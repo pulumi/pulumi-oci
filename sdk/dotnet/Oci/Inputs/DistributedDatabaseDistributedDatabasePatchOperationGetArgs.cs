@@ -27,8 +27,8 @@ namespace Pulumi.Oci.Oci.Inputs
         /// <summary>
         /// (Updatable)
         /// </summary>
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
+        [Input("value")]
+        public Input<string>? Value { get; set; }
 
         public DistributedDatabaseDistributedDatabasePatchOperationGetArgs()
         {

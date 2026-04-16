@@ -10,9 +10,12 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.DbmulticloudOracleDbAwsKeyArgs;
 import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbAwsKeyState;
+import com.pulumi.oci.oci.outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -77,6 +80,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey")
 public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResource {
+    @Export(name="action", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> action;
+
+    public Output<Optional<String>> action() {
+        return Codegen.optional(this.action);
+    }
     /**
      * AWS Account ID.
      * 
@@ -232,6 +241,20 @@ public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResou
         return this.properties;
     }
     /**
+     * Replication metadata, it has information about replication and target region.
+     * 
+     */
+    @Export(name="replicationMetadatas", refs={List.class,DbmulticloudOracleDbAwsKeyReplicationMetadata.class}, tree="[0,1]")
+    private Output<List<DbmulticloudOracleDbAwsKeyReplicationMetadata>> replicationMetadatas;
+
+    /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public Output<List<DbmulticloudOracleDbAwsKeyReplicationMetadata>> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * The lifecycle state of the Oracle DB AWS Key resource.
      * 
      */
@@ -258,6 +281,20 @@ public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResou
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Export(name="targetRegion", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Output<Optional<String>> targetRegion() {
+        return Codegen.optional(this.targetRegion);
     }
     /**
      * Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;.

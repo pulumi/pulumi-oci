@@ -23,11 +23,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem {
+    private String caBundleId;
     /**
      * @return Collection of catalogs associated with the Globally distributed autonomous database.
      * 
      */
     private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail> catalogDetails;
+    private String certificateId;
     private Integer changeDbBackupConfigTrigger;
     /**
      * @return The character set for the database.
@@ -44,6 +46,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      * 
      */
     private String compartmentId;
+    private Integer configureGsmWalletTrigger;
     private Boolean configureShardingIsRebalanceRequired;
     private Integer configureShardingTrigger;
     /**
@@ -131,6 +134,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      * 
      */
     private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadata> metadatas;
+    private Integer moveReplicationUnitTrigger;
     /**
      * @return The national character set for the database.
      * 
@@ -157,6 +161,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      * 
      */
     private List<String> privateEndpointIds;
+    private Integer recreateFailedResourceTrigger;
     /**
      * @return The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
      * 
@@ -214,16 +219,23 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     private String timeUpdated;
     private String uploadCaSignedCertificate;
     private Integer uploadSignedCertificateAndGenerateWalletTrigger;
+    private Integer validateCaBundleTrigger;
     private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail> validateNetworkDetails;
     private Integer validateNetworkTrigger;
 
     private GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem() {}
+    public String caBundleId() {
+        return this.caBundleId;
+    }
     /**
      * @return Collection of catalogs associated with the Globally distributed autonomous database.
      * 
      */
     public List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail> catalogDetails() {
         return this.catalogDetails;
+    }
+    public String certificateId() {
+        return this.certificateId;
     }
     public Integer changeDbBackupConfigTrigger() {
         return this.changeDbBackupConfigTrigger;
@@ -248,6 +260,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Integer configureGsmWalletTrigger() {
+        return this.configureGsmWalletTrigger;
     }
     public Boolean configureShardingIsRebalanceRequired() {
         return this.configureShardingIsRebalanceRequired;
@@ -390,6 +405,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     public List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadata> metadatas() {
         return this.metadatas;
     }
+    public Integer moveReplicationUnitTrigger() {
+        return this.moveReplicationUnitTrigger;
+    }
     /**
      * @return The national character set for the database.
      * 
@@ -427,6 +445,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      */
     public List<String> privateEndpointIds() {
         return this.privateEndpointIds;
+    }
+    public Integer recreateFailedResourceTrigger() {
+        return this.recreateFailedResourceTrigger;
     }
     /**
      * @return The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
@@ -511,6 +532,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     public Integer uploadSignedCertificateAndGenerateWalletTrigger() {
         return this.uploadSignedCertificateAndGenerateWalletTrigger;
     }
+    public Integer validateCaBundleTrigger() {
+        return this.validateCaBundleTrigger;
+    }
     public List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail> validateNetworkDetails() {
         return this.validateNetworkDetails;
     }
@@ -527,11 +551,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     }
     @CustomType.Builder
     public static final class Builder {
+        private String caBundleId;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail> catalogDetails;
+        private String certificateId;
         private Integer changeDbBackupConfigTrigger;
         private String characterSet;
         private Integer chunks;
         private String compartmentId;
+        private Integer configureGsmWalletTrigger;
         private Boolean configureShardingIsRebalanceRequired;
         private Integer configureShardingTrigger;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemConnectionString> connectionStrings;
@@ -559,12 +586,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         private Integer listenerPort;
         private Integer listenerPortTls;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadata> metadatas;
+        private Integer moveReplicationUnitTrigger;
         private String ncharacterSet;
         private Integer onsPortLocal;
         private Integer onsPortRemote;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemPatchOperation> patchOperations;
         private String prefix;
         private List<String> privateEndpointIds;
+        private Integer recreateFailedResourceTrigger;
         private Integer replicationFactor;
         private String replicationMethod;
         private Integer replicationUnit;
@@ -578,16 +607,20 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         private String timeUpdated;
         private String uploadCaSignedCertificate;
         private Integer uploadSignedCertificateAndGenerateWalletTrigger;
+        private Integer validateCaBundleTrigger;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail> validateNetworkDetails;
         private Integer validateNetworkTrigger;
         public Builder() {}
         public Builder(GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.caBundleId = defaults.caBundleId;
     	      this.catalogDetails = defaults.catalogDetails;
+    	      this.certificateId = defaults.certificateId;
     	      this.changeDbBackupConfigTrigger = defaults.changeDbBackupConfigTrigger;
     	      this.characterSet = defaults.characterSet;
     	      this.chunks = defaults.chunks;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configureGsmWalletTrigger = defaults.configureGsmWalletTrigger;
     	      this.configureShardingIsRebalanceRequired = defaults.configureShardingIsRebalanceRequired;
     	      this.configureShardingTrigger = defaults.configureShardingTrigger;
     	      this.connectionStrings = defaults.connectionStrings;
@@ -615,12 +648,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     	      this.listenerPort = defaults.listenerPort;
     	      this.listenerPortTls = defaults.listenerPortTls;
     	      this.metadatas = defaults.metadatas;
+    	      this.moveReplicationUnitTrigger = defaults.moveReplicationUnitTrigger;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.onsPortLocal = defaults.onsPortLocal;
     	      this.onsPortRemote = defaults.onsPortRemote;
     	      this.patchOperations = defaults.patchOperations;
     	      this.prefix = defaults.prefix;
     	      this.privateEndpointIds = defaults.privateEndpointIds;
+    	      this.recreateFailedResourceTrigger = defaults.recreateFailedResourceTrigger;
     	      this.replicationFactor = defaults.replicationFactor;
     	      this.replicationMethod = defaults.replicationMethod;
     	      this.replicationUnit = defaults.replicationUnit;
@@ -634,10 +669,19 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.uploadCaSignedCertificate = defaults.uploadCaSignedCertificate;
     	      this.uploadSignedCertificateAndGenerateWalletTrigger = defaults.uploadSignedCertificateAndGenerateWalletTrigger;
+    	      this.validateCaBundleTrigger = defaults.validateCaBundleTrigger;
     	      this.validateNetworkDetails = defaults.validateNetworkDetails;
     	      this.validateNetworkTrigger = defaults.validateNetworkTrigger;
         }
 
+        @CustomType.Setter
+        public Builder caBundleId(String caBundleId) {
+            if (caBundleId == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "caBundleId");
+            }
+            this.caBundleId = caBundleId;
+            return this;
+        }
         @CustomType.Setter
         public Builder catalogDetails(List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail> catalogDetails) {
             if (catalogDetails == null) {
@@ -648,6 +692,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         }
         public Builder catalogDetails(GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetail... catalogDetails) {
             return catalogDetails(List.of(catalogDetails));
+        }
+        @CustomType.Setter
+        public Builder certificateId(String certificateId) {
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "certificateId");
+            }
+            this.certificateId = certificateId;
+            return this;
         }
         @CustomType.Setter
         public Builder changeDbBackupConfigTrigger(Integer changeDbBackupConfigTrigger) {
@@ -679,6 +731,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configureGsmWalletTrigger(Integer configureGsmWalletTrigger) {
+            if (configureGsmWalletTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "configureGsmWalletTrigger");
+            }
+            this.configureGsmWalletTrigger = configureGsmWalletTrigger;
             return this;
         }
         @CustomType.Setter
@@ -913,6 +973,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
+        public Builder moveReplicationUnitTrigger(Integer moveReplicationUnitTrigger) {
+            if (moveReplicationUnitTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "moveReplicationUnitTrigger");
+            }
+            this.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "ncharacterSet");
@@ -965,6 +1033,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         }
         public Builder privateEndpointIds(String... privateEndpointIds) {
             return privateEndpointIds(List.of(privateEndpointIds));
+        }
+        @CustomType.Setter
+        public Builder recreateFailedResourceTrigger(Integer recreateFailedResourceTrigger) {
+            if (recreateFailedResourceTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "recreateFailedResourceTrigger");
+            }
+            this.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
+            return this;
         }
         @CustomType.Setter
         public Builder replicationFactor(Integer replicationFactor) {
@@ -1074,6 +1150,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             return this;
         }
         @CustomType.Setter
+        public Builder validateCaBundleTrigger(Integer validateCaBundleTrigger) {
+            if (validateCaBundleTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "validateCaBundleTrigger");
+            }
+            this.validateCaBundleTrigger = validateCaBundleTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder validateNetworkDetails(List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetail> validateNetworkDetails) {
             if (validateNetworkDetails == null) {
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "validateNetworkDetails");
@@ -1094,11 +1178,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         }
         public GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem build() {
             final var _resultValue = new GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem();
+            _resultValue.caBundleId = caBundleId;
             _resultValue.catalogDetails = catalogDetails;
+            _resultValue.certificateId = certificateId;
             _resultValue.changeDbBackupConfigTrigger = changeDbBackupConfigTrigger;
             _resultValue.characterSet = characterSet;
             _resultValue.chunks = chunks;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.configureGsmWalletTrigger = configureGsmWalletTrigger;
             _resultValue.configureShardingIsRebalanceRequired = configureShardingIsRebalanceRequired;
             _resultValue.configureShardingTrigger = configureShardingTrigger;
             _resultValue.connectionStrings = connectionStrings;
@@ -1126,12 +1213,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             _resultValue.listenerPort = listenerPort;
             _resultValue.listenerPortTls = listenerPortTls;
             _resultValue.metadatas = metadatas;
+            _resultValue.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.onsPortLocal = onsPortLocal;
             _resultValue.onsPortRemote = onsPortRemote;
             _resultValue.patchOperations = patchOperations;
             _resultValue.prefix = prefix;
             _resultValue.privateEndpointIds = privateEndpointIds;
+            _resultValue.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
             _resultValue.replicationFactor = replicationFactor;
             _resultValue.replicationMethod = replicationMethod;
             _resultValue.replicationUnit = replicationUnit;
@@ -1145,6 +1234,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.uploadCaSignedCertificate = uploadCaSignedCertificate;
             _resultValue.uploadSignedCertificateAndGenerateWalletTrigger = uploadSignedCertificateAndGenerateWalletTrigger;
+            _resultValue.validateCaBundleTrigger = validateCaBundleTrigger;
             _resultValue.validateNetworkDetails = validateNetworkDetails;
             _resultValue.validateNetworkTrigger = validateNetworkTrigger;
             return _resultValue;

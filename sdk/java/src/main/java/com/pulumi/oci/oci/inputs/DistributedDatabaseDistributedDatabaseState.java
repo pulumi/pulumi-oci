@@ -432,6 +432,21 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    @Import(name="moveReplicationUnitTrigger")
+    private @Nullable Output<Integer> moveReplicationUnitTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> moveReplicationUnitTrigger() {
+        return Optional.ofNullable(this.moveReplicationUnitTrigger);
+    }
+
+    /**
      * The national character set for the database.
      * 
      */
@@ -522,6 +537,21 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    @Import(name="recreateFailedResourceTrigger")
+    private @Nullable Output<Integer> recreateFailedResourceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> recreateFailedResourceTrigger() {
+        return Optional.ofNullable(this.recreateFailedResourceTrigger);
+    }
+
+    /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      * 
      */
@@ -564,6 +594,21 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
      */
     public Optional<Output<Integer>> replicationUnit() {
         return Optional.ofNullable(this.replicationUnit);
+    }
+
+    /**
+     * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     * 
+     */
+    @Import(name="scanListenerPort")
+    private @Nullable Output<Integer> scanListenerPort;
+
+    /**
+     * @return The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPort() {
+        return Optional.ofNullable(this.scanListenerPort);
     }
 
     /**
@@ -769,15 +814,18 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         this.listenerPort = $.listenerPort;
         this.listenerPortTls = $.listenerPortTls;
         this.metadatas = $.metadatas;
+        this.moveReplicationUnitTrigger = $.moveReplicationUnitTrigger;
         this.ncharacterSet = $.ncharacterSet;
         this.onsPortLocal = $.onsPortLocal;
         this.onsPortRemote = $.onsPortRemote;
         this.patchOperations = $.patchOperations;
         this.prefix = $.prefix;
         this.privateEndpointIds = $.privateEndpointIds;
+        this.recreateFailedResourceTrigger = $.recreateFailedResourceTrigger;
         this.replicationFactor = $.replicationFactor;
         this.replicationMethod = $.replicationMethod;
         this.replicationUnit = $.replicationUnit;
+        this.scanListenerPort = $.scanListenerPort;
         this.shardDetails = $.shardDetails;
         this.shardingMethod = $.shardingMethod;
         this.startDatabaseTrigger = $.startDatabaseTrigger;
@@ -1413,6 +1461,27 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         }
 
         /**
+         * @param moveReplicationUnitTrigger (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder moveReplicationUnitTrigger(@Nullable Output<Integer> moveReplicationUnitTrigger) {
+            $.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
+            return this;
+        }
+
+        /**
+         * @param moveReplicationUnitTrigger (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder moveReplicationUnitTrigger(Integer moveReplicationUnitTrigger) {
+            return moveReplicationUnitTrigger(Output.of(moveReplicationUnitTrigger));
+        }
+
+        /**
          * @param ncharacterSet The national character set for the database.
          * 
          * @return builder
@@ -1559,6 +1628,27 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         }
 
         /**
+         * @param recreateFailedResourceTrigger (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recreateFailedResourceTrigger(@Nullable Output<Integer> recreateFailedResourceTrigger) {
+            $.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
+            return this;
+        }
+
+        /**
+         * @param recreateFailedResourceTrigger (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recreateFailedResourceTrigger(Integer recreateFailedResourceTrigger) {
+            return recreateFailedResourceTrigger(Output.of(recreateFailedResourceTrigger));
+        }
+
+        /**
          * @param replicationFactor The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
          * 
          * @return builder
@@ -1619,6 +1709,27 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
          */
         public Builder replicationUnit(Integer replicationUnit) {
             return replicationUnit(Output.of(replicationUnit));
+        }
+
+        /**
+         * @param scanListenerPort The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPort(@Nullable Output<Integer> scanListenerPort) {
+            $.scanListenerPort = scanListenerPort;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPort The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPort(Integer scanListenerPort) {
+            return scanListenerPort(Output.of(scanListenerPort));
         }
 
         /**

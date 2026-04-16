@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSddcDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcInitialConfiguration;
+import com.pulumi.oci.Ocvp.outputs.GetSddcSddcByolAllocationDetail;
 import com.pulumi.oci.Ocvp.outputs.GetSddcUpgradeLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcVsphereUpgradeObject;
 import java.lang.Boolean;
@@ -325,6 +326,11 @@ public final class GetSddcResult {
     @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     private String replicationVlanId;
     private List<String> reservingHcxOnPremiseLicenseKeys;
+    /**
+     * @return The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    private List<GetSddcSddcByolAllocationDetail> sddcByolAllocationDetails;
     private String sddcId;
     /**
      * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
@@ -850,6 +856,13 @@ public final class GetSddcResult {
     public List<String> reservingHcxOnPremiseLicenseKeys() {
         return this.reservingHcxOnPremiseLicenseKeys;
     }
+    /**
+     * @return The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    public List<GetSddcSddcByolAllocationDetail> sddcByolAllocationDetails() {
+        return this.sddcByolAllocationDetails;
+    }
     public String sddcId() {
         return this.sddcId;
     }
@@ -1073,6 +1086,7 @@ public final class GetSddcResult {
         private Boolean refreshHcxLicenseStatus;
         private String replicationVlanId;
         private List<String> reservingHcxOnPremiseLicenseKeys;
+        private List<GetSddcSddcByolAllocationDetail> sddcByolAllocationDetails;
         private String sddcId;
         private String sshAuthorizedKeys;
         private String state;
@@ -1141,6 +1155,7 @@ public final class GetSddcResult {
     	      this.refreshHcxLicenseStatus = defaults.refreshHcxLicenseStatus;
     	      this.replicationVlanId = defaults.replicationVlanId;
     	      this.reservingHcxOnPremiseLicenseKeys = defaults.reservingHcxOnPremiseLicenseKeys;
+    	      this.sddcByolAllocationDetails = defaults.sddcByolAllocationDetails;
     	      this.sddcId = defaults.sddcId;
     	      this.sshAuthorizedKeys = defaults.sshAuthorizedKeys;
     	      this.state = defaults.state;
@@ -1536,6 +1551,17 @@ public final class GetSddcResult {
             return reservingHcxOnPremiseLicenseKeys(List.of(reservingHcxOnPremiseLicenseKeys));
         }
         @CustomType.Setter
+        public Builder sddcByolAllocationDetails(List<GetSddcSddcByolAllocationDetail> sddcByolAllocationDetails) {
+            if (sddcByolAllocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetSddcResult", "sddcByolAllocationDetails");
+            }
+            this.sddcByolAllocationDetails = sddcByolAllocationDetails;
+            return this;
+        }
+        public Builder sddcByolAllocationDetails(GetSddcSddcByolAllocationDetail... sddcByolAllocationDetails) {
+            return sddcByolAllocationDetails(List.of(sddcByolAllocationDetails));
+        }
+        @CustomType.Setter
         public Builder sddcId(String sddcId) {
             if (sddcId == null) {
               throw new MissingRequiredPropertyException("GetSddcResult", "sddcId");
@@ -1748,6 +1774,7 @@ public final class GetSddcResult {
             _resultValue.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
             _resultValue.replicationVlanId = replicationVlanId;
             _resultValue.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
+            _resultValue.sddcByolAllocationDetails = sddcByolAllocationDetails;
             _resultValue.sddcId = sddcId;
             _resultValue.sshAuthorizedKeys = sshAuthorizedKeys;
             _resultValue.state = state;

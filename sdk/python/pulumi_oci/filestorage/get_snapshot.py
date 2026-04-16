@@ -27,7 +27,7 @@ class GetSnapshotResult:
     """
     A collection of values returned by getSnapshot.
     """
-    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, is_lock_override=None, lifecycle_details=None, locks=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, is_lock_override=None, lifecycle_details=None, lock_duration_details=None, locks=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, system_tags=None, time_created=None, time_locked=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -55,6 +55,9 @@ class GetSnapshotResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lock_duration_details and not isinstance(lock_duration_details, list):
+            raise TypeError("Expected argument 'lock_duration_details' to be a list")
+        pulumi.set(__self__, "lock_duration_details", lock_duration_details)
         if locks and not isinstance(locks, list):
             raise TypeError("Expected argument 'locks' to be a list")
         pulumi.set(__self__, "locks", locks)
@@ -82,6 +85,9 @@ class GetSnapshotResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_locked and not isinstance(time_locked, str):
+            raise TypeError("Expected argument 'time_locked' to be a str")
+        pulumi.set(__self__, "time_locked", time_locked)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -151,6 +157,14 @@ class GetSnapshotResult:
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lockDurationDetails")
+    def lock_duration_details(self) -> Sequence['outputs.GetSnapshotLockDurationDetailResult']:
+        """
+        Details for setting a retention date or legal hold.
+        """
+        return pulumi.get(self, "lock_duration_details")
 
     @_builtins.property
     @pulumi.getter
@@ -224,6 +238,14 @@ class GetSnapshotResult:
         """
         return pulumi.get(self, "time_created")
 
+    @_builtins.property
+    @pulumi.getter(name="timeLocked")
+    def time_locked(self) -> _builtins.str:
+        """
+        The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        """
+        return pulumi.get(self, "time_locked")
+
 
 class AwaitableGetSnapshotResult(GetSnapshotResult):
     # pylint: disable=using-constant-test
@@ -240,6 +262,7 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             is_clone_source=self.is_clone_source,
             is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            lock_duration_details=self.lock_duration_details,
             locks=self.locks,
             name=self.name,
             provenance_id=self.provenance_id,
@@ -248,7 +271,8 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             snapshot_type=self.snapshot_type,
             state=self.state,
             system_tags=self.system_tags,
-            time_created=self.time_created)
+            time_created=self.time_created,
+            time_locked=self.time_locked)
 
 
 def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
@@ -285,6 +309,7 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
         is_clone_source=pulumi.get(__ret__, 'is_clone_source'),
         is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        lock_duration_details=pulumi.get(__ret__, 'lock_duration_details'),
         locks=pulumi.get(__ret__, 'locks'),
         name=pulumi.get(__ret__, 'name'),
         provenance_id=pulumi.get(__ret__, 'provenance_id'),
@@ -293,7 +318,8 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
         snapshot_type=pulumi.get(__ret__, 'snapshot_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
-        time_created=pulumi.get(__ret__, 'time_created'))
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_locked=pulumi.get(__ret__, 'time_locked'))
 def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSnapshotResult]:
     """
@@ -327,6 +353,7 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = Non
         is_clone_source=pulumi.get(__response__, 'is_clone_source'),
         is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        lock_duration_details=pulumi.get(__response__, 'lock_duration_details'),
         locks=pulumi.get(__response__, 'locks'),
         name=pulumi.get(__response__, 'name'),
         provenance_id=pulumi.get(__response__, 'provenance_id'),
@@ -335,4 +362,5 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = Non
         snapshot_type=pulumi.get(__response__, 'snapshot_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
-        time_created=pulumi.get(__response__, 'time_created')))
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_locked=pulumi.get(__response__, 'time_locked')))

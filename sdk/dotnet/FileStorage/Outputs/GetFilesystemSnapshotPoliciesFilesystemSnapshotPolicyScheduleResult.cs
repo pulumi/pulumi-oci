@@ -26,6 +26,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly int HourOfDay;
         /// <summary>
+        /// Details for setting a retention date or legal hold.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailResult> LockDurationDetails;
+        /// <summary>
         /// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         /// </summary>
         public readonly string Month;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             int hourOfDay,
 
+            ImmutableArray<Outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailResult> lockDurationDetails,
+
             string month,
 
             string period,
@@ -73,6 +79,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             DayOfMonth = dayOfMonth;
             DayOfWeek = dayOfWeek;
             HourOfDay = hourOfDay;
+            LockDurationDetails = lockDurationDetails;
             Month = month;
             Period = period;
             RetentionDurationInSeconds = retentionDurationInSeconds;

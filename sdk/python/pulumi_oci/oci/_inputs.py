@@ -47,10 +47,22 @@ __all__ = [
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict',
+    'DbmulticloudOracleDbAwsKeyReplicationMetadataArgs',
+    'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict',
+    'DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs',
+    'DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgsDict',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
+    'DbmulticloudOracleDbAzureVaultReplicationMetadataArgs',
+    'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict',
+    'DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs',
+    'DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgsDict',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict',
+    'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs',
+    'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict',
+    'DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs',
+    'DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgsDict',
     'DifStackAdbArgs',
     'DifStackAdbArgsDict',
     'DifStackAdbDbCredentialArgs',
@@ -149,12 +161,20 @@ __all__ = [
     'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseCatalogDetailArgs',
     'DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs',
     'DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgsDict',
     'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs',
     'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs',
     'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseConnectionStringArgs',
     'DistributedDatabaseDistributedDatabaseConnectionStringArgsDict',
     'DistributedDatabaseDistributedDatabaseDbBackupConfigArgs',
@@ -179,12 +199,20 @@ __all__ = [
     'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgsDict',
     'DistributedDatabaseDistributedDatabaseShardDetailArgs',
     'DistributedDatabaseDistributedDatabaseShardDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs',
     'DistributedDatabaseDistributedDatabaseShardDetailMetadataArgsDict',
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs',
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs',
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgsDict',
     'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgs',
     'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgsDict',
     'GdpGdpPipelineBucketDetailArgs',
@@ -1644,6 +1672,124 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs:
         pulumi.set(self, "time_last_checked", value)
 
 
+class DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict(TypedDict):
+    replication_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgsDict']]]]
+    """
+    List of all regions and their respective resource ID.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsKeyReplicationMetadataArgs:
+    def __init__(__self__, *,
+                 replication_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs']]] replication_details: List of all regions and their respective resource ID.
+        """
+        if replication_details is not None:
+            pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs']]]]:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+    @replication_details.setter
+    def replication_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs']]]]):
+        pulumi.set(self, "replication_details", value)
+
+
+class DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgsDict(TypedDict):
+    replication_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lifecycle state of the Oracle DB Azure Vault resource.
+    """
+    target_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target region, where resource is replicated.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs:
+    def __init__(__self__, *,
+                 replication_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        if replication_state is not None:
+            pulumi.set(__self__, "replication_state", replication_state)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @replication_state.setter
+    def replication_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "replication_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
 class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict(TypedDict):
     current_arc_agent_version: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -1753,6 +1899,124 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
         pulumi.set(self, "time_last_checked", value)
 
 
+class DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict(TypedDict):
+    replication_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgsDict']]]]
+    """
+    List of all regions and their respective resource ID.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAzureVaultReplicationMetadataArgs:
+    def __init__(__self__, *,
+                 replication_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs']]] replication_details: List of all regions and their respective resource ID.
+        """
+        if replication_details is not None:
+            pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs']]]]:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+    @replication_details.setter
+    def replication_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs']]]]):
+        pulumi.set(self, "replication_details", value)
+
+
+class DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgsDict(TypedDict):
+    replication_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lifecycle state of the Oracle DB Azure Vault resource.
+    """
+    target_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target region, where resource is replicated.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetailArgs:
+    def __init__(__self__, *,
+                 replication_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        if replication_state is not None:
+            pulumi.set(__self__, "replication_state", replication_state)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @replication_state.setter
+    def replication_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "replication_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
 class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict(TypedDict):
     host_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -1840,6 +2104,124 @@ class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs:
     @time_last_checked.setter
     def time_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_last_checked", value)
+
+
+class DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict(TypedDict):
+    replication_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgsDict']]]]
+    """
+    List of all regions and their respective resource ID.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs:
+    def __init__(__self__, *,
+                 replication_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs']]] replication_details: List of all regions and their respective resource ID.
+        """
+        if replication_details is not None:
+            pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs']]]]:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+    @replication_details.setter
+    def replication_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs']]]]):
+        pulumi.set(self, "replication_details", value)
+
+
+class DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgsDict(TypedDict):
+    replication_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The lifecycle state of the Oracle DB Azure Vault resource.
+    """
+    target_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target region, where resource is replicated.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetailArgs:
+    def __init__(__self__, *,
+                 replication_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        if replication_state is not None:
+            pulumi.set(__self__, "replication_state", replication_state)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @replication_state.setter
+    def replication_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "replication_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
 
 
 class DifStackAdbArgsDict(TypedDict):
@@ -4683,6 +5065,14 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict(Type
     """
     Name of the shard.
     """
+    okv_end_point_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OKV endpoint name.
+    """
+    okv_key_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+    """
     peer_cloud_autonomous_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
     This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
@@ -4730,6 +5120,8 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs:
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_cloud_autonomous_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]]] = None,
                  shard_group: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4750,6 +5142,8 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs:
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
         :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[_builtins.str] okv_end_point_group: The OKV endpoint name.
+        :param pulumi.Input[_builtins.str] okv_key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cloud_autonomous_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -4775,6 +5169,10 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if okv_end_point_group is not None:
+            pulumi.set(__self__, "okv_end_point_group", okv_end_point_group)
+        if okv_key_store_id is not None:
+            pulumi.set(__self__, "okv_key_store_id", okv_key_store_id)
         if peer_cloud_autonomous_vm_cluster_ids is not None:
             pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_ids", peer_cloud_autonomous_vm_cluster_ids)
         if peer_details is not None:
@@ -4925,6 +5323,30 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="okvEndPointGroup")
+    def okv_end_point_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OKV endpoint name.
+        """
+        return pulumi.get(self, "okv_end_point_group")
+
+    @okv_end_point_group.setter
+    def okv_end_point_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_end_point_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="okvKeyStoreId")
+    def okv_key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+        """
+        return pulumi.get(self, "okv_key_store_id")
+
+    @okv_key_store_id.setter
+    def okv_key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_key_store_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="peerCloudAutonomousVmClusterIds")
     def peer_cloud_autonomous_vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -5065,7 +5487,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArg
     """
     is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
     """
-    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
     """
     metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgsDict']]]]
     """
@@ -5119,7 +5541,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArg
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time preference based on data loss tolerance in seconds.
-        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
         :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the catalog peer.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -5193,7 +5615,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArg
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -6005,10 +6427,6 @@ class DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs:
 
 
 class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict(TypedDict):
-    admin_password: pulumi.Input[_builtins.str]
-    """
-    Admin password for shard database.
-    """
     cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -6029,6 +6447,10 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict(TypedD
     """
     The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
     """
+    admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Admin password for shard database.
+    """
     container_database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     the identifier of the container database for underlying supporting resource.
@@ -6048,6 +6470,14 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict(TypedD
     name: NotRequired[pulumi.Input[_builtins.str]]
     """
     Name of the shard.
+    """
+    okv_end_point_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OKV endpoint name.
+    """
+    okv_key_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
     """
     peer_cloud_autonomous_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
@@ -6089,17 +6519,19 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict(TypedD
 @pulumi.input_type
 class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
     def __init__(__self__, *,
-                 admin_password: pulumi.Input[_builtins.str],
                  cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
                  compute_count: pulumi.Input[_builtins.float],
                  data_storage_size_in_gbs: pulumi.Input[_builtins.float],
                  is_auto_scaling_enabled: pulumi.Input[_builtins.bool],
                  source: pulumi.Input[_builtins.str],
+                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
                  container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_cloud_autonomous_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]]] = None,
                  shard_group: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6110,17 +6542,19 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] admin_password: Admin password for shard database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.float] compute_count: The compute count for the shard database. It has to be in multiples of 2.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs for the shard database.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Determines the auto-scaling mode for the shard database.
         :param pulumi.Input[_builtins.str] source: The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+        :param pulumi.Input[_builtins.str] admin_password: Admin password for shard database.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
         :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[_builtins.str] okv_end_point_group: The OKV endpoint name.
+        :param pulumi.Input[_builtins.str] okv_key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cloud_autonomous_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -6131,12 +6565,13 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
         :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "data_storage_size_in_gbs", data_storage_size_in_gbs)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "source", source)
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
         if container_database_id is not None:
             pulumi.set(__self__, "container_database_id", container_database_id)
         if kms_key_id is not None:
@@ -6147,6 +6582,10 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if okv_end_point_group is not None:
+            pulumi.set(__self__, "okv_end_point_group", okv_end_point_group)
+        if okv_key_store_id is not None:
+            pulumi.set(__self__, "okv_key_store_id", okv_key_store_id)
         if peer_cloud_autonomous_vm_cluster_ids is not None:
             pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_ids", peer_cloud_autonomous_vm_cluster_ids)
         if peer_details is not None:
@@ -6165,18 +6604,6 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
-
-    @_builtins.property
-    @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        Admin password for shard database.
-        """
-        return pulumi.get(self, "admin_password")
-
-    @admin_password.setter
-    def admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -6239,6 +6666,18 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
         pulumi.set(self, "source", value)
 
     @_builtins.property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Admin password for shard database.
+        """
+        return pulumi.get(self, "admin_password")
+
+    @admin_password.setter
+    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -6297,6 +6736,30 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="okvEndPointGroup")
+    def okv_end_point_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OKV endpoint name.
+        """
+        return pulumi.get(self, "okv_end_point_group")
+
+    @okv_end_point_group.setter
+    def okv_end_point_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_end_point_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="okvKeyStoreId")
+    def okv_key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+        """
+        return pulumi.get(self, "okv_key_store_id")
+
+    @okv_key_store_id.setter
+    def okv_key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerCloudAutonomousVmClusterIds")
@@ -6451,7 +6914,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgsD
     """
     is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
     """
-    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
     """
     metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgsDict']]]]
     """
@@ -6505,7 +6968,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs:
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time preference based on data loss tolerance in seconds.
-        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
         :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the shard peer.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -6579,7 +7042,7 @@ class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -6771,15 +7234,15 @@ class DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs
 class DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict(TypedDict):
     admin_password: pulumi.Input[_builtins.str]
     """
-    The admin password for the cataog associated with Globally distributed database.
+    The admin password for the catalog associated with Globally distributed database.
     """
     source: pulumi.Input[_builtins.str]
     """
-    The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+    Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
     """
-    vm_cluster_id: pulumi.Input[_builtins.str]
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    The name of the availability domain that the distributed database shard will be located in.
     """
     container_database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -6788,6 +7251,10 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict(TypedDict):
     db_home_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+    """
+    db_storage_vault_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgsDict']]
+    """
+    Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
     """
     kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -6841,15 +7308,24 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
     """
+    vm_cluster_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgsDict']]
+    """
+    Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
 
 @pulumi.input_type
 class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
     def __init__(__self__, *,
                  admin_password: pulumi.Input[_builtins.str],
                  source: pulumi.Input[_builtins.str],
-                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_storage_vault_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]]] = None,
@@ -6862,13 +7338,16 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
                  supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs']] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] admin_password: The admin password for the cataog associated with Globally distributed database.
-        :param pulumi.Input[_builtins.str] source: The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
-        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.str] admin_password: The admin password for the catalog associated with Globally distributed database.
+        :param pulumi.Input[_builtins.str] source: Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
+        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the distributed database shard will be located in.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs'] db_storage_vault_details: Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
@@ -6882,14 +7361,19 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
         :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs'] vm_cluster_details: Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if container_database_id is not None:
             pulumi.set(__self__, "container_database_id", container_database_id)
         if db_home_id is not None:
             pulumi.set(__self__, "db_home_id", db_home_id)
+        if db_storage_vault_details is not None:
+            pulumi.set(__self__, "db_storage_vault_details", db_storage_vault_details)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -6916,12 +7400,16 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_details is not None:
+            pulumi.set(__self__, "vm_cluster_details", vm_cluster_details)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[_builtins.str]:
         """
-        The admin password for the cataog associated with Globally distributed database.
+        The admin password for the catalog associated with Globally distributed database.
         """
         return pulumi.get(self, "admin_password")
 
@@ -6933,7 +7421,7 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[_builtins.str]:
         """
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
         """
         return pulumi.get(self, "source")
 
@@ -6942,16 +7430,16 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
         pulumi.set(self, "source", value)
 
     @_builtins.property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        The name of the availability domain that the distributed database shard will be located in.
         """
-        return pulumi.get(self, "vm_cluster_id")
+        return pulumi.get(self, "availability_domain")
 
-    @vm_cluster_id.setter
-    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "vm_cluster_id", value)
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
@@ -6976,6 +7464,18 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
     @db_home_id.setter
     def db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_home_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultDetails")
+    def db_storage_vault_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs']]:
+        """
+        Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "db_storage_vault_details")
+
+    @db_storage_vault_details.setter
+    def db_storage_vault_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs']]):
+        pulumi.set(self, "db_storage_vault_details", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -7133,6 +7633,119 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
     def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vmClusterDetails")
+    def vm_cluster_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs']]:
+        """
+        Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "vm_cluster_details")
+
+    @vm_cluster_details.setter
+    def vm_cluster_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs']]):
+        pulumi.set(self, "vm_cluster_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgsDict(TypedDict):
+    additional_flash_cache_in_percent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of additional Flash Cache in percentage of High Capacity database storage.
+    """
+    db_storage_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    high_capacity_database_storage: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total storage capacity in GB for vault storage.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs:
+    def __init__(__self__, *,
+                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+                 db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[_builtins.str] db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.int] high_capacity_database_storage: Total storage capacity in GB for vault storage.
+        """
+        if additional_flash_cache_in_percent is not None:
+            pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if db_storage_vault_id is not None:
+            pulumi.set(__self__, "db_storage_vault_id", db_storage_vault_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if high_capacity_database_storage is not None:
+            pulumi.set(__self__, "high_capacity_database_storage", high_capacity_database_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFlashCacheInPercent")
+    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The size of additional Flash Cache in percentage of High Capacity database storage.
+        """
+        return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @additional_flash_cache_in_percent.setter
+    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "additional_flash_cache_in_percent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultId")
+    def db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        """
+        return pulumi.get(self, "db_storage_vault_id")
+
+    @db_storage_vault_id.setter
+    def db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_storage_vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="highCapacityDatabaseStorage")
+    def high_capacity_database_storage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Total storage capacity in GB for vault storage.
+        """
+        return pulumi.get(self, "high_capacity_database_storage")
+
+    @high_capacity_database_storage.setter
+    def high_capacity_database_storage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "high_capacity_database_storage", value)
+
 
 class DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgsDict(TypedDict):
     map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
@@ -7164,13 +7777,17 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs:
 
 
 class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict(TypedDict):
-    vm_cluster_id: pulumi.Input[_builtins.str]
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+    The name of the availability domain that the distributed database shard will be located in.
     """
     container_database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     the identifier of the container database for underlying supporting resource.
+    """
+    db_storage_vault_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgsDict']]
+    """
+    Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
     """
     metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict']]]]
     """
@@ -7204,12 +7821,21 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict(Type
     """
     The redo transport type to use for this Data Guard association.
     """
+    vm_cluster_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgsDict']]
+    """
+    Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+    """
 
 @pulumi.input_type
 class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
     def __init__(__self__, *,
-                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_storage_vault_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs']] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]]] = None,
                  protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  shard_group: Optional[pulumi.Input[_builtins.str]] = None,
@@ -7217,10 +7843,13 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
                  supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs']] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the distributed database shard will be located in.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs'] db_storage_vault_details: Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
         :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the catalog peer.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -7229,10 +7858,15 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
         :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs'] vm_cluster_details: Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
         """
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if container_database_id is not None:
             pulumi.set(__self__, "container_database_id", container_database_id)
+        if db_storage_vault_details is not None:
+            pulumi.set(__self__, "db_storage_vault_details", db_storage_vault_details)
         if metadatas is not None:
             pulumi.set(__self__, "metadatas", metadatas)
         if protection_mode is not None:
@@ -7249,18 +7883,22 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
+        if vm_cluster_details is not None:
+            pulumi.set(__self__, "vm_cluster_details", vm_cluster_details)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+        The name of the availability domain that the distributed database shard will be located in.
         """
-        return pulumi.get(self, "vm_cluster_id")
+        return pulumi.get(self, "availability_domain")
 
-    @vm_cluster_id.setter
-    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "vm_cluster_id", value)
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
@@ -7273,6 +7911,18 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
     @container_database_id.setter
     def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultDetails")
+    def db_storage_vault_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs']]:
+        """
+        Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "db_storage_vault_details")
+
+    @db_storage_vault_details.setter
+    def db_storage_vault_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs']]):
+        pulumi.set(self, "db_storage_vault_details", value)
 
     @_builtins.property
     @pulumi.getter
@@ -7370,6 +8020,119 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
     def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "transport_type", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vmClusterDetails")
+    def vm_cluster_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs']]:
+        """
+        Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "vm_cluster_details")
+
+    @vm_cluster_details.setter
+    def vm_cluster_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs']]):
+        pulumi.set(self, "vm_cluster_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgsDict(TypedDict):
+    additional_flash_cache_in_percent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of additional Flash Cache in percentage of High Capacity database storage.
+    """
+    db_storage_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    high_capacity_database_storage: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total storage capacity in GB for vault storage.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs:
+    def __init__(__self__, *,
+                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+                 db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[_builtins.str] db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.int] high_capacity_database_storage: Total storage capacity in GB for vault storage.
+        """
+        if additional_flash_cache_in_percent is not None:
+            pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if db_storage_vault_id is not None:
+            pulumi.set(__self__, "db_storage_vault_id", db_storage_vault_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if high_capacity_database_storage is not None:
+            pulumi.set(__self__, "high_capacity_database_storage", high_capacity_database_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFlashCacheInPercent")
+    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The size of additional Flash Cache in percentage of High Capacity database storage.
+        """
+        return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @additional_flash_cache_in_percent.setter
+    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "additional_flash_cache_in_percent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultId")
+    def db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        """
+        return pulumi.get(self, "db_storage_vault_id")
+
+    @db_storage_vault_id.setter
+    def db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_storage_vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="highCapacityDatabaseStorage")
+    def high_capacity_database_storage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Total storage capacity in GB for vault storage.
+        """
+        return pulumi.get(self, "high_capacity_database_storage")
+
+    @high_capacity_database_storage.setter
+    def high_capacity_database_storage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "high_capacity_database_storage", value)
+
 
 class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict(TypedDict):
     map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
@@ -7398,6 +8161,664 @@ class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs:
     @map.setter
     def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgsDict(TypedDict):
+    backup_network_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+    """
+    backup_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+    """
+    enabled_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+    """
+    private_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private zone ID in which you want DNS records to be created.
+    """
+    ssh_public_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    total_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    vm_file_system_storage_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    File System Storage Size in GBs for Exadata VM cluster.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs:
+    def __init__(__self__, *,
+                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 total_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_size: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        :param pulumi.Input[_builtins.int] enabled_ecpu_count: The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.int] total_ecpu_count: The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.int] vm_file_system_storage_size: File System Storage Size in GBs for Exadata VM cluster.
+        """
+        if backup_network_nsg_ids is not None:
+            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if backup_subnet_id is not None:
+            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if enabled_ecpu_count is not None:
+            pulumi.set(__self__, "enabled_ecpu_count", enabled_ecpu_count)
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if ssh_public_keys is not None:
+            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if total_ecpu_count is not None:
+            pulumi.set(__self__, "total_ecpu_count", total_ecpu_count)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if vm_file_system_storage_size is not None:
+            pulumi.set(__self__, "vm_file_system_storage_size", vm_file_system_storage_size)
+
+    @_builtins.property
+    @pulumi.getter(name="backupNetworkNsgIds")
+    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        """
+        return pulumi.get(self, "backup_network_nsg_ids")
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupSubnetId")
+    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "backup_subnet_id")
+
+    @backup_subnet_id.setter
+    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enabledEcpuCount")
+    def enabled_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "enabled_ecpu_count")
+
+    @enabled_ecpu_count.setter
+    def enabled_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "enabled_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "license_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The private zone ID in which you want DNS records to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_zone_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ssh_public_keys", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalEcpuCount")
+    def total_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "total_ecpu_count")
+
+    @total_ecpu_count.setter
+    def total_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageSize")
+    def vm_file_system_storage_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        File System Storage Size in GBs for Exadata VM cluster.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size")
+
+    @vm_file_system_storage_size.setter
+    def vm_file_system_storage_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "vm_file_system_storage_size", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgsDict(TypedDict):
+    backup_network_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+    """
+    backup_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+    """
+    enabled_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+    """
+    private_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private zone ID in which you want DNS records to be created.
+    """
+    ssh_public_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    total_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    vm_file_system_storage_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    File System Storage Size in GBs for Exadata VM cluster.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs:
+    def __init__(__self__, *,
+                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 total_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_size: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        :param pulumi.Input[_builtins.int] enabled_ecpu_count: The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.int] total_ecpu_count: The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.int] vm_file_system_storage_size: File System Storage Size in GBs for Exadata VM cluster.
+        """
+        if backup_network_nsg_ids is not None:
+            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if backup_subnet_id is not None:
+            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if enabled_ecpu_count is not None:
+            pulumi.set(__self__, "enabled_ecpu_count", enabled_ecpu_count)
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if ssh_public_keys is not None:
+            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if total_ecpu_count is not None:
+            pulumi.set(__self__, "total_ecpu_count", total_ecpu_count)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if vm_file_system_storage_size is not None:
+            pulumi.set(__self__, "vm_file_system_storage_size", vm_file_system_storage_size)
+
+    @_builtins.property
+    @pulumi.getter(name="backupNetworkNsgIds")
+    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        """
+        return pulumi.get(self, "backup_network_nsg_ids")
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupSubnetId")
+    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "backup_subnet_id")
+
+    @backup_subnet_id.setter
+    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enabledEcpuCount")
+    def enabled_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "enabled_ecpu_count")
+
+    @enabled_ecpu_count.setter
+    def enabled_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "enabled_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "license_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The private zone ID in which you want DNS records to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_zone_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ssh_public_keys", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalEcpuCount")
+    def total_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "total_ecpu_count")
+
+    @total_ecpu_count.setter
+    def total_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageSize")
+    def vm_file_system_storage_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        File System Storage Size in GBs for Exadata VM cluster.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size")
+
+    @vm_file_system_storage_size.setter
+    def vm_file_system_storage_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "vm_file_system_storage_size", value)
 
 
 class DistributedDatabaseDistributedDatabaseConnectionStringArgsDict(TypedDict):
@@ -8200,7 +9621,7 @@ class DistributedDatabaseDistributedDatabasePatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    value: pulumi.Input[_builtins.str]
+    value: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable)
     """
@@ -8210,7 +9631,7 @@ class DistributedDatabaseDistributedDatabasePatchOperationArgs:
     def __init__(__self__, *,
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
-                 value: pulumi.Input[_builtins.str]):
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
         :param pulumi.Input[_builtins.str] selection: (Updatable)
@@ -8218,7 +9639,8 @@ class DistributedDatabaseDistributedDatabasePatchOperationArgs:
         """
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "selection", selection)
-        pulumi.set(__self__, "value", value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @_builtins.property
     @pulumi.getter
@@ -8246,14 +9668,14 @@ class DistributedDatabaseDistributedDatabasePatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> pulumi.Input[_builtins.str]:
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: pulumi.Input[_builtins.str]):
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -8362,11 +9784,11 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgsDict(TypedDict):
     """
     source: pulumi.Input[_builtins.str]
     """
-    The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+    Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
     """
-    vm_cluster_id: pulumi.Input[_builtins.str]
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    The name of the availability domain that the distributed database shard will be located in.
     """
     container_database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -8375,6 +9797,10 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgsDict(TypedDict):
     db_home_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+    """
+    db_storage_vault_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgsDict']]
+    """
+    Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
     """
     kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -8428,15 +9854,24 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
     """
+    vm_cluster_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgsDict']]
+    """
+    Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
 
 @pulumi.input_type
 class DistributedDatabaseDistributedDatabaseShardDetailArgs:
     def __init__(__self__, *,
                  admin_password: pulumi.Input[_builtins.str],
                  source: pulumi.Input[_builtins.str],
-                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_storage_vault_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs']] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]]] = None,
@@ -8449,13 +9884,16 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
                  supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs']] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] admin_password: The admin password for the shard associated with Globally distributed database.
-        :param pulumi.Input[_builtins.str] source: The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
-        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.str] source: Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
+        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the distributed database shard will be located in.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs'] db_storage_vault_details: Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
@@ -8469,14 +9907,19 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
         :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs'] vm_cluster_details: Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if container_database_id is not None:
             pulumi.set(__self__, "container_database_id", container_database_id)
         if db_home_id is not None:
             pulumi.set(__self__, "db_home_id", db_home_id)
+        if db_storage_vault_details is not None:
+            pulumi.set(__self__, "db_storage_vault_details", db_storage_vault_details)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -8503,6 +9946,10 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_details is not None:
+            pulumi.set(__self__, "vm_cluster_details", vm_cluster_details)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -8520,7 +9967,7 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[_builtins.str]:
         """
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
         """
         return pulumi.get(self, "source")
 
@@ -8529,16 +9976,16 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
         pulumi.set(self, "source", value)
 
     @_builtins.property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        The name of the availability domain that the distributed database shard will be located in.
         """
-        return pulumi.get(self, "vm_cluster_id")
+        return pulumi.get(self, "availability_domain")
 
-    @vm_cluster_id.setter
-    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "vm_cluster_id", value)
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
@@ -8563,6 +10010,18 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
     @db_home_id.setter
     def db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_home_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultDetails")
+    def db_storage_vault_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs']]:
+        """
+        Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "db_storage_vault_details")
+
+    @db_storage_vault_details.setter
+    def db_storage_vault_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs']]):
+        pulumi.set(self, "db_storage_vault_details", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -8720,6 +10179,119 @@ class DistributedDatabaseDistributedDatabaseShardDetailArgs:
     def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vmClusterDetails")
+    def vm_cluster_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs']]:
+        """
+        Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "vm_cluster_details")
+
+    @vm_cluster_details.setter
+    def vm_cluster_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs']]):
+        pulumi.set(self, "vm_cluster_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgsDict(TypedDict):
+    additional_flash_cache_in_percent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of additional Flash Cache in percentage of High Capacity database storage.
+    """
+    db_storage_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    high_capacity_database_storage: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total storage capacity in GB for vault storage.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs:
+    def __init__(__self__, *,
+                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+                 db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[_builtins.str] db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.int] high_capacity_database_storage: Total storage capacity in GB for vault storage.
+        """
+        if additional_flash_cache_in_percent is not None:
+            pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if db_storage_vault_id is not None:
+            pulumi.set(__self__, "db_storage_vault_id", db_storage_vault_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if high_capacity_database_storage is not None:
+            pulumi.set(__self__, "high_capacity_database_storage", high_capacity_database_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFlashCacheInPercent")
+    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The size of additional Flash Cache in percentage of High Capacity database storage.
+        """
+        return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @additional_flash_cache_in_percent.setter
+    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "additional_flash_cache_in_percent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultId")
+    def db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        """
+        return pulumi.get(self, "db_storage_vault_id")
+
+    @db_storage_vault_id.setter
+    def db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_storage_vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="highCapacityDatabaseStorage")
+    def high_capacity_database_storage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Total storage capacity in GB for vault storage.
+        """
+        return pulumi.get(self, "high_capacity_database_storage")
+
+    @high_capacity_database_storage.setter
+    def high_capacity_database_storage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "high_capacity_database_storage", value)
+
 
 class DistributedDatabaseDistributedDatabaseShardDetailMetadataArgsDict(TypedDict):
     map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
@@ -8751,13 +10323,17 @@ class DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs:
 
 
 class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict(TypedDict):
-    vm_cluster_id: pulumi.Input[_builtins.str]
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+    The name of the availability domain that the distributed database shard will be located in.
     """
     container_database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     the identifier of the container database for underlying supporting resource.
+    """
+    db_storage_vault_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgsDict']]
+    """
+    Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
     """
     metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict']]]]
     """
@@ -8791,12 +10367,21 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict(TypedD
     """
     The redo transport type to use for this Data Guard association.
     """
+    vm_cluster_details: NotRequired[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgsDict']]
+    """
+    Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+    """
 
 @pulumi.input_type
 class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
     def __init__(__self__, *,
-                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_storage_vault_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs']] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]]] = None,
                  protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  shard_group: Optional[pulumi.Input[_builtins.str]] = None,
@@ -8804,10 +10389,13 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
                  supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_details: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs']] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+        :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the distributed database shard will be located in.
         :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs'] db_storage_vault_details: Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
         :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the shard peer.
         :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
@@ -8816,10 +10404,15 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
         :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.
+        :param pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs'] vm_cluster_details: Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
         """
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if container_database_id is not None:
             pulumi.set(__self__, "container_database_id", container_database_id)
+        if db_storage_vault_details is not None:
+            pulumi.set(__self__, "db_storage_vault_details", db_storage_vault_details)
         if metadatas is not None:
             pulumi.set(__self__, "metadatas", metadatas)
         if protection_mode is not None:
@@ -8836,18 +10429,22 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
+        if vm_cluster_details is not None:
+            pulumi.set(__self__, "vm_cluster_details", vm_cluster_details)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+        The name of the availability domain that the distributed database shard will be located in.
         """
-        return pulumi.get(self, "vm_cluster_id")
+        return pulumi.get(self, "availability_domain")
 
-    @vm_cluster_id.setter
-    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "vm_cluster_id", value)
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
@@ -8860,6 +10457,18 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
     @container_database_id.setter
     def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultDetails")
+    def db_storage_vault_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs']]:
+        """
+        Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "db_storage_vault_details")
+
+    @db_storage_vault_details.setter
+    def db_storage_vault_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs']]):
+        pulumi.set(self, "db_storage_vault_details", value)
 
     @_builtins.property
     @pulumi.getter
@@ -8957,6 +10566,119 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
     def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "transport_type", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vmClusterDetails")
+    def vm_cluster_details(self) -> Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs']]:
+        """
+        Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        """
+        return pulumi.get(self, "vm_cluster_details")
+
+    @vm_cluster_details.setter
+    def vm_cluster_details(self, value: Optional[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs']]):
+        pulumi.set(self, "vm_cluster_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgsDict(TypedDict):
+    additional_flash_cache_in_percent: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The size of additional Flash Cache in percentage of High Capacity database storage.
+    """
+    db_storage_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    high_capacity_database_storage: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total storage capacity in GB for vault storage.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs:
+    def __init__(__self__, *,
+                 additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+                 db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[_builtins.str] db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.int] high_capacity_database_storage: Total storage capacity in GB for vault storage.
+        """
+        if additional_flash_cache_in_percent is not None:
+            pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if db_storage_vault_id is not None:
+            pulumi.set(__self__, "db_storage_vault_id", db_storage_vault_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if high_capacity_database_storage is not None:
+            pulumi.set(__self__, "high_capacity_database_storage", high_capacity_database_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFlashCacheInPercent")
+    def additional_flash_cache_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The size of additional Flash Cache in percentage of High Capacity database storage.
+        """
+        return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @additional_flash_cache_in_percent.setter
+    def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "additional_flash_cache_in_percent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStorageVaultId")
+    def db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+        """
+        return pulumi.get(self, "db_storage_vault_id")
+
+    @db_storage_vault_id.setter
+    def db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_storage_vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="highCapacityDatabaseStorage")
+    def high_capacity_database_storage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Total storage capacity in GB for vault storage.
+        """
+        return pulumi.get(self, "high_capacity_database_storage")
+
+    @high_capacity_database_storage.setter
+    def high_capacity_database_storage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "high_capacity_database_storage", value)
+
 
 class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict(TypedDict):
     map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
@@ -8985,6 +10707,664 @@ class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs:
     @map.setter
     def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgsDict(TypedDict):
+    backup_network_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+    """
+    backup_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+    """
+    enabled_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+    """
+    private_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private zone ID in which you want DNS records to be created.
+    """
+    ssh_public_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    total_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    vm_file_system_storage_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    File System Storage Size in GBs for Exadata VM cluster.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs:
+    def __init__(__self__, *,
+                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 total_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_size: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        :param pulumi.Input[_builtins.int] enabled_ecpu_count: The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.int] total_ecpu_count: The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.int] vm_file_system_storage_size: File System Storage Size in GBs for Exadata VM cluster.
+        """
+        if backup_network_nsg_ids is not None:
+            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if backup_subnet_id is not None:
+            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if enabled_ecpu_count is not None:
+            pulumi.set(__self__, "enabled_ecpu_count", enabled_ecpu_count)
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if ssh_public_keys is not None:
+            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if total_ecpu_count is not None:
+            pulumi.set(__self__, "total_ecpu_count", total_ecpu_count)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if vm_file_system_storage_size is not None:
+            pulumi.set(__self__, "vm_file_system_storage_size", vm_file_system_storage_size)
+
+    @_builtins.property
+    @pulumi.getter(name="backupNetworkNsgIds")
+    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        """
+        return pulumi.get(self, "backup_network_nsg_ids")
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupSubnetId")
+    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "backup_subnet_id")
+
+    @backup_subnet_id.setter
+    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enabledEcpuCount")
+    def enabled_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "enabled_ecpu_count")
+
+    @enabled_ecpu_count.setter
+    def enabled_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "enabled_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "license_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The private zone ID in which you want DNS records to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_zone_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ssh_public_keys", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalEcpuCount")
+    def total_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "total_ecpu_count")
+
+    @total_ecpu_count.setter
+    def total_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageSize")
+    def vm_file_system_storage_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        File System Storage Size in GBs for Exadata VM cluster.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size")
+
+    @vm_file_system_storage_size.setter
+    def vm_file_system_storage_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "vm_file_system_storage_size", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgsDict(TypedDict):
+    backup_network_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+    """
+    backup_subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The display name of the Globally distributed database.
+    """
+    domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+    """
+    enabled_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    is_diagnostics_events_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+    """
+    is_health_monitoring_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+    """
+    is_incident_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+    """
+    private_zone_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private zone ID in which you want DNS records to be created.
+    """
+    ssh_public_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+    """
+    total_ecpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+    """
+    vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    vm_file_system_storage_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    File System Storage Size in GBs for Exadata VM cluster.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs:
+    def __init__(__self__, *,
+                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 total_ecpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_file_system_storage_size: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the Globally distributed database.
+        :param pulumi.Input[_builtins.str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        :param pulumi.Input[_builtins.int] enabled_ecpu_count: The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.int] total_ecpu_count: The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.int] vm_file_system_storage_size: File System Storage Size in GBs for Exadata VM cluster.
+        """
+        if backup_network_nsg_ids is not None:
+            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if backup_subnet_id is not None:
+            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if enabled_ecpu_count is not None:
+            pulumi.set(__self__, "enabled_ecpu_count", enabled_ecpu_count)
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if ssh_public_keys is not None:
+            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if total_ecpu_count is not None:
+            pulumi.set(__self__, "total_ecpu_count", total_ecpu_count)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if vm_file_system_storage_size is not None:
+            pulumi.set(__self__, "vm_file_system_storage_size", vm_file_system_storage_size)
+
+    @_builtins.property
+    @pulumi.getter(name="backupNetworkNsgIds")
+    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        """
+        return pulumi.get(self, "backup_network_nsg_ids")
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupSubnetId")
+    def backup_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "backup_subnet_id")
+
+    @backup_subnet_id.setter
+    def backup_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the Globally distributed database.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enabledEcpuCount")
+    def enabled_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "enabled_ecpu_count")
+
+    @enabled_ecpu_count.setter
+    def enabled_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "enabled_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "license_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The private zone ID in which you want DNS records to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_zone_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @ssh_public_keys.setter
+    def ssh_public_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ssh_public_keys", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalEcpuCount")
+    def total_ecpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "total_ecpu_count")
+
+    @total_ecpu_count.setter
+    def total_ecpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_ecpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmFileSystemStorageSize")
+    def vm_file_system_storage_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        File System Storage Size in GBs for Exadata VM cluster.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size")
+
+    @vm_file_system_storage_size.setter
+    def vm_file_system_storage_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "vm_file_system_storage_size", value)
 
 
 class DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgsDict(TypedDict):

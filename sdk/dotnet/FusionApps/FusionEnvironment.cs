@@ -40,6 +40,16 @@ namespace Pulumi.Oci.FusionApps
     ///         DisplayName = fusionEnvironmentDisplayName,
     ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
     ///         FusionEnvironmentType = fusionEnvironmentFusionEnvironmentType,
+    ///         AdditionalEgressRules = new[]
+    ///         {
+    ///             new Oci.FusionApps.Inputs.FusionEnvironmentAdditionalEgressRuleArgs
+    ///             {
+    ///                 Description = fusionEnvironmentAdditionalEgressRulesDescription,
+    ///                 DestinationCidr = fusionEnvironmentAdditionalEgressRulesDestinationCidr,
+    ///                 MaxDestinationPort = fusionEnvironmentAdditionalEgressRulesMaxDestinationPort,
+    ///                 MinDestinationPort = fusionEnvironmentAdditionalEgressRulesMinDestinationPort,
+    ///             },
+    ///         },
     ///         AdditionalLanguagePacks = fusionEnvironmentAdditionalLanguagePacks,
     ///         DefinedTags = 
     ///         {
@@ -89,6 +99,12 @@ namespace Pulumi.Oci.FusionApps
     [OciResourceType("oci:FusionApps/fusionEnvironment:FusionEnvironment")]
     public partial class FusionEnvironment : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        /// </summary>
+        [Output("additionalEgressRules")]
+        public Output<ImmutableArray<Outputs.FusionEnvironmentAdditionalEgressRule>> AdditionalEgressRules { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Language packs.
         /// </summary>
@@ -168,7 +184,7 @@ namespace Pulumi.Oci.FusionApps
         public Output<bool> IsBreakGlassEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         /// </summary>
         [Output("isIpv6dualStackEnabled")]
         public Output<bool> IsIpv6dualStackEnabled { get; private set; } = null!;
@@ -309,6 +325,18 @@ namespace Pulumi.Oci.FusionApps
 
     public sealed class FusionEnvironmentArgs : global::Pulumi.ResourceArgs
     {
+        [Input("additionalEgressRules")]
+        private InputList<Inputs.FusionEnvironmentAdditionalEgressRuleArgs>? _additionalEgressRules;
+
+        /// <summary>
+        /// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        /// </summary>
+        public InputList<Inputs.FusionEnvironmentAdditionalEgressRuleArgs> AdditionalEgressRules
+        {
+            get => _additionalEgressRules ?? (_additionalEgressRules = new InputList<Inputs.FusionEnvironmentAdditionalEgressRuleArgs>());
+            set => _additionalEgressRules = value;
+        }
+
         [Input("additionalLanguagePacks")]
         private InputList<string>? _additionalLanguagePacks;
 
@@ -382,7 +410,7 @@ namespace Pulumi.Oci.FusionApps
         public Input<string> FusionEnvironmentType { get; set; } = null!;
 
         /// <summary>
-        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         /// </summary>
         [Input("isIpv6dualStackEnabled")]
         public Input<bool>? IsIpv6dualStackEnabled { get; set; }
@@ -419,6 +447,18 @@ namespace Pulumi.Oci.FusionApps
 
     public sealed class FusionEnvironmentState : global::Pulumi.ResourceArgs
     {
+        [Input("additionalEgressRules")]
+        private InputList<Inputs.FusionEnvironmentAdditionalEgressRuleGetArgs>? _additionalEgressRules;
+
+        /// <summary>
+        /// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        /// </summary>
+        public InputList<Inputs.FusionEnvironmentAdditionalEgressRuleGetArgs> AdditionalEgressRules
+        {
+            get => _additionalEgressRules ?? (_additionalEgressRules = new InputList<Inputs.FusionEnvironmentAdditionalEgressRuleGetArgs>());
+            set => _additionalEgressRules = value;
+        }
+
         [Input("additionalLanguagePacks")]
         private InputList<string>? _additionalLanguagePacks;
 
@@ -522,7 +562,7 @@ namespace Pulumi.Oci.FusionApps
         public Input<bool>? IsBreakGlassEnabled { get; set; }
 
         /// <summary>
-        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         /// </summary>
         [Input("isIpv6dualStackEnabled")]
         public Input<bool>? IsIpv6dualStackEnabled { get; set; }

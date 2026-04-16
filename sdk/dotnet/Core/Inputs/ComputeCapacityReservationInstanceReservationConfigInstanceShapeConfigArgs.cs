@@ -24,6 +24,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }
 
+        [Input("resourceManagement")]
+        public Input<string>? ResourceManagement { get; set; }
+
         public ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs()
         {
         }

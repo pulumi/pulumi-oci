@@ -33,6 +33,7 @@ import (
 //				CompartmentId:         compartmentId,
 //				DisplayName:           pulumi.StringRef(managementApplianceDisplayName),
 //				ManagementApplianceId: pulumi.StringRef(testManagementAppliance.Id),
+//				SddcId:                pulumi.StringRef(testSddc.Id),
 //				State:                 pulumi.StringRef(managementApplianceState),
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetManagementAppliancesArgs struct {
 	Filters     []GetManagementAppliancesFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
 	ManagementApplianceId *string `pulumi:"managementApplianceId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+	SddcId *string `pulumi:"sddcId"`
 	// The lifecycle state of the management appliance.
 	State *string `pulumi:"state"`
 }
@@ -78,6 +81,8 @@ type GetManagementAppliancesResult struct {
 	// The list of management_appliance_collection.
 	ManagementApplianceCollections []GetManagementAppliancesManagementApplianceCollection `pulumi:"managementApplianceCollections"`
 	ManagementApplianceId          *string                                                `pulumi:"managementApplianceId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+	SddcId *string `pulumi:"sddcId"`
 	// Current state of the management appliance.
 	State *string `pulumi:"state"`
 }
@@ -100,6 +105,8 @@ type GetManagementAppliancesOutputArgs struct {
 	Filters     GetManagementAppliancesFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
 	ManagementApplianceId pulumi.StringPtrInput `pulumi:"managementApplianceId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+	SddcId pulumi.StringPtrInput `pulumi:"sddcId"`
 	// The lifecycle state of the management appliance.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -151,6 +158,11 @@ func (o GetManagementAppliancesResultOutput) ManagementApplianceCollections() Ge
 
 func (o GetManagementAppliancesResultOutput) ManagementApplianceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementAppliancesResult) *string { return v.ManagementApplianceId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+func (o GetManagementAppliancesResultOutput) SddcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAppliancesResult) *string { return v.SddcId }).(pulumi.StringPtrOutput)
 }
 
 // Current state of the management appliance.

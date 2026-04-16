@@ -36,10 +36,12 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseArgs {
  * A collection of values returned by getDistributedDatabaseDistributedAutonomousDatabase.
  */
 export interface GetDistributedDatabaseDistributedAutonomousDatabaseResult {
+    readonly caBundleId: string;
     /**
      * Collection of catalogs associated with the Globally distributed autonomous database.
      */
     readonly catalogDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetail[];
+    readonly certificateId: string;
     readonly changeDbBackupConfigTrigger: number;
     /**
      * The character set for the database.
@@ -53,6 +55,7 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
      */
     readonly compartmentId: string;
+    readonly configureGsmWalletTrigger: number;
     readonly configureShardingIsRebalanceRequired: boolean;
     readonly configureShardingTrigger: number;
     /**
@@ -127,6 +130,7 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseResult {
      * Additional metadata related to Globally distributed autonomous database resources.
      */
     readonly metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseMetadata[];
+    readonly moveReplicationUnitTrigger: number;
     /**
      * The national character set for the database.
      */
@@ -148,6 +152,7 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseResult {
      * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
      */
     readonly privateEndpointIds: string[];
+    readonly recreateFailedResourceTrigger: number;
     /**
      * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
      */
@@ -188,6 +193,7 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabaseResult {
     readonly timeUpdated: string;
     readonly uploadCaSignedCertificate: string;
     readonly uploadSignedCertificateAndGenerateWalletTrigger: number;
+    readonly validateCaBundleTrigger: number;
     readonly validateNetworkDetails: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetail[];
     readonly validateNetworkTrigger: number;
 }

@@ -54,6 +54,14 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
+        /// The OKV endpoint name.
+        /// </summary>
+        public readonly string? OkvEndPointGroup;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+        /// </summary>
+        public readonly string? OkvKeyStoreId;
+        /// <summary>
         /// This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
         /// </summary>
         public readonly ImmutableArray<string> PeerCloudAutonomousVmClusterIds;
@@ -112,6 +120,10 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string? name,
 
+            string? okvEndPointGroup,
+
+            string? okvKeyStoreId,
+
             ImmutableArray<string> peerCloudAutonomousVmClusterIds,
 
             ImmutableArray<Outputs.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail> peerDetails,
@@ -140,6 +152,8 @@ namespace Pulumi.Oci.Oci.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             Metadatas = metadatas;
             Name = name;
+            OkvEndPointGroup = okvEndPointGroup;
+            OkvKeyStoreId = okvKeyStoreId;
             PeerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             PeerDetails = peerDetails;
             ShardGroup = shardGroup;

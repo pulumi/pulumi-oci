@@ -96,14 +96,14 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
     }
 
     /**
-     * The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     @Import(name="globallyDistributedAutonomousDatabases")
     private @Nullable Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs>> globallyDistributedAutonomousDatabases;
 
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public Optional<Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs>>> globallyDistributedAutonomousDatabases() {
@@ -111,14 +111,14 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
     }
 
     /**
-     * The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     @Import(name="globallyDistributedDatabases")
     private @Nullable Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs>> globallyDistributedDatabases;
 
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public Optional<Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs>>> globallyDistributedDatabases() {
@@ -443,7 +443,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedAutonomousDatabases The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+         * @param globallyDistributedAutonomousDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedAutonomousDatabases The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+         * @param globallyDistributedAutonomousDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedAutonomousDatabases The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+         * @param globallyDistributedAutonomousDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedDatabases The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+         * @param globallyDistributedDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedDatabases The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+         * @param globallyDistributedDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class DistributedDatabaseDistributedDatabasePrivateEndpointState ex
         }
 
         /**
-         * @param globallyDistributedDatabases The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+         * @param globallyDistributedDatabases This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
          * 
          * @return builder
          * 

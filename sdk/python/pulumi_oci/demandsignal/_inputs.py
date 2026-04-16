@@ -21,8 +21,12 @@ __all__ = [
     'OccDemandSignalOccDemandSignalValueArgsDict',
     'OccDemandSignalPatchOperationArgs',
     'OccDemandSignalPatchOperationArgsDict',
+    'OccMetricAlarmResourceConfigurationArgs',
+    'OccMetricAlarmResourceConfigurationArgsDict',
     'GetOccDemandSignalsFilterArgs',
     'GetOccDemandSignalsFilterArgsDict',
+    'GetOccMetricAlarmsFilterArgs',
+    'GetOccMetricAlarmsFilterArgsDict',
 ]
 
 class OccDemandSignalOccDemandSignalArgsDict(TypedDict):
@@ -283,6 +287,193 @@ class OccDemandSignalPatchOperationArgs:
         pulumi.set(self, "selected_item", value)
 
 
+class OccMetricAlarmResourceConfigurationArgsDict(TypedDict):
+    resource: pulumi.Input[_builtins.str]
+    """
+    Resources like COMPUTE, STORAGE, EXADATA etc.
+    """
+    usage_type: pulumi.Input[_builtins.str]
+    """
+    The type of usage for the resource.
+    """
+    compute_hw_generation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hardware generation of the compute resource.
+    """
+    hw_generation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hardware generation of the Exadata system.
+    """
+    link_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the link in the network.
+    """
+    node_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of node in the Exadata system.
+    """
+    occ_metric_alarm_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The provider of the network service.
+    """
+    shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The shape of the compute instance.
+    """
+    storage_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of storage resource.
+    """
+
+@pulumi.input_type
+class OccMetricAlarmResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource: pulumi.Input[_builtins.str],
+                 usage_type: pulumi.Input[_builtins.str],
+                 compute_hw_generation: Optional[pulumi.Input[_builtins.str]] = None,
+                 hw_generation: Optional[pulumi.Input[_builtins.str]] = None,
+                 link_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 occ_metric_alarm_provider: Optional[pulumi.Input[_builtins.str]] = None,
+                 shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] resource: Resources like COMPUTE, STORAGE, EXADATA etc.
+        :param pulumi.Input[_builtins.str] usage_type: The type of usage for the resource.
+        :param pulumi.Input[_builtins.str] compute_hw_generation: The hardware generation of the compute resource.
+        :param pulumi.Input[_builtins.str] hw_generation: The hardware generation of the Exadata system.
+        :param pulumi.Input[_builtins.str] link_role: The role of the link in the network.
+        :param pulumi.Input[_builtins.str] node_type: The type of node in the Exadata system.
+        :param pulumi.Input[_builtins.str] occ_metric_alarm_provider: The provider of the network service.
+        :param pulumi.Input[_builtins.str] shape: The shape of the compute instance.
+        :param pulumi.Input[_builtins.str] storage_type: The type of storage resource.
+        """
+        pulumi.set(__self__, "resource", resource)
+        pulumi.set(__self__, "usage_type", usage_type)
+        if compute_hw_generation is not None:
+            pulumi.set(__self__, "compute_hw_generation", compute_hw_generation)
+        if hw_generation is not None:
+            pulumi.set(__self__, "hw_generation", hw_generation)
+        if link_role is not None:
+            pulumi.set(__self__, "link_role", link_role)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if occ_metric_alarm_provider is not None:
+            pulumi.set(__self__, "occ_metric_alarm_provider", occ_metric_alarm_provider)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> pulumi.Input[_builtins.str]:
+        """
+        Resources like COMPUTE, STORAGE, EXADATA etc.
+        """
+        return pulumi.get(self, "resource")
+
+    @resource.setter
+    def resource(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "resource", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usageType")
+    def usage_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of usage for the resource.
+        """
+        return pulumi.get(self, "usage_type")
+
+    @usage_type.setter
+    def usage_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "usage_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHwGeneration")
+    def compute_hw_generation(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The hardware generation of the compute resource.
+        """
+        return pulumi.get(self, "compute_hw_generation")
+
+    @compute_hw_generation.setter
+    def compute_hw_generation(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_hw_generation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hwGeneration")
+    def hw_generation(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The hardware generation of the Exadata system.
+        """
+        return pulumi.get(self, "hw_generation")
+
+    @hw_generation.setter
+    def hw_generation(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "hw_generation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="linkRole")
+    def link_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The role of the link in the network.
+        """
+        return pulumi.get(self, "link_role")
+
+    @link_role.setter
+    def link_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "link_role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of node in the Exadata system.
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="occMetricAlarmProvider")
+    def occ_metric_alarm_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The provider of the network service.
+        """
+        return pulumi.get(self, "occ_metric_alarm_provider")
+
+    @occ_metric_alarm_provider.setter
+    def occ_metric_alarm_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "occ_metric_alarm_provider", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The shape of the compute instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of storage resource.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "storage_type", value)
+
+
 class GetOccDemandSignalsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -320,6 +511,50 @@ class GetOccDemandSignalsFilterArgs:
         """
         The values of forecast.
         """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetOccMetricAlarmsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetOccMetricAlarmsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "values")
 
     @values.setter

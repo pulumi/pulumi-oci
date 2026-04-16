@@ -25,6 +25,12 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
+        /// The BYOL allocations used for VMware Cluster provisioning.
+        /// </summary>
+        [Input("clusterByolAllocationDetails")]
+        public Input<Inputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsGetArgs>? ClusterByolAllocationDetails { get; set; }
+
+        /// <summary>
         /// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         /// </summary>
         [Input("computeAvailabilityDomain", required: true)]
@@ -85,6 +91,12 @@ namespace Pulumi.Oci.Ocvp.Inputs
         /// </summary>
         [Input("initialHostShapeName")]
         public Input<string>? InitialHostShapeName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        /// </summary>
+        [Input("initialVcfByolAllocationId")]
+        public Input<string>? InitialVcfByolAllocationId { get; set; }
 
         /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.

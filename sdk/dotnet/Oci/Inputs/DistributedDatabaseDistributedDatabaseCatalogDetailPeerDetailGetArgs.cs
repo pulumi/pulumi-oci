@@ -13,10 +13,22 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The name of the availability domain that the distributed database shard will be located in.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
         /// the identifier of the container database for underlying supporting resource.
         /// </summary>
         [Input("containerDatabaseId")]
         public Input<string>? ContainerDatabaseId { get; set; }
+
+        /// <summary>
+        /// Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        /// </summary>
+        [Input("dbStorageVaultDetails")]
+        public Input<Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsGetArgs>? DbStorageVaultDetails { get; set; }
 
         [Input("metadatas")]
         private InputList<Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataGetArgs>? _metadatas;
@@ -73,10 +85,16 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? TransportType { get; set; }
 
         /// <summary>
+        /// Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        /// </summary>
+        [Input("vmClusterDetails")]
+        public Input<Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsGetArgs>? VmClusterDetails { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
         /// </summary>
-        [Input("vmClusterId", required: true)]
-        public Input<string> VmClusterId { get; set; } = null!;
+        [Input("vmClusterId")]
+        public Input<string>? VmClusterId { get; set; }
 
         public DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailGetArgs()
         {

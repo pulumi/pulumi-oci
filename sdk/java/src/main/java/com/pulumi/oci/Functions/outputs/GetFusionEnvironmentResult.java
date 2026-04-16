@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdditionalEgressRule;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentKmsKeyInfo;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentMaintenancePolicy;
@@ -18,6 +19,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFusionEnvironmentResult {
+    /**
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    private List<GetFusionEnvironmentAdditionalEgressRule> additionalEgressRules;
     /**
      * @return Language packs
      * 
@@ -86,7 +92,7 @@ public final class GetFusionEnvironmentResult {
      */
     private Boolean isBreakGlassEnabled;
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * 
      */
     private Boolean isIpv6dualStackEnabled;
@@ -167,6 +173,13 @@ public final class GetFusionEnvironmentResult {
     private String version;
 
     private GetFusionEnvironmentResult() {}
+    /**
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    public List<GetFusionEnvironmentAdditionalEgressRule> additionalEgressRules() {
+        return this.additionalEgressRules;
+    }
     /**
      * @return Language packs
      * 
@@ -265,7 +278,7 @@ public final class GetFusionEnvironmentResult {
         return this.isBreakGlassEnabled;
     }
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * 
      */
     public Boolean isIpv6dualStackEnabled() {
@@ -386,6 +399,7 @@ public final class GetFusionEnvironmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetFusionEnvironmentAdditionalEgressRule> additionalEgressRules;
         private List<String> additionalLanguagePacks;
         private List<String> appliedPatchBundles;
         private String compartmentId;
@@ -420,6 +434,7 @@ public final class GetFusionEnvironmentResult {
         public Builder() {}
         public Builder(GetFusionEnvironmentResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalEgressRules = defaults.additionalEgressRules;
     	      this.additionalLanguagePacks = defaults.additionalLanguagePacks;
     	      this.appliedPatchBundles = defaults.appliedPatchBundles;
     	      this.compartmentId = defaults.compartmentId;
@@ -453,6 +468,17 @@ public final class GetFusionEnvironmentResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder additionalEgressRules(List<GetFusionEnvironmentAdditionalEgressRule> additionalEgressRules) {
+            if (additionalEgressRules == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentResult", "additionalEgressRules");
+            }
+            this.additionalEgressRules = additionalEgressRules;
+            return this;
+        }
+        public Builder additionalEgressRules(GetFusionEnvironmentAdditionalEgressRule... additionalEgressRules) {
+            return additionalEgressRules(List.of(additionalEgressRules));
+        }
         @CustomType.Setter
         public Builder additionalLanguagePacks(List<String> additionalLanguagePacks) {
             if (additionalLanguagePacks == null) {
@@ -727,6 +753,7 @@ public final class GetFusionEnvironmentResult {
         }
         public GetFusionEnvironmentResult build() {
             final var _resultValue = new GetFusionEnvironmentResult();
+            _resultValue.additionalEgressRules = additionalEgressRules;
             _resultValue.additionalLanguagePacks = additionalLanguagePacks;
             _resultValue.appliedPatchBundles = appliedPatchBundles;
             _resultValue.compartmentId = compartmentId;

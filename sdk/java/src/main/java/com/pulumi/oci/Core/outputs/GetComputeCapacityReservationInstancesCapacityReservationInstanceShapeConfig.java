@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
@@ -16,10 +17,11 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      */
     private Double memoryInGbs;
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the instance
      * 
      */
     private Double ocpus;
+    private String resourceManagement;
 
     private GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig() {}
     /**
@@ -30,11 +32,14 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
         return this.memoryInGbs;
     }
     /**
-     * @return The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the instance
      * 
      */
     public Double ocpus() {
         return this.ocpus;
+    }
+    public String resourceManagement() {
+        return this.resourceManagement;
     }
 
     public static Builder builder() {
@@ -48,11 +53,13 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     public static final class Builder {
         private Double memoryInGbs;
         private Double ocpus;
+        private String resourceManagement;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
+    	      this.resourceManagement = defaults.resourceManagement;
         }
 
         @CustomType.Setter
@@ -71,10 +78,19 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder resourceManagement(String resourceManagement) {
+            if (resourceManagement == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig", "resourceManagement");
+            }
+            this.resourceManagement = resourceManagement;
+            return this;
+        }
         public GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig build() {
             final var _resultValue = new GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig();
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
+            _resultValue.resourceManagement = resourceManagement;
             return _resultValue;
         }
     }

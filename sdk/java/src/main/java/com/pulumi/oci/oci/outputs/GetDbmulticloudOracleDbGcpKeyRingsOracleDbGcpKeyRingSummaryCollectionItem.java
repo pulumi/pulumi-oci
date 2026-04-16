@@ -5,12 +5,15 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem {
+    private String action;
     /**
      * @return The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -62,6 +65,11 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
      */
     private Map<String,String> properties;
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    private List<GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata> replicationMetadatas;
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -71,6 +79,11 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    private String targetRegion;
     /**
      * @return Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
@@ -88,6 +101,9 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
     private String type;
 
     private GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem() {}
+    public String action() {
+        return this.action;
+    }
     /**
      * @return The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -159,6 +175,13 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
         return this.properties;
     }
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public List<GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -171,6 +194,13 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public String targetRegion() {
+        return this.targetRegion;
     }
     /**
      * @return Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
@@ -203,6 +233,7 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
@@ -213,14 +244,17 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
         private String location;
         private String oracleDbConnectorId;
         private Map<String,String> properties;
+        private List<GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata> replicationMetadatas;
         private String state;
         private Map<String,String> systemTags;
+        private String targetRegion;
         private String timeCreated;
         private String timeUpdated;
         private String type;
         public Builder() {}
         public Builder(GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -231,13 +265,23 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
     	      this.location = defaults.location;
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.properties = defaults.properties;
+    	      this.replicationMetadatas = defaults.replicationMetadatas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetRegion = defaults.targetRegion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder action(String action) {
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem", "action");
+            }
+            this.action = action;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -319,6 +363,17 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
             return this;
         }
         @CustomType.Setter
+        public Builder replicationMetadatas(List<GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata> replicationMetadatas) {
+            if (replicationMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem", "replicationMetadatas");
+            }
+            this.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+        public Builder replicationMetadatas(GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadata... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem", "state");
@@ -332,6 +387,14 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetRegion(String targetRegion) {
+            if (targetRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem", "targetRegion");
+            }
+            this.targetRegion = targetRegion;
             return this;
         }
         @CustomType.Setter
@@ -360,6 +423,7 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
         }
         public GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem build() {
             final var _resultValue = new GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItem();
+            _resultValue.action = action;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
@@ -370,8 +434,10 @@ public final class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCo
             _resultValue.location = location;
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.properties = properties;
+            _resultValue.replicationMetadatas = replicationMetadatas;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetRegion = targetRegion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

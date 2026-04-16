@@ -75,6 +75,8 @@ type LookupSnapshotResult struct {
 	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails []GetSnapshotLockDurationDetail `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks []GetSnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
@@ -95,6 +97,8 @@ type LookupSnapshotResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked string `pulumi:"timeLocked"`
 }
 
 func LookupSnapshotOutput(ctx *pulumi.Context, args LookupSnapshotOutputArgs, opts ...pulumi.InvokeOption) LookupSnapshotResultOutput {
@@ -175,6 +179,11 @@ func (o LookupSnapshotResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Details for setting a retention date or legal hold.
+func (o LookupSnapshotResultOutput) LockDurationDetails() GetSnapshotLockDurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) []GetSnapshotLockDurationDetail { return v.LockDurationDetails }).(GetSnapshotLockDurationDetailArrayOutput)
+}
+
 // Locks associated with this resource.
 func (o LookupSnapshotResultOutput) Locks() GetSnapshotLockArrayOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) []GetSnapshotLock { return v.Locks }).(GetSnapshotLockArrayOutput)
@@ -220,6 +229,11 @@ func (o LookupSnapshotResultOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupSnapshotResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+func (o LookupSnapshotResultOutput) TimeLocked() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) string { return v.TimeLocked }).(pulumi.StringOutput)
 }
 
 func init() {

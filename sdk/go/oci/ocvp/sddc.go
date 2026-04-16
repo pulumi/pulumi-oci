@@ -61,20 +61,25 @@ import (
 //								},
 //								VsphereType:           pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsVsphereType),
 //								CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
-//								DatastoreClusterIds:   pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds),
+//								ClusterByolAllocationDetails: &ocvp.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs{
+//									FirewallByolAllocationId: pulumi.Any(testByolAllocation.Id),
+//									VsanByolAllocationId:     pulumi.Any(testByolAllocation.Id),
+//								},
+//								DatastoreClusterIds: pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds),
 //								Datastores: ocvp.SddcInitialConfigurationInitialClusterConfigurationDatastoreArray{
 //									&ocvp.SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{
 //										BlockVolumeIds: pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds),
 //										DatastoreType:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDatastoresDatastoreType),
 //									},
 //								},
-//								DisplayName:               pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDisplayName),
-//								InitialCommitment:         pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment),
-//								InitialHostOcpuCount:      pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount),
-//								InitialHostShapeName:      pulumi.Any(testShape.Name),
-//								InstanceDisplayNamePrefix: pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix),
-//								IsShieldedInstanceEnabled: pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled),
-//								WorkloadNetworkCidr:       pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr),
+//								DisplayName:                pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsDisplayName),
+//								InitialCommitment:          pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment),
+//								InitialHostOcpuCount:       pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount),
+//								InitialHostShapeName:       pulumi.Any(testShape.Name),
+//								InitialVcfByolAllocationId: pulumi.Any(testByolAllocation.Id),
+//								InstanceDisplayNamePrefix:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix),
+//								IsShieldedInstanceEnabled:  pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled),
+//								WorkloadNetworkCidr:        pulumi.Any(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr),
 //							},
 //						},
 //					},
@@ -89,8 +94,12 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				IsSingleHostSddc: pulumi.Any(sddcIsSingleHostSddc),
-//				HcxAction:        pulumi.Any(hcxAction),
-//				IsHcxEnabled:     pulumi.Any(sddcIsHcxEnabled),
+//				SddcByolAllocationDetails: &ocvp.SddcSddcByolAllocationDetailsArgs{
+//					LoadBalancerByolAllocationId: pulumi.Any(testByolAllocation.Id),
+//					LoadBalancerInstanceCount:    pulumi.Any(sddcSddcByolAllocationDetailsLoadBalancerInstanceCount),
+//				},
+//				HcxAction:    pulumi.Any(hcxAction),
+//				IsHcxEnabled: pulumi.Any(sddcIsHcxEnabled),
 //			})
 //			if err != nil {
 //				return err
@@ -260,6 +269,8 @@ type Sddc struct {
 	ReplicationVlanId pulumi.StringOutput `pulumi:"replicationVlanId"`
 	// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayOutput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
+	// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails SddcSddcByolAllocationDetailsOutput `pulumi:"sddcByolAllocationDetails"`
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys pulumi.StringOutput `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
@@ -498,6 +509,8 @@ type sddcState struct {
 	ReplicationVlanId *string `pulumi:"replicationVlanId"`
 	// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
+	// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails *SddcSddcByolAllocationDetails `pulumi:"sddcByolAllocationDetails"`
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys *string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
@@ -698,6 +711,8 @@ type SddcState struct {
 	ReplicationVlanId pulumi.StringPtrInput
 	// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput
+	// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails SddcSddcByolAllocationDetailsPtrInput
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys pulumi.StringPtrInput
 	// The current state of the SDDC.
@@ -858,6 +873,8 @@ type sddcArgs struct {
 	ReplicationVlanId *string `pulumi:"replicationVlanId"`
 	// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
+	// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails *SddcSddcByolAllocationDetails `pulumi:"sddcByolAllocationDetails"`
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
 	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
@@ -981,6 +998,8 @@ type SddcArgs struct {
 	ReplicationVlanId pulumi.StringPtrInput
 	// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput
+	// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails SddcSddcByolAllocationDetailsPtrInput
 	// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
 	SshAuthorizedKeys pulumi.StringInput
 	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
@@ -1363,6 +1382,11 @@ func (o SddcOutput) ReplicationVlanId() pulumi.StringOutput {
 // (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
 func (o SddcOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringArrayOutput { return v.ReservingHcxOnPremiseLicenseKeys }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+func (o SddcOutput) SddcByolAllocationDetails() SddcSddcByolAllocationDetailsOutput {
+	return o.ApplyT(func(v *Sddc) SddcSddcByolAllocationDetailsOutput { return v.SddcByolAllocationDetails }).(SddcSddcByolAllocationDetailsOutput)
 }
 
 // (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file

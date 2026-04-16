@@ -25,6 +25,11 @@ export type BdsInstanceApiKey = import("./bdsInstanceApiKey").BdsInstanceApiKey;
 export const BdsInstanceApiKey: typeof import("./bdsInstanceApiKey").BdsInstanceApiKey = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceApiKey"], () => require("./bdsInstanceApiKey"));
 
+export { BdsInstanceExecuteBootstrapScriptActionArgs, BdsInstanceExecuteBootstrapScriptActionState } from "./bdsInstanceExecuteBootstrapScriptAction";
+export type BdsInstanceExecuteBootstrapScriptAction = import("./bdsInstanceExecuteBootstrapScriptAction").BdsInstanceExecuteBootstrapScriptAction;
+export const BdsInstanceExecuteBootstrapScriptAction: typeof import("./bdsInstanceExecuteBootstrapScriptAction").BdsInstanceExecuteBootstrapScriptAction = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceExecuteBootstrapScriptAction"], () => require("./bdsInstanceExecuteBootstrapScriptAction"));
+
 export { BdsInstanceIdentityConfigurationArgs, BdsInstanceIdentityConfigurationState } from "./bdsInstanceIdentityConfiguration";
 export type BdsInstanceIdentityConfiguration = import("./bdsInstanceIdentityConfiguration").BdsInstanceIdentityConfiguration;
 export const BdsInstanceIdentityConfiguration: typeof import("./bdsInstanceIdentityConfiguration").BdsInstanceIdentityConfiguration = null as any;
@@ -218,6 +223,8 @@ const _module = {
                 return new BdsInstance(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
                 return new BdsInstanceApiKey(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction":
+                return new BdsInstanceExecuteBootstrapScriptAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration":
                 return new BdsInstanceIdentityConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
@@ -249,6 +256,7 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfigur
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsCapacityReport", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceExecuteBootstrapScriptAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceIdentityConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceNodeBackup", _module)

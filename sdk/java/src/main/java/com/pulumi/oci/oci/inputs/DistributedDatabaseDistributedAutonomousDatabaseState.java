@@ -29,6 +29,21 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
     public static final DistributedDatabaseDistributedAutonomousDatabaseState Empty = new DistributedDatabaseDistributedAutonomousDatabaseState();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    @Import(name="caBundleId")
+    private @Nullable Output<String> caBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    public Optional<Output<String>> caBundleId() {
+        return Optional.ofNullable(this.caBundleId);
+    }
+
+    /**
      * Collection of catalog for the Globally distributed autonomous database.
      * 
      */
@@ -41,6 +56,21 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
      */
     public Optional<Output<List<DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs>>> catalogDetails() {
         return Optional.ofNullable(this.catalogDetails);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    @Import(name="certificateId")
+    private @Nullable Output<String> certificateId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    public Optional<Output<String>> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
 
     /**
@@ -103,9 +133,32 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+     * 
+     */
+    @Import(name="configureGsmWalletTrigger")
+    private @Nullable Output<Integer> configureGsmWalletTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> configureGsmWalletTrigger() {
+        return Optional.ofNullable(this.configureGsmWalletTrigger);
+    }
+
+    /**
+     * (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+     * 
+     */
     @Import(name="configureShardingIsRebalanceRequired")
     private @Nullable Output<Boolean> configureShardingIsRebalanceRequired;
 
+    /**
+     * @return (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+     * 
+     */
     public Optional<Output<Boolean>> configureShardingIsRebalanceRequired() {
         return Optional.ofNullable(this.configureShardingIsRebalanceRequired);
     }
@@ -430,6 +483,21 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    @Import(name="moveReplicationUnitTrigger")
+    private @Nullable Output<Integer> moveReplicationUnitTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> moveReplicationUnitTrigger() {
+        return Optional.ofNullable(this.moveReplicationUnitTrigger);
+    }
+
+    /**
      * The national character set for the database.
      * 
      */
@@ -517,6 +585,21 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
      */
     public Optional<Output<List<String>>> privateEndpointIds() {
         return Optional.ofNullable(this.privateEndpointIds);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    @Import(name="recreateFailedResourceTrigger")
+    private @Nullable Output<Integer> recreateFailedResourceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> recreateFailedResourceTrigger() {
+        return Optional.ofNullable(this.recreateFailedResourceTrigger);
     }
 
     /**
@@ -706,6 +789,21 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         return Optional.ofNullable(this.uploadSignedCertificateAndGenerateWalletTrigger);
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+     * 
+     */
+    @Import(name="validateCaBundleTrigger")
+    private @Nullable Output<Integer> validateCaBundleTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> validateCaBundleTrigger() {
+        return Optional.ofNullable(this.validateCaBundleTrigger);
+    }
+
     @Import(name="validateNetworkDetails")
     private @Nullable Output<DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs> validateNetworkDetails;
 
@@ -737,11 +835,14 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
     private DistributedDatabaseDistributedAutonomousDatabaseState() {}
 
     private DistributedDatabaseDistributedAutonomousDatabaseState(DistributedDatabaseDistributedAutonomousDatabaseState $) {
+        this.caBundleId = $.caBundleId;
         this.catalogDetails = $.catalogDetails;
+        this.certificateId = $.certificateId;
         this.changeDbBackupConfigTrigger = $.changeDbBackupConfigTrigger;
         this.characterSet = $.characterSet;
         this.chunks = $.chunks;
         this.compartmentId = $.compartmentId;
+        this.configureGsmWalletTrigger = $.configureGsmWalletTrigger;
         this.configureShardingIsRebalanceRequired = $.configureShardingIsRebalanceRequired;
         this.configureShardingTrigger = $.configureShardingTrigger;
         this.connectionStrings = $.connectionStrings;
@@ -768,12 +869,14 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         this.listenerPort = $.listenerPort;
         this.listenerPortTls = $.listenerPortTls;
         this.metadatas = $.metadatas;
+        this.moveReplicationUnitTrigger = $.moveReplicationUnitTrigger;
         this.ncharacterSet = $.ncharacterSet;
         this.onsPortLocal = $.onsPortLocal;
         this.onsPortRemote = $.onsPortRemote;
         this.patchOperations = $.patchOperations;
         this.prefix = $.prefix;
         this.privateEndpointIds = $.privateEndpointIds;
+        this.recreateFailedResourceTrigger = $.recreateFailedResourceTrigger;
         this.replicationFactor = $.replicationFactor;
         this.replicationMethod = $.replicationMethod;
         this.replicationUnit = $.replicationUnit;
@@ -787,6 +890,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         this.timeUpdated = $.timeUpdated;
         this.uploadCaSignedCertificate = $.uploadCaSignedCertificate;
         this.uploadSignedCertificateAndGenerateWalletTrigger = $.uploadSignedCertificateAndGenerateWalletTrigger;
+        this.validateCaBundleTrigger = $.validateCaBundleTrigger;
         this.validateNetworkDetails = $.validateNetworkDetails;
         this.validateNetworkTrigger = $.validateNetworkTrigger;
     }
@@ -807,6 +911,27 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
 
         public Builder(DistributedDatabaseDistributedAutonomousDatabaseState defaults) {
             $ = new DistributedDatabaseDistributedAutonomousDatabaseState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param caBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caBundleId(@Nullable Output<String> caBundleId) {
+            $.caBundleId = caBundleId;
+            return this;
+        }
+
+        /**
+         * @param caBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caBundleId(String caBundleId) {
+            return caBundleId(Output.of(caBundleId));
         }
 
         /**
@@ -838,6 +963,27 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
          */
         public Builder catalogDetails(DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs... catalogDetails) {
             return catalogDetails(List.of(catalogDetails));
+        }
+
+        /**
+         * @param certificateId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(@Nullable Output<String> certificateId) {
+            $.certificateId = certificateId;
+            return this;
+        }
+
+        /**
+         * @param certificateId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(String certificateId) {
+            return certificateId(Output.of(certificateId));
         }
 
         /**
@@ -924,11 +1070,44 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param configureGsmWalletTrigger (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureGsmWalletTrigger(@Nullable Output<Integer> configureGsmWalletTrigger) {
+            $.configureGsmWalletTrigger = configureGsmWalletTrigger;
+            return this;
+        }
+
+        /**
+         * @param configureGsmWalletTrigger (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configureGsmWalletTrigger(Integer configureGsmWalletTrigger) {
+            return configureGsmWalletTrigger(Output.of(configureGsmWalletTrigger));
+        }
+
+        /**
+         * @param configureShardingIsRebalanceRequired (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configureShardingIsRebalanceRequired(@Nullable Output<Boolean> configureShardingIsRebalanceRequired) {
             $.configureShardingIsRebalanceRequired = configureShardingIsRebalanceRequired;
             return this;
         }
 
+        /**
+         * @param configureShardingIsRebalanceRequired (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configureShardingIsRebalanceRequired(Boolean configureShardingIsRebalanceRequired) {
             return configureShardingIsRebalanceRequired(Output.of(configureShardingIsRebalanceRequired));
         }
@@ -1415,6 +1594,27 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         }
 
         /**
+         * @param moveReplicationUnitTrigger (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder moveReplicationUnitTrigger(@Nullable Output<Integer> moveReplicationUnitTrigger) {
+            $.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
+            return this;
+        }
+
+        /**
+         * @param moveReplicationUnitTrigger (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder moveReplicationUnitTrigger(Integer moveReplicationUnitTrigger) {
+            return moveReplicationUnitTrigger(Output.of(moveReplicationUnitTrigger));
+        }
+
+        /**
          * @param ncharacterSet The national character set for the database.
          * 
          * @return builder
@@ -1558,6 +1758,27 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
          */
         public Builder privateEndpointIds(String... privateEndpointIds) {
             return privateEndpointIds(List.of(privateEndpointIds));
+        }
+
+        /**
+         * @param recreateFailedResourceTrigger (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recreateFailedResourceTrigger(@Nullable Output<Integer> recreateFailedResourceTrigger) {
+            $.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
+            return this;
+        }
+
+        /**
+         * @param recreateFailedResourceTrigger (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recreateFailedResourceTrigger(Integer recreateFailedResourceTrigger) {
+            return recreateFailedResourceTrigger(Output.of(recreateFailedResourceTrigger));
         }
 
         /**
@@ -1829,6 +2050,27 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
          */
         public Builder uploadSignedCertificateAndGenerateWalletTrigger(Integer uploadSignedCertificateAndGenerateWalletTrigger) {
             return uploadSignedCertificateAndGenerateWalletTrigger(Output.of(uploadSignedCertificateAndGenerateWalletTrigger));
+        }
+
+        /**
+         * @param validateCaBundleTrigger (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateCaBundleTrigger(@Nullable Output<Integer> validateCaBundleTrigger) {
+            $.validateCaBundleTrigger = validateCaBundleTrigger;
+            return this;
+        }
+
+        /**
+         * @param validateCaBundleTrigger (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateCaBundleTrigger(Integer validateCaBundleTrigger) {
+            return validateCaBundleTrigger(Output.of(validateCaBundleTrigger));
         }
 
         public Builder validateNetworkDetails(@Nullable Output<DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs> validateNetworkDetails) {

@@ -29,6 +29,12 @@ namespace Pulumi.Oci.Oci.Inputs
         }
 
         /// <summary>
+        /// The name of the availability domain that the distributed database shard will be located in.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
         /// the identifier of the container database for underlying supporting resource.
         /// </summary>
         [Input("containerDatabaseId")]
@@ -39,6 +45,12 @@ namespace Pulumi.Oci.Oci.Inputs
         /// </summary>
         [Input("dbHomeId")]
         public Input<string>? DbHomeId { get; set; }
+
+        /// <summary>
+        /// Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        /// </summary>
+        [Input("dbStorageVaultDetails")]
+        public Input<Inputs.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs>? DbStorageVaultDetails { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -107,7 +119,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? ShardSpace { get; set; }
 
         /// <summary>
-        /// The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        /// Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
@@ -143,10 +155,16 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
+        /// Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        /// </summary>
+        [Input("vmClusterDetails")]
+        public Input<Inputs.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs>? VmClusterDetails { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
         /// </summary>
-        [Input("vmClusterId", required: true)]
-        public Input<string> VmClusterId { get; set; } = null!;
+        [Input("vmClusterId")]
+        public Input<string>? VmClusterId { get; set; }
 
         public DistributedDatabaseDistributedDatabaseShardDetailArgs()
         {

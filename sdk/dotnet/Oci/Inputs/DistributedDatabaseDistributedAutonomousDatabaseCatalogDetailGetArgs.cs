@@ -88,6 +88,18 @@ namespace Pulumi.Oci.Oci.Inputs
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The OKV endpoint name.
+        /// </summary>
+        [Input("okvEndPointGroup")]
+        public Input<string>? OkvEndPointGroup { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+        /// </summary>
+        [Input("okvKeyStoreId")]
+        public Input<string>? OkvKeyStoreId { get; set; }
+
         [Input("peerCloudAutonomousVmClusterIds")]
         private InputList<string>? _peerCloudAutonomousVmClusterIds;
 

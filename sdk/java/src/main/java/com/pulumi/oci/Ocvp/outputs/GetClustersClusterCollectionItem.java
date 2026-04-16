@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollectionItemClusterByolAllocationDetail;
 import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollectionItemDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollectionItemNetworkConfiguration;
 import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollectionItemUpgradeLicense;
@@ -26,6 +27,11 @@ public final class GetClustersClusterCollectionItem {
      * 
      */
     private String capacityReservationId;
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    private List<GetClustersClusterCollectionItemClusterByolAllocationDetail> clusterByolAllocationDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
@@ -92,6 +98,11 @@ public final class GetClustersClusterCollectionItem {
      * 
      */
     private String initialHostShapeName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    private String initialVcfByolAllocationId;
     /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
@@ -171,6 +182,13 @@ public final class GetClustersClusterCollectionItem {
      */
     public String capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public List<GetClustersClusterCollectionItemClusterByolAllocationDetail> clusterByolAllocationDetails() {
+        return this.clusterByolAllocationDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
@@ -265,6 +283,13 @@ public final class GetClustersClusterCollectionItem {
      */
     public String initialHostShapeName() {
         return this.initialHostShapeName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public String initialVcfByolAllocationId() {
+        return this.initialVcfByolAllocationId;
     }
     /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
@@ -370,6 +395,7 @@ public final class GetClustersClusterCollectionItem {
         private Integer actualEsxiHostsCount;
         private List<String> attachDatastoreClusterIds;
         private String capacityReservationId;
+        private List<GetClustersClusterCollectionItemClusterByolAllocationDetail> clusterByolAllocationDetails;
         private String compartmentId;
         private String computeAvailabilityDomain;
         private List<String> datastoreClusterIds;
@@ -384,6 +410,7 @@ public final class GetClustersClusterCollectionItem {
         private String initialCommitment;
         private Double initialHostOcpuCount;
         private String initialHostShapeName;
+        private String initialVcfByolAllocationId;
         private String instanceDisplayNamePrefix;
         private Boolean isShieldedInstanceEnabled;
         private List<GetClustersClusterCollectionItemNetworkConfiguration> networkConfigurations;
@@ -403,6 +430,7 @@ public final class GetClustersClusterCollectionItem {
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
     	      this.attachDatastoreClusterIds = defaults.attachDatastoreClusterIds;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterByolAllocationDetails = defaults.clusterByolAllocationDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.datastoreClusterIds = defaults.datastoreClusterIds;
@@ -417,6 +445,7 @@ public final class GetClustersClusterCollectionItem {
     	      this.initialCommitment = defaults.initialCommitment;
     	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
     	      this.initialHostShapeName = defaults.initialHostShapeName;
+    	      this.initialVcfByolAllocationId = defaults.initialVcfByolAllocationId;
     	      this.instanceDisplayNamePrefix = defaults.instanceDisplayNamePrefix;
     	      this.isShieldedInstanceEnabled = defaults.isShieldedInstanceEnabled;
     	      this.networkConfigurations = defaults.networkConfigurations;
@@ -458,6 +487,17 @@ public final class GetClustersClusterCollectionItem {
             }
             this.capacityReservationId = capacityReservationId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder clusterByolAllocationDetails(List<GetClustersClusterCollectionItemClusterByolAllocationDetail> clusterByolAllocationDetails) {
+            if (clusterByolAllocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "clusterByolAllocationDetails");
+            }
+            this.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            return this;
+        }
+        public Builder clusterByolAllocationDetails(GetClustersClusterCollectionItemClusterByolAllocationDetail... clusterByolAllocationDetails) {
+            return clusterByolAllocationDetails(List.of(clusterByolAllocationDetails));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -581,6 +621,14 @@ public final class GetClustersClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            if (initialVcfByolAllocationId == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "initialVcfByolAllocationId");
+            }
+            this.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             if (instanceDisplayNamePrefix == null) {
               throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "instanceDisplayNamePrefix");
@@ -698,6 +746,7 @@ public final class GetClustersClusterCollectionItem {
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
             _resultValue.attachDatastoreClusterIds = attachDatastoreClusterIds;
             _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.clusterByolAllocationDetails = clusterByolAllocationDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
             _resultValue.datastoreClusterIds = datastoreClusterIds;
@@ -712,6 +761,7 @@ public final class GetClustersClusterCollectionItem {
             _resultValue.initialCommitment = initialCommitment;
             _resultValue.initialHostOcpuCount = initialHostOcpuCount;
             _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.initialVcfByolAllocationId = initialVcfByolAllocationId;
             _resultValue.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             _resultValue.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             _resultValue.networkConfigurations = networkConfigurations;

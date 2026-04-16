@@ -27,6 +27,8 @@ class ClusterArgs:
                  sddc_id: pulumi.Input[_builtins.str],
                  attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_byol_allocation_details: Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -36,6 +38,7 @@ class ClusterArgs:
                  initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
                  initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
                  initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -50,6 +53,8 @@ class ClusterArgs:
         :param pulumi.Input['ClusterNetworkConfigurationArgs'] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param pulumi.Input['ClusterClusterByolAllocationDetailsArgs'] cluster_byol_allocation_details: (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -58,6 +63,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param pulumi.Input[_builtins.str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -77,6 +83,10 @@ class ClusterArgs:
             pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_byol_allocation_details is not None:
+            pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
+        if datastore_cluster_ids is not None:
+            pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if datastores is not None:
             pulumi.set(__self__, "datastores", datastores)
         if defined_tags is not None:
@@ -95,6 +105,8 @@ class ClusterArgs:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
             pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        if initial_vcf_byol_allocation_id is not None:
+            pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         if instance_display_name_prefix is not None:
             pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         if is_shielded_instance_enabled is not None:
@@ -174,6 +186,30 @@ class ClusterArgs:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']]:
+        """
+        (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
+
+    @cluster_byol_allocation_details.setter
+    def cluster_byol_allocation_details(self, value: Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']]):
+        pulumi.set(self, "cluster_byol_allocation_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "datastore_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter
@@ -281,6 +317,18 @@ class ClusterArgs:
         pulumi.set(self, "initial_host_shape_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @initial_vcf_byol_allocation_id.setter
+    def initial_vcf_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "initial_vcf_byol_allocation_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -341,6 +389,7 @@ class _ClusterState:
                  actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
                  attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_byol_allocation_details: Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -354,6 +403,7 @@ class _ClusterState:
                  initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
                  initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
                  initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  network_configuration: Optional[pulumi.Input['ClusterNetworkConfigurationArgs']] = None,
@@ -371,6 +421,7 @@ class _ClusterState:
         Input properties used for looking up and filtering Cluster resources.
 
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param pulumi.Input['ClusterClusterByolAllocationDetailsArgs'] cluster_byol_allocation_details: (Updatable) The BYOL allocations used for VMware Cluster provisioning.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
@@ -385,6 +436,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param pulumi.Input[_builtins.str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -411,6 +463,8 @@ class _ClusterState:
             pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_byol_allocation_details is not None:
+            pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_availability_domain is not None:
@@ -437,6 +491,8 @@ class _ClusterState:
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
             pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        if initial_vcf_byol_allocation_id is not None:
+            pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         if instance_display_name_prefix is not None:
             pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         if is_shielded_instance_enabled is not None:
@@ -493,6 +549,18 @@ class _ClusterState:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']]:
+        """
+        (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
+
+    @cluster_byol_allocation_details.setter
+    def cluster_byol_allocation_details(self, value: Optional[pulumi.Input['ClusterClusterByolAllocationDetailsArgs']]):
+        pulumi.set(self, "cluster_byol_allocation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -648,6 +716,18 @@ class _ClusterState:
     @initial_host_shape_name.setter
     def initial_host_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "initial_host_shape_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @initial_vcf_byol_allocation_id.setter
+    def initial_vcf_byol_allocation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "initial_vcf_byol_allocation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
@@ -820,7 +900,9 @@ class Cluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_byol_allocation_details: Optional[pulumi.Input[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict']]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -831,6 +913,7 @@ class Cluster(pulumi.CustomResource):
                  initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
                  initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
                  initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
@@ -875,6 +958,10 @@ class Cluster(pulumi.CustomResource):
             },
             sddc_id=test_sddc["id"],
             capacity_reservation_id=test_capacity_reservation["id"],
+            cluster_byol_allocation_details={
+                "firewall_byol_allocation_id": test_byol_allocation["id"],
+                "vsan_byol_allocation_id": test_byol_allocation["id"],
+            },
             datastore_cluster_ids=cluster_datastore_cluster_ids,
             datastores=[{
                 "block_volume_ids": cluster_datastores_block_volume_ids,
@@ -891,6 +978,7 @@ class Cluster(pulumi.CustomResource):
             initial_commitment=cluster_initial_commitment,
             initial_host_ocpu_count=cluster_initial_host_ocpu_count,
             initial_host_shape_name=test_shape["name"],
+            initial_vcf_byol_allocation_id=test_byol_allocation["id"],
             instance_display_name_prefix=cluster_instance_display_name_prefix,
             is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
             vmware_software_version=cluster_vmware_software_version,
@@ -909,7 +997,9 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param pulumi.Input[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict']] cluster_byol_allocation_details: (Updatable) The BYOL allocations used for VMware Cluster provisioning.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
@@ -921,6 +1011,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param pulumi.Input[_builtins.str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -977,6 +1068,10 @@ class Cluster(pulumi.CustomResource):
             },
             sddc_id=test_sddc["id"],
             capacity_reservation_id=test_capacity_reservation["id"],
+            cluster_byol_allocation_details={
+                "firewall_byol_allocation_id": test_byol_allocation["id"],
+                "vsan_byol_allocation_id": test_byol_allocation["id"],
+            },
             datastore_cluster_ids=cluster_datastore_cluster_ids,
             datastores=[{
                 "block_volume_ids": cluster_datastores_block_volume_ids,
@@ -993,6 +1088,7 @@ class Cluster(pulumi.CustomResource):
             initial_commitment=cluster_initial_commitment,
             initial_host_ocpu_count=cluster_initial_host_ocpu_count,
             initial_host_shape_name=test_shape["name"],
+            initial_vcf_byol_allocation_id=test_byol_allocation["id"],
             instance_display_name_prefix=cluster_instance_display_name_prefix,
             is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
             vmware_software_version=cluster_vmware_software_version,
@@ -1025,7 +1121,9 @@ class Cluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_byol_allocation_details: Optional[pulumi.Input[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict']]] = None,
                  compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1036,6 +1134,7 @@ class Cluster(pulumi.CustomResource):
                  initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
                  initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
                  initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
@@ -1053,9 +1152,11 @@ class Cluster(pulumi.CustomResource):
 
             __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
             __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
+            __props__.__dict__["cluster_byol_allocation_details"] = cluster_byol_allocation_details
             if compute_availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'compute_availability_domain'")
             __props__.__dict__["compute_availability_domain"] = compute_availability_domain
+            __props__.__dict__["datastore_cluster_ids"] = datastore_cluster_ids
             __props__.__dict__["datastores"] = datastores
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["detach_datastore_cluster_ids"] = detach_datastore_cluster_ids
@@ -1068,6 +1169,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["initial_commitment"] = initial_commitment
             __props__.__dict__["initial_host_ocpu_count"] = initial_host_ocpu_count
             __props__.__dict__["initial_host_shape_name"] = initial_host_shape_name
+            __props__.__dict__["initial_vcf_byol_allocation_id"] = initial_vcf_byol_allocation_id
             __props__.__dict__["instance_display_name_prefix"] = instance_display_name_prefix
             __props__.__dict__["is_shielded_instance_enabled"] = is_shielded_instance_enabled
             if network_configuration is None and not opts.urn:
@@ -1080,7 +1182,6 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["workload_network_cidr"] = workload_network_cidr
             __props__.__dict__["actual_esxi_hosts_count"] = None
             __props__.__dict__["compartment_id"] = None
-            __props__.__dict__["datastore_cluster_ids"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -1101,6 +1202,7 @@ class Cluster(pulumi.CustomResource):
             actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
             attach_datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_byol_allocation_details: Optional[pulumi.Input[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1114,6 +1216,7 @@ class Cluster(pulumi.CustomResource):
             initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
             initial_host_ocpu_count: Optional[pulumi.Input[_builtins.float]] = None,
             initial_host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+            initial_vcf_byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
             instance_display_name_prefix: Optional[pulumi.Input[_builtins.str]] = None,
             is_shielded_instance_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
@@ -1135,6 +1238,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param pulumi.Input[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict']] cluster_byol_allocation_details: (Updatable) The BYOL allocations used for VMware Cluster provisioning.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
@@ -1149,6 +1253,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param pulumi.Input[_builtins.str] initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param pulumi.Input[_builtins.str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -1176,6 +1281,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["actual_esxi_hosts_count"] = actual_esxi_hosts_count
         __props__.__dict__["attach_datastore_cluster_ids"] = attach_datastore_cluster_ids
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
+        __props__.__dict__["cluster_byol_allocation_details"] = cluster_byol_allocation_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_availability_domain"] = compute_availability_domain
         __props__.__dict__["datastore_cluster_ids"] = datastore_cluster_ids
@@ -1189,6 +1295,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["initial_commitment"] = initial_commitment
         __props__.__dict__["initial_host_ocpu_count"] = initial_host_ocpu_count
         __props__.__dict__["initial_host_shape_name"] = initial_host_shape_name
+        __props__.__dict__["initial_vcf_byol_allocation_id"] = initial_vcf_byol_allocation_id
         __props__.__dict__["instance_display_name_prefix"] = instance_display_name_prefix
         __props__.__dict__["is_shielded_instance_enabled"] = is_shielded_instance_enabled
         __props__.__dict__["network_configuration"] = network_configuration
@@ -1221,6 +1328,14 @@ class Cluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> pulumi.Output['outputs.ClusterClusterByolAllocationDetails']:
+        """
+        (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1324,6 +1439,14 @@ class Cluster(pulumi.CustomResource):
         The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "initial_host_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")

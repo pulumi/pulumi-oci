@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ByolArgs, ByolState } from "./byol";
+export type Byol = import("./byol").Byol;
+export const Byol: typeof import("./byol").Byol = null as any;
+utilities.lazyLoad(exports, ["Byol"], () => require("./byol"));
+
+export { ByolAllocationArgs, ByolAllocationState } from "./byolAllocation";
+export type ByolAllocation = import("./byolAllocation").ByolAllocation;
+export const ByolAllocation: typeof import("./byolAllocation").ByolAllocation = null as any;
+utilities.lazyLoad(exports, ["ByolAllocation"], () => require("./byolAllocation"));
+
 export { ClusterArgs, ClusterState } from "./cluster";
 export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
@@ -24,6 +34,26 @@ export { EsxiHostArgs, EsxiHostState } from "./esxiHost";
 export type EsxiHost = import("./esxiHost").EsxiHost;
 export const EsxiHost: typeof import("./esxiHost").EsxiHost = null as any;
 utilities.lazyLoad(exports, ["EsxiHost"], () => require("./esxiHost"));
+
+export { GetByolArgs, GetByolResult, GetByolOutputArgs } from "./getByol";
+export const getByol: typeof import("./getByol").getByol = null as any;
+export const getByolOutput: typeof import("./getByol").getByolOutput = null as any;
+utilities.lazyLoad(exports, ["getByol","getByolOutput"], () => require("./getByol"));
+
+export { GetByolAllocationArgs, GetByolAllocationResult, GetByolAllocationOutputArgs } from "./getByolAllocation";
+export const getByolAllocation: typeof import("./getByolAllocation").getByolAllocation = null as any;
+export const getByolAllocationOutput: typeof import("./getByolAllocation").getByolAllocationOutput = null as any;
+utilities.lazyLoad(exports, ["getByolAllocation","getByolAllocationOutput"], () => require("./getByolAllocation"));
+
+export { GetByolAllocationsArgs, GetByolAllocationsResult, GetByolAllocationsOutputArgs } from "./getByolAllocations";
+export const getByolAllocations: typeof import("./getByolAllocations").getByolAllocations = null as any;
+export const getByolAllocationsOutput: typeof import("./getByolAllocations").getByolAllocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getByolAllocations","getByolAllocationsOutput"], () => require("./getByolAllocations"));
+
+export { GetByolsArgs, GetByolsResult, GetByolsOutputArgs } from "./getByols";
+export const getByols: typeof import("./getByols").getByols = null as any;
+export const getByolsOutput: typeof import("./getByols").getByolsOutput = null as any;
+utilities.lazyLoad(exports, ["getByols","getByolsOutput"], () => require("./getByols"));
 
 export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
 export const getCluster: typeof import("./getCluster").getCluster = null as any;
@@ -125,6 +155,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Ocvp/byol:Byol":
+                return new Byol(name, <any>undefined, { urn })
+            case "oci:Ocvp/byolAllocation:ByolAllocation":
+                return new ByolAllocation(name, <any>undefined, { urn })
             case "oci:Ocvp/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
             case "oci:Ocvp/datastore:Datastore":
@@ -142,6 +176,8 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Ocvp/byol", _module)
+pulumi.runtime.registerResourceModule("oci", "Ocvp/byolAllocation", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/cluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/datastore", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/datastoreCluster", _module)

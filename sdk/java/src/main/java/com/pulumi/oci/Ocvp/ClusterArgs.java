@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.inputs.ClusterClusterByolAllocationDetailsArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
 import java.lang.Boolean;
@@ -46,6 +47,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    @Import(name="clusterByolAllocationDetails")
+    private @Nullable Output<ClusterClusterByolAllocationDetailsArgs> clusterByolAllocationDetails;
+
+    /**
+     * @return (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public Optional<Output<ClusterClusterByolAllocationDetailsArgs>> clusterByolAllocationDetails() {
+        return Optional.ofNullable(this.clusterByolAllocationDetails);
+    }
+
+    /**
      * The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      * 
      */
@@ -58,6 +74,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
+    }
+
+    /**
+     * A list of datastore clusters.
+     * 
+     */
+    @Import(name="datastoreClusterIds")
+    private @Nullable Output<List<String>> datastoreClusterIds;
+
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public Optional<Output<List<String>>> datastoreClusterIds() {
+        return Optional.ofNullable(this.datastoreClusterIds);
     }
 
     /**
@@ -207,6 +238,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    @Import(name="initialVcfByolAllocationId")
+    private @Nullable Output<String> initialVcfByolAllocationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public Optional<Output<String>> initialVcfByolAllocationId() {
+        return Optional.ofNullable(this.initialVcfByolAllocationId);
+    }
+
+    /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -311,7 +357,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     private ClusterArgs(ClusterArgs $) {
         this.attachDatastoreClusterIds = $.attachDatastoreClusterIds;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterByolAllocationDetails = $.clusterByolAllocationDetails;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.datastoreClusterIds = $.datastoreClusterIds;
         this.datastores = $.datastores;
         this.definedTags = $.definedTags;
         this.detachDatastoreClusterIds = $.detachDatastoreClusterIds;
@@ -322,6 +370,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.initialCommitment = $.initialCommitment;
         this.initialHostOcpuCount = $.initialHostOcpuCount;
         this.initialHostShapeName = $.initialHostShapeName;
+        this.initialVcfByolAllocationId = $.initialVcfByolAllocationId;
         this.instanceDisplayNamePrefix = $.instanceDisplayNamePrefix;
         this.isShieldedInstanceEnabled = $.isShieldedInstanceEnabled;
         this.networkConfiguration = $.networkConfiguration;
@@ -383,6 +432,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param clusterByolAllocationDetails (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(@Nullable Output<ClusterClusterByolAllocationDetailsArgs> clusterByolAllocationDetails) {
+            $.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            return this;
+        }
+
+        /**
+         * @param clusterByolAllocationDetails (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(ClusterClusterByolAllocationDetailsArgs clusterByolAllocationDetails) {
+            return clusterByolAllocationDetails(Output.of(clusterByolAllocationDetails));
+        }
+
+        /**
          * @param computeAvailabilityDomain The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
          * 
          * @return builder
@@ -401,6 +471,37 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(@Nullable Output<List<String>> datastoreClusterIds) {
+            $.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            return datastoreClusterIds(Output.of(datastoreClusterIds));
+        }
+
+        /**
+         * @param datastoreClusterIds A list of datastore clusters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
         }
 
         /**
@@ -617,6 +718,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder initialHostShapeName(String initialHostShapeName) {
             return initialHostShapeName(Output.of(initialHostShapeName));
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(@Nullable Output<String> initialVcfByolAllocationId) {
+            $.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            return initialVcfByolAllocationId(Output.of(initialVcfByolAllocationId));
         }
 
         /**

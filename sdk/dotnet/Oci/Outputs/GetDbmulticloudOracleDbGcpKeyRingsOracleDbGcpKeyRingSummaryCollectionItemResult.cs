@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Oci.Outputs
     [OutputType]
     public sealed class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult
     {
+        public readonly string Action;
         /// <summary>
         /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -54,6 +55,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadataResult> ReplicationMetadatas;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
@@ -61,6 +66,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        public readonly string TargetRegion;
         /// <summary>
         /// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         /// </summary>
@@ -76,6 +85,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
         [OutputConstructor]
         private GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult(
+            string action,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -96,9 +107,13 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableDictionary<string, string> properties,
 
+            ImmutableArray<Outputs.GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemReplicationMetadataResult> replicationMetadatas,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
+
+            string targetRegion,
 
             string timeCreated,
 
@@ -106,6 +121,7 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string type)
         {
+            Action = action;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
@@ -116,8 +132,10 @@ namespace Pulumi.Oci.Oci.Outputs
             Location = location;
             OracleDbConnectorId = oracleDbConnectorId;
             Properties = properties;
+            ReplicationMetadatas = replicationMetadatas;
             State = state;
             SystemTags = systemTags;
+            TargetRegion = targetRegion;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;

@@ -68,7 +68,9 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .hostOcpuCount(esxiHostHostOcpuCount)
  *             .hostShapeName(testShape.name())
+ *             .isVsanByolEnabled(esxiHostIsVsanByolEnabled)
  *             .nextCommitment(esxiHostNextCommitment)
+ *             .vcfByolAllocationId(testByolAllocation.id())
  *             .build());
  * 
  *     }
@@ -423,14 +425,28 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.isBillingSwappingInProgress;
     }
     /**
-     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    @Export(name="isVsanByolEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isVsanByolEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    public Output<Boolean> isVsanByolEnabled() {
+        return this.isVsanByolEnabled;
+    }
+    /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
     @Export(name="nextCommitment", refs={String.class}, tree="[0]")
     private Output<String> nextCommitment;
 
     /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * @return (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
     public Output<String> nextCommitment() {
@@ -471,6 +487,12 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> nonUpgradedEsxiHostId() {
         return this.nonUpgradedEsxiHostId;
+    }
+    @Export(name="primaryVnicMacAddress", refs={String.class}, tree="[0]")
+    private Output<String> primaryVnicMacAddress;
+
+    public Output<String> primaryVnicMacAddress() {
+        return this.primaryVnicMacAddress;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -593,6 +615,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> upgradedReplacementEsxiHostId() {
         return this.upgradedReplacementEsxiHostId;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    @Export(name="vcfByolAllocationId", refs={String.class}, tree="[0]")
+    private Output<String> vcfByolAllocationId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    public Output<String> vcfByolAllocationId() {
+        return this.vcfByolAllocationId;
     }
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.

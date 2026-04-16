@@ -52,6 +52,11 @@ namespace Pulumi.Oci.Ocvp
     ///         },
     ///         SddcId = testSddc.Id,
     ///         CapacityReservationId = testCapacityReservation.Id,
+    ///         ClusterByolAllocationDetails = new Oci.Ocvp.Inputs.ClusterClusterByolAllocationDetailsArgs
+    ///         {
+    ///             FirewallByolAllocationId = testByolAllocation.Id,
+    ///             VsanByolAllocationId = testByolAllocation.Id,
+    ///         },
     ///         DatastoreClusterIds = clusterDatastoreClusterIds,
     ///         Datastores = new[]
     ///         {
@@ -74,6 +79,7 @@ namespace Pulumi.Oci.Ocvp
     ///         InitialCommitment = clusterInitialCommitment,
     ///         InitialHostOcpuCount = clusterInitialHostOcpuCount,
     ///         InitialHostShapeName = testShape.Name,
+    ///         InitialVcfByolAllocationId = testByolAllocation.Id,
     ///         InstanceDisplayNamePrefix = clusterInstanceDisplayNamePrefix,
     ///         IsShieldedInstanceEnabled = clusterIsShieldedInstanceEnabled,
     ///         VmwareSoftwareVersion = clusterVmwareSoftwareVersion,
@@ -105,6 +111,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("capacityReservationId")]
         public Output<string> CapacityReservationId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        /// </summary>
+        [Output("clusterByolAllocationDetails")]
+        public Output<Outputs.ClusterClusterByolAllocationDetails> ClusterByolAllocationDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
@@ -182,6 +194,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("initialHostShapeName")]
         public Output<string> InitialHostShapeName { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        /// </summary>
+        [Output("initialVcfByolAllocationId")]
+        public Output<string> InitialVcfByolAllocationId { get; private set; } = null!;
 
         /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
@@ -328,10 +346,28 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        /// </summary>
+        [Input("clusterByolAllocationDetails")]
+        public Input<Inputs.ClusterClusterByolAllocationDetailsArgs>? ClusterByolAllocationDetails { get; set; }
+
+        /// <summary>
         /// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         /// </summary>
         [Input("computeAvailabilityDomain", required: true)]
         public Input<string> ComputeAvailabilityDomain { get; set; } = null!;
+
+        [Input("datastoreClusterIds")]
+        private InputList<string>? _datastoreClusterIds;
+
+        /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public InputList<string> DatastoreClusterIds
+        {
+            get => _datastoreClusterIds ?? (_datastoreClusterIds = new InputList<string>());
+            set => _datastoreClusterIds = value;
+        }
 
         [Input("datastores")]
         private InputList<Inputs.ClusterDatastoreArgs>? _datastores;
@@ -416,6 +452,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? InitialHostShapeName { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        /// </summary>
+        [Input("initialVcfByolAllocationId")]
+        public Input<string>? InitialVcfByolAllocationId { get; set; }
+
+        /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         /// 
         /// For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -481,6 +523,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("capacityReservationId")]
         public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+        /// </summary>
+        [Input("clusterByolAllocationDetails")]
+        public Input<Inputs.ClusterClusterByolAllocationDetailsGetArgs>? ClusterByolAllocationDetails { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
@@ -587,6 +635,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("initialHostShapeName")]
         public Input<string>? InitialHostShapeName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        /// </summary>
+        [Input("initialVcfByolAllocationId")]
+        public Input<string>? InitialVcfByolAllocationId { get; set; }
 
         /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.

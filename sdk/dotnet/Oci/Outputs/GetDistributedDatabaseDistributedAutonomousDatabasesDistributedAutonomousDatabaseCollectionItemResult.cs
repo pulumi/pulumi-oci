@@ -13,10 +13,12 @@ namespace Pulumi.Oci.Oci.Outputs
     [OutputType]
     public sealed class GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemResult
     {
+        public readonly string CaBundleId;
         /// <summary>
         /// Collection of catalogs associated with the Globally distributed autonomous database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailResult> CatalogDetails;
+        public readonly string CertificateId;
         public readonly int ChangeDbBackupConfigTrigger;
         /// <summary>
         /// The character set for the database.
@@ -30,6 +32,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly int ConfigureGsmWalletTrigger;
         public readonly bool ConfigureShardingIsRebalanceRequired;
         public readonly int ConfigureShardingTrigger;
         /// <summary>
@@ -102,6 +105,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Comma separated names of argument corresponding to which metadata need to be retrived.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadataResult> Metadatas;
+        public readonly int MoveReplicationUnitTrigger;
         /// <summary>
         /// The national character set for the database.
         /// </summary>
@@ -123,6 +127,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
         /// </summary>
         public readonly ImmutableArray<string> PrivateEndpointIds;
+        public readonly int RecreateFailedResourceTrigger;
         /// <summary>
         /// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
         /// </summary>
@@ -169,12 +174,17 @@ namespace Pulumi.Oci.Oci.Outputs
         public readonly string TimeUpdated;
         public readonly string UploadCaSignedCertificate;
         public readonly int UploadSignedCertificateAndGenerateWalletTrigger;
+        public readonly int ValidateCaBundleTrigger;
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetailResult> ValidateNetworkDetails;
         public readonly int ValidateNetworkTrigger;
 
         [OutputConstructor]
         private GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemResult(
+            string caBundleId,
+
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailResult> catalogDetails,
+
+            string certificateId,
 
             int changeDbBackupConfigTrigger,
 
@@ -183,6 +193,8 @@ namespace Pulumi.Oci.Oci.Outputs
             int chunks,
 
             string compartmentId,
+
+            int configureGsmWalletTrigger,
 
             bool configureShardingIsRebalanceRequired,
 
@@ -238,6 +250,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemMetadataResult> metadatas,
 
+            int moveReplicationUnitTrigger,
+
             string ncharacterSet,
 
             int onsPortLocal,
@@ -249,6 +263,8 @@ namespace Pulumi.Oci.Oci.Outputs
             string prefix,
 
             ImmutableArray<string> privateEndpointIds,
+
+            int recreateFailedResourceTrigger,
 
             int replicationFactor,
 
@@ -276,15 +292,20 @@ namespace Pulumi.Oci.Oci.Outputs
 
             int uploadSignedCertificateAndGenerateWalletTrigger,
 
+            int validateCaBundleTrigger,
+
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemValidateNetworkDetailResult> validateNetworkDetails,
 
             int validateNetworkTrigger)
         {
+            CaBundleId = caBundleId;
             CatalogDetails = catalogDetails;
+            CertificateId = certificateId;
             ChangeDbBackupConfigTrigger = changeDbBackupConfigTrigger;
             CharacterSet = characterSet;
             Chunks = chunks;
             CompartmentId = compartmentId;
+            ConfigureGsmWalletTrigger = configureGsmWalletTrigger;
             ConfigureShardingIsRebalanceRequired = configureShardingIsRebalanceRequired;
             ConfigureShardingTrigger = configureShardingTrigger;
             ConnectionStrings = connectionStrings;
@@ -312,12 +333,14 @@ namespace Pulumi.Oci.Oci.Outputs
             ListenerPort = listenerPort;
             ListenerPortTls = listenerPortTls;
             Metadatas = metadatas;
+            MoveReplicationUnitTrigger = moveReplicationUnitTrigger;
             NcharacterSet = ncharacterSet;
             OnsPortLocal = onsPortLocal;
             OnsPortRemote = onsPortRemote;
             PatchOperations = patchOperations;
             Prefix = prefix;
             PrivateEndpointIds = privateEndpointIds;
+            RecreateFailedResourceTrigger = recreateFailedResourceTrigger;
             ReplicationFactor = replicationFactor;
             ReplicationMethod = replicationMethod;
             ReplicationUnit = replicationUnit;
@@ -331,6 +354,7 @@ namespace Pulumi.Oci.Oci.Outputs
             TimeUpdated = timeUpdated;
             UploadCaSignedCertificate = uploadCaSignedCertificate;
             UploadSignedCertificateAndGenerateWalletTrigger = uploadSignedCertificateAndGenerateWalletTrigger;
+            ValidateCaBundleTrigger = validateCaBundleTrigger;
             ValidateNetworkDetails = validateNetworkDetails;
             ValidateNetworkTrigger = validateNetworkTrigger;
         }

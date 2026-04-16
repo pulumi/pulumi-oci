@@ -49,6 +49,8 @@ import (
 //						Source:                          pulumi.Any(distributedAutonomousDatabaseCatalogDetailsSource),
 //						KmsKeyId:                        pulumi.Any(testKey.Id),
 //						KmsKeyVersionId:                 pulumi.Any(testKeyVersion.Id),
+//						OkvEndPointGroup:                pulumi.Any(distributedAutonomousDatabaseCatalogDetailsOkvEndPointGroup),
+//						OkvKeyStoreId:                   pulumi.Any(testKeyStore.Id),
 //						PeerCloudAutonomousVmClusterIds: pulumi.Any(distributedAutonomousDatabaseCatalogDetailsPeerCloudAutonomousVmClusterIds),
 //						PeerDetails: oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArray{
 //							&oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs{
@@ -85,6 +87,8 @@ import (
 //						Source:                          pulumi.Any(distributedAutonomousDatabaseShardDetailsSource),
 //						KmsKeyId:                        pulumi.Any(testKey.Id),
 //						KmsKeyVersionId:                 pulumi.Any(testKeyVersion.Id),
+//						OkvEndPointGroup:                pulumi.Any(distributedAutonomousDatabaseShardDetailsOkvEndPointGroup),
+//						OkvKeyStoreId:                   pulumi.Any(testKeyStore.Id),
 //						PeerCloudAutonomousVmClusterIds: pulumi.Any(distributedAutonomousDatabaseShardDetailsPeerCloudAutonomousVmClusterIds),
 //						PeerDetails: oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArray{
 //							&oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs{
@@ -153,8 +157,12 @@ import (
 type DistributedDatabaseDistributedAutonomousDatabase struct {
 	pulumi.CustomResourceState
 
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CaBundleId pulumi.StringPtrOutput `pulumi:"caBundleId"`
 	// Collection of catalog for the Globally distributed autonomous database.
 	CatalogDetails DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput `pulumi:"catalogDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CertificateId pulumi.StringPtrOutput `pulumi:"certificateId"`
 	// (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
 	ChangeDbBackupConfigTrigger pulumi.IntPtrOutput `pulumi:"changeDbBackupConfigTrigger"`
 	// The character set for the database.
@@ -162,7 +170,10 @@ type DistributedDatabaseDistributedAutonomousDatabase struct {
 	// Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 	Chunks pulumi.IntOutput `pulumi:"chunks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
-	CompartmentId                        pulumi.StringOutput  `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+	ConfigureGsmWalletTrigger pulumi.IntPtrOutput `pulumi:"configureGsmWalletTrigger"`
+	// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
 	ConfigureShardingIsRebalanceRequired pulumi.BoolPtrOutput `pulumi:"configureShardingIsRebalanceRequired"`
 	// (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
 	ConfigureShardingTrigger pulumi.IntPtrOutput `pulumi:"configureShardingTrigger"`
@@ -207,6 +218,8 @@ type DistributedDatabaseDistributedAutonomousDatabase struct {
 	ListenerPortTls pulumi.IntOutput `pulumi:"listenerPortTls"`
 	// Additional metadata related to Globally distributed autonomous database resources.
 	Metadatas DistributedDatabaseDistributedAutonomousDatabaseMetadataArrayOutput `pulumi:"metadatas"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrOutput `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
 	// Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
@@ -219,6 +232,8 @@ type DistributedDatabaseDistributedAutonomousDatabase struct {
 	Prefix pulumi.StringOutput `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayOutput `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrOutput `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntOutput `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
@@ -243,8 +258,10 @@ type DistributedDatabaseDistributedAutonomousDatabase struct {
 	TimeUpdated               pulumi.StringOutput    `pulumi:"timeUpdated"`
 	UploadCaSignedCertificate pulumi.StringPtrOutput `pulumi:"uploadCaSignedCertificate"`
 	// (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
-	UploadSignedCertificateAndGenerateWalletTrigger pulumi.IntPtrOutput                                                             `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
-	ValidateNetworkDetails                          DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrOutput `pulumi:"validateNetworkDetails"`
+	UploadSignedCertificateAndGenerateWalletTrigger pulumi.IntPtrOutput `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
+	// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+	ValidateCaBundleTrigger pulumi.IntPtrOutput                                                             `pulumi:"validateCaBundleTrigger"`
+	ValidateNetworkDetails  DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrOutput `pulumi:"validateNetworkDetails"`
 	// (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -340,8 +357,12 @@ func GetDistributedDatabaseDistributedAutonomousDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DistributedDatabaseDistributedAutonomousDatabase resources.
 type distributedDatabaseDistributedAutonomousDatabaseState struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CaBundleId *string `pulumi:"caBundleId"`
 	// Collection of catalog for the Globally distributed autonomous database.
 	CatalogDetails []DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail `pulumi:"catalogDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
 	ChangeDbBackupConfigTrigger *int `pulumi:"changeDbBackupConfigTrigger"`
 	// The character set for the database.
@@ -349,8 +370,11 @@ type distributedDatabaseDistributedAutonomousDatabaseState struct {
 	// Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 	Chunks *int `pulumi:"chunks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
-	CompartmentId                        *string `pulumi:"compartmentId"`
-	ConfigureShardingIsRebalanceRequired *bool   `pulumi:"configureShardingIsRebalanceRequired"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+	ConfigureGsmWalletTrigger *int `pulumi:"configureGsmWalletTrigger"`
+	// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+	ConfigureShardingIsRebalanceRequired *bool `pulumi:"configureShardingIsRebalanceRequired"`
 	// (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
 	ConfigureShardingTrigger *int `pulumi:"configureShardingTrigger"`
 	// Details of Globally distributed autonomous database connection String.
@@ -394,6 +418,8 @@ type distributedDatabaseDistributedAutonomousDatabaseState struct {
 	ListenerPortTls *int `pulumi:"listenerPortTls"`
 	// Additional metadata related to Globally distributed autonomous database resources.
 	Metadatas []DistributedDatabaseDistributedAutonomousDatabaseMetadata `pulumi:"metadatas"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger *int `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
@@ -406,6 +432,8 @@ type distributedDatabaseDistributedAutonomousDatabaseState struct {
 	Prefix *string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger *int `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor *int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
@@ -430,8 +458,10 @@ type distributedDatabaseDistributedAutonomousDatabaseState struct {
 	TimeUpdated               *string `pulumi:"timeUpdated"`
 	UploadCaSignedCertificate *string `pulumi:"uploadCaSignedCertificate"`
 	// (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
-	UploadSignedCertificateAndGenerateWalletTrigger *int                                                                    `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
-	ValidateNetworkDetails                          *DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails `pulumi:"validateNetworkDetails"`
+	UploadSignedCertificateAndGenerateWalletTrigger *int `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
+	// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+	ValidateCaBundleTrigger *int                                                                    `pulumi:"validateCaBundleTrigger"`
+	ValidateNetworkDetails  *DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails `pulumi:"validateNetworkDetails"`
 	// (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -440,8 +470,12 @@ type distributedDatabaseDistributedAutonomousDatabaseState struct {
 }
 
 type DistributedDatabaseDistributedAutonomousDatabaseState struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CaBundleId pulumi.StringPtrInput
 	// Collection of catalog for the Globally distributed autonomous database.
 	CatalogDetails DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CertificateId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
 	ChangeDbBackupConfigTrigger pulumi.IntPtrInput
 	// The character set for the database.
@@ -449,7 +483,10 @@ type DistributedDatabaseDistributedAutonomousDatabaseState struct {
 	// Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 	Chunks pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
-	CompartmentId                        pulumi.StringPtrInput
+	CompartmentId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+	ConfigureGsmWalletTrigger pulumi.IntPtrInput
+	// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
 	ConfigureShardingIsRebalanceRequired pulumi.BoolPtrInput
 	// (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
 	ConfigureShardingTrigger pulumi.IntPtrInput
@@ -494,6 +531,8 @@ type DistributedDatabaseDistributedAutonomousDatabaseState struct {
 	ListenerPortTls pulumi.IntPtrInput
 	// Additional metadata related to Globally distributed autonomous database resources.
 	Metadatas DistributedDatabaseDistributedAutonomousDatabaseMetadataArrayInput
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringPtrInput
 	// Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
@@ -506,6 +545,8 @@ type DistributedDatabaseDistributedAutonomousDatabaseState struct {
 	Prefix pulumi.StringPtrInput
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrInput
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntPtrInput
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
@@ -531,7 +572,9 @@ type DistributedDatabaseDistributedAutonomousDatabaseState struct {
 	UploadCaSignedCertificate pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
 	UploadSignedCertificateAndGenerateWalletTrigger pulumi.IntPtrInput
-	ValidateNetworkDetails                          DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrInput
+	// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+	ValidateCaBundleTrigger pulumi.IntPtrInput
+	ValidateNetworkDetails  DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrInput
 	// (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -544,8 +587,12 @@ func (DistributedDatabaseDistributedAutonomousDatabaseState) ElementType() refle
 }
 
 type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CaBundleId *string `pulumi:"caBundleId"`
 	// Collection of catalog for the Globally distributed autonomous database.
 	CatalogDetails []DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail `pulumi:"catalogDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
 	ChangeDbBackupConfigTrigger *int `pulumi:"changeDbBackupConfigTrigger"`
 	// The character set for the database.
@@ -553,8 +600,11 @@ type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	// Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 	Chunks *int `pulumi:"chunks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
-	CompartmentId                        string `pulumi:"compartmentId"`
-	ConfigureShardingIsRebalanceRequired *bool  `pulumi:"configureShardingIsRebalanceRequired"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+	ConfigureGsmWalletTrigger *int `pulumi:"configureGsmWalletTrigger"`
+	// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+	ConfigureShardingIsRebalanceRequired *bool `pulumi:"configureShardingIsRebalanceRequired"`
 	// (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
 	ConfigureShardingTrigger *int `pulumi:"configureShardingTrigger"`
 	// Oracle Database version for the shards and catalog used in Globally distributed autonomous database.
@@ -583,6 +633,8 @@ type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	ListenerPort int `pulumi:"listenerPort"`
 	// The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
 	ListenerPortTls *int `pulumi:"listenerPortTls"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger *int `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
@@ -595,6 +647,8 @@ type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	Prefix string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger *int `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor *int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
@@ -613,8 +667,10 @@ type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	StopDatabaseTrigger       *int    `pulumi:"stopDatabaseTrigger"`
 	UploadCaSignedCertificate *string `pulumi:"uploadCaSignedCertificate"`
 	// (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
-	UploadSignedCertificateAndGenerateWalletTrigger *int                                                                    `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
-	ValidateNetworkDetails                          *DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails `pulumi:"validateNetworkDetails"`
+	UploadSignedCertificateAndGenerateWalletTrigger *int `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
+	// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+	ValidateCaBundleTrigger *int                                                                    `pulumi:"validateCaBundleTrigger"`
+	ValidateNetworkDetails  *DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails `pulumi:"validateNetworkDetails"`
 	// (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -624,8 +680,12 @@ type distributedDatabaseDistributedAutonomousDatabaseArgs struct {
 
 // The set of arguments for constructing a DistributedDatabaseDistributedAutonomousDatabase resource.
 type DistributedDatabaseDistributedAutonomousDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CaBundleId pulumi.StringPtrInput
 	// Collection of catalog for the Globally distributed autonomous database.
 	CatalogDetails DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+	CertificateId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
 	ChangeDbBackupConfigTrigger pulumi.IntPtrInput
 	// The character set for the database.
@@ -633,7 +693,10 @@ type DistributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	// Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed autonomous databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 	Chunks pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
-	CompartmentId                        pulumi.StringInput
+	CompartmentId pulumi.StringInput
+	// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+	ConfigureGsmWalletTrigger pulumi.IntPtrInput
+	// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
 	ConfigureShardingIsRebalanceRequired pulumi.BoolPtrInput
 	// (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
 	ConfigureShardingTrigger pulumi.IntPtrInput
@@ -663,6 +726,8 @@ type DistributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	ListenerPort pulumi.IntInput
 	// The TLS listener port number for Globally distributed autonomous database. The TLS listener port number has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory for dedicated infrastructure based distributed autonomous databases.
 	ListenerPortTls pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput
 	// Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for any other distributed autonomous database.
@@ -675,6 +740,8 @@ type DistributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	Prefix pulumi.StringInput
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrInput
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntPtrInput
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
@@ -694,7 +761,9 @@ type DistributedDatabaseDistributedAutonomousDatabaseArgs struct {
 	UploadCaSignedCertificate pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
 	UploadSignedCertificateAndGenerateWalletTrigger pulumi.IntPtrInput
-	ValidateNetworkDetails                          DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrInput
+	// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+	ValidateCaBundleTrigger pulumi.IntPtrInput
+	ValidateNetworkDetails  DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsPtrInput
 	// (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -789,11 +858,23 @@ func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) ToDistributedDat
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) CaBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.StringPtrOutput { return v.CaBundleId }).(pulumi.StringPtrOutput)
+}
+
 // Collection of catalog for the Globally distributed autonomous database.
 func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) CatalogDetails() DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput {
 		return v.CatalogDetails
 	}).(DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.StringPtrOutput {
+		return v.CertificateId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
@@ -818,6 +899,14 @@ func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) CompartmentId() 
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) ConfigureGsmWalletTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.IntPtrOutput {
+		return v.ConfigureGsmWalletTrigger
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
 func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) ConfigureShardingIsRebalanceRequired() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.BoolPtrOutput {
 		return v.ConfigureShardingIsRebalanceRequired
@@ -982,6 +1071,13 @@ func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) Metadatas() Dist
 	}).(DistributedDatabaseDistributedAutonomousDatabaseMetadataArrayOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) MoveReplicationUnitTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.IntPtrOutput {
+		return v.MoveReplicationUnitTrigger
+	}).(pulumi.IntPtrOutput)
+}
+
 // The national character set for the database.
 func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -1014,6 +1110,13 @@ func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) PrivateEndpointI
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.StringArrayOutput {
 		return v.PrivateEndpointIds
 	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) RecreateFailedResourceTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.IntPtrOutput {
+		return v.RecreateFailedResourceTrigger
+	}).(pulumi.IntPtrOutput)
 }
 
 // The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
@@ -1089,6 +1192,13 @@ func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) UploadCaSignedCe
 func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) UploadSignedCertificateAndGenerateWalletTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.IntPtrOutput {
 		return v.UploadSignedCertificateAndGenerateWalletTrigger
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+func (o DistributedDatabaseDistributedAutonomousDatabaseOutput) ValidateCaBundleTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedAutonomousDatabase) pulumi.IntPtrOutput {
+		return v.ValidateCaBundleTrigger
 	}).(pulumi.IntPtrOutput)
 }
 

@@ -64,6 +64,12 @@ namespace Pulumi.Oci.FileStorage
     ///                 DayOfMonth = filesystemSnapshotPolicySchedulesDayOfMonth,
     ///                 DayOfWeek = filesystemSnapshotPolicySchedulesDayOfWeek,
     ///                 HourOfDay = filesystemSnapshotPolicySchedulesHourOfDay,
+    ///                 LockDurationDetails = new Oci.FileStorage.Inputs.FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs
+    ///                 {
+    ///                     LockDuration = filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration,
+    ///                     LockMode = filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode,
+    ///                     CoolOffDuration = filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration,
+    ///                 },
     ///                 Month = filesystemSnapshotPolicySchedulesMonth,
     ///                 RetentionDurationInSeconds = filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,
     ///                 SchedulePrefix = filesystemSnapshotPolicySchedulesSchedulePrefix,

@@ -41,7 +41,9 @@ import * as utilities from "../utilities";
  *     },
  *     hostOcpuCount: esxiHostHostOcpuCount,
  *     hostShapeName: testShape.name,
+ *     isVsanByolEnabled: esxiHostIsVsanByolEnabled,
  *     nextCommitment: esxiHostNextCommitment,
+ *     vcfByolAllocationId: testByolAllocation.id,
  * });
  * ```
  *
@@ -187,7 +189,11 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isBillingSwappingInProgress: pulumi.Output<boolean>;
     /**
-     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     */
+    declare public readonly isVsanByolEnabled: pulumi.Output<boolean>;
+    /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
     declare public /*out*/ readonly nextCommitment: pulumi.Output<string>;
     /**
@@ -202,6 +208,7 @@ export class EsxiHost extends pulumi.CustomResource {
      * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
     declare public readonly nonUpgradedEsxiHostId: pulumi.Output<string>;
+    declare public /*out*/ readonly primaryVnicMacAddress: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
@@ -240,6 +247,10 @@ export class EsxiHost extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      */
     declare public /*out*/ readonly upgradedReplacementEsxiHostId: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     */
+    declare public readonly vcfByolAllocationId: pulumi.Output<string>;
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
@@ -281,9 +292,11 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["hostShapeName"] = state?.hostShapeName;
             resourceInputs["isBillingContinuationInProgress"] = state?.isBillingContinuationInProgress;
             resourceInputs["isBillingSwappingInProgress"] = state?.isBillingSwappingInProgress;
+            resourceInputs["isVsanByolEnabled"] = state?.isVsanByolEnabled;
             resourceInputs["nextCommitment"] = state?.nextCommitment;
             resourceInputs["nextSku"] = state?.nextSku;
             resourceInputs["nonUpgradedEsxiHostId"] = state?.nonUpgradedEsxiHostId;
+            resourceInputs["primaryVnicMacAddress"] = state?.primaryVnicMacAddress;
             resourceInputs["replacementEsxiHostId"] = state?.replacementEsxiHostId;
             resourceInputs["sddcId"] = state?.sddcId;
             resourceInputs["state"] = state?.state;
@@ -292,6 +305,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["upgradedReplacementEsxiHostId"] = state?.upgradedReplacementEsxiHostId;
+            resourceInputs["vcfByolAllocationId"] = state?.vcfByolAllocationId;
             resourceInputs["vmwareSoftwareVersion"] = state?.vmwareSoftwareVersion;
         } else {
             const args = argsOrState as EsxiHostArgs | undefined;
@@ -309,10 +323,12 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["hostOcpuCount"] = args?.hostOcpuCount;
             resourceInputs["hostShapeName"] = args?.hostShapeName;
+            resourceInputs["isVsanByolEnabled"] = args?.isVsanByolEnabled;
             resourceInputs["nextSku"] = args?.nextSku;
             resourceInputs["nonUpgradedEsxiHostId"] = args?.nonUpgradedEsxiHostId;
             resourceInputs["sddcId"] = args?.sddcId;
             resourceInputs["systemTags"] = args?.systemTags;
+            resourceInputs["vcfByolAllocationId"] = args?.vcfByolAllocationId;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
@@ -323,6 +339,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["isBillingContinuationInProgress"] = undefined /*out*/;
             resourceInputs["isBillingSwappingInProgress"] = undefined /*out*/;
             resourceInputs["nextCommitment"] = undefined /*out*/;
+            resourceInputs["primaryVnicMacAddress"] = undefined /*out*/;
             resourceInputs["replacementEsxiHostId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["swapBillingHostId"] = undefined /*out*/;
@@ -437,7 +454,11 @@ export interface EsxiHostState {
      */
     isBillingSwappingInProgress?: pulumi.Input<boolean>;
     /**
-     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     */
+    isVsanByolEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
     nextCommitment?: pulumi.Input<string>;
     /**
@@ -452,6 +473,7 @@ export interface EsxiHostState {
      * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
     nonUpgradedEsxiHostId?: pulumi.Input<string>;
+    primaryVnicMacAddress?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
@@ -490,6 +512,10 @@ export interface EsxiHostState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      */
     upgradedReplacementEsxiHostId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     */
+    vcfByolAllocationId?: pulumi.Input<string>;
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
@@ -561,6 +587,10 @@ export interface EsxiHostArgs {
      */
     hostShapeName?: pulumi.Input<string>;
     /**
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     */
+    isVsanByolEnabled?: pulumi.Input<boolean>;
+    /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      *
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
@@ -586,4 +616,8 @@ export interface EsxiHostArgs {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     */
+    vcfByolAllocationId?: pulumi.Input<string>;
 }

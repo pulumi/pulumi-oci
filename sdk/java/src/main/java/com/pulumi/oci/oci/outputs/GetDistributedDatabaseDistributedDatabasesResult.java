@@ -26,7 +26,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
      */
     private @Nullable String dbDeploymentType;
     /**
-     * @return The display name of the Globally distributed database.
+     * @return The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -46,6 +46,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
      * 
      */
     private @Nullable String metadata;
+    private @Nullable String privateEndpointId;
     /**
      * @return Lifecycle states for the Globally distributed database.
      * 
@@ -68,7 +69,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
         return Optional.ofNullable(this.dbDeploymentType);
     }
     /**
-     * @return The display name of the Globally distributed database.
+     * @return The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      * 
      */
     public Optional<String> displayName() {
@@ -98,6 +99,9 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
     public Optional<String> metadata() {
         return Optional.ofNullable(this.metadata);
     }
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
     /**
      * @return Lifecycle states for the Globally distributed database.
      * 
@@ -122,6 +126,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
         private @Nullable List<GetDistributedDatabaseDistributedDatabasesFilter> filters;
         private String id;
         private @Nullable String metadata;
+        private @Nullable String privateEndpointId;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDistributedDatabaseDistributedDatabasesResult defaults) {
@@ -133,6 +138,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.metadata = defaults.metadata;
+    	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.state = defaults.state;
         }
 
@@ -191,6 +197,12 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+
+            this.privateEndpointId = privateEndpointId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -205,6 +217,7 @@ public final class GetDistributedDatabaseDistributedDatabasesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.metadata = metadata;
+            _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.state = state;
             return _resultValue;
         }

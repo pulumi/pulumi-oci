@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DbmulticloudOracleDbGcpKeyRingArgs', 'DbmulticloudOracleDbGcpKeyRing']
 
@@ -22,11 +24,13 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  oracle_db_connector_id: pulumi.Input[_builtins.str],
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gcp_key_ring_id: Optional[pulumi.Input[_builtins.str]] = None,
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbGcpKeyRing resource.
@@ -39,6 +43,7 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
         :param pulumi.Input[_builtins.str] gcp_key_ring_id: GCP Key Ring ID.
         :param pulumi.Input[_builtins.str] location: Location of the GCP Key Ring resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
                
                
@@ -48,6 +53,8 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -58,6 +65,8 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
             pulumi.set(__self__, "location", location)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -96,6 +105,15 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
     @oracle_db_connector_id.setter
     def oracle_db_connector_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "oracle_db_connector_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -158,6 +176,18 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
         pulumi.set(self, "properties", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -177,6 +207,7 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
 @pulumi.input_type
 class _DbmulticloudOracleDbGcpKeyRingState:
     def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -186,8 +217,10 @@ class _DbmulticloudOracleDbGcpKeyRingState:
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs']]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
@@ -203,8 +236,10 @@ class _DbmulticloudOracleDbGcpKeyRingState:
         :param pulumi.Input[_builtins.str] location: Location of the GCP Key Ring resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs']]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB GCP Key Ring resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] time_created: Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
@@ -213,6 +248,8 @@ class _DbmulticloudOracleDbGcpKeyRingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -231,16 +268,29 @@ class _DbmulticloudOracleDbGcpKeyRingState:
             pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if replication_metadatas is not None:
+            pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -351,6 +401,18 @@ class _DbmulticloudOracleDbGcpKeyRingState:
         pulumi.set(self, "properties", value)
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs']]]]:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @replication_metadatas.setter
+    def replication_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs']]]]):
+        pulumi.set(self, "replication_metadatas", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -373,6 +435,18 @@ class _DbmulticloudOracleDbGcpKeyRingState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -421,6 +495,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -429,6 +504,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -480,6 +556,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] location: Location of the GCP Key Ring resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
                
                
@@ -546,6 +623,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -554,6 +632,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -564,6 +643,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbmulticloudOracleDbGcpKeyRingArgs.__new__(DbmulticloudOracleDbGcpKeyRingArgs)
 
+            __props__.__dict__["action"] = action
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -578,8 +658,10 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                 raise TypeError("Missing required property 'oracle_db_connector_id'")
             __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
             __props__.__dict__["properties"] = properties
+            __props__.__dict__["target_region"] = target_region
             __props__.__dict__["type"] = type
             __props__.__dict__["lifecycle_state_details"] = None
+            __props__.__dict__["replication_metadatas"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -594,6 +676,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -603,8 +686,10 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
             location: Optional[pulumi.Input[_builtins.str]] = None,
             oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
             properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            replication_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict']]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_region: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbmulticloudOracleDbGcpKeyRing':
@@ -624,8 +709,10 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] location: Location of the GCP Key Ring resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs', 'DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgsDict']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB GCP Key Ring resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] time_created: Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
@@ -638,6 +725,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
 
         __props__ = _DbmulticloudOracleDbGcpKeyRingState.__new__(_DbmulticloudOracleDbGcpKeyRingState)
 
+        __props__.__dict__["action"] = action
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -647,12 +735,19 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         __props__.__dict__["location"] = location
         __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
         __props__.__dict__["properties"] = properties
+        __props__.__dict__["replication_metadatas"] = replication_metadatas
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_region"] = target_region
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
         return DbmulticloudOracleDbGcpKeyRing(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Output[Optional[_builtins.str]]:
+        return pulumi.get(self, "action")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -727,6 +822,14 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         return pulumi.get(self, "properties")
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> pulumi.Output[Sequence['outputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadata']]:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
@@ -741,6 +844,14 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

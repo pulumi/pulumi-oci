@@ -47,6 +47,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
      * 
      */
     private List<GetDistributedDatabaseDistributedAutonomousDatabasesMetadata> metadatas;
+    private @Nullable String privateEndpointId;
     /**
      * @return Lifecycle states for the Globally distributed autonomous database.
      * 
@@ -99,6 +100,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
     public List<GetDistributedDatabaseDistributedAutonomousDatabasesMetadata> metadatas() {
         return this.metadatas;
     }
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
     /**
      * @return Lifecycle states for the Globally distributed autonomous database.
      * 
@@ -123,6 +127,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
         private @Nullable List<GetDistributedDatabaseDistributedAutonomousDatabasesFilter> filters;
         private String id;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesMetadata> metadatas;
+        private @Nullable String privateEndpointId;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDistributedDatabaseDistributedAutonomousDatabasesResult defaults) {
@@ -134,6 +139,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.metadatas = defaults.metadatas;
+    	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.state = defaults.state;
         }
 
@@ -197,6 +203,12 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+
+            this.privateEndpointId = privateEndpointId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -211,6 +223,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.metadatas = metadatas;
+            _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.state = state;
             return _resultValue;
         }

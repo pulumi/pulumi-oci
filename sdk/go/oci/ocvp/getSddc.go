@@ -191,7 +191,9 @@ type LookupSddcResult struct {
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
-	SddcId                           string   `pulumi:"sddcId"`
+	// The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails []GetSddcSddcByolAllocationDetail `pulumi:"sddcByolAllocationDetails"`
+	SddcId                    string                            `pulumi:"sddcId"`
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
 	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
@@ -548,6 +550,11 @@ func (o LookupSddcResultOutput) ReplicationVlanId() pulumi.StringOutput {
 
 func (o LookupSddcResultOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSddcResult) []string { return v.ReservingHcxOnPremiseLicenseKeys }).(pulumi.StringArrayOutput)
+}
+
+// The BYOL allocations used for VMware SDDC provisioning.
+func (o LookupSddcResultOutput) SddcByolAllocationDetails() GetSddcSddcByolAllocationDetailArrayOutput {
+	return o.ApplyT(func(v LookupSddcResult) []GetSddcSddcByolAllocationDetail { return v.SddcByolAllocationDetails }).(GetSddcSddcByolAllocationDetailArrayOutput)
 }
 
 func (o LookupSddcResultOutput) SddcId() pulumi.StringOutput {

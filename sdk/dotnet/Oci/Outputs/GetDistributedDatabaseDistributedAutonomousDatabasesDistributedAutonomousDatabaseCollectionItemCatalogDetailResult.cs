@@ -51,6 +51,14 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// The OKV endpoint name.
+        /// </summary>
+        public readonly string OkvEndPointGroup;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+        /// </summary>
+        public readonly string OkvKeyStoreId;
+        /// <summary>
         /// This field is deprecated. For shard peer details please refer peerDetails attribute.
         /// </summary>
         public readonly ImmutableArray<string> PeerCloudAutonomousVmClusterIds;
@@ -109,6 +117,10 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string name,
 
+            string okvEndPointGroup,
+
+            string okvKeyStoreId,
+
             ImmutableArray<string> peerCloudAutonomousVmClusterIds,
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemCatalogDetailPeerDetailResult> peerDetails,
@@ -137,6 +149,8 @@ namespace Pulumi.Oci.Oci.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             Metadatas = metadatas;
             Name = name;
+            OkvEndPointGroup = okvEndPointGroup;
+            OkvKeyStoreId = okvKeyStoreId;
             PeerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             PeerDetails = peerDetails;
             ShardGroup = shardGroup;

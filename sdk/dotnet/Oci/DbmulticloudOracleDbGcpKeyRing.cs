@@ -60,6 +60,9 @@ namespace Pulumi.Oci.Oci
     [OciResourceType("oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing")]
     public partial class DbmulticloudOracleDbGcpKeyRing : global::Pulumi.CustomResource
     {
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
         /// </summary>
@@ -115,6 +118,12 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
         /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        [Output("replicationMetadatas")]
+        public Output<ImmutableArray<Outputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadata>> ReplicationMetadatas { get; private set; } = null!;
+
+        /// <summary>
         /// The lifecycle state of the Oracle DB GCP Key Ring resource.
         /// </summary>
         [Output("state")]
@@ -125,6 +134,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Output("targetRegion")]
+        public Output<string?> TargetRegion { get; private set; } = null!;
 
         /// <summary>
         /// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -194,6 +209,9 @@ namespace Pulumi.Oci.Oci
 
     public sealed class DbmulticloudOracleDbGcpKeyRingArgs : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
         /// </summary>
@@ -261,6 +279,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Input("targetRegion")]
+        public Input<string>? TargetRegion { get; set; }
+
+        /// <summary>
         /// Oracle DB GCP Key Ring resource Type.
         /// 
         /// 
@@ -278,6 +302,9 @@ namespace Pulumi.Oci.Oci
 
     public sealed class DbmulticloudOracleDbGcpKeyRingState : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
         /// </summary>
@@ -350,6 +377,18 @@ namespace Pulumi.Oci.Oci
             set => _properties = value;
         }
 
+        [Input("replicationMetadatas")]
+        private InputList<Inputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadataGetArgs>? _replicationMetadatas;
+
+        /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        public InputList<Inputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadataGetArgs> ReplicationMetadatas
+        {
+            get => _replicationMetadatas ?? (_replicationMetadatas = new InputList<Inputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadataGetArgs>());
+            set => _replicationMetadatas = value;
+        }
+
         /// <summary>
         /// The lifecycle state of the Oracle DB GCP Key Ring resource.
         /// </summary>
@@ -367,6 +406,12 @@ namespace Pulumi.Oci.Oci
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Input("targetRegion")]
+        public Input<string>? TargetRegion { get; set; }
 
         /// <summary>
         /// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'

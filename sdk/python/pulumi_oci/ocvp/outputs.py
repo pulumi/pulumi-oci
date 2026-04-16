@@ -16,6 +16,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ClusterClusterByolAllocationDetails',
     'ClusterDatastore',
     'ClusterNetworkConfiguration',
     'ClusterUpgradeLicense',
@@ -30,16 +31,26 @@ __all__ = [
     'SddcHcxOnPremLicense',
     'SddcInitialConfiguration',
     'SddcInitialConfigurationInitialClusterConfiguration',
+    'SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails',
     'SddcInitialConfigurationInitialClusterConfigurationDatastore',
     'SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration',
+    'SddcSddcByolAllocationDetails',
     'SddcUpgradeLicense',
     'SddcVsphereUpgradeObject',
+    'GetByolAllocationsByolAllocationCollectionResult',
+    'GetByolAllocationsByolAllocationCollectionItemResult',
+    'GetByolAllocationsFilterResult',
+    'GetByolsByolCollectionResult',
+    'GetByolsByolCollectionItemResult',
+    'GetByolsFilterResult',
+    'GetClusterClusterByolAllocationDetailResult',
     'GetClusterDatastoreResult',
     'GetClusterNetworkConfigurationResult',
     'GetClusterUpgradeLicenseResult',
     'GetClusterVsphereUpgradeObjectResult',
     'GetClustersClusterCollectionResult',
     'GetClustersClusterCollectionItemResult',
+    'GetClustersClusterCollectionItemClusterByolAllocationDetailResult',
     'GetClustersClusterCollectionItemDatastoreResult',
     'GetClustersClusterCollectionItemNetworkConfigurationResult',
     'GetClustersClusterCollectionItemUpgradeLicenseResult',
@@ -72,8 +83,10 @@ __all__ = [
     'GetSddcHcxOnPremLicenseResult',
     'GetSddcInitialConfigurationResult',
     'GetSddcInitialConfigurationInitialClusterConfigurationResult',
+    'GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult',
     'GetSddcInitialConfigurationInitialClusterConfigurationDatastoreResult',
     'GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult',
+    'GetSddcSddcByolAllocationDetailResult',
     'GetSddcUpgradeLicenseResult',
     'GetSddcVsphereUpgradeObjectResult',
     'GetSddcsFilterResult',
@@ -82,8 +95,10 @@ __all__ = [
     'GetSddcsSddcCollectionHcxOnPremLicenseResult',
     'GetSddcsSddcCollectionInitialConfigurationResult',
     'GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResult',
+    'GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult',
     'GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult',
     'GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult',
+    'GetSddcsSddcCollectionSddcByolAllocationDetailResult',
     'GetSddcsSddcCollectionUpgradeLicenseResult',
     'GetSddcsSddcCollectionVsphereUpgradeObjectResult',
     'GetSupportedCommitmentsFilterResult',
@@ -96,6 +111,56 @@ __all__ = [
     'GetSupportedVmwareSoftwareVersionsItemResult',
     'GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionResult',
 ]
+
+@pulumi.output_type
+class ClusterClusterByolAllocationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firewallByolAllocationId":
+            suggest = "firewall_byol_allocation_id"
+        elif key == "vsanByolAllocationId":
+            suggest = "vsan_byol_allocation_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterClusterByolAllocationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterClusterByolAllocationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterClusterByolAllocationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: Optional[_builtins.str] = None,
+                 vsan_byol_allocation_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str firewall_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        if firewall_byol_allocation_id is not None:
+            pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        if vsan_byol_allocation_id is not None:
+            pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
+
 
 @pulumi.output_type
 class ClusterDatastore(dict):
@@ -1022,6 +1087,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             suggest = "actual_esxi_hosts_count"
         elif key == "capacityReservationId":
             suggest = "capacity_reservation_id"
+        elif key == "clusterByolAllocationDetails":
+            suggest = "cluster_byol_allocation_details"
         elif key == "datastoreClusterIds":
             suggest = "datastore_cluster_ids"
         elif key == "displayName":
@@ -1032,6 +1099,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             suggest = "initial_host_ocpu_count"
         elif key == "initialHostShapeName":
             suggest = "initial_host_shape_name"
+        elif key == "initialVcfByolAllocationId":
+            suggest = "initial_vcf_byol_allocation_id"
         elif key == "instanceDisplayNamePrefix":
             suggest = "instance_display_name_prefix"
         elif key == "isShieldedInstanceEnabled":
@@ -1058,12 +1127,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
                  vsphere_type: _builtins.str,
                  actual_esxi_hosts_count: Optional[_builtins.int] = None,
                  capacity_reservation_id: Optional[_builtins.str] = None,
+                 cluster_byol_allocation_details: Optional['outputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails'] = None,
                  datastore_cluster_ids: Optional[Sequence[_builtins.str]] = None,
                  datastores: Optional[Sequence['outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore']] = None,
                  display_name: Optional[_builtins.str] = None,
                  initial_commitment: Optional[_builtins.str] = None,
                  initial_host_ocpu_count: Optional[_builtins.float] = None,
                  initial_host_shape_name: Optional[_builtins.str] = None,
+                 initial_vcf_byol_allocation_id: Optional[_builtins.str] = None,
                  instance_display_name_prefix: Optional[_builtins.str] = None,
                  is_shielded_instance_enabled: Optional[_builtins.bool] = None,
                  network_configuration: Optional['outputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration'] = None,
@@ -1076,12 +1147,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         :param _builtins.str vsphere_type: vSphere Cluster types.
         :param _builtins.int actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param 'SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs' cluster_byol_allocation_details: The BYOL allocations used for VMware Cluster provisioning.
         :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param _builtins.str display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param _builtins.str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -1096,6 +1169,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_byol_allocation_details is not None:
+            pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         if datastore_cluster_ids is not None:
             pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if datastores is not None:
@@ -1108,6 +1183,8 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
             pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
             pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        if initial_vcf_byol_allocation_id is not None:
+            pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         if instance_display_name_prefix is not None:
             pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         if is_shielded_instance_enabled is not None:
@@ -1160,6 +1237,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Optional['outputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails']:
+        """
+        The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
+
+    @_builtins.property
     @pulumi.getter(name="datastoreClusterIds")
     def datastore_cluster_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
@@ -1208,6 +1293,14 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         return pulumi.get(self, "initial_host_shape_name")
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> Optional[_builtins.str]:
         """
@@ -1240,6 +1333,56 @@ class SddcInitialConfigurationInitialClusterConfiguration(dict):
         The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         """
         return pulumi.get(self, "workload_network_cidr")
+
+
+@pulumi.output_type
+class SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firewallByolAllocationId":
+            suggest = "firewall_byol_allocation_id"
+        elif key == "vsanByolAllocationId":
+            suggest = "vsan_byol_allocation_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: Optional[_builtins.str] = None,
+                 vsan_byol_allocation_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        if firewall_byol_allocation_id is not None:
+            pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        if vsan_byol_allocation_id is not None:
+            pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
 
 
 @pulumi.output_type
@@ -1526,6 +1669,56 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration(di
 
 
 @pulumi.output_type
+class SddcSddcByolAllocationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadBalancerByolAllocationId":
+            suggest = "load_balancer_byol_allocation_id"
+        elif key == "loadBalancerInstanceCount":
+            suggest = "load_balancer_instance_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SddcSddcByolAllocationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SddcSddcByolAllocationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SddcSddcByolAllocationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 load_balancer_byol_allocation_id: Optional[_builtins.str] = None,
+                 load_balancer_instance_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str load_balancer_byol_allocation_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        :param _builtins.int load_balancer_instance_count: (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        if load_balancer_byol_allocation_id is not None:
+            pulumi.set(__self__, "load_balancer_byol_allocation_id", load_balancer_byol_allocation_id)
+        if load_balancer_instance_count is not None:
+            pulumi.set(__self__, "load_balancer_instance_count", load_balancer_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerByolAllocationId")
+    def load_balancer_byol_allocation_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        """
+        return pulumi.get(self, "load_balancer_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerInstanceCount")
+    def load_balancer_instance_count(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        return pulumi.get(self, "load_balancer_instance_count")
+
+
+@pulumi.output_type
 class SddcUpgradeLicense(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1623,6 +1816,485 @@ class SddcVsphereUpgradeObject(dict):
         Binary object description.
         """
         return pulumi.get(self, "link_description")
+
+
+@pulumi.output_type
+class GetByolAllocationsByolAllocationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetByolAllocationsByolAllocationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetByolAllocationsByolAllocationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetByolAllocationsByolAllocationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 allocated_units: _builtins.int,
+                 available_units: _builtins.int,
+                 byol_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 entitlement_key: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 software_type: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_term_end: _builtins.str,
+                 time_term_start: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.int allocated_units: The quantity of licensed units that allocated to this region.
+        :param _builtins.int available_units: The quantity of licensed units that not yet consumed by resources.
+        :param _builtins.str byol_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str entitlement_key: The Broadcom-supplied identifier of a BYOL license.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+        :param _builtins.str software_type: A filter to return only resources whose softwareType matches the given value.
+        :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_created: The date and time the BYOL Allocation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_term_end: The date and time when the BYOL Allocation expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_term_start: The date and time when the BYOL Allocation becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the BYOL Allocation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "allocated_units", allocated_units)
+        pulumi.set(__self__, "available_units", available_units)
+        pulumi.set(__self__, "byol_id", byol_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entitlement_key", entitlement_key)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_type", software_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_term_end", time_term_end)
+        pulumi.set(__self__, "time_term_start", time_term_start)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="allocatedUnits")
+    def allocated_units(self) -> _builtins.int:
+        """
+        The quantity of licensed units that allocated to this region.
+        """
+        return pulumi.get(self, "allocated_units")
+
+    @_builtins.property
+    @pulumi.getter(name="availableUnits")
+    def available_units(self) -> _builtins.int:
+        """
+        The quantity of licensed units that not yet consumed by resources.
+        """
+        return pulumi.get(self, "available_units")
+
+    @_builtins.property
+    @pulumi.getter(name="byolId")
+    def byol_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+        """
+        return pulumi.get(self, "byol_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="entitlementKey")
+    def entitlement_key(self) -> _builtins.str:
+        """
+        The Broadcom-supplied identifier of a BYOL license.
+        """
+        return pulumi.get(self, "entitlement_key")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareType")
+    def software_type(self) -> _builtins.str:
+        """
+        A filter to return only resources whose softwareType matches the given value.
+        """
+        return pulumi.get(self, "software_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycle state matches the given value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the BYOL Allocation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeTermEnd")
+    def time_term_end(self) -> _builtins.str:
+        """
+        The date and time when the BYOL Allocation expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_term_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeTermStart")
+    def time_term_start(self) -> _builtins.str:
+        """
+        The date and time when the BYOL Allocation becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_term_start")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the BYOL Allocation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetByolAllocationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetByolsByolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetByolsByolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetByolsByolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetByolsByolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 available_units: _builtins.int,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 entitlement_key: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 software_type: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_term_end: _builtins.str,
+                 time_term_start: _builtins.str,
+                 time_updated: _builtins.str,
+                 total_units: _builtins.int):
+        """
+        :param _builtins.int available_units: The quantity of licensed units that not yet allocated to specific region.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A description of the BYOL.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str entitlement_key: The Broadcom-supplied identifier of a BYOL license.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+        :param _builtins.str software_type: A filter to return only resources whose softwareType matches the given value.
+        :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_created: The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_term_end: The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_term_start: The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.int total_units: Total quantity of licensed units for the specified `softwareType`:
+               * VCF, VDEFEND: number of OCPUs
+               * VSAN: storage capacity in TiB (tebibytes)
+               * AVI_LOAD_BALANCER: number of instances
+        """
+        pulumi.set(__self__, "available_units", available_units)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entitlement_key", entitlement_key)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_type", software_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_term_end", time_term_end)
+        pulumi.set(__self__, "time_term_start", time_term_start)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_units", total_units)
+
+    @_builtins.property
+    @pulumi.getter(name="availableUnits")
+    def available_units(self) -> _builtins.int:
+        """
+        The quantity of licensed units that not yet allocated to specific region.
+        """
+        return pulumi.get(self, "available_units")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the BYOL.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="entitlementKey")
+    def entitlement_key(self) -> _builtins.str:
+        """
+        The Broadcom-supplied identifier of a BYOL license.
+        """
+        return pulumi.get(self, "entitlement_key")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareType")
+    def software_type(self) -> _builtins.str:
+        """
+        A filter to return only resources whose softwareType matches the given value.
+        """
+        return pulumi.get(self, "software_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycle state matches the given value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeTermEnd")
+    def time_term_end(self) -> _builtins.str:
+        """
+        The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_term_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeTermStart")
+    def time_term_start(self) -> _builtins.str:
+        """
+        The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_term_start")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="totalUnits")
+    def total_units(self) -> _builtins.int:
+        """
+        Total quantity of licensed units for the specified `softwareType`:
+        * VCF, VDEFEND: number of OCPUs
+        * VSAN: storage capacity in TiB (tebibytes)
+        * AVI_LOAD_BALANCER: number of instances
+        """
+        return pulumi.get(self, "total_units")
+
+
+@pulumi.output_type
+class GetByolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetClusterClusterByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: _builtins.str,
+                 vsan_byol_allocation_id: _builtins.str):
+        """
+        :param _builtins.str firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
 
 
 @pulumi.output_type
@@ -1869,6 +2541,7 @@ class GetClustersClusterCollectionItemResult(dict):
                  actual_esxi_hosts_count: _builtins.int,
                  attach_datastore_cluster_ids: Sequence[_builtins.str],
                  capacity_reservation_id: _builtins.str,
+                 cluster_byol_allocation_details: Sequence['outputs.GetClustersClusterCollectionItemClusterByolAllocationDetailResult'],
                  compartment_id: _builtins.str,
                  compute_availability_domain: _builtins.str,
                  datastore_cluster_ids: Sequence[_builtins.str],
@@ -1883,6 +2556,7 @@ class GetClustersClusterCollectionItemResult(dict):
                  initial_commitment: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
+                 initial_vcf_byol_allocation_id: _builtins.str,
                  instance_display_name_prefix: _builtins.str,
                  is_shielded_instance_enabled: _builtins.bool,
                  network_configurations: Sequence['outputs.GetClustersClusterCollectionItemNetworkConfigurationResult'],
@@ -1898,6 +2572,7 @@ class GetClustersClusterCollectionItemResult(dict):
                  workload_network_cidr: _builtins.str):
         """
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param Sequence['GetClustersClusterCollectionItemClusterByolAllocationDetailArgs'] cluster_byol_allocation_details: The BYOL allocations used for VMware Cluster provisioning.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         :param _builtins.str compute_availability_domain: The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
         :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
@@ -1911,6 +2586,7 @@ class GetClustersClusterCollectionItemResult(dict):
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param _builtins.str initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param _builtins.str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         :param _builtins.bool is_shielded_instance_enabled: Indicates whether shielded instance is enabled at the Cluster level.
         :param Sequence['GetClustersClusterCollectionItemNetworkConfigurationArgs'] network_configurations: The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
@@ -1928,6 +2604,7 @@ class GetClustersClusterCollectionItemResult(dict):
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
@@ -1942,6 +2619,7 @@ class GetClustersClusterCollectionItemResult(dict):
         pulumi.set(__self__, "initial_commitment", initial_commitment)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
         pulumi.set(__self__, "network_configurations", network_configurations)
@@ -1973,6 +2651,14 @@ class GetClustersClusterCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Sequence['outputs.GetClustersClusterCollectionItemClusterByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2084,6 +2770,14 @@ class GetClustersClusterCollectionItemResult(dict):
         return pulumi.get(self, "initial_host_shape_name")
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> _builtins.str:
         """
@@ -2186,6 +2880,35 @@ class GetClustersClusterCollectionItemResult(dict):
         The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
         return pulumi.get(self, "workload_network_cidr")
+
+
+@pulumi.output_type
+class GetClustersClusterCollectionItemClusterByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: _builtins.str,
+                 vsan_byol_allocation_id: _builtins.str):
+        """
+        :param _builtins.str firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
 
 
 @pulumi.output_type
@@ -3123,9 +3846,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  id: _builtins.str,
                  is_billing_continuation_in_progress: _builtins.bool,
                  is_billing_swapping_in_progress: _builtins.bool,
+                 is_vsan_byol_enabled: _builtins.bool,
                  next_commitment: _builtins.str,
                  next_sku: _builtins.str,
                  non_upgraded_esxi_host_id: _builtins.str,
+                 primary_vnic_mac_address: _builtins.str,
                  replacement_esxi_host_id: _builtins.str,
                  sddc_id: _builtins.str,
                  state: _builtins.str,
@@ -3134,6 +3859,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  upgraded_replacement_esxi_host_id: _builtins.str,
+                 vcf_byol_allocation_id: _builtins.str,
                  vmware_software_version: _builtins.str):
         """
         :param _builtins.str billing_contract_end_date: Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -3158,6 +3884,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         :param _builtins.bool is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param _builtins.bool is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
+        :param _builtins.bool is_vsan_byol_enabled: Indicates whether this host embedded VMware vSAN with BYOL Allocation.
         :param _builtins.str next_commitment: The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.str next_sku: (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         :param _builtins.str non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
@@ -3169,6 +3896,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        :param _builtins.str vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
         :param _builtins.str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
@@ -3195,9 +3923,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
         pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+        pulumi.set(__self__, "is_vsan_byol_enabled", is_vsan_byol_enabled)
         pulumi.set(__self__, "next_commitment", next_commitment)
         pulumi.set(__self__, "next_sku", next_sku)
         pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        pulumi.set(__self__, "primary_vnic_mac_address", primary_vnic_mac_address)
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
@@ -3206,6 +3936,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        pulumi.set(__self__, "vcf_byol_allocation_id", vcf_byol_allocation_id)
         pulumi.set(__self__, "vmware_software_version", vmware_software_version)
 
     @_builtins.property
@@ -3398,6 +4129,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         return pulumi.get(self, "is_billing_swapping_in_progress")
 
     @_builtins.property
+    @pulumi.getter(name="isVsanByolEnabled")
+    def is_vsan_byol_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        """
+        return pulumi.get(self, "is_vsan_byol_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="nextCommitment")
     def next_commitment(self) -> _builtins.str:
         """
@@ -3422,6 +4161,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         """
         return pulumi.get(self, "non_upgraded_esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryVnicMacAddress")
+    def primary_vnic_mac_address(self) -> _builtins.str:
+        return pulumi.get(self, "primary_vnic_mac_address")
 
     @_builtins.property
     @pulumi.getter(name="replacementEsxiHostId")
@@ -3487,6 +4231,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         """
         return pulumi.get(self, "upgraded_replacement_esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vcfByolAllocationId")
+    def vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        """
+        return pulumi.get(self, "vcf_byol_allocation_id")
 
     @_builtins.property
     @pulumi.getter(name="vmwareSoftwareVersion")
@@ -3759,6 +4511,7 @@ class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  management_agent_id: _builtins.str,
+                 plugin_version: _builtins.str,
                  public_ssh_keys: _builtins.str,
                  sddc_id: _builtins.str,
                  state: _builtins.str,
@@ -3779,7 +4532,8 @@ class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
         :param _builtins.str lifecycle_details: Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
         :param _builtins.str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
-        :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        :param _builtins.str plugin_version: Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         :param _builtins.str state: The lifecycle state of the management appliance.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_configuration_updated: The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -3798,6 +4552,7 @@ class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "plugin_version", plugin_version)
         pulumi.set(__self__, "public_ssh_keys", public_ssh_keys)
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
@@ -3896,6 +4651,14 @@ class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
         return pulumi.get(self, "management_agent_id")
 
     @_builtins.property
+    @pulumi.getter(name="pluginVersion")
+    def plugin_version(self) -> _builtins.str:
+        """
+        Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        """
+        return pulumi.get(self, "plugin_version")
+
+    @_builtins.property
     @pulumi.getter(name="publicSshKeys")
     def public_ssh_keys(self) -> _builtins.str:
         return pulumi.get(self, "public_ssh_keys")
@@ -3904,7 +4667,7 @@ class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         """
         return pulumi.get(self, "sddc_id")
 
@@ -4180,6 +4943,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
     def __init__(__self__, *,
                  actual_esxi_hosts_count: _builtins.int,
                  capacity_reservation_id: _builtins.str,
+                 cluster_byol_allocation_details: Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult'],
                  compute_availability_domain: _builtins.str,
                  datastore_cluster_ids: Sequence[_builtins.str],
                  datastores: Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationDatastoreResult'],
@@ -4188,6 +4952,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
                  initial_commitment: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
+                 initial_vcf_byol_allocation_id: _builtins.str,
                  instance_display_name_prefix: _builtins.str,
                  is_shielded_instance_enabled: _builtins.bool,
                  network_configurations: Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult'],
@@ -4196,6 +4961,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         """
         :param _builtins.int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param Sequence['GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs'] cluster_byol_allocation_details: The BYOL allocations used for VMware Cluster provisioning.
         :param _builtins.str compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
         :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
@@ -4204,6 +4970,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+        :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param _builtins.str instance_display_name_prefix: (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
         :param _builtins.bool is_shielded_instance_enabled: (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
         :param Sequence['GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs'] network_configurations: The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
@@ -4212,6 +4979,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "datastores", datastores)
@@ -4220,6 +4988,7 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         pulumi.set(__self__, "initial_commitment", initial_commitment)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
         pulumi.set(__self__, "network_configurations", network_configurations)
@@ -4241,6 +5010,14 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Sequence['outputs.GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
@@ -4307,6 +5084,14 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         return pulumi.get(self, "initial_host_shape_name")
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> _builtins.str:
         """
@@ -4345,6 +5130,35 @@ class GetSddcInitialConfigurationInitialClusterConfigurationResult(dict):
         (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
         """
         return pulumi.get(self, "workload_network_cidr")
+
+
+@pulumi.output_type
+class GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: _builtins.str,
+                 vsan_byol_allocation_id: _builtins.str):
+        """
+        :param _builtins.str firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
 
 
 @pulumi.output_type
@@ -4505,6 +5319,35 @@ class GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration
 
 
 @pulumi.output_type
+class GetSddcSddcByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 load_balancer_byol_allocation_id: _builtins.str,
+                 load_balancer_instance_count: _builtins.int):
+        """
+        :param _builtins.str load_balancer_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        :param _builtins.int load_balancer_instance_count: The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        pulumi.set(__self__, "load_balancer_byol_allocation_id", load_balancer_byol_allocation_id)
+        pulumi.set(__self__, "load_balancer_instance_count", load_balancer_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerByolAllocationId")
+    def load_balancer_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        """
+        return pulumi.get(self, "load_balancer_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerInstanceCount")
+    def load_balancer_instance_count(self) -> _builtins.int:
+        """
+        The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        return pulumi.get(self, "load_balancer_instance_count")
+
+
+@pulumi.output_type
 class GetSddcUpgradeLicenseResult(dict):
     def __init__(__self__, *,
                  license_key: _builtins.str,
@@ -4637,6 +5480,7 @@ class GetSddcsSddcCollectionResult(dict):
                  refresh_hcx_license_status: _builtins.bool,
                  replication_vlan_id: _builtins.str,
                  reserving_hcx_on_premise_license_keys: Sequence[_builtins.str],
+                 sddc_byol_allocation_details: Sequence['outputs.GetSddcsSddcCollectionSddcByolAllocationDetailResult'],
                  ssh_authorized_keys: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -4691,6 +5535,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param _builtins.str provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
         :param _builtins.str provisioning_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
         :param _builtins.str replication_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        :param Sequence['GetSddcsSddcCollectionSddcByolAllocationDetailArgs'] sddc_byol_allocation_details: The BYOL allocations used for VMware SDDC provisioning.
         :param _builtins.str state: The lifecycle state of the resource.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -4747,6 +5592,7 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
         pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
         pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        pulumi.set(__self__, "sddc_byol_allocation_details", sddc_byol_allocation_details)
         pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -5118,6 +5964,14 @@ class GetSddcsSddcCollectionResult(dict):
         return pulumi.get(self, "reserving_hcx_on_premise_license_keys")
 
     @_builtins.property
+    @pulumi.getter(name="sddcByolAllocationDetails")
+    def sddc_byol_allocation_details(self) -> Sequence['outputs.GetSddcsSddcCollectionSddcByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware SDDC provisioning.
+        """
+        return pulumi.get(self, "sddc_byol_allocation_details")
+
+    @_builtins.property
     @pulumi.getter(name="sshAuthorizedKeys")
     def ssh_authorized_keys(self) -> _builtins.str:
         return pulumi.get(self, "ssh_authorized_keys")
@@ -5350,6 +6204,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
     def __init__(__self__, *,
                  actual_esxi_hosts_count: _builtins.int,
                  capacity_reservation_id: _builtins.str,
+                 cluster_byol_allocation_details: Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult'],
                  compute_availability_domain: _builtins.str,
                  datastore_cluster_ids: Sequence[_builtins.str],
                  datastores: Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult'],
@@ -5358,6 +6213,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
                  initial_commitment: _builtins.str,
                  initial_host_ocpu_count: _builtins.float,
                  initial_host_shape_name: _builtins.str,
+                 initial_vcf_byol_allocation_id: _builtins.str,
                  instance_display_name_prefix: _builtins.str,
                  is_shielded_instance_enabled: _builtins.bool,
                  network_configurations: Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult'],
@@ -5366,6 +6222,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         """
         :param _builtins.int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs'] cluster_byol_allocation_details: The BYOL allocations used for VMware Cluster provisioning.
         :param _builtins.str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         :param Sequence[_builtins.str] datastore_cluster_ids: A list of datastore clusters.
         :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs'] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
@@ -5374,6 +6231,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         :param _builtins.str initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param _builtins.float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
         :param _builtins.str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param _builtins.str initial_vcf_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
         :param _builtins.str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         :param _builtins.bool is_shielded_instance_enabled: (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
         :param Sequence['GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs'] network_configurations: The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
@@ -5382,6 +6240,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         pulumi.set(__self__, "datastores", datastores)
@@ -5390,6 +6249,7 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         pulumi.set(__self__, "initial_commitment", initial_commitment)
         pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
         pulumi.set(__self__, "network_configurations", network_configurations)
@@ -5411,6 +6271,14 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Sequence['outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="computeAvailabilityDomain")
@@ -5477,6 +6345,14 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         return pulumi.get(self, "initial_host_shape_name")
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> _builtins.str:
         """
@@ -5515,6 +6391,35 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResul
         The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         """
         return pulumi.get(self, "workload_network_cidr")
+
+
+@pulumi.output_type
+class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 firewall_byol_allocation_id: _builtins.str,
+                 vsan_byol_allocation_id: _builtins.str):
+        """
+        :param _builtins.str firewall_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        :param _builtins.str vsan_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        pulumi.set(__self__, "firewall_byol_allocation_id", firewall_byol_allocation_id)
+        pulumi.set(__self__, "vsan_byol_allocation_id", vsan_byol_allocation_id)
+
+    @_builtins.property
+    @pulumi.getter(name="firewallByolAllocationId")
+    def firewall_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+        """
+        return pulumi.get(self, "firewall_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vsanByolAllocationId")
+    def vsan_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+        """
+        return pulumi.get(self, "vsan_byol_allocation_id")
 
 
 @pulumi.output_type
@@ -5672,6 +6577,35 @@ class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetwo
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
         """
         return pulumi.get(self, "vsphere_vlan_id")
+
+
+@pulumi.output_type
+class GetSddcsSddcCollectionSddcByolAllocationDetailResult(dict):
+    def __init__(__self__, *,
+                 load_balancer_byol_allocation_id: _builtins.str,
+                 load_balancer_instance_count: _builtins.int):
+        """
+        :param _builtins.str load_balancer_byol_allocation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        :param _builtins.int load_balancer_instance_count: The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        pulumi.set(__self__, "load_balancer_byol_allocation_id", load_balancer_byol_allocation_id)
+        pulumi.set(__self__, "load_balancer_instance_count", load_balancer_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerByolAllocationId")
+    def load_balancer_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+        """
+        return pulumi.get(self, "load_balancer_byol_allocation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerInstanceCount")
+    def load_balancer_instance_count(self) -> _builtins.int:
+        """
+        The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+        """
+        return pulumi.get(self, "load_balancer_instance_count")
 
 
 @pulumi.output_type

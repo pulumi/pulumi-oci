@@ -69,6 +69,7 @@ import (
 type DbmulticloudOracleDbAwsKey struct {
 	pulumi.CustomResourceState
 
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// AWS Account ID.
 	AwsAccountId pulumi.StringOutput `pulumi:"awsAccountId"`
 	// Amazon resource name of AWS Key.
@@ -91,10 +92,14 @@ type DbmulticloudOracleDbAwsKey struct {
 	OracleDbConnectorId pulumi.StringOutput `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties pulumi.StringMapOutput `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB AWS Key resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrOutput `pulumi:"targetRegion"`
 	// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
@@ -145,6 +150,7 @@ func GetDbmulticloudOracleDbAwsKey(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbAwsKey resources.
 type dbmulticloudOracleDbAwsKeyState struct {
+	Action *string `pulumi:"action"`
 	// AWS Account ID.
 	AwsAccountId *string `pulumi:"awsAccountId"`
 	// Amazon resource name of AWS Key.
@@ -167,10 +173,14 @@ type dbmulticloudOracleDbAwsKeyState struct {
 	OracleDbConnectorId *string `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas []DbmulticloudOracleDbAwsKeyReplicationMetadata `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB AWS Key resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
@@ -183,6 +193,7 @@ type dbmulticloudOracleDbAwsKeyState struct {
 }
 
 type DbmulticloudOracleDbAwsKeyState struct {
+	Action pulumi.StringPtrInput
 	// AWS Account ID.
 	AwsAccountId pulumi.StringPtrInput
 	// Amazon resource name of AWS Key.
@@ -205,10 +216,14 @@ type DbmulticloudOracleDbAwsKeyState struct {
 	OracleDbConnectorId pulumi.StringPtrInput
 	// AWS Key resource's properties.
 	Properties pulumi.StringMapInput
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbAwsKeyReplicationMetadataArrayInput
 	// The lifecycle state of the Oracle DB AWS Key resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
 	TimeCreated pulumi.StringPtrInput
 	// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
@@ -225,6 +240,7 @@ func (DbmulticloudOracleDbAwsKeyState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbAwsKeyArgs struct {
+	Action *string `pulumi:"action"`
 	// AWS Account ID.
 	AwsAccountId *string `pulumi:"awsAccountId"`
 	// Amazon resource name of AWS Key.
@@ -245,6 +261,8 @@ type dbmulticloudOracleDbAwsKeyArgs struct {
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// AWS Key resource type.
 	//
 	// ** IMPORTANT **
@@ -254,6 +272,7 @@ type dbmulticloudOracleDbAwsKeyArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbAwsKey resource.
 type DbmulticloudOracleDbAwsKeyArgs struct {
+	Action pulumi.StringPtrInput
 	// AWS Account ID.
 	AwsAccountId pulumi.StringPtrInput
 	// Amazon resource name of AWS Key.
@@ -274,6 +293,8 @@ type DbmulticloudOracleDbAwsKeyArgs struct {
 	OracleDbConnectorId pulumi.StringInput
 	// AWS Key resource's properties.
 	Properties pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// AWS Key resource type.
 	//
 	// ** IMPORTANT **
@@ -368,6 +389,10 @@ func (o DbmulticloudOracleDbAwsKeyOutput) ToDbmulticloudOracleDbAwsKeyOutputWith
 	return o
 }
 
+func (o DbmulticloudOracleDbAwsKeyOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // AWS Account ID.
 func (o DbmulticloudOracleDbAwsKeyOutput) AwsAccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringOutput { return v.AwsAccountId }).(pulumi.StringOutput)
@@ -423,6 +448,13 @@ func (o DbmulticloudOracleDbAwsKeyOutput) Properties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
+// Replication metadata, it has information about replication and target region.
+func (o DbmulticloudOracleDbAwsKeyOutput) ReplicationMetadatas() DbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) DbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput {
+		return v.ReplicationMetadatas
+	}).(DbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput)
+}
+
 // The lifecycle state of the Oracle DB AWS Key resource.
 func (o DbmulticloudOracleDbAwsKeyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -431,6 +463,11 @@ func (o DbmulticloudOracleDbAwsKeyOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DbmulticloudOracleDbAwsKeyOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target region, where resource is replicated.
+func (o DbmulticloudOracleDbAwsKeyOutput) TargetRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAwsKey) pulumi.StringPtrOutput { return v.TargetRegion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.

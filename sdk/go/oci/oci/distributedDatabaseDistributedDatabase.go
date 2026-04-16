@@ -23,6 +23,8 @@ import (
 //
 // operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
 // and remove in single operation is not allowed.
+// For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+// will also delete the associated VmCluster and DbStorageVault.
 //
 // ## Example Usage
 //
@@ -41,21 +43,63 @@ import (
 //			_, err := oci.NewDistributedDatabaseDistributedDatabase(ctx, "test_distributed_database", &oci.DistributedDatabaseDistributedDatabaseArgs{
 //				CatalogDetails: oci.DistributedDatabaseDistributedDatabaseCatalogDetailArray{
 //					&oci.DistributedDatabaseDistributedDatabaseCatalogDetailArgs{
-//						AdminPassword:   pulumi.Any(distributedDatabaseCatalogDetailsAdminPassword),
-//						Source:          pulumi.Any(distributedDatabaseCatalogDetailsSource),
-//						VmClusterId:     pulumi.Any(testVmCluster.Id),
+//						AdminPassword:      pulumi.Any(distributedDatabaseCatalogDetailsAdminPassword),
+//						Source:             pulumi.Any(distributedDatabaseCatalogDetailsSource),
+//						AvailabilityDomain: pulumi.Any(distributedDatabaseCatalogDetailsAvailabilityDomain),
+//						DbStorageVaultDetails: &oci.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs{
+//							AdditionalFlashCacheInPercent: pulumi.Any(distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+//							HighCapacityDatabaseStorage:   pulumi.Any(distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
+//						},
 //						KmsKeyId:        pulumi.Any(testKey.Id),
 //						KmsKeyVersionId: pulumi.Any(testKeyVersion.Id),
 //						PeerDetails: oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArray{
 //							&oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs{
-//								VmClusterId:    pulumi.Any(testVmCluster.Id),
+//								AvailabilityDomain: pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsAvailabilityDomain),
+//								DbStorageVaultDetails: &oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs{
+//									AdditionalFlashCacheInPercent: pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+//									HighCapacityDatabaseStorage:   pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
+//								},
 //								ProtectionMode: pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsProtectionMode),
 //								TransportType:  pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsTransportType),
+//								VmClusterDetails: &oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs{
+//									BackupNetworkNsgIds:        pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds),
+//									BackupSubnetId:             pulumi.Any(testSubnet.Id),
+//									Domain:                     pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsDomain),
+//									EnabledEcpuCount:           pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount),
+//									IsDiagnosticsEventsEnabled: pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled),
+//									IsHealthMonitoringEnabled:  pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled),
+//									IsIncidentLogsEnabled:      pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled),
+//									LicenseModel:               pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsLicenseModel),
+//									NsgIds:                     pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsNsgIds),
+//									PrivateZoneId:              pulumi.Any(testZone.Id),
+//									SshPublicKeys:              pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsSshPublicKeys),
+//									SubnetId:                   pulumi.Any(testSubnet.Id),
+//									TotalEcpuCount:             pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount),
+//									VmFileSystemStorageSize:    pulumi.Any(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize),
+//								},
+//								VmClusterId: pulumi.Any(testVmCluster.Id),
 //							},
 //						},
 //						PeerVmClusterIds: pulumi.Any(distributedDatabaseCatalogDetailsPeerVmClusterIds),
 //						ShardSpace:       pulumi.Any(distributedDatabaseCatalogDetailsShardSpace),
 //						VaultId:          pulumi.Any(testVault.Id),
+//						VmClusterDetails: &oci.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs{
+//							BackupNetworkNsgIds:        pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsBackupNetworkNsgIds),
+//							BackupSubnetId:             pulumi.Any(testSubnet.Id),
+//							Domain:                     pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsDomain),
+//							EnabledEcpuCount:           pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount),
+//							IsDiagnosticsEventsEnabled: pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled),
+//							IsHealthMonitoringEnabled:  pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled),
+//							IsIncidentLogsEnabled:      pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled),
+//							LicenseModel:               pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsLicenseModel),
+//							NsgIds:                     pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsNsgIds),
+//							PrivateZoneId:              pulumi.Any(testZone.Id),
+//							SshPublicKeys:              pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsSshPublicKeys),
+//							SubnetId:                   pulumi.Any(testSubnet.Id),
+//							TotalEcpuCount:             pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount),
+//							VmFileSystemStorageSize:    pulumi.Any(distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize),
+//						},
+//						VmClusterId: pulumi.Any(testVmCluster.Id),
 //					},
 //				},
 //				CharacterSet:          pulumi.Any(distributedDatabaseCharacterSet),
@@ -72,21 +116,63 @@ import (
 //				PrivateEndpointIds:    pulumi.Any(distributedDatabasePrivateEndpointIds),
 //				ShardDetails: oci.DistributedDatabaseDistributedDatabaseShardDetailArray{
 //					&oci.DistributedDatabaseDistributedDatabaseShardDetailArgs{
-//						AdminPassword:   pulumi.Any(distributedDatabaseShardDetailsAdminPassword),
-//						Source:          pulumi.Any(distributedDatabaseShardDetailsSource),
-//						VmClusterId:     pulumi.Any(testVmCluster.Id),
+//						AdminPassword:      pulumi.Any(distributedDatabaseShardDetailsAdminPassword),
+//						Source:             pulumi.Any(distributedDatabaseShardDetailsSource),
+//						AvailabilityDomain: pulumi.Any(distributedDatabaseShardDetailsAvailabilityDomain),
+//						DbStorageVaultDetails: &oci.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs{
+//							AdditionalFlashCacheInPercent: pulumi.Any(distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+//							HighCapacityDatabaseStorage:   pulumi.Any(distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
+//						},
 //						KmsKeyId:        pulumi.Any(testKey.Id),
 //						KmsKeyVersionId: pulumi.Any(testKeyVersion.Id),
 //						PeerDetails: oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArray{
 //							&oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs{
-//								VmClusterId:    pulumi.Any(testVmCluster.Id),
+//								AvailabilityDomain: pulumi.Any(distributedDatabaseShardDetailsPeerDetailsAvailabilityDomain),
+//								DbStorageVaultDetails: &oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs{
+//									AdditionalFlashCacheInPercent: pulumi.Any(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+//									HighCapacityDatabaseStorage:   pulumi.Any(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
+//								},
 //								ProtectionMode: pulumi.Any(distributedDatabaseShardDetailsPeerDetailsProtectionMode),
 //								TransportType:  pulumi.Any(distributedDatabaseShardDetailsPeerDetailsTransportType),
+//								VmClusterDetails: &oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs{
+//									BackupNetworkNsgIds:        pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds),
+//									BackupSubnetId:             pulumi.Any(testSubnet.Id),
+//									Domain:                     pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsDomain),
+//									EnabledEcpuCount:           pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount),
+//									IsDiagnosticsEventsEnabled: pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled),
+//									IsHealthMonitoringEnabled:  pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled),
+//									IsIncidentLogsEnabled:      pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled),
+//									LicenseModel:               pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsLicenseModel),
+//									NsgIds:                     pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsNsgIds),
+//									PrivateZoneId:              pulumi.Any(testZone.Id),
+//									SshPublicKeys:              pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsSshPublicKeys),
+//									SubnetId:                   pulumi.Any(testSubnet.Id),
+//									TotalEcpuCount:             pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount),
+//									VmFileSystemStorageSize:    pulumi.Any(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize),
+//								},
+//								VmClusterId: pulumi.Any(testVmCluster.Id),
 //							},
 //						},
 //						PeerVmClusterIds: pulumi.Any(distributedDatabaseShardDetailsPeerVmClusterIds),
 //						ShardSpace:       pulumi.Any(distributedDatabaseShardDetailsShardSpace),
 //						VaultId:          pulumi.Any(testVault.Id),
+//						VmClusterDetails: &oci.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs{
+//							BackupNetworkNsgIds:        pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsBackupNetworkNsgIds),
+//							BackupSubnetId:             pulumi.Any(testSubnet.Id),
+//							Domain:                     pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsDomain),
+//							EnabledEcpuCount:           pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount),
+//							IsDiagnosticsEventsEnabled: pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled),
+//							IsHealthMonitoringEnabled:  pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled),
+//							IsIncidentLogsEnabled:      pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled),
+//							LicenseModel:               pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsLicenseModel),
+//							NsgIds:                     pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsNsgIds),
+//							PrivateZoneId:              pulumi.Any(testZone.Id),
+//							SshPublicKeys:              pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsSshPublicKeys),
+//							SubnetId:                   pulumi.Any(testSubnet.Id),
+//							TotalEcpuCount:             pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount),
+//							VmFileSystemStorageSize:    pulumi.Any(distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize),
+//						},
+//						VmClusterId: pulumi.Any(testVmCluster.Id),
 //					},
 //				},
 //				ShardingMethod: pulumi.Any(distributedDatabaseShardingMethod),
@@ -133,6 +219,7 @@ import (
 //				ReplicationFactor: pulumi.Any(distributedDatabaseReplicationFactor),
 //				ReplicationMethod: pulumi.Any(distributedDatabaseReplicationMethod),
 //				ReplicationUnit:   pulumi.Any(distributedDatabaseReplicationUnit),
+//				ScanListenerPort:  pulumi.Any(distributedDatabaseScanListenerPort),
 //			})
 //			if err != nil {
 //				return err
@@ -209,6 +296,8 @@ type DistributedDatabaseDistributedDatabase struct {
 	ListenerPortTls pulumi.IntOutput `pulumi:"listenerPortTls"`
 	// Additional metadata related to Globally distributed database resources.
 	Metadatas DistributedDatabaseDistributedDatabaseMetadataArrayOutput `pulumi:"metadatas"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrOutput `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
 	// The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
@@ -221,12 +310,16 @@ type DistributedDatabaseDistributedDatabase struct {
 	Prefix pulumi.StringOutput `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayOutput `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrOutput `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntOutput `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 	ReplicationMethod pulumi.StringOutput `pulumi:"replicationMethod"`
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit pulumi.IntOutput `pulumi:"replicationUnit"`
+	// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+	ScanListenerPort pulumi.IntOutput `pulumi:"scanListenerPort"`
 	// Collection of shards for the Globally distributed database.
 	ShardDetails DistributedDatabaseDistributedDatabaseShardDetailArrayOutput `pulumi:"shardDetails"`
 	// Sharding Methods for the Globally distributed database.
@@ -391,6 +484,8 @@ type distributedDatabaseDistributedDatabaseState struct {
 	ListenerPortTls *int `pulumi:"listenerPortTls"`
 	// Additional metadata related to Globally distributed database resources.
 	Metadatas []DistributedDatabaseDistributedDatabaseMetadata `pulumi:"metadatas"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger *int `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
@@ -403,12 +498,16 @@ type distributedDatabaseDistributedDatabaseState struct {
 	Prefix *string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger *int `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor *int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 	ReplicationMethod *string `pulumi:"replicationMethod"`
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit *int `pulumi:"replicationUnit"`
+	// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+	ScanListenerPort *int `pulumi:"scanListenerPort"`
 	// Collection of shards for the Globally distributed database.
 	ShardDetails []DistributedDatabaseDistributedDatabaseShardDetail `pulumi:"shardDetails"`
 	// Sharding Methods for the Globally distributed database.
@@ -494,6 +593,8 @@ type DistributedDatabaseDistributedDatabaseState struct {
 	ListenerPortTls pulumi.IntPtrInput
 	// Additional metadata related to Globally distributed database resources.
 	Metadatas DistributedDatabaseDistributedDatabaseMetadataArrayInput
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringPtrInput
 	// The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
@@ -506,12 +607,16 @@ type DistributedDatabaseDistributedDatabaseState struct {
 	Prefix pulumi.StringPtrInput
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrInput
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntPtrInput
 	// The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 	ReplicationMethod pulumi.StringPtrInput
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit pulumi.IntPtrInput
+	// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+	ScanListenerPort pulumi.IntPtrInput
 	// Collection of shards for the Globally distributed database.
 	ShardDetails DistributedDatabaseDistributedDatabaseShardDetailArrayInput
 	// Sharding Methods for the Globally distributed database.
@@ -587,6 +692,8 @@ type distributedDatabaseDistributedDatabaseArgs struct {
 	ListenerPort int `pulumi:"listenerPort"`
 	// The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
 	ListenerPortTls *int `pulumi:"listenerPortTls"`
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger *int `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
@@ -599,12 +706,16 @@ type distributedDatabaseDistributedDatabaseArgs struct {
 	Prefix string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger *int `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor *int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 	ReplicationMethod *string `pulumi:"replicationMethod"`
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit *int `pulumi:"replicationUnit"`
+	// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+	ScanListenerPort *int `pulumi:"scanListenerPort"`
 	// Collection of shards for the Globally distributed database.
 	ShardDetails []DistributedDatabaseDistributedDatabaseShardDetail `pulumi:"shardDetails"`
 	// Sharding Methods for the Globally distributed database.
@@ -671,6 +782,8 @@ type DistributedDatabaseDistributedDatabaseArgs struct {
 	ListenerPort pulumi.IntInput
 	// The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
 	ListenerPortTls pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+	MoveReplicationUnitTrigger pulumi.IntPtrInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput
 	// The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
@@ -683,12 +796,16 @@ type DistributedDatabaseDistributedDatabaseArgs struct {
 	Prefix pulumi.StringInput
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
 	PrivateEndpointIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+	RecreateFailedResourceTrigger pulumi.IntPtrInput
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor pulumi.IntPtrInput
 	// The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 	ReplicationMethod pulumi.StringPtrInput
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit pulumi.IntPtrInput
+	// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+	ScanListenerPort pulumi.IntPtrInput
 	// Collection of shards for the Globally distributed database.
 	ShardDetails DistributedDatabaseDistributedDatabaseShardDetailArrayInput
 	// Sharding Methods for the Globally distributed database.
@@ -971,6 +1088,13 @@ func (o DistributedDatabaseDistributedDatabaseOutput) Metadatas() DistributedDat
 	}).(DistributedDatabaseDistributedDatabaseMetadataArrayOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+func (o DistributedDatabaseDistributedDatabaseOutput) MoveReplicationUnitTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntPtrOutput {
+		return v.MoveReplicationUnitTrigger
+	}).(pulumi.IntPtrOutput)
+}
+
 // The national character set for the database.
 func (o DistributedDatabaseDistributedDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -1003,6 +1127,13 @@ func (o DistributedDatabaseDistributedDatabaseOutput) PrivateEndpointIds() pulum
 	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.StringArrayOutput { return v.PrivateEndpointIds }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+func (o DistributedDatabaseDistributedDatabaseOutput) RecreateFailedResourceTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntPtrOutput {
+		return v.RecreateFailedResourceTrigger
+	}).(pulumi.IntPtrOutput)
+}
+
 // The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 func (o DistributedDatabaseDistributedDatabaseOutput) ReplicationFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntOutput { return v.ReplicationFactor }).(pulumi.IntOutput)
@@ -1016,6 +1147,11 @@ func (o DistributedDatabaseDistributedDatabaseOutput) ReplicationMethod() pulumi
 // The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 func (o DistributedDatabaseDistributedDatabaseOutput) ReplicationUnit() pulumi.IntOutput {
 	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntOutput { return v.ReplicationUnit }).(pulumi.IntOutput)
+}
+
+// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+func (o DistributedDatabaseDistributedDatabaseOutput) ScanListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntOutput { return v.ScanListenerPort }).(pulumi.IntOutput)
 }
 
 // Collection of shards for the Globally distributed database.

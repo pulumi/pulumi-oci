@@ -25,15 +25,15 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
      * Admin password for shard database.
      * 
      */
-    @Import(name="adminPassword", required=true)
-    private Output<String> adminPassword;
+    @Import(name="adminPassword")
+    private @Nullable Output<String> adminPassword;
 
     /**
      * @return Admin password for shard database.
      * 
      */
-    public Output<String> adminPassword() {
-        return this.adminPassword;
+    public Optional<Output<String>> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
 
     /**
@@ -169,6 +169,36 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The OKV endpoint name.
+     * 
+     */
+    @Import(name="okvEndPointGroup")
+    private @Nullable Output<String> okvEndPointGroup;
+
+    /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    public Optional<Output<String>> okvEndPointGroup() {
+        return Optional.ofNullable(this.okvEndPointGroup);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    @Import(name="okvKeyStoreId")
+    private @Nullable Output<String> okvKeyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    public Optional<Output<String>> okvKeyStoreId() {
+        return Optional.ofNullable(this.okvKeyStoreId);
     }
 
     /**
@@ -334,6 +364,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.metadatas = $.metadatas;
         this.name = $.name;
+        this.okvEndPointGroup = $.okvEndPointGroup;
+        this.okvKeyStoreId = $.okvKeyStoreId;
         this.peerCloudAutonomousVmClusterIds = $.peerCloudAutonomousVmClusterIds;
         this.peerDetails = $.peerDetails;
         this.shardGroup = $.shardGroup;
@@ -370,7 +402,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
          * @return builder
          * 
          */
-        public Builder adminPassword(Output<String> adminPassword) {
+        public Builder adminPassword(@Nullable Output<String> adminPassword) {
             $.adminPassword = adminPassword;
             return this;
         }
@@ -582,6 +614,48 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param okvEndPointGroup The OKV endpoint name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroup(@Nullable Output<String> okvEndPointGroup) {
+            $.okvEndPointGroup = okvEndPointGroup;
+            return this;
+        }
+
+        /**
+         * @param okvEndPointGroup The OKV endpoint name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroup(String okvEndPointGroup) {
+            return okvEndPointGroup(Output.of(okvEndPointGroup));
+        }
+
+        /**
+         * @param okvKeyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvKeyStoreId(@Nullable Output<String> okvKeyStoreId) {
+            $.okvKeyStoreId = okvKeyStoreId;
+            return this;
+        }
+
+        /**
+         * @param okvKeyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvKeyStoreId(String okvKeyStoreId) {
+            return okvKeyStoreId(Output.of(okvKeyStoreId));
         }
 
         /**
@@ -815,9 +889,6 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailAr
         }
 
         public DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs build() {
-            if ($.adminPassword == null) {
-                throw new MissingRequiredPropertyException("DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs", "adminPassword");
-            }
             if ($.cloudAutonomousVmClusterId == null) {
                 throw new MissingRequiredPropertyException("DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs", "cloudAutonomousVmClusterId");
             }

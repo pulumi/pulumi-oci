@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FusionApps.FusionEnvironmentArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentState;
+import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentAdditionalEgressRule;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentKmsKeyInfo;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentMaintenancePolicy;
@@ -41,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FusionApps.FusionEnvironment;
  * import com.pulumi.oci.FusionApps.FusionEnvironmentArgs;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs;
+ * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentAdditionalEgressRuleArgs;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleArgs;
  * import java.util.List;
@@ -67,6 +69,12 @@ import javax.annotation.Nullable;
  *             .displayName(fusionEnvironmentDisplayName)
  *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
  *             .fusionEnvironmentType(fusionEnvironmentFusionEnvironmentType)
+ *             .additionalEgressRules(FusionEnvironmentAdditionalEgressRuleArgs.builder()
+ *                 .description(fusionEnvironmentAdditionalEgressRulesDescription)
+ *                 .destinationCidr(fusionEnvironmentAdditionalEgressRulesDestinationCidr)
+ *                 .maxDestinationPort(fusionEnvironmentAdditionalEgressRulesMaxDestinationPort)
+ *                 .minDestinationPort(fusionEnvironmentAdditionalEgressRulesMinDestinationPort)
+ *                 .build())
  *             .additionalLanguagePacks(fusionEnvironmentAdditionalLanguagePacks)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .dnsPrefix(fusionEnvironmentDnsPrefix)
@@ -103,6 +111,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:FusionApps/fusionEnvironment:FusionEnvironment")
 public class FusionEnvironment extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    @Export(name="additionalEgressRules", refs={List.class,FusionEnvironmentAdditionalEgressRule.class}, tree="[0,1]")
+    private Output<List<FusionEnvironmentAdditionalEgressRule>> additionalEgressRules;
+
+    /**
+     * @return (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    public Output<List<FusionEnvironmentAdditionalEgressRule>> additionalEgressRules() {
+        return this.additionalEgressRules;
+    }
     /**
      * (Updatable) Language packs.
      * 
@@ -286,14 +308,14 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
         return this.isBreakGlassEnabled;
     }
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      * 
      */
     @Export(name="isIpv6dualStackEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIpv6dualStackEnabled;
 
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      * 
      */
     public Output<Boolean> isIpv6dualStackEnabled() {

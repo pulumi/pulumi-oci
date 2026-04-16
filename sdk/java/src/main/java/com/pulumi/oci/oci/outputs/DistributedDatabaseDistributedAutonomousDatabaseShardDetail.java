@@ -21,7 +21,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
      * @return Admin password for shard database.
      * 
      */
-    private String adminPassword;
+    private @Nullable String adminPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
@@ -67,6 +67,16 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    private @Nullable String okvEndPointGroup;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    private @Nullable String okvKeyStoreId;
     /**
      * @return This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
      * 
@@ -123,8 +133,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
      * @return Admin password for shard database.
      * 
      */
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -188,6 +198,20 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    public Optional<String> okvEndPointGroup() {
+        return Optional.ofNullable(this.okvEndPointGroup);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    public Optional<String> okvKeyStoreId() {
+        return Optional.ofNullable(this.okvKeyStoreId);
     }
     /**
      * @return This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
@@ -269,7 +293,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminPassword;
+        private @Nullable String adminPassword;
         private String cloudAutonomousVmClusterId;
         private Double computeCount;
         private @Nullable String containerDatabaseId;
@@ -279,6 +303,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
         private @Nullable String kmsKeyVersionId;
         private @Nullable List<DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata> metadatas;
         private @Nullable String name;
+        private @Nullable String okvEndPointGroup;
+        private @Nullable String okvKeyStoreId;
         private @Nullable List<String> peerCloudAutonomousVmClusterIds;
         private @Nullable List<DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail> peerDetails;
         private @Nullable String shardGroup;
@@ -302,6 +328,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
+    	      this.okvEndPointGroup = defaults.okvEndPointGroup;
+    	      this.okvKeyStoreId = defaults.okvKeyStoreId;
     	      this.peerCloudAutonomousVmClusterIds = defaults.peerCloudAutonomousVmClusterIds;
     	      this.peerDetails = defaults.peerDetails;
     	      this.shardGroup = defaults.shardGroup;
@@ -315,10 +343,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
         }
 
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            if (adminPassword == null) {
-              throw new MissingRequiredPropertyException("DistributedDatabaseDistributedAutonomousDatabaseShardDetail", "adminPassword");
-            }
+        public Builder adminPassword(@Nullable String adminPassword) {
+
             this.adminPassword = adminPassword;
             return this;
         }
@@ -385,6 +411,18 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
         public Builder name(@Nullable String name) {
 
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder okvEndPointGroup(@Nullable String okvEndPointGroup) {
+
+            this.okvEndPointGroup = okvEndPointGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder okvKeyStoreId(@Nullable String okvKeyStoreId) {
+
+            this.okvKeyStoreId = okvKeyStoreId;
             return this;
         }
         @CustomType.Setter
@@ -467,6 +505,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
+            _resultValue.okvEndPointGroup = okvEndPointGroup;
+            _resultValue.okvKeyStoreId = okvKeyStoreId;
             _resultValue.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             _resultValue.peerDetails = peerDetails;
             _resultValue.shardGroup = shardGroup;

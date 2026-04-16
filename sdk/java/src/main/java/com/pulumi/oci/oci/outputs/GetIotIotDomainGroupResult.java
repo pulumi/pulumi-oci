@@ -84,7 +84,7 @@ public final class GetIotIotDomainGroupResult {
      */
     private String timeUpdated;
     /**
-     * @return Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * @return Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
      * 
      */
     private String type;
@@ -192,7 +192,7 @@ public final class GetIotIotDomainGroupResult {
         return this.timeUpdated;
     }
     /**
-     * @return Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * @return Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
      * 
      */
     public String type() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy;
@@ -18,6 +19,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
+    /**
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules;
     /**
      * @return Language packs
      * 
@@ -85,7 +91,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      */
     private Boolean isBreakGlassEnabled;
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * 
      */
     private Boolean isIpv6dualStackEnabled;
@@ -166,6 +172,13 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     private String version;
 
     private GetFusionEnvironmentsFusionEnvironmentCollectionItem() {}
+    /**
+     * @return Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules() {
+        return this.additionalEgressRules;
+    }
     /**
      * @return Language packs
      * 
@@ -261,7 +274,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         return this.isBreakGlassEnabled;
     }
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      * 
      */
     public Boolean isIpv6dualStackEnabled() {
@@ -382,6 +395,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules;
         private List<String> additionalLanguagePacks;
         private List<String> appliedPatchBundles;
         private String compartmentId;
@@ -415,6 +429,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         public Builder() {}
         public Builder(GetFusionEnvironmentsFusionEnvironmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalEgressRules = defaults.additionalEgressRules;
     	      this.additionalLanguagePacks = defaults.additionalLanguagePacks;
     	      this.appliedPatchBundles = defaults.appliedPatchBundles;
     	      this.compartmentId = defaults.compartmentId;
@@ -447,6 +462,17 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder additionalEgressRules(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule> additionalEgressRules) {
+            if (additionalEgressRules == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "additionalEgressRules");
+            }
+            this.additionalEgressRules = additionalEgressRules;
+            return this;
+        }
+        public Builder additionalEgressRules(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule... additionalEgressRules) {
+            return additionalEgressRules(List.of(additionalEgressRules));
+        }
         @CustomType.Setter
         public Builder additionalLanguagePacks(List<String> additionalLanguagePacks) {
             if (additionalLanguagePacks == null) {
@@ -713,6 +739,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItem build() {
             final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItem();
+            _resultValue.additionalEgressRules = additionalEgressRules;
             _resultValue.additionalLanguagePacks = additionalLanguagePacks;
             _resultValue.appliedPatchBundles = appliedPatchBundles;
             _resultValue.compartmentId = compartmentId;

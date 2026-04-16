@@ -38,6 +38,8 @@ import javax.annotation.Nullable;
  *   Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
  * operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
  * and remove in single operation is not allowed.
+ * For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+ * will also delete the associated VmCluster and DbStorageVault.
  * 
  * ## Example Usage
  * 
@@ -51,7 +53,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.DistributedDatabaseDistributedDatabase;
  * import com.pulumi.oci.oci.DistributedDatabaseDistributedDatabaseArgs;
  * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailArgs;
+ * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs;
+ * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs;
  * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailArgs;
+ * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs;
+ * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs;
  * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseDbBackupConfigArgs;
  * import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabasePatchOperationArgs;
  * import java.util.List;
@@ -71,17 +77,59 @@ import javax.annotation.Nullable;
  *             .catalogDetails(DistributedDatabaseDistributedDatabaseCatalogDetailArgs.builder()
  *                 .adminPassword(distributedDatabaseCatalogDetailsAdminPassword)
  *                 .source(distributedDatabaseCatalogDetailsSource)
- *                 .vmClusterId(testVmCluster.id())
+ *                 .availabilityDomain(distributedDatabaseCatalogDetailsAvailabilityDomain)
+ *                 .dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs.builder()
+ *                     .additionalFlashCacheInPercent(distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent)
+ *                     .highCapacityDatabaseStorage(distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage)
+ *                     .build())
  *                 .kmsKeyId(testKey.id())
  *                 .kmsKeyVersionId(testKeyVersion.id())
  *                 .peerDetails(DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs.builder()
- *                     .vmClusterId(testVmCluster.id())
+ *                     .availabilityDomain(distributedDatabaseCatalogDetailsPeerDetailsAvailabilityDomain)
+ *                     .dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs.builder()
+ *                         .additionalFlashCacheInPercent(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent)
+ *                         .highCapacityDatabaseStorage(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage)
+ *                         .build())
  *                     .protectionMode(distributedDatabaseCatalogDetailsPeerDetailsProtectionMode)
  *                     .transportType(distributedDatabaseCatalogDetailsPeerDetailsTransportType)
+ *                     .vmClusterDetails(DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs.builder()
+ *                         .backupNetworkNsgIds(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds)
+ *                         .backupSubnetId(testSubnet.id())
+ *                         .domain(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsDomain)
+ *                         .enabledEcpuCount(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount)
+ *                         .isDiagnosticsEventsEnabled(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled)
+ *                         .isHealthMonitoringEnabled(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled)
+ *                         .isIncidentLogsEnabled(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled)
+ *                         .licenseModel(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsLicenseModel)
+ *                         .nsgIds(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsNsgIds)
+ *                         .privateZoneId(testZone.id())
+ *                         .sshPublicKeys(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsSshPublicKeys)
+ *                         .subnetId(testSubnet.id())
+ *                         .totalEcpuCount(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount)
+ *                         .vmFileSystemStorageSize(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize)
+ *                         .build())
+ *                     .vmClusterId(testVmCluster.id())
  *                     .build())
  *                 .peerVmClusterIds(distributedDatabaseCatalogDetailsPeerVmClusterIds)
  *                 .shardSpace(distributedDatabaseCatalogDetailsShardSpace)
  *                 .vaultId(testVault.id())
+ *                 .vmClusterDetails(DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs.builder()
+ *                     .backupNetworkNsgIds(distributedDatabaseCatalogDetailsVmClusterDetailsBackupNetworkNsgIds)
+ *                     .backupSubnetId(testSubnet.id())
+ *                     .domain(distributedDatabaseCatalogDetailsVmClusterDetailsDomain)
+ *                     .enabledEcpuCount(distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount)
+ *                     .isDiagnosticsEventsEnabled(distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled)
+ *                     .isHealthMonitoringEnabled(distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled)
+ *                     .isIncidentLogsEnabled(distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled)
+ *                     .licenseModel(distributedDatabaseCatalogDetailsVmClusterDetailsLicenseModel)
+ *                     .nsgIds(distributedDatabaseCatalogDetailsVmClusterDetailsNsgIds)
+ *                     .privateZoneId(testZone.id())
+ *                     .sshPublicKeys(distributedDatabaseCatalogDetailsVmClusterDetailsSshPublicKeys)
+ *                     .subnetId(testSubnet.id())
+ *                     .totalEcpuCount(distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount)
+ *                     .vmFileSystemStorageSize(distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize)
+ *                     .build())
+ *                 .vmClusterId(testVmCluster.id())
  *                 .build())
  *             .characterSet(distributedDatabaseCharacterSet)
  *             .compartmentId(compartmentId)
@@ -98,17 +146,59 @@ import javax.annotation.Nullable;
  *             .shardDetails(DistributedDatabaseDistributedDatabaseShardDetailArgs.builder()
  *                 .adminPassword(distributedDatabaseShardDetailsAdminPassword)
  *                 .source(distributedDatabaseShardDetailsSource)
- *                 .vmClusterId(testVmCluster.id())
+ *                 .availabilityDomain(distributedDatabaseShardDetailsAvailabilityDomain)
+ *                 .dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs.builder()
+ *                     .additionalFlashCacheInPercent(distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent)
+ *                     .highCapacityDatabaseStorage(distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage)
+ *                     .build())
  *                 .kmsKeyId(testKey.id())
  *                 .kmsKeyVersionId(testKeyVersion.id())
  *                 .peerDetails(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs.builder()
- *                     .vmClusterId(testVmCluster.id())
+ *                     .availabilityDomain(distributedDatabaseShardDetailsPeerDetailsAvailabilityDomain)
+ *                     .dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs.builder()
+ *                         .additionalFlashCacheInPercent(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent)
+ *                         .highCapacityDatabaseStorage(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage)
+ *                         .build())
  *                     .protectionMode(distributedDatabaseShardDetailsPeerDetailsProtectionMode)
  *                     .transportType(distributedDatabaseShardDetailsPeerDetailsTransportType)
+ *                     .vmClusterDetails(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs.builder()
+ *                         .backupNetworkNsgIds(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds)
+ *                         .backupSubnetId(testSubnet.id())
+ *                         .domain(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsDomain)
+ *                         .enabledEcpuCount(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount)
+ *                         .isDiagnosticsEventsEnabled(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled)
+ *                         .isHealthMonitoringEnabled(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled)
+ *                         .isIncidentLogsEnabled(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled)
+ *                         .licenseModel(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsLicenseModel)
+ *                         .nsgIds(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsNsgIds)
+ *                         .privateZoneId(testZone.id())
+ *                         .sshPublicKeys(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsSshPublicKeys)
+ *                         .subnetId(testSubnet.id())
+ *                         .totalEcpuCount(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount)
+ *                         .vmFileSystemStorageSize(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize)
+ *                         .build())
+ *                     .vmClusterId(testVmCluster.id())
  *                     .build())
  *                 .peerVmClusterIds(distributedDatabaseShardDetailsPeerVmClusterIds)
  *                 .shardSpace(distributedDatabaseShardDetailsShardSpace)
  *                 .vaultId(testVault.id())
+ *                 .vmClusterDetails(DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs.builder()
+ *                     .backupNetworkNsgIds(distributedDatabaseShardDetailsVmClusterDetailsBackupNetworkNsgIds)
+ *                     .backupSubnetId(testSubnet.id())
+ *                     .domain(distributedDatabaseShardDetailsVmClusterDetailsDomain)
+ *                     .enabledEcpuCount(distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount)
+ *                     .isDiagnosticsEventsEnabled(distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled)
+ *                     .isHealthMonitoringEnabled(distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled)
+ *                     .isIncidentLogsEnabled(distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled)
+ *                     .licenseModel(distributedDatabaseShardDetailsVmClusterDetailsLicenseModel)
+ *                     .nsgIds(distributedDatabaseShardDetailsVmClusterDetailsNsgIds)
+ *                     .privateZoneId(testZone.id())
+ *                     .sshPublicKeys(distributedDatabaseShardDetailsVmClusterDetailsSshPublicKeys)
+ *                     .subnetId(testSubnet.id())
+ *                     .totalEcpuCount(distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount)
+ *                     .vmFileSystemStorageSize(distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize)
+ *                     .build())
+ *                 .vmClusterId(testVmCluster.id())
  *                 .build())
  *             .shardingMethod(distributedDatabaseShardingMethod)
  *             .chunks(distributedDatabaseChunks)
@@ -146,6 +236,7 @@ import javax.annotation.Nullable;
  *             .replicationFactor(distributedDatabaseReplicationFactor)
  *             .replicationMethod(distributedDatabaseReplicationMethod)
  *             .replicationUnit(distributedDatabaseReplicationUnit)
+ *             .scanListenerPort(distributedDatabaseScanListenerPort)
  *             .build());
  * 
  *     }
@@ -531,6 +622,20 @@ public class DistributedDatabaseDistributedDatabase extends com.pulumi.resources
         return this.metadatas;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    @Export(name="moveReplicationUnitTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> moveReplicationUnitTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> moveReplicationUnitTrigger() {
+        return Codegen.optional(this.moveReplicationUnitTrigger);
+    }
+    /**
      * The national character set for the database.
      * 
      */
@@ -615,6 +720,20 @@ public class DistributedDatabaseDistributedDatabase extends com.pulumi.resources
         return this.privateEndpointIds;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    @Export(name="recreateFailedResourceTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> recreateFailedResourceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> recreateFailedResourceTrigger() {
+        return Codegen.optional(this.recreateFailedResourceTrigger);
+    }
+    /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      * 
      */
@@ -655,6 +774,20 @@ public class DistributedDatabaseDistributedDatabase extends com.pulumi.resources
      */
     public Output<Integer> replicationUnit() {
         return this.replicationUnit;
+    }
+    /**
+     * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     * 
+     */
+    @Export(name="scanListenerPort", refs={Integer.class}, tree="[0]")
+    private Output<Integer> scanListenerPort;
+
+    /**
+     * @return The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     * 
+     */
+    public Output<Integer> scanListenerPort() {
+        return this.scanListenerPort;
     }
     /**
      * Collection of shards for the Globally distributed database.

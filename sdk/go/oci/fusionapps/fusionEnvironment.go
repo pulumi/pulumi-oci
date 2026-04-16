@@ -44,7 +44,15 @@ import (
 //				DisplayName:               pulumi.Any(fusionEnvironmentDisplayName),
 //				FusionEnvironmentFamilyId: pulumi.Any(testFusionEnvironmentFamily.Id),
 //				FusionEnvironmentType:     pulumi.Any(fusionEnvironmentFusionEnvironmentType),
-//				AdditionalLanguagePacks:   pulumi.Any(fusionEnvironmentAdditionalLanguagePacks),
+//				AdditionalEgressRules: fusionapps.FusionEnvironmentAdditionalEgressRuleArray{
+//					&fusionapps.FusionEnvironmentAdditionalEgressRuleArgs{
+//						Description:        pulumi.Any(fusionEnvironmentAdditionalEgressRulesDescription),
+//						DestinationCidr:    pulumi.Any(fusionEnvironmentAdditionalEgressRulesDestinationCidr),
+//						MaxDestinationPort: pulumi.Any(fusionEnvironmentAdditionalEgressRulesMaxDestinationPort),
+//						MinDestinationPort: pulumi.Any(fusionEnvironmentAdditionalEgressRulesMinDestinationPort),
+//					},
+//				},
+//				AdditionalLanguagePacks: pulumi.Any(fusionEnvironmentAdditionalLanguagePacks),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -90,6 +98,8 @@ import (
 type FusionEnvironment struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayOutput `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayOutput `pulumi:"additionalLanguagePacks"`
 	// Patch bundle names
@@ -116,7 +126,7 @@ type FusionEnvironment struct {
 	IdcsDomainUrl pulumi.StringOutput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolOutput `pulumi:"isBreakGlassEnabled"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolOutput `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
@@ -195,6 +205,8 @@ func GetFusionEnvironment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FusionEnvironment resources.
 type fusionEnvironmentState struct {
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules []FusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
 	// Patch bundle names
@@ -221,7 +233,7 @@ type fusionEnvironmentState struct {
 	IdcsDomainUrl *string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled *bool `pulumi:"isBreakGlassEnabled"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -256,6 +268,8 @@ type fusionEnvironmentState struct {
 }
 
 type FusionEnvironmentState struct {
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayInput
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayInput
 	// Patch bundle names
@@ -282,7 +296,7 @@ type FusionEnvironmentState struct {
 	IdcsDomainUrl pulumi.StringPtrInput
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolPtrInput
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolPtrInput
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringPtrInput
@@ -321,6 +335,8 @@ func (FusionEnvironmentState) ElementType() reflect.Type {
 }
 
 type fusionEnvironmentArgs struct {
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules []FusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
 	// (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -339,7 +355,7 @@ type fusionEnvironmentArgs struct {
 	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
 	// The type of environment. Valid values are Production, Test, or Development.
 	FusionEnvironmentType string `pulumi:"fusionEnvironmentType"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -351,6 +367,8 @@ type fusionEnvironmentArgs struct {
 
 // The set of arguments for constructing a FusionEnvironment resource.
 type FusionEnvironmentArgs struct {
+	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules FusionEnvironmentAdditionalEgressRuleArrayInput
 	// (Updatable) Language packs.
 	AdditionalLanguagePacks pulumi.StringArrayInput
 	// (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -369,7 +387,7 @@ type FusionEnvironmentArgs struct {
 	FusionEnvironmentFamilyId pulumi.StringInput
 	// The type of environment. Valid values are Production, Test, or Development.
 	FusionEnvironmentType pulumi.StringInput
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 	IsIpv6dualStackEnabled pulumi.BoolPtrInput
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringPtrInput
@@ -466,6 +484,13 @@ func (o FusionEnvironmentOutput) ToFusionEnvironmentOutputWithContext(ctx contex
 	return o
 }
 
+// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+func (o FusionEnvironmentOutput) AdditionalEgressRules() FusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o.ApplyT(func(v *FusionEnvironment) FusionEnvironmentAdditionalEgressRuleArrayOutput {
+		return v.AdditionalEgressRules
+	}).(FusionEnvironmentAdditionalEgressRuleArrayOutput)
+}
+
 // (Updatable) Language packs.
 func (o FusionEnvironmentOutput) AdditionalLanguagePacks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringArrayOutput { return v.AdditionalLanguagePacks }).(pulumi.StringArrayOutput)
@@ -533,7 +558,7 @@ func (o FusionEnvironmentOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
 }
 
-// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+// (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
 func (o FusionEnvironmentOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }

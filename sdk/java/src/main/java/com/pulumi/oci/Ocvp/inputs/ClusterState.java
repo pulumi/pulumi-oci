@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Ocvp.inputs.ClusterClusterByolAllocationDetailsArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterUpgradeLicenseArgs;
@@ -51,6 +52,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    @Import(name="clusterByolAllocationDetails")
+    private @Nullable Output<ClusterClusterByolAllocationDetailsArgs> clusterByolAllocationDetails;
+
+    /**
+     * @return (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public Optional<Output<ClusterClusterByolAllocationDetailsArgs>> clusterByolAllocationDetails() {
+        return Optional.ofNullable(this.clusterByolAllocationDetails);
     }
 
     /**
@@ -242,6 +258,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> initialHostShapeName() {
         return Optional.ofNullable(this.initialHostShapeName);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    @Import(name="initialVcfByolAllocationId")
+    private @Nullable Output<String> initialVcfByolAllocationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public Optional<Output<String>> initialVcfByolAllocationId() {
+        return Optional.ofNullable(this.initialVcfByolAllocationId);
     }
 
     /**
@@ -455,6 +486,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.actualEsxiHostsCount = $.actualEsxiHostsCount;
         this.attachDatastoreClusterIds = $.attachDatastoreClusterIds;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterByolAllocationDetails = $.clusterByolAllocationDetails;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.datastoreClusterIds = $.datastoreClusterIds;
@@ -468,6 +500,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.initialCommitment = $.initialCommitment;
         this.initialHostOcpuCount = $.initialHostOcpuCount;
         this.initialHostShapeName = $.initialHostShapeName;
+        this.initialVcfByolAllocationId = $.initialVcfByolAllocationId;
         this.instanceDisplayNamePrefix = $.instanceDisplayNamePrefix;
         this.isShieldedInstanceEnabled = $.isShieldedInstanceEnabled;
         this.networkConfiguration = $.networkConfiguration;
@@ -542,6 +575,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
+        }
+
+        /**
+         * @param clusterByolAllocationDetails (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(@Nullable Output<ClusterClusterByolAllocationDetailsArgs> clusterByolAllocationDetails) {
+            $.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            return this;
+        }
+
+        /**
+         * @param clusterByolAllocationDetails (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(ClusterClusterByolAllocationDetailsArgs clusterByolAllocationDetails) {
+            return clusterByolAllocationDetails(Output.of(clusterByolAllocationDetails));
         }
 
         /**
@@ -831,6 +885,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder initialHostShapeName(String initialHostShapeName) {
             return initialHostShapeName(Output.of(initialHostShapeName));
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(@Nullable Output<String> initialVcfByolAllocationId) {
+            $.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            return initialVcfByolAllocationId(Output.of(initialVcfByolAllocationId));
         }
 
         /**

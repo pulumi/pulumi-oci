@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -41,6 +43,7 @@ export interface GetDbmulticloudOracleDbAwsKeyArgs {
  * A collection of values returned by getDbmulticloudOracleDbAwsKey.
  */
 export interface GetDbmulticloudOracleDbAwsKeyResult {
+    readonly action: string;
     /**
      * AWS Account ID.
      */
@@ -91,6 +94,10 @@ export interface GetDbmulticloudOracleDbAwsKeyResult {
      */
     readonly properties: {[key: string]: string};
     /**
+     * Replication metadata, it has information about replication and target region.
+     */
+    readonly replicationMetadatas: outputs.oci.GetDbmulticloudOracleDbAwsKeyReplicationMetadata[];
+    /**
      * The lifecycle state of the Oracle DB AWS Key resource.
      */
     readonly state: string;
@@ -98,6 +105,10 @@ export interface GetDbmulticloudOracleDbAwsKeyResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The target region, where resource is replicated.
+     */
+    readonly targetRegion: string;
     /**
      * Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
      */

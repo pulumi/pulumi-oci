@@ -46,6 +46,10 @@ import * as utilities from "../utilities";
  *             },
  *             vsphereType: sddcInitialConfigurationInitialClusterConfigurationsVsphereType,
  *             capacityReservationId: testCapacityReservation.id,
+ *             clusterByolAllocationDetails: {
+ *                 firewallByolAllocationId: testByolAllocation.id,
+ *                 vsanByolAllocationId: testByolAllocation.id,
+ *             },
  *             datastoreClusterIds: sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds,
  *             datastores: [{
  *                 blockVolumeIds: sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds,
@@ -55,6 +59,7 @@ import * as utilities from "../utilities";
  *             initialCommitment: sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
  *             initialHostOcpuCount: sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
  *             initialHostShapeName: testShape.name,
+ *             initialVcfByolAllocationId: testByolAllocation.id,
  *             instanceDisplayNamePrefix: sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix,
  *             isShieldedInstanceEnabled: sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled,
  *             workloadNetworkCidr: sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr,
@@ -70,6 +75,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     isSingleHostSddc: sddcIsSingleHostSddc,
+ *     sddcByolAllocationDetails: {
+ *         loadBalancerByolAllocationId: testByolAllocation.id,
+ *         loadBalancerInstanceCount: sddcSddcByolAllocationDetailsLoadBalancerInstanceCount,
+ *     },
  *     hcxAction: hcxAction,
  *     isHcxEnabled: sddcIsHcxEnabled,
  * });
@@ -349,6 +358,10 @@ export class Sddc extends pulumi.CustomResource {
      */
     declare public readonly reservingHcxOnPremiseLicenseKeys: pulumi.Output<string[] | undefined>;
     /**
+     * (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     */
+    declare public readonly sddcByolAllocationDetails: pulumi.Output<outputs.Ocvp.SddcSddcByolAllocationDetails>;
+    /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
      */
     declare public readonly sshAuthorizedKeys: pulumi.Output<string>;
@@ -502,6 +515,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["refreshHcxLicenseStatus"] = state?.refreshHcxLicenseStatus;
             resourceInputs["replicationVlanId"] = state?.replicationVlanId;
             resourceInputs["reservingHcxOnPremiseLicenseKeys"] = state?.reservingHcxOnPremiseLicenseKeys;
+            resourceInputs["sddcByolAllocationDetails"] = state?.sddcByolAllocationDetails;
             resourceInputs["sshAuthorizedKeys"] = state?.sshAuthorizedKeys;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -560,6 +574,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["refreshHcxLicenseStatus"] = args?.refreshHcxLicenseStatus;
             resourceInputs["replicationVlanId"] = args?.replicationVlanId;
             resourceInputs["reservingHcxOnPremiseLicenseKeys"] = args?.reservingHcxOnPremiseLicenseKeys;
+            resourceInputs["sddcByolAllocationDetails"] = args?.sddcByolAllocationDetails;
             resourceInputs["sshAuthorizedKeys"] = args?.sshAuthorizedKeys;
             resourceInputs["vmotionVlanId"] = args?.vmotionVlanId;
             resourceInputs["vmwareSoftwareVersion"] = args?.vmwareSoftwareVersion;
@@ -834,6 +849,10 @@ export interface SddcState {
      */
     reservingHcxOnPremiseLicenseKeys?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     */
+    sddcByolAllocationDetails?: pulumi.Input<inputs.Ocvp.SddcSddcByolAllocationDetails>;
+    /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
      */
     sshAuthorizedKeys?: pulumi.Input<string>;
@@ -1087,6 +1106,10 @@ export interface SddcArgs {
      * (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
      */
     reservingHcxOnPremiseLicenseKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     */
+    sddcByolAllocationDetails?: pulumi.Input<inputs.Ocvp.SddcSddcByolAllocationDetails>;
     /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
      */

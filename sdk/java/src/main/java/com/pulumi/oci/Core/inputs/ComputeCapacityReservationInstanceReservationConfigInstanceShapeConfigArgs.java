@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -45,11 +46,19 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
         return Optional.ofNullable(this.ocpus);
     }
 
+    @Import(name="resourceManagement")
+    private @Nullable Output<String> resourceManagement;
+
+    public Optional<Output<String>> resourceManagement() {
+        return Optional.ofNullable(this.resourceManagement);
+    }
+
     private ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs() {}
 
     private ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs $) {
         this.memoryInGbs = $.memoryInGbs;
         this.ocpus = $.ocpus;
+        this.resourceManagement = $.resourceManagement;
     }
 
     public static Builder builder() {
@@ -110,6 +119,15 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
          */
         public Builder ocpus(Double ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        public Builder resourceManagement(@Nullable Output<String> resourceManagement) {
+            $.resourceManagement = resourceManagement;
+            return this;
+        }
+
+        public Builder resourceManagement(String resourceManagement) {
+            return resourceManagement(Output.of(resourceManagement));
         }
 
         public ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs build() {

@@ -3387,6 +3387,8 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig(dic
         suggest = None
         if key == "memoryInGbs":
             suggest = "memory_in_gbs"
+        elif key == "resourceManagement":
+            suggest = "resource_management"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig. Access the value via the '{suggest}' property getter instead.")
@@ -3401,7 +3403,8 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig(dic
 
     def __init__(__self__, *,
                  memory_in_gbs: Optional[_builtins.float] = None,
-                 ocpus: Optional[_builtins.float] = None):
+                 ocpus: Optional[_builtins.float] = None,
+                 resource_management: Optional[_builtins.str] = None):
         """
         :param _builtins.float memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float ocpus: (Updatable) The total number of OCPUs available to the instance.
@@ -3410,6 +3413,8 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig(dic
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -3426,6 +3431,11 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig(dic
         (Updatable) The total number of OCPUs available to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "resource_management")
 
 
 @pulumi.output_type
@@ -23049,13 +23059,15 @@ class GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult(
 class GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
-                 ocpus: _builtins.float):
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str):
         """
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -23072,6 +23084,11 @@ class GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigR
         The total number of OCPUs available to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        return pulumi.get(self, "resource_management")
 
 
 @pulumi.output_type
@@ -23218,13 +23235,15 @@ class GetComputeCapacityReservationInstancesCapacityReservationInstanceResult(di
 class GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
-                 ocpus: _builtins.float):
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str):
         """
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
-        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -23238,9 +23257,14 @@ class GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConf
     @pulumi.getter
     def ocpus(self) -> _builtins.float:
         """
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the instance
         """
         return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        return pulumi.get(self, "resource_management")
 
 
 @pulumi.output_type
@@ -23537,13 +23561,15 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
 class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
-                 ocpus: _builtins.float):
+                 ocpus: _builtins.float,
+                 resource_management: _builtins.str):
         """
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "resource_management", resource_management)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -23560,6 +23586,11 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
         The total number of OCPUs available to the instance.
         """
         return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> _builtins.str:
+        return pulumi.get(self, "resource_management")
 
 
 @pulumi.output_type

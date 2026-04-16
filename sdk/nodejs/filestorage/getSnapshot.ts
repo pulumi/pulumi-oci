@@ -77,6 +77,10 @@ export interface GetSnapshotResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Details for setting a retention date or legal hold.
+     */
+    readonly lockDurationDetails: outputs.FileStorage.GetSnapshotLockDurationDetail[];
+    /**
      * Locks associated with this resource.
      */
     readonly locks: outputs.FileStorage.GetSnapshotLock[];
@@ -112,6 +116,10 @@ export interface GetSnapshotResult {
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     */
+    readonly timeLocked: string;
 }
 /**
  * This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.

@@ -41,6 +41,12 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         LockDurationDetails = new Oci.FileStorage.Inputs.SnapshotLockDurationDetailsArgs
+    ///         {
+    ///             LockDuration = snapshotLockDurationDetailsLockDuration,
+    ///             LockMode = snapshotLockDurationDetailsLockMode,
+    ///             CoolOffDuration = snapshotLockDurationDetailsCoolOffDuration,
+    ///         },
     ///         Locks = new[]
     ///         {
     ///             new Oci.FileStorage.Inputs.SnapshotLockArgs
@@ -113,6 +119,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details for setting a retention date or legal hold.
+        /// </summary>
+        [Output("lockDurationDetails")]
+        public Output<Outputs.SnapshotLockDurationDetails?> LockDurationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// Locks associated with this resource.
         /// </summary>
         [Output("locks")]
@@ -170,6 +182,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        /// </summary>
+        [Output("timeLocked")]
+        public Output<string> TimeLocked { get; private set; } = null!;
 
 
         /// <summary>
@@ -255,6 +273,12 @@ namespace Pulumi.Oci.FileStorage
 
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for setting a retention date or legal hold.
+        /// </summary>
+        [Input("lockDurationDetails")]
+        public Input<Inputs.SnapshotLockDurationDetailsArgs>? LockDurationDetails { get; set; }
 
         [Input("locks")]
         private InputList<Inputs.SnapshotLockArgs>? _locks;
@@ -347,6 +371,12 @@ namespace Pulumi.Oci.FileStorage
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) Details for setting a retention date or legal hold.
+        /// </summary>
+        [Input("lockDurationDetails")]
+        public Input<Inputs.SnapshotLockDurationDetailsGetArgs>? LockDurationDetails { get; set; }
+
         [Input("locks")]
         private InputList<Inputs.SnapshotLockGetArgs>? _locks;
 
@@ -417,6 +447,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        /// </summary>
+        [Input("timeLocked")]
+        public Input<string>? TimeLocked { get; set; }
 
         public SnapshotState()
         {

@@ -260,6 +260,10 @@ export interface GetSddcResult {
      */
     readonly replicationVlanId: string;
     readonly reservingHcxOnPremiseLicenseKeys: string[];
+    /**
+     * The BYOL allocations used for VMware SDDC provisioning.
+     */
+    readonly sddcByolAllocationDetails: outputs.Ocvp.GetSddcSddcByolAllocationDetail[];
     readonly sddcId: string;
     /**
      * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.

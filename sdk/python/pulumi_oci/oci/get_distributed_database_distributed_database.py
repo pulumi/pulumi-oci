@@ -27,7 +27,7 @@ class GetDistributedDatabaseDistributedDatabaseResult:
     """
     A collection of values returned by getDistributedDatabaseDistributedDatabase.
     """
-    def __init__(__self__, catalog_details=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, defined_tags=None, display_name=None, distributed_database_id=None, download_gsm_certificate_signing_request_trigger=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, gsm_ssh_public_key=None, id=None, latest_gsm_image_details=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, replication_factor=None, replication_method=None, replication_unit=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_network_details=None, validate_network_trigger=None):
+    def __init__(__self__, catalog_details=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, defined_tags=None, display_name=None, distributed_database_id=None, download_gsm_certificate_signing_request_trigger=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, gsm_ssh_public_key=None, id=None, latest_gsm_image_details=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata=None, move_replication_unit_trigger=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, recreate_failed_resource_trigger=None, replication_factor=None, replication_method=None, replication_unit=None, scan_listener_port=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_network_details=None, validate_network_trigger=None):
         if catalog_details and not isinstance(catalog_details, list):
             raise TypeError("Expected argument 'catalog_details' to be a list")
         pulumi.set(__self__, "catalog_details", catalog_details)
@@ -121,6 +121,9 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         if metadata and not isinstance(metadata, str):
             raise TypeError("Expected argument 'metadata' to be a str")
         pulumi.set(__self__, "metadata", metadata)
+        if move_replication_unit_trigger and not isinstance(move_replication_unit_trigger, int):
+            raise TypeError("Expected argument 'move_replication_unit_trigger' to be a int")
+        pulumi.set(__self__, "move_replication_unit_trigger", move_replication_unit_trigger)
         if ncharacter_set and not isinstance(ncharacter_set, str):
             raise TypeError("Expected argument 'ncharacter_set' to be a str")
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
@@ -139,6 +142,9 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         if private_endpoint_ids and not isinstance(private_endpoint_ids, list):
             raise TypeError("Expected argument 'private_endpoint_ids' to be a list")
         pulumi.set(__self__, "private_endpoint_ids", private_endpoint_ids)
+        if recreate_failed_resource_trigger and not isinstance(recreate_failed_resource_trigger, int):
+            raise TypeError("Expected argument 'recreate_failed_resource_trigger' to be a int")
+        pulumi.set(__self__, "recreate_failed_resource_trigger", recreate_failed_resource_trigger)
         if replication_factor and not isinstance(replication_factor, int):
             raise TypeError("Expected argument 'replication_factor' to be a int")
         pulumi.set(__self__, "replication_factor", replication_factor)
@@ -148,6 +154,9 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         if replication_unit and not isinstance(replication_unit, int):
             raise TypeError("Expected argument 'replication_unit' to be a int")
         pulumi.set(__self__, "replication_unit", replication_unit)
+        if scan_listener_port and not isinstance(scan_listener_port, int):
+            raise TypeError("Expected argument 'scan_listener_port' to be a int")
+        pulumi.set(__self__, "scan_listener_port", scan_listener_port)
         if shard_details and not isinstance(shard_details, list):
             raise TypeError("Expected argument 'shard_details' to be a list")
         pulumi.set(__self__, "shard_details", shard_details)
@@ -273,7 +282,7 @@ class GetDistributedDatabaseDistributedDatabaseResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        The display name of the Globally distributed database.
+        The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -397,6 +406,11 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         return pulumi.get(self, "metadata")
 
     @_builtins.property
+    @pulumi.getter(name="moveReplicationUnitTrigger")
+    def move_replication_unit_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "move_replication_unit_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> _builtins.str:
         """
@@ -442,6 +456,11 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         return pulumi.get(self, "private_endpoint_ids")
 
     @_builtins.property
+    @pulumi.getter(name="recreateFailedResourceTrigger")
+    def recreate_failed_resource_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "recreate_failed_resource_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="replicationFactor")
     def replication_factor(self) -> _builtins.int:
         """
@@ -464,6 +483,14 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
         """
         return pulumi.get(self, "replication_unit")
+
+    @_builtins.property
+    @pulumi.getter(name="scanListenerPort")
+    def scan_listener_port(self) -> _builtins.int:
+        """
+        The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+        """
+        return pulumi.get(self, "scan_listener_port")
 
     @_builtins.property
     @pulumi.getter(name="shardDetails")
@@ -577,15 +604,18 @@ class AwaitableGetDistributedDatabaseDistributedDatabaseResult(GetDistributedDat
             listener_port=self.listener_port,
             listener_port_tls=self.listener_port_tls,
             metadata=self.metadata,
+            move_replication_unit_trigger=self.move_replication_unit_trigger,
             ncharacter_set=self.ncharacter_set,
             ons_port_local=self.ons_port_local,
             ons_port_remote=self.ons_port_remote,
             patch_operations=self.patch_operations,
             prefix=self.prefix,
             private_endpoint_ids=self.private_endpoint_ids,
+            recreate_failed_resource_trigger=self.recreate_failed_resource_trigger,
             replication_factor=self.replication_factor,
             replication_method=self.replication_method,
             replication_unit=self.replication_unit,
+            scan_listener_port=self.scan_listener_port,
             shard_details=self.shard_details,
             sharding_method=self.sharding_method,
             start_database_trigger=self.start_database_trigger,
@@ -649,15 +679,18 @@ def get_distributed_database_distributed_database(distributed_database_id: Optio
         listener_port=pulumi.get(__ret__, 'listener_port'),
         listener_port_tls=pulumi.get(__ret__, 'listener_port_tls'),
         metadata=pulumi.get(__ret__, 'metadata'),
+        move_replication_unit_trigger=pulumi.get(__ret__, 'move_replication_unit_trigger'),
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
         ons_port_local=pulumi.get(__ret__, 'ons_port_local'),
         ons_port_remote=pulumi.get(__ret__, 'ons_port_remote'),
         patch_operations=pulumi.get(__ret__, 'patch_operations'),
         prefix=pulumi.get(__ret__, 'prefix'),
         private_endpoint_ids=pulumi.get(__ret__, 'private_endpoint_ids'),
+        recreate_failed_resource_trigger=pulumi.get(__ret__, 'recreate_failed_resource_trigger'),
         replication_factor=pulumi.get(__ret__, 'replication_factor'),
         replication_method=pulumi.get(__ret__, 'replication_method'),
         replication_unit=pulumi.get(__ret__, 'replication_unit'),
+        scan_listener_port=pulumi.get(__ret__, 'scan_listener_port'),
         shard_details=pulumi.get(__ret__, 'shard_details'),
         sharding_method=pulumi.get(__ret__, 'sharding_method'),
         start_database_trigger=pulumi.get(__ret__, 'start_database_trigger'),
@@ -718,15 +751,18 @@ def get_distributed_database_distributed_database_output(distributed_database_id
         listener_port=pulumi.get(__response__, 'listener_port'),
         listener_port_tls=pulumi.get(__response__, 'listener_port_tls'),
         metadata=pulumi.get(__response__, 'metadata'),
+        move_replication_unit_trigger=pulumi.get(__response__, 'move_replication_unit_trigger'),
         ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
         ons_port_local=pulumi.get(__response__, 'ons_port_local'),
         ons_port_remote=pulumi.get(__response__, 'ons_port_remote'),
         patch_operations=pulumi.get(__response__, 'patch_operations'),
         prefix=pulumi.get(__response__, 'prefix'),
         private_endpoint_ids=pulumi.get(__response__, 'private_endpoint_ids'),
+        recreate_failed_resource_trigger=pulumi.get(__response__, 'recreate_failed_resource_trigger'),
         replication_factor=pulumi.get(__response__, 'replication_factor'),
         replication_method=pulumi.get(__response__, 'replication_method'),
         replication_unit=pulumi.get(__response__, 'replication_unit'),
+        scan_listener_port=pulumi.get(__response__, 'scan_listener_port'),
         shard_details=pulumi.get(__response__, 'shard_details'),
         sharding_method=pulumi.get(__response__, 'sharding_method'),
         start_database_trigger=pulumi.get(__response__, 'start_database_trigger'),

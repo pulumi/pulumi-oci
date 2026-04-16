@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }

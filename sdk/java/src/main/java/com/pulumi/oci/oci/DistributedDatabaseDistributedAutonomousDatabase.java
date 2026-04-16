@@ -77,6 +77,8 @@ import javax.annotation.Nullable;
  *                 .source(distributedAutonomousDatabaseCatalogDetailsSource)
  *                 .kmsKeyId(testKey.id())
  *                 .kmsKeyVersionId(testKeyVersion.id())
+ *                 .okvEndPointGroup(distributedAutonomousDatabaseCatalogDetailsOkvEndPointGroup)
+ *                 .okvKeyStoreId(testKeyStore.id())
  *                 .peerCloudAutonomousVmClusterIds(distributedAutonomousDatabaseCatalogDetailsPeerCloudAutonomousVmClusterIds)
  *                 .peerDetails(DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs.builder()
  *                     .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
@@ -109,6 +111,8 @@ import javax.annotation.Nullable;
  *                 .source(distributedAutonomousDatabaseShardDetailsSource)
  *                 .kmsKeyId(testKey.id())
  *                 .kmsKeyVersionId(testKeyVersion.id())
+ *                 .okvEndPointGroup(distributedAutonomousDatabaseShardDetailsOkvEndPointGroup)
+ *                 .okvKeyStoreId(testKeyStore.id())
  *                 .peerCloudAutonomousVmClusterIds(distributedAutonomousDatabaseShardDetailsPeerCloudAutonomousVmClusterIds)
  *                 .peerDetails(DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs.builder()
  *                     .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
@@ -165,6 +169,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase")
 public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    @Export(name="caBundleId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> caBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CA bundle to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    public Output<Optional<String>> caBundleId() {
+        return Codegen.optional(this.caBundleId);
+    }
+    /**
      * Collection of catalog for the Globally distributed autonomous database.
      * 
      */
@@ -177,6 +195,20 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
      */
     public Output<List<DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail>> catalogDetails() {
         return this.catalogDetails;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    @Export(name="certificateId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> certificateId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster certificate to pass to Configure Sharding. Required when `configureShardingTrigger` is incremented.
+     * 
+     */
+    public Output<Optional<String>> certificateId() {
+        return Codegen.optional(this.certificateId);
     }
     /**
      * (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
@@ -234,9 +266,31 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+     * 
+     */
+    @Export(name="configureGsmWalletTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> configureGsmWalletTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Configure Gsm Wallet. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> configureGsmWalletTrigger() {
+        return Codegen.optional(this.configureGsmWalletTrigger);
+    }
+    /**
+     * (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+     * 
+     */
     @Export(name="configureShardingIsRebalanceRequired", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> configureShardingIsRebalanceRequired;
 
+    /**
+     * @return (Updatable) Indicates whether shard chunks should be re-balanced as part of Configure Sharding.
+     * 
+     */
     public Output<Optional<Boolean>> configureShardingIsRebalanceRequired() {
         return Codegen.optional(this.configureShardingIsRebalanceRequired);
     }
@@ -535,6 +589,20 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
         return this.metadatas;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    @Export(name="moveReplicationUnitTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> moveReplicationUnitTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> moveReplicationUnitTrigger() {
+        return Codegen.optional(this.moveReplicationUnitTrigger);
+    }
+    /**
      * The national character set for the database.
      * 
      */
@@ -617,6 +685,20 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
      */
     public Output<List<String>> privateEndpointIds() {
         return this.privateEndpointIds;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    @Export(name="recreateFailedResourceTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> recreateFailedResourceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> recreateFailedResourceTrigger() {
+        return Codegen.optional(this.recreateFailedResourceTrigger);
     }
     /**
      * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
@@ -791,6 +873,20 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
      */
     public Output<Optional<Integer>> uploadSignedCertificateAndGenerateWalletTrigger() {
         return Codegen.optional(this.uploadSignedCertificateAndGenerateWalletTrigger);
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+     * 
+     */
+    @Export(name="validateCaBundleTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> validateCaBundleTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> validateCaBundleTrigger() {
+        return Codegen.optional(this.validateCaBundleTrigger);
     }
     @Export(name="validateNetworkDetails", refs={DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails.class}, tree="[0]")
     private Output</* @Nullable */ DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails> validateNetworkDetails;

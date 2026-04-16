@@ -70,9 +70,14 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
      * 
      */
     private String managementAgentId;
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    private String pluginVersion;
     private String publicSshKeys;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
     private String sddcId;
@@ -185,11 +190,18 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
     public String managementAgentId() {
         return this.managementAgentId;
     }
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    public String pluginVersion() {
+        return this.pluginVersion;
+    }
     public String publicSshKeys() {
         return this.publicSshKeys;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
     public String sddcId() {
@@ -258,6 +270,7 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
         private String id;
         private String lifecycleDetails;
         private String managementAgentId;
+        private String pluginVersion;
         private String publicSshKeys;
         private String sddcId;
         private String state;
@@ -280,6 +293,7 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementAgentId = defaults.managementAgentId;
+    	      this.pluginVersion = defaults.pluginVersion;
     	      this.publicSshKeys = defaults.publicSshKeys;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
@@ -388,6 +402,14 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder pluginVersion(String pluginVersion) {
+            if (pluginVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementAppliancesManagementApplianceCollectionItem", "pluginVersion");
+            }
+            this.pluginVersion = pluginVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder publicSshKeys(String publicSshKeys) {
             if (publicSshKeys == null) {
               throw new MissingRequiredPropertyException("GetManagementAppliancesManagementApplianceCollectionItem", "publicSshKeys");
@@ -464,6 +486,7 @@ public final class GetManagementAppliancesManagementApplianceCollectionItem {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementAgentId = managementAgentId;
+            _resultValue.pluginVersion = pluginVersion;
             _resultValue.publicSshKeys = publicSshKeys;
             _resultValue.sddcId = sddcId;
             _resultValue.state = state;

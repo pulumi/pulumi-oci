@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -234,7 +234,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -354,7 +354,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
         /// 
         /// 
         /// ** IMPORTANT **

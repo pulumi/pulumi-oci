@@ -58,6 +58,8 @@ type GetFusionEnvironmentArgs struct {
 
 // A collection of values returned by getFusionEnvironment.
 type GetFusionEnvironmentResult struct {
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules []GetFusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
 	// Patch bundle names
@@ -86,7 +88,7 @@ type GetFusionEnvironmentResult struct {
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 	IsIpv6dualStackEnabled bool `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
@@ -152,6 +154,13 @@ func (o GetFusionEnvironmentResultOutput) ToGetFusionEnvironmentResultOutput() G
 
 func (o GetFusionEnvironmentResultOutput) ToGetFusionEnvironmentResultOutputWithContext(ctx context.Context) GetFusionEnvironmentResultOutput {
 	return o
+}
+
+// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+func (o GetFusionEnvironmentResultOutput) AdditionalEgressRules() GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentResult) []GetFusionEnvironmentAdditionalEgressRule {
+		return v.AdditionalEgressRules
+	}).(GetFusionEnvironmentAdditionalEgressRuleArrayOutput)
 }
 
 // Language packs
@@ -229,7 +238,7 @@ func (o GetFusionEnvironmentResultOutput) IsBreakGlassEnabled() pulumi.BoolOutpu
 	return o.ApplyT(func(v GetFusionEnvironmentResult) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
 }
 
-// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 func (o GetFusionEnvironmentResultOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentResult) bool { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -245,6 +246,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    @Import(name="isVsanByolEnabled")
+    private @Nullable Output<Boolean> isVsanByolEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    public Optional<Output<Boolean>> isVsanByolEnabled() {
+        return Optional.ofNullable(this.isVsanByolEnabled);
+    }
+
+    /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      * 
      * @deprecated
@@ -334,6 +350,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.systemTags);
     }
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    @Import(name="vcfByolAllocationId")
+    private @Nullable Output<String> vcfByolAllocationId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    public Optional<Output<String>> vcfByolAllocationId() {
+        return Optional.ofNullable(this.vcfByolAllocationId);
+    }
+
     private EsxiHostArgs() {}
 
     private EsxiHostArgs(EsxiHostArgs $) {
@@ -351,10 +382,12 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
+        this.isVsanByolEnabled = $.isVsanByolEnabled;
         this.nextSku = $.nextSku;
         this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.sddcId = $.sddcId;
         this.systemTags = $.systemTags;
+        this.vcfByolAllocationId = $.vcfByolAllocationId;
     }
 
     public static Builder builder() {
@@ -686,6 +719,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isVsanByolEnabled (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVsanByolEnabled(@Nullable Output<Boolean> isVsanByolEnabled) {
+            $.isVsanByolEnabled = isVsanByolEnabled;
+            return this;
+        }
+
+        /**
+         * @param isVsanByolEnabled (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVsanByolEnabled(Boolean isVsanByolEnabled) {
+            return isVsanByolEnabled(Output.of(isVsanByolEnabled));
+        }
+
+        /**
          * @param nextSku (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
          * 
          * @return builder
@@ -797,6 +851,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param vcfByolAllocationId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcfByolAllocationId(@Nullable Output<String> vcfByolAllocationId) {
+            $.vcfByolAllocationId = vcfByolAllocationId;
+            return this;
+        }
+
+        /**
+         * @param vcfByolAllocationId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcfByolAllocationId(String vcfByolAllocationId) {
+            return vcfByolAllocationId(Output.of(vcfByolAllocationId));
         }
 
         public EsxiHostArgs build() {

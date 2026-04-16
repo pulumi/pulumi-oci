@@ -43,6 +43,10 @@ import * as utilities from "../utilities";
  *     },
  *     sddcId: testSddc.id,
  *     capacityReservationId: testCapacityReservation.id,
+ *     clusterByolAllocationDetails: {
+ *         firewallByolAllocationId: testByolAllocation.id,
+ *         vsanByolAllocationId: testByolAllocation.id,
+ *     },
  *     datastoreClusterIds: clusterDatastoreClusterIds,
  *     datastores: [{
  *         blockVolumeIds: clusterDatastoresBlockVolumeIds,
@@ -59,6 +63,7 @@ import * as utilities from "../utilities";
  *     initialCommitment: clusterInitialCommitment,
  *     initialHostOcpuCount: clusterInitialHostOcpuCount,
  *     initialHostShapeName: testShape.name,
+ *     initialVcfByolAllocationId: testByolAllocation.id,
  *     instanceDisplayNamePrefix: clusterInstanceDisplayNamePrefix,
  *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled,
  *     vmwareSoftwareVersion: clusterVmwareSoftwareVersion,
@@ -109,6 +114,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     */
+    declare public readonly clusterByolAllocationDetails: pulumi.Output<outputs.Ocvp.ClusterClusterByolAllocationDetails>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
     declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
@@ -119,7 +128,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * A list of datastore clusters.
      */
-    declare public /*out*/ readonly datastoreClusterIds: pulumi.Output<string[]>;
+    declare public readonly datastoreClusterIds: pulumi.Output<string[]>;
     /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
@@ -159,6 +168,10 @@ export class Cluster extends pulumi.CustomResource {
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
     declare public readonly initialHostShapeName: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     */
+    declare public readonly initialVcfByolAllocationId: pulumi.Output<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *
@@ -234,6 +247,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["actualEsxiHostsCount"] = state?.actualEsxiHostsCount;
             resourceInputs["attachDatastoreClusterIds"] = state?.attachDatastoreClusterIds;
             resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["clusterByolAllocationDetails"] = state?.clusterByolAllocationDetails;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
             resourceInputs["datastoreClusterIds"] = state?.datastoreClusterIds;
@@ -247,6 +261,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["initialCommitment"] = state?.initialCommitment;
             resourceInputs["initialHostOcpuCount"] = state?.initialHostOcpuCount;
             resourceInputs["initialHostShapeName"] = state?.initialHostShapeName;
+            resourceInputs["initialVcfByolAllocationId"] = state?.initialVcfByolAllocationId;
             resourceInputs["instanceDisplayNamePrefix"] = state?.instanceDisplayNamePrefix;
             resourceInputs["isShieldedInstanceEnabled"] = state?.isShieldedInstanceEnabled;
             resourceInputs["networkConfiguration"] = state?.networkConfiguration;
@@ -276,7 +291,9 @@ export class Cluster extends pulumi.CustomResource {
             }
             resourceInputs["attachDatastoreClusterIds"] = args?.attachDatastoreClusterIds;
             resourceInputs["capacityReservationId"] = args?.capacityReservationId;
+            resourceInputs["clusterByolAllocationDetails"] = args?.clusterByolAllocationDetails;
             resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
+            resourceInputs["datastoreClusterIds"] = args?.datastoreClusterIds;
             resourceInputs["datastores"] = args?.datastores;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["detachDatastoreClusterIds"] = args?.detachDatastoreClusterIds;
@@ -287,6 +304,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["initialCommitment"] = args?.initialCommitment;
             resourceInputs["initialHostOcpuCount"] = args?.initialHostOcpuCount;
             resourceInputs["initialHostShapeName"] = args?.initialHostShapeName;
+            resourceInputs["initialVcfByolAllocationId"] = args?.initialVcfByolAllocationId;
             resourceInputs["instanceDisplayNamePrefix"] = args?.instanceDisplayNamePrefix;
             resourceInputs["isShieldedInstanceEnabled"] = args?.isShieldedInstanceEnabled;
             resourceInputs["networkConfiguration"] = args?.networkConfiguration;
@@ -295,7 +313,6 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["workloadNetworkCidr"] = args?.workloadNetworkCidr;
             resourceInputs["actualEsxiHostsCount"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
-            resourceInputs["datastoreClusterIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -319,6 +336,10 @@ export interface ClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     capacityReservationId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     */
+    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
@@ -370,6 +391,10 @@ export interface ClusterState {
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
     initialHostShapeName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     */
+    initialVcfByolAllocationId?: pulumi.Input<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *
@@ -440,9 +465,17 @@ export interface ClusterArgs {
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     */
+    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails>;
+    /**
      * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      */
     computeAvailabilityDomain: pulumi.Input<string>;
+    /**
+     * A list of datastore clusters.
+     */
+    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
@@ -482,6 +515,10 @@ export interface ClusterArgs {
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
     initialHostShapeName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     */
+    initialVcfByolAllocationId?: pulumi.Input<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *

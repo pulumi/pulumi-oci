@@ -121,6 +121,21 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
     }
 
     /**
+     * The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    @Import(name="spatialStudioUrl")
+    private @Nullable Output<String> spatialStudioUrl;
+
+    /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    public Optional<Output<String>> spatialStudioUrl() {
+        return Optional.ofNullable(this.spatialStudioUrl);
+    }
+
+    /**
      * Oracle SQL Developer Web URL.
      * 
      */
@@ -145,6 +160,7 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
         this.machineLearningUserManagementUrl = $.machineLearningUserManagementUrl;
         this.mongoDbUrl = $.mongoDbUrl;
         this.ordsUrl = $.ordsUrl;
+        this.spatialStudioUrl = $.spatialStudioUrl;
         this.sqlDevWebUrl = $.sqlDevWebUrl;
     }
 
@@ -311,6 +327,27 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
          */
         public Builder ordsUrl(String ordsUrl) {
             return ordsUrl(Output.of(ordsUrl));
+        }
+
+        /**
+         * @param spatialStudioUrl The URL of the Spatial Studio for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spatialStudioUrl(@Nullable Output<String> spatialStudioUrl) {
+            $.spatialStudioUrl = spatialStudioUrl;
+            return this;
+        }
+
+        /**
+         * @param spatialStudioUrl The URL of the Spatial Studio for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder spatialStudioUrl(String spatialStudioUrl) {
+            return spatialStudioUrl(Output.of(spatialStudioUrl));
         }
 
         /**

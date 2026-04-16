@@ -13,6 +13,130 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type FusionEnvironmentAdditionalEgressRule struct {
+	// (Updatable) Rule description.
+	Description string `pulumi:"description"`
+	// (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr string `pulumi:"destinationCidr"`
+	// (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort int `pulumi:"maxDestinationPort"`
+	// (Updatable) The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort int `pulumi:"minDestinationPort"`
+}
+
+// FusionEnvironmentAdditionalEgressRuleInput is an input type that accepts FusionEnvironmentAdditionalEgressRuleArgs and FusionEnvironmentAdditionalEgressRuleOutput values.
+// You can construct a concrete instance of `FusionEnvironmentAdditionalEgressRuleInput` via:
+//
+//	FusionEnvironmentAdditionalEgressRuleArgs{...}
+type FusionEnvironmentAdditionalEgressRuleInput interface {
+	pulumi.Input
+
+	ToFusionEnvironmentAdditionalEgressRuleOutput() FusionEnvironmentAdditionalEgressRuleOutput
+	ToFusionEnvironmentAdditionalEgressRuleOutputWithContext(context.Context) FusionEnvironmentAdditionalEgressRuleOutput
+}
+
+type FusionEnvironmentAdditionalEgressRuleArgs struct {
+	// (Updatable) Rule description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr pulumi.StringInput `pulumi:"destinationCidr"`
+	// (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort pulumi.IntInput `pulumi:"maxDestinationPort"`
+	// (Updatable) The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort pulumi.IntInput `pulumi:"minDestinationPort"`
+}
+
+func (FusionEnvironmentAdditionalEgressRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i FusionEnvironmentAdditionalEgressRuleArgs) ToFusionEnvironmentAdditionalEgressRuleOutput() FusionEnvironmentAdditionalEgressRuleOutput {
+	return i.ToFusionEnvironmentAdditionalEgressRuleOutputWithContext(context.Background())
+}
+
+func (i FusionEnvironmentAdditionalEgressRuleArgs) ToFusionEnvironmentAdditionalEgressRuleOutputWithContext(ctx context.Context) FusionEnvironmentAdditionalEgressRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdditionalEgressRuleOutput)
+}
+
+// FusionEnvironmentAdditionalEgressRuleArrayInput is an input type that accepts FusionEnvironmentAdditionalEgressRuleArray and FusionEnvironmentAdditionalEgressRuleArrayOutput values.
+// You can construct a concrete instance of `FusionEnvironmentAdditionalEgressRuleArrayInput` via:
+//
+//	FusionEnvironmentAdditionalEgressRuleArray{ FusionEnvironmentAdditionalEgressRuleArgs{...} }
+type FusionEnvironmentAdditionalEgressRuleArrayInput interface {
+	pulumi.Input
+
+	ToFusionEnvironmentAdditionalEgressRuleArrayOutput() FusionEnvironmentAdditionalEgressRuleArrayOutput
+	ToFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(context.Context) FusionEnvironmentAdditionalEgressRuleArrayOutput
+}
+
+type FusionEnvironmentAdditionalEgressRuleArray []FusionEnvironmentAdditionalEgressRuleInput
+
+func (FusionEnvironmentAdditionalEgressRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i FusionEnvironmentAdditionalEgressRuleArray) ToFusionEnvironmentAdditionalEgressRuleArrayOutput() FusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return i.ToFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(context.Background())
+}
+
+func (i FusionEnvironmentAdditionalEgressRuleArray) ToFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) FusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdditionalEgressRuleArrayOutput)
+}
+
+type FusionEnvironmentAdditionalEgressRuleOutput struct{ *pulumi.OutputState }
+
+func (FusionEnvironmentAdditionalEgressRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o FusionEnvironmentAdditionalEgressRuleOutput) ToFusionEnvironmentAdditionalEgressRuleOutput() FusionEnvironmentAdditionalEgressRuleOutput {
+	return o
+}
+
+func (o FusionEnvironmentAdditionalEgressRuleOutput) ToFusionEnvironmentAdditionalEgressRuleOutputWithContext(ctx context.Context) FusionEnvironmentAdditionalEgressRuleOutput {
+	return o
+}
+
+// (Updatable) Rule description.
+func (o FusionEnvironmentAdditionalEgressRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v FusionEnvironmentAdditionalEgressRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+func (o FusionEnvironmentAdditionalEgressRuleOutput) DestinationCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v FusionEnvironmentAdditionalEgressRule) string { return v.DestinationCidr }).(pulumi.StringOutput)
+}
+
+// (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o FusionEnvironmentAdditionalEgressRuleOutput) MaxDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v FusionEnvironmentAdditionalEgressRule) int { return v.MaxDestinationPort }).(pulumi.IntOutput)
+}
+
+// (Updatable) The minimum port number, which must not be greater than the maximum port number.
+func (o FusionEnvironmentAdditionalEgressRuleOutput) MinDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v FusionEnvironmentAdditionalEgressRule) int { return v.MinDestinationPort }).(pulumi.IntOutput)
+}
+
+type FusionEnvironmentAdditionalEgressRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (FusionEnvironmentAdditionalEgressRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o FusionEnvironmentAdditionalEgressRuleArrayOutput) ToFusionEnvironmentAdditionalEgressRuleArrayOutput() FusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o FusionEnvironmentAdditionalEgressRuleArrayOutput) ToFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) FusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o FusionEnvironmentAdditionalEgressRuleArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentAdditionalEgressRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FusionEnvironmentAdditionalEgressRule {
+		return vs[0].([]FusionEnvironmentAdditionalEgressRule)[vs[1].(int)]
+	}).(FusionEnvironmentAdditionalEgressRuleOutput)
+}
+
 type FusionEnvironmentAdminUserItem struct {
 	// The email address for the administrator.
 	EmailAddress *string `pulumi:"emailAddress"`
@@ -1371,6 +1495,8 @@ func (o FusionEnvironmentRuleConditionArrayOutput) Index(i pulumi.IntInput) Fusi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentAdditionalEgressRuleInput)(nil)).Elem(), FusionEnvironmentAdditionalEgressRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentAdditionalEgressRuleArrayInput)(nil)).Elem(), FusionEnvironmentAdditionalEgressRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentAdminUserItemInput)(nil)).Elem(), FusionEnvironmentAdminUserItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentAdminUserItemArrayInput)(nil)).Elem(), FusionEnvironmentAdminUserItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsInput)(nil)).Elem(), FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs{})
@@ -1391,6 +1517,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentRuleArrayInput)(nil)).Elem(), FusionEnvironmentRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentRuleConditionInput)(nil)).Elem(), FusionEnvironmentRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FusionEnvironmentRuleConditionArrayInput)(nil)).Elem(), FusionEnvironmentRuleConditionArray{})
+	pulumi.RegisterOutputType(FusionEnvironmentAdditionalEgressRuleOutput{})
+	pulumi.RegisterOutputType(FusionEnvironmentAdditionalEgressRuleArrayOutput{})
 	pulumi.RegisterOutputType(FusionEnvironmentAdminUserItemOutput{})
 	pulumi.RegisterOutputType(FusionEnvironmentAdminUserItemArrayOutput{})
 	pulumi.RegisterOutputType(FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput{})

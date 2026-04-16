@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -71,6 +73,7 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
         return obj['__pulumiType'] === DbmulticloudOracleDbGcpKeyRing.__pulumiType;
     }
 
+    declare public readonly action: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
      */
@@ -108,6 +111,10 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
      */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
+     * Replication metadata, it has information about replication and target region.
+     */
+    declare public /*out*/ readonly replicationMetadatas: pulumi.Output<outputs.oci.DbmulticloudOracleDbGcpKeyRingReplicationMetadata[]>;
+    /**
      * The lifecycle state of the Oracle DB GCP Key Ring resource.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -115,6 +122,10 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    declare public readonly targetRegion: pulumi.Output<string | undefined>;
     /**
      * Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
@@ -145,6 +156,7 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbmulticloudOracleDbGcpKeyRingState | undefined;
+            resourceInputs["action"] = state?.action;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
@@ -154,8 +166,10 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
             resourceInputs["location"] = state?.location;
             resourceInputs["oracleDbConnectorId"] = state?.oracleDbConnectorId;
             resourceInputs["properties"] = state?.properties;
+            resourceInputs["replicationMetadatas"] = state?.replicationMetadatas;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetRegion"] = state?.targetRegion;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["type"] = state?.type;
@@ -170,6 +184,7 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
             if (args?.oracleDbConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'oracleDbConnectorId'");
             }
+            resourceInputs["action"] = args?.action;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
@@ -178,8 +193,10 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
             resourceInputs["location"] = args?.location;
             resourceInputs["oracleDbConnectorId"] = args?.oracleDbConnectorId;
             resourceInputs["properties"] = args?.properties;
+            resourceInputs["targetRegion"] = args?.targetRegion;
             resourceInputs["type"] = args?.type;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
+            resourceInputs["replicationMetadatas"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -194,6 +211,7 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DbmulticloudOracleDbGcpKeyRing resources.
  */
 export interface DbmulticloudOracleDbGcpKeyRingState {
+    action?: pulumi.Input<string>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
      */
@@ -231,6 +249,10 @@ export interface DbmulticloudOracleDbGcpKeyRingState {
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Replication metadata, it has information about replication and target region.
+     */
+    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbGcpKeyRingReplicationMetadata>[]>;
+    /**
      * The lifecycle state of the Oracle DB GCP Key Ring resource.
      */
     state?: pulumi.Input<string>;
@@ -238,6 +260,10 @@ export interface DbmulticloudOracleDbGcpKeyRingState {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    targetRegion?: pulumi.Input<string>;
     /**
      * Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
@@ -260,6 +286,7 @@ export interface DbmulticloudOracleDbGcpKeyRingState {
  * The set of arguments for constructing a DbmulticloudOracleDbGcpKeyRing resource.
  */
 export interface DbmulticloudOracleDbGcpKeyRingArgs {
+    action?: pulumi.Input<string>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
      */
@@ -292,6 +319,10 @@ export interface DbmulticloudOracleDbGcpKeyRingArgs {
      * Oracle DB GCP Key Ring resource's properties.
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    targetRegion?: pulumi.Input<string>;
     /**
      * Oracle DB GCP Key Ring resource Type.
      *

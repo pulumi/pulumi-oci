@@ -17,6 +17,8 @@ import * as utilities from "../utilities";
  *   Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
  * operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
  * and remove in single operation is not allowed.
+ * For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+ * will also delete the associated VmCluster and DbStorageVault.
  *
  * ## Example Usage
  *
@@ -28,17 +30,59 @@ import * as utilities from "../utilities";
  *     catalogDetails: [{
  *         adminPassword: distributedDatabaseCatalogDetailsAdminPassword,
  *         source: distributedDatabaseCatalogDetailsSource,
- *         vmClusterId: testVmCluster.id,
+ *         availabilityDomain: distributedDatabaseCatalogDetailsAvailabilityDomain,
+ *         dbStorageVaultDetails: {
+ *             additionalFlashCacheInPercent: distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+ *             highCapacityDatabaseStorage: distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *         },
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
  *         peerDetails: [{
- *             vmClusterId: testVmCluster.id,
+ *             availabilityDomain: distributedDatabaseCatalogDetailsPeerDetailsAvailabilityDomain,
+ *             dbStorageVaultDetails: {
+ *                 additionalFlashCacheInPercent: distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+ *                 highCapacityDatabaseStorage: distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *             },
  *             protectionMode: distributedDatabaseCatalogDetailsPeerDetailsProtectionMode,
  *             transportType: distributedDatabaseCatalogDetailsPeerDetailsTransportType,
+ *             vmClusterDetails: {
+ *                 backupNetworkNsgIds: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
+ *                 backupSubnetId: testSubnet.id,
+ *                 domain: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsDomain,
+ *                 enabledEcpuCount: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
+ *                 isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+ *                 isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+ *                 isIncidentLogsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *                 licenseModel: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsLicenseModel,
+ *                 nsgIds: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsNsgIds,
+ *                 privateZoneId: testZone.id,
+ *                 sshPublicKeys: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
+ *                 subnetId: testSubnet.id,
+ *                 totalEcpuCount: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
+ *                 vmFileSystemStorageSize: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *             },
+ *             vmClusterId: testVmCluster.id,
  *         }],
  *         peerVmClusterIds: distributedDatabaseCatalogDetailsPeerVmClusterIds,
  *         shardSpace: distributedDatabaseCatalogDetailsShardSpace,
  *         vaultId: testVault.id,
+ *         vmClusterDetails: {
+ *             backupNetworkNsgIds: distributedDatabaseCatalogDetailsVmClusterDetailsBackupNetworkNsgIds,
+ *             backupSubnetId: testSubnet.id,
+ *             domain: distributedDatabaseCatalogDetailsVmClusterDetailsDomain,
+ *             enabledEcpuCount: distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount,
+ *             isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+ *             isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+ *             isIncidentLogsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *             licenseModel: distributedDatabaseCatalogDetailsVmClusterDetailsLicenseModel,
+ *             nsgIds: distributedDatabaseCatalogDetailsVmClusterDetailsNsgIds,
+ *             privateZoneId: testZone.id,
+ *             sshPublicKeys: distributedDatabaseCatalogDetailsVmClusterDetailsSshPublicKeys,
+ *             subnetId: testSubnet.id,
+ *             totalEcpuCount: distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount,
+ *             vmFileSystemStorageSize: distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *         },
+ *         vmClusterId: testVmCluster.id,
  *     }],
  *     characterSet: distributedDatabaseCharacterSet,
  *     compartmentId: compartmentId,
@@ -55,17 +99,59 @@ import * as utilities from "../utilities";
  *     shardDetails: [{
  *         adminPassword: distributedDatabaseShardDetailsAdminPassword,
  *         source: distributedDatabaseShardDetailsSource,
- *         vmClusterId: testVmCluster.id,
+ *         availabilityDomain: distributedDatabaseShardDetailsAvailabilityDomain,
+ *         dbStorageVaultDetails: {
+ *             additionalFlashCacheInPercent: distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+ *             highCapacityDatabaseStorage: distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *         },
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
  *         peerDetails: [{
- *             vmClusterId: testVmCluster.id,
+ *             availabilityDomain: distributedDatabaseShardDetailsPeerDetailsAvailabilityDomain,
+ *             dbStorageVaultDetails: {
+ *                 additionalFlashCacheInPercent: distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+ *                 highCapacityDatabaseStorage: distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *             },
  *             protectionMode: distributedDatabaseShardDetailsPeerDetailsProtectionMode,
  *             transportType: distributedDatabaseShardDetailsPeerDetailsTransportType,
+ *             vmClusterDetails: {
+ *                 backupNetworkNsgIds: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
+ *                 backupSubnetId: testSubnet.id,
+ *                 domain: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsDomain,
+ *                 enabledEcpuCount: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
+ *                 isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+ *                 isHealthMonitoringEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+ *                 isIncidentLogsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *                 licenseModel: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsLicenseModel,
+ *                 nsgIds: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsNsgIds,
+ *                 privateZoneId: testZone.id,
+ *                 sshPublicKeys: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
+ *                 subnetId: testSubnet.id,
+ *                 totalEcpuCount: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
+ *                 vmFileSystemStorageSize: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *             },
+ *             vmClusterId: testVmCluster.id,
  *         }],
  *         peerVmClusterIds: distributedDatabaseShardDetailsPeerVmClusterIds,
  *         shardSpace: distributedDatabaseShardDetailsShardSpace,
  *         vaultId: testVault.id,
+ *         vmClusterDetails: {
+ *             backupNetworkNsgIds: distributedDatabaseShardDetailsVmClusterDetailsBackupNetworkNsgIds,
+ *             backupSubnetId: testSubnet.id,
+ *             domain: distributedDatabaseShardDetailsVmClusterDetailsDomain,
+ *             enabledEcpuCount: distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount,
+ *             isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+ *             isHealthMonitoringEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+ *             isIncidentLogsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *             licenseModel: distributedDatabaseShardDetailsVmClusterDetailsLicenseModel,
+ *             nsgIds: distributedDatabaseShardDetailsVmClusterDetailsNsgIds,
+ *             privateZoneId: testZone.id,
+ *             sshPublicKeys: distributedDatabaseShardDetailsVmClusterDetailsSshPublicKeys,
+ *             subnetId: testSubnet.id,
+ *             totalEcpuCount: distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount,
+ *             vmFileSystemStorageSize: distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *         },
+ *         vmClusterId: testVmCluster.id,
  *     }],
  *     shardingMethod: distributedDatabaseShardingMethod,
  *     chunks: distributedDatabaseChunks,
@@ -107,6 +193,7 @@ import * as utilities from "../utilities";
  *     replicationFactor: distributedDatabaseReplicationFactor,
  *     replicationMethod: distributedDatabaseReplicationMethod,
  *     replicationUnit: distributedDatabaseReplicationUnit,
+ *     scanListenerPort: distributedDatabaseScanListenerPort,
  * });
  * ```
  *
@@ -249,6 +336,10 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
      */
     declare public /*out*/ readonly metadatas: pulumi.Output<outputs.oci.DistributedDatabaseDistributedDatabaseMetadata[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     */
+    declare public readonly moveReplicationUnitTrigger: pulumi.Output<number | undefined>;
+    /**
      * The national character set for the database.
      */
     declare public readonly ncharacterSet: pulumi.Output<string>;
@@ -273,6 +364,10 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
      */
     declare public readonly privateEndpointIds: pulumi.Output<string[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     */
+    declare public readonly recreateFailedResourceTrigger: pulumi.Output<number | undefined>;
+    /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
     declare public readonly replicationFactor: pulumi.Output<number>;
@@ -284,6 +379,10 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
     declare public readonly replicationUnit: pulumi.Output<number>;
+    /**
+     * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     */
+    declare public readonly scanListenerPort: pulumi.Output<number>;
     /**
      * Collection of shards for the Globally distributed database.
      */
@@ -374,15 +473,18 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
             resourceInputs["listenerPort"] = state?.listenerPort;
             resourceInputs["listenerPortTls"] = state?.listenerPortTls;
             resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["moveReplicationUnitTrigger"] = state?.moveReplicationUnitTrigger;
             resourceInputs["ncharacterSet"] = state?.ncharacterSet;
             resourceInputs["onsPortLocal"] = state?.onsPortLocal;
             resourceInputs["onsPortRemote"] = state?.onsPortRemote;
             resourceInputs["patchOperations"] = state?.patchOperations;
             resourceInputs["prefix"] = state?.prefix;
             resourceInputs["privateEndpointIds"] = state?.privateEndpointIds;
+            resourceInputs["recreateFailedResourceTrigger"] = state?.recreateFailedResourceTrigger;
             resourceInputs["replicationFactor"] = state?.replicationFactor;
             resourceInputs["replicationMethod"] = state?.replicationMethod;
             resourceInputs["replicationUnit"] = state?.replicationUnit;
+            resourceInputs["scanListenerPort"] = state?.scanListenerPort;
             resourceInputs["shardDetails"] = state?.shardDetails;
             resourceInputs["shardingMethod"] = state?.shardingMethod;
             resourceInputs["startDatabaseTrigger"] = state?.startDatabaseTrigger;
@@ -458,15 +560,18 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
             resourceInputs["gsmSshPublicKey"] = args?.gsmSshPublicKey;
             resourceInputs["listenerPort"] = args?.listenerPort;
             resourceInputs["listenerPortTls"] = args?.listenerPortTls;
+            resourceInputs["moveReplicationUnitTrigger"] = args?.moveReplicationUnitTrigger;
             resourceInputs["ncharacterSet"] = args?.ncharacterSet;
             resourceInputs["onsPortLocal"] = args?.onsPortLocal;
             resourceInputs["onsPortRemote"] = args?.onsPortRemote;
             resourceInputs["patchOperations"] = args?.patchOperations;
             resourceInputs["prefix"] = args?.prefix;
             resourceInputs["privateEndpointIds"] = args?.privateEndpointIds;
+            resourceInputs["recreateFailedResourceTrigger"] = args?.recreateFailedResourceTrigger;
             resourceInputs["replicationFactor"] = args?.replicationFactor;
             resourceInputs["replicationMethod"] = args?.replicationMethod;
             resourceInputs["replicationUnit"] = args?.replicationUnit;
+            resourceInputs["scanListenerPort"] = args?.scanListenerPort;
             resourceInputs["shardDetails"] = args?.shardDetails;
             resourceInputs["shardingMethod"] = args?.shardingMethod;
             resourceInputs["startDatabaseTrigger"] = args?.startDatabaseTrigger;
@@ -602,6 +707,10 @@ export interface DistributedDatabaseDistributedDatabaseState {
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseMetadata>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     */
+    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    /**
      * The national character set for the database.
      */
     ncharacterSet?: pulumi.Input<string>;
@@ -626,6 +735,10 @@ export interface DistributedDatabaseDistributedDatabaseState {
      */
     privateEndpointIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     */
+    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
     replicationFactor?: pulumi.Input<number>;
@@ -637,6 +750,10 @@ export interface DistributedDatabaseDistributedDatabaseState {
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
     replicationUnit?: pulumi.Input<number>;
+    /**
+     * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     */
+    scanListenerPort?: pulumi.Input<number>;
     /**
      * Collection of shards for the Globally distributed database.
      */
@@ -769,6 +886,10 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
      */
     listenerPortTls?: pulumi.Input<number>;
     /**
+     * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+     */
+    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    /**
      * The national character set for the database.
      */
     ncharacterSet: pulumi.Input<string>;
@@ -793,6 +914,10 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
      */
     privateEndpointIds: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+     */
+    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
     replicationFactor?: pulumi.Input<number>;
@@ -804,6 +929,10 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
     replicationUnit?: pulumi.Input<number>;
+    /**
+     * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+     */
+    scanListenerPort?: pulumi.Input<number>;
     /**
      * Collection of shards for the Globally distributed database.
      */

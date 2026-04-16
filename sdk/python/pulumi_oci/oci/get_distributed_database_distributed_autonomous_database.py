@@ -27,10 +27,16 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
     """
     A collection of values returned by getDistributedDatabaseDistributedAutonomousDatabase.
     """
-    def __init__(__self__, catalog_details=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, db_workload=None, defined_tags=None, display_name=None, distributed_autonomous_database_id=None, download_gsm_certificate_signing_request_trigger=None, downloaded_gsm_csr_pem=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_gsm_certificate_signing_request_trigger_ca_bundle_id=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, id=None, latest_gsm_images=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata_query=None, metadatas=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, replication_factor=None, replication_method=None, replication_unit=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_ca_signed_certificate=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_network_details=None, validate_network_trigger=None):
+    def __init__(__self__, ca_bundle_id=None, catalog_details=None, certificate_id=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_gsm_wallet_trigger=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, db_workload=None, defined_tags=None, display_name=None, distributed_autonomous_database_id=None, download_gsm_certificate_signing_request_trigger=None, downloaded_gsm_csr_pem=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_gsm_certificate_signing_request_trigger_ca_bundle_id=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, id=None, latest_gsm_images=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata_query=None, metadatas=None, move_replication_unit_trigger=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, recreate_failed_resource_trigger=None, replication_factor=None, replication_method=None, replication_unit=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_ca_signed_certificate=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_ca_bundle_trigger=None, validate_network_details=None, validate_network_trigger=None):
+        if ca_bundle_id and not isinstance(ca_bundle_id, str):
+            raise TypeError("Expected argument 'ca_bundle_id' to be a str")
+        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
         if catalog_details and not isinstance(catalog_details, list):
             raise TypeError("Expected argument 'catalog_details' to be a list")
         pulumi.set(__self__, "catalog_details", catalog_details)
+        if certificate_id and not isinstance(certificate_id, str):
+            raise TypeError("Expected argument 'certificate_id' to be a str")
+        pulumi.set(__self__, "certificate_id", certificate_id)
         if change_db_backup_config_trigger and not isinstance(change_db_backup_config_trigger, int):
             raise TypeError("Expected argument 'change_db_backup_config_trigger' to be a int")
         pulumi.set(__self__, "change_db_backup_config_trigger", change_db_backup_config_trigger)
@@ -43,6 +49,9 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if configure_gsm_wallet_trigger and not isinstance(configure_gsm_wallet_trigger, int):
+            raise TypeError("Expected argument 'configure_gsm_wallet_trigger' to be a int")
+        pulumi.set(__self__, "configure_gsm_wallet_trigger", configure_gsm_wallet_trigger)
         if configure_sharding_is_rebalance_required and not isinstance(configure_sharding_is_rebalance_required, bool):
             raise TypeError("Expected argument 'configure_sharding_is_rebalance_required' to be a bool")
         pulumi.set(__self__, "configure_sharding_is_rebalance_required", configure_sharding_is_rebalance_required)
@@ -130,6 +139,9 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         if metadatas and not isinstance(metadatas, list):
             raise TypeError("Expected argument 'metadatas' to be a list")
         pulumi.set(__self__, "metadatas", metadatas)
+        if move_replication_unit_trigger and not isinstance(move_replication_unit_trigger, int):
+            raise TypeError("Expected argument 'move_replication_unit_trigger' to be a int")
+        pulumi.set(__self__, "move_replication_unit_trigger", move_replication_unit_trigger)
         if ncharacter_set and not isinstance(ncharacter_set, str):
             raise TypeError("Expected argument 'ncharacter_set' to be a str")
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
@@ -148,6 +160,9 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         if private_endpoint_ids and not isinstance(private_endpoint_ids, list):
             raise TypeError("Expected argument 'private_endpoint_ids' to be a list")
         pulumi.set(__self__, "private_endpoint_ids", private_endpoint_ids)
+        if recreate_failed_resource_trigger and not isinstance(recreate_failed_resource_trigger, int):
+            raise TypeError("Expected argument 'recreate_failed_resource_trigger' to be a int")
+        pulumi.set(__self__, "recreate_failed_resource_trigger", recreate_failed_resource_trigger)
         if replication_factor and not isinstance(replication_factor, int):
             raise TypeError("Expected argument 'replication_factor' to be a int")
         pulumi.set(__self__, "replication_factor", replication_factor)
@@ -187,6 +202,9 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         if upload_signed_certificate_and_generate_wallet_trigger and not isinstance(upload_signed_certificate_and_generate_wallet_trigger, int):
             raise TypeError("Expected argument 'upload_signed_certificate_and_generate_wallet_trigger' to be a int")
         pulumi.set(__self__, "upload_signed_certificate_and_generate_wallet_trigger", upload_signed_certificate_and_generate_wallet_trigger)
+        if validate_ca_bundle_trigger and not isinstance(validate_ca_bundle_trigger, int):
+            raise TypeError("Expected argument 'validate_ca_bundle_trigger' to be a int")
+        pulumi.set(__self__, "validate_ca_bundle_trigger", validate_ca_bundle_trigger)
         if validate_network_details and not isinstance(validate_network_details, list):
             raise TypeError("Expected argument 'validate_network_details' to be a list")
         pulumi.set(__self__, "validate_network_details", validate_network_details)
@@ -195,12 +213,22 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         pulumi.set(__self__, "validate_network_trigger", validate_network_trigger)
 
     @_builtins.property
+    @pulumi.getter(name="caBundleId")
+    def ca_bundle_id(self) -> _builtins.str:
+        return pulumi.get(self, "ca_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="catalogDetails")
     def catalog_details(self) -> Sequence['outputs.GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailResult']:
         """
         Collection of catalogs associated with the Globally distributed autonomous database.
         """
         return pulumi.get(self, "catalog_details")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_id")
 
     @_builtins.property
     @pulumi.getter(name="changeDbBackupConfigTrigger")
@@ -230,6 +258,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="configureGsmWalletTrigger")
+    def configure_gsm_wallet_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "configure_gsm_wallet_trigger")
 
     @_builtins.property
     @pulumi.getter(name="configureShardingIsRebalanceRequired")
@@ -422,6 +455,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         return pulumi.get(self, "metadatas")
 
     @_builtins.property
+    @pulumi.getter(name="moveReplicationUnitTrigger")
+    def move_replication_unit_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "move_replication_unit_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> _builtins.str:
         """
@@ -465,6 +503,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
         """
         return pulumi.get(self, "private_endpoint_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="recreateFailedResourceTrigger")
+    def recreate_failed_resource_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "recreate_failed_resource_trigger")
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
@@ -559,6 +602,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabaseResult:
         return pulumi.get(self, "upload_signed_certificate_and_generate_wallet_trigger")
 
     @_builtins.property
+    @pulumi.getter(name="validateCaBundleTrigger")
+    def validate_ca_bundle_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "validate_ca_bundle_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="validateNetworkDetails")
     def validate_network_details(self) -> Sequence['outputs.GetDistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailResult']:
         return pulumi.get(self, "validate_network_details")
@@ -575,11 +623,14 @@ class AwaitableGetDistributedDatabaseDistributedAutonomousDatabaseResult(GetDist
         if False:
             yield self
         return GetDistributedDatabaseDistributedAutonomousDatabaseResult(
+            ca_bundle_id=self.ca_bundle_id,
             catalog_details=self.catalog_details,
+            certificate_id=self.certificate_id,
             change_db_backup_config_trigger=self.change_db_backup_config_trigger,
             character_set=self.character_set,
             chunks=self.chunks,
             compartment_id=self.compartment_id,
+            configure_gsm_wallet_trigger=self.configure_gsm_wallet_trigger,
             configure_sharding_is_rebalance_required=self.configure_sharding_is_rebalance_required,
             configure_sharding_trigger=self.configure_sharding_trigger,
             connection_strings=self.connection_strings,
@@ -609,12 +660,14 @@ class AwaitableGetDistributedDatabaseDistributedAutonomousDatabaseResult(GetDist
             listener_port_tls=self.listener_port_tls,
             metadata_query=self.metadata_query,
             metadatas=self.metadatas,
+            move_replication_unit_trigger=self.move_replication_unit_trigger,
             ncharacter_set=self.ncharacter_set,
             ons_port_local=self.ons_port_local,
             ons_port_remote=self.ons_port_remote,
             patch_operations=self.patch_operations,
             prefix=self.prefix,
             private_endpoint_ids=self.private_endpoint_ids,
+            recreate_failed_resource_trigger=self.recreate_failed_resource_trigger,
             replication_factor=self.replication_factor,
             replication_method=self.replication_method,
             replication_unit=self.replication_unit,
@@ -628,6 +681,7 @@ class AwaitableGetDistributedDatabaseDistributedAutonomousDatabaseResult(GetDist
             time_updated=self.time_updated,
             upload_ca_signed_certificate=self.upload_ca_signed_certificate,
             upload_signed_certificate_and_generate_wallet_trigger=self.upload_signed_certificate_and_generate_wallet_trigger,
+            validate_ca_bundle_trigger=self.validate_ca_bundle_trigger,
             validate_network_details=self.validate_network_details,
             validate_network_trigger=self.validate_network_trigger)
 
@@ -652,11 +706,14 @@ def get_distributed_database_distributed_autonomous_database(distributed_autonom
     __ret__ = pulumi.runtime.invoke('oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase', __args__, opts=opts, typ=GetDistributedDatabaseDistributedAutonomousDatabaseResult).value
 
     return AwaitableGetDistributedDatabaseDistributedAutonomousDatabaseResult(
+        ca_bundle_id=pulumi.get(__ret__, 'ca_bundle_id'),
         catalog_details=pulumi.get(__ret__, 'catalog_details'),
+        certificate_id=pulumi.get(__ret__, 'certificate_id'),
         change_db_backup_config_trigger=pulumi.get(__ret__, 'change_db_backup_config_trigger'),
         character_set=pulumi.get(__ret__, 'character_set'),
         chunks=pulumi.get(__ret__, 'chunks'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configure_gsm_wallet_trigger=pulumi.get(__ret__, 'configure_gsm_wallet_trigger'),
         configure_sharding_is_rebalance_required=pulumi.get(__ret__, 'configure_sharding_is_rebalance_required'),
         configure_sharding_trigger=pulumi.get(__ret__, 'configure_sharding_trigger'),
         connection_strings=pulumi.get(__ret__, 'connection_strings'),
@@ -686,12 +743,14 @@ def get_distributed_database_distributed_autonomous_database(distributed_autonom
         listener_port_tls=pulumi.get(__ret__, 'listener_port_tls'),
         metadata_query=pulumi.get(__ret__, 'metadata_query'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
+        move_replication_unit_trigger=pulumi.get(__ret__, 'move_replication_unit_trigger'),
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
         ons_port_local=pulumi.get(__ret__, 'ons_port_local'),
         ons_port_remote=pulumi.get(__ret__, 'ons_port_remote'),
         patch_operations=pulumi.get(__ret__, 'patch_operations'),
         prefix=pulumi.get(__ret__, 'prefix'),
         private_endpoint_ids=pulumi.get(__ret__, 'private_endpoint_ids'),
+        recreate_failed_resource_trigger=pulumi.get(__ret__, 'recreate_failed_resource_trigger'),
         replication_factor=pulumi.get(__ret__, 'replication_factor'),
         replication_method=pulumi.get(__ret__, 'replication_method'),
         replication_unit=pulumi.get(__ret__, 'replication_unit'),
@@ -705,6 +764,7 @@ def get_distributed_database_distributed_autonomous_database(distributed_autonom
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upload_ca_signed_certificate=pulumi.get(__ret__, 'upload_ca_signed_certificate'),
         upload_signed_certificate_and_generate_wallet_trigger=pulumi.get(__ret__, 'upload_signed_certificate_and_generate_wallet_trigger'),
+        validate_ca_bundle_trigger=pulumi.get(__ret__, 'validate_ca_bundle_trigger'),
         validate_network_details=pulumi.get(__ret__, 'validate_network_details'),
         validate_network_trigger=pulumi.get(__ret__, 'validate_network_trigger'))
 def get_distributed_database_distributed_autonomous_database_output(distributed_autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -726,11 +786,14 @@ def get_distributed_database_distributed_autonomous_database_output(distributed_
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase', __args__, opts=opts, typ=GetDistributedDatabaseDistributedAutonomousDatabaseResult)
     return __ret__.apply(lambda __response__: GetDistributedDatabaseDistributedAutonomousDatabaseResult(
+        ca_bundle_id=pulumi.get(__response__, 'ca_bundle_id'),
         catalog_details=pulumi.get(__response__, 'catalog_details'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
         change_db_backup_config_trigger=pulumi.get(__response__, 'change_db_backup_config_trigger'),
         character_set=pulumi.get(__response__, 'character_set'),
         chunks=pulumi.get(__response__, 'chunks'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configure_gsm_wallet_trigger=pulumi.get(__response__, 'configure_gsm_wallet_trigger'),
         configure_sharding_is_rebalance_required=pulumi.get(__response__, 'configure_sharding_is_rebalance_required'),
         configure_sharding_trigger=pulumi.get(__response__, 'configure_sharding_trigger'),
         connection_strings=pulumi.get(__response__, 'connection_strings'),
@@ -760,12 +823,14 @@ def get_distributed_database_distributed_autonomous_database_output(distributed_
         listener_port_tls=pulumi.get(__response__, 'listener_port_tls'),
         metadata_query=pulumi.get(__response__, 'metadata_query'),
         metadatas=pulumi.get(__response__, 'metadatas'),
+        move_replication_unit_trigger=pulumi.get(__response__, 'move_replication_unit_trigger'),
         ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
         ons_port_local=pulumi.get(__response__, 'ons_port_local'),
         ons_port_remote=pulumi.get(__response__, 'ons_port_remote'),
         patch_operations=pulumi.get(__response__, 'patch_operations'),
         prefix=pulumi.get(__response__, 'prefix'),
         private_endpoint_ids=pulumi.get(__response__, 'private_endpoint_ids'),
+        recreate_failed_resource_trigger=pulumi.get(__response__, 'recreate_failed_resource_trigger'),
         replication_factor=pulumi.get(__response__, 'replication_factor'),
         replication_method=pulumi.get(__response__, 'replication_method'),
         replication_unit=pulumi.get(__response__, 'replication_unit'),
@@ -779,5 +844,6 @@ def get_distributed_database_distributed_autonomous_database_output(distributed_
         time_updated=pulumi.get(__response__, 'time_updated'),
         upload_ca_signed_certificate=pulumi.get(__response__, 'upload_ca_signed_certificate'),
         upload_signed_certificate_and_generate_wallet_trigger=pulumi.get(__response__, 'upload_signed_certificate_and_generate_wallet_trigger'),
+        validate_ca_bundle_trigger=pulumi.get(__response__, 'validate_ca_bundle_trigger'),
         validate_network_details=pulumi.get(__response__, 'validate_network_details'),
         validate_network_trigger=pulumi.get(__response__, 'validate_network_trigger')))

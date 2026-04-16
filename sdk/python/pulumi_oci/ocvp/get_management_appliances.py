@@ -28,7 +28,7 @@ class GetManagementAppliancesResult:
     """
     A collection of values returned by getManagementAppliances.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, management_appliance_collections=None, management_appliance_id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, management_appliance_collections=None, management_appliance_id=None, sddc_id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetManagementAppliancesResult:
         if management_appliance_id and not isinstance(management_appliance_id, str):
             raise TypeError("Expected argument 'management_appliance_id' to be a str")
         pulumi.set(__self__, "management_appliance_id", management_appliance_id)
+        if sddc_id and not isinstance(sddc_id, str):
+            raise TypeError("Expected argument 'sddc_id' to be a str")
+        pulumi.set(__self__, "sddc_id", sddc_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -94,6 +97,14 @@ class GetManagementAppliancesResult:
         return pulumi.get(self, "management_appliance_id")
 
     @_builtins.property
+    @pulumi.getter(name="sddcId")
+    def sddc_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        """
+        return pulumi.get(self, "sddc_id")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -114,6 +125,7 @@ class AwaitableGetManagementAppliancesResult(GetManagementAppliancesResult):
             id=self.id,
             management_appliance_collections=self.management_appliance_collections,
             management_appliance_id=self.management_appliance_id,
+            sddc_id=self.sddc_id,
             state=self.state)
 
 
@@ -121,6 +133,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
                               filters: Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]] = None,
                               management_appliance_id: Optional[_builtins.str] = None,
+                              sddc_id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAppliancesResult:
     """
@@ -137,6 +150,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
     test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
+        sddc_id=test_sddc["id"],
         state=management_appliance_state)
     ```
 
@@ -144,6 +158,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str management_appliance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
+    :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param _builtins.str state: The lifecycle state of the management appliance.
     """
     __args__ = dict()
@@ -151,6 +166,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['managementApplianceId'] = management_appliance_id
+    __args__['sddcId'] = sddc_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getManagementAppliances:getManagementAppliances', __args__, opts=opts, typ=GetManagementAppliancesResult).value
@@ -162,11 +178,13 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         management_appliance_collections=pulumi.get(__ret__, 'management_appliance_collections'),
         management_appliance_id=pulumi.get(__ret__, 'management_appliance_id'),
+        sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAppliancesFilterArgs', 'GetManagementAppliancesFilterArgsDict']]]]] = None,
                                      management_appliance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                     sddc_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAppliancesResult]:
     """
@@ -183,6 +201,7 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
     test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
+        sddc_id=test_sddc["id"],
         state=management_appliance_state)
     ```
 
@@ -190,6 +209,7 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str management_appliance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
+    :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param _builtins.str state: The lifecycle state of the management appliance.
     """
     __args__ = dict()
@@ -197,6 +217,7 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['managementApplianceId'] = management_appliance_id
+    __args__['sddcId'] = sddc_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getManagementAppliances:getManagementAppliances', __args__, opts=opts, typ=GetManagementAppliancesResult)
@@ -207,4 +228,5 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
         id=pulumi.get(__response__, 'id'),
         management_appliance_collections=pulumi.get(__response__, 'management_appliance_collections'),
         management_appliance_id=pulumi.get(__response__, 'management_appliance_id'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
         state=pulumi.get(__response__, 'state')))

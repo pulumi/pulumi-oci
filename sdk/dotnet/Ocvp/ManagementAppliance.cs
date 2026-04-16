@@ -11,6 +11,9 @@ namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
     /// This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
     /// 
     /// Creates a management appliance.
     /// 
@@ -127,6 +130,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("managementAgentId")]
         public Output<string> ManagementAgentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        /// </summary>
+        [Output("pluginVersion")]
+        public Output<string> PluginVersion { get; private set; } = null!;
 
         /// <summary>
         /// One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
@@ -381,6 +390,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("managementAgentId")]
         public Input<string>? ManagementAgentId { get; set; }
+
+        /// <summary>
+        /// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        /// </summary>
+        [Input("pluginVersion")]
+        public Input<string>? PluginVersion { get; set; }
 
         /// <summary>
         /// One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.

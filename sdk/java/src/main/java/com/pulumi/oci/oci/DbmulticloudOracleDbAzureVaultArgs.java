@@ -17,6 +17,13 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
 
     public static final DbmulticloudOracleDbAzureVaultArgs Empty = new DbmulticloudOracleDbAzureVaultArgs();
 
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
     /**
      * (Updatable) Azure Vault ID.
      * 
@@ -153,6 +160,21 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Import(name="targetRegion")
+    private @Nullable Output<String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Optional<Output<String>> targetRegion() {
+        return Optional.ofNullable(this.targetRegion);
+    }
+
+    /**
      * (Updatable) Oracle DB Azure Vault resource type.
      * 
      * ** IMPORTANT **
@@ -176,6 +198,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     private DbmulticloudOracleDbAzureVaultArgs() {}
 
     private DbmulticloudOracleDbAzureVaultArgs(DbmulticloudOracleDbAzureVaultArgs $) {
+        this.action = $.action;
         this.azureVaultId = $.azureVaultId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
@@ -185,6 +208,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         this.oracleDbAzureResourceGroup = $.oracleDbAzureResourceGroup;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.targetRegion = $.targetRegion;
         this.type = $.type;
     }
 
@@ -204,6 +228,15 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
 
         public Builder(DbmulticloudOracleDbAzureVaultArgs defaults) {
             $ = new DbmulticloudOracleDbAzureVaultArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -393,6 +426,27 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
          */
         public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(@Nullable Output<String> targetRegion) {
+            $.targetRegion = targetRegion;
+            return this;
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(String targetRegion) {
+            return targetRegion(Output.of(targetRegion));
         }
 
         /**

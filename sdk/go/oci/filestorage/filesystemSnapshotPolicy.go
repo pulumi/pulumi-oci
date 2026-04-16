@@ -58,11 +58,16 @@ import (
 //				PolicyPrefix: pulumi.Any(filesystemSnapshotPolicyPolicyPrefix),
 //				Schedules: filestorage.FilesystemSnapshotPolicyScheduleArray{
 //					&filestorage.FilesystemSnapshotPolicyScheduleArgs{
-//						Period:                     pulumi.Any(filesystemSnapshotPolicySchedulesPeriod),
-//						TimeZone:                   pulumi.Any(filesystemSnapshotPolicySchedulesTimeZone),
-//						DayOfMonth:                 pulumi.Any(filesystemSnapshotPolicySchedulesDayOfMonth),
-//						DayOfWeek:                  pulumi.Any(filesystemSnapshotPolicySchedulesDayOfWeek),
-//						HourOfDay:                  pulumi.Any(filesystemSnapshotPolicySchedulesHourOfDay),
+//						Period:     pulumi.Any(filesystemSnapshotPolicySchedulesPeriod),
+//						TimeZone:   pulumi.Any(filesystemSnapshotPolicySchedulesTimeZone),
+//						DayOfMonth: pulumi.Any(filesystemSnapshotPolicySchedulesDayOfMonth),
+//						DayOfWeek:  pulumi.Any(filesystemSnapshotPolicySchedulesDayOfWeek),
+//						HourOfDay:  pulumi.Any(filesystemSnapshotPolicySchedulesHourOfDay),
+//						LockDurationDetails: &filestorage.FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs{
+//							LockDuration:    pulumi.Any(filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration),
+//							LockMode:        pulumi.Any(filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode),
+//							CoolOffDuration: pulumi.Any(filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration),
+//						},
 //						Month:                      pulumi.Any(filesystemSnapshotPolicySchedulesMonth),
 //						RetentionDurationInSeconds: pulumi.Any(filesystemSnapshotPolicySchedulesRetentionDurationInSeconds),
 //						SchedulePrefix:             pulumi.Any(filesystemSnapshotPolicySchedulesSchedulePrefix),

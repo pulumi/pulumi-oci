@@ -75,6 +75,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// A filter to return only resources that are associated with the given privateEndpointId.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public string? PrivateEndpointId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
@@ -113,6 +119,12 @@ namespace Pulumi.Oci.Oci
             get => _filters ?? (_filters = new InputList<Inputs.GetDistributedDatabaseDistributedAutonomousDatabasesFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only resources that are associated with the given privateEndpointId.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public Input<string>? PrivateEndpointId { get; set; }
 
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -155,6 +167,7 @@ namespace Pulumi.Oci.Oci
         /// Additional metadata related to Globally distributed autonomous database resources.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesMetadataResult> Metadatas;
+        public readonly string? PrivateEndpointId;
         /// <summary>
         /// Lifecycle states for the Globally distributed autonomous database.
         /// </summary>
@@ -176,6 +189,8 @@ namespace Pulumi.Oci.Oci
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedAutonomousDatabasesMetadataResult> metadatas,
 
+            string? privateEndpointId,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -185,6 +200,7 @@ namespace Pulumi.Oci.Oci
             Filters = filters;
             Id = id;
             Metadatas = metadatas;
+            PrivateEndpointId = privateEndpointId;
             State = state;
         }
     }

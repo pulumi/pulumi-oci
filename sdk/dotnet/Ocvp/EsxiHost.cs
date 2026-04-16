@@ -51,7 +51,9 @@ namespace Pulumi.Oci.Ocvp
     ///         },
     ///         HostOcpuCount = esxiHostHostOcpuCount,
     ///         HostShapeName = testShape.Name,
+    ///         IsVsanByolEnabled = esxiHostIsVsanByolEnabled,
     ///         NextCommitment = esxiHostNextCommitment,
+    ///         VcfByolAllocationId = testByolAllocation.Id,
     ///     });
     /// 
     /// });
@@ -214,7 +216,13 @@ namespace Pulumi.Oci.Ocvp
         public Output<bool> IsBillingSwappingInProgress { get; private set; } = null!;
 
         /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        /// </summary>
+        [Output("isVsanByolEnabled")]
+        public Output<bool> IsVsanByolEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         /// </summary>
         [Output("nextCommitment")]
         public Output<string> NextCommitment { get; private set; } = null!;
@@ -230,6 +238,9 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("nonUpgradedEsxiHostId")]
         public Output<string> NonUpgradedEsxiHostId { get; private set; } = null!;
+
+        [Output("primaryVnicMacAddress")]
+        public Output<string> PrimaryVnicMacAddress { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -282,6 +293,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("upgradedReplacementEsxiHostId")]
         public Output<string> UpgradedReplacementEsxiHostId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        /// </summary>
+        [Output("vcfByolAllocationId")]
+        public Output<string> VcfByolAllocationId { get; private set; } = null!;
 
         /// <summary>
         /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -440,6 +457,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? HostShapeName { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        /// </summary>
+        [Input("isVsanByolEnabled")]
+        public Input<bool>? IsVsanByolEnabled { get; set; }
+
+        /// <summary>
         /// (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `NextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `NextCommitment` instead.
         /// </summary>
         [Input("nextSku")]
@@ -472,6 +495,12 @@ namespace Pulumi.Oci.Ocvp
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        /// </summary>
+        [Input("vcfByolAllocationId")]
+        public Input<string>? VcfByolAllocationId { get; set; }
 
         public EsxiHostArgs()
         {
@@ -652,7 +681,13 @@ namespace Pulumi.Oci.Ocvp
         public Input<bool>? IsBillingSwappingInProgress { get; set; }
 
         /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        /// </summary>
+        [Input("isVsanByolEnabled")]
+        public Input<bool>? IsVsanByolEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         /// </summary>
         [Input("nextCommitment")]
         public Input<string>? NextCommitment { get; set; }
@@ -668,6 +703,9 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("nonUpgradedEsxiHostId")]
         public Input<string>? NonUpgradedEsxiHostId { get; set; }
+
+        [Input("primaryVnicMacAddress")]
+        public Input<string>? PrimaryVnicMacAddress { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -726,6 +764,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("upgradedReplacementEsxiHostId")]
         public Input<string>? UpgradedReplacementEsxiHostId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        /// </summary>
+        [Input("vcfByolAllocationId")]
+        public Input<string>? VcfByolAllocationId { get; set; }
 
         /// <summary>
         /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.

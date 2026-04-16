@@ -31,6 +31,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     lockDurationDetails: {
+ *         lockDuration: snapshotLockDurationDetailsLockDuration,
+ *         lockMode: snapshotLockDurationDetailsLockMode,
+ *         coolOffDuration: snapshotLockDurationDetailsCoolOffDuration,
+ *     },
  *     locks: [{
  *         type: snapshotLocksType,
  *         message: snapshotLocksMessage,
@@ -106,6 +111,10 @@ export class Snapshot extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     */
+    declare public readonly lockDurationDetails: pulumi.Output<outputs.FileStorage.SnapshotLockDurationDetails | undefined>;
+    /**
      * Locks associated with this resource.
      */
     declare public readonly locks: pulumi.Output<outputs.FileStorage.SnapshotLock[]>;
@@ -148,6 +157,10 @@ export class Snapshot extends pulumi.CustomResource {
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     */
+    declare public /*out*/ readonly timeLocked: pulumi.Output<string>;
 
     /**
      * Create a Snapshot resource with the given unique name, arguments, and options.
@@ -170,6 +183,7 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["isCloneSource"] = state?.isCloneSource;
             resourceInputs["isLockOverride"] = state?.isLockOverride;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lockDurationDetails"] = state?.lockDurationDetails;
             resourceInputs["locks"] = state?.locks;
             resourceInputs["name"] = state?.name;
             resourceInputs["provenanceId"] = state?.provenanceId;
@@ -178,6 +192,7 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLocked"] = state?.timeLocked;
         } else {
             const args = argsOrState as SnapshotArgs | undefined;
             if (args?.fileSystemId === undefined && !opts.urn) {
@@ -188,6 +203,7 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["fileSystemId"] = args?.fileSystemId;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["lockDurationDetails"] = args?.lockDurationDetails;
             resourceInputs["locks"] = args?.locks;
             resourceInputs["name"] = args?.name;
             resourceInputs["filesystemSnapshotPolicyId"] = undefined /*out*/;
@@ -199,6 +215,7 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeLocked"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Snapshot.__pulumiType, name, resourceInputs, opts);
@@ -238,6 +255,10 @@ export interface SnapshotState {
      * Additional information about the current `lifecycleState`.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     */
+    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails>;
     /**
      * Locks associated with this resource.
      */
@@ -281,6 +302,10 @@ export interface SnapshotState {
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     */
+    timeLocked?: pulumi.Input<string>;
 }
 
 /**
@@ -304,6 +329,10 @@ export interface SnapshotArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     */
+    lockDurationDetails?: pulumi.Input<inputs.FileStorage.SnapshotLockDurationDetails>;
     /**
      * Locks associated with this resource.
      */

@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DistributedDatabaseDistributedDatabasePatchOperationArgs extends com.pulumi.resources.ResourceArgs {
@@ -48,15 +50,15 @@ public final class DistributedDatabaseDistributedDatabasePatchOperationArgs exte
      * (Updatable)
      * 
      */
-    @Import(name="value", required=true)
-    private Output<String> value;
+    @Import(name="value")
+    private @Nullable Output<String> value;
 
     /**
      * @return (Updatable)
      * 
      */
-    public Output<String> value() {
-        return this.value;
+    public Optional<Output<String>> value() {
+        return Optional.ofNullable(this.value);
     }
 
     private DistributedDatabaseDistributedDatabasePatchOperationArgs() {}
@@ -133,7 +135,7 @@ public final class DistributedDatabaseDistributedDatabasePatchOperationArgs exte
          * @return builder
          * 
          */
-        public Builder value(Output<String> value) {
+        public Builder value(@Nullable Output<String> value) {
             $.value = value;
             return this;
         }
@@ -154,9 +156,6 @@ public final class DistributedDatabaseDistributedDatabasePatchOperationArgs exte
             }
             if ($.selection == null) {
                 throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabasePatchOperationArgs", "selection");
-            }
-            if ($.value == null) {
-                throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabasePatchOperationArgs", "value");
             }
             return $;
         }

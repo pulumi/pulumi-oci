@@ -20,6 +20,9 @@ import javax.annotation.Nullable;
 
 /**
  * This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
  * 
  * Creates a management appliance.
  * 
@@ -222,6 +225,20 @@ public class ManagementAppliance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> managementAgentId() {
         return this.managementAgentId;
+    }
+    /**
+     * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    @Export(name="pluginVersion", refs={String.class}, tree="[0]")
+    private Output<String> pluginVersion;
+
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    public Output<String> pluginVersion() {
+        return this.pluginVersion;
     }
     /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.

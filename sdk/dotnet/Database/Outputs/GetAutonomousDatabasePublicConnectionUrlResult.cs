@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string OrdsUrl;
         /// <summary>
+        /// The URL of the Spatial Studio for the Autonomous AI Database.
+        /// </summary>
+        public readonly string SpatialStudioUrl;
+        /// <summary>
         /// Oracle SQL Developer Web URL.
         /// </summary>
         public readonly string SqlDevWebUrl;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string ordsUrl,
 
+            string spatialStudioUrl,
+
             string sqlDevWebUrl)
         {
             ApexUrl = apexUrl;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Database.Outputs
             MachineLearningUserManagementUrl = machineLearningUserManagementUrl;
             MongoDbUrl = mongoDbUrl;
             OrdsUrl = ordsUrl;
+            SpatialStudioUrl = spatialStudioUrl;
             SqlDevWebUrl = sqlDevWebUrl;
         }
     }

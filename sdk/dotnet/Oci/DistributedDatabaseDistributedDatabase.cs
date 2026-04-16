@@ -20,6 +20,8 @@ namespace Pulumi.Oci.Oci
     ///   Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
     /// operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
     /// and remove in single operation is not allowed.
+    /// For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+    /// will also delete the associated VmCluster and DbStorageVault.
     /// 
     /// ## Example Usage
     /// 
@@ -39,21 +41,67 @@ namespace Pulumi.Oci.Oci
     ///             {
     ///                 AdminPassword = distributedDatabaseCatalogDetailsAdminPassword,
     ///                 Source = distributedDatabaseCatalogDetailsSource,
-    ///                 VmClusterId = testVmCluster.Id,
+    ///                 AvailabilityDomain = distributedDatabaseCatalogDetailsAvailabilityDomain,
+    ///                 DbStorageVaultDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs
+    ///                 {
+    ///                     AdditionalFlashCacheInPercent = distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+    ///                     HighCapacityDatabaseStorage = distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+    ///                 },
     ///                 KmsKeyId = testKey.Id,
     ///                 KmsKeyVersionId = testKeyVersion.Id,
     ///                 PeerDetails = new[]
     ///                 {
     ///                     new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs
     ///                     {
-    ///                         VmClusterId = testVmCluster.Id,
+    ///                         AvailabilityDomain = distributedDatabaseCatalogDetailsPeerDetailsAvailabilityDomain,
+    ///                         DbStorageVaultDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailsArgs
+    ///                         {
+    ///                             AdditionalFlashCacheInPercent = distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+    ///                             HighCapacityDatabaseStorage = distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+    ///                         },
     ///                         ProtectionMode = distributedDatabaseCatalogDetailsPeerDetailsProtectionMode,
     ///                         TransportType = distributedDatabaseCatalogDetailsPeerDetailsTransportType,
+    ///                         VmClusterDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailsArgs
+    ///                         {
+    ///                             BackupNetworkNsgIds = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
+    ///                             BackupSubnetId = testSubnet.Id,
+    ///                             Domain = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsDomain,
+    ///                             EnabledEcpuCount = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
+    ///                             IsDiagnosticsEventsEnabled = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+    ///                             IsHealthMonitoringEnabled = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+    ///                             IsIncidentLogsEnabled = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+    ///                             LicenseModel = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsLicenseModel,
+    ///                             NsgIds = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsNsgIds,
+    ///                             PrivateZoneId = testZone.Id,
+    ///                             SshPublicKeys = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
+    ///                             SubnetId = testSubnet.Id,
+    ///                             TotalEcpuCount = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
+    ///                             VmFileSystemStorageSize = distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+    ///                         },
+    ///                         VmClusterId = testVmCluster.Id,
     ///                     },
     ///                 },
     ///                 PeerVmClusterIds = distributedDatabaseCatalogDetailsPeerVmClusterIds,
     ///                 ShardSpace = distributedDatabaseCatalogDetailsShardSpace,
     ///                 VaultId = testVault.Id,
+    ///                 VmClusterDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs
+    ///                 {
+    ///                     BackupNetworkNsgIds = distributedDatabaseCatalogDetailsVmClusterDetailsBackupNetworkNsgIds,
+    ///                     BackupSubnetId = testSubnet.Id,
+    ///                     Domain = distributedDatabaseCatalogDetailsVmClusterDetailsDomain,
+    ///                     EnabledEcpuCount = distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount,
+    ///                     IsDiagnosticsEventsEnabled = distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+    ///                     IsHealthMonitoringEnabled = distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+    ///                     IsIncidentLogsEnabled = distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled,
+    ///                     LicenseModel = distributedDatabaseCatalogDetailsVmClusterDetailsLicenseModel,
+    ///                     NsgIds = distributedDatabaseCatalogDetailsVmClusterDetailsNsgIds,
+    ///                     PrivateZoneId = testZone.Id,
+    ///                     SshPublicKeys = distributedDatabaseCatalogDetailsVmClusterDetailsSshPublicKeys,
+    ///                     SubnetId = testSubnet.Id,
+    ///                     TotalEcpuCount = distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount,
+    ///                     VmFileSystemStorageSize = distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize,
+    ///                 },
+    ///                 VmClusterId = testVmCluster.Id,
     ///             },
     ///         },
     ///         CharacterSet = distributedDatabaseCharacterSet,
@@ -74,21 +122,67 @@ namespace Pulumi.Oci.Oci
     ///             {
     ///                 AdminPassword = distributedDatabaseShardDetailsAdminPassword,
     ///                 Source = distributedDatabaseShardDetailsSource,
-    ///                 VmClusterId = testVmCluster.Id,
+    ///                 AvailabilityDomain = distributedDatabaseShardDetailsAvailabilityDomain,
+    ///                 DbStorageVaultDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetailsArgs
+    ///                 {
+    ///                     AdditionalFlashCacheInPercent = distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+    ///                     HighCapacityDatabaseStorage = distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+    ///                 },
     ///                 KmsKeyId = testKey.Id,
     ///                 KmsKeyVersionId = testKeyVersion.Id,
     ///                 PeerDetails = new[]
     ///                 {
     ///                     new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs
     ///                     {
-    ///                         VmClusterId = testVmCluster.Id,
+    ///                         AvailabilityDomain = distributedDatabaseShardDetailsPeerDetailsAvailabilityDomain,
+    ///                         DbStorageVaultDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs
+    ///                         {
+    ///                             AdditionalFlashCacheInPercent = distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
+    ///                             HighCapacityDatabaseStorage = distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+    ///                         },
     ///                         ProtectionMode = distributedDatabaseShardDetailsPeerDetailsProtectionMode,
     ///                         TransportType = distributedDatabaseShardDetailsPeerDetailsTransportType,
+    ///                         VmClusterDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs
+    ///                         {
+    ///                             BackupNetworkNsgIds = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
+    ///                             BackupSubnetId = testSubnet.Id,
+    ///                             Domain = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsDomain,
+    ///                             EnabledEcpuCount = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
+    ///                             IsDiagnosticsEventsEnabled = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+    ///                             IsHealthMonitoringEnabled = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+    ///                             IsIncidentLogsEnabled = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+    ///                             LicenseModel = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsLicenseModel,
+    ///                             NsgIds = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsNsgIds,
+    ///                             PrivateZoneId = testZone.Id,
+    ///                             SshPublicKeys = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
+    ///                             SubnetId = testSubnet.Id,
+    ///                             TotalEcpuCount = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
+    ///                             VmFileSystemStorageSize = distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+    ///                         },
+    ///                         VmClusterId = testVmCluster.Id,
     ///                     },
     ///                 },
     ///                 PeerVmClusterIds = distributedDatabaseShardDetailsPeerVmClusterIds,
     ///                 ShardSpace = distributedDatabaseShardDetailsShardSpace,
     ///                 VaultId = testVault.Id,
+    ///                 VmClusterDetails = new Oci.Oci.Inputs.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetailsArgs
+    ///                 {
+    ///                     BackupNetworkNsgIds = distributedDatabaseShardDetailsVmClusterDetailsBackupNetworkNsgIds,
+    ///                     BackupSubnetId = testSubnet.Id,
+    ///                     Domain = distributedDatabaseShardDetailsVmClusterDetailsDomain,
+    ///                     EnabledEcpuCount = distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount,
+    ///                     IsDiagnosticsEventsEnabled = distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
+    ///                     IsHealthMonitoringEnabled = distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled,
+    ///                     IsIncidentLogsEnabled = distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled,
+    ///                     LicenseModel = distributedDatabaseShardDetailsVmClusterDetailsLicenseModel,
+    ///                     NsgIds = distributedDatabaseShardDetailsVmClusterDetailsNsgIds,
+    ///                     PrivateZoneId = testZone.Id,
+    ///                     SshPublicKeys = distributedDatabaseShardDetailsVmClusterDetailsSshPublicKeys,
+    ///                     SubnetId = testSubnet.Id,
+    ///                     TotalEcpuCount = distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount,
+    ///                     VmFileSystemStorageSize = distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize,
+    ///                 },
+    ///                 VmClusterId = testVmCluster.Id,
     ///             },
     ///         },
     ///         ShardingMethod = distributedDatabaseShardingMethod,
@@ -142,6 +236,7 @@ namespace Pulumi.Oci.Oci
     ///         ReplicationFactor = distributedDatabaseReplicationFactor,
     ///         ReplicationMethod = distributedDatabaseReplicationMethod,
     ///         ReplicationUnit = distributedDatabaseReplicationUnit,
+    ///         ScanListenerPort = distributedDatabaseScanListenerPort,
     ///     });
     /// 
     /// });
@@ -315,6 +410,12 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableArray<Outputs.DistributedDatabaseDistributedDatabaseMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        /// </summary>
+        [Output("moveReplicationUnitTrigger")]
+        public Output<int?> MoveReplicationUnitTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         [Output("ncharacterSet")]
@@ -351,6 +452,12 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableArray<string>> PrivateEndpointIds { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        /// </summary>
+        [Output("recreateFailedResourceTrigger")]
+        public Output<int?> RecreateFailedResourceTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         /// </summary>
         [Output("replicationFactor")]
@@ -367,6 +474,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("replicationUnit")]
         public Output<int> ReplicationUnit { get; private set; } = null!;
+
+        /// <summary>
+        /// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        /// </summary>
+        [Output("scanListenerPort")]
+        public Output<int> ScanListenerPort { get; private set; } = null!;
 
         /// <summary>
         /// Collection of shards for the Globally distributed database.
@@ -628,6 +741,12 @@ namespace Pulumi.Oci.Oci
         public Input<int>? ListenerPortTls { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        /// </summary>
+        [Input("moveReplicationUnitTrigger")]
+        public Input<int>? MoveReplicationUnitTrigger { get; set; }
+
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         [Input("ncharacterSet", required: true)]
@@ -676,6 +795,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        /// </summary>
+        [Input("recreateFailedResourceTrigger")]
+        public Input<int>? RecreateFailedResourceTrigger { get; set; }
+
+        /// <summary>
         /// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         /// </summary>
         [Input("replicationFactor")]
@@ -692,6 +817,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("replicationUnit")]
         public Input<int>? ReplicationUnit { get; set; }
+
+        /// <summary>
+        /// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        /// </summary>
+        [Input("scanListenerPort")]
+        public Input<int>? ScanListenerPort { get; set; }
 
         [Input("shardDetails", required: true)]
         private InputList<Inputs.DistributedDatabaseDistributedDatabaseShardDetailArgs>? _shardDetails;
@@ -973,6 +1104,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        /// </summary>
+        [Input("moveReplicationUnitTrigger")]
+        public Input<int>? MoveReplicationUnitTrigger { get; set; }
+
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         [Input("ncharacterSet")]
@@ -1021,6 +1158,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        /// </summary>
+        [Input("recreateFailedResourceTrigger")]
+        public Input<int>? RecreateFailedResourceTrigger { get; set; }
+
+        /// <summary>
         /// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         /// </summary>
         [Input("replicationFactor")]
@@ -1037,6 +1180,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("replicationUnit")]
         public Input<int>? ReplicationUnit { get; set; }
+
+        /// <summary>
+        /// The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        /// </summary>
+        [Input("scanListenerPort")]
+        public Input<int>? ScanListenerPort { get; set; }
 
         [Input("shardDetails")]
         private InputList<Inputs.DistributedDatabaseDistributedDatabaseShardDetailGetArgs>? _shardDetails;

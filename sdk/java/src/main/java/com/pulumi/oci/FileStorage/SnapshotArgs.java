@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.SnapshotLockArgs;
+import com.pulumi.oci.FileStorage.inputs.SnapshotLockDurationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -88,6 +89,21 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    @Import(name="lockDurationDetails")
+    private @Nullable Output<SnapshotLockDurationDetailsArgs> lockDurationDetails;
+
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    public Optional<Output<SnapshotLockDurationDetailsArgs>> lockDurationDetails() {
+        return Optional.ofNullable(this.lockDurationDetails);
+    }
+
+    /**
      * Locks associated with this resource.
      * 
      */
@@ -139,6 +155,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         this.fileSystemId = $.fileSystemId;
         this.freeformTags = $.freeformTags;
         this.isLockOverride = $.isLockOverride;
+        this.lockDurationDetails = $.lockDurationDetails;
         this.locks = $.locks;
         this.name = $.name;
     }
@@ -252,6 +269,27 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder isLockOverride(Boolean isLockOverride) {
             return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(@Nullable Output<SnapshotLockDurationDetailsArgs> lockDurationDetails) {
+            $.lockDurationDetails = lockDurationDetails;
+            return this;
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(SnapshotLockDurationDetailsArgs lockDurationDetails) {
+            return lockDurationDetails(Output.of(lockDurationDetails));
         }
 
         /**

@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs;
 import java.lang.Boolean;
@@ -50,6 +51,21 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
      */
     public Optional<Output<String>> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
+     * The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    @Import(name="clusterByolAllocationDetails")
+    private @Nullable Output<SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs> clusterByolAllocationDetails;
+
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public Optional<Output<SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs>> clusterByolAllocationDetails() {
+        return Optional.ofNullable(this.clusterByolAllocationDetails);
     }
 
     /**
@@ -177,6 +193,21 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    @Import(name="initialVcfByolAllocationId")
+    private @Nullable Output<String> initialVcfByolAllocationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public Optional<Output<String>> initialVcfByolAllocationId() {
+        return Optional.ofNullable(this.initialVcfByolAllocationId);
+    }
+
+    /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -260,6 +291,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     private SddcInitialConfigurationInitialClusterConfigurationArgs(SddcInitialConfigurationInitialClusterConfigurationArgs $) {
         this.actualEsxiHostsCount = $.actualEsxiHostsCount;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterByolAllocationDetails = $.clusterByolAllocationDetails;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.datastoreClusterIds = $.datastoreClusterIds;
         this.datastores = $.datastores;
@@ -268,6 +300,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         this.initialCommitment = $.initialCommitment;
         this.initialHostOcpuCount = $.initialHostOcpuCount;
         this.initialHostShapeName = $.initialHostShapeName;
+        this.initialVcfByolAllocationId = $.initialVcfByolAllocationId;
         this.instanceDisplayNamePrefix = $.instanceDisplayNamePrefix;
         this.isShieldedInstanceEnabled = $.isShieldedInstanceEnabled;
         this.networkConfiguration = $.networkConfiguration;
@@ -333,6 +366,27 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
          */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
+        }
+
+        /**
+         * @param clusterByolAllocationDetails The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(@Nullable Output<SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs> clusterByolAllocationDetails) {
+            $.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            return this;
+        }
+
+        /**
+         * @param clusterByolAllocationDetails The BYOL allocations used for VMware Cluster provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterByolAllocationDetails(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs clusterByolAllocationDetails) {
+            return clusterByolAllocationDetails(Output.of(clusterByolAllocationDetails));
         }
 
         /**
@@ -525,6 +579,27 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
          */
         public Builder initialHostShapeName(String initialHostShapeName) {
             return initialHostShapeName(Output.of(initialHostShapeName));
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(@Nullable Output<String> initialVcfByolAllocationId) {
+            $.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+
+        /**
+         * @param initialVcfByolAllocationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            return initialVcfByolAllocationId(Output.of(initialVcfByolAllocationId));
         }
 
         /**

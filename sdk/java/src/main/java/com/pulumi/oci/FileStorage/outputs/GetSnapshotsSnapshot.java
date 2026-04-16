@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetSnapshotsSnapshotLock;
+import com.pulumi.oci.FileStorage.outputs.GetSnapshotsSnapshotLockDurationDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -56,6 +57,11 @@ public final class GetSnapshotsSnapshot {
      */
     private String lifecycleDetails;
     /**
+     * @return Details for setting a retention date or legal hold.
+     * 
+     */
+    private List<GetSnapshotsSnapshotLockDurationDetail> lockDurationDetails;
+    /**
      * @return Locks associated with this resource.
      * 
      */
@@ -98,6 +104,11 @@ public final class GetSnapshotsSnapshot {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    private String timeLocked;
 
     private GetSnapshotsSnapshot() {}
     /**
@@ -160,6 +171,13 @@ public final class GetSnapshotsSnapshot {
         return this.lifecycleDetails;
     }
     /**
+     * @return Details for setting a retention date or legal hold.
+     * 
+     */
+    public List<GetSnapshotsSnapshotLockDurationDetail> lockDurationDetails() {
+        return this.lockDurationDetails;
+    }
+    /**
      * @return Locks associated with this resource.
      * 
      */
@@ -218,6 +236,13 @@ public final class GetSnapshotsSnapshot {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    public String timeLocked() {
+        return this.timeLocked;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -237,6 +262,7 @@ public final class GetSnapshotsSnapshot {
         private Boolean isCloneSource;
         private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetSnapshotsSnapshotLockDurationDetail> lockDurationDetails;
         private List<GetSnapshotsSnapshotLock> locks;
         private String name;
         private String provenanceId;
@@ -245,6 +271,7 @@ public final class GetSnapshotsSnapshot {
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String timeLocked;
         public Builder() {}
         public Builder(GetSnapshotsSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
@@ -257,6 +284,7 @@ public final class GetSnapshotsSnapshot {
     	      this.isCloneSource = defaults.isCloneSource;
     	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.lockDurationDetails = defaults.lockDurationDetails;
     	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.provenanceId = defaults.provenanceId;
@@ -265,6 +293,7 @@ public final class GetSnapshotsSnapshot {
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLocked = defaults.timeLocked;
         }
 
         @CustomType.Setter
@@ -340,6 +369,17 @@ public final class GetSnapshotsSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder lockDurationDetails(List<GetSnapshotsSnapshotLockDurationDetail> lockDurationDetails) {
+            if (lockDurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotsSnapshot", "lockDurationDetails");
+            }
+            this.lockDurationDetails = lockDurationDetails;
+            return this;
+        }
+        public Builder lockDurationDetails(GetSnapshotsSnapshotLockDurationDetail... lockDurationDetails) {
+            return lockDurationDetails(List.of(lockDurationDetails));
+        }
+        @CustomType.Setter
         public Builder locks(List<GetSnapshotsSnapshotLock> locks) {
             if (locks == null) {
               throw new MissingRequiredPropertyException("GetSnapshotsSnapshot", "locks");
@@ -406,6 +446,14 @@ public final class GetSnapshotsSnapshot {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeLocked(String timeLocked) {
+            if (timeLocked == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotsSnapshot", "timeLocked");
+            }
+            this.timeLocked = timeLocked;
+            return this;
+        }
         public GetSnapshotsSnapshot build() {
             final var _resultValue = new GetSnapshotsSnapshot();
             _resultValue.definedTags = definedTags;
@@ -417,6 +465,7 @@ public final class GetSnapshotsSnapshot {
             _resultValue.isCloneSource = isCloneSource;
             _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.lockDurationDetails = lockDurationDetails;
             _resultValue.locks = locks;
             _resultValue.name = name;
             _resultValue.provenanceId = provenanceId;
@@ -425,6 +474,7 @@ public final class GetSnapshotsSnapshot {
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLocked = timeLocked;
             return _resultValue;
         }
     }

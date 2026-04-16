@@ -26,6 +26,7 @@ class FusionEnvironmentArgs:
                  display_name: pulumi.Input[_builtins.str],
                  fusion_environment_family_id: pulumi.Input[_builtins.str],
                  fusion_environment_type: pulumi.Input[_builtins.str],
+                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
@@ -42,11 +43,12 @@ class FusionEnvironmentArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[_builtins.str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] dns_prefix: DNS prefix.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
         :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]] rules: (Updatable) Rules.
@@ -56,6 +58,8 @@ class FusionEnvironmentArgs:
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fusion_environment_family_id", fusion_environment_family_id)
         pulumi.set(__self__, "fusion_environment_type", fusion_environment_type)
+        if additional_egress_rules is not None:
+            pulumi.set(__self__, "additional_egress_rules", additional_egress_rules)
         if additional_language_packs is not None:
             pulumi.set(__self__, "additional_language_packs", additional_language_packs)
         if defined_tags is not None:
@@ -134,6 +138,18 @@ class FusionEnvironmentArgs:
         pulumi.set(self, "fusion_environment_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="additionalEgressRules")
+    def additional_egress_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
+        """
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        """
+        return pulumi.get(self, "additional_egress_rules")
+
+    @additional_egress_rules.setter
+    def additional_egress_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
+        pulumi.set(self, "additional_egress_rules", value)
+
+    @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
     def additional_language_packs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -185,7 +201,7 @@ class FusionEnvironmentArgs:
     @pulumi.getter(name="isIpv6dualStackEnabled")
     def is_ipv6dual_stack_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
@@ -233,6 +249,7 @@ class FusionEnvironmentArgs:
 @pulumi.input_type
 class _FusionEnvironmentState:
     def __init__(__self__, *,
+                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -265,6 +282,7 @@ class _FusionEnvironmentState:
         """
         Input properties used for looking up and filtering FusionEnvironment resources.
 
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -278,7 +296,7 @@ class _FusionEnvironmentState:
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[_builtins.str] idcs_domain_url: The IDCS Domain URL
         :param pulumi.Input[_builtins.bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
-        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]] kms_key_infos: BYOK key info
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -295,6 +313,8 @@ class _FusionEnvironmentState:
         :param pulumi.Input[_builtins.str] time_updated: The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] version: Version of Fusion Apps used by this environment
         """
+        if additional_egress_rules is not None:
+            pulumi.set(__self__, "additional_egress_rules", additional_egress_rules)
         if additional_language_packs is not None:
             pulumi.set(__self__, "additional_language_packs", additional_language_packs)
         if applied_patch_bundles is not None:
@@ -353,6 +373,18 @@ class _FusionEnvironmentState:
             pulumi.set(__self__, "time_updated", time_updated)
         if version is not None:
             pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalEgressRules")
+    def additional_egress_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
+        """
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        """
+        return pulumi.get(self, "additional_egress_rules")
+
+    @additional_egress_rules.setter
+    def additional_egress_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
+        pulumi.set(self, "additional_egress_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
@@ -514,7 +546,7 @@ class _FusionEnvironmentState:
     @pulumi.getter(name="isIpv6dualStackEnabled")
     def is_ipv6dual_stack_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
@@ -709,6 +741,7 @@ class FusionEnvironment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
@@ -748,6 +781,12 @@ class FusionEnvironment(pulumi.CustomResource):
             display_name=fusion_environment_display_name,
             fusion_environment_family_id=test_fusion_environment_family["id"],
             fusion_environment_type=fusion_environment_fusion_environment_type,
+            additional_egress_rules=[{
+                "description": fusion_environment_additional_egress_rules_description,
+                "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
+                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
+                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
+            }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -783,6 +822,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
@@ -792,7 +832,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
         :param pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]] rules: (Updatable) Rules.
@@ -828,6 +868,12 @@ class FusionEnvironment(pulumi.CustomResource):
             display_name=fusion_environment_display_name,
             fusion_environment_family_id=test_fusion_environment_family["id"],
             fusion_environment_type=fusion_environment_fusion_environment_type,
+            additional_egress_rules=[{
+                "description": fusion_environment_additional_egress_rules_description,
+                "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
+                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
+                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
+            }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -876,6 +922,7 @@ class FusionEnvironment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
@@ -898,6 +945,7 @@ class FusionEnvironment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = FusionEnvironmentArgs.__new__(FusionEnvironmentArgs)
 
+            __props__.__dict__["additional_egress_rules"] = additional_egress_rules
             __props__.__dict__["additional_language_packs"] = additional_language_packs
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -947,6 +995,7 @@ class FusionEnvironment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
             additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -983,6 +1032,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]] additional_egress_rules: (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -996,7 +1046,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[_builtins.str] idcs_domain_url: The IDCS Domain URL
         :param pulumi.Input[_builtins.bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
-        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        :param pulumi.Input[_builtins.bool] is_ipv6dual_stack_enabled: (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) byok kms keyId
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict']]]] kms_key_infos: BYOK key info
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1017,6 +1067,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
         __props__ = _FusionEnvironmentState.__new__(_FusionEnvironmentState)
 
+        __props__.__dict__["additional_egress_rules"] = additional_egress_rules
         __props__.__dict__["additional_language_packs"] = additional_language_packs
         __props__.__dict__["applied_patch_bundles"] = applied_patch_bundles
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1047,6 +1098,14 @@ class FusionEnvironment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["version"] = version
         return FusionEnvironment(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalEgressRules")
+    def additional_egress_rules(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentAdditionalEgressRule']]:
+        """
+        (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        """
+        return pulumi.get(self, "additional_egress_rules")
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
@@ -1156,7 +1215,7 @@ class FusionEnvironment(pulumi.CustomResource):
     @pulumi.getter(name="isIpv6dualStackEnabled")
     def is_ipv6dual_stack_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 

@@ -48,10 +48,13 @@ class DistributedDatabaseDistributedDatabaseArgs:
                  generate_wallet_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  gsm_ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
+                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]]] = None,
+                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_method: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
+                 scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  stop_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -86,10 +89,13 @@ class DistributedDatabaseDistributedDatabaseArgs:
         :param pulumi.Input[_builtins.int] generate_wallet_trigger: (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] gsm_ssh_public_key: The SSH public key for Global service manager instances.
         :param pulumi.Input[_builtins.int] listener_port_tls: The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
+        :param pulumi.Input[_builtins.int] move_replication_unit_trigger: (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]] patch_operations: (Updatable)
+        :param pulumi.Input[_builtins.int] recreate_failed_resource_trigger: (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] replication_factor: The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         :param pulumi.Input[_builtins.str] replication_method: The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         :param pulumi.Input[_builtins.int] replication_unit: The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
+        :param pulumi.Input[_builtins.int] scan_listener_port: The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
         :param pulumi.Input[_builtins.int] start_database_trigger: Increment this value to trigger StartDistributedDatabase action.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Distributed Database. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.int] stop_database_trigger: Increment this value to trigger StopDistributedDatabase action.
@@ -146,14 +152,20 @@ class DistributedDatabaseDistributedDatabaseArgs:
             pulumi.set(__self__, "gsm_ssh_public_key", gsm_ssh_public_key)
         if listener_port_tls is not None:
             pulumi.set(__self__, "listener_port_tls", listener_port_tls)
+        if move_replication_unit_trigger is not None:
+            pulumi.set(__self__, "move_replication_unit_trigger", move_replication_unit_trigger)
         if patch_operations is not None:
             pulumi.set(__self__, "patch_operations", patch_operations)
+        if recreate_failed_resource_trigger is not None:
+            pulumi.set(__self__, "recreate_failed_resource_trigger", recreate_failed_resource_trigger)
         if replication_factor is not None:
             pulumi.set(__self__, "replication_factor", replication_factor)
         if replication_method is not None:
             pulumi.set(__self__, "replication_method", replication_method)
         if replication_unit is not None:
             pulumi.set(__self__, "replication_unit", replication_unit)
+        if scan_listener_port is not None:
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
         if start_database_trigger is not None:
             pulumi.set(__self__, "start_database_trigger", start_database_trigger)
         if state is not None:
@@ -491,6 +503,18 @@ class DistributedDatabaseDistributedDatabaseArgs:
         pulumi.set(self, "listener_port_tls", value)
 
     @_builtins.property
+    @pulumi.getter(name="moveReplicationUnitTrigger")
+    def move_replication_unit_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        """
+        return pulumi.get(self, "move_replication_unit_trigger")
+
+    @move_replication_unit_trigger.setter
+    def move_replication_unit_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "move_replication_unit_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]]]:
         """
@@ -501,6 +525,18 @@ class DistributedDatabaseDistributedDatabaseArgs:
     @patch_operations.setter
     def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recreateFailedResourceTrigger")
+    def recreate_failed_resource_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        """
+        return pulumi.get(self, "recreate_failed_resource_trigger")
+
+    @recreate_failed_resource_trigger.setter
+    def recreate_failed_resource_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recreate_failed_resource_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
@@ -537,6 +573,18 @@ class DistributedDatabaseDistributedDatabaseArgs:
     @replication_unit.setter
     def replication_unit(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "replication_unit", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scanListenerPort")
+    def scan_listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        """
+        return pulumi.get(self, "scan_listener_port")
+
+    @scan_listener_port.setter
+    def scan_listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "scan_listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="startDatabaseTrigger")
@@ -645,15 +693,18 @@ class _DistributedDatabaseDistributedDatabaseState:
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseMetadataArgs']]]] = None,
+                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
                  ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
                  ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]]] = None,
                  prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_method: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
+                 scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  shard_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]] = None,
                  sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
                  start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -691,15 +742,18 @@ class _DistributedDatabaseDistributedDatabaseState:
         :param pulumi.Input[_builtins.int] listener_port: The listener port number for the Globally distributed database. The listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] listener_port_tls: The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.int] move_replication_unit_trigger: (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.int] ons_port_local: The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] ons_port_remote: The ons remote port number for the Globally distributed database. The onsPortRemote has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] prefix: Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_endpoint_ids: The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.int] recreate_failed_resource_trigger: (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] replication_factor: The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         :param pulumi.Input[_builtins.str] replication_method: The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         :param pulumi.Input[_builtins.int] replication_unit: The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
+        :param pulumi.Input[_builtins.int] scan_listener_port: The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
         :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]] shard_details: Collection of shards for the Globally distributed database.
         :param pulumi.Input[_builtins.str] sharding_method: Sharding Methods for the Globally distributed database.
         :param pulumi.Input[_builtins.int] start_database_trigger: Increment this value to trigger StartDistributedDatabase action.
@@ -779,6 +833,8 @@ class _DistributedDatabaseDistributedDatabaseState:
             pulumi.set(__self__, "listener_port_tls", listener_port_tls)
         if metadatas is not None:
             pulumi.set(__self__, "metadatas", metadatas)
+        if move_replication_unit_trigger is not None:
+            pulumi.set(__self__, "move_replication_unit_trigger", move_replication_unit_trigger)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if ons_port_local is not None:
@@ -791,12 +847,16 @@ class _DistributedDatabaseDistributedDatabaseState:
             pulumi.set(__self__, "prefix", prefix)
         if private_endpoint_ids is not None:
             pulumi.set(__self__, "private_endpoint_ids", private_endpoint_ids)
+        if recreate_failed_resource_trigger is not None:
+            pulumi.set(__self__, "recreate_failed_resource_trigger", recreate_failed_resource_trigger)
         if replication_factor is not None:
             pulumi.set(__self__, "replication_factor", replication_factor)
         if replication_method is not None:
             pulumi.set(__self__, "replication_method", replication_method)
         if replication_unit is not None:
             pulumi.set(__self__, "replication_unit", replication_unit)
+        if scan_listener_port is not None:
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
         if shard_details is not None:
             pulumi.set(__self__, "shard_details", shard_details)
         if sharding_method is not None:
@@ -1156,6 +1216,18 @@ class _DistributedDatabaseDistributedDatabaseState:
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
+    @pulumi.getter(name="moveReplicationUnitTrigger")
+    def move_replication_unit_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        """
+        return pulumi.get(self, "move_replication_unit_trigger")
+
+    @move_replication_unit_trigger.setter
+    def move_replication_unit_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "move_replication_unit_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1228,6 +1300,18 @@ class _DistributedDatabaseDistributedDatabaseState:
         pulumi.set(self, "private_endpoint_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="recreateFailedResourceTrigger")
+    def recreate_failed_resource_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        """
+        return pulumi.get(self, "recreate_failed_resource_trigger")
+
+    @recreate_failed_resource_trigger.setter
+    def recreate_failed_resource_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recreate_failed_resource_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="replicationFactor")
     def replication_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -1262,6 +1346,18 @@ class _DistributedDatabaseDistributedDatabaseState:
     @replication_unit.setter
     def replication_unit(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "replication_unit", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scanListenerPort")
+    def scan_listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        """
+        return pulumi.get(self, "scan_listener_port")
+
+    @scan_listener_port.setter
+    def scan_listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "scan_listener_port", value)
 
     @_builtins.property
     @pulumi.getter(name="shardDetails")
@@ -1424,15 +1520,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
                  gsm_ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
+                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
                  ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
                  ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePatchOperationArgs', 'DistributedDatabaseDistributedDatabasePatchOperationArgsDict']]]]] = None,
                  prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_method: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
+                 scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseShardDetailArgs', 'DistributedDatabaseDistributedDatabaseShardDetailArgsDict']]]]] = None,
                  sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
                  start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1453,6 +1552,8 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
           Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
         operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
         and remove in single operation is not allowed.
+        For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+        will also delete the associated VmCluster and DbStorageVault.
 
         ## Example Usage
 
@@ -1464,17 +1565,59 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             catalog_details=[{
                 "admin_password": distributed_database_catalog_details_admin_password,
                 "source": distributed_database_catalog_details_source,
-                "vm_cluster_id": test_vm_cluster["id"],
+                "availability_domain": distributed_database_catalog_details_availability_domain,
+                "db_storage_vault_details": {
+                    "additional_flash_cache_in_percent": distributed_database_catalog_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                    "high_capacity_database_storage": distributed_database_catalog_details_db_storage_vault_details_high_capacity_database_storage,
+                },
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
                 "peer_details": [{
-                    "vm_cluster_id": test_vm_cluster["id"],
+                    "availability_domain": distributed_database_catalog_details_peer_details_availability_domain,
+                    "db_storage_vault_details": {
+                        "additional_flash_cache_in_percent": distributed_database_catalog_details_peer_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                        "high_capacity_database_storage": distributed_database_catalog_details_peer_details_db_storage_vault_details_high_capacity_database_storage,
+                    },
                     "protection_mode": distributed_database_catalog_details_peer_details_protection_mode,
                     "transport_type": distributed_database_catalog_details_peer_details_transport_type,
+                    "vm_cluster_details": {
+                        "backup_network_nsg_ids": distributed_database_catalog_details_peer_details_vm_cluster_details_backup_network_nsg_ids,
+                        "backup_subnet_id": test_subnet["id"],
+                        "domain": distributed_database_catalog_details_peer_details_vm_cluster_details_domain,
+                        "enabled_ecpu_count": distributed_database_catalog_details_peer_details_vm_cluster_details_enabled_ecpu_count,
+                        "is_diagnostics_events_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_diagnostics_events_enabled,
+                        "is_health_monitoring_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_health_monitoring_enabled,
+                        "is_incident_logs_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_incident_logs_enabled,
+                        "license_model": distributed_database_catalog_details_peer_details_vm_cluster_details_license_model,
+                        "nsg_ids": distributed_database_catalog_details_peer_details_vm_cluster_details_nsg_ids,
+                        "private_zone_id": test_zone["id"],
+                        "ssh_public_keys": distributed_database_catalog_details_peer_details_vm_cluster_details_ssh_public_keys,
+                        "subnet_id": test_subnet["id"],
+                        "total_ecpu_count": distributed_database_catalog_details_peer_details_vm_cluster_details_total_ecpu_count,
+                        "vm_file_system_storage_size": distributed_database_catalog_details_peer_details_vm_cluster_details_vm_file_system_storage_size,
+                    },
+                    "vm_cluster_id": test_vm_cluster["id"],
                 }],
                 "peer_vm_cluster_ids": distributed_database_catalog_details_peer_vm_cluster_ids,
                 "shard_space": distributed_database_catalog_details_shard_space,
                 "vault_id": test_vault["id"],
+                "vm_cluster_details": {
+                    "backup_network_nsg_ids": distributed_database_catalog_details_vm_cluster_details_backup_network_nsg_ids,
+                    "backup_subnet_id": test_subnet["id"],
+                    "domain": distributed_database_catalog_details_vm_cluster_details_domain,
+                    "enabled_ecpu_count": distributed_database_catalog_details_vm_cluster_details_enabled_ecpu_count,
+                    "is_diagnostics_events_enabled": distributed_database_catalog_details_vm_cluster_details_is_diagnostics_events_enabled,
+                    "is_health_monitoring_enabled": distributed_database_catalog_details_vm_cluster_details_is_health_monitoring_enabled,
+                    "is_incident_logs_enabled": distributed_database_catalog_details_vm_cluster_details_is_incident_logs_enabled,
+                    "license_model": distributed_database_catalog_details_vm_cluster_details_license_model,
+                    "nsg_ids": distributed_database_catalog_details_vm_cluster_details_nsg_ids,
+                    "private_zone_id": test_zone["id"],
+                    "ssh_public_keys": distributed_database_catalog_details_vm_cluster_details_ssh_public_keys,
+                    "subnet_id": test_subnet["id"],
+                    "total_ecpu_count": distributed_database_catalog_details_vm_cluster_details_total_ecpu_count,
+                    "vm_file_system_storage_size": distributed_database_catalog_details_vm_cluster_details_vm_file_system_storage_size,
+                },
+                "vm_cluster_id": test_vm_cluster["id"],
             }],
             character_set=distributed_database_character_set,
             compartment_id=compartment_id,
@@ -1491,17 +1634,59 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             shard_details=[{
                 "admin_password": distributed_database_shard_details_admin_password,
                 "source": distributed_database_shard_details_source,
-                "vm_cluster_id": test_vm_cluster["id"],
+                "availability_domain": distributed_database_shard_details_availability_domain,
+                "db_storage_vault_details": {
+                    "additional_flash_cache_in_percent": distributed_database_shard_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                    "high_capacity_database_storage": distributed_database_shard_details_db_storage_vault_details_high_capacity_database_storage,
+                },
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
                 "peer_details": [{
-                    "vm_cluster_id": test_vm_cluster["id"],
+                    "availability_domain": distributed_database_shard_details_peer_details_availability_domain,
+                    "db_storage_vault_details": {
+                        "additional_flash_cache_in_percent": distributed_database_shard_details_peer_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                        "high_capacity_database_storage": distributed_database_shard_details_peer_details_db_storage_vault_details_high_capacity_database_storage,
+                    },
                     "protection_mode": distributed_database_shard_details_peer_details_protection_mode,
                     "transport_type": distributed_database_shard_details_peer_details_transport_type,
+                    "vm_cluster_details": {
+                        "backup_network_nsg_ids": distributed_database_shard_details_peer_details_vm_cluster_details_backup_network_nsg_ids,
+                        "backup_subnet_id": test_subnet["id"],
+                        "domain": distributed_database_shard_details_peer_details_vm_cluster_details_domain,
+                        "enabled_ecpu_count": distributed_database_shard_details_peer_details_vm_cluster_details_enabled_ecpu_count,
+                        "is_diagnostics_events_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_diagnostics_events_enabled,
+                        "is_health_monitoring_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_health_monitoring_enabled,
+                        "is_incident_logs_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_incident_logs_enabled,
+                        "license_model": distributed_database_shard_details_peer_details_vm_cluster_details_license_model,
+                        "nsg_ids": distributed_database_shard_details_peer_details_vm_cluster_details_nsg_ids,
+                        "private_zone_id": test_zone["id"],
+                        "ssh_public_keys": distributed_database_shard_details_peer_details_vm_cluster_details_ssh_public_keys,
+                        "subnet_id": test_subnet["id"],
+                        "total_ecpu_count": distributed_database_shard_details_peer_details_vm_cluster_details_total_ecpu_count,
+                        "vm_file_system_storage_size": distributed_database_shard_details_peer_details_vm_cluster_details_vm_file_system_storage_size,
+                    },
+                    "vm_cluster_id": test_vm_cluster["id"],
                 }],
                 "peer_vm_cluster_ids": distributed_database_shard_details_peer_vm_cluster_ids,
                 "shard_space": distributed_database_shard_details_shard_space,
                 "vault_id": test_vault["id"],
+                "vm_cluster_details": {
+                    "backup_network_nsg_ids": distributed_database_shard_details_vm_cluster_details_backup_network_nsg_ids,
+                    "backup_subnet_id": test_subnet["id"],
+                    "domain": distributed_database_shard_details_vm_cluster_details_domain,
+                    "enabled_ecpu_count": distributed_database_shard_details_vm_cluster_details_enabled_ecpu_count,
+                    "is_diagnostics_events_enabled": distributed_database_shard_details_vm_cluster_details_is_diagnostics_events_enabled,
+                    "is_health_monitoring_enabled": distributed_database_shard_details_vm_cluster_details_is_health_monitoring_enabled,
+                    "is_incident_logs_enabled": distributed_database_shard_details_vm_cluster_details_is_incident_logs_enabled,
+                    "license_model": distributed_database_shard_details_vm_cluster_details_license_model,
+                    "nsg_ids": distributed_database_shard_details_vm_cluster_details_nsg_ids,
+                    "private_zone_id": test_zone["id"],
+                    "ssh_public_keys": distributed_database_shard_details_vm_cluster_details_ssh_public_keys,
+                    "subnet_id": test_subnet["id"],
+                    "total_ecpu_count": distributed_database_shard_details_vm_cluster_details_total_ecpu_count,
+                    "vm_file_system_storage_size": distributed_database_shard_details_vm_cluster_details_vm_file_system_storage_size,
+                },
+                "vm_cluster_id": test_vm_cluster["id"],
             }],
             sharding_method=distributed_database_sharding_method,
             chunks=distributed_database_chunks,
@@ -1542,7 +1727,8 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             }],
             replication_factor=distributed_database_replication_factor,
             replication_method=distributed_database_replication_method,
-            replication_unit=distributed_database_replication_unit)
+            replication_unit=distributed_database_replication_unit,
+            scan_listener_port=distributed_database_scan_listener_port)
         ```
 
         ## Import
@@ -1574,15 +1760,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] gsm_ssh_public_key: The SSH public key for Global service manager instances.
         :param pulumi.Input[_builtins.int] listener_port: The listener port number for the Globally distributed database. The listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] listener_port_tls: The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
+        :param pulumi.Input[_builtins.int] move_replication_unit_trigger: (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.int] ons_port_local: The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] ons_port_remote: The ons remote port number for the Globally distributed database. The onsPortRemote has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePatchOperationArgs', 'DistributedDatabaseDistributedDatabasePatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] prefix: Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_endpoint_ids: The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.int] recreate_failed_resource_trigger: (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] replication_factor: The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         :param pulumi.Input[_builtins.str] replication_method: The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         :param pulumi.Input[_builtins.int] replication_unit: The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
+        :param pulumi.Input[_builtins.int] scan_listener_port: The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseShardDetailArgs', 'DistributedDatabaseDistributedDatabaseShardDetailArgsDict']]]] shard_details: Collection of shards for the Globally distributed database.
         :param pulumi.Input[_builtins.str] sharding_method: Sharding Methods for the Globally distributed database.
         :param pulumi.Input[_builtins.int] start_database_trigger: Increment this value to trigger StartDistributedDatabase action.
@@ -1612,6 +1801,8 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
           Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
         operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
         and remove in single operation is not allowed.
+        For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+        will also delete the associated VmCluster and DbStorageVault.
 
         ## Example Usage
 
@@ -1623,17 +1814,59 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             catalog_details=[{
                 "admin_password": distributed_database_catalog_details_admin_password,
                 "source": distributed_database_catalog_details_source,
-                "vm_cluster_id": test_vm_cluster["id"],
+                "availability_domain": distributed_database_catalog_details_availability_domain,
+                "db_storage_vault_details": {
+                    "additional_flash_cache_in_percent": distributed_database_catalog_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                    "high_capacity_database_storage": distributed_database_catalog_details_db_storage_vault_details_high_capacity_database_storage,
+                },
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
                 "peer_details": [{
-                    "vm_cluster_id": test_vm_cluster["id"],
+                    "availability_domain": distributed_database_catalog_details_peer_details_availability_domain,
+                    "db_storage_vault_details": {
+                        "additional_flash_cache_in_percent": distributed_database_catalog_details_peer_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                        "high_capacity_database_storage": distributed_database_catalog_details_peer_details_db_storage_vault_details_high_capacity_database_storage,
+                    },
                     "protection_mode": distributed_database_catalog_details_peer_details_protection_mode,
                     "transport_type": distributed_database_catalog_details_peer_details_transport_type,
+                    "vm_cluster_details": {
+                        "backup_network_nsg_ids": distributed_database_catalog_details_peer_details_vm_cluster_details_backup_network_nsg_ids,
+                        "backup_subnet_id": test_subnet["id"],
+                        "domain": distributed_database_catalog_details_peer_details_vm_cluster_details_domain,
+                        "enabled_ecpu_count": distributed_database_catalog_details_peer_details_vm_cluster_details_enabled_ecpu_count,
+                        "is_diagnostics_events_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_diagnostics_events_enabled,
+                        "is_health_monitoring_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_health_monitoring_enabled,
+                        "is_incident_logs_enabled": distributed_database_catalog_details_peer_details_vm_cluster_details_is_incident_logs_enabled,
+                        "license_model": distributed_database_catalog_details_peer_details_vm_cluster_details_license_model,
+                        "nsg_ids": distributed_database_catalog_details_peer_details_vm_cluster_details_nsg_ids,
+                        "private_zone_id": test_zone["id"],
+                        "ssh_public_keys": distributed_database_catalog_details_peer_details_vm_cluster_details_ssh_public_keys,
+                        "subnet_id": test_subnet["id"],
+                        "total_ecpu_count": distributed_database_catalog_details_peer_details_vm_cluster_details_total_ecpu_count,
+                        "vm_file_system_storage_size": distributed_database_catalog_details_peer_details_vm_cluster_details_vm_file_system_storage_size,
+                    },
+                    "vm_cluster_id": test_vm_cluster["id"],
                 }],
                 "peer_vm_cluster_ids": distributed_database_catalog_details_peer_vm_cluster_ids,
                 "shard_space": distributed_database_catalog_details_shard_space,
                 "vault_id": test_vault["id"],
+                "vm_cluster_details": {
+                    "backup_network_nsg_ids": distributed_database_catalog_details_vm_cluster_details_backup_network_nsg_ids,
+                    "backup_subnet_id": test_subnet["id"],
+                    "domain": distributed_database_catalog_details_vm_cluster_details_domain,
+                    "enabled_ecpu_count": distributed_database_catalog_details_vm_cluster_details_enabled_ecpu_count,
+                    "is_diagnostics_events_enabled": distributed_database_catalog_details_vm_cluster_details_is_diagnostics_events_enabled,
+                    "is_health_monitoring_enabled": distributed_database_catalog_details_vm_cluster_details_is_health_monitoring_enabled,
+                    "is_incident_logs_enabled": distributed_database_catalog_details_vm_cluster_details_is_incident_logs_enabled,
+                    "license_model": distributed_database_catalog_details_vm_cluster_details_license_model,
+                    "nsg_ids": distributed_database_catalog_details_vm_cluster_details_nsg_ids,
+                    "private_zone_id": test_zone["id"],
+                    "ssh_public_keys": distributed_database_catalog_details_vm_cluster_details_ssh_public_keys,
+                    "subnet_id": test_subnet["id"],
+                    "total_ecpu_count": distributed_database_catalog_details_vm_cluster_details_total_ecpu_count,
+                    "vm_file_system_storage_size": distributed_database_catalog_details_vm_cluster_details_vm_file_system_storage_size,
+                },
+                "vm_cluster_id": test_vm_cluster["id"],
             }],
             character_set=distributed_database_character_set,
             compartment_id=compartment_id,
@@ -1650,17 +1883,59 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             shard_details=[{
                 "admin_password": distributed_database_shard_details_admin_password,
                 "source": distributed_database_shard_details_source,
-                "vm_cluster_id": test_vm_cluster["id"],
+                "availability_domain": distributed_database_shard_details_availability_domain,
+                "db_storage_vault_details": {
+                    "additional_flash_cache_in_percent": distributed_database_shard_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                    "high_capacity_database_storage": distributed_database_shard_details_db_storage_vault_details_high_capacity_database_storage,
+                },
                 "kms_key_id": test_key["id"],
                 "kms_key_version_id": test_key_version["id"],
                 "peer_details": [{
-                    "vm_cluster_id": test_vm_cluster["id"],
+                    "availability_domain": distributed_database_shard_details_peer_details_availability_domain,
+                    "db_storage_vault_details": {
+                        "additional_flash_cache_in_percent": distributed_database_shard_details_peer_details_db_storage_vault_details_additional_flash_cache_in_percent,
+                        "high_capacity_database_storage": distributed_database_shard_details_peer_details_db_storage_vault_details_high_capacity_database_storage,
+                    },
                     "protection_mode": distributed_database_shard_details_peer_details_protection_mode,
                     "transport_type": distributed_database_shard_details_peer_details_transport_type,
+                    "vm_cluster_details": {
+                        "backup_network_nsg_ids": distributed_database_shard_details_peer_details_vm_cluster_details_backup_network_nsg_ids,
+                        "backup_subnet_id": test_subnet["id"],
+                        "domain": distributed_database_shard_details_peer_details_vm_cluster_details_domain,
+                        "enabled_ecpu_count": distributed_database_shard_details_peer_details_vm_cluster_details_enabled_ecpu_count,
+                        "is_diagnostics_events_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_diagnostics_events_enabled,
+                        "is_health_monitoring_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_health_monitoring_enabled,
+                        "is_incident_logs_enabled": distributed_database_shard_details_peer_details_vm_cluster_details_is_incident_logs_enabled,
+                        "license_model": distributed_database_shard_details_peer_details_vm_cluster_details_license_model,
+                        "nsg_ids": distributed_database_shard_details_peer_details_vm_cluster_details_nsg_ids,
+                        "private_zone_id": test_zone["id"],
+                        "ssh_public_keys": distributed_database_shard_details_peer_details_vm_cluster_details_ssh_public_keys,
+                        "subnet_id": test_subnet["id"],
+                        "total_ecpu_count": distributed_database_shard_details_peer_details_vm_cluster_details_total_ecpu_count,
+                        "vm_file_system_storage_size": distributed_database_shard_details_peer_details_vm_cluster_details_vm_file_system_storage_size,
+                    },
+                    "vm_cluster_id": test_vm_cluster["id"],
                 }],
                 "peer_vm_cluster_ids": distributed_database_shard_details_peer_vm_cluster_ids,
                 "shard_space": distributed_database_shard_details_shard_space,
                 "vault_id": test_vault["id"],
+                "vm_cluster_details": {
+                    "backup_network_nsg_ids": distributed_database_shard_details_vm_cluster_details_backup_network_nsg_ids,
+                    "backup_subnet_id": test_subnet["id"],
+                    "domain": distributed_database_shard_details_vm_cluster_details_domain,
+                    "enabled_ecpu_count": distributed_database_shard_details_vm_cluster_details_enabled_ecpu_count,
+                    "is_diagnostics_events_enabled": distributed_database_shard_details_vm_cluster_details_is_diagnostics_events_enabled,
+                    "is_health_monitoring_enabled": distributed_database_shard_details_vm_cluster_details_is_health_monitoring_enabled,
+                    "is_incident_logs_enabled": distributed_database_shard_details_vm_cluster_details_is_incident_logs_enabled,
+                    "license_model": distributed_database_shard_details_vm_cluster_details_license_model,
+                    "nsg_ids": distributed_database_shard_details_vm_cluster_details_nsg_ids,
+                    "private_zone_id": test_zone["id"],
+                    "ssh_public_keys": distributed_database_shard_details_vm_cluster_details_ssh_public_keys,
+                    "subnet_id": test_subnet["id"],
+                    "total_ecpu_count": distributed_database_shard_details_vm_cluster_details_total_ecpu_count,
+                    "vm_file_system_storage_size": distributed_database_shard_details_vm_cluster_details_vm_file_system_storage_size,
+                },
+                "vm_cluster_id": test_vm_cluster["id"],
             }],
             sharding_method=distributed_database_sharding_method,
             chunks=distributed_database_chunks,
@@ -1701,7 +1976,8 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             }],
             replication_factor=distributed_database_replication_factor,
             replication_method=distributed_database_replication_method,
-            replication_unit=distributed_database_replication_unit)
+            replication_unit=distributed_database_replication_unit,
+            scan_listener_port=distributed_database_scan_listener_port)
         ```
 
         ## Import
@@ -1748,15 +2024,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
                  gsm_ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
+                 move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
                  ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
                  ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePatchOperationArgs', 'DistributedDatabaseDistributedDatabasePatchOperationArgsDict']]]]] = None,
                  prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
                  replication_method: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
+                 scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None,
                  shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseShardDetailArgs', 'DistributedDatabaseDistributedDatabaseShardDetailArgsDict']]]]] = None,
                  sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
                  start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1808,6 +2087,7 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
                 raise TypeError("Missing required property 'listener_port'")
             __props__.__dict__["listener_port"] = listener_port
             __props__.__dict__["listener_port_tls"] = listener_port_tls
+            __props__.__dict__["move_replication_unit_trigger"] = move_replication_unit_trigger
             if ncharacter_set is None and not opts.urn:
                 raise TypeError("Missing required property 'ncharacter_set'")
             __props__.__dict__["ncharacter_set"] = ncharacter_set
@@ -1824,9 +2104,11 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             if private_endpoint_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'private_endpoint_ids'")
             __props__.__dict__["private_endpoint_ids"] = private_endpoint_ids
+            __props__.__dict__["recreate_failed_resource_trigger"] = recreate_failed_resource_trigger
             __props__.__dict__["replication_factor"] = replication_factor
             __props__.__dict__["replication_method"] = replication_method
             __props__.__dict__["replication_unit"] = replication_unit
+            __props__.__dict__["scan_listener_port"] = scan_listener_port
             if shard_details is None and not opts.urn:
                 raise TypeError("Missing required property 'shard_details'")
             __props__.__dict__["shard_details"] = shard_details
@@ -1892,15 +2174,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             listener_port: Optional[pulumi.Input[_builtins.int]] = None,
             listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseMetadataArgs', 'DistributedDatabaseDistributedDatabaseMetadataArgsDict']]]]] = None,
+            move_replication_unit_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
             ons_port_local: Optional[pulumi.Input[_builtins.int]] = None,
             ons_port_remote: Optional[pulumi.Input[_builtins.int]] = None,
             patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePatchOperationArgs', 'DistributedDatabaseDistributedDatabasePatchOperationArgsDict']]]]] = None,
             prefix: Optional[pulumi.Input[_builtins.str]] = None,
             private_endpoint_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            recreate_failed_resource_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
             replication_method: Optional[pulumi.Input[_builtins.str]] = None,
             replication_unit: Optional[pulumi.Input[_builtins.int]] = None,
+            scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None,
             shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseShardDetailArgs', 'DistributedDatabaseDistributedDatabaseShardDetailArgsDict']]]]] = None,
             sharding_method: Optional[pulumi.Input[_builtins.str]] = None,
             start_database_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1942,15 +2227,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] listener_port: The listener port number for the Globally distributed database. The listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] listener_port_tls: The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseMetadataArgs', 'DistributedDatabaseDistributedDatabaseMetadataArgsDict']]]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.int] move_replication_unit_trigger: (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.int] ons_port_local: The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.int] ons_port_remote: The ons remote port number for the Globally distributed database. The onsPortRemote has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePatchOperationArgs', 'DistributedDatabaseDistributedDatabasePatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] prefix: Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_endpoint_ids: The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.int] recreate_failed_resource_trigger: (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] replication_factor: The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         :param pulumi.Input[_builtins.str] replication_method: The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         :param pulumi.Input[_builtins.int] replication_unit: The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
+        :param pulumi.Input[_builtins.int] scan_listener_port: The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabaseShardDetailArgs', 'DistributedDatabaseDistributedDatabaseShardDetailArgsDict']]]] shard_details: Collection of shards for the Globally distributed database.
         :param pulumi.Input[_builtins.str] sharding_method: Sharding Methods for the Globally distributed database.
         :param pulumi.Input[_builtins.int] start_database_trigger: Increment this value to trigger StartDistributedDatabase action.
@@ -1999,15 +2287,18 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         __props__.__dict__["listener_port"] = listener_port
         __props__.__dict__["listener_port_tls"] = listener_port_tls
         __props__.__dict__["metadatas"] = metadatas
+        __props__.__dict__["move_replication_unit_trigger"] = move_replication_unit_trigger
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["ons_port_local"] = ons_port_local
         __props__.__dict__["ons_port_remote"] = ons_port_remote
         __props__.__dict__["patch_operations"] = patch_operations
         __props__.__dict__["prefix"] = prefix
         __props__.__dict__["private_endpoint_ids"] = private_endpoint_ids
+        __props__.__dict__["recreate_failed_resource_trigger"] = recreate_failed_resource_trigger
         __props__.__dict__["replication_factor"] = replication_factor
         __props__.__dict__["replication_method"] = replication_method
         __props__.__dict__["replication_unit"] = replication_unit
+        __props__.__dict__["scan_listener_port"] = scan_listener_port
         __props__.__dict__["shard_details"] = shard_details
         __props__.__dict__["sharding_method"] = sharding_method
         __props__.__dict__["start_database_trigger"] = start_database_trigger
@@ -2238,6 +2529,14 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         return pulumi.get(self, "metadatas")
 
     @_builtins.property
+    @pulumi.getter(name="moveReplicationUnitTrigger")
+    def move_replication_unit_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
+        """
+        return pulumi.get(self, "move_replication_unit_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2286,6 +2585,14 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         return pulumi.get(self, "private_endpoint_ids")
 
     @_builtins.property
+    @pulumi.getter(name="recreateFailedResourceTrigger")
+    def recreate_failed_resource_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
+        """
+        return pulumi.get(self, "recreate_failed_resource_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="replicationFactor")
     def replication_factor(self) -> pulumi.Output[_builtins.int]:
         """
@@ -2308,6 +2615,14 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
         """
         return pulumi.get(self, "replication_unit")
+
+    @_builtins.property
+    @pulumi.getter(name="scanListenerPort")
+    def scan_listener_port(self) -> pulumi.Output[_builtins.int]:
+        """
+        The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        """
+        return pulumi.get(self, "scan_listener_port")
 
     @_builtins.property
     @pulumi.getter(name="shardDetails")

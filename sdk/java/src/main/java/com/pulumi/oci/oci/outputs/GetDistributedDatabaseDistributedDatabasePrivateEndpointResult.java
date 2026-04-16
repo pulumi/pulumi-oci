@@ -42,12 +42,12 @@ public final class GetDistributedDatabaseDistributedDatabasePrivateEndpointResul
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     private List<GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase> globallyDistributedAutonomousDatabases;
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     private List<GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase> globallyDistributedDatabases;
@@ -148,14 +148,14 @@ public final class GetDistributedDatabaseDistributedDatabasePrivateEndpointResul
         return this.freeformTags;
     }
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public List<GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase> globallyDistributedAutonomousDatabases() {
         return this.globallyDistributedAutonomousDatabases;
     }
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public List<GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase> globallyDistributedDatabases() {

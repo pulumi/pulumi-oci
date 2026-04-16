@@ -8,6 +8,14 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolAllocationPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+import com.pulumi.oci.Ocvp.inputs.GetByolsPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClusterPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
@@ -42,6 +50,10 @@ import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsPlainArgs;
+import com.pulumi.oci.Ocvp.outputs.GetByolAllocationResult;
+import com.pulumi.oci.Ocvp.outputs.GetByolAllocationsResult;
+import com.pulumi.oci.Ocvp.outputs.GetByolResult;
+import com.pulumi.oci.Ocvp.outputs.GetByolsResult;
 import com.pulumi.oci.Ocvp.outputs.GetClusterResult;
 import com.pulumi.oci.Ocvp.outputs.GetClustersResult;
 import com.pulumi.oci.Ocvp.outputs.GetDatastoreClusterResult;
@@ -63,6 +75,911 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class OcvpFunctions {
+    /**
+     * This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
+     *             .byolId(testByolOciOcvpByol.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolResult> getByol(GetByolArgs args) {
+        return getByol(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
+     *             .byolId(testByolOciOcvpByol.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolResult> getByolPlain(GetByolPlainArgs args) {
+        return getByolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
+     *             .byolId(testByolOciOcvpByol.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolResult> getByol(GetByolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByol:getByol", TypeShape.of(GetByolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
+     *             .byolId(testByolOciOcvpByol.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolResult> getByol(GetByolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByol:getByol", TypeShape.of(GetByolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byol resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
+     *             .byolId(testByolOciOcvpByol.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolResult> getByolPlain(GetByolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getByol:getByol", TypeShape.of(GetByolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL Allocation&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationResult> getByolAllocation(GetByolAllocationArgs args) {
+        return getByolAllocation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL Allocation&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolAllocationResult> getByolAllocationPlain(GetByolAllocationPlainArgs args) {
+        return getByolAllocationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL Allocation&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationResult> getByolAllocation(GetByolAllocationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByolAllocation:getByolAllocation", TypeShape.of(GetByolAllocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL Allocation&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationResult> getByolAllocation(GetByolAllocationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByolAllocation:getByolAllocation", TypeShape.of(GetByolAllocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified BYOL Allocation&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolAllocationResult> getByolAllocationPlain(GetByolAllocationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getByolAllocation:getByolAllocation", TypeShape.of(GetByolAllocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOL Allocations in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolAllocationId(testByolAllocation.id())
+     *             .byolId(testByol.id())
+     *             .displayName(byolAllocationDisplayName)
+     *             .softwareType(byolAllocationSoftwareType)
+     *             .state(byolAllocationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationsResult> getByolAllocations(GetByolAllocationsArgs args) {
+        return getByolAllocations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOL Allocations in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolAllocationId(testByolAllocation.id())
+     *             .byolId(testByol.id())
+     *             .displayName(byolAllocationDisplayName)
+     *             .softwareType(byolAllocationSoftwareType)
+     *             .state(byolAllocationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolAllocationsResult> getByolAllocationsPlain(GetByolAllocationsPlainArgs args) {
+        return getByolAllocationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOL Allocations in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolAllocationId(testByolAllocation.id())
+     *             .byolId(testByol.id())
+     *             .displayName(byolAllocationDisplayName)
+     *             .softwareType(byolAllocationSoftwareType)
+     *             .state(byolAllocationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationsResult> getByolAllocations(GetByolAllocationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByolAllocations:getByolAllocations", TypeShape.of(GetByolAllocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOL Allocations in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolAllocationId(testByolAllocation.id())
+     *             .byolId(testByol.id())
+     *             .displayName(byolAllocationDisplayName)
+     *             .softwareType(byolAllocationSoftwareType)
+     *             .state(byolAllocationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolAllocationsResult> getByolAllocations(GetByolAllocationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByolAllocations:getByolAllocations", TypeShape.of(GetByolAllocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOL Allocations in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolAllocationId(testByolAllocation.id())
+     *             .byolId(testByol.id())
+     *             .displayName(byolAllocationDisplayName)
+     *             .softwareType(byolAllocationSoftwareType)
+     *             .state(byolAllocationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolAllocationsResult> getByolAllocationsPlain(GetByolAllocationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getByolAllocations:getByolAllocations", TypeShape.of(GetByolAllocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOLs in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolId(testByol.id())
+     *             .displayName(byolDisplayName)
+     *             .softwareType(byolSoftwareType)
+     *             .state(byolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolsResult> getByols(GetByolsArgs args) {
+        return getByols(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOLs in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolId(testByol.id())
+     *             .displayName(byolDisplayName)
+     *             .softwareType(byolSoftwareType)
+     *             .state(byolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolsResult> getByolsPlain(GetByolsPlainArgs args) {
+        return getByolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOLs in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolId(testByol.id())
+     *             .displayName(byolDisplayName)
+     *             .softwareType(byolSoftwareType)
+     *             .state(byolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolsResult> getByols(GetByolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByols:getByols", TypeShape.of(GetByolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOLs in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolId(testByol.id())
+     *             .displayName(byolDisplayName)
+     *             .softwareType(byolSoftwareType)
+     *             .state(byolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetByolsResult> getByols(GetByolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getByols:getByols", TypeShape.of(GetByolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the BYOLs in the specified compartment. The list can be
+     * filtered by display name or availability domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
+     *             .byolId(testByol.id())
+     *             .displayName(byolDisplayName)
+     *             .softwareType(byolSoftwareType)
+     *             .state(byolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetByolsResult> getByolsPlain(GetByolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getByols:getByols", TypeShape.of(GetByolsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
@@ -2330,6 +3247,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
      *             .managementApplianceId(testManagementAppliance.id())
+     *             .sddcId(testSddc.id())
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -2375,6 +3293,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
      *             .managementApplianceId(testManagementAppliance.id())
+     *             .sddcId(testSddc.id())
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -2420,6 +3339,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
      *             .managementApplianceId(testManagementAppliance.id())
+     *             .sddcId(testSddc.id())
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -2465,6 +3385,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
      *             .managementApplianceId(testManagementAppliance.id())
+     *             .sddcId(testSddc.id())
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -2510,6 +3431,7 @@ public final class OcvpFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
      *             .managementApplianceId(testManagementAppliance.id())
+     *             .sddcId(testSddc.id())
      *             .state(managementApplianceState)
      *             .build());
      * 

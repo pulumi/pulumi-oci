@@ -15,10 +15,25 @@ export const getOccDemandSignals: typeof import("./getOccDemandSignals").getOccD
 export const getOccDemandSignalsOutput: typeof import("./getOccDemandSignals").getOccDemandSignalsOutput = null as any;
 utilities.lazyLoad(exports, ["getOccDemandSignals","getOccDemandSignalsOutput"], () => require("./getOccDemandSignals"));
 
+export { GetOccMetricAlarmArgs, GetOccMetricAlarmResult, GetOccMetricAlarmOutputArgs } from "./getOccMetricAlarm";
+export const getOccMetricAlarm: typeof import("./getOccMetricAlarm").getOccMetricAlarm = null as any;
+export const getOccMetricAlarmOutput: typeof import("./getOccMetricAlarm").getOccMetricAlarmOutput = null as any;
+utilities.lazyLoad(exports, ["getOccMetricAlarm","getOccMetricAlarmOutput"], () => require("./getOccMetricAlarm"));
+
+export { GetOccMetricAlarmsArgs, GetOccMetricAlarmsResult, GetOccMetricAlarmsOutputArgs } from "./getOccMetricAlarms";
+export const getOccMetricAlarms: typeof import("./getOccMetricAlarms").getOccMetricAlarms = null as any;
+export const getOccMetricAlarmsOutput: typeof import("./getOccMetricAlarms").getOccMetricAlarmsOutput = null as any;
+utilities.lazyLoad(exports, ["getOccMetricAlarms","getOccMetricAlarmsOutput"], () => require("./getOccMetricAlarms"));
+
 export { OccDemandSignalArgs, OccDemandSignalState } from "./occDemandSignal";
 export type OccDemandSignal = import("./occDemandSignal").OccDemandSignal;
 export const OccDemandSignal: typeof import("./occDemandSignal").OccDemandSignal = null as any;
 utilities.lazyLoad(exports, ["OccDemandSignal"], () => require("./occDemandSignal"));
+
+export { OccMetricAlarmArgs, OccMetricAlarmState } from "./occMetricAlarm";
+export type OccMetricAlarm = import("./occMetricAlarm").OccMetricAlarm;
+export const OccMetricAlarm: typeof import("./occMetricAlarm").OccMetricAlarm = null as any;
+utilities.lazyLoad(exports, ["OccMetricAlarm"], () => require("./occMetricAlarm"));
 
 
 const _module = {
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "oci:DemandSignal/occDemandSignal:OccDemandSignal":
                 return new OccDemandSignal(name, <any>undefined, { urn })
+            case "oci:DemandSignal/occMetricAlarm:OccMetricAlarm":
+                return new OccMetricAlarm(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "DemandSignal/occDemandSignal", _module)
+pulumi.runtime.registerResourceModule("oci", "DemandSignal/occMetricAlarm", _module)

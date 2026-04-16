@@ -5,8 +5,10 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails;
 import com.pulumi.oci.oci.outputs.DistributedDatabaseDistributedDatabaseCatalogDetailMetadata;
 import com.pulumi.oci.oci.outputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail;
+import com.pulumi.oci.oci.outputs.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,10 +18,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
     /**
-     * @return The admin password for the cataog associated with Globally distributed database.
+     * @return The admin password for the catalog associated with Globally distributed database.
      * 
      */
     private String adminPassword;
+    /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    private @Nullable String availabilityDomain;
     /**
      * @return the identifier of the container database for underlying supporting resource.
      * 
@@ -30,6 +37,11 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
      * 
      */
     private @Nullable String dbHomeId;
+    /**
+     * @return Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    private @Nullable DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails dbStorageVaultDetails;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -71,7 +83,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
      */
     private @Nullable String shardSpace;
     /**
-     * @return The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+     * @return Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
      * 
      */
     private String source;
@@ -101,18 +113,30 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
      */
     private @Nullable String vaultId;
     /**
+     * @return Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    private @Nullable DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails vmClusterDetails;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
-    private String vmClusterId;
+    private @Nullable String vmClusterId;
 
     private DistributedDatabaseDistributedDatabaseCatalogDetail() {}
     /**
-     * @return The admin password for the cataog associated with Globally distributed database.
+     * @return The admin password for the catalog associated with Globally distributed database.
      * 
      */
     public String adminPassword() {
         return this.adminPassword;
+    }
+    /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return the identifier of the container database for underlying supporting resource.
@@ -127,6 +151,13 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
      */
     public Optional<String> dbHomeId() {
         return Optional.ofNullable(this.dbHomeId);
+    }
+    /**
+     * @return Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails> dbStorageVaultDetails() {
+        return Optional.ofNullable(this.dbStorageVaultDetails);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -185,7 +216,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
         return Optional.ofNullable(this.shardSpace);
     }
     /**
-     * @return The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+     * @return Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
      * 
      */
     public String source() {
@@ -227,11 +258,18 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
         return Optional.ofNullable(this.vaultId);
     }
     /**
+     * @return Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails> vmClusterDetails() {
+        return Optional.ofNullable(this.vmClusterDetails);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
-    public String vmClusterId() {
-        return this.vmClusterId;
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     public static Builder builder() {
@@ -244,8 +282,10 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
     @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
+        private @Nullable String availabilityDomain;
         private @Nullable String containerDatabaseId;
         private @Nullable String dbHomeId;
+        private @Nullable DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails dbStorageVaultDetails;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable List<DistributedDatabaseDistributedDatabaseCatalogDetailMetadata> metadatas;
@@ -260,13 +300,16 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
         private @Nullable String vaultId;
-        private String vmClusterId;
+        private @Nullable DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails vmClusterDetails;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(DistributedDatabaseDistributedDatabaseCatalogDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.containerDatabaseId = defaults.containerDatabaseId;
     	      this.dbHomeId = defaults.dbHomeId;
+    	      this.dbStorageVaultDetails = defaults.dbStorageVaultDetails;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.metadatas = defaults.metadatas;
@@ -281,6 +324,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.vaultId = defaults.vaultId;
+    	      this.vmClusterDetails = defaults.vmClusterDetails;
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
@@ -293,6 +337,12 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
         public Builder containerDatabaseId(@Nullable String containerDatabaseId) {
 
             this.containerDatabaseId = containerDatabaseId;
@@ -302,6 +352,12 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
         public Builder dbHomeId(@Nullable String dbHomeId) {
 
             this.dbHomeId = dbHomeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbStorageVaultDetails(@Nullable DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails dbStorageVaultDetails) {
+
+            this.dbStorageVaultDetails = dbStorageVaultDetails;
             return this;
         }
         @CustomType.Setter
@@ -400,18 +456,24 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterId(String vmClusterId) {
-            if (vmClusterId == null) {
-              throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseCatalogDetail", "vmClusterId");
-            }
+        public Builder vmClusterDetails(@Nullable DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails vmClusterDetails) {
+
+            this.vmClusterDetails = vmClusterDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+
             this.vmClusterId = vmClusterId;
             return this;
         }
         public DistributedDatabaseDistributedDatabaseCatalogDetail build() {
             final var _resultValue = new DistributedDatabaseDistributedDatabaseCatalogDetail();
             _resultValue.adminPassword = adminPassword;
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.containerDatabaseId = containerDatabaseId;
             _resultValue.dbHomeId = dbHomeId;
+            _resultValue.dbStorageVaultDetails = dbStorageVaultDetails;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.metadatas = metadatas;
@@ -426,6 +488,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetail {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.vaultId = vaultId;
+            _resultValue.vmClusterDetails = vmClusterDetails;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }

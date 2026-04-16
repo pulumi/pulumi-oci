@@ -5,7 +5,9 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,10 +15,20 @@ import java.util.Objects;
 @CustomType
 public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail {
     /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return the identifier of the container database for underlying supporting resource.
      * 
      */
     private String containerDatabaseId;
+    /**
+     * @return The Storage Vault for Distributed Database Resource
+     * 
+     */
+    private List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail> dbStorageVaultDetails;
     /**
      * @return Comma separated names of argument corresponding to which metadata need to be retrived.
      * 
@@ -58,6 +70,11 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
      */
     private String transportType;
     /**
+     * @return The Exadata VM cluster for Distributed Database Resource
+     * 
+     */
+    private List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail> vmClusterDetails;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
@@ -65,11 +82,25 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
 
     private GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail() {}
     /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * @return the identifier of the container database for underlying supporting resource.
      * 
      */
     public String containerDatabaseId() {
         return this.containerDatabaseId;
+    }
+    /**
+     * @return The Storage Vault for Distributed Database Resource
+     * 
+     */
+    public List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail> dbStorageVaultDetails() {
+        return this.dbStorageVaultDetails;
     }
     /**
      * @return Comma separated names of argument corresponding to which metadata need to be retrived.
@@ -128,6 +159,13 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
         return this.transportType;
     }
     /**
+     * @return The Exadata VM cluster for Distributed Database Resource
+     * 
+     */
+    public List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail> vmClusterDetails() {
+        return this.vmClusterDetails;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
@@ -144,7 +182,9 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private String containerDatabaseId;
+        private List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail> dbStorageVaultDetails;
         private List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata> metadatas;
         private String protectionMode;
         private String shardGroup;
@@ -153,11 +193,14 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
         private String timeCreated;
         private String timeUpdated;
         private String transportType;
+        private List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail> vmClusterDetails;
         private String vmClusterId;
         public Builder() {}
         public Builder(GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.containerDatabaseId = defaults.containerDatabaseId;
+    	      this.dbStorageVaultDetails = defaults.dbStorageVaultDetails;
     	      this.metadatas = defaults.metadatas;
     	      this.protectionMode = defaults.protectionMode;
     	      this.shardGroup = defaults.shardGroup;
@@ -166,9 +209,18 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.transportType = defaults.transportType;
+    	      this.vmClusterDetails = defaults.vmClusterDetails;
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder containerDatabaseId(String containerDatabaseId) {
             if (containerDatabaseId == null) {
@@ -176,6 +228,17 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
             }
             this.containerDatabaseId = containerDatabaseId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbStorageVaultDetails(List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail> dbStorageVaultDetails) {
+            if (dbStorageVaultDetails == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail", "dbStorageVaultDetails");
+            }
+            this.dbStorageVaultDetails = dbStorageVaultDetails;
+            return this;
+        }
+        public Builder dbStorageVaultDetails(GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetail... dbStorageVaultDetails) {
+            return dbStorageVaultDetails(List.of(dbStorageVaultDetails));
         }
         @CustomType.Setter
         public Builder metadatas(List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata> metadatas) {
@@ -245,6 +308,17 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
             return this;
         }
         @CustomType.Setter
+        public Builder vmClusterDetails(List<GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail> vmClusterDetails) {
+            if (vmClusterDetails == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail", "vmClusterDetails");
+            }
+            this.vmClusterDetails = vmClusterDetails;
+            return this;
+        }
+        public Builder vmClusterDetails(GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetail... vmClusterDetails) {
+            return vmClusterDetails(List.of(vmClusterDetails));
+        }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             if (vmClusterId == null) {
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail", "vmClusterId");
@@ -254,7 +328,9 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
         }
         public GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail build() {
             final var _resultValue = new GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.containerDatabaseId = containerDatabaseId;
+            _resultValue.dbStorageVaultDetails = dbStorageVaultDetails;
             _resultValue.metadatas = metadatas;
             _resultValue.protectionMode = protectionMode;
             _resultValue.shardGroup = shardGroup;
@@ -263,6 +339,7 @@ public final class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDet
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.transportType = transportType;
+            _resultValue.vmClusterDetails = vmClusterDetails;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }

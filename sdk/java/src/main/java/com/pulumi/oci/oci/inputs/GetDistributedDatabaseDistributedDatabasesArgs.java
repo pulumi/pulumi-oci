@@ -86,6 +86,21 @@ public final class GetDistributedDatabaseDistributedDatabasesArgs extends com.pu
     }
 
     /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     * 
+     */
+    @Import(name="privateEndpointId")
+    private @Nullable Output<String> privateEndpointId;
+
+    /**
+     * @return A filter to return only resources that are associated with the given privateEndpointId.
+     * 
+     */
+    public Optional<Output<String>> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
+
+    /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
@@ -108,6 +123,7 @@ public final class GetDistributedDatabaseDistributedDatabasesArgs extends com.pu
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.metadata = $.metadata;
+        this.privateEndpointId = $.privateEndpointId;
         this.state = $.state;
     }
 
@@ -224,6 +240,27 @@ public final class GetDistributedDatabaseDistributedDatabasesArgs extends com.pu
          */
         public Builder metadata(String metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param privateEndpointId A filter to return only resources that are associated with the given privateEndpointId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(@Nullable Output<String> privateEndpointId) {
+            $.privateEndpointId = privateEndpointId;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointId A filter to return only resources that are associated with the given privateEndpointId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(String privateEndpointId) {
+            return privateEndpointId(Output.of(privateEndpointId));
         }
 
         /**

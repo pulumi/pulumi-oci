@@ -92,11 +92,11 @@ export class DistributedDatabaseDistributedDatabasePrivateEndpoint extends pulum
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
     declare public /*out*/ readonly globallyDistributedAutonomousDatabases: pulumi.Output<outputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase[]>;
     /**
-     * The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
     declare public /*out*/ readonly globallyDistributedDatabases: pulumi.Output<outputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase[]>;
     /**
@@ -239,11 +239,11 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
     globallyDistributedAutonomousDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase>[]>;
     /**
-     * The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      */
     globallyDistributedDatabases?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase>[]>;
     /**

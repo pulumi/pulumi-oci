@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly int FastStartFailOverLagLimitInSeconds;
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        /// This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
         /// </summary>
         public readonly bool IsAutomaticFailoverEnabled;
         /// <summary>

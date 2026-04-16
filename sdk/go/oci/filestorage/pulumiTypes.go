@@ -664,6 +664,8 @@ type FilesystemSnapshotPolicySchedule struct {
 	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay *int `pulumi:"hourOfDay"`
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails *FilesystemSnapshotPolicyScheduleLockDurationDetails `pulumi:"lockDurationDetails"`
 	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month *string `pulumi:"month"`
 	// (Updatable) The frequency of scheduled snapshots.
@@ -696,6 +698,8 @@ type FilesystemSnapshotPolicyScheduleArgs struct {
 	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput `pulumi:"lockDurationDetails"`
 	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringPtrInput `pulumi:"month"`
 	// (Updatable) The frequency of scheduled snapshots.
@@ -776,6 +780,13 @@ func (o FilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput 
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Details for setting a retention date or legal hold.
+func (o FilesystemSnapshotPolicyScheduleOutput) LockDurationDetails() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *FilesystemSnapshotPolicyScheduleLockDurationDetails {
+		return v.LockDurationDetails
+	}).(FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput)
+}
+
 // (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o FilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
@@ -824,6 +835,181 @@ func (o FilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) Fi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FilesystemSnapshotPolicySchedule {
 		return vs[0].([]FilesystemSnapshotPolicySchedule)[vs[1].(int)]
 	}).(FilesystemSnapshotPolicyScheduleOutput)
+}
+
+type FilesystemSnapshotPolicyScheduleLockDurationDetails struct {
+	// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration *int `pulumi:"coolOffDuration"`
+	// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// FilesystemSnapshotPolicyScheduleLockDurationDetailsInput is an input type that accepts FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs and FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyScheduleLockDurationDetailsInput` via:
+//
+//	FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs{...}
+type FilesystemSnapshotPolicyScheduleLockDurationDetailsInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput
+	ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutputWithContext(context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput
+}
+
+type FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs struct {
+	// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntPtrInput `pulumi:"coolOffDuration"`
+	// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicyScheduleLockDurationDetails)(nil)).Elem()
+}
+
+func (i FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput {
+	return i.ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput)
+}
+
+func (i FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return i.ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput).ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(ctx)
+}
+
+// FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput is an input type that accepts FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs, FilesystemSnapshotPolicyScheduleLockDurationDetailsPtr and FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput` via:
+//
+//	        FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput
+	ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput
+}
+
+type filesystemSnapshotPolicyScheduleLockDurationDetailsPtrType FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs
+
+func FilesystemSnapshotPolicyScheduleLockDurationDetailsPtr(v *FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput {
+	return (*filesystemSnapshotPolicyScheduleLockDurationDetailsPtrType)(v)
+}
+
+func (*filesystemSnapshotPolicyScheduleLockDurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FilesystemSnapshotPolicyScheduleLockDurationDetails)(nil)).Elem()
+}
+
+func (i *filesystemSnapshotPolicyScheduleLockDurationDetailsPtrType) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return i.ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *filesystemSnapshotPolicyScheduleLockDurationDetailsPtrType) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput)
+}
+
+type FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicyScheduleLockDurationDetails)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return o.ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FilesystemSnapshotPolicyScheduleLockDurationDetails) *FilesystemSnapshotPolicyScheduleLockDurationDetails {
+		return &v
+	}).(FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput)
+}
+
+// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) CoolOffDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyScheduleLockDurationDetails) *int { return v.CoolOffDuration }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyScheduleLockDurationDetails) int { return v.LockDuration }).(pulumi.IntOutput)
+}
+
+// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyScheduleLockDurationDetails) string { return v.LockMode }).(pulumi.StringOutput)
+}
+
+type FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FilesystemSnapshotPolicyScheduleLockDurationDetails)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput() FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) ToFilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) Elem() FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicyScheduleLockDurationDetails) FilesystemSnapshotPolicyScheduleLockDurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret FilesystemSnapshotPolicyScheduleLockDurationDetails
+		return ret
+	}).(FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput)
+}
+
+// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) CoolOffDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicyScheduleLockDurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CoolOffDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) LockDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicyScheduleLockDurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.LockDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput) LockMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicyScheduleLockDurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LockMode
+	}).(pulumi.StringPtrOutput)
 }
 
 type MountTargetKerberos struct {
@@ -1909,6 +2095,181 @@ func (o SnapshotLockArrayOutput) Index(i pulumi.IntInput) SnapshotLockOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotLock {
 		return vs[0].([]SnapshotLock)[vs[1].(int)]
 	}).(SnapshotLockOutput)
+}
+
+type SnapshotLockDurationDetails struct {
+	// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration *int `pulumi:"coolOffDuration"`
+	// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// SnapshotLockDurationDetailsInput is an input type that accepts SnapshotLockDurationDetailsArgs and SnapshotLockDurationDetailsOutput values.
+// You can construct a concrete instance of `SnapshotLockDurationDetailsInput` via:
+//
+//	SnapshotLockDurationDetailsArgs{...}
+type SnapshotLockDurationDetailsInput interface {
+	pulumi.Input
+
+	ToSnapshotLockDurationDetailsOutput() SnapshotLockDurationDetailsOutput
+	ToSnapshotLockDurationDetailsOutputWithContext(context.Context) SnapshotLockDurationDetailsOutput
+}
+
+type SnapshotLockDurationDetailsArgs struct {
+	// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntPtrInput `pulumi:"coolOffDuration"`
+	// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (SnapshotLockDurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotLockDurationDetails)(nil)).Elem()
+}
+
+func (i SnapshotLockDurationDetailsArgs) ToSnapshotLockDurationDetailsOutput() SnapshotLockDurationDetailsOutput {
+	return i.ToSnapshotLockDurationDetailsOutputWithContext(context.Background())
+}
+
+func (i SnapshotLockDurationDetailsArgs) ToSnapshotLockDurationDetailsOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotLockDurationDetailsOutput)
+}
+
+func (i SnapshotLockDurationDetailsArgs) ToSnapshotLockDurationDetailsPtrOutput() SnapshotLockDurationDetailsPtrOutput {
+	return i.ToSnapshotLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i SnapshotLockDurationDetailsArgs) ToSnapshotLockDurationDetailsPtrOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotLockDurationDetailsOutput).ToSnapshotLockDurationDetailsPtrOutputWithContext(ctx)
+}
+
+// SnapshotLockDurationDetailsPtrInput is an input type that accepts SnapshotLockDurationDetailsArgs, SnapshotLockDurationDetailsPtr and SnapshotLockDurationDetailsPtrOutput values.
+// You can construct a concrete instance of `SnapshotLockDurationDetailsPtrInput` via:
+//
+//	        SnapshotLockDurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SnapshotLockDurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToSnapshotLockDurationDetailsPtrOutput() SnapshotLockDurationDetailsPtrOutput
+	ToSnapshotLockDurationDetailsPtrOutputWithContext(context.Context) SnapshotLockDurationDetailsPtrOutput
+}
+
+type snapshotLockDurationDetailsPtrType SnapshotLockDurationDetailsArgs
+
+func SnapshotLockDurationDetailsPtr(v *SnapshotLockDurationDetailsArgs) SnapshotLockDurationDetailsPtrInput {
+	return (*snapshotLockDurationDetailsPtrType)(v)
+}
+
+func (*snapshotLockDurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SnapshotLockDurationDetails)(nil)).Elem()
+}
+
+func (i *snapshotLockDurationDetailsPtrType) ToSnapshotLockDurationDetailsPtrOutput() SnapshotLockDurationDetailsPtrOutput {
+	return i.ToSnapshotLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *snapshotLockDurationDetailsPtrType) ToSnapshotLockDurationDetailsPtrOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotLockDurationDetailsPtrOutput)
+}
+
+type SnapshotLockDurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (SnapshotLockDurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotLockDurationDetails)(nil)).Elem()
+}
+
+func (o SnapshotLockDurationDetailsOutput) ToSnapshotLockDurationDetailsOutput() SnapshotLockDurationDetailsOutput {
+	return o
+}
+
+func (o SnapshotLockDurationDetailsOutput) ToSnapshotLockDurationDetailsOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsOutput {
+	return o
+}
+
+func (o SnapshotLockDurationDetailsOutput) ToSnapshotLockDurationDetailsPtrOutput() SnapshotLockDurationDetailsPtrOutput {
+	return o.ToSnapshotLockDurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o SnapshotLockDurationDetailsOutput) ToSnapshotLockDurationDetailsPtrOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SnapshotLockDurationDetails) *SnapshotLockDurationDetails {
+		return &v
+	}).(SnapshotLockDurationDetailsPtrOutput)
+}
+
+// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o SnapshotLockDurationDetailsOutput) CoolOffDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SnapshotLockDurationDetails) *int { return v.CoolOffDuration }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o SnapshotLockDurationDetailsOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v SnapshotLockDurationDetails) int { return v.LockDuration }).(pulumi.IntOutput)
+}
+
+// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o SnapshotLockDurationDetailsOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v SnapshotLockDurationDetails) string { return v.LockMode }).(pulumi.StringOutput)
+}
+
+type SnapshotLockDurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (SnapshotLockDurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SnapshotLockDurationDetails)(nil)).Elem()
+}
+
+func (o SnapshotLockDurationDetailsPtrOutput) ToSnapshotLockDurationDetailsPtrOutput() SnapshotLockDurationDetailsPtrOutput {
+	return o
+}
+
+func (o SnapshotLockDurationDetailsPtrOutput) ToSnapshotLockDurationDetailsPtrOutputWithContext(ctx context.Context) SnapshotLockDurationDetailsPtrOutput {
+	return o
+}
+
+func (o SnapshotLockDurationDetailsPtrOutput) Elem() SnapshotLockDurationDetailsOutput {
+	return o.ApplyT(func(v *SnapshotLockDurationDetails) SnapshotLockDurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret SnapshotLockDurationDetails
+		return ret
+	}).(SnapshotLockDurationDetailsOutput)
+}
+
+// (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o SnapshotLockDurationDetailsPtrOutput) CoolOffDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SnapshotLockDurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CoolOffDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o SnapshotLockDurationDetailsPtrOutput) LockDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SnapshotLockDurationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.LockDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o SnapshotLockDurationDetailsPtrOutput) LockMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SnapshotLockDurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LockMode
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetExportSetsExportSet struct {
@@ -4045,6 +4406,8 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule struct {
 	DayOfWeek string `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay int `pulumi:"hourOfDay"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail `pulumi:"lockDurationDetails"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
@@ -4077,6 +4440,8 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs struct {
 	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput `pulumi:"lockDurationDetails"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
@@ -4157,6 +4522,13 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Hou
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
 }
 
+// Details for setting a retention date or legal hold.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) LockDurationDetails() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail {
+		return v.LockDurationDetails
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput)
+}
+
 // The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
@@ -4209,6 +4581,127 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule {
 		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule)[vs[1].(int)]
 	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration int `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{...}
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntInput `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput)
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray{ GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{...} }
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailInput
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return o
+}
+
+// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) CoolOffDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail) int {
+		return v.CoolOffDuration
+	}).(pulumi.IntOutput)
+}
+
+// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail) int {
+		return v.LockDuration
+	}).(pulumi.IntOutput)
+}
+
+// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail) string {
+		return v.LockMode
+	}).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail {
+		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetail)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput)
 }
 
 type GetFilesystemSnapshotPoliciesFilter struct {
@@ -4448,6 +4941,8 @@ type GetFilesystemSnapshotPolicySchedule struct {
 	DayOfWeek string `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay int `pulumi:"hourOfDay"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails []GetFilesystemSnapshotPolicyScheduleLockDurationDetail `pulumi:"lockDurationDetails"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
@@ -4480,6 +4975,8 @@ type GetFilesystemSnapshotPolicyScheduleArgs struct {
 	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput `pulumi:"lockDurationDetails"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
@@ -4560,6 +5057,13 @@ func (o GetFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput 
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
 }
 
+// Details for setting a retention date or legal hold.
+func (o GetFilesystemSnapshotPolicyScheduleOutput) LockDurationDetails() GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) []GetFilesystemSnapshotPolicyScheduleLockDurationDetail {
+		return v.LockDurationDetails
+	}).(GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput)
+}
+
 // The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
@@ -4608,6 +5112,121 @@ func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPolicySchedule {
 		return vs[0].([]GetFilesystemSnapshotPolicySchedule)[vs[1].(int)]
 	}).(GetFilesystemSnapshotPolicyScheduleOutput)
+}
+
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetail struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration int `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// GetFilesystemSnapshotPolicyScheduleLockDurationDetailInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs and GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyScheduleLockDurationDetailInput` via:
+//
+//	GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{...}
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput
+	ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput
+}
+
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntInput `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return i.ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput)
+}
+
+// GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray and GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput` via:
+//
+//	GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray{ GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{...} }
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput
+	ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput
+}
+
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray []GetFilesystemSnapshotPolicyScheduleLockDurationDetailInput
+
+func (GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return i.ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput)
+}
+
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return o
+}
+
+// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) CoolOffDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyScheduleLockDurationDetail) int { return v.CoolOffDuration }).(pulumi.IntOutput)
+}
+
+// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyScheduleLockDurationDetail) int { return v.LockDuration }).(pulumi.IntOutput)
+}
+
+// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyScheduleLockDurationDetail) string { return v.LockMode }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicyScheduleLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput() GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) ToGetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPolicyScheduleLockDurationDetail {
+		return vs[0].([]GetFilesystemSnapshotPolicyScheduleLockDurationDetail)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput)
 }
 
 type GetMountTargetsFilter struct {
@@ -7362,6 +7981,121 @@ func (o GetSnapshotLockArrayOutput) Index(i pulumi.IntInput) GetSnapshotLockOutp
 	}).(GetSnapshotLockOutput)
 }
 
+type GetSnapshotLockDurationDetail struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration int `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// GetSnapshotLockDurationDetailInput is an input type that accepts GetSnapshotLockDurationDetailArgs and GetSnapshotLockDurationDetailOutput values.
+// You can construct a concrete instance of `GetSnapshotLockDurationDetailInput` via:
+//
+//	GetSnapshotLockDurationDetailArgs{...}
+type GetSnapshotLockDurationDetailInput interface {
+	pulumi.Input
+
+	ToGetSnapshotLockDurationDetailOutput() GetSnapshotLockDurationDetailOutput
+	ToGetSnapshotLockDurationDetailOutputWithContext(context.Context) GetSnapshotLockDurationDetailOutput
+}
+
+type GetSnapshotLockDurationDetailArgs struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntInput `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (GetSnapshotLockDurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetSnapshotLockDurationDetailArgs) ToGetSnapshotLockDurationDetailOutput() GetSnapshotLockDurationDetailOutput {
+	return i.ToGetSnapshotLockDurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotLockDurationDetailArgs) ToGetSnapshotLockDurationDetailOutputWithContext(ctx context.Context) GetSnapshotLockDurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotLockDurationDetailOutput)
+}
+
+// GetSnapshotLockDurationDetailArrayInput is an input type that accepts GetSnapshotLockDurationDetailArray and GetSnapshotLockDurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotLockDurationDetailArrayInput` via:
+//
+//	GetSnapshotLockDurationDetailArray{ GetSnapshotLockDurationDetailArgs{...} }
+type GetSnapshotLockDurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotLockDurationDetailArrayOutput() GetSnapshotLockDurationDetailArrayOutput
+	ToGetSnapshotLockDurationDetailArrayOutputWithContext(context.Context) GetSnapshotLockDurationDetailArrayOutput
+}
+
+type GetSnapshotLockDurationDetailArray []GetSnapshotLockDurationDetailInput
+
+func (GetSnapshotLockDurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetSnapshotLockDurationDetailArray) ToGetSnapshotLockDurationDetailArrayOutput() GetSnapshotLockDurationDetailArrayOutput {
+	return i.ToGetSnapshotLockDurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotLockDurationDetailArray) ToGetSnapshotLockDurationDetailArrayOutputWithContext(ctx context.Context) GetSnapshotLockDurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotLockDurationDetailArrayOutput)
+}
+
+type GetSnapshotLockDurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotLockDurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetSnapshotLockDurationDetailOutput) ToGetSnapshotLockDurationDetailOutput() GetSnapshotLockDurationDetailOutput {
+	return o
+}
+
+func (o GetSnapshotLockDurationDetailOutput) ToGetSnapshotLockDurationDetailOutputWithContext(ctx context.Context) GetSnapshotLockDurationDetailOutput {
+	return o
+}
+
+// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o GetSnapshotLockDurationDetailOutput) CoolOffDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotLockDurationDetail) int { return v.CoolOffDuration }).(pulumi.IntOutput)
+}
+
+// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o GetSnapshotLockDurationDetailOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotLockDurationDetail) int { return v.LockDuration }).(pulumi.IntOutput)
+}
+
+// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o GetSnapshotLockDurationDetailOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotLockDurationDetail) string { return v.LockMode }).(pulumi.StringOutput)
+}
+
+type GetSnapshotLockDurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotLockDurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetSnapshotLockDurationDetailArrayOutput) ToGetSnapshotLockDurationDetailArrayOutput() GetSnapshotLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSnapshotLockDurationDetailArrayOutput) ToGetSnapshotLockDurationDetailArrayOutputWithContext(ctx context.Context) GetSnapshotLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSnapshotLockDurationDetailArrayOutput) Index(i pulumi.IntInput) GetSnapshotLockDurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotLockDurationDetail {
+		return vs[0].([]GetSnapshotLockDurationDetail)[vs[1].(int)]
+	}).(GetSnapshotLockDurationDetailOutput)
+}
+
 type GetSnapshotsFilter struct {
 	// Name of the snapshot. This value is immutable.
 	Name   string   `pulumi:"name"`
@@ -7489,6 +8223,8 @@ type GetSnapshotsSnapshot struct {
 	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails []GetSnapshotsSnapshotLockDurationDetail `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks []GetSnapshotsSnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
@@ -7508,6 +8244,8 @@ type GetSnapshotsSnapshot struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked string `pulumi:"timeLocked"`
 }
 
 // GetSnapshotsSnapshotInput is an input type that accepts GetSnapshotsSnapshotArgs and GetSnapshotsSnapshotOutput values.
@@ -7539,6 +8277,8 @@ type GetSnapshotsSnapshotArgs struct {
 	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Details for setting a retention date or legal hold.
+	LockDurationDetails GetSnapshotsSnapshotLockDurationDetailArrayInput `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks GetSnapshotsSnapshotLockArrayInput `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
@@ -7558,6 +8298,8 @@ type GetSnapshotsSnapshotArgs struct {
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked pulumi.StringInput `pulumi:"timeLocked"`
 }
 
 func (GetSnapshotsSnapshotArgs) ElementType() reflect.Type {
@@ -7655,6 +8397,11 @@ func (o GetSnapshotsSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Details for setting a retention date or legal hold.
+func (o GetSnapshotsSnapshotOutput) LockDurationDetails() GetSnapshotsSnapshotLockDurationDetailArrayOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) []GetSnapshotsSnapshotLockDurationDetail { return v.LockDurationDetails }).(GetSnapshotsSnapshotLockDurationDetailArrayOutput)
+}
+
 // Locks associated with this resource.
 func (o GetSnapshotsSnapshotOutput) Locks() GetSnapshotsSnapshotLockArrayOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) []GetSnapshotsSnapshotLock { return v.Locks }).(GetSnapshotsSnapshotLockArrayOutput)
@@ -7696,6 +8443,11 @@ func (o GetSnapshotsSnapshotOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetSnapshotsSnapshotOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+func (o GetSnapshotsSnapshotOutput) TimeLocked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.TimeLocked }).(pulumi.StringOutput)
 }
 
 type GetSnapshotsSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -7842,6 +8594,121 @@ func (o GetSnapshotsSnapshotLockArrayOutput) Index(i pulumi.IntInput) GetSnapsho
 	}).(GetSnapshotsSnapshotLockOutput)
 }
 
+type GetSnapshotsSnapshotLockDurationDetail struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration int `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration int `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode string `pulumi:"lockMode"`
+}
+
+// GetSnapshotsSnapshotLockDurationDetailInput is an input type that accepts GetSnapshotsSnapshotLockDurationDetailArgs and GetSnapshotsSnapshotLockDurationDetailOutput values.
+// You can construct a concrete instance of `GetSnapshotsSnapshotLockDurationDetailInput` via:
+//
+//	GetSnapshotsSnapshotLockDurationDetailArgs{...}
+type GetSnapshotsSnapshotLockDurationDetailInput interface {
+	pulumi.Input
+
+	ToGetSnapshotsSnapshotLockDurationDetailOutput() GetSnapshotsSnapshotLockDurationDetailOutput
+	ToGetSnapshotsSnapshotLockDurationDetailOutputWithContext(context.Context) GetSnapshotsSnapshotLockDurationDetailOutput
+}
+
+type GetSnapshotsSnapshotLockDurationDetailArgs struct {
+	// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+	CoolOffDuration pulumi.IntInput `pulumi:"coolOffDuration"`
+	// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+	LockDuration pulumi.IntInput `pulumi:"lockDuration"`
+	// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+	LockMode pulumi.StringInput `pulumi:"lockMode"`
+}
+
+func (GetSnapshotsSnapshotLockDurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotsSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetSnapshotsSnapshotLockDurationDetailArgs) ToGetSnapshotsSnapshotLockDurationDetailOutput() GetSnapshotsSnapshotLockDurationDetailOutput {
+	return i.ToGetSnapshotsSnapshotLockDurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotsSnapshotLockDurationDetailArgs) ToGetSnapshotsSnapshotLockDurationDetailOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockDurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotLockDurationDetailOutput)
+}
+
+// GetSnapshotsSnapshotLockDurationDetailArrayInput is an input type that accepts GetSnapshotsSnapshotLockDurationDetailArray and GetSnapshotsSnapshotLockDurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotsSnapshotLockDurationDetailArrayInput` via:
+//
+//	GetSnapshotsSnapshotLockDurationDetailArray{ GetSnapshotsSnapshotLockDurationDetailArgs{...} }
+type GetSnapshotsSnapshotLockDurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotsSnapshotLockDurationDetailArrayOutput() GetSnapshotsSnapshotLockDurationDetailArrayOutput
+	ToGetSnapshotsSnapshotLockDurationDetailArrayOutputWithContext(context.Context) GetSnapshotsSnapshotLockDurationDetailArrayOutput
+}
+
+type GetSnapshotsSnapshotLockDurationDetailArray []GetSnapshotsSnapshotLockDurationDetailInput
+
+func (GetSnapshotsSnapshotLockDurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotsSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (i GetSnapshotsSnapshotLockDurationDetailArray) ToGetSnapshotsSnapshotLockDurationDetailArrayOutput() GetSnapshotsSnapshotLockDurationDetailArrayOutput {
+	return i.ToGetSnapshotsSnapshotLockDurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotsSnapshotLockDurationDetailArray) ToGetSnapshotsSnapshotLockDurationDetailArrayOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockDurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotLockDurationDetailArrayOutput)
+}
+
+type GetSnapshotsSnapshotLockDurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotsSnapshotLockDurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotsSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetSnapshotsSnapshotLockDurationDetailOutput) ToGetSnapshotsSnapshotLockDurationDetailOutput() GetSnapshotsSnapshotLockDurationDetailOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockDurationDetailOutput) ToGetSnapshotsSnapshotLockDurationDetailOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockDurationDetailOutput {
+	return o
+}
+
+// For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+func (o GetSnapshotsSnapshotLockDurationDetailOutput) CoolOffDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLockDurationDetail) int { return v.CoolOffDuration }).(pulumi.IntOutput)
+}
+
+// The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+func (o GetSnapshotsSnapshotLockDurationDetailOutput) LockDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLockDurationDetail) int { return v.LockDuration }).(pulumi.IntOutput)
+}
+
+// Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+func (o GetSnapshotsSnapshotLockDurationDetailOutput) LockMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLockDurationDetail) string { return v.LockMode }).(pulumi.StringOutput)
+}
+
+type GetSnapshotsSnapshotLockDurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotsSnapshotLockDurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotsSnapshotLockDurationDetail)(nil)).Elem()
+}
+
+func (o GetSnapshotsSnapshotLockDurationDetailArrayOutput) ToGetSnapshotsSnapshotLockDurationDetailArrayOutput() GetSnapshotsSnapshotLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockDurationDetailArrayOutput) ToGetSnapshotsSnapshotLockDurationDetailArrayOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockDurationDetailArrayOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockDurationDetailArrayOutput) Index(i pulumi.IntInput) GetSnapshotsSnapshotLockDurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotsSnapshotLockDurationDetail {
+		return vs[0].([]GetSnapshotsSnapshotLockDurationDetail)[vs[1].(int)]
+	}).(GetSnapshotsSnapshotLockDurationDetailOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExportExportOptionInput)(nil)).Elem(), ExportExportOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExportExportOptionArrayInput)(nil)).Elem(), ExportExportOptionArray{})
@@ -7855,6 +8722,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleLockDurationDetailsInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosInput)(nil)).Elem(), MountTargetKerberosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosPtrInput)(nil)).Elem(), MountTargetKerberosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLdapIdmapInput)(nil)).Elem(), MountTargetLdapIdmapArgs{})
@@ -7869,6 +8738,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicationLockArrayInput)(nil)).Elem(), ReplicationLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockInput)(nil)).Elem(), SnapshotLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockArrayInput)(nil)).Elem(), SnapshotLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockDurationDetailsInput)(nil)).Elem(), SnapshotLockDurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockDurationDetailsPtrInput)(nil)).Elem(), SnapshotLockDurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetInput)(nil)).Elem(), GetExportSetsExportSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetArrayInput)(nil)).Elem(), GetExportSetsExportSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsFilterInput)(nil)).Elem(), GetExportSetsFilterArgs{})
@@ -7899,12 +8770,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyLockInput)(nil)).Elem(), GetFilesystemSnapshotPolicyLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleLockDurationDetailInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleLockDurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleLockDurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterInput)(nil)).Elem(), GetMountTargetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterArrayInput)(nil)).Elem(), GetMountTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetInput)(nil)).Elem(), GetMountTargetsMountTargetArgs{})
@@ -7941,12 +8816,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationLockArrayInput)(nil)).Elem(), GetReplicationsReplicationLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockInput)(nil)).Elem(), GetSnapshotLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockArrayInput)(nil)).Elem(), GetSnapshotLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockDurationDetailInput)(nil)).Elem(), GetSnapshotLockDurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockDurationDetailArrayInput)(nil)).Elem(), GetSnapshotLockDurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterInput)(nil)).Elem(), GetSnapshotsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterArrayInput)(nil)).Elem(), GetSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotInput)(nil)).Elem(), GetSnapshotsSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotArrayInput)(nil)).Elem(), GetSnapshotsSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockInput)(nil)).Elem(), GetSnapshotsSnapshotLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockArrayInput)(nil)).Elem(), GetSnapshotsSnapshotLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockDurationDetailInput)(nil)).Elem(), GetSnapshotsSnapshotLockDurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockDurationDetailArrayInput)(nil)).Elem(), GetSnapshotsSnapshotLockDurationDetailArray{})
 	pulumi.RegisterOutputType(ExportExportOptionOutput{})
 	pulumi.RegisterOutputType(ExportExportOptionArrayOutput{})
 	pulumi.RegisterOutputType(ExportLockOutput{})
@@ -7959,6 +8838,8 @@ func init() {
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleLockDurationDetailsOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleLockDurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MountTargetKerberosOutput{})
 	pulumi.RegisterOutputType(MountTargetKerberosPtrOutput{})
 	pulumi.RegisterOutputType(MountTargetLdapIdmapOutput{})
@@ -7973,6 +8854,8 @@ func init() {
 	pulumi.RegisterOutputType(ReplicationLockArrayOutput{})
 	pulumi.RegisterOutputType(SnapshotLockOutput{})
 	pulumi.RegisterOutputType(SnapshotLockArrayOutput{})
+	pulumi.RegisterOutputType(SnapshotLockDurationDetailsOutput{})
+	pulumi.RegisterOutputType(SnapshotLockDurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsFilterOutput{})
@@ -8003,12 +8886,16 @@ func init() {
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyLockOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleLockDurationDetailOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleLockDurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsFilterOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetOutput{})
@@ -8045,10 +8932,14 @@ func init() {
 	pulumi.RegisterOutputType(GetReplicationsReplicationLockArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotLockOutput{})
 	pulumi.RegisterOutputType(GetSnapshotLockArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotLockDurationDetailOutput{})
+	pulumi.RegisterOutputType(GetSnapshotLockDurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockDurationDetailOutput{})
+	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockDurationDetailArrayOutput{})
 }

@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionInitialConfiguration;
+import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionSddcByolAllocationDetail;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionUpgradeLicense;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsSddcCollectionVsphereUpgradeObject;
 import java.lang.Boolean;
@@ -303,6 +304,11 @@ public final class GetSddcsSddcCollection {
     @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     private String replicationVlanId;
     private List<String> reservingHcxOnPremiseLicenseKeys;
+    /**
+     * @return The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    private List<GetSddcsSddcCollectionSddcByolAllocationDetail> sddcByolAllocationDetails;
     private String sshAuthorizedKeys;
     /**
      * @return The lifecycle state of the resource.
@@ -777,6 +783,13 @@ public final class GetSddcsSddcCollection {
     public List<String> reservingHcxOnPremiseLicenseKeys() {
         return this.reservingHcxOnPremiseLicenseKeys;
     }
+    /**
+     * @return The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    public List<GetSddcsSddcCollectionSddcByolAllocationDetail> sddcByolAllocationDetails() {
+        return this.sddcByolAllocationDetails;
+    }
     public String sshAuthorizedKeys() {
         return this.sshAuthorizedKeys;
     }
@@ -969,6 +982,7 @@ public final class GetSddcsSddcCollection {
         private Boolean refreshHcxLicenseStatus;
         private String replicationVlanId;
         private List<String> reservingHcxOnPremiseLicenseKeys;
+        private List<GetSddcsSddcCollectionSddcByolAllocationDetail> sddcByolAllocationDetails;
         private String sshAuthorizedKeys;
         private String state;
         private Map<String,String> systemTags;
@@ -1036,6 +1050,7 @@ public final class GetSddcsSddcCollection {
     	      this.refreshHcxLicenseStatus = defaults.refreshHcxLicenseStatus;
     	      this.replicationVlanId = defaults.replicationVlanId;
     	      this.reservingHcxOnPremiseLicenseKeys = defaults.reservingHcxOnPremiseLicenseKeys;
+    	      this.sddcByolAllocationDetails = defaults.sddcByolAllocationDetails;
     	      this.sshAuthorizedKeys = defaults.sshAuthorizedKeys;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -1430,6 +1445,17 @@ public final class GetSddcsSddcCollection {
             return reservingHcxOnPremiseLicenseKeys(List.of(reservingHcxOnPremiseLicenseKeys));
         }
         @CustomType.Setter
+        public Builder sddcByolAllocationDetails(List<GetSddcsSddcCollectionSddcByolAllocationDetail> sddcByolAllocationDetails) {
+            if (sddcByolAllocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "sddcByolAllocationDetails");
+            }
+            this.sddcByolAllocationDetails = sddcByolAllocationDetails;
+            return this;
+        }
+        public Builder sddcByolAllocationDetails(GetSddcsSddcCollectionSddcByolAllocationDetail... sddcByolAllocationDetails) {
+            return sddcByolAllocationDetails(List.of(sddcByolAllocationDetails));
+        }
+        @CustomType.Setter
         public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
             if (sshAuthorizedKeys == null) {
               throw new MissingRequiredPropertyException("GetSddcsSddcCollection", "sshAuthorizedKeys");
@@ -1634,6 +1660,7 @@ public final class GetSddcsSddcCollection {
             _resultValue.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
             _resultValue.replicationVlanId = replicationVlanId;
             _resultValue.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
+            _resultValue.sddcByolAllocationDetails = sddcByolAllocationDetails;
             _resultValue.sshAuthorizedKeys = sshAuthorizedKeys;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

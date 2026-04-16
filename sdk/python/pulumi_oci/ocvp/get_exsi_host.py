@@ -27,7 +27,7 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, system_tags=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, is_vsan_byol_enabled=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, primary_vnic_mac_address=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, system_tags=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vcf_byol_allocation_id=None, vmware_software_version=None):
         if attach_datastore_cluster_ids and not isinstance(attach_datastore_cluster_ids, list):
             raise TypeError("Expected argument 'attach_datastore_cluster_ids' to be a list")
         pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
@@ -103,6 +103,9 @@ class GetExsiHostResult:
         if is_billing_swapping_in_progress and not isinstance(is_billing_swapping_in_progress, bool):
             raise TypeError("Expected argument 'is_billing_swapping_in_progress' to be a bool")
         pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+        if is_vsan_byol_enabled and not isinstance(is_vsan_byol_enabled, bool):
+            raise TypeError("Expected argument 'is_vsan_byol_enabled' to be a bool")
+        pulumi.set(__self__, "is_vsan_byol_enabled", is_vsan_byol_enabled)
         if next_commitment and not isinstance(next_commitment, str):
             raise TypeError("Expected argument 'next_commitment' to be a str")
         pulumi.set(__self__, "next_commitment", next_commitment)
@@ -112,6 +115,9 @@ class GetExsiHostResult:
         if non_upgraded_esxi_host_id and not isinstance(non_upgraded_esxi_host_id, str):
             raise TypeError("Expected argument 'non_upgraded_esxi_host_id' to be a str")
         pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        if primary_vnic_mac_address and not isinstance(primary_vnic_mac_address, str):
+            raise TypeError("Expected argument 'primary_vnic_mac_address' to be a str")
+        pulumi.set(__self__, "primary_vnic_mac_address", primary_vnic_mac_address)
         if replacement_esxi_host_id and not isinstance(replacement_esxi_host_id, str):
             raise TypeError("Expected argument 'replacement_esxi_host_id' to be a str")
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
@@ -136,6 +142,9 @@ class GetExsiHostResult:
         if upgraded_replacement_esxi_host_id and not isinstance(upgraded_replacement_esxi_host_id, str):
             raise TypeError("Expected argument 'upgraded_replacement_esxi_host_id' to be a str")
         pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        if vcf_byol_allocation_id and not isinstance(vcf_byol_allocation_id, str):
+            raise TypeError("Expected argument 'vcf_byol_allocation_id' to be a str")
+        pulumi.set(__self__, "vcf_byol_allocation_id", vcf_byol_allocation_id)
         if vmware_software_version and not isinstance(vmware_software_version, str):
             raise TypeError("Expected argument 'vmware_software_version' to be a str")
         pulumi.set(__self__, "vmware_software_version", vmware_software_version)
@@ -335,6 +344,14 @@ class GetExsiHostResult:
         return pulumi.get(self, "is_billing_swapping_in_progress")
 
     @_builtins.property
+    @pulumi.getter(name="isVsanByolEnabled")
+    def is_vsan_byol_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        """
+        return pulumi.get(self, "is_vsan_byol_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="nextCommitment")
     def next_commitment(self) -> _builtins.str:
         """
@@ -359,6 +376,11 @@ class GetExsiHostResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         """
         return pulumi.get(self, "non_upgraded_esxi_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryVnicMacAddress")
+    def primary_vnic_mac_address(self) -> _builtins.str:
+        return pulumi.get(self, "primary_vnic_mac_address")
 
     @_builtins.property
     @pulumi.getter(name="replacementEsxiHostId")
@@ -426,6 +448,14 @@ class GetExsiHostResult:
         return pulumi.get(self, "upgraded_replacement_esxi_host_id")
 
     @_builtins.property
+    @pulumi.getter(name="vcfByolAllocationId")
+    def vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        """
+        return pulumi.get(self, "vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="vmwareSoftwareVersion")
     def vmware_software_version(self) -> _builtins.str:
         """
@@ -465,9 +495,11 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             id=self.id,
             is_billing_continuation_in_progress=self.is_billing_continuation_in_progress,
             is_billing_swapping_in_progress=self.is_billing_swapping_in_progress,
+            is_vsan_byol_enabled=self.is_vsan_byol_enabled,
             next_commitment=self.next_commitment,
             next_sku=self.next_sku,
             non_upgraded_esxi_host_id=self.non_upgraded_esxi_host_id,
+            primary_vnic_mac_address=self.primary_vnic_mac_address,
             replacement_esxi_host_id=self.replacement_esxi_host_id,
             sddc_id=self.sddc_id,
             state=self.state,
@@ -476,6 +508,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             time_created=self.time_created,
             time_updated=self.time_updated,
             upgraded_replacement_esxi_host_id=self.upgraded_replacement_esxi_host_id,
+            vcf_byol_allocation_id=self.vcf_byol_allocation_id,
             vmware_software_version=self.vmware_software_version)
 
 
@@ -529,9 +562,11 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_billing_continuation_in_progress=pulumi.get(__ret__, 'is_billing_continuation_in_progress'),
         is_billing_swapping_in_progress=pulumi.get(__ret__, 'is_billing_swapping_in_progress'),
+        is_vsan_byol_enabled=pulumi.get(__ret__, 'is_vsan_byol_enabled'),
         next_commitment=pulumi.get(__ret__, 'next_commitment'),
         next_sku=pulumi.get(__ret__, 'next_sku'),
         non_upgraded_esxi_host_id=pulumi.get(__ret__, 'non_upgraded_esxi_host_id'),
+        primary_vnic_mac_address=pulumi.get(__ret__, 'primary_vnic_mac_address'),
         replacement_esxi_host_id=pulumi.get(__ret__, 'replacement_esxi_host_id'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -540,6 +575,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgraded_replacement_esxi_host_id=pulumi.get(__ret__, 'upgraded_replacement_esxi_host_id'),
+        vcf_byol_allocation_id=pulumi.get(__ret__, 'vcf_byol_allocation_id'),
         vmware_software_version=pulumi.get(__ret__, 'vmware_software_version'))
 def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExsiHostResult]:
@@ -590,9 +626,11 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
         id=pulumi.get(__response__, 'id'),
         is_billing_continuation_in_progress=pulumi.get(__response__, 'is_billing_continuation_in_progress'),
         is_billing_swapping_in_progress=pulumi.get(__response__, 'is_billing_swapping_in_progress'),
+        is_vsan_byol_enabled=pulumi.get(__response__, 'is_vsan_byol_enabled'),
         next_commitment=pulumi.get(__response__, 'next_commitment'),
         next_sku=pulumi.get(__response__, 'next_sku'),
         non_upgraded_esxi_host_id=pulumi.get(__response__, 'non_upgraded_esxi_host_id'),
+        primary_vnic_mac_address=pulumi.get(__response__, 'primary_vnic_mac_address'),
         replacement_esxi_host_id=pulumi.get(__response__, 'replacement_esxi_host_id'),
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         state=pulumi.get(__response__, 'state'),
@@ -601,4 +639,5 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         upgraded_replacement_esxi_host_id=pulumi.get(__response__, 'upgraded_replacement_esxi_host_id'),
+        vcf_byol_allocation_id=pulumi.get(__response__, 'vcf_byol_allocation_id'),
         vmware_software_version=pulumi.get(__response__, 'vmware_software_version')))

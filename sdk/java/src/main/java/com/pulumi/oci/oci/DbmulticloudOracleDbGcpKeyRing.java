@@ -10,8 +10,11 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.DbmulticloudOracleDbGcpKeyRingArgs;
 import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbGcpKeyRingState;
+import com.pulumi.oci.oci.outputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadata;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -74,6 +77,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing")
 public class DbmulticloudOracleDbGcpKeyRing extends com.pulumi.resources.CustomResource {
+    @Export(name="action", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> action;
+
+    public Output<Optional<String>> action() {
+        return Codegen.optional(this.action);
+    }
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
      * 
@@ -201,6 +210,20 @@ public class DbmulticloudOracleDbGcpKeyRing extends com.pulumi.resources.CustomR
         return this.properties;
     }
     /**
+     * Replication metadata, it has information about replication and target region.
+     * 
+     */
+    @Export(name="replicationMetadatas", refs={List.class,DbmulticloudOracleDbGcpKeyRingReplicationMetadata.class}, tree="[0,1]")
+    private Output<List<DbmulticloudOracleDbGcpKeyRingReplicationMetadata>> replicationMetadatas;
+
+    /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public Output<List<DbmulticloudOracleDbGcpKeyRingReplicationMetadata>> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * The lifecycle state of the Oracle DB GCP Key Ring resource.
      * 
      */
@@ -227,6 +250,20 @@ public class DbmulticloudOracleDbGcpKeyRing extends com.pulumi.resources.CustomR
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Export(name="targetRegion", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Output<Optional<String>> targetRegion() {
+        return Codegen.optional(this.targetRegion);
     }
     /**
      * Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;

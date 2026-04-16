@@ -156,6 +156,7 @@ class _ManagementApplianceState:
                  heartbeat_connection_states: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
                  public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
                  sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -177,6 +178,7 @@ class _ManagementApplianceState:
         :param pulumi.Input[Sequence[pulumi.Input['ManagementApplianceHeartbeatConnectionStateArgs']]] heartbeat_connection_states: Current states of connections.
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+        :param pulumi.Input[_builtins.str] plugin_version: Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
         :param pulumi.Input[_builtins.str] public_ssh_keys: One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in. 
                
@@ -210,6 +212,8 @@ class _ManagementApplianceState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if plugin_version is not None:
+            pulumi.set(__self__, "plugin_version", plugin_version)
         if public_ssh_keys is not None:
             pulumi.set(__self__, "public_ssh_keys", public_ssh_keys)
         if sddc_id is not None:
@@ -348,6 +352,18 @@ class _ManagementApplianceState:
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="pluginVersion")
+    def plugin_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        """
+        return pulumi.get(self, "plugin_version")
+
+    @plugin_version.setter
+    def plugin_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "plugin_version", value)
+
+    @_builtins.property
     @pulumi.getter(name="publicSshKeys")
     def public_ssh_keys(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -464,6 +480,9 @@ class ManagementAppliance(pulumi.CustomResource):
                  __props__=None):
         """
         This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
 
         Creates a management appliance.
 
@@ -526,6 +545,9 @@ class ManagementAppliance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
 
         Creates a management appliance.
 
@@ -617,6 +639,7 @@ class ManagementAppliance(pulumi.CustomResource):
             __props__.__dict__["heartbeat_connection_states"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["management_agent_id"] = None
+            __props__.__dict__["plugin_version"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_configuration_updated"] = None
@@ -643,6 +666,7 @@ class ManagementAppliance(pulumi.CustomResource):
             heartbeat_connection_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+            plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
             public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None,
             sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -668,6 +692,7 @@ class ManagementAppliance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict']]]] heartbeat_connection_states: Current states of connections.
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+        :param pulumi.Input[_builtins.str] plugin_version: Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
         :param pulumi.Input[_builtins.str] public_ssh_keys: One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in. 
                
@@ -695,6 +720,7 @@ class ManagementAppliance(pulumi.CustomResource):
         __props__.__dict__["heartbeat_connection_states"] = heartbeat_connection_states
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["management_agent_id"] = management_agent_id
+        __props__.__dict__["plugin_version"] = plugin_version
         __props__.__dict__["public_ssh_keys"] = public_ssh_keys
         __props__.__dict__["sddc_id"] = sddc_id
         __props__.__dict__["state"] = state
@@ -784,6 +810,14 @@ class ManagementAppliance(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
         """
         return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="pluginVersion")
+    def plugin_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        """
+        return pulumi.get(self, "plugin_version")
 
     @_builtins.property
     @pulumi.getter(name="publicSshKeys")

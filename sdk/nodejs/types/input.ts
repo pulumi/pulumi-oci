@@ -14352,6 +14352,7 @@ export namespace Core {
          * (Updatable) The total number of OCPUs available to the instance.
          */
         ocpus?: pulumi.Input<number>;
+        resourceManagement?: pulumi.Input<string>;
     }
 
     export interface ComputeCapacityTopologyCapacitySource {
@@ -30202,6 +30203,10 @@ export namespace Database {
          */
         ordsUrl?: pulumi.Input<string>;
         /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl?: pulumi.Input<string>;
+        /**
          * Oracle SQL Developer Web URL.
          */
         sqlDevWebUrl?: pulumi.Input<string>;
@@ -30513,6 +30518,10 @@ export namespace Database {
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
         ordsUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database.
+         */
+        spatialStudioUrl?: pulumi.Input<string>;
         /**
          * Oracle SQL Developer Web URL.
          */
@@ -41746,6 +41755,18 @@ export namespace DemandSignal {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetOccMetricAlarmsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOccMetricAlarmsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface OccDemandSignalOccDemandSignal {
         /**
          * The name of the resource for the data.
@@ -41801,6 +41822,45 @@ export namespace DemandSignal {
          * (Updatable)
          */
         value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface OccMetricAlarmResourceConfiguration {
+        /**
+         * The hardware generation of the compute resource.
+         */
+        computeHwGeneration?: pulumi.Input<string>;
+        /**
+         * The hardware generation of the Exadata system.
+         */
+        hwGeneration?: pulumi.Input<string>;
+        /**
+         * The role of the link in the network.
+         */
+        linkRole?: pulumi.Input<string>;
+        /**
+         * The type of node in the Exadata system.
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * The provider of the network service.
+         */
+        occMetricAlarmProvider?: pulumi.Input<string>;
+        /**
+         * Resources like COMPUTE, STORAGE, EXADATA etc.
+         */
+        resource: pulumi.Input<string>;
+        /**
+         * The shape of the compute instance.
+         */
+        shape?: pulumi.Input<string>;
+        /**
+         * The type of storage resource.
+         */
+        storageType?: pulumi.Input<string>;
+        /**
+         * The type of usage for the resource.
+         */
+        usageType: pulumi.Input<string>;
     }
 }
 
@@ -45673,6 +45733,10 @@ export namespace FileStorage {
          */
         hourOfDay?: pulumi.Input<number>;
         /**
+         * (Updatable) Details for setting a retention date or legal hold.
+         */
+        lockDurationDetails?: pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyScheduleLockDurationDetails>;
+        /**
          * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          */
         month?: pulumi.Input<string>;
@@ -45696,6 +45760,21 @@ export namespace FileStorage {
          * (Updatable) Time zone used for scheduling the snapshot.
          */
         timeZone: pulumi.Input<string>;
+    }
+
+    export interface FilesystemSnapshotPolicyScheduleLockDurationDetails {
+        /**
+         * (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+         */
+        coolOffDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+         */
+        lockDuration: pulumi.Input<number>;
+        /**
+         * (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+         */
+        lockMode: pulumi.Input<string>;
     }
 
     export interface GetExportSetsFilter {
@@ -45967,6 +46046,21 @@ export namespace FileStorage {
          * Type of the lock.
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface SnapshotLockDurationDetails {
+        /**
+         * (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+         */
+        coolOffDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+         */
+        lockDuration: pulumi.Input<number>;
+        /**
+         * (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+         */
+        lockMode: pulumi.Input<string>;
     }
 }
 
@@ -49283,6 +49377,25 @@ export namespace Functions {
 }
 
 export namespace FusionApps {
+    export interface FusionEnvironmentAdditionalEgressRule {
+        /**
+         * (Updatable) Rule description.
+         */
+        description: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+         */
+        destinationCidr: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        maxDestinationPort: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         */
+        minDestinationPort: pulumi.Input<number>;
+    }
+
     export interface FusionEnvironmentAdminUserItem {
         /**
          * The email address for the administrator.
@@ -89795,6 +89908,17 @@ export namespace Oce {
 }
 
 export namespace Ocvp {
+    export interface ClusterClusterByolAllocationDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+         */
+        firewallByolAllocationId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+         */
+        vsanByolAllocationId?: pulumi.Input<string>;
+    }
+
     export interface ClusterDatastore {
         /**
          * A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -89962,6 +90086,30 @@ export namespace Ocvp {
          * An IQN of the Block Storage Volume.
          */
         volumeIqn?: pulumi.Input<string>;
+    }
+
+    export interface GetByolAllocationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetByolAllocationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetByolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetByolsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetClustersFilter {
@@ -90194,6 +90342,10 @@ export namespace Ocvp {
          */
         capacityReservationId?: pulumi.Input<string>;
         /**
+         * The BYOL allocations used for VMware Cluster provisioning.
+         */
+        clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails>;
+        /**
          * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
          */
         computeAvailabilityDomain: pulumi.Input<string>;
@@ -90228,6 +90380,10 @@ export namespace Ocvp {
          */
         initialHostShapeName?: pulumi.Input<string>;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+         */
+        initialVcfByolAllocationId?: pulumi.Input<string>;
+        /**
          * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
          *
          * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -90249,6 +90405,17 @@ export namespace Ocvp {
          * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
          */
         workloadNetworkCidr?: pulumi.Input<string>;
+    }
+
+    export interface SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+         */
+        firewallByolAllocationId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+         */
+        vsanByolAllocationId?: pulumi.Input<string>;
     }
 
     export interface SddcInitialConfigurationInitialClusterConfigurationDatastore {
@@ -90339,6 +90506,17 @@ export namespace Ocvp {
          * Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
          */
         vsphereVlanId?: pulumi.Input<string>;
+    }
+
+    export interface SddcSddcByolAllocationDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+         */
+        loadBalancerByolAllocationId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+         */
+        loadBalancerInstanceCount?: pulumi.Input<number>;
     }
 
     export interface SddcUpgradeLicense {
@@ -100763,6 +100941,32 @@ export namespace oci {
         timeLastChecked?: pulumi.Input<string>;
     }
 
+    export interface DbmulticloudOracleDbAwsKeyReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetail>[]>;
+    }
+
+    export interface DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState?: pulumi.Input<string>;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion?: pulumi.Input<string>;
+        /**
+         * Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
     export interface DbmulticloudOracleDbAzureConnectorArcAgentNode {
         /**
          * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
@@ -100786,6 +100990,32 @@ export namespace oci {
         timeLastChecked?: pulumi.Input<string>;
     }
 
+    export interface DbmulticloudOracleDbAzureVaultReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetail>[]>;
+    }
+
+    export interface DbmulticloudOracleDbAzureVaultReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState?: pulumi.Input<string>;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion?: pulumi.Input<string>;
+        /**
+         * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
     export interface DbmulticloudOracleDbGcpIdentityConnectorGcpNode {
         /**
          * Host ID.
@@ -100803,6 +101033,32 @@ export namespace oci {
          * time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
          */
         timeLastChecked?: pulumi.Input<string>;
+    }
+
+    export interface DbmulticloudOracleDbGcpKeyRingReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetail>[]>;
+    }
+
+    export interface DbmulticloudOracleDbGcpKeyRingReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState?: pulumi.Input<string>;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion?: pulumi.Input<string>;
+        /**
+         * Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+         */
+        timeUpdated?: pulumi.Input<string>;
     }
 
     export interface DifStackAdb {
@@ -101450,6 +101706,14 @@ export namespace oci {
          */
         name?: pulumi.Input<string>;
         /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroup?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+         */
+        okvKeyStoreId?: pulumi.Input<string>;
+        /**
          * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
          */
         peerCloudAutonomousVmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -101508,7 +101772,7 @@ export namespace oci {
          */
         fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
          */
         isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
         /**
@@ -101703,7 +101967,7 @@ export namespace oci {
         /**
          * Admin password for shard database.
          */
-        adminPassword: pulumi.Input<string>;
+        adminPassword?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          */
@@ -101740,6 +102004,14 @@ export namespace oci {
          * Name of the shard.
          */
         name?: pulumi.Input<string>;
+        /**
+         * The OKV endpoint name.
+         */
+        okvEndPointGroup?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+         */
+        okvKeyStoreId?: pulumi.Input<string>;
         /**
          * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
          */
@@ -101803,7 +102075,7 @@ export namespace oci {
          */
         fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
          */
         isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
         /**
@@ -101858,9 +102130,13 @@ export namespace oci {
 
     export interface DistributedDatabaseDistributedDatabaseCatalogDetail {
         /**
-         * The admin password for the cataog associated with Globally distributed database.
+         * The admin password for the catalog associated with Globally distributed database.
          */
         adminPassword: pulumi.Input<string>;
+        /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string>;
         /**
          * the identifier of the container database for underlying supporting resource.
          */
@@ -101869,6 +102145,10 @@ export namespace oci {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          */
         dbHomeId?: pulumi.Input<string>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails>;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -101902,7 +102182,7 @@ export namespace oci {
          */
         shardSpace?: pulumi.Input<string>;
         /**
-         * The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
          */
         source: pulumi.Input<string>;
         /**
@@ -101926,9 +102206,32 @@ export namespace oci {
          */
         vaultId?: pulumi.Input<string>;
         /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
          */
-        vmClusterId: pulumi.Input<string>;
+        vmClusterId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         */
+        dbStorageVaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseCatalogDetailMetadata {
@@ -101940,9 +102243,17 @@ export namespace oci {
 
     export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail {
         /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
          * the identifier of the container database for underlying supporting resource.
          */
         containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetails>;
         /**
          * Additional metadata related to Globally distributed database resources.
          */
@@ -101976,9 +102287,32 @@ export namespace oci {
          */
         transportType?: pulumi.Input<string>;
         /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetails>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
          */
-        vmClusterId: pulumi.Input<string>;
+        vmClusterId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         */
+        dbStorageVaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata {
@@ -101986,6 +102320,140 @@ export namespace oci {
          * The map containing key-value pair of additional metadata.
          */
         map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId?: pulumi.Input<string>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId?: pulumi.Input<string>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseConnectionString {
@@ -102168,7 +102636,7 @@ export namespace oci {
         /**
          * (Updatable)
          */
-        value: pulumi.Input<string>;
+        value?: pulumi.Input<string>;
     }
 
     export interface DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase {
@@ -102199,6 +102667,10 @@ export namespace oci {
          */
         adminPassword: pulumi.Input<string>;
         /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
          * the identifier of the container database for underlying supporting resource.
          */
         containerDatabaseId?: pulumi.Input<string>;
@@ -102206,6 +102678,10 @@ export namespace oci {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          */
         dbHomeId?: pulumi.Input<string>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails>;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -102239,7 +102715,7 @@ export namespace oci {
          */
         shardSpace?: pulumi.Input<string>;
         /**
-         * The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
          */
         source: pulumi.Input<string>;
         /**
@@ -102263,9 +102739,32 @@ export namespace oci {
          */
         vaultId?: pulumi.Input<string>;
         /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
          */
-        vmClusterId: pulumi.Input<string>;
+        vmClusterId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         */
+        dbStorageVaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseShardDetailMetadata {
@@ -102277,9 +102776,17 @@ export namespace oci {
 
     export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetail {
         /**
+         * The name of the availability domain that the distributed database shard will be located in.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
          * the identifier of the container database for underlying supporting resource.
          */
         containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         */
+        dbStorageVaultDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetails>;
         /**
          * Additional metadata related to Globally distributed database resources.
          */
@@ -102313,9 +102820,32 @@ export namespace oci {
          */
         transportType?: pulumi.Input<string>;
         /**
+         * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         */
+        vmClusterDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetails>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
          */
-        vmClusterId: pulumi.Input<string>;
+        vmClusterId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetails {
+        /**
+         * The size of additional Flash Cache in percentage of High Capacity database storage.
+         */
+        additionalFlashCacheInPercent?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         */
+        dbStorageVaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Total storage capacity in GB for vault storage.
+         */
+        highCapacityDatabaseStorage?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata {
@@ -102323,6 +102853,140 @@ export namespace oci {
          * The map containing key-value pair of additional metadata.
          */
         map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId?: pulumi.Input<string>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails {
+        /**
+         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to.  Setting this to an empty array after the list is created removes the resource from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+         */
+        backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        backupSubnetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the Globally distributed database.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * A domain name used for the Exadata VM cluster on Exascale Infrastructure.  If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name.  Hyphens (-) are not permitted. Applies to Exadata Database Service on Exascale Infrastructure only.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * The number of ECPUs to enable for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        enabledEcpuCount?: pulumi.Input<number>;
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster.  Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues.  Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system.  You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster.  Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel.  You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster.  Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         */
+        licenseModel?: pulumi.Input<string>;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs.  Setting this to an empty list removes all resources from all NSGs.  For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The private zone ID in which you want DNS records to be created.
+         */
+        privateZoneId?: pulumi.Input<string>;
+        /**
+         * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+         */
+        sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The number of Total ECPUs for an Exadata VM cluster on Exascale Infrastructure.
+         */
+        totalEcpuCount?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId?: pulumi.Input<string>;
+        /**
+         * File System Storage Size in GBs for Exadata VM cluster.
+         */
+        vmFileSystemStorageSize?: pulumi.Input<number>;
     }
 
     export interface DistributedDatabaseDistributedDatabaseValidateNetworkDetails {

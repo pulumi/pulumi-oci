@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -60,6 +61,21 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
      */
     public Optional<Output<Integer>> hourOfDay() {
         return Optional.ofNullable(this.hourOfDay);
+    }
+
+    /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    @Import(name="lockDurationDetails")
+    private @Nullable Output<FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs> lockDurationDetails;
+
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    public Optional<Output<FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs>> lockDurationDetails() {
+        return Optional.ofNullable(this.lockDurationDetails);
     }
 
     /**
@@ -158,6 +174,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         this.dayOfMonth = $.dayOfMonth;
         this.dayOfWeek = $.dayOfWeek;
         this.hourOfDay = $.hourOfDay;
+        this.lockDurationDetails = $.lockDurationDetails;
         this.month = $.month;
         this.period = $.period;
         this.retentionDurationInSeconds = $.retentionDurationInSeconds;
@@ -245,6 +262,27 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
          */
         public Builder hourOfDay(Integer hourOfDay) {
             return hourOfDay(Output.of(hourOfDay));
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(@Nullable Output<FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs> lockDurationDetails) {
+            $.lockDurationDetails = lockDurationDetails;
+            return this;
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs lockDurationDetails) {
+            return lockDurationDetails(Output.of(lockDurationDetails));
         }
 
         /**

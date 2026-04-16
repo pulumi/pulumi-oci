@@ -47,6 +47,11 @@ public final class AutonomousDatabasePublicConnectionUrl {
      */
     private @Nullable String ordsUrl;
     /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    private @Nullable String spatialStudioUrl;
+    /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
@@ -103,6 +108,13 @@ public final class AutonomousDatabasePublicConnectionUrl {
         return Optional.ofNullable(this.ordsUrl);
     }
     /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    public Optional<String> spatialStudioUrl() {
+        return Optional.ofNullable(this.spatialStudioUrl);
+    }
+    /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
@@ -126,6 +138,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
         private @Nullable String machineLearningUserManagementUrl;
         private @Nullable String mongoDbUrl;
         private @Nullable String ordsUrl;
+        private @Nullable String spatialStudioUrl;
         private @Nullable String sqlDevWebUrl;
         public Builder() {}
         public Builder(AutonomousDatabasePublicConnectionUrl defaults) {
@@ -137,6 +150,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
     	      this.mongoDbUrl = defaults.mongoDbUrl;
     	      this.ordsUrl = defaults.ordsUrl;
+    	      this.spatialStudioUrl = defaults.spatialStudioUrl;
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
@@ -183,6 +197,12 @@ public final class AutonomousDatabasePublicConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder spatialStudioUrl(@Nullable String spatialStudioUrl) {
+
+            this.spatialStudioUrl = spatialStudioUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlDevWebUrl(@Nullable String sqlDevWebUrl) {
 
             this.sqlDevWebUrl = sqlDevWebUrl;
@@ -197,6 +217,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             _resultValue.mongoDbUrl = mongoDbUrl;
             _resultValue.ordsUrl = ordsUrl;
+            _resultValue.spatialStudioUrl = spatialStudioUrl;
             _resultValue.sqlDevWebUrl = sqlDevWebUrl;
             return _resultValue;
         }

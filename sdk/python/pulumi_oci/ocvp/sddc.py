@@ -51,6 +51,7 @@ class SddcArgs:
                  refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
                  replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']] = None,
                  vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vsan_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vsphere_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -94,6 +95,7 @@ class SddcArgs:
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
+        :param pulumi.Input['SddcSddcByolAllocationDetailsArgs'] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] vmotion_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotion_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] vsan_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsan_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] vsphere_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphere_vlan_id` of `network_configuration` instead.
@@ -211,6 +213,8 @@ class SddcArgs:
             pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
             pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        if sddc_byol_allocation_details is not None:
+            pulumi.set(__self__, "sddc_byol_allocation_details", sddc_byol_allocation_details)
         if vmotion_vlan_id is not None:
             warnings.warn("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vmotion_vlan_id is deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
@@ -616,6 +620,18 @@ class SddcArgs:
         pulumi.set(self, "reserving_hcx_on_premise_license_keys", value)
 
     @_builtins.property
+    @pulumi.getter(name="sddcByolAllocationDetails")
+    def sddc_byol_allocation_details(self) -> Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]:
+        """
+        (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        """
+        return pulumi.get(self, "sddc_byol_allocation_details")
+
+    @sddc_byol_allocation_details.setter
+    def sddc_byol_allocation_details(self, value: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]):
+        pulumi.set(self, "sddc_byol_allocation_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmotionVlanId")
     @_utilities.deprecated("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
     def vmotion_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
@@ -719,6 +735,7 @@ class _SddcState:
                  refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
                  replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']] = None,
                  ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -791,6 +808,7 @@ class _SddcState:
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
+        :param pulumi.Input['SddcSddcByolAllocationDetailsArgs'] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] state: The current state of the SDDC.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -972,6 +990,8 @@ class _SddcState:
             pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
             pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        if sddc_byol_allocation_details is not None:
+            pulumi.set(__self__, "sddc_byol_allocation_details", sddc_byol_allocation_details)
         if ssh_authorized_keys is not None:
             pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
         if state is not None:
@@ -1593,6 +1613,18 @@ class _SddcState:
         pulumi.set(self, "reserving_hcx_on_premise_license_keys", value)
 
     @_builtins.property
+    @pulumi.getter(name="sddcByolAllocationDetails")
+    def sddc_byol_allocation_details(self) -> Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]:
+        """
+        (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        """
+        return pulumi.get(self, "sddc_byol_allocation_details")
+
+    @sddc_byol_allocation_details.setter
+    def sddc_byol_allocation_details(self, value: Optional[pulumi.Input['SddcSddcByolAllocationDetailsArgs']]):
+        pulumi.set(self, "sddc_byol_allocation_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="sshAuthorizedKeys")
     def ssh_authorized_keys(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1867,6 +1899,7 @@ class Sddc(pulumi.CustomResource):
                  refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
                  replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
                  ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
                  vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1914,6 +1947,10 @@ class Sddc(pulumi.CustomResource):
                     },
                     "vsphere_type": sddc_initial_configuration_initial_cluster_configurations_vsphere_type,
                     "capacity_reservation_id": test_capacity_reservation["id"],
+                    "cluster_byol_allocation_details": {
+                        "firewall_byol_allocation_id": test_byol_allocation["id"],
+                        "vsan_byol_allocation_id": test_byol_allocation["id"],
+                    },
                     "datastore_cluster_ids": sddc_initial_configuration_initial_cluster_configurations_datastore_cluster_ids,
                     "datastores": [{
                         "block_volume_ids": sddc_initial_configuration_initial_cluster_configurations_datastores_block_volume_ids,
@@ -1923,6 +1960,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_commitment": sddc_initial_configuration_initial_cluster_configurations_initial_commitment,
                     "initial_host_ocpu_count": sddc_initial_configuration_initial_cluster_configurations_initial_host_ocpu_count,
                     "initial_host_shape_name": test_shape["name"],
+                    "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
                     "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
@@ -1938,6 +1976,10 @@ class Sddc(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_single_host_sddc=sddc_is_single_host_sddc,
+            sddc_byol_allocation_details={
+                "load_balancer_byol_allocation_id": test_byol_allocation["id"],
+                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+            },
             hcx_action=hcx_action,
             is_hcx_enabled=sddc_is_hcx_enabled)
         ```
@@ -1996,6 +2038,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
+        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] vmotion_vlan_id: (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotion_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -2053,6 +2096,10 @@ class Sddc(pulumi.CustomResource):
                     },
                     "vsphere_type": sddc_initial_configuration_initial_cluster_configurations_vsphere_type,
                     "capacity_reservation_id": test_capacity_reservation["id"],
+                    "cluster_byol_allocation_details": {
+                        "firewall_byol_allocation_id": test_byol_allocation["id"],
+                        "vsan_byol_allocation_id": test_byol_allocation["id"],
+                    },
                     "datastore_cluster_ids": sddc_initial_configuration_initial_cluster_configurations_datastore_cluster_ids,
                     "datastores": [{
                         "block_volume_ids": sddc_initial_configuration_initial_cluster_configurations_datastores_block_volume_ids,
@@ -2062,6 +2109,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_commitment": sddc_initial_configuration_initial_cluster_configurations_initial_commitment,
                     "initial_host_ocpu_count": sddc_initial_configuration_initial_cluster_configurations_initial_host_ocpu_count,
                     "initial_host_shape_name": test_shape["name"],
+                    "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
                     "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
@@ -2077,6 +2125,10 @@ class Sddc(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_single_host_sddc=sddc_is_single_host_sddc,
+            sddc_byol_allocation_details={
+                "load_balancer_byol_allocation_id": test_byol_allocation["id"],
+                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+            },
             hcx_action=hcx_action,
             is_hcx_enabled=sddc_is_hcx_enabled)
         ```
@@ -2142,6 +2194,7 @@ class Sddc(pulumi.CustomResource):
                  refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
                  replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
                  ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
                  vmotion_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2187,6 +2240,7 @@ class Sddc(pulumi.CustomResource):
             __props__.__dict__["refresh_hcx_license_status"] = refresh_hcx_license_status
             __props__.__dict__["replication_vlan_id"] = replication_vlan_id
             __props__.__dict__["reserving_hcx_on_premise_license_keys"] = reserving_hcx_on_premise_license_keys
+            __props__.__dict__["sddc_byol_allocation_details"] = sddc_byol_allocation_details
             if ssh_authorized_keys is None and not opts.urn:
                 raise TypeError("Missing required property 'ssh_authorized_keys'")
             __props__.__dict__["ssh_authorized_keys"] = ssh_authorized_keys
@@ -2280,6 +2334,7 @@ class Sddc(pulumi.CustomResource):
             refresh_hcx_license_status: Optional[pulumi.Input[_builtins.bool]] = None,
             replication_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sddc_byol_allocation_details: Optional[pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']]] = None,
             ssh_authorized_keys: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -2356,6 +2411,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[_builtins.str] replication_vlan_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
+        :param pulumi.Input[Union['SddcSddcByolAllocationDetailsArgs', 'SddcSddcByolAllocationDetailsArgsDict']] sddc_byol_allocation_details: (Updatable) The BYOL allocations used for VMware SDDC provisioning.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] state: The current state of the SDDC.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -2428,6 +2484,7 @@ class Sddc(pulumi.CustomResource):
         __props__.__dict__["refresh_hcx_license_status"] = refresh_hcx_license_status
         __props__.__dict__["replication_vlan_id"] = replication_vlan_id
         __props__.__dict__["reserving_hcx_on_premise_license_keys"] = reserving_hcx_on_premise_license_keys
+        __props__.__dict__["sddc_byol_allocation_details"] = sddc_byol_allocation_details
         __props__.__dict__["ssh_authorized_keys"] = ssh_authorized_keys
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -2829,6 +2886,14 @@ class Sddc(pulumi.CustomResource):
         (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
         """
         return pulumi.get(self, "reserving_hcx_on_premise_license_keys")
+
+    @_builtins.property
+    @pulumi.getter(name="sddcByolAllocationDetails")
+    def sddc_byol_allocation_details(self) -> pulumi.Output['outputs.SddcSddcByolAllocationDetails']:
+        """
+        (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        """
+        return pulumi.get(self, "sddc_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="sshAuthorizedKeys")

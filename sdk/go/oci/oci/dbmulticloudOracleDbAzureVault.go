@@ -68,6 +68,7 @@ import (
 type DbmulticloudOracleDbAzureVault struct {
 	pulumi.CustomResourceState
 
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringOutput `pulumi:"azureVaultId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
@@ -90,10 +91,14 @@ type DbmulticloudOracleDbAzureVault struct {
 	OracleDbConnectorId pulumi.StringOutput `pulumi:"oracleDbConnectorId"`
 	// (Updatable) resource's properties.
 	Properties pulumi.StringMapOutput `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrOutput `pulumi:"targetRegion"`
 	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -144,6 +149,7 @@ func GetDbmulticloudOracleDbAzureVault(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
 type dbmulticloudOracleDbAzureVaultState struct {
+	Action *string `pulumi:"action"`
 	// (Updatable) Azure Vault ID.
 	AzureVaultId *string `pulumi:"azureVaultId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
@@ -166,10 +172,14 @@ type dbmulticloudOracleDbAzureVaultState struct {
 	OracleDbConnectorId *string `pulumi:"oracleDbConnectorId"`
 	// (Updatable) resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas []DbmulticloudOracleDbAzureVaultReplicationMetadata `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -182,6 +192,7 @@ type dbmulticloudOracleDbAzureVaultState struct {
 }
 
 type DbmulticloudOracleDbAzureVaultState struct {
+	Action pulumi.StringPtrInput
 	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
@@ -204,10 +215,14 @@ type DbmulticloudOracleDbAzureVaultState struct {
 	OracleDbConnectorId pulumi.StringPtrInput
 	// (Updatable) resource's properties.
 	Properties pulumi.StringMapInput
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbAzureVaultReplicationMetadataArrayInput
 	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringPtrInput
 	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -224,6 +239,7 @@ func (DbmulticloudOracleDbAzureVaultState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbAzureVaultArgs struct {
+	Action *string `pulumi:"action"`
 	// (Updatable) Azure Vault ID.
 	AzureVaultId *string `pulumi:"azureVaultId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
@@ -242,6 +258,8 @@ type dbmulticloudOracleDbAzureVaultArgs struct {
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// (Updatable) resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
@@ -251,6 +269,7 @@ type dbmulticloudOracleDbAzureVaultArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
 type DbmulticloudOracleDbAzureVaultArgs struct {
+	Action pulumi.StringPtrInput
 	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
@@ -269,6 +288,8 @@ type DbmulticloudOracleDbAzureVaultArgs struct {
 	OracleDbConnectorId pulumi.StringInput
 	// (Updatable) resource's properties.
 	Properties pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
@@ -363,6 +384,10 @@ func (o DbmulticloudOracleDbAzureVaultOutput) ToDbmulticloudOracleDbAzureVaultOu
 	return o
 }
 
+func (o DbmulticloudOracleDbAzureVaultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Azure Vault ID.
 func (o DbmulticloudOracleDbAzureVaultOutput) AzureVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.AzureVaultId }).(pulumi.StringOutput)
@@ -418,6 +443,13 @@ func (o DbmulticloudOracleDbAzureVaultOutput) Properties() pulumi.StringMapOutpu
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
+// Replication metadata, it has information about replication and target region.
+func (o DbmulticloudOracleDbAzureVaultOutput) ReplicationMetadatas() DbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) DbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput {
+		return v.ReplicationMetadatas
+	}).(DbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput)
+}
+
 // The lifecycle state of the Oracle DB Azure Vault resource.
 func (o DbmulticloudOracleDbAzureVaultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -426,6 +458,11 @@ func (o DbmulticloudOracleDbAzureVaultOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DbmulticloudOracleDbAzureVaultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target region, where resource is replicated.
+func (o DbmulticloudOracleDbAzureVaultOutput) TargetRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringPtrOutput { return v.TargetRegion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'

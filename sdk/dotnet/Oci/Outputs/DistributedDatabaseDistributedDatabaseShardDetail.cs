@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string AdminPassword;
         /// <summary>
+        /// The name of the availability domain that the distributed database shard will be located in.
+        /// </summary>
+        public readonly string? AvailabilityDomain;
+        /// <summary>
         /// the identifier of the container database for underlying supporting resource.
         /// </summary>
         public readonly string? ContainerDatabaseId;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         public readonly string? DbHomeId;
+        /// <summary>
+        /// Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+        /// </summary>
+        public readonly Outputs.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails? DbStorageVaultDetails;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -58,7 +66,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string? ShardSpace;
         /// <summary>
-        /// The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        /// Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
         /// </summary>
         public readonly string Source;
         /// <summary>
@@ -82,17 +90,25 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string? VaultId;
         /// <summary>
+        /// Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+        /// </summary>
+        public readonly Outputs.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails? VmClusterDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
         /// </summary>
-        public readonly string VmClusterId;
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private DistributedDatabaseDistributedDatabaseShardDetail(
             string adminPassword,
 
+            string? availabilityDomain,
+
             string? containerDatabaseId,
 
             string? dbHomeId,
+
+            Outputs.DistributedDatabaseDistributedDatabaseShardDetailDbStorageVaultDetails? dbStorageVaultDetails,
 
             string? kmsKeyId,
 
@@ -122,11 +138,15 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string? vaultId,
 
-            string vmClusterId)
+            Outputs.DistributedDatabaseDistributedDatabaseShardDetailVmClusterDetails? vmClusterDetails,
+
+            string? vmClusterId)
         {
             AdminPassword = adminPassword;
+            AvailabilityDomain = availabilityDomain;
             ContainerDatabaseId = containerDatabaseId;
             DbHomeId = dbHomeId;
+            DbStorageVaultDetails = dbStorageVaultDetails;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             Metadatas = metadatas;
@@ -141,6 +161,7 @@ namespace Pulumi.Oci.Oci.Outputs
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             VaultId = vaultId;
+            VmClusterDetails = vmClusterDetails;
             VmClusterId = vmClusterId;
         }
     }

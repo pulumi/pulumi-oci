@@ -5,8 +5,9 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs;
 import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs;
+import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs Empty = new DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs();
+
+    /**
+     * The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
 
     /**
      * the identifier of the container database for underlying supporting resource.
@@ -31,6 +47,21 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
      */
     public Optional<Output<String>> containerDatabaseId() {
         return Optional.ofNullable(this.containerDatabaseId);
+    }
+
+    /**
+     * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    @Import(name="dbStorageVaultDetails")
+    private @Nullable Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs> dbStorageVaultDetails;
+
+    /**
+     * @return Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs>> dbStorageVaultDetails() {
+        return Optional.ofNullable(this.dbStorageVaultDetails);
     }
 
     /**
@@ -154,24 +185,41 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
     }
 
     /**
+     * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    @Import(name="vmClusterDetails")
+    private @Nullable Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs> vmClusterDetails;
+
+    /**
+     * @return Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs>> vmClusterDetails() {
+        return Optional.ofNullable(this.vmClusterDetails);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
      * 
      */
-    @Import(name="vmClusterId", required=true)
-    private Output<String> vmClusterId;
+    @Import(name="vmClusterId")
+    private @Nullable Output<String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
      * 
      */
-    public Output<String> vmClusterId() {
-        return this.vmClusterId;
+    public Optional<Output<String>> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     private DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs() {}
 
     private DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.containerDatabaseId = $.containerDatabaseId;
+        this.dbStorageVaultDetails = $.dbStorageVaultDetails;
         this.metadatas = $.metadatas;
         this.protectionMode = $.protectionMode;
         this.shardGroup = $.shardGroup;
@@ -180,6 +228,7 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.transportType = $.transportType;
+        this.vmClusterDetails = $.vmClusterDetails;
         this.vmClusterId = $.vmClusterId;
     }
 
@@ -202,6 +251,27 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
         }
 
         /**
+         * @param availabilityDomain The name of the availability domain that the distributed database shard will be located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the distributed database shard will be located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
          * @param containerDatabaseId the identifier of the container database for underlying supporting resource.
          * 
          * @return builder
@@ -220,6 +290,27 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
          */
         public Builder containerDatabaseId(String containerDatabaseId) {
             return containerDatabaseId(Output.of(containerDatabaseId));
+        }
+
+        /**
+         * @param dbStorageVaultDetails Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbStorageVaultDetails(@Nullable Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs> dbStorageVaultDetails) {
+            $.dbStorageVaultDetails = dbStorageVaultDetails;
+            return this;
+        }
+
+        /**
+         * @param dbStorageVaultDetails Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailDbStorageVaultDetailsArgs dbStorageVaultDetails) {
+            return dbStorageVaultDetails(Output.of(dbStorageVaultDetails));
         }
 
         /**
@@ -401,12 +492,33 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
         }
 
         /**
+         * @param vmClusterDetails Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterDetails(@Nullable Output<DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs> vmClusterDetails) {
+            $.vmClusterDetails = vmClusterDetails;
+            return this;
+        }
+
+        /**
+         * @param vmClusterDetails Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterDetails(DistributedDatabaseDistributedDatabaseShardDetailPeerDetailVmClusterDetailsArgs vmClusterDetails) {
+            return vmClusterDetails(Output.of(vmClusterDetails));
+        }
+
+        /**
          * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
          * 
          * @return builder
          * 
          */
-        public Builder vmClusterId(Output<String> vmClusterId) {
+        public Builder vmClusterId(@Nullable Output<String> vmClusterId) {
             $.vmClusterId = vmClusterId;
             return this;
         }
@@ -422,9 +534,6 @@ public final class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailAr
         }
 
         public DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs build() {
-            if ($.vmClusterId == null) {
-                throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs", "vmClusterId");
-            }
             return $;
         }
     }

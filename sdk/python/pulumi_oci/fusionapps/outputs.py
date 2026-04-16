@@ -16,6 +16,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'FusionEnvironmentAdditionalEgressRule',
     'FusionEnvironmentAdminUserItem',
     'FusionEnvironmentCreateFusionEnvironmentAdminUserDetails',
     'FusionEnvironmentFamilyFamilyMaintenancePolicy',
@@ -27,6 +28,78 @@ __all__ = [
     'FusionEnvironmentRule',
     'FusionEnvironmentRuleCondition',
 ]
+
+@pulumi.output_type
+class FusionEnvironmentAdditionalEgressRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationCidr":
+            suggest = "destination_cidr"
+        elif key == "maxDestinationPort":
+            suggest = "max_destination_port"
+        elif key == "minDestinationPort":
+            suggest = "min_destination_port"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FusionEnvironmentAdditionalEgressRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FusionEnvironmentAdditionalEgressRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FusionEnvironmentAdditionalEgressRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 destination_cidr: _builtins.str,
+                 max_destination_port: _builtins.int,
+                 min_destination_port: _builtins.int):
+        """
+        :param _builtins.str description: (Updatable) Rule description.
+        :param _builtins.str destination_cidr: (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        :param _builtins.int max_destination_port: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param _builtins.int min_destination_port: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "destination_cidr", destination_cidr)
+        pulumi.set(__self__, "max_destination_port", max_destination_port)
+        pulumi.set(__self__, "min_destination_port", min_destination_port)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        (Updatable) Rule description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> _builtins.str:
+        """
+        (Updatable) Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @_builtins.property
+    @pulumi.getter(name="maxDestinationPort")
+    def max_destination_port(self) -> _builtins.int:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max_destination_port")
+
+    @_builtins.property
+    @pulumi.getter(name="minDestinationPort")
+    def min_destination_port(self) -> _builtins.int:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min_destination_port")
+
 
 @pulumi.output_type
 class FusionEnvironmentAdminUserItem(dict):

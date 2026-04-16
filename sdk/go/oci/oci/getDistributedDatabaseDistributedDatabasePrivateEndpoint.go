@@ -69,9 +69,9 @@ type LookupDistributedDatabaseDistributedDatabasePrivateEndpointResult struct {
 	DistributedDatabasePrivateEndpointId string `pulumi:"distributedDatabasePrivateEndpointId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+	// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 	GloballyDistributedAutonomousDatabases []GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase `pulumi:"globallyDistributedAutonomousDatabases"`
-	// The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+	// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 	GloballyDistributedDatabases []GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase `pulumi:"globallyDistributedDatabases"`
 	// The identifier of the Private Endpoint.
 	Id string `pulumi:"id"`
@@ -169,14 +169,14 @@ func (o LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput)
 	}).(pulumi.StringMapOutput)
 }
 
-// The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 func (o LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput) GloballyDistributedAutonomousDatabases() GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArrayOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabasePrivateEndpointResult) []GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase {
 		return v.GloballyDistributedAutonomousDatabases
 	}).(GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArrayOutput)
 }
 
-// The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 func (o LookupDistributedDatabaseDistributedDatabasePrivateEndpointResultOutput) GloballyDistributedDatabases() GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArrayOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabasePrivateEndpointResult) []GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase {
 		return v.GloballyDistributedDatabases

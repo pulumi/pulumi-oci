@@ -141,6 +141,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
      * 
      */
     private List<GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadata> metadatas;
+    private Integer moveReplicationUnitTrigger;
     /**
      * @return The national character set for the database.
      * 
@@ -167,6 +168,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
      * 
      */
     private List<String> privateEndpointIds;
+    private Integer recreateFailedResourceTrigger;
     /**
      * @return The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      * 
@@ -182,6 +184,11 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
      * 
      */
     private Integer replicationUnit;
+    /**
+     * @return The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+     * 
+     */
+    private Integer scanListenerPort;
     /**
      * @return Collection of shards associated with the Globally distributed database.
      * 
@@ -411,6 +418,9 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
     public List<GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadata> metadatas() {
         return this.metadatas;
     }
+    public Integer moveReplicationUnitTrigger() {
+        return this.moveReplicationUnitTrigger;
+    }
     /**
      * @return The national character set for the database.
      * 
@@ -449,6 +459,9 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
     public List<String> privateEndpointIds() {
         return this.privateEndpointIds;
     }
+    public Integer recreateFailedResourceTrigger() {
+        return this.recreateFailedResourceTrigger;
+    }
     /**
      * @return The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      * 
@@ -469,6 +482,13 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
      */
     public Integer replicationUnit() {
         return this.replicationUnit;
+    }
+    /**
+     * @return The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+     * 
+     */
+    public Integer scanListenerPort() {
+        return this.scanListenerPort;
     }
     /**
      * @return Collection of shards associated with the Globally distributed database.
@@ -581,15 +601,18 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
         private Integer listenerPort;
         private Integer listenerPortTls;
         private List<GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadata> metadatas;
+        private Integer moveReplicationUnitTrigger;
         private String ncharacterSet;
         private Integer onsPortLocal;
         private Integer onsPortRemote;
         private List<GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemPatchOperation> patchOperations;
         private String prefix;
         private List<String> privateEndpointIds;
+        private Integer recreateFailedResourceTrigger;
         private Integer replicationFactor;
         private String replicationMethod;
         private Integer replicationUnit;
+        private Integer scanListenerPort;
         private List<GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetail> shardDetails;
         private String shardingMethod;
         private Integer startDatabaseTrigger;
@@ -634,15 +657,18 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
     	      this.listenerPort = defaults.listenerPort;
     	      this.listenerPortTls = defaults.listenerPortTls;
     	      this.metadatas = defaults.metadatas;
+    	      this.moveReplicationUnitTrigger = defaults.moveReplicationUnitTrigger;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.onsPortLocal = defaults.onsPortLocal;
     	      this.onsPortRemote = defaults.onsPortRemote;
     	      this.patchOperations = defaults.patchOperations;
     	      this.prefix = defaults.prefix;
     	      this.privateEndpointIds = defaults.privateEndpointIds;
+    	      this.recreateFailedResourceTrigger = defaults.recreateFailedResourceTrigger;
     	      this.replicationFactor = defaults.replicationFactor;
     	      this.replicationMethod = defaults.replicationMethod;
     	      this.replicationUnit = defaults.replicationUnit;
+    	      this.scanListenerPort = defaults.scanListenerPort;
     	      this.shardDetails = defaults.shardDetails;
     	      this.shardingMethod = defaults.shardingMethod;
     	      this.startDatabaseTrigger = defaults.startDatabaseTrigger;
@@ -915,6 +941,14 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
+        public Builder moveReplicationUnitTrigger(Integer moveReplicationUnitTrigger) {
+            if (moveReplicationUnitTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "moveReplicationUnitTrigger");
+            }
+            this.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "ncharacterSet");
@@ -969,6 +1003,14 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
             return privateEndpointIds(List.of(privateEndpointIds));
         }
         @CustomType.Setter
+        public Builder recreateFailedResourceTrigger(Integer recreateFailedResourceTrigger) {
+            if (recreateFailedResourceTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "recreateFailedResourceTrigger");
+            }
+            this.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder replicationFactor(Integer replicationFactor) {
             if (replicationFactor == null) {
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "replicationFactor");
@@ -990,6 +1032,14 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "replicationUnit");
             }
             this.replicationUnit = replicationUnit;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scanListenerPort(Integer scanListenerPort) {
+            if (scanListenerPort == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "scanListenerPort");
+            }
+            this.scanListenerPort = scanListenerPort;
             return this;
         }
         @CustomType.Setter
@@ -1118,15 +1168,18 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
             _resultValue.listenerPort = listenerPort;
             _resultValue.listenerPortTls = listenerPortTls;
             _resultValue.metadatas = metadatas;
+            _resultValue.moveReplicationUnitTrigger = moveReplicationUnitTrigger;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.onsPortLocal = onsPortLocal;
             _resultValue.onsPortRemote = onsPortRemote;
             _resultValue.patchOperations = patchOperations;
             _resultValue.prefix = prefix;
             _resultValue.privateEndpointIds = privateEndpointIds;
+            _resultValue.recreateFailedResourceTrigger = recreateFailedResourceTrigger;
             _resultValue.replicationFactor = replicationFactor;
             _resultValue.replicationMethod = replicationMethod;
             _resultValue.replicationUnit = replicationUnit;
+            _resultValue.scanListenerPort = scanListenerPort;
             _resultValue.shardDetails = shardDetails;
             _resultValue.shardingMethod = shardingMethod;
             _resultValue.startDatabaseTrigger = startDatabaseTrigger;

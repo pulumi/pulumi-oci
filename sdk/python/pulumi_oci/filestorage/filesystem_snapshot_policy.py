@@ -460,6 +460,11 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 "day_of_month": filesystem_snapshot_policy_schedules_day_of_month,
                 "day_of_week": filesystem_snapshot_policy_schedules_day_of_week,
                 "hour_of_day": filesystem_snapshot_policy_schedules_hour_of_day,
+                "lock_duration_details": {
+                    "lock_duration": filesystem_snapshot_policy_schedules_lock_duration_details_lock_duration,
+                    "lock_mode": filesystem_snapshot_policy_schedules_lock_duration_details_lock_mode,
+                    "cool_off_duration": filesystem_snapshot_policy_schedules_lock_duration_details_cool_off_duration,
+                },
                 "month": filesystem_snapshot_policy_schedules_month,
                 "retention_duration_in_seconds": filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
                 "schedule_prefix": filesystem_snapshot_policy_schedules_schedule_prefix,
@@ -541,6 +546,11 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 "day_of_month": filesystem_snapshot_policy_schedules_day_of_month,
                 "day_of_week": filesystem_snapshot_policy_schedules_day_of_week,
                 "hour_of_day": filesystem_snapshot_policy_schedules_hour_of_day,
+                "lock_duration_details": {
+                    "lock_duration": filesystem_snapshot_policy_schedules_lock_duration_details_lock_duration,
+                    "lock_mode": filesystem_snapshot_policy_schedules_lock_duration_details_lock_mode,
+                    "cool_off_duration": filesystem_snapshot_policy_schedules_lock_duration_details_cool_off_duration,
+                },
                 "month": filesystem_snapshot_policy_schedules_month,
                 "retention_duration_in_seconds": filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
                 "schedule_prefix": filesystem_snapshot_policy_schedules_schedule_prefix,

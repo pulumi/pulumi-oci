@@ -30,7 +30,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDet
      */
     private Integer fastStartFailOverLagLimitInSeconds;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     private Boolean isAutomaticFailoverEnabled;
@@ -98,7 +98,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDet
         return this.fastStartFailOverLagLimitInSeconds;
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     public Boolean isAutomaticFailoverEnabled() {

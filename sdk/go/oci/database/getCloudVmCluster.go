@@ -80,7 +80,7 @@ type LookupCloudVmClusterResult struct {
 	CreateAsync  bool `pulumi:"createAsync"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []GetCloudVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
 	// The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
@@ -134,6 +134,8 @@ type LookupCloudVmClusterResult struct {
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount     float64 `pulumi:"ocpuCount"`
 	PrivateZoneId string  `pulumi:"privateZoneId"`
+	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage int `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 	ScanDnsName string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -150,6 +152,8 @@ type LookupCloudVmClusterResult struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud VM cluster.
 	Shape string `pulumi:"shape"`
+	// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage int `pulumi:"sparseStoragePercentage"`
 	// The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
@@ -282,7 +286,7 @@ func (o LookupCloudVmClusterResultOutput) DataCollectionOptions() GetCloudVmClus
 	}).(GetCloudVmClusterDataCollectionOptionArrayOutput)
 }
 
-// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 func (o LookupCloudVmClusterResultOutput) DataStoragePercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.DataStoragePercentage }).(pulumi.IntOutput)
 }
@@ -421,6 +425,11 @@ func (o LookupCloudVmClusterResultOutput) PrivateZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.PrivateZoneId }).(pulumi.StringOutput)
 }
 
+// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o LookupCloudVmClusterResultOutput) RecoStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.RecoStoragePercentage }).(pulumi.IntOutput)
+}
+
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) ScanDnsName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ScanDnsName }).(pulumi.StringOutput)
@@ -459,6 +468,11 @@ func (o LookupCloudVmClusterResultOutput) SecurityAttributes() pulumi.StringMapO
 // The model name of the Exadata hardware running the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o LookupCloudVmClusterResultOutput) SparseStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.SparseStoragePercentage }).(pulumi.IntOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.

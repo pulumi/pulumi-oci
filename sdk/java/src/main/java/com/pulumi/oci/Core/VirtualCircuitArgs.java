@@ -241,14 +241,14 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      * 
      */
     @Import(name="providerServiceKeyName")
     private @Nullable Output<String> providerServiceKeyName;
 
     /**
-     * @return (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * @return (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      * 
      */
     public Optional<Output<String>> providerServiceKeyName() {
@@ -676,7 +676,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param providerServiceKeyName (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+         * @param providerServiceKeyName (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param providerServiceKeyName (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+         * @param providerServiceKeyName (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
          * 
          * @return builder
          * 

@@ -152,6 +152,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> DataCollectionOptions;
         /// <summary>
+        /// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        public readonly int DataStoragePercentage;
+        /// <summary>
         /// Size of the DATA disk group in GBs.
         /// </summary>
         public readonly double DataStorageSizeInGb;
@@ -226,9 +230,17 @@ namespace Pulumi.Oci.Database
         public readonly double OcpuCount;
         public readonly double OcpusEnabled;
         /// <summary>
+        /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        public readonly int RecoStoragePercentage;
+        /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         public readonly string Shape;
+        /// <summary>
+        /// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        public readonly int SparseStoragePercentage;
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the VM cluster.
         /// </summary>
@@ -291,6 +303,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> dataCollectionOptions,
 
+            int dataStoragePercentage,
+
             double dataStorageSizeInGb,
 
             double dataStorageSizeInTbs,
@@ -331,7 +345,11 @@ namespace Pulumi.Oci.Database
 
             double ocpusEnabled,
 
+            int recoStoragePercentage,
+
             string shape,
+
+            int sparseStoragePercentage,
 
             ImmutableArray<string> sshPublicKeys,
 
@@ -364,6 +382,7 @@ namespace Pulumi.Oci.Database
             CpuCoreCount = cpuCoreCount;
             CpusEnabled = cpusEnabled;
             DataCollectionOptions = dataCollectionOptions;
+            DataStoragePercentage = dataStoragePercentage;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -384,7 +403,9 @@ namespace Pulumi.Oci.Database
             MemorySizeInGbs = memorySizeInGbs;
             OcpuCount = ocpuCount;
             OcpusEnabled = ocpusEnabled;
+            RecoStoragePercentage = recoStoragePercentage;
             Shape = shape;
+            SparseStoragePercentage = sparseStoragePercentage;
             SshPublicKeys = sshPublicKeys;
             State = state;
             StorageManagementType = storageManagementType;

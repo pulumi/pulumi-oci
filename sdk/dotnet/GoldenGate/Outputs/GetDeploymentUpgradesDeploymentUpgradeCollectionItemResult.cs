@@ -88,7 +88,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ReleaseType;
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployment upgrades having the 'lifecycleState' given.
         /// </summary>
         public readonly string State;
         /// <summary>

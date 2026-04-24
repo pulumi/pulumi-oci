@@ -106,7 +106,7 @@ public final class GetDeploymentUpgradeResult {
      */
     private String releaseType;
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Upgrade.
      * 
      */
     private String state;
@@ -294,7 +294,7 @@ public final class GetDeploymentUpgradeResult {
         return this.releaseType;
     }
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Upgrade.
      * 
      */
     public String state() {

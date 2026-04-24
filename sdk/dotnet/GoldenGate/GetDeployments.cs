@@ -171,7 +171,7 @@ namespace Pulumi.Oci.GoldenGate
         public string? LifecycleSubState { get; set; }
 
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployments having the 'lifecycleState' given.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? LifecycleSubState { get; set; }
 
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployments having the 'lifecycleState' given.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string? LifecycleSubState;
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment.
         /// </summary>
         public readonly string? State;
         public readonly string? SupportedConnectionType;

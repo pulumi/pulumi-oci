@@ -84,9 +84,6 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
     declare public readonly availabilityDomain: pulumi.Output<string>;
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     */
     declare public /*out*/ readonly capacityBins: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
@@ -231,9 +228,6 @@ export interface DedicatedVmHostState {
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string>;
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     */
     capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[]>;
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.

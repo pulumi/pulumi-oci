@@ -90,6 +90,10 @@ export class DatabaseRegistration extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     */
+    declare public /*out*/ readonly connectionId: pulumi.Output<string>;
+    /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
     declare public readonly connectionString: pulumi.Output<string>;
@@ -201,6 +205,7 @@ export class DatabaseRegistration extends pulumi.CustomResource {
             const state = argsOrState as DatabaseRegistrationState | undefined;
             resourceInputs["aliasName"] = state?.aliasName;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionId"] = state?.connectionId;
             resourceInputs["connectionString"] = state?.connectionString;
             resourceInputs["databaseId"] = state?.databaseId;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -262,6 +267,7 @@ export class DatabaseRegistration extends pulumi.CustomResource {
             resourceInputs["username"] = args?.username;
             resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["wallet"] = args?.wallet;
+            resourceInputs["connectionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["rcePrivateIp"] = undefined /*out*/;
             resourceInputs["secretId"] = undefined /*out*/;
@@ -289,6 +295,10 @@ export interface DatabaseRegistrationState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     */
+    connectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */

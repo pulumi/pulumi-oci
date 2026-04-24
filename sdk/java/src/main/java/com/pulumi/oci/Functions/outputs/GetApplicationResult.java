@@ -6,6 +6,7 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetApplicationImagePolicyConfig;
+import com.pulumi.oci.Functions.outputs.GetApplicationLogging;
 import com.pulumi.oci.Functions.outputs.GetApplicationTraceConfig;
 import java.lang.String;
 import java.util.List;
@@ -50,6 +51,11 @@ public final class GetApplicationResult {
      * 
      */
     private List<GetApplicationImagePolicyConfig> imagePolicyConfigs;
+    /**
+     * @return Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    private List<GetApplicationLogging> loggings;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      * 
@@ -150,6 +156,13 @@ public final class GetApplicationResult {
         return this.imagePolicyConfigs;
     }
     /**
+     * @return Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    public List<GetApplicationLogging> loggings() {
+        return this.loggings;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      * 
      */
@@ -230,6 +243,7 @@ public final class GetApplicationResult {
         private Map<String,String> freeformTags;
         private String id;
         private List<GetApplicationImagePolicyConfig> imagePolicyConfigs;
+        private List<GetApplicationLogging> loggings;
         private List<String> networkSecurityGroupIds;
         private Map<String,String> securityAttributes;
         private String shape;
@@ -250,6 +264,7 @@ public final class GetApplicationResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.imagePolicyConfigs = defaults.imagePolicyConfigs;
+    	      this.loggings = defaults.loggings;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
@@ -327,6 +342,17 @@ public final class GetApplicationResult {
         }
         public Builder imagePolicyConfigs(GetApplicationImagePolicyConfig... imagePolicyConfigs) {
             return imagePolicyConfigs(List.of(imagePolicyConfigs));
+        }
+        @CustomType.Setter
+        public Builder loggings(List<GetApplicationLogging> loggings) {
+            if (loggings == null) {
+              throw new MissingRequiredPropertyException("GetApplicationResult", "loggings");
+            }
+            this.loggings = loggings;
+            return this;
+        }
+        public Builder loggings(GetApplicationLogging... loggings) {
+            return loggings(List.of(loggings));
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
@@ -419,6 +445,7 @@ public final class GetApplicationResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.imagePolicyConfigs = imagePolicyConfigs;
+            _resultValue.loggings = loggings;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;

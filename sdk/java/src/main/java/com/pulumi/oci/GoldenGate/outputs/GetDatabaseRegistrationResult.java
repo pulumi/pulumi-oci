@@ -22,6 +22,11 @@ public final class GetDatabaseRegistrationResult {
      */
     private String compartmentId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    private String connectionId;
+    /**
      * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
@@ -149,6 +154,13 @@ public final class GetDatabaseRegistrationResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    public String connectionId() {
+        return this.connectionId;
     }
     /**
      * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
@@ -325,6 +337,7 @@ public final class GetDatabaseRegistrationResult {
     public static final class Builder {
         private String aliasName;
         private String compartmentId;
+        private String connectionId;
         private String connectionString;
         private String databaseId;
         private String databaseRegistrationId;
@@ -355,6 +368,7 @@ public final class GetDatabaseRegistrationResult {
     	      Objects.requireNonNull(defaults);
     	      this.aliasName = defaults.aliasName;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionId = defaults.connectionId;
     	      this.connectionString = defaults.connectionString;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseRegistrationId = defaults.databaseRegistrationId;
@@ -396,6 +410,14 @@ public final class GetDatabaseRegistrationResult {
               throw new MissingRequiredPropertyException("GetDatabaseRegistrationResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionId(String connectionId) {
+            if (connectionId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationResult", "connectionId");
+            }
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
@@ -602,6 +624,7 @@ public final class GetDatabaseRegistrationResult {
             final var _resultValue = new GetDatabaseRegistrationResult();
             _resultValue.aliasName = aliasName;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionId = connectionId;
             _resultValue.connectionString = connectionString;
             _resultValue.databaseId = databaseId;
             _resultValue.databaseRegistrationId = databaseRegistrationId;

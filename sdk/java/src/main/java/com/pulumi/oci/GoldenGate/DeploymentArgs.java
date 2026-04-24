@@ -319,14 +319,36 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * 
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * 
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      * 
      */
     @Import(name="loadBalancerSubnetId")
     private @Nullable Output<String> loadBalancerSubnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * 
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * 
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      * 
      */
     public Optional<Output<String>> loadBalancerSubnetId() {
@@ -454,14 +476,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment.
      * 
      */
     public Optional<Output<String>> state() {
@@ -968,7 +990,18 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * 
+         * Rules:
+         * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * * Update:
+         * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * 
+         * Validation:
+         * * Must reference a public subnet.
+         * * Must be a regional subnet.
+         * * Must be in the same VCN as subnetId.
          * 
          * @return builder
          * 
@@ -979,7 +1012,18 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * 
+         * Rules:
+         * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * * Update:
+         * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * 
+         * Validation:
+         * * Must reference a public subnet.
+         * * Must be a regional subnet.
+         * * Must be in the same VCN as subnetId.
          * 
          * @return builder
          * 
@@ -1187,7 +1231,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment.
          * 
          * @return builder
          * 
@@ -1198,7 +1242,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment.
          * 
          * @return builder
          * 

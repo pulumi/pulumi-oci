@@ -27,7 +27,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, cluster_placement_group_id=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, security_attributes=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, cluster_placement_group_id=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, security_attributes=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -202,9 +202,6 @@ class GetDeploymentResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
-        if time_upgrade_required and not isinstance(time_upgrade_required, str):
-            raise TypeError("Expected argument 'time_upgrade_required' to be a str")
-        pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -426,6 +423,7 @@ class GetDeploymentResult:
 
     @_builtins.property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
+    @_utilities.deprecated("""The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""")
     def is_storage_utilization_limit_exceeded(self) -> _builtins.bool:
         """
         Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -468,7 +466,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -572,7 +570,7 @@ class GetDeploymentResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
         """
         return pulumi.get(self, "state")
 
@@ -664,14 +662,6 @@ class GetDeploymentResult:
         """
         return pulumi.get(self, "time_updated")
 
-    @_builtins.property
-    @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> _builtins.str:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        return pulumi.get(self, "time_upgrade_required")
-
 
 class AwaitableGetDeploymentResult(GetDeploymentResult):
     # pylint: disable=using-constant-test
@@ -736,8 +726,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             time_of_next_maintenance=self.time_of_next_maintenance,
             time_ogg_version_supported_until=self.time_ogg_version_supported_until,
             time_role_changed=self.time_role_changed,
-            time_updated=self.time_updated,
-            time_upgrade_required=self.time_upgrade_required)
+            time_updated=self.time_updated)
 
 
 def get_deployment(deployment_id: Optional[_builtins.str] = None,
@@ -822,8 +811,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         time_of_next_maintenance=pulumi.get(__ret__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_role_changed=pulumi.get(__ret__, 'time_role_changed'),
-        time_updated=pulumi.get(__ret__, 'time_updated'),
-        time_upgrade_required=pulumi.get(__ret__, 'time_upgrade_required'))
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentResult]:
     """
@@ -905,5 +893,4 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
         time_of_next_maintenance=pulumi.get(__response__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__response__, 'time_ogg_version_supported_until'),
         time_role_changed=pulumi.get(__response__, 'time_role_changed'),
-        time_updated=pulumi.get(__response__, 'time_updated'),
-        time_upgrade_required=pulumi.get(__response__, 'time_upgrade_required')))
+        time_updated=pulumi.get(__response__, 'time_updated')))

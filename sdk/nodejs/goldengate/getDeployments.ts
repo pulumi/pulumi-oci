@@ -80,7 +80,7 @@ export interface GetDeploymentsArgs {
      */
     lifecycleSubState?: string;
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployments having the 'lifecycleState' given.
      */
     state?: string;
     /**
@@ -125,7 +125,7 @@ export interface GetDeploymentsResult {
      */
     readonly lifecycleSubState?: string;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      */
     readonly state?: string;
     readonly supportedConnectionType?: string;
@@ -204,7 +204,7 @@ export interface GetDeploymentsOutputArgs {
      */
     lifecycleSubState?: pulumi.Input<string>;
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployments having the 'lifecycleState' given.
      */
     state?: pulumi.Input<string>;
     /**

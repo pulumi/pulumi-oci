@@ -153,6 +153,10 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApplicationImagePolicyConfigResult> ImagePolicyConfigs;
         /// <summary>
+        /// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetApplicationLoggingResult> Loggings;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
@@ -207,6 +211,8 @@ namespace Pulumi.Oci.Functions
 
             ImmutableArray<Outputs.GetApplicationImagePolicyConfigResult> imagePolicyConfigs,
 
+            ImmutableArray<Outputs.GetApplicationLoggingResult> loggings,
+
             ImmutableArray<string> networkSecurityGroupIds,
 
             ImmutableDictionary<string, string> securityAttributes,
@@ -233,6 +239,7 @@ namespace Pulumi.Oci.Functions
             FreeformTags = freeformTags;
             Id = id;
             ImagePolicyConfigs = imagePolicyConfigs;
+            Loggings = loggings;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             SecurityAttributes = securityAttributes;
             Shape = shape;

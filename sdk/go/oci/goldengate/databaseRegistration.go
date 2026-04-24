@@ -81,6 +81,8 @@ type DatabaseRegistration struct {
 	AliasName pulumi.StringOutput `pulumi:"aliasName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
 	// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -191,6 +193,8 @@ type databaseRegistrationState struct {
 	AliasName *string `pulumi:"aliasName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+	ConnectionId *string `pulumi:"connectionId"`
 	// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString *string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -247,6 +251,8 @@ type DatabaseRegistrationState struct {
 	AliasName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+	ConnectionId pulumi.StringPtrInput
 	// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -482,6 +488,11 @@ func (o DatabaseRegistrationOutput) AliasName() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o DatabaseRegistrationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+func (o DatabaseRegistrationOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseRegistration) pulumi.StringOutput { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.

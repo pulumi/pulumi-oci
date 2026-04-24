@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, reco_storage_percentage=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -145,6 +145,9 @@ class GetCloudVmClusterResult:
         if private_zone_id and not isinstance(private_zone_id, str):
             raise TypeError("Expected argument 'private_zone_id' to be a str")
         pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if reco_storage_percentage and not isinstance(reco_storage_percentage, int):
+            raise TypeError("Expected argument 'reco_storage_percentage' to be a int")
+        pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         if scan_dns_name and not isinstance(scan_dns_name, str):
             raise TypeError("Expected argument 'scan_dns_name' to be a str")
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
@@ -169,6 +172,9 @@ class GetCloudVmClusterResult:
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
+        if sparse_storage_percentage and not isinstance(sparse_storage_percentage, int):
+            raise TypeError("Expected argument 'sparse_storage_percentage' to be a int")
+        pulumi.set(__self__, "sparse_storage_percentage", sparse_storage_percentage)
         if ssh_public_keys and not isinstance(ssh_public_keys, list):
             raise TypeError("Expected argument 'ssh_public_keys' to be a list")
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
@@ -315,7 +321,7 @@ class GetCloudVmClusterResult:
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> _builtins.int:
         """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "data_storage_percentage")
 
@@ -526,6 +532,14 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "private_zone_id")
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @_builtins.property
     @pulumi.getter(name="scanDnsName")
     def scan_dns_name(self) -> _builtins.str:
         """
@@ -588,6 +602,14 @@ class GetCloudVmClusterResult:
         The model name of the Exadata hardware running the cloud VM cluster.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
@@ -771,6 +793,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
             private_zone_id=self.private_zone_id,
+            reco_storage_percentage=self.reco_storage_percentage,
             scan_dns_name=self.scan_dns_name,
             scan_dns_record_id=self.scan_dns_record_id,
             scan_ip_ids=self.scan_ip_ids,
@@ -779,6 +802,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             scan_listener_port_tcp_ssl=self.scan_listener_port_tcp_ssl,
             security_attributes=self.security_attributes,
             shape=self.shape,
+            sparse_storage_percentage=self.sparse_storage_percentage,
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
             storage_management_type=self.storage_management_type,
@@ -862,6 +886,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
         private_zone_id=pulumi.get(__ret__, 'private_zone_id'),
+        reco_storage_percentage=pulumi.get(__ret__, 'reco_storage_percentage'),
         scan_dns_name=pulumi.get(__ret__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__ret__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__ret__, 'scan_ip_ids'),
@@ -870,6 +895,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
+        sparse_storage_percentage=pulumi.get(__ret__, 'sparse_storage_percentage'),
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
         storage_management_type=pulumi.get(__ret__, 'storage_management_type'),
@@ -950,6 +976,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[_buil
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
         private_zone_id=pulumi.get(__response__, 'private_zone_id'),
+        reco_storage_percentage=pulumi.get(__response__, 'reco_storage_percentage'),
         scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
         scan_dns_record_id=pulumi.get(__response__, 'scan_dns_record_id'),
         scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
@@ -958,6 +985,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[_buil
         scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
+        sparse_storage_percentage=pulumi.get(__response__, 'sparse_storage_percentage'),
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
         storage_management_type=pulumi.get(__response__, 'storage_management_type'),

@@ -123,7 +123,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployment peers having the 'lifecycleState' given.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployment peers having the 'lifecycleState' given.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

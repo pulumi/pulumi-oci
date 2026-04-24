@@ -69,6 +69,10 @@ export interface GetVmClusterResult {
      */
     readonly dataCollectionOptions: outputs.Database.GetVmClusterDataCollectionOption[];
     /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    readonly dataStoragePercentage: number;
+    /**
      * Size of the DATA disk group in GBs.
      */
     readonly dataStorageSizeInGb: number;
@@ -143,9 +147,17 @@ export interface GetVmClusterResult {
     readonly ocpuCount: number;
     readonly ocpusEnabled: number;
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    readonly recoStoragePercentage: number;
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
     readonly shape: string;
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    readonly sparseStoragePercentage: number;
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */

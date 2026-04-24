@@ -3517,7 +3517,7 @@ class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig(dict):
         """
         :param _builtins.bool is_upsize_enabled: (Updatable) Enables upsizing towards the target size.
         :param _builtins.bool is_downsize_enabled: (Updatable) Enables downsizing towards the target size.
-        :param _builtins.str target_size: (Updatable) The configured target size for the GPU Memory cluster.
+        :param _builtins.str target_size: (Updatable) The configured target size for the GPU Memory Cluster.
         """
         pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
         if is_downsize_enabled is not None:
@@ -3545,7 +3545,7 @@ class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig(dict):
     @pulumi.getter(name="targetSize")
     def target_size(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The configured target size for the GPU Memory cluster.
+        (Updatable) The configured target size for the GPU Memory Cluster.
         """
         return pulumi.get(self, "target_size")
 
@@ -15822,7 +15822,6 @@ class VcnByoipv6cidrDetail(dict):
                  ipv6cidr_block: _builtins.str):
         """
         :param _builtins.str byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-               * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
         :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
         """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
@@ -15833,7 +15832,6 @@ class VcnByoipv6cidrDetail(dict):
     def byoipv6range_id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
         """
         return pulumi.get(self, "byoipv6range_id")
 
@@ -24607,7 +24605,7 @@ class GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigResult(dict):
         """
         :param _builtins.bool is_downsize_enabled: Whether downsizing is enabled.
         :param _builtins.bool is_upsize_enabled: Whether upsizing is enabled.
-        :param _builtins.str target_size: The configured target size for the GPU Memory cluster.
+        :param _builtins.str target_size: The configured target size for the GPU Memory Cluster.
         """
         pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
         pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
@@ -24633,7 +24631,7 @@ class GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfigResult(dict):
     @pulumi.getter(name="targetSize")
     def target_size(self) -> _builtins.str:
         """
-        The configured target size for the GPU Memory cluster.
+        The configured target size for the GPU Memory Cluster.
         """
         return pulumi.get(self, "target_size")
 
@@ -24643,7 +24641,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     def __init__(__self__, *,
                  items: Sequence['outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult']):
         """
-        :param Sequence['GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemArgs'] items: The list of compute GPU memory cluster instances.
+        :param Sequence['GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemArgs'] items: The list of compute GPU Memory Cluster instances.
         """
         pulumi.set(__self__, "items", items)
 
@@ -24651,7 +24649,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult']:
         """
-        The list of compute GPU memory cluster instances.
+        The list of compute GPU Memory Cluster instances.
         """
         return pulumi.get(self, "items")
 
@@ -24670,16 +24668,16 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
                  state: _builtins.str,
                  time_created: _builtins.str):
         """
-        :param _builtins.str availability_domain: The availability domain of the GPU memory cluster instance.
+        :param _builtins.str availability_domain: The availability domain of the GPU Memory Cluster instance.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment compartment.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param _builtins.str fault_domain: The fault domain the GPU memory cluster instance is running in.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+        :param _builtins.str fault_domain: The fault domain the GPU Memory Cluster instance is running in.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
         :param _builtins.str instance_configuration_id: Configuration to be used for this GPU Memory Cluster instance.
         :param _builtins.str instance_shape: The shape of an instance. The shape determines the number of CPUs, amount of memory,  and other resources allocated to the instance. The shape determines the number of CPUs,  the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param _builtins.str region: The region that contains the availability domain the instance is running in.
-        :param _builtins.str state: The lifecycle state of the GPU memory cluster instance
-        :param _builtins.str time_created: The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+        :param _builtins.str state: The lifecycle state of the GPU Memory Cluster instance
+        :param _builtins.str time_created: The date and time the GPU Memory Cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -24696,7 +24694,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of the GPU memory cluster instance.
+        The availability domain of the GPU Memory Cluster instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -24720,7 +24718,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> _builtins.str:
         """
-        The fault domain the GPU memory cluster instance is running in.
+        The fault domain the GPU Memory Cluster instance is running in.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -24728,7 +24726,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
         """
         return pulumi.get(self, "id")
 
@@ -24760,7 +24758,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The lifecycle state of the GPU memory cluster instance
+        The lifecycle state of the GPU Memory Cluster instance
         """
         return pulumi.get(self, "state")
 
@@ -24768,7 +24766,7 @@ class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollecti
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+        The date and time the GPU Memory Cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -24825,6 +24823,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
                  gpu_memory_fabric_id: _builtins.str,
                  id: _builtins.str,
                  instance_configuration_id: _builtins.str,
+                 private_ip_ids: Sequence[_builtins.str],
                  size: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -24838,12 +24837,13 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_configs: Configuration settings for GPU Memory Cluster scaling.
         :param _builtins.str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
         :param _builtins.str instance_configuration_id: The OCID of the Instance Configuration used to source launch details for this instance.
-        :param _builtins.str size: The number of instances currently running in the GpuMemoryCluster
-        :param _builtins.str state: The lifecycle state of the GPU memory cluster
+        :param Sequence[_builtins.str] private_ip_ids: Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        :param _builtins.str size: The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
+        :param _builtins.str state: The lifecycle state of the GPU Memory Cluster
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        :param _builtins.str time_created: The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -24855,6 +24855,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "private_ip_ids", private_ip_ids)
         pulumi.set(__self__, "size", size)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -24928,7 +24929,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
         """
         return pulumi.get(self, "id")
 
@@ -24941,10 +24942,18 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
         return pulumi.get(self, "instance_configuration_id")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpIds")
+    def private_ip_ids(self) -> Sequence[_builtins.str]:
+        """
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        """
+        return pulumi.get(self, "private_ip_ids")
+
+    @_builtins.property
     @pulumi.getter
     def size(self) -> _builtins.str:
         """
-        The number of instances currently running in the GpuMemoryCluster
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
         """
         return pulumi.get(self, "size")
 
@@ -24952,7 +24961,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The lifecycle state of the GPU memory cluster
+        The lifecycle state of the GPU Memory Cluster
         """
         return pulumi.get(self, "state")
 
@@ -24968,7 +24977,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemResult(dic
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -24982,7 +24991,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryC
         """
         :param _builtins.bool is_downsize_enabled: Whether downsizing is enabled.
         :param _builtins.bool is_upsize_enabled: Whether upsizing is enabled.
-        :param _builtins.str target_size: The configured target size for the GPU Memory cluster.
+        :param _builtins.str target_size: The configured target size for the GPU Memory Cluster.
         """
         pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
         pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
@@ -25008,7 +25017,7 @@ class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItemGpuMemoryC
     @pulumi.getter(name="targetSize")
     def target_size(self) -> _builtins.str:
         """
-        The configured target size for the GPU Memory cluster.
+        The configured target size for the GPU Memory Cluster.
         """
         return pulumi.get(self, "target_size")
 
@@ -28107,7 +28116,6 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  total_ocpus: _builtins.float):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param Sequence['GetDedicatedVmHostsDedicatedVmHostCapacityBinArgs'] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
         :param _builtins.str capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -28157,9 +28165,6 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult']:
-        """
-        A list of total and remaining CPU and memory per capacity bucket.
-        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property

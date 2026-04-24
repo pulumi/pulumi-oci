@@ -71,7 +71,7 @@ type GetComputeGpuMemoryClustersArgs struct {
 
 // A collection of values returned by getComputeGpuMemoryClusters.
 type GetComputeGpuMemoryClustersResult struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -130,7 +130,7 @@ func (o GetComputeGpuMemoryClustersResultOutput) ToGetComputeGpuMemoryClustersRe
 	return o
 }
 
-// The availability domain of the GPU memory cluster.
+// The availability domain of the GPU Memory Cluster.
 func (o GetComputeGpuMemoryClustersResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeGpuMemoryClustersResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }

@@ -101,17 +101,9 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     @Export(name="capacityBins", refs={List.class,DedicatedVmHostCapacityBin.class}, tree="[0,1]")
     private Output<List<DedicatedVmHostCapacityBin>> capacityBins;
 
-    /**
-     * @return A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     public Output<List<DedicatedVmHostCapacityBin>> capacityBins() {
         return this.capacityBins;
     }

@@ -91,6 +91,10 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly dataCollectionOptions: pulumi.Output<outputs.Database.VmClusterAddVirtualNetworkDataCollectionOption[]>;
     /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    declare public /*out*/ readonly dataStoragePercentage: pulumi.Output<number>;
+    /**
      * Size of the DATA disk group in GBs.
      */
     declare public /*out*/ readonly dataStorageSizeInGb: pulumi.Output<number>;
@@ -160,9 +164,17 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
     declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     declare public /*out*/ readonly ocpusEnabled: pulumi.Output<number>;
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    declare public /*out*/ readonly recoStoragePercentage: pulumi.Output<number>;
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
     declare public /*out*/ readonly shape: pulumi.Output<string>;
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    declare public /*out*/ readonly sparseStoragePercentage: pulumi.Output<number>;
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
@@ -223,6 +235,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             resourceInputs["computeModel"] = state?.computeModel;
             resourceInputs["cpusEnabled"] = state?.cpusEnabled;
             resourceInputs["dataCollectionOptions"] = state?.dataCollectionOptions;
+            resourceInputs["dataStoragePercentage"] = state?.dataStoragePercentage;
             resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
             resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
             resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
@@ -241,7 +254,9 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
             resourceInputs["ocpusEnabled"] = state?.ocpusEnabled;
+            resourceInputs["recoStoragePercentage"] = state?.recoStoragePercentage;
             resourceInputs["shape"] = state?.shape;
+            resourceInputs["sparseStoragePercentage"] = state?.sparseStoragePercentage;
             resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
             resourceInputs["state"] = state?.state;
             resourceInputs["storageManagementType"] = state?.storageManagementType;
@@ -267,6 +282,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["dataCollectionOptions"] = undefined /*out*/;
+            resourceInputs["dataStoragePercentage"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
@@ -284,7 +300,9 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
+            resourceInputs["recoStoragePercentage"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
+            resourceInputs["sparseStoragePercentage"] = undefined /*out*/;
             resourceInputs["sshPublicKeys"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageManagementType"] = undefined /*out*/;
@@ -327,6 +345,10 @@ export interface VmClusterAddVirtualNetworkState {
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
     dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDataCollectionOption>[]>;
+    /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    dataStoragePercentage?: pulumi.Input<number>;
     /**
      * Size of the DATA disk group in GBs.
      */
@@ -397,9 +419,17 @@ export interface VmClusterAddVirtualNetworkState {
     memorySizeInGbs?: pulumi.Input<number>;
     ocpusEnabled?: pulumi.Input<number>;
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    recoStoragePercentage?: pulumi.Input<number>;
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
     shape?: pulumi.Input<string>;
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    sparseStoragePercentage?: pulumi.Input<number>;
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */

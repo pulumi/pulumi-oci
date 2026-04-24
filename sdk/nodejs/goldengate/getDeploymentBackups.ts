@@ -54,7 +54,7 @@ export interface GetDeploymentBackupsArgs {
     displayName?: string;
     filters?: inputs.GoldenGate.GetDeploymentBackupsFilter[];
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment backups having the 'lifecycleState' given.
      */
     state?: string;
 }
@@ -85,7 +85,7 @@ export interface GetDeploymentBackupsResult {
      */
     readonly id: string;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      */
     readonly state?: string;
 }
@@ -137,7 +137,7 @@ export interface GetDeploymentBackupsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentBackupsFilterArgs>[]>;
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment backups having the 'lifecycleState' given.
      */
     state?: pulumi.Input<string>;
 }

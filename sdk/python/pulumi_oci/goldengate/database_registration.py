@@ -320,6 +320,7 @@ class _DatabaseRegistrationState:
     def __init__(__self__, *,
                  alias_name: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connection_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
                  database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -348,6 +349,7 @@ class _DatabaseRegistrationState:
 
         :param pulumi.Input[_builtins.str] alias_name: (Updatable) Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -380,6 +382,8 @@ class _DatabaseRegistrationState:
             pulumi.set(__self__, "alias_name", alias_name)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
         if connection_string is not None:
             pulumi.set(__self__, "connection_string", connection_string)
         if database_id is not None:
@@ -450,6 +454,18 @@ class _DatabaseRegistrationState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
@@ -958,6 +974,7 @@ class DatabaseRegistration(pulumi.CustomResource):
             __props__.__dict__["username"] = username
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["wallet"] = wallet
+            __props__.__dict__["connection_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["rce_private_ip"] = None
             __props__.__dict__["secret_id"] = None
@@ -979,6 +996,7 @@ class DatabaseRegistration(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             alias_name: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            connection_id: Optional[pulumi.Input[_builtins.str]] = None,
             connection_string: Optional[pulumi.Input[_builtins.str]] = None,
             database_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1011,6 +1029,7 @@ class DatabaseRegistration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alias_name: (Updatable) Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1045,6 +1064,7 @@ class DatabaseRegistration(pulumi.CustomResource):
 
         __props__.__dict__["alias_name"] = alias_name
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["connection_id"] = connection_id
         __props__.__dict__["connection_string"] = connection_string
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1085,6 +1105,14 @@ class DatabaseRegistration(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        """
+        return pulumi.get(self, "connection_id")
 
     @_builtins.property
     @pulumi.getter(name="connectionString")

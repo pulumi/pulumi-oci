@@ -87,7 +87,7 @@ type Usage struct {
 	IsAggregateByTime pulumi.BoolOutput `pulumi:"isAggregateByTime"`
 	// A list of usage items.
 	Items UsageItemArrayOutput `pulumi:"items"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 	QueryType pulumi.StringOutput `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
@@ -158,7 +158,7 @@ type usageState struct {
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// A list of usage items.
 	Items []UsageItem `pulumi:"items"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 	QueryType *string `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId *string `pulumi:"tenantId"`
@@ -188,7 +188,7 @@ type UsageState struct {
 	IsAggregateByTime pulumi.BoolPtrInput
 	// A list of usage items.
 	Items UsageItemArrayInput
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 	QueryType pulumi.StringPtrInput
 	// Tenant ID.
 	TenantId pulumi.StringPtrInput
@@ -220,7 +220,7 @@ type usageArgs struct {
 	GroupByTags []UsageGroupByTag `pulumi:"groupByTags"`
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 	QueryType *string `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -249,7 +249,7 @@ type UsageArgs struct {
 	GroupByTags UsageGroupByTagArrayInput
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolPtrInput
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 	QueryType pulumi.StringPtrInput
 	// Tenant ID.
 	TenantId pulumi.StringInput
@@ -389,7 +389,7 @@ func (o UsageOutput) Items() UsageItemArrayOutput {
 	return o.ApplyT(func(v *Usage) UsageItemArrayOutput { return v.Items }).(UsageItemArrayOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
 func (o UsageOutput) QueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Usage) pulumi.StringOutput { return v.QueryType }).(pulumi.StringOutput)
 }

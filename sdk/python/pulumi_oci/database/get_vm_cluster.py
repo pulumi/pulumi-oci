@@ -27,7 +27,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_backup_storage_type=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None, vm_file_system_storage_type=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, reco_storage_percentage=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_backup_storage_type=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None, vm_file_system_storage_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -49,6 +49,9 @@ class GetVmClusterResult:
         if data_collection_options and not isinstance(data_collection_options, list):
             raise TypeError("Expected argument 'data_collection_options' to be a list")
         pulumi.set(__self__, "data_collection_options", data_collection_options)
+        if data_storage_percentage and not isinstance(data_storage_percentage, int):
+            raise TypeError("Expected argument 'data_storage_percentage' to be a int")
+        pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_gb and not isinstance(data_storage_size_in_gb, float):
             raise TypeError("Expected argument 'data_storage_size_in_gb' to be a float")
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -109,9 +112,15 @@ class GetVmClusterResult:
         if ocpus_enabled and not isinstance(ocpus_enabled, float):
             raise TypeError("Expected argument 'ocpus_enabled' to be a float")
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if reco_storage_percentage and not isinstance(reco_storage_percentage, int):
+            raise TypeError("Expected argument 'reco_storage_percentage' to be a int")
+        pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
+        if sparse_storage_percentage and not isinstance(sparse_storage_percentage, int):
+            raise TypeError("Expected argument 'sparse_storage_percentage' to be a int")
+        pulumi.set(__self__, "sparse_storage_percentage", sparse_storage_percentage)
         if ssh_public_keys and not isinstance(ssh_public_keys, list):
             raise TypeError("Expected argument 'ssh_public_keys' to be a list")
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
@@ -201,6 +210,14 @@ class GetVmClusterResult:
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStoragePercentage")
+    def data_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "data_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -357,12 +374,28 @@ class GetVmClusterResult:
         return pulumi.get(self, "ocpus_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
         The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
@@ -471,6 +504,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             cpu_core_count=self.cpu_core_count,
             cpus_enabled=self.cpus_enabled,
             data_collection_options=self.data_collection_options,
+            data_storage_percentage=self.data_storage_percentage,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
@@ -491,7 +525,9 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             memory_size_in_gbs=self.memory_size_in_gbs,
             ocpu_count=self.ocpu_count,
             ocpus_enabled=self.ocpus_enabled,
+            reco_storage_percentage=self.reco_storage_percentage,
             shape=self.shape,
+            sparse_storage_percentage=self.sparse_storage_percentage,
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
             storage_management_type=self.storage_management_type,
@@ -538,6 +574,7 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
         data_collection_options=pulumi.get(__ret__, 'data_collection_options'),
+        data_storage_percentage=pulumi.get(__ret__, 'data_storage_percentage'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
@@ -558,7 +595,9 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
         ocpus_enabled=pulumi.get(__ret__, 'ocpus_enabled'),
+        reco_storage_percentage=pulumi.get(__ret__, 'reco_storage_percentage'),
         shape=pulumi.get(__ret__, 'shape'),
+        sparse_storage_percentage=pulumi.get(__ret__, 'sparse_storage_percentage'),
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
         storage_management_type=pulumi.get(__ret__, 'storage_management_type'),
@@ -602,6 +641,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] =
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),
         data_collection_options=pulumi.get(__response__, 'data_collection_options'),
+        data_storage_percentage=pulumi.get(__response__, 'data_storage_percentage'),
         data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
         data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
         db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
@@ -622,7 +662,9 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] =
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
         ocpus_enabled=pulumi.get(__response__, 'ocpus_enabled'),
+        reco_storage_percentage=pulumi.get(__response__, 'reco_storage_percentage'),
         shape=pulumi.get(__response__, 'shape'),
+        sparse_storage_percentage=pulumi.get(__response__, 'sparse_storage_percentage'),
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
         storage_management_type=pulumi.get(__response__, 'storage_management_type'),

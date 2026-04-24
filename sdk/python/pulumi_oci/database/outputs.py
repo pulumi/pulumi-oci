@@ -9426,7 +9426,7 @@ class CloudVmClusterDataCollectionOptions(dict):
         """
         :param _builtins.bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         :param _builtins.bool is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param _builtins.bool is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        :param _builtins.bool is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
@@ -9455,7 +9455,7 @@ class CloudVmClusterDataCollectionOptions(dict):
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
 
@@ -43850,6 +43850,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  nsg_ids: Sequence[_builtins.str],
                  ocpu_count: _builtins.float,
                  private_zone_id: _builtins.str,
+                 reco_storage_percentage: _builtins.int,
                  scan_dns_name: _builtins.str,
                  scan_dns_record_id: _builtins.str,
                  scan_ip_ids: Sequence[_builtins.str],
@@ -43858,6 +43859,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  scan_listener_port_tcp_ssl: _builtins.int,
                  security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
+                 sparse_storage_percentage: _builtins.int,
                  ssh_public_keys: Sequence[_builtins.str],
                  state: _builtins.str,
                  storage_management_type: _builtins.str,
@@ -43886,7 +43888,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpu_core_count: The number of CPU cores enabled on the cloud VM cluster.
         :param Sequence['GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param _builtins.int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param _builtins.int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param _builtins.float data_storage_size_in_tbs: The data disk group size to be allocated in TBs.
         :param _builtins.int db_node_storage_size_in_gbs: The local node storage to be allocated in GBs.
         :param Sequence[_builtins.str] db_servers: The list of DB servers.
@@ -43912,6 +43914,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param _builtins.float ocpu_count: The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param _builtins.int reco_storage_percentage: The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param _builtins.str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param _builtins.str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param Sequence[_builtins.str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -43920,6 +43923,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.int scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape: The model name of the Exadata hardware running the cloud VM cluster.
+        :param _builtins.int sparse_storage_percentage: The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param Sequence[_builtins.str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param _builtins.str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
         :param _builtins.str storage_management_type: Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
@@ -43976,6 +43980,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "private_zone_id", private_zone_id)
+        pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
@@ -43984,6 +43989,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "sparse_storage_percentage", sparse_storage_percentage)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_management_type", storage_management_type)
@@ -44091,7 +44097,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> _builtins.int:
         """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "data_storage_percentage")
 
@@ -44299,6 +44305,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         return pulumi.get(self, "private_zone_id")
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @_builtins.property
     @pulumi.getter(name="scanDnsName")
     def scan_dns_name(self) -> _builtins.str:
         """
@@ -44361,6 +44375,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The model name of the Exadata hardware running the cloud VM cluster.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
@@ -68499,6 +68521,7 @@ class GetVmClustersVmClusterResult(dict):
                  cpu_core_count: _builtins.int,
                  cpus_enabled: _builtins.int,
                  data_collection_options: Sequence['outputs.GetVmClustersVmClusterDataCollectionOptionResult'],
+                 data_storage_percentage: _builtins.int,
                  data_storage_size_in_gb: _builtins.float,
                  data_storage_size_in_tbs: _builtins.float,
                  db_node_storage_size_in_gbs: _builtins.int,
@@ -68519,7 +68542,9 @@ class GetVmClustersVmClusterResult(dict):
                  memory_size_in_gbs: _builtins.int,
                  ocpu_count: _builtins.float,
                  ocpus_enabled: _builtins.float,
+                 reco_storage_percentage: _builtins.int,
                  shape: _builtins.str,
+                 sparse_storage_percentage: _builtins.int,
                  ssh_public_keys: Sequence[_builtins.str],
                  state: _builtins.str,
                  storage_management_type: _builtins.str,
@@ -68538,6 +68563,7 @@ class GetVmClustersVmClusterResult(dict):
         :param _builtins.str compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param _builtins.int cpus_enabled: The number of enabled CPU cores.
         :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param _builtins.int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param _builtins.float data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param _builtins.float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param _builtins.int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -68556,7 +68582,9 @@ class GetVmClustersVmClusterResult(dict):
         :param _builtins.str license_model: The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int memory_size_in_gbs: The memory allocated in GBs.
+        :param _builtins.int reco_storage_percentage: The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param _builtins.str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param _builtins.int sparse_storage_percentage: The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param Sequence[_builtins.str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
@@ -68576,6 +68604,7 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
+        pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -68596,7 +68625,9 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "sparse_storage_percentage", sparse_storage_percentage)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_management_type", storage_management_type)
@@ -68661,6 +68692,14 @@ class GetVmClustersVmClusterResult(dict):
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStoragePercentage")
+    def data_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "data_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -68817,12 +68856,28 @@ class GetVmClustersVmClusterResult(dict):
         return pulumi.get(self, "ocpus_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
         The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> _builtins.int:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")

@@ -132,7 +132,7 @@ def get_deployment_peers(deployment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str deployment_id: A unique Deployment identifier.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployment peers having the 'lifecycleState' given.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -173,7 +173,7 @@ def get_deployment_peers_output(deployment_id: Optional[pulumi.Input[_builtins.s
 
     :param _builtins.str deployment_id: A unique Deployment identifier.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployment peers having the 'lifecycleState' given.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id

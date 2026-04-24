@@ -139,7 +139,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
         /// </summary>
         public readonly string LoadBalancerSubnetId;
         /// <summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string SourceDeploymentId;
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployments having the 'lifecycleState' given.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -238,10 +238,6 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
-        /// <summary>
-        /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        /// </summary>
-        public readonly string TimeUpgradeRequired;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
@@ -357,9 +353,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeRoleChanged,
 
-            string timeUpdated,
-
-            string timeUpgradeRequired)
+            string timeUpdated)
         {
             AvailabilityDomain = availabilityDomain;
             BackupSchedules = backupSchedules;
@@ -418,7 +412,6 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             TimeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             TimeRoleChanged = timeRoleChanged;
             TimeUpdated = timeUpdated;
-            TimeUpgradeRequired = timeUpgradeRequired;
         }
     }
 }

@@ -87,7 +87,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly double SizeInBytes;
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployment backups having the 'lifecycleState' given.
         /// </summary>
         public readonly string State;
         /// <summary>

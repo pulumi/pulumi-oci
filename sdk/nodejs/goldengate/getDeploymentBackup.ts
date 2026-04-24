@@ -118,7 +118,7 @@ export interface GetDeploymentBackupResult {
      */
     readonly sizeInBytes: number;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      */
     readonly state: string;
     /**

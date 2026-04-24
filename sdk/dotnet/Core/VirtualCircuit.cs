@@ -217,7 +217,7 @@ namespace Pulumi.Oci.Core
         public Output<string> ProviderServiceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        /// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         /// </summary>
         [Output("providerServiceKeyName")]
         public Output<string> ProviderServiceKeyName { get; private set; } = null!;
@@ -435,7 +435,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ProviderServiceId { get; set; }
 
         /// <summary>
-        /// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        /// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         /// </summary>
         [Input("providerServiceKeyName")]
         public Input<string>? ProviderServiceKeyName { get; set; }
@@ -615,7 +615,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ProviderServiceId { get; set; }
 
         /// <summary>
-        /// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        /// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         /// </summary>
         [Input("providerServiceKeyName")]
         public Input<string>? ProviderServiceKeyName { get; set; }

@@ -73,6 +73,8 @@ type LookupApplicationResult struct {
 	Id string `pulumi:"id"`
 	// Define the image signature verification policy for an application.
 	ImagePolicyConfigs []GetApplicationImagePolicyConfig `pulumi:"imagePolicyConfigs"`
+	// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Loggings []GetApplicationLogging `pulumi:"loggings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -164,6 +166,11 @@ func (o LookupApplicationResultOutput) Id() pulumi.StringOutput {
 // Define the image signature verification policy for an application.
 func (o LookupApplicationResultOutput) ImagePolicyConfigs() GetApplicationImagePolicyConfigArrayOutput {
 	return o.ApplyT(func(v LookupApplicationResult) []GetApplicationImagePolicyConfig { return v.ImagePolicyConfigs }).(GetApplicationImagePolicyConfigArrayOutput)
+}
+
+// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+func (o LookupApplicationResultOutput) Loggings() GetApplicationLoggingArrayOutput {
+	return o.ApplyT(func(v LookupApplicationResult) []GetApplicationLogging { return v.Loggings }).(GetApplicationLoggingArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.

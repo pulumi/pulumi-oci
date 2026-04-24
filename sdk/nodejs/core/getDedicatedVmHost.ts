@@ -47,9 +47,6 @@ export interface GetDedicatedVmHostResult {
      * The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
      */
     readonly availabilityDomain: string;
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     */
     readonly capacityBins: outputs.Core.GetDedicatedVmHostCapacityBin[];
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.

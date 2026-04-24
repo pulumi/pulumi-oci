@@ -47,6 +47,21 @@ public final class DatabaseRegistrationState extends com.pulumi.resources.Resour
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    @Import(name="connectionId")
+    private @Nullable Output<String> connectionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    public Optional<Output<String>> connectionId() {
+        return Optional.ofNullable(this.connectionId);
+    }
+
+    /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
@@ -402,6 +417,7 @@ public final class DatabaseRegistrationState extends com.pulumi.resources.Resour
     private DatabaseRegistrationState(DatabaseRegistrationState $) {
         this.aliasName = $.aliasName;
         this.compartmentId = $.compartmentId;
+        this.connectionId = $.connectionId;
         this.connectionString = $.connectionString;
         this.databaseId = $.databaseId;
         this.definedTags = $.definedTags;
@@ -485,6 +501,27 @@ public final class DatabaseRegistrationState extends com.pulumi.resources.Resour
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param connectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionId(@Nullable Output<String> connectionId) {
+            $.connectionId = connectionId;
+            return this;
+        }
+
+        /**
+         * @param connectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionId(String connectionId) {
+            return connectionId(Output.of(connectionId));
         }
 
         /**

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? AccessKeyId;
         /// <summary>
+        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        public readonly string? AccountKey;
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         /// </summary>
         public readonly string? AccountKeySecretId;
@@ -50,9 +54,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? SchemeType;
         /// <summary>
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        public readonly string? SecretAccessKey;
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         /// </summary>
         public readonly string? SecretAccessKeySecretId;
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        public readonly string? ServiceAccountKeyFile;
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         /// </summary>
@@ -65,6 +77,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         [OutputConstructor]
         private ConnectionStorage(
             string? accessKeyId,
+
+            string? accountKey,
 
             string? accountKeySecretId,
 
@@ -82,13 +96,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? schemeType,
 
+            string? secretAccessKey,
+
             string? secretAccessKeySecretId,
+
+            string? serviceAccountKeyFile,
 
             string? serviceAccountKeyFileSecretId,
 
             string storageType)
         {
             AccessKeyId = accessKeyId;
+            AccountKey = accountKey;
             AccountKeySecretId = accountKeySecretId;
             AccountName = accountName;
             Bucket = bucket;
@@ -97,7 +116,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ProjectId = projectId;
             Region = region;
             SchemeType = schemeType;
+            SecretAccessKey = secretAccessKey;
             SecretAccessKeySecretId = secretAccessKeySecretId;
+            ServiceAccountKeyFile = serviceAccountKeyFile;
             ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             StorageType = storageType;
         }

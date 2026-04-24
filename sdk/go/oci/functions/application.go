@@ -55,6 +55,9 @@ import (
 //						},
 //					},
 //				},
+//				Logging: &functions.ApplicationLoggingArgs{
+//					LineFormat: pulumi.Any(applicationLoggingLineFormat),
+//				},
 //				SecurityAttributes: pulumi.Any(applicationSecurityAttributes),
 //				Shape:              pulumi.Any(applicationShape),
 //				SyslogUrl:          pulumi.Any(applicationSyslogUrl),
@@ -96,6 +99,8 @@ type Application struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Define the image signature verification policy for an application.
 	ImagePolicyConfig ApplicationImagePolicyConfigOutput `pulumi:"imagePolicyConfig"`
+	// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Logging ApplicationLoggingOutput `pulumi:"logging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -169,6 +174,8 @@ type applicationState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Define the image signature verification policy for an application.
 	ImagePolicyConfig *ApplicationImagePolicyConfig `pulumi:"imagePolicyConfig"`
+	// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Logging *ApplicationLogging `pulumi:"logging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -204,6 +211,8 @@ type ApplicationState struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Define the image signature verification policy for an application.
 	ImagePolicyConfig ApplicationImagePolicyConfigPtrInput
+	// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Logging ApplicationLoggingPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -243,6 +252,8 @@ type applicationArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Define the image signature verification policy for an application.
 	ImagePolicyConfig *ApplicationImagePolicyConfig `pulumi:"imagePolicyConfig"`
+	// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Logging *ApplicationLogging `pulumi:"logging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -273,6 +284,8 @@ type ApplicationArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Define the image signature verification policy for an application.
 	ImagePolicyConfig ApplicationImagePolicyConfigPtrInput
+	// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Logging ApplicationLoggingPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -404,6 +417,11 @@ func (o ApplicationOutput) FreeformTags() pulumi.StringMapOutput {
 // (Updatable) Define the image signature verification policy for an application.
 func (o ApplicationOutput) ImagePolicyConfig() ApplicationImagePolicyConfigOutput {
 	return o.ApplyT(func(v *Application) ApplicationImagePolicyConfigOutput { return v.ImagePolicyConfig }).(ApplicationImagePolicyConfigOutput)
+}
+
+// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+func (o ApplicationOutput) Logging() ApplicationLoggingOutput {
+	return o.ApplyT(func(v *Application) ApplicationLoggingOutput { return v.Logging }).(ApplicationLoggingOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.

@@ -19,6 +19,12 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? AccessKeyId { get; set; }
 
         /// <summary>
+        /// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Input("accountKey")]
+        public Input<string>? AccountKey { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         /// </summary>
         [Input("accountKeySecretId")]
@@ -67,10 +73,22 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? SchemeType { get; set; }
 
         /// <summary>
+        /// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Input("secretAccessKey")]
+        public Input<string>? SecretAccessKey { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         /// </summary>
         [Input("secretAccessKeySecretId")]
         public Input<string>? SecretAccessKeySecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        /// </summary>
+        [Input("serviceAccountKeyFile")]
+        public Input<string>? ServiceAccountKeyFile { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.

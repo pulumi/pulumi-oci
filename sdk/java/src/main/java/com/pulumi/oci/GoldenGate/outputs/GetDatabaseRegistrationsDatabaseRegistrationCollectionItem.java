@@ -22,6 +22,11 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    private String connectionId;
+    /**
      * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
@@ -148,6 +153,13 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    public String connectionId() {
+        return this.connectionId;
     }
     /**
      * @return Connect descriptor or Easy Connect Naming method used to connect to a database.
@@ -321,6 +333,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
     public static final class Builder {
         private String aliasName;
         private String compartmentId;
+        private String connectionId;
         private String connectionString;
         private String databaseId;
         private Map<String,String> definedTags;
@@ -350,6 +363,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.aliasName = defaults.aliasName;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionId = defaults.connectionId;
     	      this.connectionString = defaults.connectionString;
     	      this.databaseId = defaults.databaseId;
     	      this.definedTags = defaults.definedTags;
@@ -390,6 +404,14 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
               throw new MissingRequiredPropertyException("GetDatabaseRegistrationsDatabaseRegistrationCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionId(String connectionId) {
+            if (connectionId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseRegistrationsDatabaseRegistrationCollectionItem", "connectionId");
+            }
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
@@ -588,6 +610,7 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
             final var _resultValue = new GetDatabaseRegistrationsDatabaseRegistrationCollectionItem();
             _resultValue.aliasName = aliasName;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionId = connectionId;
             _resultValue.connectionString = connectionString;
             _resultValue.databaseId = databaseId;
             _resultValue.definedTags = definedTags;

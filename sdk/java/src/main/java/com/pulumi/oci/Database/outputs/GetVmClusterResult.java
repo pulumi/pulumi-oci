@@ -50,6 +50,11 @@ public final class GetVmClusterResult {
      */
     private List<GetVmClusterDataCollectionOption> dataCollectionOptions;
     /**
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    private Integer dataStoragePercentage;
+    /**
      * @return Size of the DATA disk group in GBs.
      * 
      */
@@ -142,10 +147,20 @@ public final class GetVmClusterResult {
     private Double ocpuCount;
     private Double ocpusEnabled;
     /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    private Integer recoStoragePercentage;
+    /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
     private String shape;
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    private Integer sparseStoragePercentage;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
@@ -248,6 +263,13 @@ public final class GetVmClusterResult {
      */
     public List<GetVmClusterDataCollectionOption> dataCollectionOptions() {
         return this.dataCollectionOptions;
+    }
+    /**
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Integer dataStoragePercentage() {
+        return this.dataStoragePercentage;
     }
     /**
      * @return Size of the DATA disk group in GBs.
@@ -382,11 +404,25 @@ public final class GetVmClusterResult {
         return this.ocpusEnabled;
     }
     /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Integer recoStoragePercentage() {
+        return this.recoStoragePercentage;
+    }
+    /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
     public String shape() {
         return this.shape;
+    }
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Integer sparseStoragePercentage() {
+        return this.sparseStoragePercentage;
     }
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -485,6 +521,7 @@ public final class GetVmClusterResult {
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
         private List<GetVmClusterDataCollectionOption> dataCollectionOptions;
+        private Integer dataStoragePercentage;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
@@ -505,7 +542,9 @@ public final class GetVmClusterResult {
         private Integer memorySizeInGbs;
         private Double ocpuCount;
         private Double ocpusEnabled;
+        private Integer recoStoragePercentage;
         private String shape;
+        private Integer sparseStoragePercentage;
         private List<String> sshPublicKeys;
         private String state;
         private String storageManagementType;
@@ -528,6 +567,7 @@ public final class GetVmClusterResult {
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
+    	      this.dataStoragePercentage = defaults.dataStoragePercentage;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -548,7 +588,9 @@ public final class GetVmClusterResult {
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
+    	      this.recoStoragePercentage = defaults.recoStoragePercentage;
     	      this.shape = defaults.shape;
+    	      this.sparseStoragePercentage = defaults.sparseStoragePercentage;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
     	      this.storageManagementType = defaults.storageManagementType;
@@ -624,6 +666,14 @@ public final class GetVmClusterResult {
         }
         public Builder dataCollectionOptions(GetVmClusterDataCollectionOption... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
+        }
+        @CustomType.Setter
+        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
+            if (dataStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "dataStoragePercentage");
+            }
+            this.dataStoragePercentage = dataStoragePercentage;
+            return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
@@ -792,11 +842,27 @@ public final class GetVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder recoStoragePercentage(Integer recoStoragePercentage) {
+            if (recoStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "recoStoragePercentage");
+            }
+            this.recoStoragePercentage = recoStoragePercentage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetVmClusterResult", "shape");
             }
             this.shape = shape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
+            if (sparseStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "sparseStoragePercentage");
+            }
+            this.sparseStoragePercentage = sparseStoragePercentage;
             return this;
         }
         @CustomType.Setter
@@ -907,6 +973,7 @@ public final class GetVmClusterResult {
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.cpusEnabled = cpusEnabled;
             _resultValue.dataCollectionOptions = dataCollectionOptions;
+            _resultValue.dataStoragePercentage = dataStoragePercentage;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorageSizeInTbs = dataStorageSizeInTbs;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -927,7 +994,9 @@ public final class GetVmClusterResult {
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.ocpusEnabled = ocpusEnabled;
+            _resultValue.recoStoragePercentage = recoStoragePercentage;
             _resultValue.shape = shape;
+            _resultValue.sparseStoragePercentage = sparseStoragePercentage;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
             _resultValue.storageManagementType = storageManagementType;

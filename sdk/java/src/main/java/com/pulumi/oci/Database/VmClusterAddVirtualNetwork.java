@@ -165,6 +165,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
         return this.dataCollectionOptions;
     }
     /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> dataStoragePercentage;
+
+    /**
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> dataStoragePercentage() {
+        return this.dataStoragePercentage;
+    }
+    /**
      * Size of the DATA disk group in GBs.
      * 
      */
@@ -409,6 +423,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
         return this.ocpusEnabled;
     }
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="recoStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> recoStoragePercentage;
+
+    /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> recoStoragePercentage() {
+        return this.recoStoragePercentage;
+    }
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
@@ -421,6 +449,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      */
     public Output<String> shape() {
         return this.shape;
+    }
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="sparseStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> sparseStoragePercentage;
+
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> sparseStoragePercentage() {
+        return this.sparseStoragePercentage;
     }
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.

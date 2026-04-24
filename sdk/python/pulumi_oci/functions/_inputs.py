@@ -19,6 +19,8 @@ __all__ = [
     'ApplicationImagePolicyConfigArgsDict',
     'ApplicationImagePolicyConfigKeyDetailArgs',
     'ApplicationImagePolicyConfigKeyDetailArgsDict',
+    'ApplicationLoggingArgs',
+    'ApplicationLoggingArgsDict',
     'ApplicationTraceConfigArgs',
     'ApplicationTraceConfigArgsDict',
     'FunctionFailureDestinationArgs',
@@ -133,6 +135,35 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "kms_key_id", value)
+
+
+class ApplicationLoggingArgsDict(TypedDict):
+    line_format: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify the format of log lines emitted by functions in this application.
+    """
+
+@pulumi.input_type
+class ApplicationLoggingArgs:
+    def __init__(__self__, *,
+                 line_format: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] line_format: (Updatable) Specify the format of log lines emitted by functions in this application.
+        """
+        if line_format is not None:
+            pulumi.set(__self__, "line_format", line_format)
+
+    @_builtins.property
+    @pulumi.getter(name="lineFormat")
+    def line_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specify the format of log lines emitted by functions in this application.
+        """
+        return pulumi.get(self, "line_format")
+
+    @line_format.setter
+    def line_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "line_format", value)
 
 
 class ApplicationTraceConfigArgsDict(TypedDict):

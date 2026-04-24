@@ -217,7 +217,6 @@ class _DedicatedVmHostState:
         Input properties used for looking up and filtering DedicatedVmHost resources.
 
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
         :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -291,9 +290,6 @@ class _DedicatedVmHostState:
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
-        """
-        A list of total and remaining CPU and memory per capacity bucket.
-        """
         return pulumi.get(self, "capacity_bins")
 
     @capacity_bins.setter
@@ -723,7 +719,6 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
         :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -780,9 +775,6 @@ class DedicatedVmHost(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> pulumi.Output[Sequence['outputs.DedicatedVmHostCapacityBin']]:
-        """
-        A list of total and remaining CPU and memory per capacity bucket.
-        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property

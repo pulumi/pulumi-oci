@@ -211,9 +211,7 @@ class ConnectionBootstrapServer(dict):
         """
         :param _builtins.str host: (Updatable) The name or address of a host.
         :param _builtins.int port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param _builtins.str private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param _builtins.str private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         if host is not None:
             pulumi.set(__self__, "host", host)
@@ -242,9 +240,7 @@ class ConnectionBootstrapServer(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[_builtins.str]:
         """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
@@ -258,6 +254,8 @@ class ConnectionCatalog(dict):
             suggest = "catalog_type"
         elif key == "clientId":
             suggest = "client_id"
+        elif key == "clientSecret":
+            suggest = "client_secret"
         elif key == "clientSecretSecretId":
             suggest = "client_secret_secret_id"
         elif key == "glueId":
@@ -282,20 +280,24 @@ class ConnectionCatalog(dict):
                  catalog_type: _builtins.str,
                  branch: Optional[_builtins.str] = None,
                  client_id: Optional[_builtins.str] = None,
+                 client_secret: Optional[_builtins.str] = None,
                  client_secret_secret_id: Optional[_builtins.str] = None,
                  glue_id: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
                  principal_role: Optional[_builtins.str] = None,
+                 properties: Optional[_builtins.str] = None,
                  properties_secret_id: Optional[_builtins.str] = None,
                  uri: Optional[_builtins.str] = None):
         """
         :param _builtins.str catalog_type: (Updatable) The catalog type.
         :param _builtins.str branch: (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
         :param _builtins.str client_id: (Updatable) The OAuth client ID used for authentication.
-        :param _builtins.str client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        :param _builtins.str client_secret: (Updatable) Client secret required to connect to Polaris.
+        :param _builtins.str client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         :param _builtins.str glue_id: (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
         :param _builtins.str name: (Updatable) The catalog name within Polaris where Iceberg tables are registered.
         :param _builtins.str principal_role: (Updatable) The Snowflake role used to access Polaris.
+        :param _builtins.str properties: (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
         :param _builtins.str properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param _builtins.str uri: (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
@@ -304,6 +306,8 @@ class ConnectionCatalog(dict):
             pulumi.set(__self__, "branch", branch)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
             pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         if glue_id is not None:
@@ -312,6 +316,8 @@ class ConnectionCatalog(dict):
             pulumi.set(__self__, "name", name)
         if principal_role is not None:
             pulumi.set(__self__, "principal_role", principal_role)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
         if properties_secret_id is not None:
             pulumi.set(__self__, "properties_secret_id", properties_secret_id)
         if uri is not None:
@@ -342,10 +348,19 @@ class ConnectionCatalog(dict):
         return pulumi.get(self, "client_id")
 
     @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
+    def client_secret(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Client secret required to connect to Polaris.
+        """
+        return pulumi.get(self, "client_secret")
+
+    @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -372,6 +387,15 @@ class ConnectionCatalog(dict):
         (Updatable) The Snowflake role used to access Polaris.
         """
         return pulumi.get(self, "principal_role")
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
+    def properties(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        """
+        return pulumi.get(self, "properties")
 
     @_builtins.property
     @pulumi.getter(name="propertiesSecretId")
@@ -508,6 +532,8 @@ class ConnectionStorage(dict):
             suggest = "storage_type"
         elif key == "accessKeyId":
             suggest = "access_key_id"
+        elif key == "accountKey":
+            suggest = "account_key"
         elif key == "accountKeySecretId":
             suggest = "account_key_secret_id"
         elif key == "accountName":
@@ -516,8 +542,12 @@ class ConnectionStorage(dict):
             suggest = "project_id"
         elif key == "schemeType":
             suggest = "scheme_type"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
         elif key == "secretAccessKeySecretId":
             suggest = "secret_access_key_secret_id"
+        elif key == "serviceAccountKeyFile":
+            suggest = "service_account_key_file"
         elif key == "serviceAccountKeyFileSecretId":
             suggest = "service_account_key_file_secret_id"
 
@@ -535,6 +565,7 @@ class ConnectionStorage(dict):
     def __init__(__self__, *,
                  storage_type: _builtins.str,
                  access_key_id: Optional[_builtins.str] = None,
+                 account_key: Optional[_builtins.str] = None,
                  account_key_secret_id: Optional[_builtins.str] = None,
                  account_name: Optional[_builtins.str] = None,
                  bucket: Optional[_builtins.str] = None,
@@ -543,11 +574,14 @@ class ConnectionStorage(dict):
                  project_id: Optional[_builtins.str] = None,
                  region: Optional[_builtins.str] = None,
                  scheme_type: Optional[_builtins.str] = None,
+                 secret_access_key: Optional[_builtins.str] = None,
                  secret_access_key_secret_id: Optional[_builtins.str] = None,
+                 service_account_key_file: Optional[_builtins.str] = None,
                  service_account_key_file_secret_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str storage_type: (Updatable) The storage type used in the Iceberg connection.
         :param _builtins.str access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket.
+        :param _builtins.str account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param _builtins.str account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param _builtins.str account_name: (Updatable) Sets the Azure storage account name.
         :param _builtins.str bucket: (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
@@ -556,12 +590,16 @@ class ConnectionStorage(dict):
         :param _builtins.str project_id: (Updatable) The Google Cloud Project where the bucket exists.
         :param _builtins.str region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: (Updatable) The scheme of the storage.
+        :param _builtins.str secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param _builtins.str secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        :param _builtins.str service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param _builtins.str service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         pulumi.set(__self__, "storage_type", storage_type)
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
         if account_key_secret_id is not None:
             pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         if account_name is not None:
@@ -578,8 +616,12 @@ class ConnectionStorage(dict):
             pulumi.set(__self__, "region", region)
         if scheme_type is not None:
             pulumi.set(__self__, "scheme_type", scheme_type)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
             pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if service_account_key_file is not None:
+            pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if service_account_key_file_secret_id is not None:
             pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
 
@@ -598,6 +640,15 @@ class ConnectionStorage(dict):
         (Updatable) Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+    def account_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "account_key")
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
@@ -664,12 +715,30 @@ class ConnectionStorage(dict):
         return pulumi.get(self, "scheme_type")
 
     @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
+    def service_account_key_file(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "service_account_key_file")
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
@@ -1282,6 +1351,7 @@ class DeploymentOggData(dict):
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
+    @_utilities.deprecated("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def admin_password(self) -> Optional[_builtins.str]:
         """
         (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
@@ -2187,8 +2257,7 @@ class GetConnectionBootstrapServerResult(dict):
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param _builtins.int port: The port of an endpoint usually specified for a connection.
-        :param _builtins.str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param _builtins.str private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "port", port)
@@ -2216,8 +2285,7 @@ class GetConnectionBootstrapServerResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> _builtins.str:
         """
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
@@ -2228,10 +2296,12 @@ class GetConnectionCatalogResult(dict):
                  branch: _builtins.str,
                  catalog_type: _builtins.str,
                  client_id: _builtins.str,
+                 client_secret: _builtins.str,
                  client_secret_secret_id: _builtins.str,
                  glue_id: _builtins.str,
                  name: _builtins.str,
                  principal_role: _builtins.str,
+                 properties: _builtins.str,
                  properties_secret_id: _builtins.str,
                  uri: _builtins.str):
         """
@@ -2248,10 +2318,12 @@ class GetConnectionCatalogResult(dict):
         pulumi.set(__self__, "branch", branch)
         pulumi.set(__self__, "catalog_type", catalog_type)
         pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
         pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         pulumi.set(__self__, "glue_id", glue_id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "principal_role", principal_role)
+        pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "properties_secret_id", properties_secret_id)
         pulumi.set(__self__, "uri", uri)
 
@@ -2278,6 +2350,12 @@ class GetConnectionCatalogResult(dict):
         Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         """
         return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
+    def client_secret(self) -> _builtins.str:
+        return pulumi.get(self, "client_secret")
 
     @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
@@ -2310,6 +2388,12 @@ class GetConnectionCatalogResult(dict):
         The Snowflake role used to access Polaris.
         """
         return pulumi.get(self, "principal_role")
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
+    def properties(self) -> _builtins.str:
+        return pulumi.get(self, "properties")
 
     @_builtins.property
     @pulumi.getter(name="propertiesSecretId")
@@ -2401,6 +2485,7 @@ class GetConnectionLockResult(dict):
 class GetConnectionStorageResult(dict):
     def __init__(__self__, *,
                  access_key_id: _builtins.str,
+                 account_key: _builtins.str,
                  account_key_secret_id: _builtins.str,
                  account_name: _builtins.str,
                  bucket: _builtins.str,
@@ -2409,7 +2494,9 @@ class GetConnectionStorageResult(dict):
                  project_id: _builtins.str,
                  region: _builtins.str,
                  scheme_type: _builtins.str,
+                 secret_access_key: _builtins.str,
                  secret_access_key_secret_id: _builtins.str,
+                 service_account_key_file: _builtins.str,
                  service_account_key_file_secret_id: _builtins.str,
                  storage_type: _builtins.str):
         """
@@ -2418,7 +2505,7 @@ class GetConnectionStorageResult(dict):
         :param _builtins.str account_name: Sets the Azure storage account name.
         :param _builtins.str bucket: Google Cloud Storage bucket where Iceberg stores metadata and data files.
         :param _builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
-        :param _builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param _builtins.str endpoint: A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         :param _builtins.str project_id: The Google Cloud Project where the bucket exists.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: The scheme of the storage.
@@ -2427,6 +2514,7 @@ class GetConnectionStorageResult(dict):
         :param _builtins.str storage_type: The storage type used in the Iceberg connection.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "account_key", account_key)
         pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "bucket", bucket)
@@ -2435,7 +2523,9 @@ class GetConnectionStorageResult(dict):
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "scheme_type", scheme_type)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
         pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
         pulumi.set(__self__, "storage_type", storage_type)
 
@@ -2446,6 +2536,12 @@ class GetConnectionStorageResult(dict):
         Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+    def account_key(self) -> _builtins.str:
+        return pulumi.get(self, "account_key")
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
@@ -2483,7 +2579,7 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -2512,12 +2608,24 @@ class GetConnectionStorageResult(dict):
         return pulumi.get(self, "scheme_type")
 
     @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> _builtins.str:
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
+    def service_account_key_file(self) -> _builtins.str:
+        return pulumi.get(self, "service_account_key_file")
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
@@ -2712,7 +2820,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str description: Metadata about this specific object.
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param _builtins.bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
-        :param _builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param _builtins.str endpoint: A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         :param _builtins.str fingerprint: Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param _builtins.str host: The name or address of a host.
@@ -2733,8 +2841,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Sequence[_builtins.str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
         :param _builtins.int port: The port of an endpoint usually specified for a connection.
-        :param _builtins.str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param _builtins.str private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         :param _builtins.str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param _builtins.str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param _builtins.str producer_properties: The base64 encoded content of the producer.properties file.
@@ -2751,7 +2858,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str servers: Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
                If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
         :param _builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-        :param _builtins.str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param _builtins.str session_mode: Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
         :param _builtins.bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param _builtins.bool should_use_resource_principal: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param _builtins.bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
@@ -2919,6 +3026,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> _builtins.str:
         return pulumi.get(self, "account_key")
 
@@ -3011,6 +3119,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
     def client_secret(self) -> _builtins.str:
         return pulumi.get(self, "client_secret")
 
@@ -3167,7 +3276,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -3244,6 +3353,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
+    @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
     def jndi_security_credentials(self) -> _builtins.str:
         return pulumi.get(self, "jndi_security_credentials")
 
@@ -3273,11 +3383,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
+    @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
     def key_store(self) -> _builtins.str:
         return pulumi.get(self, "key_store")
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
+    @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
     def key_store_password(self) -> _builtins.str:
         return pulumi.get(self, "key_store_password")
 
@@ -3323,6 +3435,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def password(self) -> _builtins.str:
         return pulumi.get(self, "password")
 
@@ -3346,13 +3459,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> _builtins.str:
         """
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
     def private_key_file(self) -> _builtins.str:
         return pulumi.get(self, "private_key_file")
 
@@ -3366,6 +3479,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
     def private_key_passphrase(self) -> _builtins.str:
         return pulumi.get(self, "private_key_passphrase")
 
@@ -3419,6 +3533,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
+    @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
     def sas_token(self) -> _builtins.str:
         return pulumi.get(self, "sas_token")
 
@@ -3432,6 +3547,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> _builtins.str:
         return pulumi.get(self, "secret_access_key")
 
@@ -3472,6 +3588,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> _builtins.str:
         return pulumi.get(self, "service_account_key_file")
 
@@ -3487,7 +3604,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> _builtins.str:
         """
-        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
         """
         return pulumi.get(self, "session_mode")
 
@@ -3533,6 +3650,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
+    @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
     def ssl_client_keystash(self) -> _builtins.str:
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -3546,6 +3664,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
+    @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
     def ssl_client_keystoredb(self) -> _builtins.str:
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -3567,11 +3686,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
+    @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
     def ssl_key(self) -> _builtins.str:
         return pulumi.get(self, "ssl_key")
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
+    @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
     def ssl_key_password(self) -> _builtins.str:
         return pulumi.get(self, "ssl_key_password")
 
@@ -3714,11 +3835,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
+    @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
     def tls_certificate_key_file(self) -> _builtins.str:
         return pulumi.get(self, "tls_certificate_key_file")
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
     def tls_certificate_key_file_password(self) -> _builtins.str:
         return pulumi.get(self, "tls_certificate_key_file_password")
 
@@ -3746,11 +3869,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
     def trust_store(self) -> _builtins.str:
         return pulumi.get(self, "trust_store")
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
+    @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
     def trust_store_password(self) -> _builtins.str:
         return pulumi.get(self, "trust_store_password")
 
@@ -3804,6 +3929,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
     def wallet(self) -> _builtins.str:
         return pulumi.get(self, "wallet")
 
@@ -3856,8 +3982,7 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param _builtins.int port: The port of an endpoint usually specified for a connection.
-        :param _builtins.str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param _builtins.str private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "port", port)
@@ -3885,8 +4010,7 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> _builtins.str:
         """
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
@@ -3897,10 +4021,12 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
                  branch: _builtins.str,
                  catalog_type: _builtins.str,
                  client_id: _builtins.str,
+                 client_secret: _builtins.str,
                  client_secret_secret_id: _builtins.str,
                  glue_id: _builtins.str,
                  name: _builtins.str,
                  principal_role: _builtins.str,
+                 properties: _builtins.str,
                  properties_secret_id: _builtins.str,
                  uri: _builtins.str):
         """
@@ -3917,10 +4043,12 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
         pulumi.set(__self__, "branch", branch)
         pulumi.set(__self__, "catalog_type", catalog_type)
         pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
         pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         pulumi.set(__self__, "glue_id", glue_id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "principal_role", principal_role)
+        pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "properties_secret_id", properties_secret_id)
         pulumi.set(__self__, "uri", uri)
 
@@ -3947,6 +4075,12 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
         Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         """
         return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
+    def client_secret(self) -> _builtins.str:
+        return pulumi.get(self, "client_secret")
 
     @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
@@ -3979,6 +4113,12 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
         The Snowflake role used to access Polaris.
         """
         return pulumi.get(self, "principal_role")
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
+    def properties(self) -> _builtins.str:
+        return pulumi.get(self, "properties")
 
     @_builtins.property
     @pulumi.getter(name="propertiesSecretId")
@@ -4070,6 +4210,7 @@ class GetConnectionsConnectionCollectionItemLockResult(dict):
 class GetConnectionsConnectionCollectionItemStorageResult(dict):
     def __init__(__self__, *,
                  access_key_id: _builtins.str,
+                 account_key: _builtins.str,
                  account_key_secret_id: _builtins.str,
                  account_name: _builtins.str,
                  bucket: _builtins.str,
@@ -4078,7 +4219,9 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
                  project_id: _builtins.str,
                  region: _builtins.str,
                  scheme_type: _builtins.str,
+                 secret_access_key: _builtins.str,
                  secret_access_key_secret_id: _builtins.str,
+                 service_account_key_file: _builtins.str,
                  service_account_key_file_secret_id: _builtins.str,
                  storage_type: _builtins.str):
         """
@@ -4087,7 +4230,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
         :param _builtins.str account_name: Sets the Azure storage account name.
         :param _builtins.str bucket: Google Cloud Storage bucket where Iceberg stores metadata and data files.
         :param _builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
-        :param _builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param _builtins.str endpoint: A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         :param _builtins.str project_id: The Google Cloud Project where the bucket exists.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: The scheme of the storage.
@@ -4096,6 +4239,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
         :param _builtins.str storage_type: The storage type used in the Iceberg connection.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "account_key", account_key)
         pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "bucket", bucket)
@@ -4104,7 +4248,9 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "scheme_type", scheme_type)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
         pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
         pulumi.set(__self__, "storage_type", storage_type)
 
@@ -4115,6 +4261,12 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
         Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+    def account_key(self) -> _builtins.str:
+        return pulumi.get(self, "account_key")
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
@@ -4152,7 +4304,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -4181,12 +4333,24 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
         return pulumi.get(self, "scheme_type")
 
     @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> _builtins.str:
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
+    def service_account_key_file(self) -> _builtins.str:
+        return pulumi.get(self, "service_account_key_file")
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
@@ -4255,6 +4419,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     def __init__(__self__, *,
                  alias_name: _builtins.str,
                  compartment_id: _builtins.str,
+                 connection_id: _builtins.str,
                  connection_string: _builtins.str,
                  database_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -4282,6 +4447,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         """
         :param _builtins.str alias_name: Credential store alias.
         :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+        :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
         :param _builtins.str connection_string: Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param Mapping[str, _builtins.str] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -4307,6 +4473,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         """
         pulumi.set(__self__, "alias_name", alias_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "connection_string", connection_string)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4347,6 +4514,14 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        """
+        return pulumi.get(self, "connection_id")
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
@@ -4745,7 +4920,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param _builtins.str object: Name of the object to be uploaded to object storage
         :param _builtins.str ogg_version: Version of OGG
         :param _builtins.float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+        :param _builtins.str state: A filter to return only the deployment backups having the 'lifecycleState' given.
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -4931,7 +5106,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only the resources that match the 'lifecycleState' given.
+        A filter to return only the deployment backups having the 'lifecycleState' given.
         """
         return pulumi.get(self, "state")
 
@@ -5758,6 +5933,7 @@ class GetDeploymentOggDataResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
+    @_utilities.deprecated("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def admin_password(self) -> _builtins.str:
         return pulumi.get(self, "admin_password")
 
@@ -5926,7 +6102,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         :param _builtins.str peer_role: The type of the deployment role.
         :param _builtins.str peer_type: The type of the deployment peer.
         :param _builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
-        :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+        :param _builtins.str state: A filter to return only the deployment peers having the 'lifecycleState' given.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_last_synced: The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -6016,7 +6192,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only the resources that match the 'lifecycleState' given.
+        A filter to return only the deployment peers having the 'lifecycleState' given.
         """
         return pulumi.get(self, "state")
 
@@ -6417,7 +6593,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param _builtins.str ogg_version: Version of OGG
         :param _builtins.str previous_ogg_version: Version of OGG
         :param _builtins.str release_type: The type of release.
-        :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+        :param _builtins.str state: A filter to return only the deployment upgrades having the 'lifecycleState' given.
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_finished: The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -6609,7 +6785,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only the resources that match the 'lifecycleState' given.
+        A filter to return only the deployment upgrades having the 'lifecycleState' given.
         """
         return pulumi.get(self, "state")
 
@@ -6910,8 +7086,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  time_of_next_maintenance: _builtins.str,
                  time_ogg_version_supported_until: _builtins.str,
                  time_role_changed: _builtins.str,
-                 time_updated: _builtins.str,
-                 time_upgrade_required: _builtins.str):
+                 time_updated: _builtins.str):
         """
         :param _builtins.str availability_domain: The availability domain of a placement.
         :param Sequence['GetDeploymentsDeploymentCollectionItemBackupScheduleArgs'] backup_schedules: Defines the schedule of the deployment backup.
@@ -6944,7 +7119,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param _builtins.str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
         :param _builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param _builtins.str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        :param _builtins.str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
@@ -6957,7 +7132,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str public_ip_address: The public IP address representing the access point for the Deployment.
         :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+        :param _builtins.str state: A filter to return only the deployments having the 'lifecycleState' given.
         :param _builtins.str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -6969,7 +7144,6 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param _builtins.str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_schedules", backup_schedules)
@@ -7028,7 +7202,6 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         pulumi.set(__self__, "time_role_changed", time_role_changed)
         pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -7245,6 +7418,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
+    @_utilities.deprecated("""The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""")
     def is_storage_utilization_limit_exceeded(self) -> _builtins.bool:
         """
         Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -7287,7 +7461,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -7391,7 +7565,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only the resources that match the 'lifecycleState' given.
+        A filter to return only the deployments having the 'lifecycleState' given.
         """
         return pulumi.get(self, "state")
 
@@ -7482,14 +7656,6 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> _builtins.str:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        return pulumi.get(self, "time_upgrade_required")
 
 
 @pulumi.output_type
@@ -7834,6 +8000,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
+    @_utilities.deprecated("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def admin_password(self) -> _builtins.str:
         return pulumi.get(self, "admin_password")
 

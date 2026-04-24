@@ -75,7 +75,7 @@ type GetDeploymentsArgs struct {
 	Fqdn *string `pulumi:"fqdn"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployments having the 'lifecycleState' given.
 	State *string `pulumi:"state"`
 	// The connection type which the deployment must support.
 	SupportedConnectionType *string `pulumi:"supportedConnectionType"`
@@ -100,7 +100,7 @@ type GetDeploymentsResult struct {
 	Id string `pulumi:"id"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State                   *string `pulumi:"state"`
 	SupportedConnectionType *string `pulumi:"supportedConnectionType"`
 }
@@ -131,7 +131,7 @@ type GetDeploymentsOutputArgs struct {
 	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState pulumi.StringPtrInput `pulumi:"lifecycleSubState"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployments having the 'lifecycleState' given.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The connection type which the deployment must support.
 	SupportedConnectionType pulumi.StringPtrInput `pulumi:"supportedConnectionType"`
@@ -203,7 +203,7 @@ func (o GetDeploymentsResultOutput) LifecycleSubState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment.
 func (o GetDeploymentsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

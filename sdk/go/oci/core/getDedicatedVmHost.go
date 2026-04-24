@@ -59,9 +59,8 @@ type LookupDedicatedVmHostArgs struct {
 // A collection of values returned by getDedicatedVmHost.
 type LookupDedicatedVmHostResult struct {
 	// The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// A list of total and remaining CPU and memory per capacity bucket.
-	CapacityBins []GetDedicatedVmHostCapacityBin `pulumi:"capacityBins"`
+	AvailabilityDomain string                          `pulumi:"availabilityDomain"`
+	CapacityBins       []GetDedicatedVmHostCapacityBin `pulumi:"capacityBins"`
 	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
 	CapacityConfig string `pulumi:"capacityConfig"`
 	// The OCID of the compartment that contains the dedicated virtual machine host.
@@ -138,7 +137,6 @@ func (o LookupDedicatedVmHostResultOutput) AvailabilityDomain() pulumi.StringOut
 	return o.ApplyT(func(v LookupDedicatedVmHostResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// A list of total and remaining CPU and memory per capacity bucket.
 func (o LookupDedicatedVmHostResultOutput) CapacityBins() GetDedicatedVmHostCapacityBinArrayOutput {
 	return o.ApplyT(func(v LookupDedicatedVmHostResult) []GetDedicatedVmHostCapacityBin { return v.CapacityBins }).(GetDedicatedVmHostCapacityBinArrayOutput)
 }

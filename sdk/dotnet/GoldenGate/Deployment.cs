@@ -212,7 +212,18 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+        /// 
+        /// Rules:
+        /// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        /// * Update:
+        /// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        /// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+        /// 
+        /// Validation:
+        /// * Must reference a public subnet.
+        /// * Must be a regional subnet.
+        /// * Must be in the same VCN as subnetId.
         /// </summary>
         [Output("loadBalancerSubnetId")]
         public Output<string> LoadBalancerSubnetId { get; private set; } = null!;
@@ -290,7 +301,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SourceDeploymentId { get; private set; } = null!;
 
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -364,12 +375,6 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
-
-        /// <summary>
-        /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        /// </summary>
-        [Output("timeUpgradeRequired")]
-        public Output<string> TimeUpgradeRequired { get; private set; } = null!;
 
 
         /// <summary>
@@ -547,7 +552,18 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? LicenseModel { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+        /// 
+        /// Rules:
+        /// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        /// * Update:
+        /// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        /// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+        /// 
+        /// Validation:
+        /// * Must reference a public subnet.
+        /// * Must be a regional subnet.
+        /// * Must be in the same VCN as subnetId.
         /// </summary>
         [Input("loadBalancerSubnetId")]
         public Input<string>? LoadBalancerSubnetId { get; set; }
@@ -625,7 +641,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SourceDeploymentId { get; set; }
 
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -862,7 +878,18 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+        /// 
+        /// Rules:
+        /// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        /// * Update:
+        /// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        /// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+        /// 
+        /// Validation:
+        /// * Must reference a public subnet.
+        /// * Must be a regional subnet.
+        /// * Must be in the same VCN as subnetId.
         /// </summary>
         [Input("loadBalancerSubnetId")]
         public Input<string>? LoadBalancerSubnetId { get; set; }
@@ -964,7 +991,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SourceDeploymentId { get; set; }
 
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -1044,12 +1071,6 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
-
-        /// <summary>
-        /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        /// </summary>
-        [Input("timeUpgradeRequired")]
-        public Input<string>? TimeUpgradeRequired { get; set; }
 
         public DeploymentState()
         {

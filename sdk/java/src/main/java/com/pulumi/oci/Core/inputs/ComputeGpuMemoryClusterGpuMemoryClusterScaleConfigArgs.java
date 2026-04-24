@@ -48,14 +48,14 @@ public final class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs extend
     }
 
     /**
-     * (Updatable) The configured target size for the GPU Memory cluster.
+     * (Updatable) The configured target size for the GPU Memory Cluster.
      * 
      */
     @Import(name="targetSize")
     private @Nullable Output<String> targetSize;
 
     /**
-     * @return (Updatable) The configured target size for the GPU Memory cluster.
+     * @return (Updatable) The configured target size for the GPU Memory Cluster.
      * 
      */
     public Optional<Output<String>> targetSize() {
@@ -131,7 +131,7 @@ public final class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs extend
         }
 
         /**
-         * @param targetSize (Updatable) The configured target size for the GPU Memory cluster.
+         * @param targetSize (Updatable) The configured target size for the GPU Memory Cluster.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs extend
         }
 
         /**
-         * @param targetSize (Updatable) The configured target size for the GPU Memory cluster.
+         * @param targetSize (Updatable) The configured target size for the GPU Memory Cluster.
          * 
          * @return builder
          * 

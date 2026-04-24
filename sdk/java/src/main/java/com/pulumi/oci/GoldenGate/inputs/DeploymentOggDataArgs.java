@@ -20,14 +20,22 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
+     * @deprecated
+     * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
     @Import(name="adminPassword")
     private @Nullable Output<String> adminPassword;
 
     /**
      * @return (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as &#39;$&#39;, &#39;^&#39;, or &#39;?&#39; are not allowed. This field will be deprecated and replaced by &#34;passwordSecretId&#34;.
      * 
+     * @deprecated
+     * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
     public Optional<Output<String>> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
     }
@@ -205,7 +213,11 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+         * 
          */
+        @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
         public Builder adminPassword(@Nullable Output<String> adminPassword) {
             $.adminPassword = adminPassword;
             return this;
@@ -216,7 +228,11 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+         * 
          */
+        @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
         public Builder adminPassword(String adminPassword) {
             return adminPassword(Output.of(adminPassword));
         }

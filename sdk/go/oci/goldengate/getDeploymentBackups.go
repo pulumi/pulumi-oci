@@ -62,7 +62,7 @@ type GetDeploymentBackupsArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetDeploymentBackupsFilter `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment backups having the 'lifecycleState' given.
 	State *string `pulumi:"state"`
 }
 
@@ -79,7 +79,7 @@ type GetDeploymentBackupsResult struct {
 	Filters     []GetDeploymentBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Backup.
 	State *string `pulumi:"state"`
 }
 
@@ -101,7 +101,7 @@ type GetDeploymentBackupsOutputArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput                `pulumi:"displayName"`
 	Filters     GetDeploymentBackupsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment backups having the 'lifecycleState' given.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -155,7 +155,7 @@ func (o GetDeploymentBackupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment Backup.
 func (o GetDeploymentBackupsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

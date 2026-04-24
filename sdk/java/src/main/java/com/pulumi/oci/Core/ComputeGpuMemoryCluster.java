@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.inputs.ComputeGpuMemoryClusterState;
 import com.pulumi.oci.Core.outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -62,6 +63,7 @@ import javax.annotation.Nullable;
  *                 .targetSize(computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize)
  *                 .build())
  *             .gpuMemoryFabricId(testGpuMemoryFabric.id())
+ *             .privateIpIds(computeGpuMemoryClusterPrivateIpIds)
  *             .size(computeGpuMemoryClusterSize)
  *             .build());
  * 
@@ -82,28 +84,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster")
 public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource {
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the GPU memory cluster.
+     * @return The availability domain of the GPU Memory Cluster.
      * 
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -208,7 +210,21 @@ public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource
         return this.instanceConfigurationId;
     }
     /**
-     * (Updatable) The number of instances currently running in the GpuMemoryCluster
+     * (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    @Export(name="privateIpIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> privateIpIds;
+
+    /**
+     * @return (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    public Output<List<String>> privateIpIds() {
+        return this.privateIpIds;
+    }
+    /**
+     * (Updatable) The desired number of instances for the GPU Memory Cluster.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -218,7 +234,7 @@ public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource
     private Output<String> size;
 
     /**
-     * @return (Updatable) The number of instances currently running in the GpuMemoryCluster
+     * @return (Updatable) The desired number of instances for the GPU Memory Cluster.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,14 +244,14 @@ public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource
         return this.size;
     }
     /**
-     * The lifecycle state of the GPU memory cluster
+     * The lifecycle state of the GPU Memory Cluster
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The lifecycle state of the GPU memory cluster
+     * @return The lifecycle state of the GPU Memory Cluster
      * 
      */
     public Output<String> state() {
@@ -256,14 +272,14 @@ public class ComputeGpuMemoryCluster extends com.pulumi.resources.CustomResource
         return this.systemTags;
     }
     /**
-     * The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+     * The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+     * @return The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {

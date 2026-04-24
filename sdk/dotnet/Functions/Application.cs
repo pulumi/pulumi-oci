@@ -55,6 +55,10 @@ namespace Pulumi.Oci.Functions
     ///                 },
     ///             },
     ///         },
+    ///         Logging = new Oci.Functions.Inputs.ApplicationLoggingArgs
+    ///         {
+    ///             LineFormat = applicationLoggingLineFormat,
+    ///         },
     ///         SecurityAttributes = applicationSecurityAttributes,
     ///         Shape = applicationShape,
     ///         SyslogUrl = applicationSyslogUrl,
@@ -116,6 +120,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Output("imagePolicyConfig")]
         public Output<Outputs.ApplicationImagePolicyConfig> ImagePolicyConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        /// </summary>
+        [Output("logging")]
+        public Output<Outputs.ApplicationLogging> Logging { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
@@ -273,6 +283,12 @@ namespace Pulumi.Oci.Functions
         [Input("imagePolicyConfig")]
         public Input<Inputs.ApplicationImagePolicyConfigArgs>? ImagePolicyConfig { get; set; }
 
+        /// <summary>
+        /// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        /// </summary>
+        [Input("logging")]
+        public Input<Inputs.ApplicationLoggingArgs>? Logging { get; set; }
+
         [Input("networkSecurityGroupIds")]
         private InputList<string>? _networkSecurityGroupIds;
 
@@ -390,6 +406,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("imagePolicyConfig")]
         public Input<Inputs.ApplicationImagePolicyConfigGetArgs>? ImagePolicyConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        /// </summary>
+        [Input("logging")]
+        public Input<Inputs.ApplicationLoggingGetArgs>? Logging { get; set; }
 
         [Input("networkSecurityGroupIds")]
         private InputList<string>? _networkSecurityGroupIds;

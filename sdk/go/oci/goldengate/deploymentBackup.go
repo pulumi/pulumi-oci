@@ -111,7 +111,7 @@ type DeploymentBackup struct {
 	OggVersion pulumi.StringOutput `pulumi:"oggVersion"`
 	// The size of the backup stored in object storage (in bytes)
 	SizeInBytes pulumi.Float64Output `pulumi:"sizeInBytes"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Backup.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
@@ -211,7 +211,7 @@ type deploymentBackupState struct {
 	OggVersion *string `pulumi:"oggVersion"`
 	// The size of the backup stored in object storage (in bytes)
 	SizeInBytes *float64 `pulumi:"sizeInBytes"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Backup.
 	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -264,7 +264,7 @@ type DeploymentBackupState struct {
 	OggVersion pulumi.StringPtrInput
 	// The size of the backup stored in object storage (in bytes)
 	SizeInBytes pulumi.Float64PtrInput
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Backup.
 	State pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput
@@ -516,7 +516,7 @@ func (o DeploymentBackupOutput) SizeInBytes() pulumi.Float64Output {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.Float64Output { return v.SizeInBytes }).(pulumi.Float64Output)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment Backup.
 func (o DeploymentBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

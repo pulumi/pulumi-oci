@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItem {
     /**
-     * @return The availability domain of the GPU memory cluster instance.
+     * @return The availability domain of the GPU Memory Cluster instance.
      * 
      */
     private String availabilityDomain;
@@ -26,12 +26,12 @@ public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterIns
      */
     private String displayName;
     /**
-     * @return The fault domain the GPU memory cluster instance is running in.
+     * @return The fault domain the GPU Memory Cluster instance is running in.
      * 
      */
     private String faultDomain;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
      * 
      */
     private String id;
@@ -51,19 +51,19 @@ public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterIns
      */
     private String region;
     /**
-     * @return The lifecycle state of the GPU memory cluster instance
+     * @return The lifecycle state of the GPU Memory Cluster instance
      * 
      */
     private String state;
     /**
-     * @return The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+     * @return The date and time the GPU Memory Cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     private String timeCreated;
 
     private GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItem() {}
     /**
-     * @return The availability domain of the GPU memory cluster instance.
+     * @return The availability domain of the GPU Memory Cluster instance.
      * 
      */
     public String availabilityDomain() {
@@ -84,14 +84,14 @@ public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterIns
         return this.displayName;
     }
     /**
-     * @return The fault domain the GPU memory cluster instance is running in.
+     * @return The fault domain the GPU Memory Cluster instance is running in.
      * 
      */
     public String faultDomain() {
         return this.faultDomain;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
      * 
      */
     public String id() {
@@ -119,14 +119,14 @@ public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterIns
         return this.region;
     }
     /**
-     * @return The lifecycle state of the GPU memory cluster instance
+     * @return The lifecycle state of the GPU Memory Cluster instance
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+     * @return The date and time the GPU Memory Cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     public String timeCreated() {

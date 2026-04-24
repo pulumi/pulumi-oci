@@ -25,6 +25,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
         public readonly string ClientId;
+        public readonly string ClientSecret;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
@@ -41,6 +42,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The Snowflake role used to access Polaris.
         /// </summary>
         public readonly string PrincipalRole;
+        public readonly string Properties;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         /// </summary>
@@ -58,6 +60,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string clientId,
 
+            string clientSecret,
+
             string clientSecretSecretId,
 
             string glueId,
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string principalRole,
 
+            string properties,
+
             string propertiesSecretId,
 
             string uri)
@@ -73,10 +79,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Branch = branch;
             CatalogType = catalogType;
             ClientId = clientId;
+            ClientSecret = clientSecret;
             ClientSecretSecretId = clientSecretSecretId;
             GlueId = glueId;
             Name = name;
             PrincipalRole = principalRole;
+            Properties = properties;
             PropertiesSecretId = propertiesSecretId;
             Uri = uri;
         }

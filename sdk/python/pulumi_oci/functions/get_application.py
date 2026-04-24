@@ -27,7 +27,7 @@ class GetApplicationResult:
     """
     A collection of values returned by getApplication.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, network_security_group_ids=None, security_attributes=None, shape=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, loggings=None, network_security_group_ids=None, security_attributes=None, shape=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -52,6 +52,9 @@ class GetApplicationResult:
         if image_policy_configs and not isinstance(image_policy_configs, list):
             raise TypeError("Expected argument 'image_policy_configs' to be a list")
         pulumi.set(__self__, "image_policy_configs", image_policy_configs)
+        if loggings and not isinstance(loggings, list):
+            raise TypeError("Expected argument 'loggings' to be a list")
+        pulumi.set(__self__, "loggings", loggings)
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
@@ -142,6 +145,14 @@ class GetApplicationResult:
         return pulumi.get(self, "image_policy_configs")
 
     @_builtins.property
+    @pulumi.getter
+    def loggings(self) -> Sequence['outputs.GetApplicationLoggingResult']:
+        """
+        Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        """
+        return pulumi.get(self, "loggings")
+
+    @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Sequence[_builtins.str]:
         """
@@ -228,6 +239,7 @@ class AwaitableGetApplicationResult(GetApplicationResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             image_policy_configs=self.image_policy_configs,
+            loggings=self.loggings,
             network_security_group_ids=self.network_security_group_ids,
             security_attributes=self.security_attributes,
             shape=self.shape,
@@ -272,6 +284,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         image_policy_configs=pulumi.get(__ret__, 'image_policy_configs'),
+        loggings=pulumi.get(__ret__, 'loggings'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
@@ -313,6 +326,7 @@ def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]]
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         image_policy_configs=pulumi.get(__response__, 'image_policy_configs'),
+        loggings=pulumi.get(__response__, 'loggings'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),

@@ -14376,7 +14376,7 @@ export namespace Core {
          */
         isUpsizeEnabled: pulumi.Input<boolean>;
         /**
-         * (Updatable) The configured target size for the GPU Memory cluster.
+         * (Updatable) The configured target size for the GPU Memory Cluster.
          */
         targetSize?: pulumi.Input<string>;
     }
@@ -18984,7 +18984,6 @@ export namespace Core {
     export interface VcnByoipv6cidrDetail {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-         * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
          */
         byoipv6rangeId: pulumi.Input<string>;
         /**
@@ -31389,7 +31388,7 @@ export namespace Database {
          */
         isHealthMonitoringEnabled?: pulumi.Input<boolean>;
         /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
          */
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
@@ -49106,6 +49105,13 @@ export namespace Functions {
         kmsKeyId: pulumi.Input<string>;
     }
 
+    export interface ApplicationLogging {
+        /**
+         * (Updatable) Specify the format of log lines emitted by functions in this application.
+         */
+        lineFormat?: pulumi.Input<string>;
+    }
+
     export interface ApplicationTraceConfig {
         /**
          * (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
@@ -50690,9 +50696,7 @@ export namespace GoldenGate {
          */
         port?: pulumi.Input<number>;
         /**
-         * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-         *
-         * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          */
         privateIp?: pulumi.Input<string>;
     }
@@ -50711,7 +50715,13 @@ export namespace GoldenGate {
          */
         clientId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * (Updatable) Client secret required to connect to Polaris.
+         *
+         * @deprecated The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
+         */
+        clientSecret?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          */
         clientSecretSecretId?: pulumi.Input<string>;
         /**
@@ -50726,6 +50736,12 @@ export namespace GoldenGate {
          * (Updatable) The Snowflake role used to access Polaris.
          */
         principalRole?: pulumi.Input<string>;
+        /**
+         * (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         *
+         * @deprecated The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.
+         */
+        properties?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          */
@@ -50768,6 +50784,12 @@ export namespace GoldenGate {
          */
         accessKeyId?: pulumi.Input<string>;
         /**
+         * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+         *
+         * @deprecated The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
+         */
+        accountKey?: pulumi.Input<string>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          */
         accountKeySecretId?: pulumi.Input<string>;
@@ -50800,9 +50822,21 @@ export namespace GoldenGate {
          */
         schemeType?: pulumi.Input<string>;
         /**
+         * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         *
+         * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+         */
+        secretAccessKey?: pulumi.Input<string>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
          */
         secretAccessKeySecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
+         */
+        serviceAccountKeyFile?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
          */
@@ -50949,6 +50983,8 @@ export namespace GoldenGate {
     export interface DeploymentOggData {
         /**
          * (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+         *
+         * @deprecated The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.
          */
         adminPassword?: pulumi.Input<string>;
         /**
@@ -83567,11 +83603,11 @@ export namespace Logging {
          */
         category: pulumi.Input<string>;
         /**
-         * (Updatable) Log category parameters are stored here.
+         * (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
          */
         parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * The unique identifier of the resource emitting the log.
+         * The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
          */
         resource: pulumi.Input<string>;
         /**

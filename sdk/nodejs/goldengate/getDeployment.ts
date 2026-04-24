@@ -151,6 +151,8 @@ export interface GetDeploymentResult {
     readonly isPublic: boolean;
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     * @deprecated The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
      */
     readonly isStorageUtilizationLimitExceeded: boolean;
     /**
@@ -170,7 +172,7 @@ export interface GetDeploymentResult {
      */
     readonly loadBalancerId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
      */
     readonly loadBalancerSubnetId: string;
     /**
@@ -222,7 +224,7 @@ export interface GetDeploymentResult {
      */
     readonly sourceDeploymentId: string;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      */
     readonly state: string;
     /**
@@ -269,10 +271,6 @@ export interface GetDeploymentResult {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpdated: string;
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     */
-    readonly timeUpgradeRequired: string;
 }
 /**
  * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.

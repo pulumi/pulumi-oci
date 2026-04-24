@@ -54,7 +54,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
      */
     private String gpuMemoryFabricId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      * 
      */
     private String id;
@@ -64,12 +64,17 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
      */
     private String instanceConfigurationId;
     /**
-     * @return The number of instances currently running in the GpuMemoryCluster
+     * @return Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    private List<String> privateIpIds;
+    /**
+     * @return The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
      * 
      */
     private String size;
     /**
-     * @return The lifecycle state of the GPU memory cluster
+     * @return The lifecycle state of the GPU Memory Cluster
      * 
      */
     private String state;
@@ -79,7 +84,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+     * @return The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     private String timeCreated;
@@ -142,7 +147,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         return this.gpuMemoryFabricId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
      * 
      */
     public String id() {
@@ -156,14 +161,21 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         return this.instanceConfigurationId;
     }
     /**
-     * @return The number of instances currently running in the GpuMemoryCluster
+     * @return Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    public List<String> privateIpIds() {
+        return this.privateIpIds;
+    }
+    /**
+     * @return The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
      * 
      */
     public String size() {
         return this.size;
     }
     /**
-     * @return The lifecycle state of the GPU memory cluster
+     * @return The lifecycle state of the GPU Memory Cluster
      * 
      */
     public String state() {
@@ -177,7 +189,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         return this.systemTags;
     }
     /**
-     * @return The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+     * @return The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
@@ -203,6 +215,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         private String gpuMemoryFabricId;
         private String id;
         private String instanceConfigurationId;
+        private List<String> privateIpIds;
         private String size;
         private String state;
         private Map<String,String> systemTags;
@@ -220,6 +233,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
     	      this.gpuMemoryFabricId = defaults.gpuMemoryFabricId;
     	      this.id = defaults.id;
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
+    	      this.privateIpIds = defaults.privateIpIds;
     	      this.size = defaults.size;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -310,6 +324,17 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpIds(List<String> privateIpIds) {
+            if (privateIpIds == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItem", "privateIpIds");
+            }
+            this.privateIpIds = privateIpIds;
+            return this;
+        }
+        public Builder privateIpIds(String... privateIpIds) {
+            return privateIpIds(List.of(privateIpIds));
+        }
+        @CustomType.Setter
         public Builder size(String size) {
             if (size == null) {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionItem", "size");
@@ -353,6 +378,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
             _resultValue.gpuMemoryFabricId = gpuMemoryFabricId;
             _resultValue.id = id;
             _resultValue.instanceConfigurationId = instanceConfigurationId;
+            _resultValue.privateIpIds = privateIpIds;
             _resultValue.size = size;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

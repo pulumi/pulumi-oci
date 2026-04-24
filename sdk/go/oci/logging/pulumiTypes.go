@@ -172,9 +172,9 @@ func (o LogConfigurationPtrOutput) Source() LogConfigurationSourcePtrOutput {
 type LogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
-	// (Updatable) Log category parameters are stored here.
+	// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters map[string]string `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
 	Service string `pulumi:"service"`
@@ -197,9 +197,9 @@ type LogConfigurationSourceInput interface {
 type LogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
-	// (Updatable) Log category parameters are stored here.
+	// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters pulumi.StringMapInput `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
 	Service pulumi.StringInput `pulumi:"service"`
@@ -290,12 +290,12 @@ func (o LogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// (Updatable) Log category parameters are stored here.
+// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
 func (o LogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
-// The unique identifier of the resource emitting the log.
+// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 func (o LogConfigurationSourceOutput) Resource() pulumi.StringOutput {
 	return o.ApplyT(func(v LogConfigurationSource) string { return v.Resource }).(pulumi.StringOutput)
 }
@@ -345,7 +345,7 @@ func (o LogConfigurationSourcePtrOutput) Category() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Log category parameters are stored here.
+// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
 func (o LogConfigurationSourcePtrOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *LogConfigurationSource) map[string]string {
 		if v == nil {
@@ -355,7 +355,7 @@ func (o LogConfigurationSourcePtrOutput) Parameters() pulumi.StringMapOutput {
 	}).(pulumi.StringMapOutput)
 }
 
-// The unique identifier of the resource emitting the log.
+// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 func (o LogConfigurationSourcePtrOutput) Resource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogConfigurationSource) *string {
 		if v == nil {
@@ -7629,9 +7629,9 @@ func (o GetLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogConfigura
 type GetLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
-	// Log category parameters are stored here.
+	// Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters map[string]string `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
 	Service string `pulumi:"service"`
@@ -7654,9 +7654,9 @@ type GetLogConfigurationSourceInput interface {
 type GetLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
-	// Log category parameters are stored here.
+	// Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters pulumi.StringMapInput `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
 	Service pulumi.StringInput `pulumi:"service"`
@@ -7721,12 +7721,12 @@ func (o GetLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// Log category parameters are stored here.
+// Log category parameters are stored here. The resource for a service log can't be updated.
 func (o GetLogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetLogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
-// The unique identifier of the resource emitting the log.
+// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 func (o GetLogConfigurationSourceOutput) Resource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogConfigurationSource) string { return v.Resource }).(pulumi.StringOutput)
 }
@@ -8851,9 +8851,9 @@ func (o GetLogsLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogsLogC
 type GetLogsLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
-	// Log category parameters are stored here.
+	// Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters map[string]string `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
 	Service string `pulumi:"service"`
@@ -8876,9 +8876,9 @@ type GetLogsLogConfigurationSourceInput interface {
 type GetLogsLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
-	// Log category parameters are stored here.
+	// Log category parameters are stored here. The resource for a service log can't be updated.
 	Parameters pulumi.StringMapInput `pulumi:"parameters"`
-	// The unique identifier of the resource emitting the log.
+	// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
 	Service pulumi.StringInput `pulumi:"service"`
@@ -8943,12 +8943,12 @@ func (o GetLogsLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogsLogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// Log category parameters are stored here.
+// Log category parameters are stored here. The resource for a service log can't be updated.
 func (o GetLogsLogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetLogsLogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
-// The unique identifier of the resource emitting the log.
+// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
 func (o GetLogsLogConfigurationSourceOutput) Resource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogsLogConfigurationSource) string { return v.Resource }).(pulumi.StringOutput)
 }

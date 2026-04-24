@@ -100,9 +100,6 @@ class GetDedicatedVmHostResult:
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostCapacityBinResult']:
-        """
-        A list of total and remaining CPU and memory per capacity bucket.
-        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property

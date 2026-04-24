@@ -202,7 +202,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string ReleaseType;
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment Upgrade.
         /// </summary>
         public readonly string State;
         /// <summary>

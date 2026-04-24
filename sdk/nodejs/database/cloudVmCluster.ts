@@ -70,9 +70,11 @@ import * as utilities from "../utilities";
  *     nsgIds: cloudVmClusterNsgIds,
  *     ocpuCount: cloudVmClusterOcpuCount,
  *     privateZoneId: testZone.id,
+ *     recoStoragePercentage: cloudVmClusterRecoStoragePercentage,
  *     scanListenerPortTcp: cloudVmClusterScanListenerPortTcp,
  *     scanListenerPortTcpSsl: cloudVmClusterScanListenerPortTcpSsl,
  *     securityAttributes: cloudVmClusterSecurityAttributes,
+ *     sparseStoragePercentage: cloudVmClusterSparseStoragePercentage,
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: cloudVmClusterSystemVersion,
  *     timeZone: cloudVmClusterTimeZone,
@@ -175,7 +177,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public readonly dataCollectionOptions: pulumi.Output<outputs.Database.CloudVmClusterDataCollectionOptions>;
     /**
-     * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     declare public readonly dataStoragePercentage: pulumi.Output<number>;
     /**
@@ -235,11 +237,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.CloudVmClusterIormConfigCache[]>;
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     declare public readonly isLocalBackupEnabled: pulumi.Output<boolean>;
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
     declare public readonly isSparseDiskgroupEnabled: pulumi.Output<boolean>;
     /**
@@ -284,6 +286,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public readonly privateZoneId: pulumi.Output<string>;
     /**
+     * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    declare public readonly recoStoragePercentage: pulumi.Output<number>;
+    /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
     declare public /*out*/ readonly scanDnsName: pulumi.Output<string>;
@@ -315,6 +321,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     declare public /*out*/ readonly shape: pulumi.Output<string>;
+    /**
+     * (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    declare public readonly sparseStoragePercentage: pulumi.Output<number>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */
@@ -438,6 +448,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["ocpuCount"] = state?.ocpuCount;
             resourceInputs["privateZoneId"] = state?.privateZoneId;
+            resourceInputs["recoStoragePercentage"] = state?.recoStoragePercentage;
             resourceInputs["scanDnsName"] = state?.scanDnsName;
             resourceInputs["scanDnsRecordId"] = state?.scanDnsRecordId;
             resourceInputs["scanIpIds"] = state?.scanIpIds;
@@ -446,6 +457,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortTcpSsl"] = state?.scanListenerPortTcpSsl;
             resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shape"] = state?.shape;
+            resourceInputs["sparseStoragePercentage"] = state?.sparseStoragePercentage;
             resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
             resourceInputs["state"] = state?.state;
             resourceInputs["storageManagementType"] = state?.storageManagementType;
@@ -520,9 +532,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["ocpuCount"] = args?.ocpuCount;
             resourceInputs["privateZoneId"] = args?.privateZoneId;
+            resourceInputs["recoStoragePercentage"] = args?.recoStoragePercentage;
             resourceInputs["scanListenerPortTcp"] = args?.scanListenerPortTcp;
             resourceInputs["scanListenerPortTcpSsl"] = args?.scanListenerPortTcpSsl;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["sparseStoragePercentage"] = args?.sparseStoragePercentage;
             resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
@@ -621,7 +635,7 @@ export interface CloudVmClusterState {
      */
     dataCollectionOptions?: pulumi.Input<inputs.Database.CloudVmClusterDataCollectionOptions>;
     /**
-     * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
@@ -681,11 +695,11 @@ export interface CloudVmClusterState {
      */
     iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigCache>[]>;
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean>;
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
     isSparseDiskgroupEnabled?: pulumi.Input<boolean>;
     /**
@@ -730,6 +744,10 @@ export interface CloudVmClusterState {
      */
     privateZoneId?: pulumi.Input<string>;
     /**
+     * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    recoStoragePercentage?: pulumi.Input<number>;
+    /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
     scanDnsName?: pulumi.Input<string>;
@@ -761,6 +779,10 @@ export interface CloudVmClusterState {
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     shape?: pulumi.Input<string>;
+    /**
+     * (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    sparseStoragePercentage?: pulumi.Input<number>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */
@@ -888,7 +910,7 @@ export interface CloudVmClusterArgs {
      */
     dataCollectionOptions?: pulumi.Input<inputs.Database.CloudVmClusterDataCollectionOptions>;
     /**
-     * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
@@ -940,11 +962,11 @@ export interface CloudVmClusterArgs {
      */
     hostname: pulumi.Input<string>;
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
     isLocalBackupEnabled?: pulumi.Input<boolean>;
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
     isSparseDiskgroupEnabled?: pulumi.Input<boolean>;
     /**
@@ -969,6 +991,10 @@ export interface CloudVmClusterArgs {
      */
     privateZoneId?: pulumi.Input<string>;
     /**
+     * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    recoStoragePercentage?: pulumi.Input<number>;
+    /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
     scanListenerPortTcp?: pulumi.Input<number>;
@@ -980,6 +1006,10 @@ export interface CloudVmClusterArgs {
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    sparseStoragePercentage?: pulumi.Input<number>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */

@@ -62,14 +62,37 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * (Updatable) Client secret required to connect to Polaris.
+     * 
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Import(name="clientSecret")
+    private @Nullable Output<String> clientSecret;
+
+    /**
+     * @return (Updatable) Client secret required to connect to Polaris.
+     * 
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    public Optional<Output<String>> clientSecret() {
+        return Optional.ofNullable(this.clientSecret);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      * 
      */
     @Import(name="clientSecretSecretId")
     private @Nullable Output<String> clientSecretSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      * 
      */
     public Optional<Output<String>> clientSecretSecretId() {
@@ -122,6 +145,29 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Import(name="properties")
+    private @Nullable Output<String> properties;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    public Optional<Output<String>> properties() {
+        return Optional.ofNullable(this.properties);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
@@ -157,10 +203,12 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
         this.branch = $.branch;
         this.catalogType = $.catalogType;
         this.clientId = $.clientId;
+        this.clientSecret = $.clientSecret;
         this.clientSecretSecretId = $.clientSecretSecretId;
         this.glueId = $.glueId;
         this.name = $.name;
         this.principalRole = $.principalRole;
+        this.properties = $.properties;
         this.propertiesSecretId = $.propertiesSecretId;
         this.uri = $.uri;
     }
@@ -247,7 +295,36 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * @param clientSecret (Updatable) Client secret required to connect to Polaris.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+        public Builder clientSecret(@Nullable Output<String> clientSecret) {
+            $.clientSecret = clientSecret;
+            return this;
+        }
+
+        /**
+         * @param clientSecret (Updatable) Client secret required to connect to Polaris.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+        public Builder clientSecret(String clientSecret) {
+            return clientSecret(Output.of(clientSecret));
+        }
+
+        /**
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          * 
          * @return builder
          * 
@@ -258,7 +335,7 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+         * @param clientSecretSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
          * 
          * @return builder
          * 
@@ -328,6 +405,35 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder principalRole(String principalRole) {
             return principalRole(Output.of(principalRole));
+        }
+
+        /**
+         * @param properties (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+        public Builder properties(@Nullable Output<String> properties) {
+            $.properties = properties;
+            return this;
+        }
+
+        /**
+         * @param properties (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+        public Builder properties(String properties) {
+            return properties(Output.of(properties));
         }
 
         /**

@@ -165,9 +165,7 @@ class ConnectionBootstrapServerArgsDict(TypedDict):
     """
     private_ip: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-    The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+    This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
     """
 
 @pulumi.input_type
@@ -179,9 +177,7 @@ class ConnectionBootstrapServerArgs:
         """
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[_builtins.str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param pulumi.Input[_builtins.str] private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         if host is not None:
             pulumi.set(__self__, "host", host)
@@ -218,9 +214,7 @@ class ConnectionBootstrapServerArgs:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
@@ -242,9 +236,13 @@ class ConnectionCatalogArgsDict(TypedDict):
     """
     (Updatable) The OAuth client ID used for authentication.
     """
+    client_secret: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Client secret required to connect to Polaris.
+    """
     client_secret_secret_id: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
     """
     glue_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -257,6 +255,10 @@ class ConnectionCatalogArgsDict(TypedDict):
     principal_role: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) The Snowflake role used to access Polaris.
+    """
+    properties: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
     """
     properties_secret_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -273,20 +275,24 @@ class ConnectionCatalogArgs:
                  catalog_type: pulumi.Input[_builtins.str],
                  branch: Optional[pulumi.Input[_builtins.str]] = None,
                  client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  glue_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  principal_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 properties: Optional[pulumi.Input[_builtins.str]] = None,
                  properties_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] catalog_type: (Updatable) The catalog type.
         :param pulumi.Input[_builtins.str] branch: (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
         :param pulumi.Input[_builtins.str] client_id: (Updatable) The OAuth client ID used for authentication.
-        :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        :param pulumi.Input[_builtins.str] client_secret: (Updatable) Client secret required to connect to Polaris.
+        :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         :param pulumi.Input[_builtins.str] glue_id: (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
         :param pulumi.Input[_builtins.str] name: (Updatable) The catalog name within Polaris where Iceberg tables are registered.
         :param pulumi.Input[_builtins.str] principal_role: (Updatable) The Snowflake role used to access Polaris.
+        :param pulumi.Input[_builtins.str] properties: (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
         :param pulumi.Input[_builtins.str] properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] uri: (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
@@ -295,6 +301,11 @@ class ConnectionCatalogArgs:
             pulumi.set(__self__, "branch", branch)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            warnings.warn("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""client_secret is deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
             pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
         if glue_id is not None:
@@ -303,6 +314,11 @@ class ConnectionCatalogArgs:
             pulumi.set(__self__, "name", name)
         if principal_role is not None:
             pulumi.set(__self__, "principal_role", principal_role)
+        if properties is not None:
+            warnings.warn("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""properties is deprecated: The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
         if properties_secret_id is not None:
             pulumi.set(__self__, "properties_secret_id", properties_secret_id)
         if uri is not None:
@@ -345,10 +361,23 @@ class ConnectionCatalogArgs:
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
+    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Client secret required to connect to Polaris.
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -391,6 +420,19 @@ class ConnectionCatalogArgs:
     @principal_role.setter
     def principal_role(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "principal_role", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
+    def properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="propertiesSecretId")
@@ -543,6 +585,10 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     (Updatable) Access key ID to access the Amazon S3 bucket.
     """
+    account_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+    """
     account_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -575,9 +621,17 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     (Updatable) The scheme of the storage.
     """
+    secret_access_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+    """
     secret_access_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+    """
+    service_account_key_file: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
     """
     service_account_key_file_secret_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -589,6 +643,7 @@ class ConnectionStorageArgs:
     def __init__(__self__, *,
                  storage_type: pulumi.Input[_builtins.str],
                  access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
                  account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  account_name: Optional[pulumi.Input[_builtins.str]] = None,
                  bucket: Optional[pulumi.Input[_builtins.str]] = None,
@@ -597,11 +652,14 @@ class ConnectionStorageArgs:
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  region: Optional[pulumi.Input[_builtins.str]] = None,
                  scheme_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
                  service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] storage_type: (Updatable) The storage type used in the Iceberg connection.
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket.
+        :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param pulumi.Input[_builtins.str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
@@ -610,12 +668,19 @@ class ConnectionStorageArgs:
         :param pulumi.Input[_builtins.str] project_id: (Updatable) The Google Cloud Project where the bucket exists.
         :param pulumi.Input[_builtins.str] region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param pulumi.Input[_builtins.str] scheme_type: (Updatable) The scheme of the storage.
+        :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         pulumi.set(__self__, "storage_type", storage_type)
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
+        if account_key is not None:
+            warnings.warn("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""account_key is deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
         if account_key_secret_id is not None:
             pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         if account_name is not None:
@@ -632,8 +697,18 @@ class ConnectionStorageArgs:
             pulumi.set(__self__, "region", region)
         if scheme_type is not None:
             pulumi.set(__self__, "scheme_type", scheme_type)
+        if secret_access_key is not None:
+            warnings.warn("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""secret_access_key is deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
             pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if service_account_key_file is not None:
+            warnings.warn("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""service_account_key_file is deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
+        if service_account_key_file is not None:
+            pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if service_account_key_file_secret_id is not None:
             pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
 
@@ -660,6 +735,19 @@ class ConnectionStorageArgs:
     @access_key_id.setter
     def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+    def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "account_key")
+
+    @account_key.setter
+    def account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "account_key", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
@@ -758,6 +846,19 @@ class ConnectionStorageArgs:
         pulumi.set(self, "scheme_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -768,6 +869,19 @@ class ConnectionStorageArgs:
     @secret_access_key_secret_id.setter
     def secret_access_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "secret_access_key_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
+    def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        """
+        return pulumi.get(self, "service_account_key_file")
+
+    @service_account_key_file.setter
+    def service_account_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "service_account_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
@@ -1464,6 +1578,9 @@ class DeploymentOggDataArgs:
         """
         pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
+            warnings.warn("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""admin_password is deprecated: The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
+        if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
@@ -1496,6 +1613,7 @@ class DeploymentOggDataArgs:
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
+    @_utilities.deprecated("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".

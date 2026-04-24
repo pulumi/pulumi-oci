@@ -28,7 +28,16 @@ public final class ConnectionCatalog {
      */
     private @Nullable String clientId;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * @return (Updatable) Client secret required to connect to Polaris.
+     * 
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    private @Nullable String clientSecret;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      * 
      */
     private @Nullable String clientSecretSecretId;
@@ -47,6 +56,15 @@ public final class ConnectionCatalog {
      * 
      */
     private @Nullable String principalRole;
+    /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    private @Nullable String properties;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
@@ -81,7 +99,18 @@ public final class ConnectionCatalog {
         return Optional.ofNullable(this.clientId);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+     * @return (Updatable) Client secret required to connect to Polaris.
+     * 
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    public Optional<String> clientSecret() {
+        return Optional.ofNullable(this.clientSecret);
+    }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
      * 
      */
     public Optional<String> clientSecretSecretId() {
@@ -107,6 +136,17 @@ public final class ConnectionCatalog {
      */
     public Optional<String> principalRole() {
         return Optional.ofNullable(this.principalRole);
+    }
+    /**
+     * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     * 
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    public Optional<String> properties() {
+        return Optional.ofNullable(this.properties);
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -135,10 +175,12 @@ public final class ConnectionCatalog {
         private @Nullable String branch;
         private String catalogType;
         private @Nullable String clientId;
+        private @Nullable String clientSecret;
         private @Nullable String clientSecretSecretId;
         private @Nullable String glueId;
         private @Nullable String name;
         private @Nullable String principalRole;
+        private @Nullable String properties;
         private @Nullable String propertiesSecretId;
         private @Nullable String uri;
         public Builder() {}
@@ -147,10 +189,12 @@ public final class ConnectionCatalog {
     	      this.branch = defaults.branch;
     	      this.catalogType = defaults.catalogType;
     	      this.clientId = defaults.clientId;
+    	      this.clientSecret = defaults.clientSecret;
     	      this.clientSecretSecretId = defaults.clientSecretSecretId;
     	      this.glueId = defaults.glueId;
     	      this.name = defaults.name;
     	      this.principalRole = defaults.principalRole;
+    	      this.properties = defaults.properties;
     	      this.propertiesSecretId = defaults.propertiesSecretId;
     	      this.uri = defaults.uri;
         }
@@ -173,6 +217,12 @@ public final class ConnectionCatalog {
         public Builder clientId(@Nullable String clientId) {
 
             this.clientId = clientId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientSecret(@Nullable String clientSecret) {
+
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
@@ -200,6 +250,12 @@ public final class ConnectionCatalog {
             return this;
         }
         @CustomType.Setter
+        public Builder properties(@Nullable String properties) {
+
+            this.properties = properties;
+            return this;
+        }
+        @CustomType.Setter
         public Builder propertiesSecretId(@Nullable String propertiesSecretId) {
 
             this.propertiesSecretId = propertiesSecretId;
@@ -216,10 +272,12 @@ public final class ConnectionCatalog {
             _resultValue.branch = branch;
             _resultValue.catalogType = catalogType;
             _resultValue.clientId = clientId;
+            _resultValue.clientSecret = clientSecret;
             _resultValue.clientSecretSecretId = clientSecretSecretId;
             _resultValue.glueId = glueId;
             _resultValue.name = name;
             _resultValue.principalRole = principalRole;
+            _resultValue.properties = properties;
             _resultValue.propertiesSecretId = propertiesSecretId;
             _resultValue.uri = uri;
             return _resultValue;

@@ -54,7 +54,7 @@ export interface GetDeploymentUpgradesArgs {
     displayName?: string;
     filters?: inputs.GoldenGate.GetDeploymentUpgradesFilter[];
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment upgrades having the 'lifecycleState' given.
      */
     state?: string;
 }
@@ -85,7 +85,7 @@ export interface GetDeploymentUpgradesResult {
      */
     readonly id: string;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Upgrade.
      */
     readonly state?: string;
 }
@@ -137,7 +137,7 @@ export interface GetDeploymentUpgradesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentUpgradesFilterArgs>[]>;
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment upgrades having the 'lifecycleState' given.
      */
     state?: pulumi.Input<string>;
 }

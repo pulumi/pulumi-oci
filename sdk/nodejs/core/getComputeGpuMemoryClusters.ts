@@ -70,7 +70,7 @@ export interface GetComputeGpuMemoryClustersArgs {
  */
 export interface GetComputeGpuMemoryClustersResult {
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      */
     readonly availabilityDomain?: string;
     /**

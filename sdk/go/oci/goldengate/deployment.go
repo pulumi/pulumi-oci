@@ -81,6 +81,8 @@ type Deployment struct {
 	// (Updatable) True if this object is publicly available.
 	IsPublic pulumi.BoolOutput `pulumi:"isPublic"`
 	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	//
+	// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 	IsStorageUtilizationLimitExceeded pulumi.BoolOutput `pulumi:"isStorageUtilizationLimitExceeded"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
@@ -90,7 +92,18 @@ type Deployment struct {
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+	//
+	// Rules:
+	// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+	// * Update:
+	// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+	// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+	//
+	// Validation:
+	// * Must reference a public subnet.
+	// * Must be a regional subnet.
+	// * Must be in the same VCN as subnetId.
 	LoadBalancerSubnetId pulumi.StringOutput `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayOutput `pulumi:"locks"`
@@ -116,7 +129,7 @@ type Deployment struct {
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringOutput `pulumi:"sourceDeploymentId"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
@@ -143,8 +156,6 @@ type Deployment struct {
 	TimeRoleChanged pulumi.StringOutput `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpgradeRequired pulumi.StringOutput `pulumi:"timeUpgradeRequired"`
 }
 
 // NewDeployment registers a new resource with the given unique name, arguments, and options.
@@ -238,6 +249,8 @@ type deploymentState struct {
 	// (Updatable) True if this object is publicly available.
 	IsPublic *bool `pulumi:"isPublic"`
 	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	//
+	// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 	IsStorageUtilizationLimitExceeded *bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -247,7 +260,18 @@ type deploymentState struct {
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+	//
+	// Rules:
+	// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+	// * Update:
+	// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+	// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+	//
+	// Validation:
+	// * Must reference a public subnet.
+	// * Must be a regional subnet.
+	// * Must be in the same VCN as subnetId.
 	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []DeploymentLock `pulumi:"locks"`
@@ -273,7 +297,7 @@ type deploymentState struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
@@ -300,8 +324,6 @@ type deploymentState struct {
 	TimeRoleChanged *string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpgradeRequired *string `pulumi:"timeUpgradeRequired"`
 }
 
 type DeploymentState struct {
@@ -357,6 +379,8 @@ type DeploymentState struct {
 	// (Updatable) True if this object is publicly available.
 	IsPublic pulumi.BoolPtrInput
 	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	//
+	// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 	IsStorageUtilizationLimitExceeded pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringPtrInput
@@ -366,7 +390,18 @@ type DeploymentState struct {
 	LifecycleSubState pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+	//
+	// Rules:
+	// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+	// * Update:
+	// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+	// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+	//
+	// Validation:
+	// * Must reference a public subnet.
+	// * Must be a regional subnet.
+	// * Must be in the same VCN as subnetId.
 	LoadBalancerSubnetId pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayInput
@@ -392,7 +427,7 @@ type DeploymentState struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State pulumi.StringPtrInput
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringPtrInput
@@ -419,8 +454,6 @@ type DeploymentState struct {
 	TimeRoleChanged pulumi.StringPtrInput
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringPtrInput
-	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpgradeRequired pulumi.StringPtrInput
 }
 
 func (DeploymentState) ElementType() reflect.Type {
@@ -467,7 +500,18 @@ type deploymentArgs struct {
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel *string `pulumi:"licenseModel"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+	//
+	// Rules:
+	// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+	// * Update:
+	// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+	// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+	//
+	// Validation:
+	// * Must reference a public subnet.
+	// * Must be a regional subnet.
+	// * Must be in the same VCN as subnetId.
 	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []DeploymentLock `pulumi:"locks"`
@@ -485,7 +529,7 @@ type deploymentArgs struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
@@ -537,7 +581,18 @@ type DeploymentArgs struct {
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+	//
+	// Rules:
+	// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+	// * Update:
+	// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+	// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+	//
+	// Validation:
+	// * Must reference a public subnet.
+	// * Must be a regional subnet.
+	// * Must be in the same VCN as subnetId.
 	LoadBalancerSubnetId pulumi.StringPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentLockArrayInput
@@ -555,7 +610,7 @@ type DeploymentArgs struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringInput
@@ -783,6 +838,8 @@ func (o DeploymentOutput) IsPublic() pulumi.BoolOutput {
 }
 
 // Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+//
+// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 func (o DeploymentOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.BoolOutput { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
 }
@@ -807,7 +864,18 @@ func (o DeploymentOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+//
+// Rules:
+// * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+// * Update:
+// * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+// * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+//
+// Validation:
+// * Must reference a public subnet.
+// * Must be a regional subnet.
+// * Must be in the same VCN as subnetId.
 func (o DeploymentOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }
@@ -872,7 +940,7 @@ func (o DeploymentOutput) SourceDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment.
 func (o DeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -933,11 +1001,6 @@ func (o DeploymentOutput) TimeRoleChanged() pulumi.StringOutput {
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o DeploymentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o DeploymentOutput) TimeUpgradeRequired() pulumi.StringOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpgradeRequired }).(pulumi.StringOutput)
 }
 
 type DeploymentArrayOutput struct{ *pulumi.OutputState }

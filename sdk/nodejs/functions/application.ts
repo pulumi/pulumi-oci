@@ -40,6 +40,9 @@ import * as utilities from "../utilities";
  *             kmsKeyId: testKey.id,
  *         }],
  *     },
+ *     logging: {
+ *         lineFormat: applicationLoggingLineFormat,
+ *     },
  *     securityAttributes: applicationSecurityAttributes,
  *     shape: applicationShape,
  *     syslogUrl: applicationSyslogUrl,
@@ -113,6 +116,10 @@ export class Application extends pulumi.CustomResource {
      */
     declare public readonly imagePolicyConfig: pulumi.Output<outputs.Functions.ApplicationImagePolicyConfig>;
     /**
+     * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     */
+    declare public readonly logging: pulumi.Output<outputs.Functions.ApplicationLogging>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
     declare public readonly networkSecurityGroupIds: pulumi.Output<string[]>;
@@ -168,6 +175,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["imagePolicyConfig"] = state?.imagePolicyConfig;
+            resourceInputs["logging"] = state?.logging;
             resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
             resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shape"] = state?.shape;
@@ -194,6 +202,7 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["imagePolicyConfig"] = args?.imagePolicyConfig;
+            resourceInputs["logging"] = args?.logging;
             resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shape"] = args?.shape;
@@ -239,6 +248,10 @@ export interface ApplicationState {
      * (Updatable) Define the image signature verification policy for an application.
      */
     imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig>;
+    /**
+     * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     */
+    logging?: pulumi.Input<inputs.Functions.ApplicationLogging>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
@@ -307,6 +320,10 @@ export interface ApplicationArgs {
      * (Updatable) Define the image signature verification policy for an application.
      */
     imagePolicyConfig?: pulumi.Input<inputs.Functions.ApplicationImagePolicyConfig>;
+    /**
+     * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     */
+    logging?: pulumi.Input<inputs.Functions.ApplicationLogging>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */

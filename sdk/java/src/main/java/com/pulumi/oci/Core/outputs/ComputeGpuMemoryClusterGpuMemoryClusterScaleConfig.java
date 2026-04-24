@@ -24,7 +24,7 @@ public final class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig {
      */
     private Boolean isUpsizeEnabled;
     /**
-     * @return (Updatable) The configured target size for the GPU Memory cluster.
+     * @return (Updatable) The configured target size for the GPU Memory Cluster.
      * 
      */
     private @Nullable String targetSize;
@@ -45,7 +45,7 @@ public final class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig {
         return this.isUpsizeEnabled;
     }
     /**
-     * @return (Updatable) The configured target size for the GPU Memory cluster.
+     * @return (Updatable) The configured target size for the GPU Memory Cluster.
      * 
      */
     public Optional<String> targetSize() {

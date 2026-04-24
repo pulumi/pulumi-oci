@@ -90,6 +90,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.VmClusterRemoveVirtualMachineDataCollectionOption>> DataCollectionOptions { get; private set; } = null!;
 
         /// <summary>
+        /// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("dataStoragePercentage")]
+        public Output<int> DataStoragePercentage { get; private set; } = null!;
+
+        /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
@@ -186,10 +192,22 @@ namespace Pulumi.Oci.Database
         public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("recoStoragePercentage")]
+        public Output<int> RecoStoragePercentage { get; private set; } = null!;
+
+        /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
+
+        /// <summary>
+        /// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("sparseStoragePercentage")]
+        public Output<int> SparseStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -374,6 +392,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("dataStoragePercentage")]
+        public Input<int>? DataStoragePercentage { get; set; }
+
+        /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Input("dataStorageSizeInTbs")]
@@ -494,10 +518,22 @@ namespace Pulumi.Oci.Database
         public Input<int>? MemorySizeInGbs { get; set; }
 
         /// <summary>
+        /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("recoStoragePercentage")]
+        public Input<int>? RecoStoragePercentage { get; set; }
+
+        /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
+
+        /// <summary>
+        /// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("sparseStoragePercentage")]
+        public Input<int>? SparseStoragePercentage { get; set; }
 
         [Input("sshPublicKeys")]
         private InputList<string>? _sshPublicKeys;

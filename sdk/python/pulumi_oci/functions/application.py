@@ -28,6 +28,7 @@ class ApplicationArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
+                 logging: Optional[pulumi.Input['ApplicationLoggingArgs']] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -45,6 +46,7 @@ class ApplicationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input['ApplicationLoggingArgs'] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -62,6 +64,8 @@ class ApplicationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_policy_config is not None:
             pulumi.set(__self__, "image_policy_config", image_policy_config)
+        if logging is not None:
+            pulumi.set(__self__, "logging", logging)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if security_attributes is not None:
@@ -160,6 +164,18 @@ class ApplicationArgs:
         pulumi.set(self, "image_policy_config", value)
 
     @_builtins.property
+    @pulumi.getter
+    def logging(self) -> Optional[pulumi.Input['ApplicationLoggingArgs']]:
+        """
+        (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        """
+        return pulumi.get(self, "logging")
+
+    @logging.setter
+    def logging(self, value: Optional[pulumi.Input['ApplicationLoggingArgs']]):
+        pulumi.set(self, "logging", value)
+
+    @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -229,6 +245,7 @@ class _ApplicationState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
+                 logging: Optional[pulumi.Input['ApplicationLoggingArgs']] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -249,6 +266,7 @@ class _ApplicationState:
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input['ApplicationLoggingArgs'] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -271,6 +289,8 @@ class _ApplicationState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_policy_config is not None:
             pulumi.set(__self__, "image_policy_config", image_policy_config)
+        if logging is not None:
+            pulumi.set(__self__, "logging", logging)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if security_attributes is not None:
@@ -363,6 +383,18 @@ class _ApplicationState:
     @image_policy_config.setter
     def image_policy_config(self, value: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]):
         pulumi.set(self, "image_policy_config", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def logging(self) -> Optional[pulumi.Input['ApplicationLoggingArgs']]:
+        """
+        (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        """
+        return pulumi.get(self, "logging")
+
+    @logging.setter
+    def logging(self, value: Optional[pulumi.Input['ApplicationLoggingArgs']]):
+        pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -485,6 +517,7 @@ class Application(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+                 logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -526,6 +559,9 @@ class Application(pulumi.CustomResource):
                     "kms_key_id": test_key["id"],
                 }],
             },
+            logging={
+                "line_format": application_logging_line_format,
+            },
             security_attributes=application_security_attributes,
             shape=application_shape,
             syslog_url=application_syslog_url,
@@ -554,6 +590,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -601,6 +638,9 @@ class Application(pulumi.CustomResource):
                     "kms_key_id": test_key["id"],
                 }],
             },
+            logging={
+                "line_format": application_logging_line_format,
+            },
             security_attributes=application_security_attributes,
             shape=application_shape,
             syslog_url=application_syslog_url,
@@ -640,6 +680,7 @@ class Application(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+                 logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -665,6 +706,7 @@ class Application(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["image_policy_config"] = image_policy_config
+            __props__.__dict__["logging"] = logging
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shape"] = shape
@@ -692,6 +734,7 @@ class Application(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
+            logging: Optional[pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -716,6 +759,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict']] logging: (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -736,6 +780,7 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["image_policy_config"] = image_policy_config
+        __props__.__dict__["logging"] = logging
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
@@ -796,6 +841,14 @@ class Application(pulumi.CustomResource):
         (Updatable) Define the image signature verification policy for an application.
         """
         return pulumi.get(self, "image_policy_config")
+
+    @_builtins.property
+    @pulumi.getter
+    def logging(self) -> pulumi.Output['outputs.ApplicationLogging']:
+        """
+        (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        """
+        return pulumi.get(self, "logging")
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")

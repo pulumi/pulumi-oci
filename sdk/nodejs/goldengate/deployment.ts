@@ -153,6 +153,8 @@ export class Deployment extends pulumi.CustomResource {
     declare public readonly isPublic: pulumi.Output<boolean>;
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     * @deprecated The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
      */
     declare public /*out*/ readonly isStorageUtilizationLimitExceeded: pulumi.Output<boolean>;
     /**
@@ -172,7 +174,18 @@ export class Deployment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly loadBalancerId: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     *
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      */
     declare public readonly loadBalancerSubnetId: pulumi.Output<string>;
     /**
@@ -224,7 +237,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     declare public readonly sourceDeploymentId: pulumi.Output<string>;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      */
     declare public readonly state: pulumi.Output<string>;
     /**
@@ -275,10 +288,6 @@ export class Deployment extends pulumi.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     */
-    declare public /*out*/ readonly timeUpgradeRequired: pulumi.Output<string>;
 
     /**
      * Create a Deployment resource with the given unique name, arguments, and options.
@@ -349,7 +358,6 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["timeOggVersionSupportedUntil"] = state?.timeOggVersionSupportedUntil;
             resourceInputs["timeRoleChanged"] = state?.timeRoleChanged;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
-            resourceInputs["timeUpgradeRequired"] = state?.timeUpgradeRequired;
         } else {
             const args = argsOrState as DeploymentArgs | undefined;
             if (args?.compartmentId === undefined && !opts.urn) {
@@ -417,7 +425,6 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["timeOggVersionSupportedUntil"] = undefined /*out*/;
             resourceInputs["timeRoleChanged"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
-            resourceInputs["timeUpgradeRequired"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Deployment.__pulumiType, name, resourceInputs, opts);
@@ -531,6 +538,8 @@ export interface DeploymentState {
     isPublic?: pulumi.Input<boolean>;
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     * @deprecated The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
      */
     isStorageUtilizationLimitExceeded?: pulumi.Input<boolean>;
     /**
@@ -550,7 +559,18 @@ export interface DeploymentState {
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     *
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      */
     loadBalancerSubnetId?: pulumi.Input<string>;
     /**
@@ -602,7 +622,7 @@ export interface DeploymentState {
      */
     sourceDeploymentId?: pulumi.Input<string>;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      */
     state?: pulumi.Input<string>;
     /**
@@ -653,10 +673,6 @@ export interface DeploymentState {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeUpdated?: pulumi.Input<string>;
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     */
-    timeUpgradeRequired?: pulumi.Input<string>;
 }
 
 /**
@@ -741,7 +757,18 @@ export interface DeploymentArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     *
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     *
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      */
     loadBalancerSubnetId?: pulumi.Input<string>;
     /**
@@ -777,7 +804,7 @@ export interface DeploymentArgs {
      */
     sourceDeploymentId?: pulumi.Input<string>;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      */
     state?: pulumi.Input<string>;
     /**

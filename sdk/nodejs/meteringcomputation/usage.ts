@@ -108,7 +108,7 @@ export class Usage extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly items: pulumi.Output<outputs.MeteringComputation.UsageItem[]>;
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
      */
     declare public readonly queryType: pulumi.Output<string>;
     /**
@@ -222,7 +222,7 @@ export interface UsageState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageItem>[]>;
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
      */
     queryType?: pulumi.Input<string>;
     /**
@@ -276,7 +276,7 @@ export interface UsageArgs {
      */
     isAggregateByTime?: pulumi.Input<boolean>;
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
      */
     queryType?: pulumi.Input<string>;
     /**

@@ -144,7 +144,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool DoesUseSecretIds;
         /// <summary>
-        /// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        /// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         /// </summary>
         public readonly string Endpoint;
         /// <summary>
@@ -227,8 +227,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-        /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        /// This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         /// </summary>
         public readonly string PrivateIp;
         public readonly string PrivateKeyFile;
@@ -292,7 +291,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ServiceAccountKeyFileSecretId;
         /// <summary>
-        /// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        /// Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
         /// </summary>
         public readonly string SessionMode;
         /// <summary>

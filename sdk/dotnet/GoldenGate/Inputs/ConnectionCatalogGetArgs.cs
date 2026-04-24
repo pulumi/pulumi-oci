@@ -31,7 +31,13 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? ClientId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        /// (Updatable) Client secret required to connect to Polaris.
+        /// </summary>
+        [Input("clientSecret")]
+        public Input<string>? ClientSecret { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         /// </summary>
         [Input("clientSecretSecretId")]
         public Input<string>? ClientSecretSecretId { get; set; }
@@ -53,6 +59,12 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         /// </summary>
         [Input("principalRole")]
         public Input<string>? PrincipalRole { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        /// </summary>
+        [Input("properties")]
+        public Input<string>? Properties { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm

@@ -36,17 +36,9 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.availabilityDomain);
     }
 
-    /**
-     * A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     @Import(name="capacityBins")
     private @Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins;
 
-    /**
-     * @return A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     public Optional<Output<List<DedicatedVmHostCapacityBinArgs>>> capacityBins() {
         return Optional.ofNullable(this.capacityBins);
     }
@@ -361,33 +353,15 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
             return availabilityDomain(Output.of(availabilityDomain));
         }
 
-        /**
-         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
-         * 
-         * @return builder
-         * 
-         */
         public Builder capacityBins(@Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins) {
             $.capacityBins = capacityBins;
             return this;
         }
 
-        /**
-         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
-         * 
-         * @return builder
-         * 
-         */
         public Builder capacityBins(List<DedicatedVmHostCapacityBinArgs> capacityBins) {
             return capacityBins(Output.of(capacityBins));
         }
 
-        /**
-         * @param capacityBins A list of total and remaining CPU and memory per capacity bucket.
-         * 
-         * @return builder
-         * 
-         */
         public Builder capacityBins(DedicatedVmHostCapacityBinArgs... capacityBins) {
             return capacityBins(List.of(capacityBins));
         }

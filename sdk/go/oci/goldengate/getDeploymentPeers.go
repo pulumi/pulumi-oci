@@ -59,7 +59,7 @@ type GetDeploymentPeersArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetDeploymentPeersFilter `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment peers having the 'lifecycleState' given.
 	State *string `pulumi:"state"`
 }
 
@@ -94,7 +94,7 @@ type GetDeploymentPeersOutputArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetDeploymentPeersFilterArrayInput `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment peers having the 'lifecycleState' given.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 

@@ -49,6 +49,7 @@ namespace Pulumi.Oci.Core
     ///             TargetSize = computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize,
     ///         },
     ///         GpuMemoryFabricId = testGpuMemoryFabric.Id,
+    ///         PrivateIpIds = computeGpuMemoryClusterPrivateIpIds,
     ///         Size = computeGpuMemoryClusterSize,
     ///     });
     /// 
@@ -67,13 +68,13 @@ namespace Pulumi.Oci.Core
     public partial class ComputeGpuMemoryCluster : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster.
+        /// The availability domain of the GPU Memory Cluster.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -121,7 +122,13 @@ namespace Pulumi.Oci.Core
         public Output<string> InstanceConfigurationId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of instances currently running in the GpuMemoryCluster 
+        /// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        /// </summary>
+        [Output("privateIpIds")]
+        public Output<ImmutableArray<string>> PrivateIpIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -131,7 +138,7 @@ namespace Pulumi.Oci.Core
         public Output<string> Size { get; private set; } = null!;
 
         /// <summary>
-        /// The lifecycle state of the GPU memory cluster
+        /// The lifecycle state of the GPU Memory Cluster
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -143,7 +150,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        /// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -195,13 +202,13 @@ namespace Pulumi.Oci.Core
     public sealed class ComputeGpuMemoryClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster.
+        /// The availability domain of the GPU Memory Cluster.
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -260,8 +267,20 @@ namespace Pulumi.Oci.Core
         [Input("instanceConfigurationId", required: true)]
         public Input<string> InstanceConfigurationId { get; set; } = null!;
 
+        [Input("privateIpIds")]
+        private InputList<string>? _privateIpIds;
+
         /// <summary>
-        /// (Updatable) The number of instances currently running in the GpuMemoryCluster 
+        /// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        /// </summary>
+        public InputList<string> PrivateIpIds
+        {
+            get => _privateIpIds ?? (_privateIpIds = new InputList<string>());
+            set => _privateIpIds = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -279,13 +298,13 @@ namespace Pulumi.Oci.Core
     public sealed class ComputeGpuMemoryClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster.
+        /// The availability domain of the GPU Memory Cluster.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -344,8 +363,20 @@ namespace Pulumi.Oci.Core
         [Input("instanceConfigurationId")]
         public Input<string>? InstanceConfigurationId { get; set; }
 
+        [Input("privateIpIds")]
+        private InputList<string>? _privateIpIds;
+
         /// <summary>
-        /// (Updatable) The number of instances currently running in the GpuMemoryCluster 
+        /// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        /// </summary>
+        public InputList<string> PrivateIpIds
+        {
+            get => _privateIpIds ?? (_privateIpIds = new InputList<string>());
+            set => _privateIpIds = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -355,7 +386,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? Size { get; set; }
 
         /// <summary>
-        /// The lifecycle state of the GPU memory cluster
+        /// The lifecycle state of the GPU Memory Cluster
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -373,7 +404,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        /// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

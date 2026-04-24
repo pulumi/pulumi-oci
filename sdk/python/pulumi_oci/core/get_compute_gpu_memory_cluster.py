@@ -27,7 +27,7 @@ class GetComputeGpuMemoryClusterResult:
     """
     A collection of values returned by getComputeGpuMemoryCluster.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, gpu_memory_cluster_scale_configs=None, gpu_memory_fabric_id=None, id=None, instance_configuration_id=None, size=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, gpu_memory_cluster_scale_configs=None, gpu_memory_fabric_id=None, id=None, instance_configuration_id=None, private_ip_ids=None, size=None, state=None, system_tags=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -61,6 +61,9 @@ class GetComputeGpuMemoryClusterResult:
         if instance_configuration_id and not isinstance(instance_configuration_id, str):
             raise TypeError("Expected argument 'instance_configuration_id' to be a str")
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        if private_ip_ids and not isinstance(private_ip_ids, list):
+            raise TypeError("Expected argument 'private_ip_ids' to be a list")
+        pulumi.set(__self__, "private_ip_ids", private_ip_ids)
         if size and not isinstance(size, str):
             raise TypeError("Expected argument 'size' to be a str")
         pulumi.set(__self__, "size", size)
@@ -78,7 +81,7 @@ class GetComputeGpuMemoryClusterResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> _builtins.str:
         """
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -147,7 +150,7 @@ class GetComputeGpuMemoryClusterResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
         """
         return pulumi.get(self, "id")
 
@@ -160,10 +163,18 @@ class GetComputeGpuMemoryClusterResult:
         return pulumi.get(self, "instance_configuration_id")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpIds")
+    def private_ip_ids(self) -> Sequence[_builtins.str]:
+        """
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        """
+        return pulumi.get(self, "private_ip_ids")
+
+    @_builtins.property
     @pulumi.getter
     def size(self) -> _builtins.str:
         """
-        The number of instances currently running in the GpuMemoryCluster
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
         """
         return pulumi.get(self, "size")
 
@@ -171,7 +182,7 @@ class GetComputeGpuMemoryClusterResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The lifecycle state of the GPU memory cluster
+        The lifecycle state of the GPU Memory Cluster
         """
         return pulumi.get(self, "state")
 
@@ -187,7 +198,7 @@ class GetComputeGpuMemoryClusterResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -209,6 +220,7 @@ class AwaitableGetComputeGpuMemoryClusterResult(GetComputeGpuMemoryClusterResult
             gpu_memory_fabric_id=self.gpu_memory_fabric_id,
             id=self.id,
             instance_configuration_id=self.instance_configuration_id,
+            private_ip_ids=self.private_ip_ids,
             size=self.size,
             state=self.state,
             system_tags=self.system_tags,
@@ -251,6 +263,7 @@ def get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id: Optional[_buil
         gpu_memory_fabric_id=pulumi.get(__ret__, 'gpu_memory_fabric_id'),
         id=pulumi.get(__ret__, 'id'),
         instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
+        private_ip_ids=pulumi.get(__ret__, 'private_ip_ids'),
         size=pulumi.get(__ret__, 'size'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -290,6 +303,7 @@ def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: Optiona
         gpu_memory_fabric_id=pulumi.get(__response__, 'gpu_memory_fabric_id'),
         id=pulumi.get(__response__, 'id'),
         instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),
+        private_ip_ids=pulumi.get(__response__, 'private_ip_ids'),
         size=pulumi.get(__response__, 'size'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

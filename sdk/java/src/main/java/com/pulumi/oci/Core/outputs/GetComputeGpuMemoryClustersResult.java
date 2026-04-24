@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetComputeGpuMemoryClustersResult {
     /**
-     * @return The availability domain of the GPU memory cluster.
+     * @return The availability domain of the GPU Memory Cluster.
      * 
      */
     private @Nullable String availabilityDomain;
@@ -50,7 +50,7 @@ public final class GetComputeGpuMemoryClustersResult {
 
     private GetComputeGpuMemoryClustersResult() {}
     /**
-     * @return The availability domain of the GPU memory cluster.
+     * @return The availability domain of the GPU Memory Cluster.
      * 
      */
     public Optional<String> availabilityDomain() {

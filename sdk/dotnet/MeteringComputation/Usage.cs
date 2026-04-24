@@ -114,7 +114,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableArray<Outputs.UsageItem>> Items { get; private set; } = null!;
 
         /// <summary>
-        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         /// </summary>
         [Output("queryType")]
         public Output<string> QueryType { get; private set; } = null!;
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<bool>? IsAggregateByTime { get; set; }
 
         /// <summary>
-        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         /// </summary>
         [Input("queryType")]
         public Input<string>? QueryType { get; set; }
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         /// </summary>
         [Input("queryType")]
         public Input<string>? QueryType { get; set; }

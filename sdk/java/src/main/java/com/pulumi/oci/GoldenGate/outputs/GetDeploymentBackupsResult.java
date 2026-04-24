@@ -42,7 +42,7 @@ public final class GetDeploymentBackupsResult {
      */
     private String id;
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     private @Nullable String state;
@@ -87,7 +87,7 @@ public final class GetDeploymentBackupsResult {
         return this.id;
     }
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     public Optional<String> state() {

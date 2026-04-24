@@ -46,7 +46,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// A filter to return only the resources that match the 'lifecycleState' given.
+        /// A filter to return only the deployment peers having the 'lifecycleState' given.
         /// </summary>
         public readonly string State;
         /// <summary>

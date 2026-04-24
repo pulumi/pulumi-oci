@@ -12,7 +12,6 @@ import java.util.Objects;
 public final class VcnByoipv6cidrDetail {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-     * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
      * 
      */
     private String byoipv6rangeId;
@@ -25,7 +24,6 @@ public final class VcnByoipv6cidrDetail {
     private VcnByoipv6cidrDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-     * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
      * 
      */
     public String byoipv6rangeId() {

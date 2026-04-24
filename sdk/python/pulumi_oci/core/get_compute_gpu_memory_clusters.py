@@ -58,7 +58,7 @@ class GetComputeGpuMemoryClustersResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[_builtins.str]:
         """
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
         """
         return pulumi.get(self, "availability_domain")
 

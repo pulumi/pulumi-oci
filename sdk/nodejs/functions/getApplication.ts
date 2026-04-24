@@ -73,6 +73,10 @@ export interface GetApplicationResult {
      */
     readonly imagePolicyConfigs: outputs.Functions.GetApplicationImagePolicyConfig[];
     /**
+     * Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     */
+    readonly loggings: outputs.Functions.GetApplicationLogging[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      */
     readonly networkSecurityGroupIds: string[];

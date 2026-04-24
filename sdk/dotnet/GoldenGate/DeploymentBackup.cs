@@ -178,7 +178,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<double> SizeInBytes { get; private set; } = null!;
 
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment Backup.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -480,7 +480,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<double>? SizeInBytes { get; set; }
 
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment Backup.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

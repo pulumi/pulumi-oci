@@ -26,13 +26,16 @@ class GetDatabaseRegistrationResult:
     """
     A collection of values returned by getDatabaseRegistration.
     """
-    def __init__(__self__, alias_name=None, compartment_id=None, connection_string=None, database_id=None, database_registration_id=None, defined_tags=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ip_address=None, key_id=None, lifecycle_details=None, password=None, rce_private_ip=None, secret_compartment_id=None, secret_id=None, session_mode=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, alias_name=None, compartment_id=None, connection_id=None, connection_string=None, database_id=None, database_registration_id=None, defined_tags=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ip_address=None, key_id=None, lifecycle_details=None, password=None, rce_private_ip=None, secret_compartment_id=None, secret_id=None, session_mode=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, username=None, vault_id=None, wallet=None):
         if alias_name and not isinstance(alias_name, str):
             raise TypeError("Expected argument 'alias_name' to be a str")
         pulumi.set(__self__, "alias_name", alias_name)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_id and not isinstance(connection_id, str):
+            raise TypeError("Expected argument 'connection_id' to be a str")
+        pulumi.set(__self__, "connection_id", connection_id)
         if connection_string and not isinstance(connection_string, str):
             raise TypeError("Expected argument 'connection_string' to be a str")
         pulumi.set(__self__, "connection_string", connection_string)
@@ -124,6 +127,14 @@ class GetDatabaseRegistrationResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        """
+        return pulumi.get(self, "connection_id")
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
@@ -325,6 +336,7 @@ class AwaitableGetDatabaseRegistrationResult(GetDatabaseRegistrationResult):
         return GetDatabaseRegistrationResult(
             alias_name=self.alias_name,
             compartment_id=self.compartment_id,
+            connection_id=self.connection_id,
             connection_string=self.connection_string,
             database_id=self.database_id,
             database_registration_id=self.database_registration_id,
@@ -380,6 +392,7 @@ def get_database_registration(database_registration_id: Optional[_builtins.str] 
     return AwaitableGetDatabaseRegistrationResult(
         alias_name=pulumi.get(__ret__, 'alias_name'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        connection_id=pulumi.get(__ret__, 'connection_id'),
         connection_string=pulumi.get(__ret__, 'connection_string'),
         database_id=pulumi.get(__ret__, 'database_id'),
         database_registration_id=pulumi.get(__ret__, 'database_registration_id'),
@@ -432,6 +445,7 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
     return __ret__.apply(lambda __response__: GetDatabaseRegistrationResult(
         alias_name=pulumi.get(__response__, 'alias_name'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_id=pulumi.get(__response__, 'connection_id'),
         connection_string=pulumi.get(__response__, 'connection_string'),
         database_id=pulumi.get(__response__, 'database_id'),
         database_registration_id=pulumi.get(__response__, 'database_registration_id'),

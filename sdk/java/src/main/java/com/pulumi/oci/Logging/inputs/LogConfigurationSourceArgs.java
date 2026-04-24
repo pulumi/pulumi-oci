@@ -33,14 +33,14 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Log category parameters are stored here.
+     * (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<Map<String,String>> parameters;
 
     /**
-     * @return (Updatable) Log category parameters are stored here.
+     * @return (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
      * 
      */
     public Optional<Output<Map<String,String>>> parameters() {
@@ -48,14 +48,14 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The unique identifier of the resource emitting the log.
+     * The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
      * 
      */
     @Import(name="resource", required=true)
     private Output<String> resource;
 
     /**
-     * @return The unique identifier of the resource emitting the log.
+     * @return The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
      * 
      */
     public Output<String> resource() {
@@ -144,7 +144,7 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param parameters (Updatable) Log category parameters are stored here.
+         * @param parameters (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param parameters (Updatable) Log category parameters are stored here.
+         * @param parameters (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param resource The unique identifier of the resource emitting the log.
+         * @param resource The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param resource The unique identifier of the resource emitting the log.
+         * @param resource The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
          * 
          * @return builder
          * 

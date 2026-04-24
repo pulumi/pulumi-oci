@@ -399,6 +399,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> _builtins.str:
         return pulumi.get(self, "account_key")
 
@@ -491,6 +492,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
     def client_secret(self) -> _builtins.str:
         return pulumi.get(self, "client_secret")
 
@@ -652,7 +654,7 @@ class GetConnectionResult:
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         """
         return pulumi.get(self, "endpoint")
 
@@ -729,6 +731,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
+    @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
     def jndi_security_credentials(self) -> _builtins.str:
         return pulumi.get(self, "jndi_security_credentials")
 
@@ -758,11 +761,13 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
+    @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
     def key_store(self) -> _builtins.str:
         return pulumi.get(self, "key_store")
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
+    @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
     def key_store_password(self) -> _builtins.str:
         return pulumi.get(self, "key_store_password")
 
@@ -808,6 +813,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def password(self) -> _builtins.str:
         return pulumi.get(self, "password")
 
@@ -831,13 +837,13 @@ class GetConnectionResult:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> _builtins.str:
         """
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
     def private_key_file(self) -> _builtins.str:
         return pulumi.get(self, "private_key_file")
 
@@ -851,6 +857,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
     def private_key_passphrase(self) -> _builtins.str:
         return pulumi.get(self, "private_key_passphrase")
 
@@ -904,6 +911,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
+    @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
     def sas_token(self) -> _builtins.str:
         return pulumi.get(self, "sas_token")
 
@@ -917,6 +925,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> _builtins.str:
         return pulumi.get(self, "secret_access_key")
 
@@ -957,6 +966,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> _builtins.str:
         return pulumi.get(self, "service_account_key_file")
 
@@ -972,7 +982,7 @@ class GetConnectionResult:
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> _builtins.str:
         """
-        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
         """
         return pulumi.get(self, "session_mode")
 
@@ -1018,6 +1028,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
+    @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
     def ssl_client_keystash(self) -> _builtins.str:
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -1031,6 +1042,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
+    @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
     def ssl_client_keystoredb(self) -> _builtins.str:
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -1052,11 +1064,13 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
+    @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
     def ssl_key(self) -> _builtins.str:
         return pulumi.get(self, "ssl_key")
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
+    @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
     def ssl_key_password(self) -> _builtins.str:
         return pulumi.get(self, "ssl_key_password")
 
@@ -1199,11 +1213,13 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
+    @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
     def tls_certificate_key_file(self) -> _builtins.str:
         return pulumi.get(self, "tls_certificate_key_file")
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
     def tls_certificate_key_file_password(self) -> _builtins.str:
         return pulumi.get(self, "tls_certificate_key_file_password")
 
@@ -1231,11 +1247,13 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
     def trust_store(self) -> _builtins.str:
         return pulumi.get(self, "trust_store")
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
+    @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
     def trust_store_password(self) -> _builtins.str:
         return pulumi.get(self, "trust_store_password")
 
@@ -1289,6 +1307,7 @@ class GetConnectionResult:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
     def wallet(self) -> _builtins.str:
         return pulumi.get(self, "wallet")
 

@@ -156,7 +156,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
     /**
      * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
+     * @deprecated
+     * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
     private Boolean isStorageUtilizationLimitExceeded;
     /**
      * @return The Oracle license model that applies to a Deployment.
@@ -179,7 +183,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String loadBalancerId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
      * 
      */
     private String loadBalancerSubnetId;
@@ -244,7 +248,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String sourceDeploymentId;
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployments having the &#39;lifecycleState&#39; given.
      * 
      */
     private String state;
@@ -303,11 +307,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String timeUpdated;
-    /**
-     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     * 
-     */
-    private String timeUpgradeRequired;
 
     private GetDeploymentsDeploymentCollectionItem() {}
     /**
@@ -498,7 +497,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
     /**
      * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
+     * @deprecated
+     * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
     public Boolean isStorageUtilizationLimitExceeded() {
         return this.isStorageUtilizationLimitExceeded;
     }
@@ -531,7 +534,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.loadBalancerId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
      * 
      */
     public String loadBalancerSubnetId() {
@@ -622,7 +625,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.sourceDeploymentId;
     }
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployments having the &#39;lifecycleState&#39; given.
      * 
      */
     public String state() {
@@ -705,13 +708,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
-    /**
-     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     * 
-     */
-    public String timeUpgradeRequired() {
-        return this.timeUpgradeRequired;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -779,7 +775,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String timeOggVersionSupportedUntil;
         private String timeRoleChanged;
         private String timeUpdated;
-        private String timeUpgradeRequired;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -840,7 +835,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
     	      this.timeRoleChanged = defaults.timeRoleChanged;
     	      this.timeUpdated = defaults.timeUpdated;
-    	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
         @CustomType.Setter
@@ -1326,14 +1320,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
             this.timeUpdated = timeUpdated;
             return this;
         }
-        @CustomType.Setter
-        public Builder timeUpgradeRequired(String timeUpgradeRequired) {
-            if (timeUpgradeRequired == null) {
-              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeUpgradeRequired");
-            }
-            this.timeUpgradeRequired = timeUpgradeRequired;
-            return this;
-        }
         public GetDeploymentsDeploymentCollectionItem build() {
             final var _resultValue = new GetDeploymentsDeploymentCollectionItem();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -1393,7 +1379,6 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             _resultValue.timeRoleChanged = timeRoleChanged;
             _resultValue.timeUpdated = timeUpdated;
-            _resultValue.timeUpgradeRequired = timeUpgradeRequired;
             return _resultValue;
         }
     }

@@ -22,7 +22,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
      */
     private Boolean isUpsizeEnabled;
     /**
-     * @return The configured target size for the GPU Memory cluster.
+     * @return The configured target size for the GPU Memory Cluster.
      * 
      */
     private String targetSize;
@@ -43,7 +43,7 @@ public final class GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionI
         return this.isUpsizeEnabled;
     }
     /**
-     * @return The configured target size for the GPU Memory cluster.
+     * @return The configured target size for the GPU Memory Cluster.
      * 
      */
     public String targetSize() {

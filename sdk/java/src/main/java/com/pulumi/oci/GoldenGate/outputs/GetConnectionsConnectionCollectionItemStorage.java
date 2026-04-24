@@ -16,6 +16,13 @@ public final class GetConnectionsConnectionCollectionItemStorage {
      */
     private String accessKeyId;
     /**
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    private String accountKey;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * 
      */
@@ -36,7 +43,7 @@ public final class GetConnectionsConnectionCollectionItemStorage {
      */
     private String container;
     /**
-     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
      * 
      */
     private String endpoint;
@@ -56,10 +63,24 @@ public final class GetConnectionsConnectionCollectionItemStorage {
      */
     private String schemeType;
     /**
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    private String secretAccessKey;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     private String secretAccessKeySecretId;
+    /**
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    private String serviceAccountKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      * 
@@ -78,6 +99,15 @@ public final class GetConnectionsConnectionCollectionItemStorage {
      */
     public String accessKeyId() {
         return this.accessKeyId;
+    }
+    /**
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    public String accountKey() {
+        return this.accountKey;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -108,7 +138,7 @@ public final class GetConnectionsConnectionCollectionItemStorage {
         return this.container;
     }
     /**
-     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
      * 
      */
     public String endpoint() {
@@ -136,11 +166,29 @@ public final class GetConnectionsConnectionCollectionItemStorage {
         return this.schemeType;
     }
     /**
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    public String secretAccessKey() {
+        return this.secretAccessKey;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     public String secretAccessKeySecretId() {
         return this.secretAccessKeySecretId;
+    }
+    /**
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    public String serviceAccountKeyFile() {
+        return this.serviceAccountKeyFile;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -167,6 +215,7 @@ public final class GetConnectionsConnectionCollectionItemStorage {
     @CustomType.Builder
     public static final class Builder {
         private String accessKeyId;
+        private String accountKey;
         private String accountKeySecretId;
         private String accountName;
         private String bucket;
@@ -175,13 +224,16 @@ public final class GetConnectionsConnectionCollectionItemStorage {
         private String projectId;
         private String region;
         private String schemeType;
+        private String secretAccessKey;
         private String secretAccessKeySecretId;
+        private String serviceAccountKeyFile;
         private String serviceAccountKeyFileSecretId;
         private String storageType;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemStorage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyId = defaults.accessKeyId;
+    	      this.accountKey = defaults.accountKey;
     	      this.accountKeySecretId = defaults.accountKeySecretId;
     	      this.accountName = defaults.accountName;
     	      this.bucket = defaults.bucket;
@@ -190,7 +242,9 @@ public final class GetConnectionsConnectionCollectionItemStorage {
     	      this.projectId = defaults.projectId;
     	      this.region = defaults.region;
     	      this.schemeType = defaults.schemeType;
+    	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.secretAccessKeySecretId = defaults.secretAccessKeySecretId;
+    	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
     	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.storageType = defaults.storageType;
         }
@@ -201,6 +255,14 @@ public final class GetConnectionsConnectionCollectionItemStorage {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemStorage", "accessKeyId");
             }
             this.accessKeyId = accessKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder accountKey(String accountKey) {
+            if (accountKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemStorage", "accountKey");
+            }
+            this.accountKey = accountKey;
             return this;
         }
         @CustomType.Setter
@@ -268,11 +330,27 @@ public final class GetConnectionsConnectionCollectionItemStorage {
             return this;
         }
         @CustomType.Setter
+        public Builder secretAccessKey(String secretAccessKey) {
+            if (secretAccessKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemStorage", "secretAccessKey");
+            }
+            this.secretAccessKey = secretAccessKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
             if (secretAccessKeySecretId == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemStorage", "secretAccessKeySecretId");
             }
             this.secretAccessKeySecretId = secretAccessKeySecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+            if (serviceAccountKeyFile == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemStorage", "serviceAccountKeyFile");
+            }
+            this.serviceAccountKeyFile = serviceAccountKeyFile;
             return this;
         }
         @CustomType.Setter
@@ -294,6 +372,7 @@ public final class GetConnectionsConnectionCollectionItemStorage {
         public GetConnectionsConnectionCollectionItemStorage build() {
             final var _resultValue = new GetConnectionsConnectionCollectionItemStorage();
             _resultValue.accessKeyId = accessKeyId;
+            _resultValue.accountKey = accountKey;
             _resultValue.accountKeySecretId = accountKeySecretId;
             _resultValue.accountName = accountName;
             _resultValue.bucket = bucket;
@@ -302,7 +381,9 @@ public final class GetConnectionsConnectionCollectionItemStorage {
             _resultValue.projectId = projectId;
             _resultValue.region = region;
             _resultValue.schemeType = schemeType;
+            _resultValue.secretAccessKey = secretAccessKey;
             _resultValue.secretAccessKeySecretId = secretAccessKeySecretId;
+            _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
             _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.storageType = storageType;
             return _resultValue;

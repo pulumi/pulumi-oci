@@ -108,7 +108,7 @@ public final class GetDeploymentBackupResult {
      */
     private Double sizeInBytes;
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     private String state;
@@ -272,7 +272,7 @@ public final class GetDeploymentBackupResult {
         return this.sizeInBytes;
     }
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     public String state() {

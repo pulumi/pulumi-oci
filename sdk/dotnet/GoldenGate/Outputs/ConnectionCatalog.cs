@@ -26,7 +26,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? ClientId;
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        /// (Updatable) Client secret required to connect to Polaris.
+        /// </summary>
+        public readonly string? ClientSecret;
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         /// </summary>
         public readonly string? ClientSecretSecretId;
         /// <summary>
@@ -41,6 +45,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// (Updatable) The Snowflake role used to access Polaris.
         /// </summary>
         public readonly string? PrincipalRole;
+        /// <summary>
+        /// (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+        /// </summary>
+        public readonly string? Properties;
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         /// </summary>
@@ -58,6 +66,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? clientId,
 
+            string? clientSecret,
+
             string? clientSecretSecretId,
 
             string? glueId,
@@ -66,6 +76,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? principalRole,
 
+            string? properties,
+
             string? propertiesSecretId,
 
             string? uri)
@@ -73,10 +85,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Branch = branch;
             CatalogType = catalogType;
             ClientId = clientId;
+            ClientSecret = clientSecret;
             ClientSecretSecretId = clientSecretSecretId;
             GlueId = glueId;
             Name = name;
             PrincipalRole = principalRole;
+            Properties = properties;
             PropertiesSecretId = propertiesSecretId;
             Uri = uri;
         }

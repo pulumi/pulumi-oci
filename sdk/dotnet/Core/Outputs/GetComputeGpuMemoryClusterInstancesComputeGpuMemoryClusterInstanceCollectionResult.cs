@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionResult
     {
         /// <summary>
-        /// The list of compute GPU memory cluster instances.
+        /// The list of compute GPU Memory Cluster instances.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult> Items;
 

@@ -151,7 +151,7 @@ type VirtualCircuit struct {
 	OracleBgpAsn pulumi.IntOutput `pulumi:"oracleBgpAsn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringOutput `pulumi:"providerServiceId"`
-	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 	ProviderServiceKeyName pulumi.StringOutput `pulumi:"providerServiceKeyName"`
 	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
 	ProviderState pulumi.StringOutput `pulumi:"providerState"`
@@ -254,7 +254,7 @@ type virtualCircuitState struct {
 	OracleBgpAsn *int `pulumi:"oracleBgpAsn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId *string `pulumi:"providerServiceId"`
-	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 	ProviderServiceKeyName *string `pulumi:"providerServiceKeyName"`
 	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
 	ProviderState *string `pulumi:"providerState"`
@@ -322,7 +322,7 @@ type VirtualCircuitState struct {
 	OracleBgpAsn pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringPtrInput
-	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 	ProviderServiceKeyName pulumi.StringPtrInput
 	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
 	ProviderState pulumi.StringPtrInput
@@ -384,7 +384,7 @@ type virtualCircuitArgs struct {
 	IsTransportMode *bool `pulumi:"isTransportMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId *string `pulumi:"providerServiceId"`
-	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 	ProviderServiceKeyName *string `pulumi:"providerServiceKeyName"`
 	// (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
 	PublicPrefixes []VirtualCircuitPublicPrefix `pulumi:"publicPrefixes"`
@@ -431,7 +431,7 @@ type VirtualCircuitArgs struct {
 	IsTransportMode pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringPtrInput
-	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 	ProviderServiceKeyName pulumi.StringPtrInput
 	// (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
 	PublicPrefixes VirtualCircuitPublicPrefixArrayInput
@@ -627,7 +627,7 @@ func (o VirtualCircuitOutput) ProviderServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderServiceId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 func (o VirtualCircuitOutput) ProviderServiceKeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderServiceKeyName }).(pulumi.StringOutput)
 }

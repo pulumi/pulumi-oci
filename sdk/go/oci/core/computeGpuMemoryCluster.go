@@ -51,6 +51,7 @@ import (
 //					TargetSize:        pulumi.Any(computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize),
 //				},
 //				GpuMemoryFabricId: pulumi.Any(testGpuMemoryFabric.Id),
+//				PrivateIpIds:      pulumi.Any(computeGpuMemoryClusterPrivateIpIds),
 //				Size:              pulumi.Any(computeGpuMemoryClusterSize),
 //			})
 //			if err != nil {
@@ -72,9 +73,9 @@ import (
 type ComputeGpuMemoryCluster struct {
 	pulumi.CustomResourceState
 
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	ComputeClusterId pulumi.StringOutput `pulumi:"computeClusterId"`
@@ -90,16 +91,18 @@ type ComputeGpuMemoryCluster struct {
 	GpuMemoryFabricId pulumi.StringOutput `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
 	InstanceConfigurationId pulumi.StringOutput `pulumi:"instanceConfigurationId"`
-	// (Updatable) The number of instances currently running in the GpuMemoryCluster
+	// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds pulumi.StringArrayOutput `pulumi:"privateIpIds"`
+	// (Updatable) The desired number of instances for the GPU Memory Cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Size pulumi.StringOutput `pulumi:"size"`
-	// The lifecycle state of the GPU memory cluster
+	// The lifecycle state of the GPU Memory Cluster
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+	// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
 
@@ -145,9 +148,9 @@ func GetComputeGpuMemoryCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ComputeGpuMemoryCluster resources.
 type computeGpuMemoryClusterState struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	ComputeClusterId *string `pulumi:"computeClusterId"`
@@ -163,23 +166,25 @@ type computeGpuMemoryClusterState struct {
 	GpuMemoryFabricId *string `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
 	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
-	// (Updatable) The number of instances currently running in the GpuMemoryCluster
+	// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds []string `pulumi:"privateIpIds"`
+	// (Updatable) The desired number of instances for the GPU Memory Cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Size *string `pulumi:"size"`
-	// The lifecycle state of the GPU memory cluster
+	// The lifecycle state of the GPU Memory Cluster
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+	// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 type ComputeGpuMemoryClusterState struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	ComputeClusterId pulumi.StringPtrInput
@@ -195,16 +200,18 @@ type ComputeGpuMemoryClusterState struct {
 	GpuMemoryFabricId pulumi.StringPtrInput
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
 	InstanceConfigurationId pulumi.StringPtrInput
-	// (Updatable) The number of instances currently running in the GpuMemoryCluster
+	// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds pulumi.StringArrayInput
+	// (Updatable) The desired number of instances for the GPU Memory Cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Size pulumi.StringPtrInput
-	// The lifecycle state of the GPU memory cluster
+	// The lifecycle state of the GPU Memory Cluster
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+	// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
 
@@ -213,9 +220,9 @@ func (ComputeGpuMemoryClusterState) ElementType() reflect.Type {
 }
 
 type computeGpuMemoryClusterArgs struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	ComputeClusterId string `pulumi:"computeClusterId"`
@@ -231,7 +238,9 @@ type computeGpuMemoryClusterArgs struct {
 	GpuMemoryFabricId *string `pulumi:"gpuMemoryFabricId"`
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
 	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
-	// (Updatable) The number of instances currently running in the GpuMemoryCluster
+	// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds []string `pulumi:"privateIpIds"`
+	// (Updatable) The desired number of instances for the GPU Memory Cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,9 +249,9 @@ type computeGpuMemoryClusterArgs struct {
 
 // The set of arguments for constructing a ComputeGpuMemoryCluster resource.
 type ComputeGpuMemoryClusterArgs struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain pulumi.StringInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 	CompartmentId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	ComputeClusterId pulumi.StringInput
@@ -258,7 +267,9 @@ type ComputeGpuMemoryClusterArgs struct {
 	GpuMemoryFabricId pulumi.StringPtrInput
 	// (Updatable) Instance Configuration to be used for this GPU Memory Cluster
 	InstanceConfigurationId pulumi.StringInput
-	// (Updatable) The number of instances currently running in the GpuMemoryCluster
+	// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds pulumi.StringArrayInput
+	// (Updatable) The desired number of instances for the GPU Memory Cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -352,12 +363,12 @@ func (o ComputeGpuMemoryClusterOutput) ToComputeGpuMemoryClusterOutputWithContex
 	return o
 }
 
-// The availability domain of the GPU memory cluster.
+// The availability domain of the GPU Memory Cluster.
 func (o ComputeGpuMemoryClusterOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
 func (o ComputeGpuMemoryClusterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -399,7 +410,12 @@ func (o ComputeGpuMemoryClusterOutput) InstanceConfigurationId() pulumi.StringOu
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.InstanceConfigurationId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The number of instances currently running in the GpuMemoryCluster
+// (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+func (o ComputeGpuMemoryClusterOutput) PrivateIpIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringArrayOutput { return v.PrivateIpIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The desired number of instances for the GPU Memory Cluster.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -407,7 +423,7 @@ func (o ComputeGpuMemoryClusterOutput) Size() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.Size }).(pulumi.StringOutput)
 }
 
-// The lifecycle state of the GPU memory cluster
+// The lifecycle state of the GPU Memory Cluster
 func (o ComputeGpuMemoryClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -417,7 +433,7 @@ func (o ComputeGpuMemoryClusterOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 func (o ComputeGpuMemoryClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

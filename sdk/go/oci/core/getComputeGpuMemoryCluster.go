@@ -58,7 +58,7 @@ type LookupComputeGpuMemoryClusterArgs struct {
 
 // A collection of values returned by getComputeGpuMemoryCluster.
 type LookupComputeGpuMemoryClusterResult struct {
-	// The availability domain of the GPU memory cluster.
+	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -75,17 +75,19 @@ type LookupComputeGpuMemoryClusterResult struct {
 	GpuMemoryClusterScaleConfigs []GetComputeGpuMemoryClusterGpuMemoryClusterScaleConfig `pulumi:"gpuMemoryClusterScaleConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
 	GpuMemoryFabricId string `pulumi:"gpuMemoryFabricId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
 	Id string `pulumi:"id"`
 	// The OCID of the Instance Configuration used to source launch details for this instance.
 	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
-	// The number of instances currently running in the GpuMemoryCluster
+	// Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+	PrivateIpIds []string `pulumi:"privateIpIds"`
+	// The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
 	Size string `pulumi:"size"`
-	// The lifecycle state of the GPU memory cluster
+	// The lifecycle state of the GPU Memory Cluster
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+	// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -123,7 +125,7 @@ func (o LookupComputeGpuMemoryClusterResultOutput) ToLookupComputeGpuMemoryClust
 	return o
 }
 
-// The availability domain of the GPU memory cluster.
+// The availability domain of the GPU Memory Cluster.
 func (o LookupComputeGpuMemoryClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -169,7 +171,7 @@ func (o LookupComputeGpuMemoryClusterResultOutput) GpuMemoryFabricId() pulumi.St
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.GpuMemoryFabricId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
 func (o LookupComputeGpuMemoryClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -179,12 +181,17 @@ func (o LookupComputeGpuMemoryClusterResultOutput) InstanceConfigurationId() pul
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
 }
 
-// The number of instances currently running in the GpuMemoryCluster
+// Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+func (o LookupComputeGpuMemoryClusterResultOutput) PrivateIpIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) []string { return v.PrivateIpIds }).(pulumi.StringArrayOutput)
+}
+
+// The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
 func (o LookupComputeGpuMemoryClusterResultOutput) Size() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.Size }).(pulumi.StringOutput)
 }
 
-// The lifecycle state of the GPU memory cluster
+// The lifecycle state of the GPU Memory Cluster
 func (o LookupComputeGpuMemoryClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -194,7 +201,7 @@ func (o LookupComputeGpuMemoryClusterResultOutput) SystemTags() pulumi.StringMap
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
 func (o LookupComputeGpuMemoryClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

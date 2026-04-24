@@ -289,14 +289,14 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     public Optional<Output<String>> state() {
@@ -808,7 +808,7 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment Backup.
          * 
          * @return builder
          * 
@@ -819,7 +819,7 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment Backup.
          * 
          * @return builder
          * 

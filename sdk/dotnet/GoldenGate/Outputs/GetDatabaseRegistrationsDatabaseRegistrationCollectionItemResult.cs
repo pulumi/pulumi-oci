@@ -22,6 +22,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        /// </summary>
+        public readonly string ConnectionId;
+        /// <summary>
         /// Connect descriptor or Easy Connect Naming method used to connect to a database.
         /// </summary>
         public readonly string ConnectionString;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string compartmentId,
 
+            string connectionId,
+
             string connectionString,
 
             string databaseId,
@@ -168,6 +174,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         {
             AliasName = aliasName;
             CompartmentId = compartmentId;
+            ConnectionId = connectionId;
             ConnectionString = connectionString;
             DatabaseId = databaseId;
             DefinedTags = definedTags;

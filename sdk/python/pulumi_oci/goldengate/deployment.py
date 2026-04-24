@@ -76,7 +76,18 @@ class DeploymentArgs:
         :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+               
+               Rules:
+               * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+               * Update:
+               * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+               * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+               
+               Validation:
+               * Must reference a public subnet.
+               * Must be a regional subnet.
+               * Must be in the same VCN as subnetId.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -85,7 +96,7 @@ class DeploymentArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
                
@@ -407,7 +418,18 @@ class DeploymentArgs:
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        * Update:
+        * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        * Must reference a public subnet.
+        * Must be a regional subnet.
+        * Must be in the same VCN as subnetId.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -515,7 +537,7 @@ class DeploymentArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
         """
         return pulumi.get(self, "state")
 
@@ -598,8 +620,7 @@ class _DeploymentState:
                  time_of_next_maintenance: Optional[pulumi.Input[_builtins.str]] = None,
                  time_ogg_version_supported_until: Optional[pulumi.Input[_builtins.str]] = None,
                  time_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_upgrade_required: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
 
@@ -633,7 +654,18 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+               
+               Rules:
+               * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+               * Update:
+               * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+               * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+               
+               Validation:
+               * Must reference a public subnet.
+               * Must be a regional subnet.
+               * Must be in the same VCN as subnetId.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -646,7 +678,7 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment.
         :param pulumi.Input[_builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -662,7 +694,6 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[_builtins.str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -716,6 +747,9 @@ class _DeploymentState:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if is_storage_utilization_limit_exceeded is not None:
+            warnings.warn("""The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""is_storage_utilization_limit_exceeded is deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""")
         if is_storage_utilization_limit_exceeded is not None:
             pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
         if license_model is not None:
@@ -776,8 +810,6 @@ class _DeploymentState:
             pulumi.set(__self__, "time_role_changed", time_role_changed)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
-        if time_upgrade_required is not None:
-            pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -1090,6 +1122,7 @@ class _DeploymentState:
 
     @_builtins.property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
+    @_utilities.deprecated("""The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""")
     def is_storage_utilization_limit_exceeded(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -1152,7 +1185,18 @@ class _DeploymentState:
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        * Update:
+        * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        * Must reference a public subnet.
+        * Must be a regional subnet.
+        * Must be in the same VCN as subnetId.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -1308,7 +1352,7 @@ class _DeploymentState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
         """
         return pulumi.get(self, "state")
 
@@ -1452,18 +1496,6 @@ class _DeploymentState:
     def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
-    @_builtins.property
-    @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        return pulumi.get(self, "time_upgrade_required")
-
-    @time_upgrade_required.setter
-    def time_upgrade_required(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "time_upgrade_required", value)
-
 
 @pulumi.type_token("oci:GoldenGate/deployment:Deployment")
 class Deployment(pulumi.CustomResource):
@@ -1542,7 +1574,18 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+               
+               Rules:
+               * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+               * Update:
+               * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+               * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+               
+               Validation:
+               * Must reference a public subnet.
+               * Must be a regional subnet.
+               * Must be in the same VCN as subnetId.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -1551,7 +1594,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                
@@ -1700,7 +1743,6 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["time_ogg_version_supported_until"] = None
             __props__.__dict__["time_role_changed"] = None
             __props__.__dict__["time_updated"] = None
-            __props__.__dict__["time_upgrade_required"] = None
         super(Deployment, __self__).__init__(
             'oci:GoldenGate/deployment:Deployment',
             resource_name,
@@ -1766,8 +1808,7 @@ class Deployment(pulumi.CustomResource):
             time_of_next_maintenance: Optional[pulumi.Input[_builtins.str]] = None,
             time_ogg_version_supported_until: Optional[pulumi.Input[_builtins.str]] = None,
             time_role_changed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_upgrade_required: Optional[pulumi.Input[_builtins.str]] = None) -> 'Deployment':
+            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Deployment':
         """
         Get an existing Deployment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1805,7 +1846,18 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
-        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+               
+               Rules:
+               * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+               * Update:
+               * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+               * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+               
+               Validation:
+               * Must reference a public subnet.
+               * Must be a regional subnet.
+               * Must be in the same VCN as subnetId.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -1818,7 +1870,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment.
         :param pulumi.Input[_builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -1834,7 +1886,6 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[_builtins.str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1896,7 +1947,6 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["time_ogg_version_supported_until"] = time_ogg_version_supported_until
         __props__.__dict__["time_role_changed"] = time_role_changed
         __props__.__dict__["time_updated"] = time_updated
-        __props__.__dict__["time_upgrade_required"] = time_upgrade_required
         return Deployment(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -2106,6 +2156,7 @@ class Deployment(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
+    @_utilities.deprecated("""The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.""")
     def is_storage_utilization_limit_exceeded(self) -> pulumi.Output[_builtins.bool]:
         """
         Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -2148,7 +2199,18 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerSubnetId")
     def load_balancer_subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        * Update:
+        * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+        * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        * Must reference a public subnet.
+        * Must be a regional subnet.
+        * Must be in the same VCN as subnetId.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
 
@@ -2252,7 +2314,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
         """
         return pulumi.get(self, "state")
 
@@ -2347,12 +2409,4 @@ class Deployment(pulumi.CustomResource):
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
-
-    @_builtins.property
-    @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> pulumi.Output[_builtins.str]:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        return pulumi.get(self, "time_upgrade_required")
 

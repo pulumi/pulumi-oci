@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string Category;
         /// <summary>
-        /// (Updatable) Log category parameters are stored here.
+        /// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
         /// </summary>
         public readonly ImmutableDictionary<string, string>? Parameters;
         /// <summary>
-        /// The unique identifier of the resource emitting the log.
+        /// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
         /// </summary>
         public readonly string Resource;
         /// <summary>

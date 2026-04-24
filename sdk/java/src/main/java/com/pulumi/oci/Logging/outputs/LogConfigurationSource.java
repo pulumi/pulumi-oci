@@ -18,12 +18,12 @@ public final class LogConfigurationSource {
      */
     private String category;
     /**
-     * @return (Updatable) Log category parameters are stored here.
+     * @return (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
      * 
      */
     private @Nullable Map<String,String> parameters;
     /**
-     * @return The unique identifier of the resource emitting the log.
+     * @return The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
      * 
      */
     private String resource;
@@ -48,14 +48,14 @@ public final class LogConfigurationSource {
         return this.category;
     }
     /**
-     * @return (Updatable) Log category parameters are stored here.
+     * @return (Updatable) Log category parameters are stored here. The resource for a service log can&#39;t be updated.
      * 
      */
     public Map<String,String> parameters() {
         return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
-     * @return The unique identifier of the resource emitting the log.
+     * @return The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
      * 
      */
     public String resource() {

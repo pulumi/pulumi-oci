@@ -38,12 +38,12 @@ class VcnArgs:
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         :param pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
-        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.
                * They must not overlap with each other or with the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-               **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+               **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
@@ -58,7 +58,7 @@ class VcnArgs:
                * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
                * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
                
-               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+               **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         :param pulumi.Input[_builtins.bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
@@ -118,7 +118,7 @@ class VcnArgs:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 
@@ -133,8 +133,8 @@ class VcnArgs:
         (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         * The CIDR blocks must be valid.
         * They must not overlap with each other or with the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "cidr_blocks")
 
@@ -204,7 +204,7 @@ class VcnArgs:
         * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
         * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 
-        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
@@ -280,12 +280,12 @@ class _VcnState:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] byoipv6cidr_blocks: The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         :param pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
-        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.
                * They must not overlap with each other or with the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-               **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+               **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         :param pulumi.Input[_builtins.str] default_dhcp_options_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
         :param pulumi.Input[_builtins.str] default_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
@@ -305,7 +305,7 @@ class _VcnState:
                * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
                * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
                
-               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+               **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         :param pulumi.Input[_builtins.bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
@@ -385,7 +385,7 @@ class _VcnState:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 
@@ -400,8 +400,8 @@ class _VcnState:
         (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         * The CIDR blocks must be valid.
         * They must not overlap with each other or with the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "cidr_blocks")
 
@@ -531,7 +531,7 @@ class _VcnState:
         * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
         * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 
-        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
@@ -721,12 +721,12 @@ class Vcn(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
-        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.
                * They must not overlap with each other or with the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-               **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+               **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -742,7 +742,7 @@ class Vcn(pulumi.CustomResource):
                * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
                * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
                
-               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+               **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         :param pulumi.Input[_builtins.bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
@@ -937,12 +937,12 @@ class Vcn(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] byoipv6cidr_blocks: The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
-        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cidr_blocks: (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
                * The CIDR blocks must be valid.
                * They must not overlap with each other or with the on-premises network CIDR block.
-               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-               **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+               * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+               **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         :param pulumi.Input[_builtins.str] default_dhcp_options_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
         :param pulumi.Input[_builtins.str] default_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
@@ -962,7 +962,7 @@ class Vcn(pulumi.CustomResource):
                * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
                * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
                
-               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+               **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[_builtins.bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         :param pulumi.Input[_builtins.bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
@@ -1019,7 +1019,7 @@ class Vcn(pulumi.CustomResource):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Output[_builtins.str]:
         """
-        **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
+        **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 
@@ -1030,8 +1030,8 @@ class Vcn(pulumi.CustomResource):
         (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         * The CIDR blocks must be valid.
         * They must not overlap with each other or with the on-premises network CIDR block.
-        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
-        **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+        * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidr_block and cidr_blocks. Note: cidr_blocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidr_block to be added must be placed at the end of the list. Once you migrate to using `cidr_blocks` from `cidr_block`, you will not be able to switch back.
+        **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "cidr_blocks")
 
@@ -1121,7 +1121,7 @@ class Vcn(pulumi.CustomResource):
         * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
         * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 
-        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 

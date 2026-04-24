@@ -21,10 +21,6 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      * 
      */
     private String availabilityDomain;
-    /**
-     * @return A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     private List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins;
     /**
      * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
@@ -120,10 +116,6 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
-    /**
-     * @return A list of total and remaining CPU and memory per capacity bucket.
-     * 
-     */
     public List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins() {
         return this.capacityBins;
     }

@@ -117,7 +117,7 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly releaseType: string;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Upgrade.
      */
     readonly state: string;
     /**

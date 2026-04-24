@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *                 .isHealthMonitoringEnabled(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled)
  *                 .isIncidentLogsEnabled(vmClusterDataCollectionOptionsIsIncidentLogsEnabled)
  *                 .build())
+ *             .dataStoragePercentage(vmClusterDataStoragePercentage)
  *             .dataStorageSizeInTbs(vmClusterDataStorageSizeInTbs)
  *             .dbNodeStorageSizeInGbs(vmClusterDbNodeStorageSizeInGbs)
  *             .dbServers(vmClusterDbServers)
@@ -97,6 +98,8 @@ import javax.annotation.Nullable;
  *             .isSparseDiskgroupEnabled(vmClusterIsSparseDiskgroupEnabled)
  *             .licenseModel(vmClusterLicenseModel)
  *             .memorySizeInGbs(vmClusterMemorySizeInGbs)
+ *             .recoStoragePercentage(vmClusterRecoStoragePercentage)
+ *             .sparseStoragePercentage(vmClusterSparseStoragePercentage)
  *             .systemVersion(vmClusterSystemVersion)
  *             .timeZone(vmClusterTimeZone)
  *             .vmBackupStorageType(vmClusterVmBackupStorageType)
@@ -217,6 +220,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<VmClusterDataCollectionOptions> dataCollectionOptions() {
         return this.dataCollectionOptions;
+    }
+    /**
+     * (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> dataStoragePercentage;
+
+    /**
+     * @return (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> dataStoragePercentage() {
+        return this.dataStoragePercentage;
     }
     /**
      * (Updatable) The data disk group size to be allocated in GBs.
@@ -373,28 +390,28 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.giVersion;
     }
     /**
-     * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+     * (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
     @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalBackupEnabled;
 
     /**
-     * @return If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+     * @return (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
     public Output<Boolean> isLocalBackupEnabled() {
         return this.isLocalBackupEnabled;
     }
     /**
-     * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+     * (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      * 
      */
     @Export(name="isSparseDiskgroupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSparseDiskgroupEnabled;
 
     /**
-     * @return If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+     * @return (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      * 
      */
     public Output<Boolean> isSparseDiskgroupEnabled() {
@@ -469,6 +486,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.ocpusEnabled;
     }
     /**
+     * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="recoStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> recoStoragePercentage;
+
+    /**
+     * @return (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> recoStoragePercentage() {
+        return this.recoStoragePercentage;
+    }
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
@@ -481,6 +512,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> shape() {
         return this.shape;
+    }
+    /**
+     * (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Export(name="sparseStoragePercentage", refs={Integer.class}, tree="[0]")
+    private Output<Integer> sparseStoragePercentage;
+
+    /**
+     * @return (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Output<Integer> sparseStoragePercentage() {
+        return this.sparseStoragePercentage;
     }
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.

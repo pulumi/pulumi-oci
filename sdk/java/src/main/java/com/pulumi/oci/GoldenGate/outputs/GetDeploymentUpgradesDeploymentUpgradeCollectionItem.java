@@ -105,7 +105,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      */
     private String releaseType;
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
      * 
      */
     private String state;
@@ -290,7 +290,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         return this.releaseType;
     }
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
      * 
      */
     public String state() {

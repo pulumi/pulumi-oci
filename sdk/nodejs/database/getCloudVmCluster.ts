@@ -86,7 +86,7 @@ export interface GetCloudVmClusterResult {
      */
     readonly dataCollectionOptions: outputs.Database.GetCloudVmClusterDataCollectionOption[];
     /**
-     * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     readonly dataStoragePercentage: number;
     /**
@@ -192,6 +192,10 @@ export interface GetCloudVmClusterResult {
     readonly ocpuCount: number;
     readonly privateZoneId: string;
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    readonly recoStoragePercentage: number;
+    /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
     readonly scanDnsName: string;
@@ -223,6 +227,10 @@ export interface GetCloudVmClusterResult {
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     readonly shape: string;
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     */
+    readonly sparseStoragePercentage: number;
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */

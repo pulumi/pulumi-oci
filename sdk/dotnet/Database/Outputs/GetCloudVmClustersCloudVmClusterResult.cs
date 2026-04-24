@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterDataCollectionOptionResult> DataCollectionOptions;
         /// <summary>
-        /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         /// </summary>
         public readonly int DataStoragePercentage;
         /// <summary>
@@ -158,6 +158,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly double OcpuCount;
         public readonly string PrivateZoneId;
         /// <summary>
+        /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        public readonly int RecoStoragePercentage;
+        /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         /// </summary>
         public readonly string ScanDnsName;
@@ -189,6 +193,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The model name of the Exadata hardware running the cloud VM cluster.
         /// </summary>
         public readonly string Shape;
+        /// <summary>
+        /// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        public readonly int SparseStoragePercentage;
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         /// </summary>
@@ -336,6 +344,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string privateZoneId,
 
+            int recoStoragePercentage,
+
             string scanDnsName,
 
             string scanDnsRecordId,
@@ -351,6 +361,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableDictionary<string, string> securityAttributes,
 
             string shape,
+
+            int sparseStoragePercentage,
 
             ImmutableArray<string> sshPublicKeys,
 
@@ -424,6 +436,7 @@ namespace Pulumi.Oci.Database.Outputs
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             PrivateZoneId = privateZoneId;
+            RecoStoragePercentage = recoStoragePercentage;
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;
@@ -432,6 +445,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
             SecurityAttributes = securityAttributes;
             Shape = shape;
+            SparseStoragePercentage = sparseStoragePercentage;
             SshPublicKeys = sshPublicKeys;
             State = state;
             StorageManagementType = storageManagementType;

@@ -47,18 +47,14 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * 
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
-     * @return (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * 
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -134,9 +130,7 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param privateIp (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-         * 
-         * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * @param privateIp This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * 
          * @return builder
          * 
@@ -147,9 +141,7 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param privateIp (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-         * 
-         * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * @param privateIp This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
          * 
          * @return builder
          * 

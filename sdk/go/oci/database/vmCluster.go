@@ -58,6 +58,7 @@ import (
 //					IsHealthMonitoringEnabled:  pulumi.Any(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
 //					IsIncidentLogsEnabled:      pulumi.Any(vmClusterDataCollectionOptionsIsIncidentLogsEnabled),
 //				},
+//				DataStoragePercentage:    pulumi.Any(vmClusterDataStoragePercentage),
 //				DataStorageSizeInTbs:     pulumi.Any(vmClusterDataStorageSizeInTbs),
 //				DbNodeStorageSizeInGbs:   pulumi.Any(vmClusterDbNodeStorageSizeInGbs),
 //				DbServers:                pulumi.Any(vmClusterDbServers),
@@ -76,6 +77,8 @@ import (
 //				IsSparseDiskgroupEnabled: pulumi.Any(vmClusterIsSparseDiskgroupEnabled),
 //				LicenseModel:             pulumi.Any(vmClusterLicenseModel),
 //				MemorySizeInGbs:          pulumi.Any(vmClusterMemorySizeInGbs),
+//				RecoStoragePercentage:    pulumi.Any(vmClusterRecoStoragePercentage),
+//				SparseStoragePercentage:  pulumi.Any(vmClusterSparseStoragePercentage),
 //				SystemVersion:            pulumi.Any(vmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(vmClusterTimeZone),
 //				VmBackupStorageType:      pulumi.Any(vmClusterVmBackupStorageType),
@@ -115,6 +118,8 @@ type VmCluster struct {
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in GBs.
 	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
@@ -137,9 +142,9 @@ type VmCluster struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
-	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolOutput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
 	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
@@ -151,8 +156,12 @@ type VmCluster struct {
 	MemorySizeInGbs pulumi.IntOutput     `pulumi:"memorySizeInGbs"`
 	OcpuCount       pulumi.Float64Output `pulumi:"ocpuCount"`
 	OcpusEnabled    pulumi.Float64Output `pulumi:"ocpusEnabled"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntOutput `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringOutput `pulumi:"shape"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntOutput `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
@@ -245,6 +254,8 @@ type vmClusterState struct {
 	CpusEnabled *int `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *VmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in GBs.
 	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
@@ -267,9 +278,9 @@ type vmClusterState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion *string `pulumi:"giVersion"`
-	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
 	LastPatchHistoryEntryId *string `pulumi:"lastPatchHistoryEntryId"`
@@ -281,8 +292,12 @@ type vmClusterState struct {
 	MemorySizeInGbs *int     `pulumi:"memorySizeInGbs"`
 	OcpuCount       *float64 `pulumi:"ocpuCount"`
 	OcpusEnabled    *float64 `pulumi:"ocpusEnabled"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage *int `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape *string `pulumi:"shape"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage *int `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
@@ -325,6 +340,8 @@ type VmClusterState struct {
 	CpusEnabled pulumi.IntPtrInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsPtrInput
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The data disk group size to be allocated in GBs.
 	DataStorageSizeInGb pulumi.Float64PtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
@@ -347,9 +364,9 @@ type VmClusterState struct {
 	FreeformTags pulumi.StringMapInput
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringPtrInput
-	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
-	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
 	LastPatchHistoryEntryId pulumi.StringPtrInput
@@ -361,8 +378,12 @@ type VmClusterState struct {
 	MemorySizeInGbs pulumi.IntPtrInput
 	OcpuCount       pulumi.Float64PtrInput
 	OcpusEnabled    pulumi.Float64PtrInput
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntPtrInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringPtrInput
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the VM cluster.
@@ -403,6 +424,8 @@ type vmClusterArgs struct {
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *VmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in GBs.
 	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
@@ -425,15 +448,19 @@ type vmClusterArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion string `pulumi:"giVersion"`
-	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs *int     `pulumi:"memorySizeInGbs"`
 	OcpuCount       *float64 `pulumi:"ocpuCount"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage *int `pulumi:"recoStoragePercentage"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage *int `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// Operating system version of the image.
@@ -463,6 +490,8 @@ type VmClusterArgs struct {
 	CpuCoreCount pulumi.IntInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsPtrInput
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The data disk group size to be allocated in GBs.
 	DataStorageSizeInGb pulumi.Float64PtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
@@ -485,15 +514,19 @@ type VmClusterArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringInput
-	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
-	// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
 	OcpuCount       pulumi.Float64PtrInput
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntPtrInput
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
 	// Operating system version of the image.
@@ -635,6 +668,11 @@ func (o VmClusterOutput) DataCollectionOptions() VmClusterDataCollectionOptionsO
 	return o.ApplyT(func(v *VmCluster) VmClusterDataCollectionOptionsOutput { return v.DataCollectionOptions }).(VmClusterDataCollectionOptionsOutput)
 }
 
+// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterOutput) DataStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.DataStoragePercentage }).(pulumi.IntOutput)
+}
+
 // (Updatable) The data disk group size to be allocated in GBs.
 func (o VmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
@@ -692,12 +730,12 @@ func (o VmClusterOutput) GiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.GiVersion }).(pulumi.StringOutput)
 }
 
-// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 func (o VmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
 }
 
-// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
 func (o VmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.BoolOutput { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolOutput)
 }
@@ -730,9 +768,19 @@ func (o VmClusterOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.OcpusEnabled }).(pulumi.Float64Output)
 }
 
+// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterOutput) RecoStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.RecoStoragePercentage }).(pulumi.IntOutput)
+}
+
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 func (o VmClusterOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+}
+
+// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterOutput) SparseStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.SparseStoragePercentage }).(pulumi.IntOutput)
 }
 
 // (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.

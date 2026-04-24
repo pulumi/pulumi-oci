@@ -127,9 +127,6 @@ namespace Pulumi.Oci.Core
         /// The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
-        /// <summary>
-        /// A list of total and remaining CPU and memory per capacity bucket.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVmHostCapacityBinResult> CapacityBins;
         /// <summary>
         /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.

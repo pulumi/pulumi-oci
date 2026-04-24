@@ -25,6 +25,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String accessKeyId;
+    /**
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
     private String accountKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -83,6 +89,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String clientId;
+    /**
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
     private String clientSecret;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
@@ -180,7 +192,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Boolean doesUseSecretIds;
     /**
-     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
      * 
      */
     private String endpoint;
@@ -227,6 +239,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String jndiProviderUrl;
+    /**
+     * @deprecated
+     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
     private String jndiSecurityCredentials;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
@@ -243,7 +261,19 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String keyId;
+    /**
+     * @deprecated
+     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
     private String keyStore;
+    /**
+     * @deprecated
+     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
     private String keyStorePassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
@@ -270,6 +300,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private List<String> nsgIds;
+    /**
+     * @deprecated
+     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
     private String password;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, &#39;password&#39; field must not be provided.
@@ -282,17 +318,28 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Integer port;
     /**
-     * @return Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     private String privateIp;
+    /**
+     * @deprecated
+     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
     private String privateKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
      * 
      */
     private String privateKeyFileSecretId;
+    /**
+     * @deprecated
+     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
     private String privateKeyPassphrase;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
@@ -324,12 +371,24 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String routingMethod;
+    /**
+     * @deprecated
+     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
     private String sasToken;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
      * 
      */
     private String sasTokenSecretId;
+    /**
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private String secretAccessKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
@@ -354,6 +413,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String servers;
+    /**
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
     private String serviceAccountKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -361,7 +426,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String serviceAccountKeyFileSecretId;
     /**
-     * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
      * 
      */
     private String sessionMode;
@@ -390,12 +455,24 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String sslCert;
+    /**
+     * @deprecated
+     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
     private String sslClientKeystash;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
      * 
      */
     private String sslClientKeystashSecretId;
+    /**
+     * @deprecated
+     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
     private String sslClientKeystoredb;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
@@ -407,7 +484,19 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String sslCrl;
+    /**
+     * @deprecated
+     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
     private String sslKey;
+    /**
+     * @deprecated
+     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
     private String sslKeyPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
@@ -495,7 +584,19 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String tlsCaFile;
+    /**
+     * @deprecated
+     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
     private String tlsCertificateKeyFile;
+    /**
+     * @deprecated
+     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
     private String tlsCertificateKeyFilePassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
@@ -509,7 +610,19 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String tlsCertificateKeyFileSecretId;
     private Boolean triggerRefresh;
+    /**
+     * @deprecated
+     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
     private String trustStore;
+    /**
+     * @deprecated
+     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
     private String trustStorePassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
@@ -541,6 +654,12 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String vaultId;
+    /**
+     * @deprecated
+     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
     private String wallet;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
@@ -556,6 +675,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String accessKeyId() {
         return this.accessKeyId;
     }
+    /**
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
     public String accountKey() {
         return this.accountKey;
     }
@@ -636,6 +761,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String clientId() {
         return this.clientId;
     }
+    /**
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
     public String clientSecret() {
         return this.clientSecret;
     }
@@ -771,7 +902,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.doesUseSecretIds;
     }
     /**
-     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
      * 
      */
     public String endpoint() {
@@ -838,6 +969,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String jndiProviderUrl() {
         return this.jndiProviderUrl;
     }
+    /**
+     * @deprecated
+     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
     public String jndiSecurityCredentials() {
         return this.jndiSecurityCredentials;
     }
@@ -862,9 +999,21 @@ public final class GetConnectionsConnectionCollectionItem {
     public String keyId() {
         return this.keyId;
     }
+    /**
+     * @deprecated
+     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
     public String keyStore() {
         return this.keyStore;
     }
+    /**
+     * @deprecated
+     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
     public String keyStorePassword() {
         return this.keyStorePassword;
     }
@@ -903,6 +1052,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public List<String> nsgIds() {
         return this.nsgIds;
     }
+    /**
+     * @deprecated
+     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
     public String password() {
         return this.password;
     }
@@ -921,13 +1076,18 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.port;
     }
     /**
-     * @return Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     public String privateIp() {
         return this.privateIp;
     }
+    /**
+     * @deprecated
+     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
     public String privateKeyFile() {
         return this.privateKeyFile;
     }
@@ -938,6 +1098,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String privateKeyFileSecretId() {
         return this.privateKeyFileSecretId;
     }
+    /**
+     * @deprecated
+     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
     public String privateKeyPassphrase() {
         return this.privateKeyPassphrase;
     }
@@ -983,6 +1149,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String routingMethod() {
         return this.routingMethod;
     }
+    /**
+     * @deprecated
+     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
     public String sasToken() {
         return this.sasToken;
     }
@@ -993,6 +1165,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String sasTokenSecretId() {
         return this.sasTokenSecretId;
     }
+    /**
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }
@@ -1027,6 +1205,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String servers() {
         return this.servers;
     }
+    /**
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
     public String serviceAccountKeyFile() {
         return this.serviceAccountKeyFile;
     }
@@ -1038,7 +1222,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.serviceAccountKeyFileSecretId;
     }
     /**
-     * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
      * 
      */
     public String sessionMode() {
@@ -1079,6 +1263,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String sslCert() {
         return this.sslCert;
     }
+    /**
+     * @deprecated
+     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
     public String sslClientKeystash() {
         return this.sslClientKeystash;
     }
@@ -1089,6 +1279,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String sslClientKeystashSecretId() {
         return this.sslClientKeystashSecretId;
     }
+    /**
+     * @deprecated
+     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
     public String sslClientKeystoredb() {
         return this.sslClientKeystoredb;
     }
@@ -1106,9 +1302,21 @@ public final class GetConnectionsConnectionCollectionItem {
     public String sslCrl() {
         return this.sslCrl;
     }
+    /**
+     * @deprecated
+     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
     public String sslKey() {
         return this.sslKey;
     }
+    /**
+     * @deprecated
+     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
     public String sslKeyPassword() {
         return this.sslKeyPassword;
     }
@@ -1232,9 +1440,21 @@ public final class GetConnectionsConnectionCollectionItem {
     public String tlsCaFile() {
         return this.tlsCaFile;
     }
+    /**
+     * @deprecated
+     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
     public String tlsCertificateKeyFile() {
         return this.tlsCertificateKeyFile;
     }
+    /**
+     * @deprecated
+     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
     public String tlsCertificateKeyFilePassword() {
         return this.tlsCertificateKeyFilePassword;
     }
@@ -1256,9 +1476,21 @@ public final class GetConnectionsConnectionCollectionItem {
     public Boolean triggerRefresh() {
         return this.triggerRefresh;
     }
+    /**
+     * @deprecated
+     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
     public String trustStore() {
         return this.trustStore;
     }
+    /**
+     * @deprecated
+     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
     public String trustStorePassword() {
         return this.trustStorePassword;
     }
@@ -1304,6 +1536,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String vaultId() {
         return this.vaultId;
     }
+    /**
+     * @deprecated
+     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
     public String wallet() {
         return this.wallet;
     }

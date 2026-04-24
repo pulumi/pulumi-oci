@@ -96,7 +96,7 @@ type LookupDeploymentBackupResult struct {
 	OggVersion string `pulumi:"oggVersion"`
 	// The size of the backup stored in object storage (in bytes)
 	SizeInBytes float64 `pulumi:"sizeInBytes"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Backup.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -242,7 +242,7 @@ func (o LookupDeploymentBackupResultOutput) SizeInBytes() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment Backup.
 func (o LookupDeploymentBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.State }).(pulumi.StringOutput)
 }

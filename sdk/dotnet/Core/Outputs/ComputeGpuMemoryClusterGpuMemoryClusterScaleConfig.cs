@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsUpsizeEnabled;
         /// <summary>
-        /// (Updatable) The configured target size for the GPU Memory cluster.
+        /// (Updatable) The configured target size for the GPU Memory Cluster.
         /// </summary>
         public readonly string? TargetSize;
 

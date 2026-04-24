@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputMap<string>? _parameters;
 
         /// <summary>
-        /// (Updatable) Log category parameters are stored here.
+        /// (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
         /// </summary>
         public InputMap<string> Parameters
         {
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// The unique identifier of the resource emitting the log.
+        /// The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
         /// </summary>
         [Input("resource", required: true)]
         public Input<string> Resource { get; set; } = null!;

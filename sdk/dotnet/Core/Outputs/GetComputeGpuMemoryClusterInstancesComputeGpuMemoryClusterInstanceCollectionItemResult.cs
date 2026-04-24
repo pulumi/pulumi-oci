@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItemResult
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster instance.
+        /// The availability domain of the GPU Memory Cluster instance.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The fault domain the GPU memory cluster instance is running in.
+        /// The fault domain the GPU Memory Cluster instance is running in.
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster instance
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster instance
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,11 +46,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// The lifecycle state of the GPU memory cluster instance
+        /// The lifecycle state of the GPU Memory Cluster instance
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The date and time the GPU memory cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
+        /// The date and time the GPU Memory Cluster instance was created.  Example: `2016-09-15T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
 

@@ -74,7 +74,6 @@ class ConnectionArgs:
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
@@ -192,9 +191,6 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[_builtins.str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[_builtins.str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -213,7 +209,11 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param pulumi.Input[_builtins.str] session_mode: (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+               
+               The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+               
+               Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
@@ -274,6 +274,9 @@ class ConnectionArgs:
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key is not None:
+            warnings.warn("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""account_key is deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+        if account_key is not None:
             pulumi.set(__self__, "account_key", account_key)
         if account_key_secret_id is not None:
             pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
@@ -295,6 +298,9 @@ class ConnectionArgs:
             pulumi.set(__self__, "catalog", catalog)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            warnings.warn("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""client_secret is deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
@@ -344,6 +350,9 @@ class ConnectionArgs:
         if jndi_provider_url is not None:
             pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
         if jndi_security_credentials is not None:
+            warnings.warn("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""jndi_security_credentials is deprecated: The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
+        if jndi_security_credentials is not None:
             pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
         if jndi_security_credentials_secret_id is not None:
             pulumi.set(__self__, "jndi_security_credentials_secret_id", jndi_security_credentials_secret_id)
@@ -352,7 +361,13 @@ class ConnectionArgs:
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if key_store is not None:
+            warnings.warn("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_store is deprecated: The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
+        if key_store is not None:
             pulumi.set(__self__, "key_store", key_store)
+        if key_store_password is not None:
+            warnings.warn("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_store_password is deprecated: The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
         if key_store_password is not None:
             pulumi.set(__self__, "key_store_password", key_store_password)
         if key_store_password_secret_id is not None:
@@ -364,17 +379,24 @@ class ConnectionArgs:
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if password is not None:
+            warnings.warn("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""password is deprecated: The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
+        if password is not None:
             pulumi.set(__self__, "password", password)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if port is not None:
             pulumi.set(__self__, "port", port)
-        if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+        if private_key_file is not None:
+            warnings.warn("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""private_key_file is deprecated: The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
         if private_key_file is not None:
             pulumi.set(__self__, "private_key_file", private_key_file)
         if private_key_file_secret_id is not None:
             pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
+        if private_key_passphrase is not None:
+            warnings.warn("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""private_key_passphrase is deprecated: The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
         if private_key_passphrase is not None:
             pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
         if private_key_passphrase_secret_id is not None:
@@ -390,9 +412,15 @@ class ConnectionArgs:
         if routing_method is not None:
             pulumi.set(__self__, "routing_method", routing_method)
         if sas_token is not None:
+            warnings.warn("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""sas_token is deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
+        if sas_token is not None:
             pulumi.set(__self__, "sas_token", sas_token)
         if sas_token_secret_id is not None:
             pulumi.set(__self__, "sas_token_secret_id", sas_token_secret_id)
+        if secret_access_key is not None:
+            warnings.warn("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""secret_access_key is deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
         if secret_access_key is not None:
             pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
@@ -403,6 +431,9 @@ class ConnectionArgs:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if servers is not None:
             pulumi.set(__self__, "servers", servers)
+        if service_account_key_file is not None:
+            warnings.warn("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""service_account_key_file is deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
         if service_account_key_file is not None:
             pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if service_account_key_file_secret_id is not None:
@@ -420,9 +451,15 @@ class ConnectionArgs:
         if ssl_cert is not None:
             pulumi.set(__self__, "ssl_cert", ssl_cert)
         if ssl_client_keystash is not None:
+            warnings.warn("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_client_keystash is deprecated: The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
+        if ssl_client_keystash is not None:
             pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
         if ssl_client_keystash_secret_id is not None:
             pulumi.set(__self__, "ssl_client_keystash_secret_id", ssl_client_keystash_secret_id)
+        if ssl_client_keystoredb is not None:
+            warnings.warn("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_client_keystoredb is deprecated: The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
         if ssl_client_keystoredb is not None:
             pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         if ssl_client_keystoredb_secret_id is not None:
@@ -430,7 +467,13 @@ class ConnectionArgs:
         if ssl_crl is not None:
             pulumi.set(__self__, "ssl_crl", ssl_crl)
         if ssl_key is not None:
+            warnings.warn("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_key is deprecated: The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
+        if ssl_key is not None:
             pulumi.set(__self__, "ssl_key", ssl_key)
+        if ssl_key_password is not None:
+            warnings.warn("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_key_password is deprecated: The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
         if ssl_key_password is not None:
             pulumi.set(__self__, "ssl_key_password", ssl_key_password)
         if ssl_key_password_secret_id is not None:
@@ -458,7 +501,13 @@ class ConnectionArgs:
         if tls_ca_file is not None:
             pulumi.set(__self__, "tls_ca_file", tls_ca_file)
         if tls_certificate_key_file is not None:
+            warnings.warn("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tls_certificate_key_file is deprecated: The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
+        if tls_certificate_key_file is not None:
             pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        if tls_certificate_key_file_password is not None:
+            warnings.warn("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tls_certificate_key_file_password is deprecated: The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
         if tls_certificate_key_file_password is not None:
             pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
         if tls_certificate_key_file_password_secret_id is not None:
@@ -468,7 +517,13 @@ class ConnectionArgs:
         if trigger_refresh is not None:
             pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         if trust_store is not None:
+            warnings.warn("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store is deprecated: The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+        if trust_store is not None:
             pulumi.set(__self__, "trust_store", trust_store)
+        if trust_store_password is not None:
+            warnings.warn("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store_password is deprecated: The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
         if trust_store_password is not None:
             pulumi.set(__self__, "trust_store_password", trust_store_password)
         if trust_store_password_secret_id is not None:
@@ -483,6 +538,9 @@ class ConnectionArgs:
             pulumi.set(__self__, "username", username)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if wallet is not None:
+            warnings.warn("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""wallet is deprecated: The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
         if wallet is not None:
             pulumi.set(__self__, "wallet", wallet)
         if wallet_secret_id is not None:
@@ -550,6 +608,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
@@ -684,6 +743,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
     def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -971,6 +1031,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
+    @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
     def jndi_security_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
@@ -1019,6 +1080,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
+    @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
     def key_store(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
@@ -1031,6 +1093,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
+    @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
     def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -1091,6 +1154,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
@@ -1126,21 +1190,8 @@ class ConnectionArgs:
         pulumi.set(self, "port", value)
 
     @_builtins.property
-    @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
-        return pulumi.get(self, "private_ip")
-
-    @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "private_ip", value)
-
-    @_builtins.property
     @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
     def private_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -1165,6 +1216,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
     def private_key_passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -1249,6 +1301,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
+    @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
     def sas_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
@@ -1273,6 +1326,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
@@ -1333,6 +1387,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
@@ -1359,7 +1414,11 @@ class ConnectionArgs:
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+
+        The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         """
         return pulumi.get(self, "session_mode")
 
@@ -1429,6 +1488,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
+    @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -1457,6 +1517,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
+    @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -1497,6 +1558,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
+    @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
     def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
@@ -1509,6 +1571,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
+    @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
     def ssl_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -1666,6 +1729,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
+    @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
     def tls_certificate_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -1678,6 +1742,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
     def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
@@ -1724,6 +1789,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
     def trust_store(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -1736,6 +1802,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
+    @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
     def trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -1820,6 +1887,7 @@ class ConnectionArgs:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
     def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
@@ -2028,9 +2096,7 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[_builtins.str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param pulumi.Input[_builtins.str] private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         :param pulumi.Input[_builtins.str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -2049,7 +2115,11 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param pulumi.Input[_builtins.str] session_mode: (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+               
+               The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+               
+               Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
@@ -2111,6 +2181,9 @@ class _ConnectionState:
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
         if account_key is not None:
+            warnings.warn("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""account_key is deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
+        if account_key is not None:
             pulumi.set(__self__, "account_key", account_key)
         if account_key_secret_id is not None:
             pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
@@ -2132,6 +2205,9 @@ class _ConnectionState:
             pulumi.set(__self__, "catalog", catalog)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            warnings.warn("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""client_secret is deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
@@ -2189,6 +2265,9 @@ class _ConnectionState:
         if jndi_provider_url is not None:
             pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
         if jndi_security_credentials is not None:
+            warnings.warn("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""jndi_security_credentials is deprecated: The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
+        if jndi_security_credentials is not None:
             pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
         if jndi_security_credentials_secret_id is not None:
             pulumi.set(__self__, "jndi_security_credentials_secret_id", jndi_security_credentials_secret_id)
@@ -2197,7 +2276,13 @@ class _ConnectionState:
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if key_store is not None:
+            warnings.warn("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_store is deprecated: The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
+        if key_store is not None:
             pulumi.set(__self__, "key_store", key_store)
+        if key_store_password is not None:
+            warnings.warn("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_store_password is deprecated: The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
         if key_store_password is not None:
             pulumi.set(__self__, "key_store_password", key_store_password)
         if key_store_password_secret_id is not None:
@@ -2211,6 +2296,9 @@ class _ConnectionState:
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if password is not None:
+            warnings.warn("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""password is deprecated: The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
+        if password is not None:
             pulumi.set(__self__, "password", password)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
@@ -2219,9 +2307,15 @@ class _ConnectionState:
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
         if private_key_file is not None:
+            warnings.warn("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""private_key_file is deprecated: The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
+        if private_key_file is not None:
             pulumi.set(__self__, "private_key_file", private_key_file)
         if private_key_file_secret_id is not None:
             pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
+        if private_key_passphrase is not None:
+            warnings.warn("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""private_key_passphrase is deprecated: The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
         if private_key_passphrase is not None:
             pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
         if private_key_passphrase_secret_id is not None:
@@ -2237,9 +2331,15 @@ class _ConnectionState:
         if routing_method is not None:
             pulumi.set(__self__, "routing_method", routing_method)
         if sas_token is not None:
+            warnings.warn("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""sas_token is deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
+        if sas_token is not None:
             pulumi.set(__self__, "sas_token", sas_token)
         if sas_token_secret_id is not None:
             pulumi.set(__self__, "sas_token_secret_id", sas_token_secret_id)
+        if secret_access_key is not None:
+            warnings.warn("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""secret_access_key is deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
         if secret_access_key is not None:
             pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
@@ -2250,6 +2350,9 @@ class _ConnectionState:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if servers is not None:
             pulumi.set(__self__, "servers", servers)
+        if service_account_key_file is not None:
+            warnings.warn("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""service_account_key_file is deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
         if service_account_key_file is not None:
             pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if service_account_key_file_secret_id is not None:
@@ -2267,9 +2370,15 @@ class _ConnectionState:
         if ssl_cert is not None:
             pulumi.set(__self__, "ssl_cert", ssl_cert)
         if ssl_client_keystash is not None:
+            warnings.warn("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_client_keystash is deprecated: The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
+        if ssl_client_keystash is not None:
             pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
         if ssl_client_keystash_secret_id is not None:
             pulumi.set(__self__, "ssl_client_keystash_secret_id", ssl_client_keystash_secret_id)
+        if ssl_client_keystoredb is not None:
+            warnings.warn("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_client_keystoredb is deprecated: The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
         if ssl_client_keystoredb is not None:
             pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         if ssl_client_keystoredb_secret_id is not None:
@@ -2277,7 +2386,13 @@ class _ConnectionState:
         if ssl_crl is not None:
             pulumi.set(__self__, "ssl_crl", ssl_crl)
         if ssl_key is not None:
+            warnings.warn("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_key is deprecated: The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
+        if ssl_key is not None:
             pulumi.set(__self__, "ssl_key", ssl_key)
+        if ssl_key_password is not None:
+            warnings.warn("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""ssl_key_password is deprecated: The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
         if ssl_key_password is not None:
             pulumi.set(__self__, "ssl_key_password", ssl_key_password)
         if ssl_key_password_secret_id is not None:
@@ -2315,7 +2430,13 @@ class _ConnectionState:
         if tls_ca_file is not None:
             pulumi.set(__self__, "tls_ca_file", tls_ca_file)
         if tls_certificate_key_file is not None:
+            warnings.warn("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tls_certificate_key_file is deprecated: The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
+        if tls_certificate_key_file is not None:
             pulumi.set(__self__, "tls_certificate_key_file", tls_certificate_key_file)
+        if tls_certificate_key_file_password is not None:
+            warnings.warn("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""tls_certificate_key_file_password is deprecated: The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
         if tls_certificate_key_file_password is not None:
             pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
         if tls_certificate_key_file_password_secret_id is not None:
@@ -2325,7 +2446,13 @@ class _ConnectionState:
         if trigger_refresh is not None:
             pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         if trust_store is not None:
+            warnings.warn("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store is deprecated: The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
+        if trust_store is not None:
             pulumi.set(__self__, "trust_store", trust_store)
+        if trust_store_password is not None:
+            warnings.warn("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""trust_store_password is deprecated: The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
         if trust_store_password is not None:
             pulumi.set(__self__, "trust_store_password", trust_store_password)
         if trust_store_password_secret_id is not None:
@@ -2340,6 +2467,9 @@ class _ConnectionState:
             pulumi.set(__self__, "username", username)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if wallet is not None:
+            warnings.warn("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""wallet is deprecated: The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
         if wallet is not None:
             pulumi.set(__self__, "wallet", wallet)
         if wallet_secret_id is not None:
@@ -2359,6 +2489,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
@@ -2493,6 +2624,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
     def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -2828,6 +2960,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
+    @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
     def jndi_security_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
@@ -2876,6 +3009,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
+    @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
     def key_store(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
@@ -2888,6 +3022,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
+    @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
     def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -2960,6 +3095,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
@@ -2998,9 +3134,7 @@ class _ConnectionState:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
@@ -3010,6 +3144,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
     def private_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -3034,6 +3169,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
     def private_key_passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -3118,6 +3254,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
+    @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
     def sas_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
@@ -3142,6 +3279,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
@@ -3202,6 +3340,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
@@ -3228,7 +3367,11 @@ class _ConnectionState:
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+
+        The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         """
         return pulumi.get(self, "session_mode")
 
@@ -3298,6 +3441,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
+    @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -3326,6 +3470,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
+    @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -3366,6 +3511,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
+    @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
     def ssl_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
@@ -3378,6 +3524,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
+    @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
     def ssl_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -3595,6 +3742,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
+    @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
     def tls_certificate_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -3607,6 +3755,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
     def tls_certificate_key_file_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
@@ -3653,6 +3802,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
     def trust_store(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -3665,6 +3815,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
+    @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
     def trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -3749,6 +3900,7 @@ class _ConnectionState:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
     def wallet(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
@@ -3834,7 +3986,6 @@ class Connection(pulumi.CustomResource):
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
@@ -3929,16 +4080,17 @@ class Connection(pulumi.CustomResource):
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
                 "port": connection_bootstrap_servers_port,
-                "private_ip": connection_bootstrap_servers_private_ip,
             }],
             catalog={
                 "catalog_type": connection_catalog_catalog_type,
                 "branch": connection_catalog_branch,
                 "client_id": test_client["id"],
+                "client_secret": connection_catalog_client_secret,
                 "client_secret_secret_id": test_secret["id"],
                 "glue_id": test_glue["id"],
                 "name": connection_catalog_name,
                 "principal_role": connection_catalog_principal_role,
+                "properties": connection_catalog_properties,
                 "properties_secret_id": test_secret["id"],
                 "uri": connection_catalog_uri,
             },
@@ -3986,7 +4138,6 @@ class Connection(pulumi.CustomResource):
             password=connection_password,
             password_secret_id=test_secret["id"],
             port=connection_port,
-            private_ip=connection_private_ip,
             private_key_file=connection_private_key_file,
             private_key_file_secret_id=test_secret["id"],
             private_key_passphrase=connection_private_key_passphrase,
@@ -4025,6 +4176,7 @@ class Connection(pulumi.CustomResource):
             storage={
                 "storage_type": connection_storage_storage_type,
                 "access_key_id": test_key["id"],
+                "account_key": connection_storage_account_key,
                 "account_key_secret_id": test_secret["id"],
                 "account_name": connection_storage_account_name,
                 "bucket": connection_storage_bucket,
@@ -4033,7 +4185,9 @@ class Connection(pulumi.CustomResource):
                 "project_id": test_project["id"],
                 "region": connection_storage_region,
                 "scheme_type": connection_storage_scheme_type,
+                "secret_access_key": connection_storage_secret_access_key,
                 "secret_access_key_secret_id": test_secret["id"],
+                "service_account_key_file": connection_storage_service_account_key_file,
                 "service_account_key_file_secret_id": test_secret["id"],
             },
             storage_credential_name=connection_storage_credential_name,
@@ -4125,9 +4279,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[_builtins.str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[_builtins.str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -4146,7 +4297,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param pulumi.Input[_builtins.str] session_mode: (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+               
+               The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+               
+               Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
@@ -4241,16 +4396,17 @@ class Connection(pulumi.CustomResource):
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
                 "port": connection_bootstrap_servers_port,
-                "private_ip": connection_bootstrap_servers_private_ip,
             }],
             catalog={
                 "catalog_type": connection_catalog_catalog_type,
                 "branch": connection_catalog_branch,
                 "client_id": test_client["id"],
+                "client_secret": connection_catalog_client_secret,
                 "client_secret_secret_id": test_secret["id"],
                 "glue_id": test_glue["id"],
                 "name": connection_catalog_name,
                 "principal_role": connection_catalog_principal_role,
+                "properties": connection_catalog_properties,
                 "properties_secret_id": test_secret["id"],
                 "uri": connection_catalog_uri,
             },
@@ -4298,7 +4454,6 @@ class Connection(pulumi.CustomResource):
             password=connection_password,
             password_secret_id=test_secret["id"],
             port=connection_port,
-            private_ip=connection_private_ip,
             private_key_file=connection_private_key_file,
             private_key_file_secret_id=test_secret["id"],
             private_key_passphrase=connection_private_key_passphrase,
@@ -4337,6 +4492,7 @@ class Connection(pulumi.CustomResource):
             storage={
                 "storage_type": connection_storage_storage_type,
                 "access_key_id": test_key["id"],
+                "account_key": connection_storage_account_key,
                 "account_key_secret_id": test_secret["id"],
                 "account_name": connection_storage_account_name,
                 "bucket": connection_storage_bucket,
@@ -4345,7 +4501,9 @@ class Connection(pulumi.CustomResource):
                 "project_id": test_project["id"],
                 "region": connection_storage_region,
                 "scheme_type": connection_storage_scheme_type,
+                "secret_access_key": connection_storage_secret_access_key,
                 "secret_access_key_secret_id": test_secret["id"],
+                "service_account_key_file": connection_storage_service_account_key_file,
                 "service_account_key_file_secret_id": test_secret["id"],
             },
             storage_credential_name=connection_storage_credential_name,
@@ -4447,7 +4605,6 @@ class Connection(pulumi.CustomResource):
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_key_passphrase: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4574,7 +4731,6 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["password_secret_id"] = password_secret_id
             __props__.__dict__["port"] = port
-            __props__.__dict__["private_ip"] = private_ip
             __props__.__dict__["private_key_file"] = None if private_key_file is None else pulumi.Output.secret(private_key_file)
             __props__.__dict__["private_key_file_secret_id"] = private_key_file_secret_id
             __props__.__dict__["private_key_passphrase"] = None if private_key_passphrase is None else pulumi.Output.secret(private_key_passphrase)
@@ -4638,6 +4794,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["wallet_secret_id"] = wallet_secret_id
             __props__.__dict__["ingress_ips"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["private_ip"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -4836,9 +4993,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[_builtins.str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-               
-               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param pulumi.Input[_builtins.str] private_ip: This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         :param pulumi.Input[_builtins.str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] private_key_passphrase: (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -4857,7 +5012,11 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
-        :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param pulumi.Input[_builtins.str] session_mode: (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+               
+               The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+               
+               Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
@@ -5050,6 +5209,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
+    @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
@@ -5140,6 +5300,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
+    @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
     def client_secret(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -5363,6 +5524,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="jndiSecurityCredentials")
+    @_utilities.deprecated("""The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.""")
     def jndi_security_credentials(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
@@ -5395,6 +5557,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="keyStore")
+    @_utilities.deprecated("""The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.""")
     def key_store(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
@@ -5403,6 +5566,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
+    @_utilities.deprecated("""The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.""")
     def key_store_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -5451,6 +5615,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'password' field has been deprecated. Please use 'password_secret_id' instead.""")
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
@@ -5477,14 +5642,13 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
     @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
     def private_key_file(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -5501,6 +5665,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
     def private_key_passphrase(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
@@ -5557,6 +5722,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
+    @_utilities.deprecated("""The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.""")
     def sas_token(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
@@ -5573,6 +5739,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
@@ -5613,6 +5780,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
+    @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
@@ -5631,7 +5799,11 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+
+        The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
         """
         return pulumi.get(self, "session_mode")
 
@@ -5677,6 +5849,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystash")
+    @_utilities.deprecated("""The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.""")
     def ssl_client_keystash(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -5697,6 +5870,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sslClientKeystoredb")
+    @_utilities.deprecated("""The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.""")
     def ssl_client_keystoredb(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -5725,6 +5899,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sslKey")
+    @_utilities.deprecated("""The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.""")
     def ssl_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
@@ -5733,6 +5908,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="sslKeyPassword")
+    @_utilities.deprecated("""The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.""")
     def ssl_key_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -5878,6 +6054,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFile")
+    @_utilities.deprecated("""The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.""")
     def tls_certificate_key_file(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
@@ -5886,6 +6063,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="tlsCertificateKeyFilePassword")
+    @_utilities.deprecated("""The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.""")
     def tls_certificate_key_file_password(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
@@ -5916,6 +6094,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="trustStore")
+    @_utilities.deprecated("""The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.""")
     def trust_store(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
@@ -5924,6 +6103,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="trustStorePassword")
+    @_utilities.deprecated("""The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.""")
     def trust_store_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
@@ -5980,6 +6160,7 @@ class Connection(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.""")
     def wallet(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.

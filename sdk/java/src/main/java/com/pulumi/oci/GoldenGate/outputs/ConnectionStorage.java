@@ -18,6 +18,15 @@ public final class ConnectionStorage {
      */
     private @Nullable String accessKeyId;
     /**
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    private @Nullable String accountKey;
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * 
      */
@@ -58,10 +67,28 @@ public final class ConnectionStorage {
      */
     private @Nullable String schemeType;
     /**
+     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    private @Nullable String secretAccessKey;
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     private @Nullable String secretAccessKeySecretId;
+    /**
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    private @Nullable String serviceAccountKeyFile;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      * 
@@ -80,6 +107,17 @@ public final class ConnectionStorage {
      */
     public Optional<String> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
+    }
+    /**
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    public Optional<String> accountKey() {
+        return Optional.ofNullable(this.accountKey);
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -138,11 +176,33 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.schemeType);
     }
     /**
+     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    public Optional<String> secretAccessKey() {
+        return Optional.ofNullable(this.secretAccessKey);
+    }
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     public Optional<String> secretAccessKeySecretId() {
         return Optional.ofNullable(this.secretAccessKeySecretId);
+    }
+    /**
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * 
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    public Optional<String> serviceAccountKeyFile() {
+        return Optional.ofNullable(this.serviceAccountKeyFile);
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -169,6 +229,7 @@ public final class ConnectionStorage {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessKeyId;
+        private @Nullable String accountKey;
         private @Nullable String accountKeySecretId;
         private @Nullable String accountName;
         private @Nullable String bucket;
@@ -177,13 +238,16 @@ public final class ConnectionStorage {
         private @Nullable String projectId;
         private @Nullable String region;
         private @Nullable String schemeType;
+        private @Nullable String secretAccessKey;
         private @Nullable String secretAccessKeySecretId;
+        private @Nullable String serviceAccountKeyFile;
         private @Nullable String serviceAccountKeyFileSecretId;
         private String storageType;
         public Builder() {}
         public Builder(ConnectionStorage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyId = defaults.accessKeyId;
+    	      this.accountKey = defaults.accountKey;
     	      this.accountKeySecretId = defaults.accountKeySecretId;
     	      this.accountName = defaults.accountName;
     	      this.bucket = defaults.bucket;
@@ -192,7 +256,9 @@ public final class ConnectionStorage {
     	      this.projectId = defaults.projectId;
     	      this.region = defaults.region;
     	      this.schemeType = defaults.schemeType;
+    	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.secretAccessKeySecretId = defaults.secretAccessKeySecretId;
+    	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
     	      this.serviceAccountKeyFileSecretId = defaults.serviceAccountKeyFileSecretId;
     	      this.storageType = defaults.storageType;
         }
@@ -201,6 +267,12 @@ public final class ConnectionStorage {
         public Builder accessKeyId(@Nullable String accessKeyId) {
 
             this.accessKeyId = accessKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder accountKey(@Nullable String accountKey) {
+
+            this.accountKey = accountKey;
             return this;
         }
         @CustomType.Setter
@@ -252,9 +324,21 @@ public final class ConnectionStorage {
             return this;
         }
         @CustomType.Setter
+        public Builder secretAccessKey(@Nullable String secretAccessKey) {
+
+            this.secretAccessKey = secretAccessKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secretAccessKeySecretId(@Nullable String secretAccessKeySecretId) {
 
             this.secretAccessKeySecretId = secretAccessKeySecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceAccountKeyFile(@Nullable String serviceAccountKeyFile) {
+
+            this.serviceAccountKeyFile = serviceAccountKeyFile;
             return this;
         }
         @CustomType.Setter
@@ -274,6 +358,7 @@ public final class ConnectionStorage {
         public ConnectionStorage build() {
             final var _resultValue = new ConnectionStorage();
             _resultValue.accessKeyId = accessKeyId;
+            _resultValue.accountKey = accountKey;
             _resultValue.accountKeySecretId = accountKeySecretId;
             _resultValue.accountName = accountName;
             _resultValue.bucket = bucket;
@@ -282,7 +367,9 @@ public final class ConnectionStorage {
             _resultValue.projectId = projectId;
             _resultValue.region = region;
             _resultValue.schemeType = schemeType;
+            _resultValue.secretAccessKey = secretAccessKey;
             _resultValue.secretAccessKeySecretId = secretAccessKeySecretId;
+            _resultValue.serviceAccountKeyFile = serviceAccountKeyFile;
             _resultValue.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             _resultValue.storageType = storageType;
             return _resultValue;

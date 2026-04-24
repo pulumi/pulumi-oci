@@ -266,6 +266,143 @@ func (o ApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInpu
 	}).(ApplicationImagePolicyConfigKeyDetailOutput)
 }
 
+type ApplicationLogging struct {
+	// (Updatable) Specify the format of log lines emitted by functions in this application.
+	LineFormat *string `pulumi:"lineFormat"`
+}
+
+// ApplicationLoggingInput is an input type that accepts ApplicationLoggingArgs and ApplicationLoggingOutput values.
+// You can construct a concrete instance of `ApplicationLoggingInput` via:
+//
+//	ApplicationLoggingArgs{...}
+type ApplicationLoggingInput interface {
+	pulumi.Input
+
+	ToApplicationLoggingOutput() ApplicationLoggingOutput
+	ToApplicationLoggingOutputWithContext(context.Context) ApplicationLoggingOutput
+}
+
+type ApplicationLoggingArgs struct {
+	// (Updatable) Specify the format of log lines emitted by functions in this application.
+	LineFormat pulumi.StringPtrInput `pulumi:"lineFormat"`
+}
+
+func (ApplicationLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationLogging)(nil)).Elem()
+}
+
+func (i ApplicationLoggingArgs) ToApplicationLoggingOutput() ApplicationLoggingOutput {
+	return i.ToApplicationLoggingOutputWithContext(context.Background())
+}
+
+func (i ApplicationLoggingArgs) ToApplicationLoggingOutputWithContext(ctx context.Context) ApplicationLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationLoggingOutput)
+}
+
+func (i ApplicationLoggingArgs) ToApplicationLoggingPtrOutput() ApplicationLoggingPtrOutput {
+	return i.ToApplicationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationLoggingArgs) ToApplicationLoggingPtrOutputWithContext(ctx context.Context) ApplicationLoggingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationLoggingOutput).ToApplicationLoggingPtrOutputWithContext(ctx)
+}
+
+// ApplicationLoggingPtrInput is an input type that accepts ApplicationLoggingArgs, ApplicationLoggingPtr and ApplicationLoggingPtrOutput values.
+// You can construct a concrete instance of `ApplicationLoggingPtrInput` via:
+//
+//	        ApplicationLoggingArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationLoggingPtrInput interface {
+	pulumi.Input
+
+	ToApplicationLoggingPtrOutput() ApplicationLoggingPtrOutput
+	ToApplicationLoggingPtrOutputWithContext(context.Context) ApplicationLoggingPtrOutput
+}
+
+type applicationLoggingPtrType ApplicationLoggingArgs
+
+func ApplicationLoggingPtr(v *ApplicationLoggingArgs) ApplicationLoggingPtrInput {
+	return (*applicationLoggingPtrType)(v)
+}
+
+func (*applicationLoggingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationLogging)(nil)).Elem()
+}
+
+func (i *applicationLoggingPtrType) ToApplicationLoggingPtrOutput() ApplicationLoggingPtrOutput {
+	return i.ToApplicationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationLoggingPtrType) ToApplicationLoggingPtrOutputWithContext(ctx context.Context) ApplicationLoggingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationLoggingPtrOutput)
+}
+
+type ApplicationLoggingOutput struct{ *pulumi.OutputState }
+
+func (ApplicationLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationLogging)(nil)).Elem()
+}
+
+func (o ApplicationLoggingOutput) ToApplicationLoggingOutput() ApplicationLoggingOutput {
+	return o
+}
+
+func (o ApplicationLoggingOutput) ToApplicationLoggingOutputWithContext(ctx context.Context) ApplicationLoggingOutput {
+	return o
+}
+
+func (o ApplicationLoggingOutput) ToApplicationLoggingPtrOutput() ApplicationLoggingPtrOutput {
+	return o.ToApplicationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationLoggingOutput) ToApplicationLoggingPtrOutputWithContext(ctx context.Context) ApplicationLoggingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationLogging) *ApplicationLogging {
+		return &v
+	}).(ApplicationLoggingPtrOutput)
+}
+
+// (Updatable) Specify the format of log lines emitted by functions in this application.
+func (o ApplicationLoggingOutput) LineFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationLogging) *string { return v.LineFormat }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationLoggingPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationLoggingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationLogging)(nil)).Elem()
+}
+
+func (o ApplicationLoggingPtrOutput) ToApplicationLoggingPtrOutput() ApplicationLoggingPtrOutput {
+	return o
+}
+
+func (o ApplicationLoggingPtrOutput) ToApplicationLoggingPtrOutputWithContext(ctx context.Context) ApplicationLoggingPtrOutput {
+	return o
+}
+
+func (o ApplicationLoggingPtrOutput) Elem() ApplicationLoggingOutput {
+	return o.ApplyT(func(v *ApplicationLogging) ApplicationLogging {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationLogging
+		return ret
+	}).(ApplicationLoggingOutput)
+}
+
+// (Updatable) Specify the format of log lines emitted by functions in this application.
+func (o ApplicationLoggingPtrOutput) LineFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationLogging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LineFormat
+	}).(pulumi.StringPtrOutput)
+}
+
 type ApplicationTraceConfig struct {
 	// (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
 	DomainId *string `pulumi:"domainId"`
@@ -1526,6 +1663,103 @@ func (o GetApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntI
 	}).(GetApplicationImagePolicyConfigKeyDetailOutput)
 }
 
+type GetApplicationLogging struct {
+	// Specify the format of log lines emitted by functions in this application.
+	LineFormat string `pulumi:"lineFormat"`
+}
+
+// GetApplicationLoggingInput is an input type that accepts GetApplicationLoggingArgs and GetApplicationLoggingOutput values.
+// You can construct a concrete instance of `GetApplicationLoggingInput` via:
+//
+//	GetApplicationLoggingArgs{...}
+type GetApplicationLoggingInput interface {
+	pulumi.Input
+
+	ToGetApplicationLoggingOutput() GetApplicationLoggingOutput
+	ToGetApplicationLoggingOutputWithContext(context.Context) GetApplicationLoggingOutput
+}
+
+type GetApplicationLoggingArgs struct {
+	// Specify the format of log lines emitted by functions in this application.
+	LineFormat pulumi.StringInput `pulumi:"lineFormat"`
+}
+
+func (GetApplicationLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationLogging)(nil)).Elem()
+}
+
+func (i GetApplicationLoggingArgs) ToGetApplicationLoggingOutput() GetApplicationLoggingOutput {
+	return i.ToGetApplicationLoggingOutputWithContext(context.Background())
+}
+
+func (i GetApplicationLoggingArgs) ToGetApplicationLoggingOutputWithContext(ctx context.Context) GetApplicationLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationLoggingOutput)
+}
+
+// GetApplicationLoggingArrayInput is an input type that accepts GetApplicationLoggingArray and GetApplicationLoggingArrayOutput values.
+// You can construct a concrete instance of `GetApplicationLoggingArrayInput` via:
+//
+//	GetApplicationLoggingArray{ GetApplicationLoggingArgs{...} }
+type GetApplicationLoggingArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationLoggingArrayOutput() GetApplicationLoggingArrayOutput
+	ToGetApplicationLoggingArrayOutputWithContext(context.Context) GetApplicationLoggingArrayOutput
+}
+
+type GetApplicationLoggingArray []GetApplicationLoggingInput
+
+func (GetApplicationLoggingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationLogging)(nil)).Elem()
+}
+
+func (i GetApplicationLoggingArray) ToGetApplicationLoggingArrayOutput() GetApplicationLoggingArrayOutput {
+	return i.ToGetApplicationLoggingArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationLoggingArray) ToGetApplicationLoggingArrayOutputWithContext(ctx context.Context) GetApplicationLoggingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationLoggingArrayOutput)
+}
+
+type GetApplicationLoggingOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationLogging)(nil)).Elem()
+}
+
+func (o GetApplicationLoggingOutput) ToGetApplicationLoggingOutput() GetApplicationLoggingOutput {
+	return o
+}
+
+func (o GetApplicationLoggingOutput) ToGetApplicationLoggingOutputWithContext(ctx context.Context) GetApplicationLoggingOutput {
+	return o
+}
+
+// Specify the format of log lines emitted by functions in this application.
+func (o GetApplicationLoggingOutput) LineFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationLogging) string { return v.LineFormat }).(pulumi.StringOutput)
+}
+
+type GetApplicationLoggingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationLoggingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationLogging)(nil)).Elem()
+}
+
+func (o GetApplicationLoggingArrayOutput) ToGetApplicationLoggingArrayOutput() GetApplicationLoggingArrayOutput {
+	return o
+}
+
+func (o GetApplicationLoggingArrayOutput) ToGetApplicationLoggingArrayOutputWithContext(ctx context.Context) GetApplicationLoggingArrayOutput {
+	return o
+}
+
+func (o GetApplicationLoggingArrayOutput) Index(i pulumi.IntInput) GetApplicationLoggingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationLogging {
+		return vs[0].([]GetApplicationLogging)[vs[1].(int)]
+	}).(GetApplicationLoggingOutput)
+}
+
 type GetApplicationTraceConfig struct {
 	// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
 	DomainId string `pulumi:"domainId"`
@@ -1647,6 +1881,8 @@ type GetApplicationsApplication struct {
 	Id string `pulumi:"id"`
 	// Define the image signature verification policy for an application.
 	ImagePolicyConfigs []GetApplicationsApplicationImagePolicyConfig `pulumi:"imagePolicyConfigs"`
+	// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Loggings []GetApplicationsApplicationLogging `pulumi:"loggings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -1693,6 +1929,8 @@ type GetApplicationsApplicationArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Define the image signature verification policy for an application.
 	ImagePolicyConfigs GetApplicationsApplicationImagePolicyConfigArrayInput `pulumi:"imagePolicyConfigs"`
+	// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+	Loggings GetApplicationsApplicationLoggingArrayInput `pulumi:"loggings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -1799,6 +2037,11 @@ func (o GetApplicationsApplicationOutput) ImagePolicyConfigs() GetApplicationsAp
 	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationImagePolicyConfig {
 		return v.ImagePolicyConfigs
 	}).(GetApplicationsApplicationImagePolicyConfigArrayOutput)
+}
+
+// Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+func (o GetApplicationsApplicationOutput) Loggings() GetApplicationsApplicationLoggingArrayOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationLogging { return v.Loggings }).(GetApplicationsApplicationLoggingArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
@@ -2069,6 +2312,103 @@ func (o GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationImagePolicyConfigKeyDetail {
 		return vs[0].([]GetApplicationsApplicationImagePolicyConfigKeyDetail)[vs[1].(int)]
 	}).(GetApplicationsApplicationImagePolicyConfigKeyDetailOutput)
+}
+
+type GetApplicationsApplicationLogging struct {
+	// Specify the format of log lines emitted by functions in this application.
+	LineFormat string `pulumi:"lineFormat"`
+}
+
+// GetApplicationsApplicationLoggingInput is an input type that accepts GetApplicationsApplicationLoggingArgs and GetApplicationsApplicationLoggingOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationLoggingInput` via:
+//
+//	GetApplicationsApplicationLoggingArgs{...}
+type GetApplicationsApplicationLoggingInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationLoggingOutput() GetApplicationsApplicationLoggingOutput
+	ToGetApplicationsApplicationLoggingOutputWithContext(context.Context) GetApplicationsApplicationLoggingOutput
+}
+
+type GetApplicationsApplicationLoggingArgs struct {
+	// Specify the format of log lines emitted by functions in this application.
+	LineFormat pulumi.StringInput `pulumi:"lineFormat"`
+}
+
+func (GetApplicationsApplicationLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationLogging)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationLoggingArgs) ToGetApplicationsApplicationLoggingOutput() GetApplicationsApplicationLoggingOutput {
+	return i.ToGetApplicationsApplicationLoggingOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationLoggingArgs) ToGetApplicationsApplicationLoggingOutputWithContext(ctx context.Context) GetApplicationsApplicationLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationLoggingOutput)
+}
+
+// GetApplicationsApplicationLoggingArrayInput is an input type that accepts GetApplicationsApplicationLoggingArray and GetApplicationsApplicationLoggingArrayOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationLoggingArrayInput` via:
+//
+//	GetApplicationsApplicationLoggingArray{ GetApplicationsApplicationLoggingArgs{...} }
+type GetApplicationsApplicationLoggingArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationLoggingArrayOutput() GetApplicationsApplicationLoggingArrayOutput
+	ToGetApplicationsApplicationLoggingArrayOutputWithContext(context.Context) GetApplicationsApplicationLoggingArrayOutput
+}
+
+type GetApplicationsApplicationLoggingArray []GetApplicationsApplicationLoggingInput
+
+func (GetApplicationsApplicationLoggingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationLogging)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationLoggingArray) ToGetApplicationsApplicationLoggingArrayOutput() GetApplicationsApplicationLoggingArrayOutput {
+	return i.ToGetApplicationsApplicationLoggingArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationLoggingArray) ToGetApplicationsApplicationLoggingArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationLoggingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationLoggingArrayOutput)
+}
+
+type GetApplicationsApplicationLoggingOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationLogging)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationLoggingOutput) ToGetApplicationsApplicationLoggingOutput() GetApplicationsApplicationLoggingOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationLoggingOutput) ToGetApplicationsApplicationLoggingOutputWithContext(ctx context.Context) GetApplicationsApplicationLoggingOutput {
+	return o
+}
+
+// Specify the format of log lines emitted by functions in this application.
+func (o GetApplicationsApplicationLoggingOutput) LineFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationLogging) string { return v.LineFormat }).(pulumi.StringOutput)
+}
+
+type GetApplicationsApplicationLoggingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationLoggingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationLogging)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationLoggingArrayOutput) ToGetApplicationsApplicationLoggingArrayOutput() GetApplicationsApplicationLoggingArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationLoggingArrayOutput) ToGetApplicationsApplicationLoggingArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationLoggingArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationLoggingArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationLoggingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationLogging {
+		return vs[0].([]GetApplicationsApplicationLogging)[vs[1].(int)]
+	}).(GetApplicationsApplicationLoggingOutput)
 }
 
 type GetApplicationsApplicationTraceConfig struct {
@@ -13122,6 +13462,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigPtrInput)(nil)).Elem(), ApplicationImagePolicyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigKeyDetailInput)(nil)).Elem(), ApplicationImagePolicyConfigKeyDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), ApplicationImagePolicyConfigKeyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationLoggingInput)(nil)).Elem(), ApplicationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationLoggingPtrInput)(nil)).Elem(), ApplicationLoggingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigPtrInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionFailureDestinationInput)(nil)).Elem(), FunctionFailureDestinationArgs{})
@@ -13138,6 +13480,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigArrayInput)(nil)).Elem(), GetApplicationImagePolicyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigKeyDetailInput)(nil)).Elem(), GetApplicationImagePolicyConfigKeyDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), GetApplicationImagePolicyConfigKeyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationLoggingInput)(nil)).Elem(), GetApplicationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationLoggingArrayInput)(nil)).Elem(), GetApplicationLoggingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationTraceConfigInput)(nil)).Elem(), GetApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationTraceConfigArrayInput)(nil)).Elem(), GetApplicationTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationInput)(nil)).Elem(), GetApplicationsApplicationArgs{})
@@ -13146,6 +13490,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationImagePolicyConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationImagePolicyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationImagePolicyConfigKeyDetailInput)(nil)).Elem(), GetApplicationsApplicationImagePolicyConfigKeyDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), GetApplicationsApplicationImagePolicyConfigKeyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationLoggingInput)(nil)).Elem(), GetApplicationsApplicationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationLoggingArrayInput)(nil)).Elem(), GetApplicationsApplicationLoggingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationTraceConfigInput)(nil)).Elem(), GetApplicationsApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationTraceConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterInput)(nil)).Elem(), GetApplicationsFilterArgs{})
@@ -13328,6 +13674,8 @@ func init() {
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailArrayOutput{})
+	pulumi.RegisterOutputType(ApplicationLoggingOutput{})
+	pulumi.RegisterOutputType(ApplicationLoggingPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionFailureDestinationOutput{})
@@ -13344,6 +13692,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigKeyDetailOutput{})
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigKeyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationLoggingOutput{})
+	pulumi.RegisterOutputType(GetApplicationLoggingArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetApplicationTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationOutput{})
@@ -13352,6 +13702,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationsApplicationImagePolicyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationImagePolicyConfigKeyDetailOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationLoggingOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationLoggingArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterOutput{})

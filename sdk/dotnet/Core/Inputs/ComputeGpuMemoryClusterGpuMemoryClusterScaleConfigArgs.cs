@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool> IsUpsizeEnabled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The configured target size for the GPU Memory cluster.
+        /// (Updatable) The configured target size for the GPU Memory Cluster.
         /// </summary>
         [Input("targetSize")]
         public Input<string>? TargetSize { get; set; }

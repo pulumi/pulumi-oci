@@ -273,7 +273,7 @@ class GetDeploymentUpgradeResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Upgrade.
         """
         return pulumi.get(self, "state")
 

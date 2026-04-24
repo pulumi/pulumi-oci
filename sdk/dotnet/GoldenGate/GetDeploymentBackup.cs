@@ -201,7 +201,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly double SizeInBytes;
         /// <summary>
-        /// Possible lifecycle states.
+        /// Possible lifecycle states for a Deployment Backup.
         /// </summary>
         public readonly string State;
         /// <summary>

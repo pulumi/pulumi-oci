@@ -213,14 +213,14 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
     @Import(name="dataStoragePercentage")
     private @Nullable Output<Integer> dataStoragePercentage;
 
     /**
-     * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * @return (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
     public Optional<Output<Integer>> dataStoragePercentage() {
@@ -431,14 +431,14 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
     @Import(name="isLocalBackupEnabled")
     private @Nullable Output<Boolean> isLocalBackupEnabled;
 
     /**
-     * @return If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+     * @return (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
     public Optional<Output<Boolean>> isLocalBackupEnabled() {
@@ -446,14 +446,14 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
      */
     @Import(name="isSparseDiskgroupEnabled")
     private @Nullable Output<Boolean> isSparseDiskgroupEnabled;
 
     /**
-     * @return If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+     * @return (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
      */
     public Optional<Output<Boolean>> isSparseDiskgroupEnabled() {
@@ -613,6 +613,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Import(name="recoStoragePercentage")
+    private @Nullable Output<Integer> recoStoragePercentage;
+
+    /**
+     * @return (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Optional<Output<Integer>> recoStoragePercentage() {
+        return Optional.ofNullable(this.recoStoragePercentage);
+    }
+
+    /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
@@ -730,6 +745,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> shape() {
         return Optional.ofNullable(this.shape);
+    }
+
+    /**
+     * (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Import(name="sparseStoragePercentage")
+    private @Nullable Output<Integer> sparseStoragePercentage;
+
+    /**
+     * @return (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Optional<Output<Integer>> sparseStoragePercentage() {
+        return Optional.ofNullable(this.sparseStoragePercentage);
     }
 
     /**
@@ -1033,6 +1063,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.privateZoneId = $.privateZoneId;
+        this.recoStoragePercentage = $.recoStoragePercentage;
         this.scanDnsName = $.scanDnsName;
         this.scanDnsRecordId = $.scanDnsRecordId;
         this.scanIpIds = $.scanIpIds;
@@ -1041,6 +1072,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
         this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
+        this.sparseStoragePercentage = $.sparseStoragePercentage;
         this.sshPublicKeys = $.sshPublicKeys;
         this.state = $.state;
         this.storageManagementType = $.storageManagementType;
@@ -1338,7 +1370,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dataStoragePercentage The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * @param dataStoragePercentage (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
          * 
          * @return builder
          * 
@@ -1349,7 +1381,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dataStoragePercentage The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * @param dataStoragePercentage (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
          * 
          * @return builder
          * 
@@ -1670,7 +1702,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param isLocalBackupEnabled If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+         * @param isLocalBackupEnabled (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
          * 
          * @return builder
          * 
@@ -1681,7 +1713,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param isLocalBackupEnabled If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+         * @param isLocalBackupEnabled (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
          * 
          * @return builder
          * 
@@ -1691,7 +1723,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param isSparseDiskgroupEnabled If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+         * @param isSparseDiskgroupEnabled (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
          * 
          * @return builder
          * 
@@ -1702,7 +1734,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param isSparseDiskgroupEnabled If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+         * @param isSparseDiskgroupEnabled (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
          * 
          * @return builder
          * 
@@ -1945,6 +1977,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param recoStoragePercentage (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoStoragePercentage(@Nullable Output<Integer> recoStoragePercentage) {
+            $.recoStoragePercentage = recoStoragePercentage;
+            return this;
+        }
+
+        /**
+         * @param recoStoragePercentage (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoStoragePercentage(Integer recoStoragePercentage) {
+            return recoStoragePercentage(Output.of(recoStoragePercentage));
+        }
+
+        /**
          * @param scanDnsName The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
          * 
          * @return builder
@@ -2130,6 +2183,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
+        }
+
+        /**
+         * @param sparseStoragePercentage (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sparseStoragePercentage(@Nullable Output<Integer> sparseStoragePercentage) {
+            $.sparseStoragePercentage = sparseStoragePercentage;
+            return this;
+        }
+
+        /**
+         * @param sparseStoragePercentage (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
+            return sparseStoragePercentage(Output.of(sparseStoragePercentage));
         }
 
         /**

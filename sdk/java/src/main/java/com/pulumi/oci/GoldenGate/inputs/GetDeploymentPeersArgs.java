@@ -56,14 +56,14 @@ public final class GetDeploymentPeersArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * A filter to return only the deployment peers having the &#39;lifecycleState&#39; given.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment peers having the &#39;lifecycleState&#39; given.
      * 
      */
     public Optional<Output<String>> state() {
@@ -153,7 +153,7 @@ public final class GetDeploymentPeersArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+         * @param state A filter to return only the deployment peers having the &#39;lifecycleState&#39; given.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class GetDeploymentPeersArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+         * @param state A filter to return only the deployment peers having the &#39;lifecycleState&#39; given.
          * 
          * @return builder
          * 

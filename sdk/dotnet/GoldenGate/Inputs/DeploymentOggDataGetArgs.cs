@@ -18,6 +18,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         /// <summary>
         /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         /// </summary>
+        [Obsolete(@"The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.")]
         public Input<string>? AdminPassword
         {
             get => _adminPassword;

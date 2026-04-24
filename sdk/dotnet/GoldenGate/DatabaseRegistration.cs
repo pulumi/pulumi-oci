@@ -83,6 +83,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        /// </summary>
+        [Output("connectionId")]
+        public Output<string> ConnectionId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         /// </summary>
         [Output("connectionString")]
@@ -427,6 +433,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+        /// </summary>
+        [Input("connectionId")]
+        public Input<string>? ConnectionId { get; set; }
 
         /// <summary>
         /// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.

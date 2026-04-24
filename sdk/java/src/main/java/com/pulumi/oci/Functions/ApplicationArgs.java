@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigArgs;
+import com.pulumi.oci.Functions.inputs.ApplicationLoggingArgs;
 import com.pulumi.oci.Functions.inputs.ApplicationTraceConfigArgs;
 import java.lang.String;
 import java.util.List;
@@ -115,6 +116,21 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    @Import(name="logging")
+    private @Nullable Output<ApplicationLoggingArgs> logging;
+
+    /**
+     * @return (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    public Optional<Output<ApplicationLoggingArgs>> logging() {
+        return Optional.ofNullable(this.logging);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      * 
      */
@@ -213,6 +229,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.imagePolicyConfig = $.imagePolicyConfig;
+        this.logging = $.logging;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
@@ -367,6 +384,27 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder imagePolicyConfig(ApplicationImagePolicyConfigArgs imagePolicyConfig) {
             return imagePolicyConfig(Output.of(imagePolicyConfig));
+        }
+
+        /**
+         * @param logging (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logging(@Nullable Output<ApplicationLoggingArgs> logging) {
+            $.logging = logging;
+            return this;
+        }
+
+        /**
+         * @param logging (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logging(ApplicationLoggingArgs logging) {
+            return logging(Output.of(logging));
         }
 
         /**

@@ -17,6 +17,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Access key ID to access the Amazon S3 bucket.
         /// </summary>
         public readonly string AccessKeyId;
+        public readonly string AccountKey;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         /// </summary>
@@ -34,7 +35,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Container;
         /// <summary>
-        /// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        /// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
         /// </summary>
         public readonly string Endpoint;
         /// <summary>
@@ -49,10 +50,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The scheme of the storage.
         /// </summary>
         public readonly string SchemeType;
+        public readonly string SecretAccessKey;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
+        public readonly string ServiceAccountKeyFile;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         /// </summary>
@@ -65,6 +68,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemStorageResult(
             string accessKeyId,
+
+            string accountKey,
 
             string accountKeySecretId,
 
@@ -82,13 +87,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string schemeType,
 
+            string secretAccessKey,
+
             string secretAccessKeySecretId,
+
+            string serviceAccountKeyFile,
 
             string serviceAccountKeyFileSecretId,
 
             string storageType)
         {
             AccessKeyId = accessKeyId;
+            AccountKey = accountKey;
             AccountKeySecretId = accountKeySecretId;
             AccountName = accountName;
             Bucket = bucket;
@@ -97,7 +107,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ProjectId = projectId;
             Region = region;
             SchemeType = schemeType;
+            SecretAccessKey = secretAccessKey;
             SecretAccessKeySecretId = secretAccessKeySecretId;
+            ServiceAccountKeyFile = serviceAccountKeyFile;
             ServiceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
             StorageType = storageType;
         }

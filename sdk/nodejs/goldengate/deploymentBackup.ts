@@ -151,7 +151,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly sizeInBytes: pulumi.Output<number>;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -340,7 +340,7 @@ export interface DeploymentBackupState {
      */
     sizeInBytes?: pulumi.Input<number>;
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      */
     state?: pulumi.Input<string>;
     /**

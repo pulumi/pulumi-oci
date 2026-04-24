@@ -115,6 +115,21 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     }
 
     /**
+     * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Import(name="dataStoragePercentage")
+    private @Nullable Output<Integer> dataStoragePercentage;
+
+    /**
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Optional<Output<Integer>> dataStoragePercentage() {
+        return Optional.ofNullable(this.dataStoragePercentage);
+    }
+
+    /**
      * Size, in terabytes, of the DATA disk group.
      * 
      */
@@ -355,6 +370,21 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     }
 
     /**
+     * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Import(name="recoStoragePercentage")
+    private @Nullable Output<Integer> recoStoragePercentage;
+
+    /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Optional<Output<Integer>> recoStoragePercentage() {
+        return Optional.ofNullable(this.recoStoragePercentage);
+    }
+
+    /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
@@ -367,6 +397,21 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
      */
     public Optional<Output<String>> shape() {
         return Optional.ofNullable(this.shape);
+    }
+
+    /**
+     * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    @Import(name="sparseStoragePercentage")
+    private @Nullable Output<Integer> sparseStoragePercentage;
+
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Optional<Output<Integer>> sparseStoragePercentage() {
+        return Optional.ofNullable(this.sparseStoragePercentage);
     }
 
     /**
@@ -519,6 +564,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         this.computeModel = $.computeModel;
         this.cpusEnabled = $.cpusEnabled;
         this.dataCollectionOptions = $.dataCollectionOptions;
+        this.dataStoragePercentage = $.dataStoragePercentage;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.dbServers = $.dbServers;
@@ -535,7 +581,9 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.memorySizeInGbs = $.memorySizeInGbs;
+        this.recoStoragePercentage = $.recoStoragePercentage;
         this.shape = $.shape;
+        this.sparseStoragePercentage = $.sparseStoragePercentage;
         this.sshPublicKeys = $.sshPublicKeys;
         this.state = $.state;
         this.storageManagementType = $.storageManagementType;
@@ -709,6 +757,27 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
          */
         public Builder dataCollectionOptions(VmClusterRemoveVirtualMachineDataCollectionOptionArgs... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
+        }
+
+        /**
+         * @param dataStoragePercentage The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStoragePercentage(@Nullable Output<Integer> dataStoragePercentage) {
+            $.dataStoragePercentage = dataStoragePercentage;
+            return this;
+        }
+
+        /**
+         * @param dataStoragePercentage The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
+            return dataStoragePercentage(Output.of(dataStoragePercentage));
         }
 
         /**
@@ -1068,6 +1137,27 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         }
 
         /**
+         * @param recoStoragePercentage The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoStoragePercentage(@Nullable Output<Integer> recoStoragePercentage) {
+            $.recoStoragePercentage = recoStoragePercentage;
+            return this;
+        }
+
+        /**
+         * @param recoStoragePercentage The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoStoragePercentage(Integer recoStoragePercentage) {
+            return recoStoragePercentage(Output.of(recoStoragePercentage));
+        }
+
+        /**
          * @param shape The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
          * 
          * @return builder
@@ -1086,6 +1176,27 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
+        }
+
+        /**
+         * @param sparseStoragePercentage The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sparseStoragePercentage(@Nullable Output<Integer> sparseStoragePercentage) {
+            $.sparseStoragePercentage = sparseStoragePercentage;
+            return this;
+        }
+
+        /**
+         * @param sparseStoragePercentage The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
+            return sparseStoragePercentage(Output.of(sparseStoragePercentage));
         }
 
         /**

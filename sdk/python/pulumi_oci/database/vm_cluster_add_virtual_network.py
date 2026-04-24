@@ -74,6 +74,7 @@ class _VmClusterAddVirtualNetworkState:
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
                  data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]] = None,
+                 data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -92,7 +93,9 @@ class _VmClusterAddVirtualNetworkState:
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  ocpus_enabled: Optional[pulumi.Input[_builtins.float]] = None,
+                 reco_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 sparse_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -111,6 +114,7 @@ class _VmClusterAddVirtualNetworkState:
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -128,7 +132,9 @@ class _VmClusterAddVirtualNetworkState:
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[_builtins.int] reco_storage_percentage: The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param pulumi.Input[_builtins.int] sparse_storage_percentage: The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the VM cluster.
         :param pulumi.Input[_builtins.str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
@@ -155,6 +161,8 @@ class _VmClusterAddVirtualNetworkState:
             pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         if data_collection_options is not None:
             pulumi.set(__self__, "data_collection_options", data_collection_options)
+        if data_storage_percentage is not None:
+            pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storage_size_in_tbs is not None:
@@ -191,8 +199,12 @@ class _VmClusterAddVirtualNetworkState:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if ocpus_enabled is not None:
             pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if reco_storage_percentage is not None:
+            pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
+        if sparse_storage_percentage is not None:
+            pulumi.set(__self__, "sparse_storage_percentage", sparse_storage_percentage)
         if ssh_public_keys is not None:
             pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if state is not None:
@@ -283,6 +295,18 @@ class _VmClusterAddVirtualNetworkState:
     @data_collection_options.setter
     def data_collection_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]]):
         pulumi.set(self, "data_collection_options", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStoragePercentage")
+    def data_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "data_storage_percentage")
+
+    @data_storage_percentage.setter
+    def data_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "data_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -498,6 +522,18 @@ class _VmClusterAddVirtualNetworkState:
         pulumi.set(self, "ocpus_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @reco_storage_percentage.setter
+    def reco_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "reco_storage_percentage", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -508,6 +544,18 @@ class _VmClusterAddVirtualNetworkState:
     @shape.setter
     def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
+
+    @sparse_storage_percentage.setter
+    def sparse_storage_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "sparse_storage_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
@@ -748,6 +796,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             __props__.__dict__["compute_model"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["data_collection_options"] = None
+            __props__.__dict__["data_storage_percentage"] = None
             __props__.__dict__["data_storage_size_in_gb"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
@@ -765,7 +814,9 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["ocpus_enabled"] = None
+            __props__.__dict__["reco_storage_percentage"] = None
             __props__.__dict__["shape"] = None
+            __props__.__dict__["sparse_storage_percentage"] = None
             __props__.__dict__["ssh_public_keys"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_management_type"] = None
@@ -790,6 +841,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             compute_model: Optional[pulumi.Input[_builtins.str]] = None,
             cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
             data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict']]]]] = None,
+            data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[_builtins.float]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -808,7 +860,9 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             ocpus_enabled: Optional[pulumi.Input[_builtins.float]] = None,
+            reco_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
             shape: Optional[pulumi.Input[_builtins.str]] = None,
+            sparse_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -831,6 +885,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterAddVirtualNetworkDataCollectionOptionArgs', 'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.float] data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -848,7 +903,9 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[_builtins.int] reco_storage_percentage: The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+        :param pulumi.Input[_builtins.int] sparse_storage_percentage: The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the VM cluster.
         :param pulumi.Input[_builtins.str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
@@ -873,6 +930,7 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpus_enabled"] = cpus_enabled
         __props__.__dict__["data_collection_options"] = data_collection_options
+        __props__.__dict__["data_storage_percentage"] = data_storage_percentage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
@@ -891,7 +949,9 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["ocpus_enabled"] = ocpus_enabled
+        __props__.__dict__["reco_storage_percentage"] = reco_storage_percentage
         __props__.__dict__["shape"] = shape
+        __props__.__dict__["sparse_storage_percentage"] = sparse_storage_percentage
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_management_type"] = storage_management_type
@@ -950,6 +1010,14 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
+
+    @_builtins.property
+    @pulumi.getter(name="dataStoragePercentage")
+    def data_storage_percentage(self) -> pulumi.Output[_builtins.int]:
+        """
+        The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "data_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -1093,12 +1161,28 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         return pulumi.get(self, "ocpus_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="recoStoragePercentage")
+    def reco_storage_percentage(self) -> pulumi.Output[_builtins.int]:
+        """
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "reco_storage_percentage")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Output[_builtins.str]:
         """
         The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="sparseStoragePercentage")
+    def sparse_storage_percentage(self) -> pulumi.Output[_builtins.int]:
+        """
+        The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        """
+        return pulumi.get(self, "sparse_storage_percentage")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")

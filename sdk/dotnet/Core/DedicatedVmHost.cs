@@ -74,9 +74,6 @@ namespace Pulumi.Oci.Core
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of total and remaining CPU and memory per capacity bucket.
-        /// </summary>
         [Output("capacityBins")]
         public Output<ImmutableArray<Outputs.DedicatedVmHostCapacityBin>> CapacityBins { get; private set; } = null!;
 
@@ -318,10 +315,6 @@ namespace Pulumi.Oci.Core
 
         [Input("capacityBins")]
         private InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>? _capacityBins;
-
-        /// <summary>
-        /// A list of total and remaining CPU and memory per capacity bucket.
-        /// </summary>
         public InputList<Inputs.DedicatedVmHostCapacityBinGetArgs> CapacityBins
         {
             get => _capacityBins ?? (_capacityBins = new InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>());

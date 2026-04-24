@@ -71,14 +71,14 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
      * 
      */
     public Optional<Output<String>> state() {
@@ -190,7 +190,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+         * @param state A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+         * @param state A filter to return only the deployment upgrades having the &#39;lifecycleState&#39; given.
          * 
          * @return builder
          * 

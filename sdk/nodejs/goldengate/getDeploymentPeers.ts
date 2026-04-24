@@ -48,7 +48,7 @@ export interface GetDeploymentPeersArgs {
     displayName?: string;
     filters?: inputs.GoldenGate.GetDeploymentPeersFilter[];
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment peers having the 'lifecycleState' given.
      */
     state?: string;
 }
@@ -121,7 +121,7 @@ export interface GetDeploymentPeersOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentPeersFilterArgs>[]>;
     /**
-     * A filter to return only the resources that match the 'lifecycleState' given.
+     * A filter to return only the deployment peers having the 'lifecycleState' given.
      */
     state?: pulumi.Input<string>;
 }

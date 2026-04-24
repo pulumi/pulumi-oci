@@ -100,7 +100,7 @@ class GetDeploymentUpgradesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Upgrade.
         """
         return pulumi.get(self, "state")
 
@@ -147,7 +147,7 @@ def get_deployment_upgrades(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param _builtins.str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployment upgrades having the 'lifecycleState' given.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -193,7 +193,7 @@ def get_deployment_upgrades_output(compartment_id: Optional[pulumi.Input[_builti
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param _builtins.str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployment upgrades having the 'lifecycleState' given.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

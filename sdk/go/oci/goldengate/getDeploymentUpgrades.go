@@ -62,7 +62,7 @@ type GetDeploymentUpgradesArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetDeploymentUpgradesFilter `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment upgrades having the 'lifecycleState' given.
 	State *string `pulumi:"state"`
 }
 
@@ -79,7 +79,7 @@ type GetDeploymentUpgradesResult struct {
 	Filters     []GetDeploymentUpgradesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment Upgrade.
 	State *string `pulumi:"state"`
 }
 
@@ -101,7 +101,7 @@ type GetDeploymentUpgradesOutputArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetDeploymentUpgradesFilterArrayInput `pulumi:"filters"`
-	// A filter to return only the resources that match the 'lifecycleState' given.
+	// A filter to return only the deployment upgrades having the 'lifecycleState' given.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -155,7 +155,7 @@ func (o GetDeploymentUpgradesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment Upgrade.
 func (o GetDeploymentUpgradesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeGpuMemoryClusterResult
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster.
+        /// The availability domain of the GPU Memory Cluster.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string GpuMemoryFabricId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory cluster
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU Memory Cluster
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -168,11 +168,15 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string InstanceConfigurationId;
         /// <summary>
-        /// The number of instances currently running in the GpuMemoryCluster
+        /// Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+        /// </summary>
+        public readonly ImmutableArray<string> PrivateIpIds;
+        /// <summary>
+        /// The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
         /// </summary>
         public readonly string Size;
         /// <summary>
-        /// The lifecycle state of the GPU memory cluster
+        /// The lifecycle state of the GPU Memory Cluster
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -180,7 +184,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the GPU memory cluster was created.  Example: `2016-09-15T21:10:29.600Z`
+        /// The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
 
@@ -208,6 +212,8 @@ namespace Pulumi.Oci.Core
 
             string instanceConfigurationId,
 
+            ImmutableArray<string> privateIpIds,
+
             string size,
 
             string state,
@@ -227,6 +233,7 @@ namespace Pulumi.Oci.Core
             GpuMemoryFabricId = gpuMemoryFabricId;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;
+            PrivateIpIds = privateIpIds;
             Size = size;
             State = state;
             SystemTags = systemTags;

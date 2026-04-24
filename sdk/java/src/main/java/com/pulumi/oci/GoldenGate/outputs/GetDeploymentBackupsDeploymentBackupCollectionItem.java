@@ -107,7 +107,7 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
      */
     private Double sizeInBytes;
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment backups having the &#39;lifecycleState&#39; given.
      * 
      */
     private String state;
@@ -268,7 +268,7 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
         return this.sizeInBytes;
     }
     /**
-     * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
+     * @return A filter to return only the deployment backups having the &#39;lifecycleState&#39; given.
      * 
      */
     public String state() {

@@ -18,6 +18,7 @@ from . import outputs
 __all__ = [
     'ApplicationImagePolicyConfig',
     'ApplicationImagePolicyConfigKeyDetail',
+    'ApplicationLogging',
     'ApplicationTraceConfig',
     'FunctionFailureDestination',
     'FunctionProvisionedConcurrencyConfig',
@@ -26,10 +27,12 @@ __all__ = [
     'FunctionTraceConfig',
     'GetApplicationImagePolicyConfigResult',
     'GetApplicationImagePolicyConfigKeyDetailResult',
+    'GetApplicationLoggingResult',
     'GetApplicationTraceConfigResult',
     'GetApplicationsApplicationResult',
     'GetApplicationsApplicationImagePolicyConfigResult',
     'GetApplicationsApplicationImagePolicyConfigKeyDetailResult',
+    'GetApplicationsApplicationLoggingResult',
     'GetApplicationsApplicationTraceConfigResult',
     'GetApplicationsFilterResult',
     'GetFunctionFailureDestinationResult',
@@ -203,6 +206,42 @@ class ApplicationImagePolicyConfigKeyDetail(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         """
         return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class ApplicationLogging(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lineFormat":
+            suggest = "line_format"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApplicationLogging. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApplicationLogging.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApplicationLogging.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 line_format: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str line_format: (Updatable) Specify the format of log lines emitted by functions in this application.
+        """
+        if line_format is not None:
+            pulumi.set(__self__, "line_format", line_format)
+
+    @_builtins.property
+    @pulumi.getter(name="lineFormat")
+    def line_format(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specify the format of log lines emitted by functions in this application.
+        """
+        return pulumi.get(self, "line_format")
 
 
 @pulumi.output_type
@@ -611,6 +650,24 @@ class GetApplicationImagePolicyConfigKeyDetailResult(dict):
 
 
 @pulumi.output_type
+class GetApplicationLoggingResult(dict):
+    def __init__(__self__, *,
+                 line_format: _builtins.str):
+        """
+        :param _builtins.str line_format: Specify the format of log lines emitted by functions in this application.
+        """
+        pulumi.set(__self__, "line_format", line_format)
+
+    @_builtins.property
+    @pulumi.getter(name="lineFormat")
+    def line_format(self) -> _builtins.str:
+        """
+        Specify the format of log lines emitted by functions in this application.
+        """
+        return pulumi.get(self, "line_format")
+
+
+@pulumi.output_type
 class GetApplicationTraceConfigResult(dict):
     def __init__(__self__, *,
                  domain_id: _builtins.str,
@@ -649,6 +706,7 @@ class GetApplicationsApplicationResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  image_policy_configs: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigResult'],
+                 loggings: Sequence['outputs.GetApplicationsApplicationLoggingResult'],
                  network_security_group_ids: Sequence[_builtins.str],
                  security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
@@ -666,6 +724,7 @@ class GetApplicationsApplicationResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: A filter to return only applications with the specified OCID.
         :param Sequence['GetApplicationsApplicationImagePolicyConfigArgs'] image_policy_configs: Define the image signature verification policy for an application.
+        :param Sequence['GetApplicationsApplicationLoggingArgs'] loggings: Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
         :param Sequence[_builtins.str] network_security_group_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
@@ -683,6 +742,7 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_policy_configs", image_policy_configs)
+        pulumi.set(__self__, "loggings", loggings)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
@@ -748,6 +808,14 @@ class GetApplicationsApplicationResult(dict):
         Define the image signature verification policy for an application.
         """
         return pulumi.get(self, "image_policy_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def loggings(self) -> Sequence['outputs.GetApplicationsApplicationLoggingResult']:
+        """
+        Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+        """
+        return pulumi.get(self, "loggings")
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -867,6 +935,24 @@ class GetApplicationsApplicationImagePolicyConfigKeyDetailResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         """
         return pulumi.get(self, "kms_key_id")
+
+
+@pulumi.output_type
+class GetApplicationsApplicationLoggingResult(dict):
+    def __init__(__self__, *,
+                 line_format: _builtins.str):
+        """
+        :param _builtins.str line_format: Specify the format of log lines emitted by functions in this application.
+        """
+        pulumi.set(__self__, "line_format", line_format)
+
+    @_builtins.property
+    @pulumi.getter(name="lineFormat")
+    def line_format(self) -> _builtins.str:
+        """
+        Specify the format of log lines emitted by functions in this application.
+        """
+        return pulumi.get(self, "line_format")
 
 
 @pulumi.output_type

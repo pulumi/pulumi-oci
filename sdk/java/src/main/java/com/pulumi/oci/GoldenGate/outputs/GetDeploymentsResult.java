@@ -54,7 +54,7 @@ public final class GetDeploymentsResult {
      */
     private @Nullable String lifecycleSubState;
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment.
      * 
      */
     private @Nullable String state;
@@ -120,7 +120,7 @@ public final class GetDeploymentsResult {
         return Optional.ofNullable(this.lifecycleSubState);
     }
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment.
      * 
      */
     public Optional<String> state() {

@@ -334,14 +334,14 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
         return this.sizeInBytes;
     }
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment Backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Backup.
      * 
      */
     public Output<String> state() {

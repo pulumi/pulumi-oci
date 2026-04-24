@@ -57,6 +57,7 @@ namespace Pulumi.Oci.Database
     ///             IsHealthMonitoringEnabled = vmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
     ///             IsIncidentLogsEnabled = vmClusterDataCollectionOptionsIsIncidentLogsEnabled,
     ///         },
+    ///         DataStoragePercentage = vmClusterDataStoragePercentage,
     ///         DataStorageSizeInTbs = vmClusterDataStorageSizeInTbs,
     ///         DbNodeStorageSizeInGbs = vmClusterDbNodeStorageSizeInGbs,
     ///         DbServers = vmClusterDbServers,
@@ -78,6 +79,8 @@ namespace Pulumi.Oci.Database
     ///         IsSparseDiskgroupEnabled = vmClusterIsSparseDiskgroupEnabled,
     ///         LicenseModel = vmClusterLicenseModel,
     ///         MemorySizeInGbs = vmClusterMemorySizeInGbs,
+    ///         RecoStoragePercentage = vmClusterRecoStoragePercentage,
+    ///         SparseStoragePercentage = vmClusterSparseStoragePercentage,
     ///         SystemVersion = vmClusterSystemVersion,
     ///         TimeZone = vmClusterTimeZone,
     ///         VmBackupStorageType = vmClusterVmBackupStorageType,
@@ -140,6 +143,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dataCollectionOptions")]
         public Output<Outputs.VmClusterDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("dataStoragePercentage")]
+        public Output<int> DataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The data disk group size to be allocated in GBs.
@@ -208,13 +217,13 @@ namespace Pulumi.Oci.Database
         public Output<string> GiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        /// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
         [Output("isLocalBackupEnabled")]
         public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+        /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Output("isSparseDiskgroupEnabled")]
         public Output<bool> IsSparseDiskgroupEnabled { get; private set; } = null!;
@@ -250,10 +259,22 @@ namespace Pulumi.Oci.Database
         public Output<double> OcpusEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("recoStoragePercentage")]
+        public Output<int> RecoStoragePercentage { get; private set; } = null!;
+
+        /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Output("sparseStoragePercentage")]
+        public Output<int> SparseStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -396,6 +417,12 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.VmClusterDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
 
         /// <summary>
+        /// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("dataStoragePercentage")]
+        public Input<int>? DataStoragePercentage { get; set; }
+
+        /// <summary>
         /// (Updatable) The data disk group size to be allocated in GBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
@@ -486,13 +513,13 @@ namespace Pulumi.Oci.Database
         public Input<string> GiVersion { get; set; } = null!;
 
         /// <summary>
-        /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        /// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
 
         /// <summary>
-        /// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+        /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Input("isSparseDiskgroupEnabled")]
         public Input<bool>? IsSparseDiskgroupEnabled { get; set; }
@@ -511,6 +538,18 @@ namespace Pulumi.Oci.Database
 
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("recoStoragePercentage")]
+        public Input<int>? RecoStoragePercentage { get; set; }
+
+        /// <summary>
+        /// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("sparseStoragePercentage")]
+        public Input<int>? SparseStoragePercentage { get; set; }
 
         [Input("sshPublicKeys", required: true)]
         private InputList<string>? _sshPublicKeys;
@@ -615,6 +654,12 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.VmClusterDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
         /// <summary>
+        /// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("dataStoragePercentage")]
+        public Input<int>? DataStoragePercentage { get; set; }
+
+        /// <summary>
         /// (Updatable) The data disk group size to be allocated in GBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
@@ -705,13 +750,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? GiVersion { get; set; }
 
         /// <summary>
-        /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
+        /// (Updatable) If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
         [Input("isLocalBackupEnabled")]
         public Input<bool>? IsLocalBackupEnabled { get; set; }
 
         /// <summary>
-        /// If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+        /// (Updatable) If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Input("isSparseDiskgroupEnabled")]
         public Input<bool>? IsSparseDiskgroupEnabled { get; set; }
@@ -747,10 +792,22 @@ namespace Pulumi.Oci.Database
         public Input<double>? OcpusEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("recoStoragePercentage")]
+        public Input<int>? RecoStoragePercentage { get; set; }
+
+        /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
+
+        /// <summary>
+        /// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        /// </summary>
+        [Input("sparseStoragePercentage")]
+        public Input<int>? SparseStoragePercentage { get; set; }
 
         [Input("sshPublicKeys")]
         private InputList<string>? _sshPublicKeys;

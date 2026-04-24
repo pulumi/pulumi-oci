@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Functions.ApplicationArgs;
 import com.pulumi.oci.Functions.inputs.ApplicationState;
 import com.pulumi.oci.Functions.outputs.ApplicationImagePolicyConfig;
+import com.pulumi.oci.Functions.outputs.ApplicationLogging;
 import com.pulumi.oci.Functions.outputs.ApplicationTraceConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
@@ -39,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Functions.Application;
  * import com.pulumi.oci.Functions.ApplicationArgs;
  * import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigArgs;
+ * import com.pulumi.oci.Functions.inputs.ApplicationLoggingArgs;
  * import com.pulumi.oci.Functions.inputs.ApplicationTraceConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -66,6 +68,9 @@ import javax.annotation.Nullable;
  *                 .keyDetails(ApplicationImagePolicyConfigKeyDetailArgs.builder()
  *                     .kmsKeyId(testKey.id())
  *                     .build())
+ *                 .build())
+ *             .logging(ApplicationLoggingArgs.builder()
+ *                 .lineFormat(applicationLoggingLineFormat)
  *                 .build())
  *             .securityAttributes(applicationSecurityAttributes)
  *             .shape(applicationShape)
@@ -179,6 +184,20 @@ public class Application extends com.pulumi.resources.CustomResource {
      */
     public Output<ApplicationImagePolicyConfig> imagePolicyConfig() {
         return this.imagePolicyConfig;
+    }
+    /**
+     * (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    @Export(name="logging", refs={ApplicationLogging.class}, tree="[0]")
+    private Output<ApplicationLogging> logging;
+
+    /**
+     * @return (Updatable) Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the Oracle Cloud Infrastructure Logging service.
+     * 
+     */
+    public Output<ApplicationLogging> logging() {
+        return this.logging;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.

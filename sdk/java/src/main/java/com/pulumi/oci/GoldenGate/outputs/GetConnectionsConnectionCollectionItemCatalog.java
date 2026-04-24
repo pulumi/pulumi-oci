@@ -26,6 +26,13 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     private String clientId;
     /**
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    private String clientSecret;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
@@ -45,6 +52,13 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      * 
      */
     private String principalRole;
+    /**
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    private String properties;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
@@ -79,6 +93,15 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.clientId;
     }
     /**
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    public String clientSecret() {
+        return this.clientSecret;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
@@ -107,6 +130,15 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.principalRole;
     }
     /**
+     * @deprecated
+     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    public String properties() {
+        return this.properties;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
@@ -133,10 +165,12 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         private String branch;
         private String catalogType;
         private String clientId;
+        private String clientSecret;
         private String clientSecretSecretId;
         private String glueId;
         private String name;
         private String principalRole;
+        private String properties;
         private String propertiesSecretId;
         private String uri;
         public Builder() {}
@@ -145,10 +179,12 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
     	      this.branch = defaults.branch;
     	      this.catalogType = defaults.catalogType;
     	      this.clientId = defaults.clientId;
+    	      this.clientSecret = defaults.clientSecret;
     	      this.clientSecretSecretId = defaults.clientSecretSecretId;
     	      this.glueId = defaults.glueId;
     	      this.name = defaults.name;
     	      this.principalRole = defaults.principalRole;
+    	      this.properties = defaults.properties;
     	      this.propertiesSecretId = defaults.propertiesSecretId;
     	      this.uri = defaults.uri;
         }
@@ -175,6 +211,14 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemCatalog", "clientId");
             }
             this.clientId = clientId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientSecret(String clientSecret) {
+            if (clientSecret == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemCatalog", "clientSecret");
+            }
+            this.clientSecret = clientSecret;
             return this;
         }
         @CustomType.Setter
@@ -210,6 +254,14 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
             return this;
         }
         @CustomType.Setter
+        public Builder properties(String properties) {
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemCatalog", "properties");
+            }
+            this.properties = properties;
+            return this;
+        }
+        @CustomType.Setter
         public Builder propertiesSecretId(String propertiesSecretId) {
             if (propertiesSecretId == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemCatalog", "propertiesSecretId");
@@ -230,10 +282,12 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
             _resultValue.branch = branch;
             _resultValue.catalogType = catalogType;
             _resultValue.clientId = clientId;
+            _resultValue.clientSecret = clientSecret;
             _resultValue.clientSecretSecretId = clientSecretSecretId;
             _resultValue.glueId = glueId;
             _resultValue.name = name;
             _resultValue.principalRole = principalRole;
+            _resultValue.properties = properties;
             _resultValue.propertiesSecretId = propertiesSecretId;
             _resultValue.uri = uri;
             return _resultValue;

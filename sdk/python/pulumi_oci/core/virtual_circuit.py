@@ -62,7 +62,7 @@ class VirtualCircuitArgs:
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
@@ -296,7 +296,7 @@ class VirtualCircuitArgs:
     @pulumi.getter(name="providerServiceKeyName")
     def provider_service_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_key_name")
 
@@ -394,7 +394,7 @@ class _VirtualCircuitState:
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
@@ -697,7 +697,7 @@ class _VirtualCircuitState:
     @pulumi.getter(name="providerServiceKeyName")
     def provider_service_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_key_name")
 
@@ -951,7 +951,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
@@ -1186,7 +1186,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
@@ -1387,7 +1387,7 @@ class VirtualCircuit(pulumi.CustomResource):
     @pulumi.getter(name="providerServiceKeyName")
     def provider_service_key_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+        (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_key_name")
 

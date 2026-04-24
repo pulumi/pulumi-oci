@@ -146,7 +146,7 @@ class LogConfigurationSourceArgsDict(TypedDict):
     """
     resource: pulumi.Input[_builtins.str]
     """
-    The unique identifier of the resource emitting the log.
+    The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
     """
     service: pulumi.Input[_builtins.str]
     """
@@ -159,7 +159,7 @@ class LogConfigurationSourceArgsDict(TypedDict):
     """
     parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
     """
-    (Updatable) Log category parameters are stored here.
+    (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
     """
 
 @pulumi.input_type
@@ -172,11 +172,11 @@ class LogConfigurationSourceArgs:
                  parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] category: Log object category.
-        :param pulumi.Input[_builtins.str] resource: The unique identifier of the resource emitting the log.
+        :param pulumi.Input[_builtins.str] resource: The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
         :param pulumi.Input[_builtins.str] service: Service generating log.
         :param pulumi.Input[_builtins.str] source_type: The log source.
                * **OCISERVICE:** Oracle Service.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Log category parameters are stored here.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "resource", resource)
@@ -201,7 +201,7 @@ class LogConfigurationSourceArgs:
     @pulumi.getter
     def resource(self) -> pulumi.Input[_builtins.str]:
         """
-        The unique identifier of the resource emitting the log.
+        The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
         """
         return pulumi.get(self, "resource")
 
@@ -238,7 +238,7 @@ class LogConfigurationSourceArgs:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Log category parameters are stored here.
+        (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
         """
         return pulumi.get(self, "parameters")
 

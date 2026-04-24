@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollection {
     /**
-     * @return The list of compute GPU memory cluster instances.
+     * @return The list of compute GPU Memory Cluster instances.
      * 
      */
     private List<GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItem> items;
 
     private GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollection() {}
     /**
-     * @return The list of compute GPU memory cluster instances.
+     * @return The list of compute GPU Memory Cluster instances.
      * 
      */
     public List<GetComputeGpuMemoryClusterInstancesComputeGpuMemoryClusterInstanceCollectionItem> items() {

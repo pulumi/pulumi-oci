@@ -42,7 +42,7 @@ public final class GetDeploymentUpgradesResult {
      */
     private String id;
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Upgrade.
      * 
      */
     private @Nullable String state;
@@ -87,7 +87,7 @@ public final class GetDeploymentUpgradesResult {
         return this.id;
     }
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment Upgrade.
      * 
      */
     public Optional<String> state() {

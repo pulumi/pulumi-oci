@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetComputeGpuMemoryClustersResult
     {
         /// <summary>
-        /// The availability domain of the GPU memory cluster.
+        /// The availability domain of the GPU Memory Cluster.
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>

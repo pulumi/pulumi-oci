@@ -384,14 +384,14 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
         return this.providerServiceId;
     }
     /**
-     * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      * 
      */
     @Export(name="providerServiceKeyName", refs={String.class}, tree="[0]")
     private Output<String> providerServiceKeyName;
 
     /**
-     * @return (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * @return (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      * 
      */
     public Output<String> providerServiceKeyName() {

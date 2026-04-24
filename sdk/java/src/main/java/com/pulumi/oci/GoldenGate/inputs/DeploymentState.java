@@ -412,14 +412,22 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
+     * @deprecated
+     * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
     @Import(name="isStorageUtilizationLimitExceeded")
     private @Nullable Output<Boolean> isStorageUtilizationLimitExceeded;
 
     /**
      * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
+     * @deprecated
+     * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
     public Optional<Output<Boolean>> isStorageUtilizationLimitExceeded() {
         return Optional.ofNullable(this.isStorageUtilizationLimitExceeded);
     }
@@ -485,14 +493,36 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * 
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * 
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      * 
      */
     @Import(name="loadBalancerSubnetId")
     private @Nullable Output<String> loadBalancerSubnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+     * 
+     * Rules:
+     * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+     * * Update:
+     * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+     * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+     * 
+     * Validation:
+     * * Must reference a public subnet.
+     * * Must be a regional subnet.
+     * * Must be in the same VCN as subnetId.
      * 
      */
     public Optional<Output<String>> loadBalancerSubnetId() {
@@ -680,14 +710,14 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Possible lifecycle states.
+     * Possible lifecycle states for a Deployment.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return Possible lifecycle states.
+     * @return Possible lifecycle states for a Deployment.
      * 
      */
     public Optional<Output<String>> state() {
@@ -865,21 +895,6 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeUpdated);
     }
 
-    /**
-     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     * 
-     */
-    @Import(name="timeUpgradeRequired")
-    private @Nullable Output<String> timeUpgradeRequired;
-
-    /**
-     * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-     * 
-     */
-    public Optional<Output<String>> timeUpgradeRequired() {
-        return Optional.ofNullable(this.timeUpgradeRequired);
-    }
-
     private DeploymentState() {}
 
     private DeploymentState(DeploymentState $) {
@@ -939,7 +954,6 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.timeOggVersionSupportedUntil = $.timeOggVersionSupportedUntil;
         this.timeRoleChanged = $.timeRoleChanged;
         this.timeUpdated = $.timeUpdated;
-        this.timeUpgradeRequired = $.timeUpgradeRequired;
     }
 
     public static Builder builder() {
@@ -1519,7 +1533,11 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
         public Builder isStorageUtilizationLimitExceeded(@Nullable Output<Boolean> isStorageUtilizationLimitExceeded) {
             $.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             return this;
@@ -1530,7 +1548,11 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
         public Builder isStorageUtilizationLimitExceeded(Boolean isStorageUtilizationLimitExceeded) {
             return isStorageUtilizationLimitExceeded(Output.of(isStorageUtilizationLimitExceeded));
         }
@@ -1620,7 +1642,18 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * 
+         * Rules:
+         * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * * Update:
+         * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * 
+         * Validation:
+         * * Must reference a public subnet.
+         * * Must be a regional subnet.
+         * * Must be in the same VCN as subnetId.
          * 
          * @return builder
          * 
@@ -1631,7 +1664,18 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+         * @param loadBalancerSubnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+         * 
+         * Rules:
+         * * Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+         * * Update:
+         * * For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+         * * Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+         * 
+         * Validation:
+         * * Must reference a public subnet.
+         * * Must be a regional subnet.
+         * * Must be in the same VCN as subnetId.
          * 
          * @return builder
          * 
@@ -1923,7 +1967,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment.
          * 
          * @return builder
          * 
@@ -1934,7 +1978,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Possible lifecycle states.
+         * @param state Possible lifecycle states for a Deployment.
          * 
          * @return builder
          * 
@@ -2178,27 +2222,6 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
-        }
-
-        /**
-         * @param timeUpgradeRequired Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder timeUpgradeRequired(@Nullable Output<String> timeUpgradeRequired) {
-            $.timeUpgradeRequired = timeUpgradeRequired;
-            return this;
-        }
-
-        /**
-         * @param timeUpgradeRequired Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder timeUpgradeRequired(String timeUpgradeRequired) {
-            return timeUpgradeRequired(Output.of(timeUpgradeRequired));
         }
 
         public DeploymentState build() {

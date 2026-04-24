@@ -14,7 +14,6 @@ namespace Pulumi.Oci.Core.Inputs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        /// * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
         /// </summary>
         [Input("byoipv6rangeId", required: true)]
         public Input<string> Byoipv6rangeId { get; set; } = null!;

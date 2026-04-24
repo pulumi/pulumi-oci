@@ -190,7 +190,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     declare public readonly providerServiceId: pulumi.Output<string>;
     /**
-     * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      */
     declare public readonly providerServiceKeyName: pulumi.Output<string>;
     /**
@@ -404,7 +404,7 @@ export interface VirtualCircuitState {
      */
     providerServiceId?: pulumi.Input<string>;
     /**
-     * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      */
     providerServiceKeyName?: pulumi.Input<string>;
     /**
@@ -516,7 +516,7 @@ export interface VirtualCircuitArgs {
      */
     providerServiceId?: pulumi.Input<string>;
     /**
-     * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
+     * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      */
     providerServiceKeyName?: pulumi.Input<string>;
     /**

@@ -72,7 +72,7 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
     /**
-     * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
     private Integer dataStoragePercentage;
@@ -200,6 +200,11 @@ public final class GetCloudVmClustersCloudVmCluster {
     private Double ocpuCount;
     private String privateZoneId;
     /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    private Integer recoStoragePercentage;
+    /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
@@ -239,6 +244,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String shape;
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    private Integer sparseStoragePercentage;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      * 
@@ -400,7 +410,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.dataCollectionOptions;
     }
     /**
-     * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * @return The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
     public Integer dataStoragePercentage() {
@@ -582,6 +592,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.privateZoneId;
     }
     /**
+     * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Integer recoStoragePercentage() {
+        return this.recoStoragePercentage;
+    }
+    /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
@@ -636,6 +653,13 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     public String shape() {
         return this.shape;
+    }
+    /**
+     * @return The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+     * 
+     */
+    public Integer sparseStoragePercentage() {
+        return this.sparseStoragePercentage;
     }
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -804,6 +828,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private List<String> nsgIds;
         private Double ocpuCount;
         private String privateZoneId;
+        private Integer recoStoragePercentage;
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
@@ -812,6 +837,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private Integer scanListenerPortTcpSsl;
         private Map<String,String> securityAttributes;
         private String shape;
+        private Integer sparseStoragePercentage;
         private List<String> sshPublicKeys;
         private String state;
         private String storageManagementType;
@@ -870,6 +896,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.privateZoneId = defaults.privateZoneId;
+    	      this.recoStoragePercentage = defaults.recoStoragePercentage;
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
@@ -878,6 +905,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
+    	      this.sparseStoragePercentage = defaults.sparseStoragePercentage;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
     	      this.storageManagementType = defaults.storageManagementType;
@@ -1226,6 +1254,14 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder recoStoragePercentage(Integer recoStoragePercentage) {
+            if (recoStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "recoStoragePercentage");
+            }
+            this.recoStoragePercentage = recoStoragePercentage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scanDnsName(String scanDnsName) {
             if (scanDnsName == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "scanDnsName");
@@ -1293,6 +1329,14 @@ public final class GetCloudVmClustersCloudVmCluster {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "shape");
             }
             this.shape = shape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
+            if (sparseStoragePercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "sparseStoragePercentage");
+            }
+            this.sparseStoragePercentage = sparseStoragePercentage;
             return this;
         }
         @CustomType.Setter
@@ -1480,6 +1524,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.nsgIds = nsgIds;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.privateZoneId = privateZoneId;
+            _resultValue.recoStoragePercentage = recoStoragePercentage;
             _resultValue.scanDnsName = scanDnsName;
             _resultValue.scanDnsRecordId = scanDnsRecordId;
             _resultValue.scanIpIds = scanIpIds;
@@ -1488,6 +1533,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
+            _resultValue.sparseStoragePercentage = sparseStoragePercentage;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
             _resultValue.storageManagementType = storageManagementType;

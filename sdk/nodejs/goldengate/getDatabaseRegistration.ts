@@ -51,6 +51,10 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly compartmentId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     */
+    readonly connectionId: string;
+    /**
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
     readonly connectionString: string;

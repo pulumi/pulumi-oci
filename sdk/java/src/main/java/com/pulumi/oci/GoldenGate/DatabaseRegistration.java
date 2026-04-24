@@ -114,6 +114,20 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    @Export(name="connectionId", refs={String.class}, tree="[0]")
+    private Output<String> connectionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+     * 
+     */
+    public Output<String> connectionId() {
+        return this.connectionId;
+    }
+    /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */

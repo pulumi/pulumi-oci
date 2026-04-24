@@ -252,7 +252,7 @@ class _DeploymentBackupState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] ogg_version: Version of OGG
         :param pulumi.Input[_builtins.float] size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment Backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -529,7 +529,7 @@ class _DeploymentBackupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Backup.
         """
         return pulumi.get(self, "state")
 
@@ -858,7 +858,7 @@ class DeploymentBackup(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] ogg_version: Version of OGG
         :param pulumi.Input[_builtins.float] size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param pulumi.Input[_builtins.str] state: Possible lifecycle states.
+        :param pulumi.Input[_builtins.str] state: Possible lifecycle states for a Deployment Backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1044,7 +1044,7 @@ class DeploymentBackup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Backup.
         """
         return pulumi.get(self, "state")
 

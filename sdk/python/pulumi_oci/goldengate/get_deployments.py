@@ -141,7 +141,7 @@ class GetDeploymentsResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
         """
         return pulumi.get(self, "state")
 
@@ -212,7 +212,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param _builtins.str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployments having the 'lifecycleState' given.
     :param _builtins.str supported_connection_type: The connection type which the deployment must support.
     """
     __args__ = dict()
@@ -283,7 +283,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param _builtins.str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-    :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param _builtins.str state: A filter to return only the deployments having the 'lifecycleState' given.
     :param _builtins.str supported_connection_type: The connection type which the deployment must support.
     """
     __args__ = dict()

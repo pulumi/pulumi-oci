@@ -74,6 +74,8 @@ type VmClusterAddVirtualNetwork struct {
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput `pulumi:"dataCollectionOptions"`
+	// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
 	// Size of the DATA disk group in GBs.
 	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
@@ -109,8 +111,12 @@ type VmClusterAddVirtualNetwork struct {
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput     `pulumi:"memorySizeInGbs"`
 	OcpusEnabled    pulumi.Float64Output `pulumi:"ocpusEnabled"`
+	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntOutput `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringOutput `pulumi:"shape"`
+	// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntOutput `pulumi:"sparseStoragePercentage"`
 	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
@@ -182,6 +188,8 @@ type vmClusterAddVirtualNetworkState struct {
 	CpusEnabled *int `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []VmClusterAddVirtualNetworkDataCollectionOption `pulumi:"dataCollectionOptions"`
+	// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// Size of the DATA disk group in GBs.
 	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
@@ -217,8 +225,12 @@ type vmClusterAddVirtualNetworkState struct {
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int     `pulumi:"memorySizeInGbs"`
 	OcpusEnabled    *float64 `pulumi:"ocpusEnabled"`
+	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage *int `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape *string `pulumi:"shape"`
+	// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage *int `pulumi:"sparseStoragePercentage"`
 	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the VM cluster.
@@ -255,6 +267,8 @@ type VmClusterAddVirtualNetworkState struct {
 	CpusEnabled pulumi.IntPtrInput
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterAddVirtualNetworkDataCollectionOptionArrayInput
+	// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	DataStoragePercentage pulumi.IntPtrInput
 	// Size of the DATA disk group in GBs.
 	DataStorageSizeInGb pulumi.Float64PtrInput
 	// Size, in terabytes, of the DATA disk group.
@@ -290,8 +304,12 @@ type VmClusterAddVirtualNetworkState struct {
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
 	OcpusEnabled    pulumi.Float64PtrInput
+	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntPtrInput
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 	Shape pulumi.StringPtrInput
+	// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntPtrInput
 	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the VM cluster.
@@ -461,6 +479,11 @@ func (o VmClusterAddVirtualNetworkOutput) DataCollectionOptions() VmClusterAddVi
 	}).(VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput)
 }
 
+// The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterAddVirtualNetworkOutput) DataStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.IntOutput { return v.DataStoragePercentage }).(pulumi.IntOutput)
+}
+
 // Size of the DATA disk group in GBs.
 func (o VmClusterAddVirtualNetworkOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
@@ -552,9 +575,19 @@ func (o VmClusterAddVirtualNetworkOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.Float64Output { return v.OcpusEnabled }).(pulumi.Float64Output)
 }
 
+// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterAddVirtualNetworkOutput) RecoStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.IntOutput { return v.RecoStoragePercentage }).(pulumi.IntOutput)
+}
+
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
 func (o VmClusterAddVirtualNetworkOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o VmClusterAddVirtualNetworkOutput) SparseStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.IntOutput { return v.SparseStoragePercentage }).(pulumi.IntOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the VM cluster.

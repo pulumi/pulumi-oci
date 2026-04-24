@@ -265,7 +265,7 @@ class GetDeploymentBackupResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Backup.
         """
         return pulumi.get(self, "state")
 

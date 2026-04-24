@@ -49,7 +49,7 @@ class UsageArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         pulumi.set(__self__, "granularity", granularity)
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -198,7 +198,7 @@ class UsageArgs:
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         return pulumi.get(self, "query_type")
 
@@ -233,7 +233,7 @@ class _UsageState:
         :param pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         :param pulumi.Input[Sequence[pulumi.Input['UsageItemArgs']]] items: A list of usage items.
-        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.
@@ -367,7 +367,7 @@ class _UsageState:
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         return pulumi.get(self, "query_type")
 
@@ -484,7 +484,7 @@ class Usage(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.
@@ -632,7 +632,7 @@ class Usage(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[_builtins.bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict']]]] items: A list of usage items.
-        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        :param pulumi.Input[_builtins.str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.
@@ -727,7 +727,7 @@ class Usage(pulumi.CustomResource):
     @pulumi.getter(name="queryType")
     def query_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit. Usage_Only - Query the only usage data without cost or currency.
         """
         return pulumi.get(self, "query_type")
 

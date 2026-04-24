@@ -63,6 +63,8 @@ type LookupDatabaseRegistrationResult struct {
 	AliasName string `pulumi:"aliasName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+	ConnectionId string `pulumi:"connectionId"`
 	// Connect descriptor or Easy Connect Naming method used to connect to a database.
 	ConnectionString string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -154,6 +156,11 @@ func (o LookupDatabaseRegistrationResultOutput) AliasName() pulumi.StringOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o LookupDatabaseRegistrationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced as the successor resource of the deprecated database registration.
+func (o LookupDatabaseRegistrationResultOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
 // Connect descriptor or Easy Connect Naming method used to connect to a database.

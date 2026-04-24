@@ -113,6 +113,8 @@ type LookupDeploymentResult struct {
 	// True if this object is publicly available.
 	IsPublic bool `pulumi:"isPublic"`
 	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	//
+	// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 	IsStorageUtilizationLimitExceeded bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
@@ -122,7 +124,7 @@ type LookupDeploymentResult struct {
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
 	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
 	Locks []GetDeploymentLock `pulumi:"locks"`
@@ -148,7 +150,7 @@ type LookupDeploymentResult struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId string `pulumi:"sourceDeploymentId"`
-	// Possible lifecycle states.
+	// Possible lifecycle states for a Deployment.
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
@@ -172,8 +174,6 @@ type LookupDeploymentResult struct {
 	TimeRoleChanged string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpgradeRequired string `pulumi:"timeUpgradeRequired"`
 }
 
 func LookupDeploymentOutput(ctx *pulumi.Context, args LookupDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentResultOutput {
@@ -351,6 +351,8 @@ func (o LookupDeploymentResultOutput) IsPublic() pulumi.BoolOutput {
 }
 
 // Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+//
+// Deprecated: The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported.
 func (o LookupDeploymentResultOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
 }
@@ -375,7 +377,7 @@ func (o LookupDeploymentResultOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
 func (o LookupDeploymentResultOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }
@@ -442,7 +444,7 @@ func (o LookupDeploymentResultOutput) SourceDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
-// Possible lifecycle states.
+// Possible lifecycle states for a Deployment.
 func (o LookupDeploymentResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -500,11 +502,6 @@ func (o LookupDeploymentResultOutput) TimeRoleChanged() pulumi.StringOutput {
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentResultOutput) TimeUpgradeRequired() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpgradeRequired }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -85,9 +85,11 @@ import (
 //				NsgIds:                   pulumi.Any(cloudVmClusterNsgIds),
 //				OcpuCount:                pulumi.Any(cloudVmClusterOcpuCount),
 //				PrivateZoneId:            pulumi.Any(testZone.Id),
+//				RecoStoragePercentage:    pulumi.Any(cloudVmClusterRecoStoragePercentage),
 //				ScanListenerPortTcp:      pulumi.Any(cloudVmClusterScanListenerPortTcp),
 //				ScanListenerPortTcpSsl:   pulumi.Any(cloudVmClusterScanListenerPortTcpSsl),
 //				SecurityAttributes:       pulumi.Any(cloudVmClusterSecurityAttributes),
+//				SparseStoragePercentage:  pulumi.Any(cloudVmClusterSparseStoragePercentage),
 //				SubscriptionId:           pulumi.Any(tenantSubscriptionId),
 //				SystemVersion:            pulumi.Any(cloudVmClusterSystemVersion),
 //				TimeZone:                 pulumi.Any(cloudVmClusterTimeZone),
@@ -150,7 +152,7 @@ type CloudVmCluster struct {
 	CreateAsync  pulumi.BoolPtrOutput `pulumi:"createAsync"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions CloudVmClusterDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
@@ -182,9 +184,9 @@ type CloudVmCluster struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
-	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolOutput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringOutput `pulumi:"lastUpdateHistoryEntryId"`
@@ -207,6 +209,8 @@ type CloudVmCluster struct {
 	OcpuCount pulumi.Float64Output `pulumi:"ocpuCount"`
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId pulumi.StringOutput `pulumi:"privateZoneId"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntOutput `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 	ScanDnsName pulumi.StringOutput `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -223,6 +227,8 @@ type CloudVmCluster struct {
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud VM cluster.
 	Shape pulumi.StringOutput `pulumi:"shape"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntOutput `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
@@ -355,7 +361,7 @@ type cloudVmClusterState struct {
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *CloudVmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
@@ -387,9 +393,9 @@ type cloudVmClusterState struct {
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []CloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
-	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId *string `pulumi:"lastUpdateHistoryEntryId"`
@@ -412,6 +418,8 @@ type cloudVmClusterState struct {
 	OcpuCount *float64 `pulumi:"ocpuCount"`
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage *int `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 	ScanDnsName *string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -428,6 +436,8 @@ type cloudVmClusterState struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud VM cluster.
 	Shape *string `pulumi:"shape"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage *int `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
@@ -504,7 +514,7 @@ type CloudVmClusterState struct {
 	CreateAsync  pulumi.BoolPtrInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions CloudVmClusterDataCollectionOptionsPtrInput
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
@@ -536,9 +546,9 @@ type CloudVmClusterState struct {
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCacheArrayInput
-	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
-	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringPtrInput
@@ -561,6 +571,8 @@ type CloudVmClusterState struct {
 	OcpuCount pulumi.Float64PtrInput
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId pulumi.StringPtrInput
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntPtrInput
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 	ScanDnsName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -577,6 +589,8 @@ type CloudVmClusterState struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The model name of the Exadata hardware running the cloud VM cluster.
 	Shape pulumi.StringPtrInput
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the cloud VM cluster.
@@ -653,7 +667,7 @@ type cloudVmClusterArgs struct {
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *CloudVmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
@@ -681,9 +695,9 @@ type cloudVmClusterArgs struct {
 	//
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname string `pulumi:"hostname"`
-	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
-	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -696,12 +710,16 @@ type cloudVmClusterArgs struct {
 	OcpuCount *float64 `pulumi:"ocpuCount"`
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId *string `pulumi:"privateZoneId"`
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage *int `pulumi:"recoStoragePercentage"`
 	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
 	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage *int `pulumi:"sparseStoragePercentage"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -759,7 +777,7 @@ type CloudVmClusterArgs struct {
 	CreateAsync  pulumi.BoolPtrInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions CloudVmClusterDataCollectionOptionsPtrInput
-	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
@@ -787,9 +805,9 @@ type CloudVmClusterArgs struct {
 	//
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringInput
-	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+	// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
-	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+	// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 	IsSparseDiskgroupEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 	LicenseModel pulumi.StringPtrInput
@@ -802,12 +820,16 @@ type CloudVmClusterArgs struct {
 	OcpuCount pulumi.Float64PtrInput
 	// The private zone id in which DNS records need to be created.
 	PrivateZoneId pulumi.StringPtrInput
+	// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	RecoStoragePercentage pulumi.IntPtrInput
 	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
 	ScanListenerPortTcp pulumi.IntPtrInput
 	// The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl pulumi.IntPtrInput
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput
+	// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+	SparseStoragePercentage pulumi.IntPtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
 	SshPublicKeys pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -989,7 +1011,7 @@ func (o CloudVmClusterOutput) DataCollectionOptions() CloudVmClusterDataCollecti
 	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterDataCollectionOptionsOutput { return v.DataCollectionOptions }).(CloudVmClusterDataCollectionOptionsOutput)
 }
 
-// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+// (Updatable) The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 func (o CloudVmClusterOutput) DataStoragePercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.DataStoragePercentage }).(pulumi.IntOutput)
 }
@@ -1065,12 +1087,12 @@ func (o CloudVmClusterOutput) IormConfigCaches() CloudVmClusterIormConfigCacheAr
 	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterIormConfigCacheArrayOutput { return v.IormConfigCaches }).(CloudVmClusterIormConfigCacheArrayOutput)
 }
 
-// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+// (Updatable) If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 func (o CloudVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
 }
 
-// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
+// (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
 func (o CloudVmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.BoolOutput { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolOutput)
 }
@@ -1128,6 +1150,11 @@ func (o CloudVmClusterOutput) PrivateZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.PrivateZoneId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o CloudVmClusterOutput) RecoStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.RecoStoragePercentage }).(pulumi.IntOutput)
+}
+
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 func (o CloudVmClusterOutput) ScanDnsName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.ScanDnsName }).(pulumi.StringOutput)
@@ -1166,6 +1193,11 @@ func (o CloudVmClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
 // The model name of the Exadata hardware running the cloud VM cluster.
 func (o CloudVmClusterOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+}
+
+// (Updatable) The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+func (o CloudVmClusterOutput) SparseStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.SparseStoragePercentage }).(pulumi.IntOutput)
 }
 
 // (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.

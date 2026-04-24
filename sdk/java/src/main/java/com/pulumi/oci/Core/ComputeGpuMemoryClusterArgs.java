@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,14 +20,14 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
     public static final ComputeGpuMemoryClusterArgs Empty = new ComputeGpuMemoryClusterArgs();
 
     /**
-     * The availability domain of the GPU memory cluster.
+     * The availability domain of the GPU Memory Cluster.
      * 
      */
     @Import(name="availabilityDomain", required=true)
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the GPU memory cluster.
+     * @return The availability domain of the GPU Memory Cluster.
      * 
      */
     public Output<String> availabilityDomain() {
@@ -34,14 +35,14 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -154,7 +155,22 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The number of instances currently running in the GpuMemoryCluster
+     * (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    @Import(name="privateIpIds")
+    private @Nullable Output<List<String>> privateIpIds;
+
+    /**
+     * @return (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+     * 
+     */
+    public Optional<Output<List<String>>> privateIpIds() {
+        return Optional.ofNullable(this.privateIpIds);
+    }
+
+    /**
+     * (Updatable) The desired number of instances for the GPU Memory Cluster.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +180,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
     private @Nullable Output<String> size;
 
     /**
-     * @return (Updatable) The number of instances currently running in the GpuMemoryCluster
+     * @return (Updatable) The desired number of instances for the GPU Memory Cluster.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -186,6 +202,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         this.gpuMemoryClusterScaleConfig = $.gpuMemoryClusterScaleConfig;
         this.gpuMemoryFabricId = $.gpuMemoryFabricId;
         this.instanceConfigurationId = $.instanceConfigurationId;
+        this.privateIpIds = $.privateIpIds;
         this.size = $.size;
     }
 
@@ -208,7 +225,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param availabilityDomain The availability domain of the GPU memory cluster.
+         * @param availabilityDomain The availability domain of the GPU Memory Cluster.
          * 
          * @return builder
          * 
@@ -219,7 +236,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param availabilityDomain The availability domain of the GPU memory cluster.
+         * @param availabilityDomain The availability domain of the GPU Memory Cluster.
          * 
          * @return builder
          * 
@@ -229,7 +246,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
          * 
          * @return builder
          * 
@@ -240,7 +257,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU memory cluster. compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
          * 
          * @return builder
          * 
@@ -397,7 +414,38 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param size (Updatable) The number of instances currently running in the GpuMemoryCluster
+         * @param privateIpIds (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpIds(@Nullable Output<List<String>> privateIpIds) {
+            $.privateIpIds = privateIpIds;
+            return this;
+        }
+
+        /**
+         * @param privateIpIds (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpIds(List<String> privateIpIds) {
+            return privateIpIds(Output.of(privateIpIds));
+        }
+
+        /**
+         * @param privateIpIds (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpIds(String... privateIpIds) {
+            return privateIpIds(List.of(privateIpIds));
+        }
+
+        /**
+         * @param size (Updatable) The desired number of instances for the GPU Memory Cluster.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -411,7 +459,7 @@ public final class ComputeGpuMemoryClusterArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param size (Updatable) The number of instances currently running in the GpuMemoryCluster
+         * @param size (Updatable) The desired number of instances for the GPU Memory Cluster.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

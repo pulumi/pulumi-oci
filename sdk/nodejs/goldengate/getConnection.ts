@@ -38,6 +38,9 @@ export interface GetConnectionResult {
      * Access key ID to access the Amazon S3 bucket.
      */
     readonly accessKeyId: string;
+    /**
+     * @deprecated The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
+     */
     readonly accountKey: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -86,6 +89,9 @@ export interface GetConnectionResult {
      * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
     readonly clientId: string;
+    /**
+     * @deprecated The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
+     */
     readonly clientSecret: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
@@ -166,7 +172,7 @@ export interface GetConnectionResult {
      */
     readonly doesUseSecretIds: boolean;
     /**
-     * The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+     * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
      */
     readonly endpoint: string;
     /**
@@ -204,6 +210,9 @@ export interface GetConnectionResult {
      * The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
      */
     readonly jndiProviderUrl: string;
+    /**
+     * @deprecated The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead.
+     */
     readonly jndiSecurityCredentials: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
@@ -217,7 +226,13 @@ export interface GetConnectionResult {
      * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
     readonly keyId: string;
+    /**
+     * @deprecated The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
+     */
     readonly keyStore: string;
+    /**
+     * @deprecated The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
+     */
     readonly keyStorePassword: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
@@ -239,6 +254,9 @@ export interface GetConnectionResult {
      * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     readonly nsgIds: string[];
+    /**
+     * @deprecated The 'password' field has been deprecated. Please use 'password_secret_id' instead.
+     */
     readonly password: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, 'password' field must not be provided.
@@ -249,15 +267,20 @@ export interface GetConnectionResult {
      */
     readonly port: number;
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      */
     readonly privateIp: string;
+    /**
+     * @deprecated The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.
+     */
     readonly privateKeyFile: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
      */
     readonly privateKeyFileSecretId: string;
+    /**
+     * @deprecated The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.
+     */
     readonly privateKeyPassphrase: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
@@ -283,11 +306,17 @@ export interface GetConnectionResult {
      * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
      */
     readonly routingMethod: string;
+    /**
+     * @deprecated The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
+     */
     readonly sasToken: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
      */
     readonly sasTokenSecretId: string;
+    /**
+     * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+     */
     readonly secretAccessKey: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
@@ -308,13 +337,16 @@ export interface GetConnectionResult {
      * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
      */
     readonly servers: string;
+    /**
+     * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
+     */
     readonly serviceAccountKeyFile: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      */
     readonly serviceAccountKeyFileSecretId: string;
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
      */
     readonly sessionMode: string;
     /**
@@ -337,11 +369,17 @@ export interface GetConnectionResult {
      * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     readonly sslCert: string;
+    /**
+     * @deprecated The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.
+     */
     readonly sslClientKeystash: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      */
     readonly sslClientKeystashSecretId: string;
+    /**
+     * @deprecated The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead.
+     */
     readonly sslClientKeystoredb: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -351,7 +389,13 @@ export interface GetConnectionResult {
      * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     readonly sslCrl: string;
+    /**
+     * @deprecated The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
+     */
     readonly sslKey: string;
+    /**
+     * @deprecated The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
+     */
     readonly sslKeyPassword: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
@@ -422,7 +466,13 @@ export interface GetConnectionResult {
      * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     readonly tlsCaFile: string;
+    /**
+     * @deprecated The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead.
+     */
     readonly tlsCertificateKeyFile: string;
+    /**
+     * @deprecated The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead.
+     */
     readonly tlsCertificateKeyFilePassword: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
@@ -434,7 +484,13 @@ export interface GetConnectionResult {
      */
     readonly tlsCertificateKeyFileSecretId: string;
     readonly triggerRefresh: boolean;
+    /**
+     * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
+     */
     readonly trustStore: string;
+    /**
+     * @deprecated The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
+     */
     readonly trustStorePassword: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
@@ -460,6 +516,9 @@ export interface GetConnectionResult {
      * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
     readonly vaultId: string;
+    /**
+     * @deprecated The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.
+     */
     readonly wallet: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.

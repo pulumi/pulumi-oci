@@ -81,16 +81,17 @@ import javax.annotation.Nullable;
  *             .bootstrapServers(ConnectionBootstrapServerArgs.builder()
  *                 .host(connectionBootstrapServersHost)
  *                 .port(connectionBootstrapServersPort)
- *                 .privateIp(connectionBootstrapServersPrivateIp)
  *                 .build())
  *             .catalog(ConnectionCatalogArgs.builder()
  *                 .catalogType(connectionCatalogCatalogType)
  *                 .branch(connectionCatalogBranch)
  *                 .clientId(testClient.id())
+ *                 .clientSecret(connectionCatalogClientSecret)
  *                 .clientSecretSecretId(testSecret.id())
  *                 .glueId(testGlue.id())
  *                 .name(connectionCatalogName)
  *                 .principalRole(connectionCatalogPrincipalRole)
+ *                 .properties(connectionCatalogProperties)
  *                 .propertiesSecretId(testSecret.id())
  *                 .uri(connectionCatalogUri)
  *                 .build())
@@ -134,7 +135,6 @@ import javax.annotation.Nullable;
  *             .password(connectionPassword)
  *             .passwordSecretId(testSecret.id())
  *             .port(connectionPort)
- *             .privateIp(connectionPrivateIp)
  *             .privateKeyFile(connectionPrivateKeyFile)
  *             .privateKeyFileSecretId(testSecret.id())
  *             .privateKeyPassphrase(connectionPrivateKeyPassphrase)
@@ -173,6 +173,7 @@ import javax.annotation.Nullable;
  *             .storage(ConnectionStorageArgs.builder()
  *                 .storageType(connectionStorageStorageType)
  *                 .accessKeyId(testKey.id())
+ *                 .accountKey(connectionStorageAccountKey)
  *                 .accountKeySecretId(testSecret.id())
  *                 .accountName(connectionStorageAccountName)
  *                 .bucket(connectionStorageBucket)
@@ -181,7 +182,9 @@ import javax.annotation.Nullable;
  *                 .projectId(testProject.id())
  *                 .region(connectionStorageRegion)
  *                 .schemeType(connectionStorageSchemeType)
+ *                 .secretAccessKey(connectionStorageSecretAccessKey)
  *                 .secretAccessKeySecretId(testSecret.id())
+ *                 .serviceAccountKeyFile(connectionStorageServiceAccountKeyFile)
  *                 .serviceAccountKeyFileSecretId(testSecret.id())
  *                 .build())
  *             .storageCredentialName(connectionStorageCredentialName)
@@ -240,7 +243,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
     @Export(name="accountKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> accountKey;
 
@@ -398,7 +405,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
     @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> clientSecret;
 
@@ -786,7 +797,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
     @Export(name="jndiSecurityCredentials", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> jndiSecurityCredentials;
 
@@ -842,7 +857,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
     @Export(name="keyStore", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> keyStore;
 
@@ -856,7 +875,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
     @Export(name="keyStorePassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> keyStorePassword;
 
@@ -940,7 +963,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
@@ -980,18 +1007,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.port;
     }
     /**
-     * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * 
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     @Export(name="privateIp", refs={String.class}, tree="[0]")
     private Output<String> privateIp;
 
     /**
-     * @return (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
-     * 
-     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
      * 
      */
     public Output<String> privateIp() {
@@ -1000,7 +1023,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
     @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyFile;
 
@@ -1028,7 +1055,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
     @Export(name="privateKeyPassphrase", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyPassphrase;
 
@@ -1126,7 +1157,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
     @Export(name="sasToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sasToken;
 
@@ -1154,7 +1189,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretAccessKey;
 
@@ -1224,7 +1263,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
     @Export(name="serviceAccountKeyFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> serviceAccountKeyFile;
 
@@ -1250,14 +1293,22 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.serviceAccountKeyFileSecretId);
     }
     /**
-     * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+     * 
+     * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+     * 
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
      * 
      */
     @Export(name="sessionMode", refs={String.class}, tree="[0]")
     private Output<String> sessionMode;
 
     /**
-     * @return (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * @return (Updatable) Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
+     * 
+     * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
+     * 
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
      * 
      */
     public Output<String> sessionMode() {
@@ -1338,7 +1389,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
     @Export(name="sslClientKeystash", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystash;
 
@@ -1374,7 +1429,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
     @Export(name="sslClientKeystoredb", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystoredb;
 
@@ -1422,7 +1481,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
     @Export(name="sslKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKey;
 
@@ -1436,7 +1499,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
     @Export(name="sslKeyPassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKeyPassword;
 
@@ -1690,7 +1757,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
     @Export(name="tlsCertificateKeyFile", refs={String.class}, tree="[0]")
     private Output<String> tlsCertificateKeyFile;
 
@@ -1704,7 +1775,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
     @Export(name="tlsCertificateKeyFilePassword", refs={String.class}, tree="[0]")
     private Output<String> tlsCertificateKeyFilePassword;
 
@@ -1754,7 +1829,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
     @Export(name="trustStore", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustStore;
 
@@ -1768,7 +1847,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
     @Export(name="trustStorePassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustStorePassword;
 
@@ -1866,7 +1949,11 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
      * 
+     * @deprecated
+     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
     @Export(name="wallet", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> wallet;
 

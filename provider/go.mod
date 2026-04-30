@@ -14,7 +14,7 @@ require (
 	github.com/pulumi/pulumi/sdk/v3 v3.228.0
 )
 
-require github.com/oracle/oci-go-sdk/v65 v65.113.0 // indirect
+require github.com/oracle/oci-go-sdk/v65 v65.114.0 // indirect
 
 require (
 	cel.dev/expr v0.25.1 // indirect
@@ -197,7 +197,7 @@ require (
 	github.com/sergi/go-diff v1.4.0 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/skeema/knownhosts v1.3.1 // indirect
-	github.com/sony/gobreaker v1.0.0 // indirect
+	github.com/sony/gobreaker/v2 v2.4.0 // indirect
 	github.com/spf13/afero v1.10.0 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/cobra v1.10.2 // indirect

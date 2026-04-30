@@ -44,6 +44,10 @@ export interface GetRedisClusterArgs {
  */
 export interface GetRedisClusterResult {
     /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+     */
+    readonly backupId: string;
+    /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
     readonly clusterMode: string;
@@ -75,6 +79,10 @@ export interface GetRedisClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
     readonly id: string;
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     */
+    readonly importFromObjectStorageDetails: outputs.Redis.GetRedisClusterImportFromObjectStorageDetail[];
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */

@@ -8925,7 +8925,7 @@ export namespace CloudGuard {
          */
         intervalInMinutes?: pulumi.Input<number>;
         /**
-         * (Updatable) Interval in minutes which query is run periodically.
+         * (Updatable) Interval in seconds which query is run periodically.
          */
         intervalInSeconds?: pulumi.Input<number>;
         /**
@@ -8937,7 +8937,7 @@ export namespace CloudGuard {
          */
         loggingQueryType?: pulumi.Input<string>;
         /**
-         * (Updatable) Operator used in data source
+         * (Updatable) DEPRECATED - Operator used in data source
          */
         operator?: pulumi.Input<string>;
         /**
@@ -8945,7 +8945,7 @@ export namespace CloudGuard {
          */
         query?: pulumi.Input<string>;
         /**
-         * (Updatable) Start policy for continuous query
+         * (Updatable) DEPRECATED - Start policy for continuous query
          */
         queryStartTime?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsQueryStartTime>;
         /**
@@ -8957,7 +8957,7 @@ export namespace CloudGuard {
          */
         scheduledQueryScopeDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail>[]>;
         /**
-         * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+         * (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          */
         threshold?: pulumi.Input<number>;
     }
@@ -95518,6 +95518,18 @@ export namespace RecoveryMod {
 }
 
 export namespace Redis {
+    export interface GetOciCacheBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOciCacheBackupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetOciCacheConfigSetsFilter {
         name: string;
         regex?: boolean;
@@ -95650,6 +95662,28 @@ export namespace Redis {
          * OCID of the OciCacheUser
          */
         ociCacheUserId?: pulumi.Input<string>;
+    }
+
+    export interface RedisClusterImportFromObjectStorageDetails {
+        /**
+         * The Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * The Object Storage namespace name.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * The list of objects to import from the specified bucket.
+         */
+        objects: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetailsObject>[]>;
+    }
+
+    export interface RedisClusterImportFromObjectStorageDetailsObject {
+        /**
+         * The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+         */
+        object: pulumi.Input<string>;
     }
 
     export interface RedisClusterNodeCollection {
@@ -100762,7 +100796,7 @@ export namespace oci {
 
     export interface BatchBatchContextFleet {
         /**
-         * A message that describes the current state of the service manage fleet configuration in more detail.
+         * A message that describes the current state of the service managed fleet configuration in more detail.
          */
         details?: pulumi.Input<string>;
         /**
@@ -100774,7 +100808,7 @@ export namespace oci {
          */
         name: pulumi.Input<string>;
         /**
-         * Shape of the fleet. Describes hardware resources of each node in the fleet.
+         * Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
          */
         shape: pulumi.Input<inputs.oci.BatchBatchContextFleetShape>;
         /**
@@ -100786,24 +100820,32 @@ export namespace oci {
          */
         state?: pulumi.Input<string>;
         /**
-         * Type of the fleet. Also serves as a discriminator for sub-entities.
+         * Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
          */
         type: pulumi.Input<string>;
     }
 
     export interface BatchBatchContextFleetShape {
         /**
-         * Amount of memory in GBs required by the shape.
+         * Amount of disk space in GBs required for the shape.
+         */
+        diskSizeInGbs?: pulumi.Input<number>;
+        /**
+         * Amount of memory in GBs required for the shape.
          */
         memoryInGbs: pulumi.Input<number>;
         /**
-         * Number of OCPUs required by the shape.
+         * Number of OCPUs required for the shape.
          */
         ocpus: pulumi.Input<number>;
         /**
          * The name of the shape.
          */
-        shapeName: pulumi.Input<string>;
+        shapeName?: pulumi.Input<string>;
+        /**
+         * Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+         */
+        type?: pulumi.Input<string>;
     }
 
     export interface BatchBatchContextJobPriorityConfiguration {
@@ -100827,6 +100869,10 @@ export namespace oci {
 
     export interface BatchBatchContextLoggingConfiguration {
         /**
+         * (Updatable) A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
+         */
+        isJobTaskEventsPropagationEnabled?: pulumi.Input<boolean>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
          */
         logGroupId: pulumi.Input<string>;
@@ -100835,7 +100881,7 @@ export namespace oci {
          */
         logId: pulumi.Input<string>;
         /**
-         * Discriminator for sub-entities.
+         * (Updatable) Type of the logging configuration. Discriminator for sub-entities.
          */
         type: pulumi.Input<string>;
     }
@@ -100900,6 +100946,21 @@ export namespace oci {
         name: pulumi.Input<string>;
         /**
          * Discriminator for sub-entities.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface BatchBatchTaskProfileExtendedInformation {
+        /**
+         * Type of CPU architecture.
+         */
+        architecture?: pulumi.Input<string>;
+        /**
+         * A name of the CPU shape.
+         */
+        shapeName?: pulumi.Input<string>;
+        /**
+         * Type of extended information.
          */
         type: pulumi.Input<string>;
     }

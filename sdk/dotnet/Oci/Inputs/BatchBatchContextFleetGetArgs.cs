@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class BatchBatchContextFleetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A message that describes the current state of the service manage fleet configuration in more detail.
+        /// A message that describes the current state of the service managed fleet configuration in more detail.
         /// </summary>
         [Input("details")]
         public Input<string>? Details { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Shape of the fleet. Describes hardware resources of each node in the fleet.
+        /// Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         /// </summary>
         [Input("shape", required: true)]
         public Input<Inputs.BatchBatchContextFleetShapeGetArgs> Shape { get; set; } = null!;
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Type of the fleet. Also serves as a discriminator for sub-entities.
+        /// Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

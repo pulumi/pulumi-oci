@@ -14,29 +14,43 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class BatchBatchContextFleetShape
     {
         /// <summary>
-        /// Amount of memory in GBs required by the shape.
+        /// Amount of disk space in GBs required for the shape.
+        /// </summary>
+        public readonly int? DiskSizeInGbs;
+        /// <summary>
+        /// Amount of memory in GBs required for the shape.
         /// </summary>
         public readonly int MemoryInGbs;
         /// <summary>
-        /// Number of OCPUs required by the shape.
+        /// Number of OCPUs required for the shape.
         /// </summary>
         public readonly int Ocpus;
         /// <summary>
         /// The name of the shape.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
+        /// <summary>
+        /// Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private BatchBatchContextFleetShape(
+            int? diskSizeInGbs,
+
             int memoryInGbs,
 
             int ocpus,
 
-            string shapeName)
+            string? shapeName,
+
+            string? type)
         {
+            DiskSizeInGbs = diskSizeInGbs;
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;
             ShapeName = shapeName;
+            Type = type;
         }
     }
 }

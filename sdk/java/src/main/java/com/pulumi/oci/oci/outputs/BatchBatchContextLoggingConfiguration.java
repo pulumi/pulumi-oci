@@ -5,11 +5,19 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class BatchBatchContextLoggingConfiguration {
+    /**
+     * @return (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    private @Nullable Boolean isJobTaskEventsPropagationEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -21,12 +29,19 @@ public final class BatchBatchContextLoggingConfiguration {
      */
     private String logId;
     /**
-     * @return Discriminator for sub-entities.
+     * @return (Updatable) Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     private String type;
 
     private BatchBatchContextLoggingConfiguration() {}
+    /**
+     * @return (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    public Optional<Boolean> isJobTaskEventsPropagationEnabled() {
+        return Optional.ofNullable(this.isJobTaskEventsPropagationEnabled);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -42,7 +57,7 @@ public final class BatchBatchContextLoggingConfiguration {
         return this.logId;
     }
     /**
-     * @return Discriminator for sub-entities.
+     * @return (Updatable) Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     public String type() {
@@ -58,17 +73,25 @@ public final class BatchBatchContextLoggingConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean isJobTaskEventsPropagationEnabled;
         private String logGroupId;
         private String logId;
         private String type;
         public Builder() {}
         public Builder(BatchBatchContextLoggingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isJobTaskEventsPropagationEnabled = defaults.isJobTaskEventsPropagationEnabled;
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder isJobTaskEventsPropagationEnabled(@Nullable Boolean isJobTaskEventsPropagationEnabled) {
+
+            this.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
+            return this;
+        }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             if (logGroupId == null) {
@@ -95,6 +118,7 @@ public final class BatchBatchContextLoggingConfiguration {
         }
         public BatchBatchContextLoggingConfiguration build() {
             final var _resultValue = new BatchBatchContextLoggingConfiguration();
+            _resultValue.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
             _resultValue.logGroupId = logGroupId;
             _resultValue.logId = logId;
             _resultValue.type = type;

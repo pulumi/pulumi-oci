@@ -24,7 +24,8 @@ class SecurityZoneArgs:
                  security_zone_recipe_id: pulumi.Input[_builtins.str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_inheritance_after_delete_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SecurityZone resource.
 
@@ -40,6 +41,7 @@ class SecurityZoneArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -50,6 +52,8 @@ class SecurityZoneArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_inheritance_after_delete_enabled is not None:
+            pulumi.set(__self__, "is_inheritance_after_delete_enabled", is_inheritance_after_delete_enabled)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -129,6 +133,18 @@ class SecurityZoneArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isInheritanceAfterDeleteEnabled")
+    def is_inheritance_after_delete_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        """
+        return pulumi.get(self, "is_inheritance_after_delete_enabled")
+
+    @is_inheritance_after_delete_enabled.setter
+    def is_inheritance_after_delete_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_inheritance_after_delete_enabled", value)
+
 
 @pulumi.input_type
 class _SecurityZoneState:
@@ -139,6 +155,7 @@ class _SecurityZoneState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inherited_by_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_inheritance_after_delete_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  security_zone_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  security_zone_target_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -156,6 +173,7 @@ class _SecurityZoneState:
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inherited_by_compartments: List of inherited compartments
+        :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
@@ -179,6 +197,8 @@ class _SecurityZoneState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if inherited_by_compartments is not None:
             pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
+        if is_inheritance_after_delete_enabled is not None:
+            pulumi.set(__self__, "is_inheritance_after_delete_enabled", is_inheritance_after_delete_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if security_zone_recipe_id is not None:
@@ -265,6 +285,18 @@ class _SecurityZoneState:
     @inherited_by_compartments.setter
     def inherited_by_compartments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "inherited_by_compartments", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isInheritanceAfterDeleteEnabled")
+    def is_inheritance_after_delete_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        """
+        return pulumi.get(self, "is_inheritance_after_delete_enabled")
+
+    @is_inheritance_after_delete_enabled.setter
+    def is_inheritance_after_delete_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_inheritance_after_delete_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -354,6 +386,7 @@ class SecurityZone(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_inheritance_after_delete_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_zone_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -381,7 +414,8 @@ class SecurityZone(pulumi.CustomResource):
             description=security_zone_description,
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled)
         ```
 
         ## Import
@@ -402,6 +436,7 @@ class SecurityZone(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
                
@@ -439,7 +474,8 @@ class SecurityZone(pulumi.CustomResource):
             description=security_zone_description,
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            is_inheritance_after_delete_enabled=security_zone_is_inheritance_after_delete_enabled)
         ```
 
         ## Import
@@ -471,6 +507,7 @@ class SecurityZone(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_inheritance_after_delete_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  security_zone_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -490,6 +527,7 @@ class SecurityZone(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_inheritance_after_delete_enabled"] = is_inheritance_after_delete_enabled
             if security_zone_recipe_id is None and not opts.urn:
                 raise TypeError("Missing required property 'security_zone_recipe_id'")
             __props__.__dict__["security_zone_recipe_id"] = security_zone_recipe_id
@@ -515,6 +553,7 @@ class SecurityZone(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             inherited_by_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_inheritance_after_delete_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             security_zone_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
             security_zone_target_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -536,6 +575,7 @@ class SecurityZone(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inherited_by_compartments: List of inherited compartments
+        :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
@@ -557,6 +597,7 @@ class SecurityZone(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["inherited_by_compartments"] = inherited_by_compartments
+        __props__.__dict__["is_inheritance_after_delete_enabled"] = is_inheritance_after_delete_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["security_zone_recipe_id"] = security_zone_recipe_id
         __props__.__dict__["security_zone_target_id"] = security_zone_target_id
@@ -614,6 +655,14 @@ class SecurityZone(pulumi.CustomResource):
         List of inherited compartments
         """
         return pulumi.get(self, "inherited_by_compartments")
+
+    @_builtins.property
+    @pulumi.getter(name="isInheritanceAfterDeleteEnabled")
+    def is_inheritance_after_delete_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        """
+        return pulumi.get(self, "is_inheritance_after_delete_enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

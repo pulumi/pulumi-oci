@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BatchBatchContextFleet {
     /**
-     * @return A message that describes the current state of the service manage fleet configuration in more detail.
+     * @return A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     private @Nullable String details;
@@ -30,7 +30,7 @@ public final class BatchBatchContextFleet {
      */
     private String name;
     /**
-     * @return Shape of the fleet. Describes hardware resources of each node in the fleet.
+     * @return Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
      */
     private BatchBatchContextFleetShape shape;
@@ -43,14 +43,14 @@ public final class BatchBatchContextFleet {
      */
     private @Nullable String state;
     /**
-     * @return Type of the fleet. Also serves as a discriminator for sub-entities.
+     * @return Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
      * 
      */
     private String type;
 
     private BatchBatchContextFleet() {}
     /**
-     * @return A message that describes the current state of the service manage fleet configuration in more detail.
+     * @return A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     public Optional<String> details() {
@@ -71,7 +71,7 @@ public final class BatchBatchContextFleet {
         return this.name;
     }
     /**
-     * @return Shape of the fleet. Describes hardware resources of each node in the fleet.
+     * @return Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
      */
     public BatchBatchContextFleetShape shape() {
@@ -88,7 +88,7 @@ public final class BatchBatchContextFleet {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return Type of the fleet. Also serves as a discriminator for sub-entities.
+     * @return Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
      * 
      */
     public String type() {

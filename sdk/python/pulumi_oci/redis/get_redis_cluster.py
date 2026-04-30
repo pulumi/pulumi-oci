@@ -27,7 +27,10 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, security_attributes=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, import_from_object_storage_details=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, security_attributes=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+        if backup_id and not isinstance(backup_id, str):
+            raise TypeError("Expected argument 'backup_id' to be a str")
+        pulumi.set(__self__, "backup_id", backup_id)
         if cluster_mode and not isinstance(cluster_mode, str):
             raise TypeError("Expected argument 'cluster_mode' to be a str")
         pulumi.set(__self__, "cluster_mode", cluster_mode)
@@ -52,6 +55,9 @@ class GetRedisClusterResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if import_from_object_storage_details and not isinstance(import_from_object_storage_details, list):
+            raise TypeError("Expected argument 'import_from_object_storage_details' to be a list")
+        pulumi.set(__self__, "import_from_object_storage_details", import_from_object_storage_details)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -109,6 +115,14 @@ class GetRedisClusterResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> _builtins.str:
+        """
+        The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+        """
+        return pulumi.get(self, "backup_id")
 
     @_builtins.property
     @pulumi.getter(name="clusterMode")
@@ -173,6 +187,14 @@ class GetRedisClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="importFromObjectStorageDetails")
+    def import_from_object_storage_details(self) -> Sequence['outputs.GetRedisClusterImportFromObjectStorageDetailResult']:
+        """
+        Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        """
+        return pulumi.get(self, "import_from_object_storage_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -330,6 +352,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
         if False:
             yield self
         return GetRedisClusterResult(
+            backup_id=self.backup_id,
             cluster_mode=self.cluster_mode,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -338,6 +361,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            import_from_object_storage_details=self.import_from_object_storage_details,
             lifecycle_details=self.lifecycle_details,
             node_collections=self.node_collections,
             node_count=self.node_count,
@@ -384,6 +408,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Redis/getRedisCluster:getRedisCluster', __args__, opts=opts, typ=GetRedisClusterResult).value
 
     return AwaitableGetRedisClusterResult(
+        backup_id=pulumi.get(__ret__, 'backup_id'),
         cluster_mode=pulumi.get(__ret__, 'cluster_mode'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -392,6 +417,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        import_from_object_storage_details=pulumi.get(__ret__, 'import_from_object_storage_details'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         node_collections=pulumi.get(__ret__, 'node_collections'),
         node_count=pulumi.get(__ret__, 'node_count'),
@@ -435,6 +461,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Redis/getRedisCluster:getRedisCluster', __args__, opts=opts, typ=GetRedisClusterResult)
     return __ret__.apply(lambda __response__: GetRedisClusterResult(
+        backup_id=pulumi.get(__response__, 'backup_id'),
         cluster_mode=pulumi.get(__response__, 'cluster_mode'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -443,6 +470,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        import_from_object_storage_details=pulumi.get(__response__, 'import_from_object_storage_details'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         node_collections=pulumi.get(__response__, 'node_collections'),
         node_count=pulumi.get(__response__, 'node_count'),

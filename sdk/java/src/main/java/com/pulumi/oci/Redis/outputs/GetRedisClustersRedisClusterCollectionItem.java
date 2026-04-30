@@ -5,6 +5,7 @@ package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Redis.outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail;
 import com.pulumi.oci.Redis.outputs.GetRedisClustersRedisClusterCollectionItemNodeCollection;
 import java.lang.Double;
 import java.lang.Integer;
@@ -15,6 +16,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRedisClustersRedisClusterCollectionItem {
+    /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+     * 
+     */
+    private String backupId;
     /**
      * @return Specifies whether the cluster is sharded or non-sharded.
      * 
@@ -55,6 +61,11 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    private List<GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail> importFromObjectStorageDetails;
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
@@ -148,6 +159,13 @@ public final class GetRedisClustersRedisClusterCollectionItem {
 
     private GetRedisClustersRedisClusterCollectionItem() {}
     /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+     * 
+     */
+    public String backupId() {
+        return this.backupId;
+    }
+    /**
      * @return Specifies whether the cluster is sharded or non-sharded.
      * 
      */
@@ -202,6 +220,13 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    public List<GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail> importFromObjectStorageDetails() {
+        return this.importFromObjectStorageDetails;
     }
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -339,6 +364,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupId;
         private String clusterMode;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -347,6 +373,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail> importFromObjectStorageDetails;
         private String lifecycleDetails;
         private List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
         private Integer nodeCount;
@@ -368,6 +395,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         public Builder() {}
         public Builder(GetRedisClustersRedisClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupId = defaults.backupId;
     	      this.clusterMode = defaults.clusterMode;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -376,6 +404,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.importFromObjectStorageDetails = defaults.importFromObjectStorageDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nodeCollections = defaults.nodeCollections;
     	      this.nodeCount = defaults.nodeCount;
@@ -396,6 +425,14 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder backupId(String backupId) {
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "backupId");
+            }
+            this.backupId = backupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder clusterMode(String clusterMode) {
             if (clusterMode == null) {
@@ -459,6 +496,17 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder importFromObjectStorageDetails(List<GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail> importFromObjectStorageDetails) {
+            if (importFromObjectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "importFromObjectStorageDetails");
+            }
+            this.importFromObjectStorageDetails = importFromObjectStorageDetails;
+            return this;
+        }
+        public Builder importFromObjectStorageDetails(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail... importFromObjectStorageDetails) {
+            return importFromObjectStorageDetails(List.of(importFromObjectStorageDetails));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -612,6 +660,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         }
         public GetRedisClustersRedisClusterCollectionItem build() {
             final var _resultValue = new GetRedisClustersRedisClusterCollectionItem();
+            _resultValue.backupId = backupId;
             _resultValue.clusterMode = clusterMode;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
@@ -620,6 +669,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.importFromObjectStorageDetails = importFromObjectStorageDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.nodeCollections = nodeCollections;
             _resultValue.nodeCount = nodeCount;

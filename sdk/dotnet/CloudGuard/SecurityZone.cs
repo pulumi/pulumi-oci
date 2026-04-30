@@ -42,6 +42,7 @@ namespace Pulumi.Oci.CloudGuard
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsInheritanceAfterDeleteEnabled = securityZoneIsInheritanceAfterDeleteEnabled,
     ///     });
     /// 
     /// });
@@ -95,6 +96,12 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         [Output("inheritedByCompartments")]
         public Output<ImmutableArray<string>> InheritedByCompartments { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        /// </summary>
+        [Output("isInheritanceAfterDeleteEnabled")]
+        public Output<bool> IsInheritanceAfterDeleteEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
@@ -227,6 +234,12 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
+        /// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        /// </summary>
+        [Input("isInheritanceAfterDeleteEnabled")]
+        public Input<bool>? IsInheritanceAfterDeleteEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
         /// 
         /// 
@@ -299,6 +312,12 @@ namespace Pulumi.Oci.CloudGuard
             get => _inheritedByCompartments ?? (_inheritedByCompartments = new InputList<string>());
             set => _inheritedByCompartments = value;
         }
+
+        /// <summary>
+        /// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        /// </summary>
+        [Input("isInheritanceAfterDeleteEnabled")]
+        public Input<bool>? IsInheritanceAfterDeleteEnabled { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.

@@ -34,8 +34,6 @@ class RedisClusterCreateIdentityTokenArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "public_key", public_key)
         pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
@@ -88,9 +86,6 @@ class RedisClusterCreateIdentityTokenArgs:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -100,9 +95,6 @@ class RedisClusterCreateIdentityTokenArgs:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -122,8 +114,6 @@ class _RedisClusterCreateIdentityTokenState:
         """
         Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
 
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] identity_token: Generated Identity token
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
@@ -149,9 +139,6 @@ class _RedisClusterCreateIdentityTokenState:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -161,9 +148,6 @@ class _RedisClusterCreateIdentityTokenState:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -252,9 +236,7 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         test_redis_cluster_create_identity_token = oci.redis.RedisClusterCreateIdentityToken("test_redis_cluster_create_identity_token",
             public_key=redis_cluster_create_identity_token_public_key,
             redis_cluster_id=test_redis_cluster["id"],
-            redis_user=redis_cluster_create_identity_token_redis_user,
-            defined_tags=redis_cluster_create_identity_token_defined_tags,
-            freeform_tags=redis_cluster_create_identity_token_freeform_tags)
+            redis_user=redis_cluster_create_identity_token_redis_user)
         ```
 
         ## Import
@@ -264,8 +246,6 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
@@ -297,9 +277,7 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         test_redis_cluster_create_identity_token = oci.redis.RedisClusterCreateIdentityToken("test_redis_cluster_create_identity_token",
             public_key=redis_cluster_create_identity_token_public_key,
             redis_cluster_id=test_redis_cluster["id"],
-            redis_user=redis_cluster_create_identity_token_redis_user,
-            defined_tags=redis_cluster_create_identity_token_defined_tags,
-            freeform_tags=redis_cluster_create_identity_token_freeform_tags)
+            redis_user=redis_cluster_create_identity_token_redis_user)
         ```
 
         ## Import
@@ -371,8 +349,6 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] identity_token: Generated Identity token
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
@@ -397,17 +373,11 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property

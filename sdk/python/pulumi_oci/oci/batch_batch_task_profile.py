@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['BatchBatchTaskProfileArgs', 'BatchBatchTaskProfile']
 
@@ -20,38 +22,48 @@ __all__ = ['BatchBatchTaskProfileArgs', 'BatchBatchTaskProfile']
 class BatchBatchTaskProfileArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 min_memory_in_gbs: pulumi.Input[_builtins.int],
-                 min_ocpus: pulumi.Input[_builtins.int],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 extended_information: Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 min_disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 min_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 min_ocpus: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a BatchBatchTaskProfile resource.
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
+        :param pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs'] extended_information: Extended information for the task profile.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "min_memory_in_gbs", min_memory_in_gbs)
-        pulumi.set(__self__, "min_ocpus", min_ocpus)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if extended_information is not None:
+            pulumi.set(__self__, "extended_information", extended_information)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if min_disk_size_in_gbs is not None:
+            pulumi.set(__self__, "min_disk_size_in_gbs", min_disk_size_in_gbs)
+        if min_memory_in_gbs is not None:
+            pulumi.set(__self__, "min_memory_in_gbs", min_memory_in_gbs)
+        if min_ocpus is not None:
+            pulumi.set(__self__, "min_ocpus", min_ocpus)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -64,34 +76,6 @@ class BatchBatchTaskProfileArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "compartment_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="minMemoryInGbs")
-    def min_memory_in_gbs(self) -> pulumi.Input[_builtins.int]:
-        """
-        The minimum required memory.
-        """
-        return pulumi.get(self, "min_memory_in_gbs")
-
-    @min_memory_in_gbs.setter
-    def min_memory_in_gbs(self, value: pulumi.Input[_builtins.int]):
-        pulumi.set(self, "min_memory_in_gbs", value)
-
-    @_builtins.property
-    @pulumi.getter(name="minOcpus")
-    def min_ocpus(self) -> pulumi.Input[_builtins.int]:
-        """
-        The minimum required OCPUs.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "min_ocpus")
-
-    @min_ocpus.setter
-    def min_ocpus(self, value: pulumi.Input[_builtins.int]):
-        pulumi.set(self, "min_ocpus", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -130,6 +114,18 @@ class BatchBatchTaskProfileArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="extendedInformation")
+    def extended_information(self) -> Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']]:
+        """
+        Extended information for the task profile.
+        """
+        return pulumi.get(self, "extended_information")
+
+    @extended_information.setter
+    def extended_information(self, value: Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']]):
+        pulumi.set(self, "extended_information", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -141,6 +137,46 @@ class BatchBatchTaskProfileArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="minDiskSizeInGbs")
+    def min_disk_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum required size of disk space in GBs.
+        """
+        return pulumi.get(self, "min_disk_size_in_gbs")
+
+    @min_disk_size_in_gbs.setter
+    def min_disk_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "min_disk_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minMemoryInGbs")
+    def min_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum required memory.
+        """
+        return pulumi.get(self, "min_memory_in_gbs")
+
+    @min_memory_in_gbs.setter
+    def min_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "min_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minOcpus")
+    def min_ocpus(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum required OCPUs.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "min_ocpus")
+
+    @min_ocpus.setter
+    def min_ocpus(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "min_ocpus", value)
+
 
 @pulumi.input_type
 class _BatchBatchTaskProfileState:
@@ -149,7 +185,9 @@ class _BatchBatchTaskProfileState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 extended_information: Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 min_disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_ocpus: Optional[pulumi.Input[_builtins.int]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -163,7 +201,9 @@ class _BatchBatchTaskProfileState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
+        :param pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs'] extended_information: Extended information for the task profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
@@ -183,8 +223,12 @@ class _BatchBatchTaskProfileState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if extended_information is not None:
+            pulumi.set(__self__, "extended_information", extended_information)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if min_disk_size_in_gbs is not None:
+            pulumi.set(__self__, "min_disk_size_in_gbs", min_disk_size_in_gbs)
         if min_memory_in_gbs is not None:
             pulumi.set(__self__, "min_memory_in_gbs", min_memory_in_gbs)
         if min_ocpus is not None:
@@ -247,6 +291,18 @@ class _BatchBatchTaskProfileState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="extendedInformation")
+    def extended_information(self) -> Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']]:
+        """
+        Extended information for the task profile.
+        """
+        return pulumi.get(self, "extended_information")
+
+    @extended_information.setter
+    def extended_information(self, value: Optional[pulumi.Input['BatchBatchTaskProfileExtendedInformationArgs']]):
+        pulumi.set(self, "extended_information", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -257,6 +313,18 @@ class _BatchBatchTaskProfileState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minDiskSizeInGbs")
+    def min_disk_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The minimum required size of disk space in GBs.
+        """
+        return pulumi.get(self, "min_disk_size_in_gbs")
+
+    @min_disk_size_in_gbs.setter
+    def min_disk_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "min_disk_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="minMemoryInGbs")
@@ -345,7 +413,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 extended_information: Optional[pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 min_disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_ocpus: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -365,16 +435,21 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
 
         test_batch_task_profile = oci.oci.BatchBatchTaskProfile("test_batch_task_profile",
             compartment_id=compartment_id,
-            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
-            min_ocpus=batch_task_profile_min_ocpus,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             description=batch_task_profile_description,
             display_name=batch_task_profile_display_name,
+            extended_information={
+                "type": batch_task_profile_extended_information_type,
+                "architecture": batch_task_profile_extended_information_architecture,
+            },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            min_disk_size_in_gbs=batch_task_profile_min_disk_size_in_gbs,
+            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
+            min_ocpus=batch_task_profile_min_ocpus)
         ```
 
         ## Import
@@ -392,7 +467,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
+        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']] extended_information: Extended information for the task profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
@@ -422,16 +499,21 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
 
         test_batch_task_profile = oci.oci.BatchBatchTaskProfile("test_batch_task_profile",
             compartment_id=compartment_id,
-            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
-            min_ocpus=batch_task_profile_min_ocpus,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             description=batch_task_profile_description,
             display_name=batch_task_profile_display_name,
+            extended_information={
+                "type": batch_task_profile_extended_information_type,
+                "architecture": batch_task_profile_extended_information_architecture,
+            },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            min_disk_size_in_gbs=batch_task_profile_min_disk_size_in_gbs,
+            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
+            min_ocpus=batch_task_profile_min_ocpus)
         ```
 
         ## Import
@@ -462,7 +544,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 extended_information: Optional[pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 min_disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  min_ocpus: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -480,12 +564,10 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["extended_information"] = extended_information
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if min_memory_in_gbs is None and not opts.urn:
-                raise TypeError("Missing required property 'min_memory_in_gbs'")
+            __props__.__dict__["min_disk_size_in_gbs"] = min_disk_size_in_gbs
             __props__.__dict__["min_memory_in_gbs"] = min_memory_in_gbs
-            if min_ocpus is None and not opts.urn:
-                raise TypeError("Missing required property 'min_ocpus'")
             __props__.__dict__["min_ocpus"] = min_ocpus
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -505,7 +587,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            extended_information: Optional[pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            min_disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             min_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             min_ocpus: Optional[pulumi.Input[_builtins.int]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -523,7 +607,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The batch task profile description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
+        :param pulumi.Input[Union['BatchBatchTaskProfileExtendedInformationArgs', 'BatchBatchTaskProfileExtendedInformationArgsDict']] extended_information: Extended information for the task profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
@@ -543,7 +629,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["extended_information"] = extended_information
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["min_disk_size_in_gbs"] = min_disk_size_in_gbs
         __props__.__dict__["min_memory_in_gbs"] = min_memory_in_gbs
         __props__.__dict__["min_ocpus"] = min_ocpus
         __props__.__dict__["state"] = state
@@ -585,12 +673,28 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="extendedInformation")
+    def extended_information(self) -> pulumi.Output['outputs.BatchBatchTaskProfileExtendedInformation']:
+        """
+        Extended information for the task profile.
+        """
+        return pulumi.get(self, "extended_information")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="minDiskSizeInGbs")
+    def min_disk_size_in_gbs(self) -> pulumi.Output[_builtins.int]:
+        """
+        The minimum required size of disk space in GBs.
+        """
+        return pulumi.get(self, "min_disk_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="minMemoryInGbs")

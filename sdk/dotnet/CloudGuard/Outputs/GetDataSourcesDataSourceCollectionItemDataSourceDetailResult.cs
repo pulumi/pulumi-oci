@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly int IntervalInMinutes;
         /// <summary>
-        /// Interval in minutes which query is run periodically.
+        /// Interval in seconds which query is run periodically.
         /// </summary>
         public readonly int IntervalInSeconds;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LoggingQueryType;
         /// <summary>
-        /// Operator used in data source
+        /// DEPRECATED - Operator used in data source
         /// </summary>
         public readonly string Operator;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetailResult> ScheduledQueryScopeDetails;
         /// <summary>
-        /// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        /// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         /// </summary>
         public readonly int Threshold;
 

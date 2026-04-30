@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Redis/ociCacheBackup:OciCacheBackup":
+		r = &OciCacheBackup{}
+	case "oci:Redis/ociCacheBackupExportToObjectStorage:OciCacheBackupExportToObjectStorage":
+		r = &OciCacheBackupExportToObjectStorage{}
 	case "oci:Redis/ociCacheConfigSet:OciCacheConfigSet":
 		r = &OciCacheConfigSet{}
 	case "oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster":
@@ -52,6 +56,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/ociCacheBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/ociCacheBackupExportToObjectStorage",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Redis/ociCacheConfigSet",

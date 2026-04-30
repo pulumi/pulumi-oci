@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetOciCacheBackupArgs, GetOciCacheBackupResult, GetOciCacheBackupOutputArgs } from "./getOciCacheBackup";
+export const getOciCacheBackup: typeof import("./getOciCacheBackup").getOciCacheBackup = null as any;
+export const getOciCacheBackupOutput: typeof import("./getOciCacheBackup").getOciCacheBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheBackup","getOciCacheBackupOutput"], () => require("./getOciCacheBackup"));
+
+export { GetOciCacheBackupsArgs, GetOciCacheBackupsResult, GetOciCacheBackupsOutputArgs } from "./getOciCacheBackups";
+export const getOciCacheBackups: typeof import("./getOciCacheBackups").getOciCacheBackups = null as any;
+export const getOciCacheBackupsOutput: typeof import("./getOciCacheBackups").getOciCacheBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheBackups","getOciCacheBackupsOutput"], () => require("./getOciCacheBackups"));
+
 export { GetOciCacheConfigSetArgs, GetOciCacheConfigSetResult, GetOciCacheConfigSetOutputArgs } from "./getOciCacheConfigSet";
 export const getOciCacheConfigSet: typeof import("./getOciCacheConfigSet").getOciCacheConfigSet = null as any;
 export const getOciCacheConfigSetOutput: typeof import("./getOciCacheConfigSet").getOciCacheConfigSetOutput = null as any;
@@ -54,6 +64,16 @@ export { GetRedisClustersArgs, GetRedisClustersResult, GetRedisClustersOutputArg
 export const getRedisClusters: typeof import("./getRedisClusters").getRedisClusters = null as any;
 export const getRedisClustersOutput: typeof import("./getRedisClusters").getRedisClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getRedisClusters","getRedisClustersOutput"], () => require("./getRedisClusters"));
+
+export { OciCacheBackupArgs, OciCacheBackupState } from "./ociCacheBackup";
+export type OciCacheBackup = import("./ociCacheBackup").OciCacheBackup;
+export const OciCacheBackup: typeof import("./ociCacheBackup").OciCacheBackup = null as any;
+utilities.lazyLoad(exports, ["OciCacheBackup"], () => require("./ociCacheBackup"));
+
+export { OciCacheBackupExportToObjectStorageArgs, OciCacheBackupExportToObjectStorageState } from "./ociCacheBackupExportToObjectStorage";
+export type OciCacheBackupExportToObjectStorage = import("./ociCacheBackupExportToObjectStorage").OciCacheBackupExportToObjectStorage;
+export const OciCacheBackupExportToObjectStorage: typeof import("./ociCacheBackupExportToObjectStorage").OciCacheBackupExportToObjectStorage = null as any;
+utilities.lazyLoad(exports, ["OciCacheBackupExportToObjectStorage"], () => require("./ociCacheBackupExportToObjectStorage"));
 
 export { OciCacheConfigSetArgs, OciCacheConfigSetState } from "./ociCacheConfigSet";
 export type OciCacheConfigSet = import("./ociCacheConfigSet").OciCacheConfigSet;
@@ -105,6 +125,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Redis/ociCacheBackup:OciCacheBackup":
+                return new OciCacheBackup(name, <any>undefined, { urn })
+            case "oci:Redis/ociCacheBackupExportToObjectStorage:OciCacheBackupExportToObjectStorage":
+                return new OciCacheBackupExportToObjectStorage(name, <any>undefined, { urn })
             case "oci:Redis/ociCacheConfigSet:OciCacheConfigSet":
                 return new OciCacheConfigSet(name, <any>undefined, { urn })
             case "oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster":
@@ -128,6 +152,8 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheBackupExportToObjectStorage", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheConfigSet", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheConfigSetlistAssociatedOciCacheCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheUser", _module)

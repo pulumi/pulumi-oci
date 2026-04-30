@@ -44,7 +44,7 @@ class BatchBatchContextArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] entitlements: (Updatable) Mapping of concurrent/shared resources used in job tasks to their limits.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
-        :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: Logging configuration for batch context.
+        :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -183,7 +183,7 @@ class BatchBatchContextArgs:
     @pulumi.getter(name="loggingConfiguration")
     def logging_configuration(self) -> Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]:
         """
-        Logging configuration for batch context.
+        (Updatable) Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configuration")
 
@@ -237,8 +237,8 @@ class _BatchBatchContextState:
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchContextFleetArgs']]] fleets: List of fleet configurations related to the batch context.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: Logging configuration for batch context.
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input['BatchBatchContextNetworkArgs'] network: Network configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -380,7 +380,7 @@ class _BatchBatchContextState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -392,7 +392,7 @@ class _BatchBatchContextState:
     @pulumi.getter(name="loggingConfiguration")
     def logging_configuration(self) -> Optional[pulumi.Input['BatchBatchContextLoggingConfigurationArgs']]:
         """
-        Logging configuration for batch context.
+        (Updatable) Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configuration")
 
@@ -505,7 +505,9 @@ class BatchBatchContext(pulumi.CustomResource):
                 "shape": {
                     "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
                     "ocpus": batch_context_fleets_shape_ocpus,
-                    "shape_name": test_shape["name"],
+                    "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
+                    "type": batch_context_fleets_shape_type,
+                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -532,6 +534,7 @@ class BatchBatchContext(pulumi.CustomResource):
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
             })
         ```
 
@@ -554,7 +557,7 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]] fleets: List of fleet configurations related to the batch context.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
-        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: Logging configuration for batch context.
+        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -590,7 +593,9 @@ class BatchBatchContext(pulumi.CustomResource):
                 "shape": {
                     "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
                     "ocpus": batch_context_fleets_shape_ocpus,
-                    "shape_name": test_shape["name"],
+                    "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
+                    "type": batch_context_fleets_shape_type,
+                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -617,6 +622,7 @@ class BatchBatchContext(pulumi.CustomResource):
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
             })
         ```
 
@@ -725,8 +731,8 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict']]]] fleets: List of fleet configurations related to the batch context.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: Logging configuration for batch context.
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -826,7 +832,7 @@ class BatchBatchContext(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
-        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -834,7 +840,7 @@ class BatchBatchContext(pulumi.CustomResource):
     @pulumi.getter(name="loggingConfiguration")
     def logging_configuration(self) -> pulumi.Output['outputs.BatchBatchContextLoggingConfiguration']:
         """
-        Logging configuration for batch context.
+        (Updatable) Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configuration")
 

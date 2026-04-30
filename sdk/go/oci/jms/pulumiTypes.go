@@ -26928,7 +26928,7 @@ func (o GetTaskSchedulesTaskScheduleCollectionArrayOutput) Index(i pulumi.IntInp
 type GetTaskSchedulesTaskScheduleCollectionItem struct {
 	// Name of the task creator.
 	CreatedBy string `pulumi:"createdBy"`
-	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// The ID of the Fleet.
 	FleetId string `pulumi:"fleetId"`
@@ -26964,7 +26964,7 @@ type GetTaskSchedulesTaskScheduleCollectionItemInput interface {
 type GetTaskSchedulesTaskScheduleCollectionItemArgs struct {
 	// Name of the task creator.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences pulumi.StringInput `pulumi:"executionRecurrences"`
 	// The ID of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
@@ -27042,7 +27042,7 @@ func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) CreatedBy() pulumi.Str
 	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
-// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) ExecutionRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.ExecutionRecurrences }).(pulumi.StringOutput)
 }

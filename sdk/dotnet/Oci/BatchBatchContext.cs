@@ -40,7 +40,9 @@ namespace Pulumi.Oci.Oci
     ///                 {
     ///                     MemoryInGbs = batchContextFleetsShapeMemoryInGbs,
     ///                     Ocpus = batchContextFleetsShapeOcpus,
-    ///                     ShapeName = testShape.Name,
+    ///                     ShapeName = testBatchContextShapes.BatchContextShapeCollection[0].Items[0].Name,
+    ///                     Type = batchContextFleetsShapeType,
+    ///                     DiskSizeInGbs = batchContextFleetsShapeDiskSizeInGbs,
     ///                 },
     ///                 Type = batchContextFleetsType,
     ///             },
@@ -76,6 +78,7 @@ namespace Pulumi.Oci.Oci
     ///             LogGroupId = testLogGroup.Id,
     ///             LogId = testLog.Id,
     ///             Type = batchContextLoggingConfigurationType,
+    ///             IsJobTaskEventsPropagationEnabled = batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled,
     ///         },
     ///     });
     /// 
@@ -142,13 +145,13 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableArray<Outputs.BatchBatchContextJobPriorityConfiguration>> JobPriorityConfigurations { get; private set; } = null!;
 
         /// <summary>
-        /// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        /// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Logging configuration for batch context.
+        /// (Updatable) Logging configuration of the batch context.
         /// </summary>
         [Output("loggingConfiguration")]
         public Output<Outputs.BatchBatchContextLoggingConfiguration> LoggingConfiguration { get; private set; } = null!;
@@ -312,7 +315,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// Logging configuration for batch context.
+        /// (Updatable) Logging configuration of the batch context.
         /// </summary>
         [Input("loggingConfiguration")]
         public Input<Inputs.BatchBatchContextLoggingConfigurationArgs>? LoggingConfiguration { get; set; }
@@ -420,13 +423,13 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        /// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Logging configuration for batch context.
+        /// (Updatable) Logging configuration of the batch context.
         /// </summary>
         [Input("loggingConfiguration")]
         public Input<Inputs.BatchBatchContextLoggingConfigurationGetArgs>? LoggingConfiguration { get; set; }

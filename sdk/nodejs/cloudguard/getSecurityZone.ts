@@ -70,6 +70,10 @@ export interface GetSecurityZoneResult {
      */
     readonly inheritedByCompartments: string[];
     /**
+     * Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     */
+    readonly isInheritanceAfterDeleteEnabled: boolean;
+    /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
     readonly lifecycleDetails: string;

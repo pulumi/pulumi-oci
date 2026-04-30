@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult
     {
         /// <summary>
+        /// A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
+        /// </summary>
+        public readonly bool IsJobTaskEventsPropagationEnabled;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         /// </summary>
         public readonly string LogGroupId;
@@ -22,18 +26,21 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LogId;
         /// <summary>
-        /// Discriminator for sub-entities.
+        /// Type of the logging configuration. Discriminator for sub-entities.
         /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
         private GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult(
+            bool isJobTaskEventsPropagationEnabled,
+
             string logGroupId,
 
             string logId,
 
             string type)
         {
+            IsJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
             LogGroupId = logGroupId;
             LogId = logId;
             Type = type;

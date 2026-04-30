@@ -161,7 +161,7 @@ class GetBatchBatchContextResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -169,7 +169,7 @@ class GetBatchBatchContextResult:
     @pulumi.getter(name="loggingConfigurations")
     def logging_configurations(self) -> Sequence['outputs.GetBatchBatchContextLoggingConfigurationResult']:
         """
-        Logging configuration for batch context.
+        Logging configuration of the batch context.
         """
         return pulumi.get(self, "logging_configurations")
 

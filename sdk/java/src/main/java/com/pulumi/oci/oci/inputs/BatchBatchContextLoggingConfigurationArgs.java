@@ -6,13 +6,31 @@ package com.pulumi.oci.oci.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BatchBatchContextLoggingConfigurationArgs Empty = new BatchBatchContextLoggingConfigurationArgs();
+
+    /**
+     * (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    @Import(name="isJobTaskEventsPropagationEnabled")
+    private @Nullable Output<Boolean> isJobTaskEventsPropagationEnabled;
+
+    /**
+     * @return (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    public Optional<Output<Boolean>> isJobTaskEventsPropagationEnabled() {
+        return Optional.ofNullable(this.isJobTaskEventsPropagationEnabled);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -45,14 +63,14 @@ public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.
     }
 
     /**
-     * Discriminator for sub-entities.
+     * (Updatable) Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Discriminator for sub-entities.
+     * @return (Updatable) Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     public Output<String> type() {
@@ -62,6 +80,7 @@ public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.
     private BatchBatchContextLoggingConfigurationArgs() {}
 
     private BatchBatchContextLoggingConfigurationArgs(BatchBatchContextLoggingConfigurationArgs $) {
+        this.isJobTaskEventsPropagationEnabled = $.isJobTaskEventsPropagationEnabled;
         this.logGroupId = $.logGroupId;
         this.logId = $.logId;
         this.type = $.type;
@@ -83,6 +102,27 @@ public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.
 
         public Builder(BatchBatchContextLoggingConfigurationArgs defaults) {
             $ = new BatchBatchContextLoggingConfigurationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isJobTaskEventsPropagationEnabled (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isJobTaskEventsPropagationEnabled(@Nullable Output<Boolean> isJobTaskEventsPropagationEnabled) {
+            $.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
+            return this;
+        }
+
+        /**
+         * @param isJobTaskEventsPropagationEnabled (Updatable) A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isJobTaskEventsPropagationEnabled(Boolean isJobTaskEventsPropagationEnabled) {
+            return isJobTaskEventsPropagationEnabled(Output.of(isJobTaskEventsPropagationEnabled));
         }
 
         /**
@@ -128,7 +168,7 @@ public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.
         }
 
         /**
-         * @param type Discriminator for sub-entities.
+         * @param type (Updatable) Type of the logging configuration. Discriminator for sub-entities.
          * 
          * @return builder
          * 
@@ -139,7 +179,7 @@ public final class BatchBatchContextLoggingConfigurationArgs extends com.pulumi.
         }
 
         /**
-         * @param type Discriminator for sub-entities.
+         * @param type (Updatable) Type of the logging configuration. Discriminator for sub-entities.
          * 
          * @return builder
          * 

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -20,16 +22,21 @@ import * as utilities from "../utilities";
  *
  * const testBatchTaskProfile = new oci.oci.BatchBatchTaskProfile("test_batch_task_profile", {
  *     compartmentId: compartmentId,
- *     minMemoryInGbs: batchTaskProfileMinMemoryInGbs,
- *     minOcpus: batchTaskProfileMinOcpus,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     description: batchTaskProfileDescription,
  *     displayName: batchTaskProfileDisplayName,
+ *     extendedInformation: {
+ *         type: batchTaskProfileExtendedInformationType,
+ *         architecture: batchTaskProfileExtendedInformationArchitecture,
+ *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     minDiskSizeInGbs: batchTaskProfileMinDiskSizeInGbs,
+ *     minMemoryInGbs: batchTaskProfileMinMemoryInGbs,
+ *     minOcpus: batchTaskProfileMinOcpus,
  * });
  * ```
  *
@@ -86,9 +93,17 @@ export class BatchBatchTaskProfile extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * Extended information for the task profile.
+     */
+    declare public readonly extendedInformation: pulumi.Output<outputs.oci.BatchBatchTaskProfileExtendedInformation>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The minimum required size of disk space in GBs.
+     */
+    declare public readonly minDiskSizeInGbs: pulumi.Output<number>;
     /**
      * The minimum required memory.
      */
@@ -135,7 +150,9 @@ export class BatchBatchTaskProfile extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["extendedInformation"] = state?.extendedInformation;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["minDiskSizeInGbs"] = state?.minDiskSizeInGbs;
             resourceInputs["minMemoryInGbs"] = state?.minMemoryInGbs;
             resourceInputs["minOcpus"] = state?.minOcpus;
             resourceInputs["state"] = state?.state;
@@ -147,17 +164,13 @@ export class BatchBatchTaskProfile extends pulumi.CustomResource {
             if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if (args?.minMemoryInGbs === undefined && !opts.urn) {
-                throw new Error("Missing required property 'minMemoryInGbs'");
-            }
-            if (args?.minOcpus === undefined && !opts.urn) {
-                throw new Error("Missing required property 'minOcpus'");
-            }
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["extendedInformation"] = args?.extendedInformation;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["minDiskSizeInGbs"] = args?.minDiskSizeInGbs;
             resourceInputs["minMemoryInGbs"] = args?.minMemoryInGbs;
             resourceInputs["minOcpus"] = args?.minOcpus;
             resourceInputs["state"] = undefined /*out*/;
@@ -191,9 +204,17 @@ export interface BatchBatchTaskProfileState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * Extended information for the task profile.
+     */
+    extendedInformation?: pulumi.Input<inputs.oci.BatchBatchTaskProfileExtendedInformation>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The minimum required size of disk space in GBs.
+     */
+    minDiskSizeInGbs?: pulumi.Input<number>;
     /**
      * The minimum required memory.
      */
@@ -245,13 +266,21 @@ export interface BatchBatchTaskProfileArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * Extended information for the task profile.
+     */
+    extendedInformation?: pulumi.Input<inputs.oci.BatchBatchTaskProfileExtendedInformation>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * The minimum required size of disk space in GBs.
+     */
+    minDiskSizeInGbs?: pulumi.Input<number>;
+    /**
      * The minimum required memory.
      */
-    minMemoryInGbs: pulumi.Input<number>;
+    minMemoryInGbs?: pulumi.Input<number>;
     /**
      * The minimum required OCPUs.
      *
@@ -259,5 +288,5 @@ export interface BatchBatchTaskProfileArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    minOcpus: pulumi.Input<number>;
+    minOcpus?: pulumi.Input<number>;
 }

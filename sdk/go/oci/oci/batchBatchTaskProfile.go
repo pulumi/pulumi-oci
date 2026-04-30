@@ -34,17 +34,22 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.NewBatchBatchTaskProfile(ctx, "test_batch_task_profile", &oci.BatchBatchTaskProfileArgs{
-//				CompartmentId:  pulumi.Any(compartmentId),
-//				MinMemoryInGbs: pulumi.Any(batchTaskProfileMinMemoryInGbs),
-//				MinOcpus:       pulumi.Any(batchTaskProfileMinOcpus),
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(batchTaskProfileDescription),
 //				DisplayName: pulumi.Any(batchTaskProfileDisplayName),
+//				ExtendedInformation: &oci.BatchBatchTaskProfileExtendedInformationArgs{
+//					Type:         pulumi.Any(batchTaskProfileExtendedInformationType),
+//					Architecture: pulumi.Any(batchTaskProfileExtendedInformationArchitecture),
+//				},
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				MinDiskSizeInGbs: pulumi.Any(batchTaskProfileMinDiskSizeInGbs),
+//				MinMemoryInGbs:   pulumi.Any(batchTaskProfileMinMemoryInGbs),
+//				MinOcpus:         pulumi.Any(batchTaskProfileMinOcpus),
 //			})
 //			if err != nil {
 //				return err
@@ -73,8 +78,12 @@ type BatchBatchTaskProfile struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Extended information for the task profile.
+	ExtendedInformation BatchBatchTaskProfileExtendedInformationOutput `pulumi:"extendedInformation"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs pulumi.IntOutput `pulumi:"minDiskSizeInGbs"`
 	// The minimum required memory.
 	MinMemoryInGbs pulumi.IntOutput `pulumi:"minMemoryInGbs"`
 	// The minimum required OCPUs.
@@ -101,12 +110,6 @@ func NewBatchBatchTaskProfile(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.MinMemoryInGbs == nil {
-		return nil, errors.New("invalid value for required argument 'MinMemoryInGbs'")
-	}
-	if args.MinOcpus == nil {
-		return nil, errors.New("invalid value for required argument 'MinOcpus'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BatchBatchTaskProfile
@@ -139,8 +142,12 @@ type batchBatchTaskProfileState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
 	DisplayName *string `pulumi:"displayName"`
+	// Extended information for the task profile.
+	ExtendedInformation *BatchBatchTaskProfileExtendedInformation `pulumi:"extendedInformation"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs *int `pulumi:"minDiskSizeInGbs"`
 	// The minimum required memory.
 	MinMemoryInGbs *int `pulumi:"minMemoryInGbs"`
 	// The minimum required OCPUs.
@@ -167,8 +174,12 @@ type BatchBatchTaskProfileState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
 	DisplayName pulumi.StringPtrInput
+	// Extended information for the task profile.
+	ExtendedInformation BatchBatchTaskProfileExtendedInformationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs pulumi.IntPtrInput
 	// The minimum required memory.
 	MinMemoryInGbs pulumi.IntPtrInput
 	// The minimum required OCPUs.
@@ -199,15 +210,19 @@ type batchBatchTaskProfileArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
 	DisplayName *string `pulumi:"displayName"`
+	// Extended information for the task profile.
+	ExtendedInformation *BatchBatchTaskProfileExtendedInformation `pulumi:"extendedInformation"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs *int `pulumi:"minDiskSizeInGbs"`
 	// The minimum required memory.
-	MinMemoryInGbs int `pulumi:"minMemoryInGbs"`
+	MinMemoryInGbs *int `pulumi:"minMemoryInGbs"`
 	// The minimum required OCPUs.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	MinOcpus int `pulumi:"minOcpus"`
+	MinOcpus *int `pulumi:"minOcpus"`
 }
 
 // The set of arguments for constructing a BatchBatchTaskProfile resource.
@@ -220,15 +235,19 @@ type BatchBatchTaskProfileArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchtaskprofile20250914115623.
 	DisplayName pulumi.StringPtrInput
+	// Extended information for the task profile.
+	ExtendedInformation BatchBatchTaskProfileExtendedInformationPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs pulumi.IntPtrInput
 	// The minimum required memory.
-	MinMemoryInGbs pulumi.IntInput
+	MinMemoryInGbs pulumi.IntPtrInput
 	// The minimum required OCPUs.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	MinOcpus pulumi.IntInput
+	MinOcpus pulumi.IntPtrInput
 }
 
 func (BatchBatchTaskProfileArgs) ElementType() reflect.Type {
@@ -338,9 +357,21 @@ func (o BatchBatchTaskProfileOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *BatchBatchTaskProfile) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Extended information for the task profile.
+func (o BatchBatchTaskProfileOutput) ExtendedInformation() BatchBatchTaskProfileExtendedInformationOutput {
+	return o.ApplyT(func(v *BatchBatchTaskProfile) BatchBatchTaskProfileExtendedInformationOutput {
+		return v.ExtendedInformation
+	}).(BatchBatchTaskProfileExtendedInformationOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o BatchBatchTaskProfileOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *BatchBatchTaskProfile) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The minimum required size of disk space in GBs.
+func (o BatchBatchTaskProfileOutput) MinDiskSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *BatchBatchTaskProfile) pulumi.IntOutput { return v.MinDiskSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The minimum required memory.

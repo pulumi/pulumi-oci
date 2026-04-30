@@ -12,7 +12,9 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
  *
- * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+ * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+ * You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+ * For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  *
  * ## Example Usage
  *
@@ -27,12 +29,20 @@ import * as utilities from "../utilities";
  *     nodeMemoryInGbs: redisClusterNodeMemoryInGbs,
  *     softwareVersion: redisClusterSoftwareVersion,
  *     subnetId: testSubnet.id,
+ *     backupId: testBackup.id,
  *     clusterMode: redisClusterClusterMode,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
+ *     },
+ *     importFromObjectStorageDetails: {
+ *         bucket: redisClusterImportFromObjectStorageDetailsBucket,
+ *         namespace: redisClusterImportFromObjectStorageDetailsNamespace,
+ *         objects: [{
+ *             object: redisClusterImportFromObjectStorageDetailsObjectsObject,
+ *         }],
  *     },
  *     nsgIds: redisClusterNsgIds,
  *     ociCacheConfigSetId: testOciCacheConfigSet.id,
@@ -78,6 +88,10 @@ export class RedisCluster extends pulumi.CustomResource {
     }
 
     /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+     */
+    declare public readonly backupId: pulumi.Output<string>;
+    /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
     declare public readonly clusterMode: pulumi.Output<string>;
@@ -105,6 +119,10 @@ export class RedisCluster extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     */
+    declare public readonly importFromObjectStorageDetails: pulumi.Output<outputs.Redis.RedisClusterImportFromObjectStorageDetails>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
@@ -195,6 +213,7 @@ export class RedisCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterState | undefined;
+            resourceInputs["backupId"] = state?.backupId;
             resourceInputs["clusterMode"] = state?.clusterMode;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -202,6 +221,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["discoveryFqdn"] = state?.discoveryFqdn;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["importFromObjectStorageDetails"] = state?.importFromObjectStorageDetails;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["nodeCollections"] = state?.nodeCollections;
             resourceInputs["nodeCount"] = state?.nodeCount;
@@ -240,11 +260,13 @@ export class RedisCluster extends pulumi.CustomResource {
             if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["backupId"] = args?.backupId;
             resourceInputs["clusterMode"] = args?.clusterMode;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["importFromObjectStorageDetails"] = args?.importFromObjectStorageDetails;
             resourceInputs["nodeCount"] = args?.nodeCount;
             resourceInputs["nodeMemoryInGbs"] = args?.nodeMemoryInGbs;
             resourceInputs["nsgIds"] = args?.nsgIds;
@@ -276,6 +298,10 @@ export class RedisCluster extends pulumi.CustomResource {
  */
 export interface RedisClusterState {
     /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+     */
+    backupId?: pulumi.Input<string>;
+    /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
     clusterMode?: pulumi.Input<string>;
@@ -303,6 +329,10 @@ export interface RedisClusterState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     */
+    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
@@ -386,6 +416,10 @@ export interface RedisClusterState {
  */
 export interface RedisClusterArgs {
     /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+     */
+    backupId?: pulumi.Input<string>;
+    /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
     clusterMode?: pulumi.Input<string>;
@@ -405,6 +439,10 @@ export interface RedisClusterArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     */
+    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails>;
     /**
      * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */

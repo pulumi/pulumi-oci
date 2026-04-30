@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.oci.inputs.BatchBatchTaskProfileExtendedInformationArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -78,6 +79,21 @@ public final class BatchBatchTaskProfileState extends com.pulumi.resources.Resou
     }
 
     /**
+     * Extended information for the task profile.
+     * 
+     */
+    @Import(name="extendedInformation")
+    private @Nullable Output<BatchBatchTaskProfileExtendedInformationArgs> extendedInformation;
+
+    /**
+     * @return Extended information for the task profile.
+     * 
+     */
+    public Optional<Output<BatchBatchTaskProfileExtendedInformationArgs>> extendedInformation() {
+        return Optional.ofNullable(this.extendedInformation);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -90,6 +106,21 @@ public final class BatchBatchTaskProfileState extends com.pulumi.resources.Resou
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * The minimum required size of disk space in GBs.
+     * 
+     */
+    @Import(name="minDiskSizeInGbs")
+    private @Nullable Output<Integer> minDiskSizeInGbs;
+
+    /**
+     * @return The minimum required size of disk space in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> minDiskSizeInGbs() {
+        return Optional.ofNullable(this.minDiskSizeInGbs);
     }
 
     /**
@@ -195,7 +226,9 @@ public final class BatchBatchTaskProfileState extends com.pulumi.resources.Resou
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.extendedInformation = $.extendedInformation;
         this.freeformTags = $.freeformTags;
+        this.minDiskSizeInGbs = $.minDiskSizeInGbs;
         this.minMemoryInGbs = $.minMemoryInGbs;
         this.minOcpus = $.minOcpus;
         this.state = $.state;
@@ -307,6 +340,27 @@ public final class BatchBatchTaskProfileState extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param extendedInformation Extended information for the task profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendedInformation(@Nullable Output<BatchBatchTaskProfileExtendedInformationArgs> extendedInformation) {
+            $.extendedInformation = extendedInformation;
+            return this;
+        }
+
+        /**
+         * @param extendedInformation Extended information for the task profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendedInformation(BatchBatchTaskProfileExtendedInformationArgs extendedInformation) {
+            return extendedInformation(Output.of(extendedInformation));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -325,6 +379,27 @@ public final class BatchBatchTaskProfileState extends com.pulumi.resources.Resou
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param minDiskSizeInGbs The minimum required size of disk space in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minDiskSizeInGbs(@Nullable Output<Integer> minDiskSizeInGbs) {
+            $.minDiskSizeInGbs = minDiskSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param minDiskSizeInGbs The minimum required size of disk space in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minDiskSizeInGbs(Integer minDiskSizeInGbs) {
+            return minDiskSizeInGbs(Output.of(minDiskSizeInGbs));
         }
 
         /**

@@ -12,12 +12,17 @@ import java.util.Objects;
 @CustomType
 public final class GetBatchBatchContextFleetShape {
     /**
-     * @return Amount of memory in GBs required by the shape.
+     * @return Amount of disk space in GBs required for the shape.
+     * 
+     */
+    private Integer diskSizeInGbs;
+    /**
+     * @return Amount of memory in GBs required for the shape.
      * 
      */
     private Integer memoryInGbs;
     /**
-     * @return Number of OCPUs required by the shape.
+     * @return Number of OCPUs required for the shape.
      * 
      */
     private Integer ocpus;
@@ -26,17 +31,29 @@ public final class GetBatchBatchContextFleetShape {
      * 
      */
     private String shapeName;
+    /**
+     * @return Type of the logging configuration. Discriminator for sub-entities.
+     * 
+     */
+    private String type;
 
     private GetBatchBatchContextFleetShape() {}
     /**
-     * @return Amount of memory in GBs required by the shape.
+     * @return Amount of disk space in GBs required for the shape.
+     * 
+     */
+    public Integer diskSizeInGbs() {
+        return this.diskSizeInGbs;
+    }
+    /**
+     * @return Amount of memory in GBs required for the shape.
      * 
      */
     public Integer memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return Number of OCPUs required by the shape.
+     * @return Number of OCPUs required for the shape.
      * 
      */
     public Integer ocpus() {
@@ -49,6 +66,13 @@ public final class GetBatchBatchContextFleetShape {
     public String shapeName() {
         return this.shapeName;
     }
+    /**
+     * @return Type of the logging configuration. Discriminator for sub-entities.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -59,17 +83,29 @@ public final class GetBatchBatchContextFleetShape {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer diskSizeInGbs;
         private Integer memoryInGbs;
         private Integer ocpus;
         private String shapeName;
+        private String type;
         public Builder() {}
         public Builder(GetBatchBatchContextFleetShape defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.diskSizeInGbs = defaults.diskSizeInGbs;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
     	      this.shapeName = defaults.shapeName;
+    	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder diskSizeInGbs(Integer diskSizeInGbs) {
+            if (diskSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchContextFleetShape", "diskSizeInGbs");
+            }
+            this.diskSizeInGbs = diskSizeInGbs;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             if (memoryInGbs == null) {
@@ -94,11 +130,21 @@ public final class GetBatchBatchContextFleetShape {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchContextFleetShape", "type");
+            }
+            this.type = type;
+            return this;
+        }
         public GetBatchBatchContextFleetShape build() {
             final var _resultValue = new GetBatchBatchContextFleetShape();
+            _resultValue.diskSizeInGbs = diskSizeInGbs;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
             _resultValue.shapeName = shapeName;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

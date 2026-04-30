@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Oci
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = batchContextShapeAvailabilityDomain,
+        ///         ShapeType = batchContextShapeShapeType,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.Oci
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = batchContextShapeAvailabilityDomain,
+        ///         ShapeType = batchContextShapeShapeType,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.Oci
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = batchContextShapeAvailabilityDomain,
+        ///         ShapeType = batchContextShapeShapeType,
         ///     });
         /// 
         /// });
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.Oci
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The type of a shape.
+        /// </summary>
+        [Input("shapeType")]
+        public string? ShapeType { get; set; }
+
         public GetBatchBatchContextShapesArgs()
         {
         }
@@ -144,6 +153,12 @@ namespace Pulumi.Oci.Oci
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The type of a shape.
+        /// </summary>
+        [Input("shapeType")]
+        public Input<string>? ShapeType { get; set; }
+
         public GetBatchBatchContextShapesInvokeArgs()
         {
         }
@@ -165,6 +180,7 @@ namespace Pulumi.Oci.Oci
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ShapeType;
 
         [OutputConstructor]
         private GetBatchBatchContextShapesResult(
@@ -176,13 +192,16 @@ namespace Pulumi.Oci.Oci
 
             ImmutableArray<Outputs.GetBatchBatchContextShapesFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? shapeType)
         {
             AvailabilityDomain = availabilityDomain;
             BatchContextShapeCollections = batchContextShapeCollections;
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            ShapeType = shapeType;
         }
     }
 }

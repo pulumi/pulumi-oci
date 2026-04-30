@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Redis.Outputs
     public sealed class GetRedisClustersRedisClusterCollectionItemResult
     {
         /// <summary>
+        /// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+        /// </summary>
+        public readonly string BackupId;
+        /// <summary>
         /// Specifies whether the cluster is sharded or non-sharded.
         /// </summary>
         public readonly string ClusterMode;
@@ -45,6 +49,10 @@ namespace Pulumi.Oci.Redis.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult> ImportFromObjectStorageDetails;
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
         /// </summary>
@@ -120,6 +128,8 @@ namespace Pulumi.Oci.Redis.Outputs
 
         [OutputConstructor]
         private GetRedisClustersRedisClusterCollectionItemResult(
+            string backupId,
+
             string clusterMode,
 
             string compartmentId,
@@ -135,6 +145,8 @@ namespace Pulumi.Oci.Redis.Outputs
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            ImmutableArray<Outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult> importFromObjectStorageDetails,
 
             string lifecycleDetails,
 
@@ -172,6 +184,7 @@ namespace Pulumi.Oci.Redis.Outputs
 
             string timeUpdated)
         {
+            BackupId = backupId;
             ClusterMode = clusterMode;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -180,6 +193,7 @@ namespace Pulumi.Oci.Redis.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            ImportFromObjectStorageDetails = importFromObjectStorageDetails;
             LifecycleDetails = lifecycleDetails;
             NodeCollections = nodeCollections;
             NodeCount = nodeCount;

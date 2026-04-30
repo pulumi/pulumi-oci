@@ -16,32 +16,16 @@ public final class RedisClusterCreateIdentityTokenState extends com.pulumi.resou
 
     public static final RedisClusterCreateIdentityTokenState Empty = new RedisClusterCreateIdentityTokenState();
 
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
-    /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
@@ -141,44 +125,20 @@ public final class RedisClusterCreateIdentityTokenState extends com.pulumi.resou
             $ = new RedisClusterCreateIdentityTokenState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-         * 
-         * @return builder
-         * 
-         */
         public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
 
-        /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-         * 
-         * @return builder
-         * 
-         */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
-        /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-         * 
-         * @return builder
-         * 
-         */
         public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
 
-        /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-         * 
-         * @return builder
-         * 
-         */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }

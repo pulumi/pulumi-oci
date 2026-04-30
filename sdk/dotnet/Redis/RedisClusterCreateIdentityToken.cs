@@ -32,8 +32,6 @@ namespace Pulumi.Oci.Redis
     ///         PublicKey = redisClusterCreateIdentityTokenPublicKey,
     ///         RedisClusterId = testRedisCluster.Id,
     ///         RedisUser = redisClusterCreateIdentityTokenRedisUser,
-    ///         DefinedTags = redisClusterCreateIdentityTokenDefinedTags,
-    ///         FreeformTags = redisClusterCreateIdentityTokenFreeformTags,
     ///     });
     /// 
     /// });
@@ -46,15 +44,9 @@ namespace Pulumi.Oci.Redis
     [OciResourceType("oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken")]
     public partial class RedisClusterCreateIdentityToken : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>?> DefinedTags { get; private set; } = null!;
 
-        /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>?> FreeformTags { get; private set; } = null!;
 
@@ -134,10 +126,6 @@ namespace Pulumi.Oci.Redis
     {
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
-
-        /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        /// </summary>
         public InputMap<string> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<string>());
@@ -146,10 +134,6 @@ namespace Pulumi.Oci.Redis
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
-
-        /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
@@ -188,10 +172,6 @@ namespace Pulumi.Oci.Redis
     {
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
-
-        /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        /// </summary>
         public InputMap<string> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<string>());
@@ -200,10 +180,6 @@ namespace Pulumi.Oci.Redis
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
-
-        /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());

@@ -161,6 +161,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// * SMALL_GENERIC_V1
         /// * MEDIUM_GENERIC_V1
         /// * LARGE_GENERIC_V1
+        /// * COHERE_H100_X1
+        /// * COHERE_A100_80G_X1
+        /// * COHERE_A100_40G_X1
+        /// * COHERE_A10_X1
         /// * A10_X1
         /// * A10_X2
         /// * A10_X4
@@ -327,6 +331,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// * SMALL_GENERIC_V1
         /// * MEDIUM_GENERIC_V1
         /// * LARGE_GENERIC_V1
+        /// * COHERE_H100_X1
+        /// * COHERE_A100_80G_X1
+        /// * COHERE_A100_40G_X1
+        /// * COHERE_A10_X1
         /// * A10_X1
         /// * A10_X2
         /// * A10_X4
@@ -503,6 +511,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// * SMALL_GENERIC_V1
         /// * MEDIUM_GENERIC_V1
         /// * LARGE_GENERIC_V1
+        /// * COHERE_H100_X1
+        /// * COHERE_A100_80G_X1
+        /// * COHERE_A100_40G_X1
+        /// * COHERE_A10_X1
         /// * A10_X1
         /// * A10_X2
         /// * A10_X4

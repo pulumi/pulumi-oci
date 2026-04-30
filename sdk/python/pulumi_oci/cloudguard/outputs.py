@@ -536,15 +536,15 @@ class CloudGuardDataSourceDataSourceDetails(dict):
         :param _builtins.int additional_entities_count: (Updatable) The additional entities count used for data source query
         :param _builtins.str description: (Updatable) Description text for the query
         :param _builtins.int interval_in_minutes: (Updatable) Interval in minutes that query is run periodically.
-        :param _builtins.int interval_in_seconds: (Updatable) Interval in minutes which query is run periodically.
+        :param _builtins.int interval_in_seconds: (Updatable) Interval in seconds which query is run periodically.
         :param 'CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs' logging_query_details: (Updatable) Details for a logging query for a data source.
         :param _builtins.str logging_query_type: (Updatable) Type of logging query for data source (Sighting/Insight)
-        :param _builtins.str operator: (Updatable) Operator used in data source
+        :param _builtins.str operator: (Updatable) DEPRECATED - Operator used in data source
         :param _builtins.str query: (Updatable) The continuous query expression that is run periodically.
-        :param 'CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs' query_start_time: (Updatable) Start policy for continuous query
+        :param 'CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs' query_start_time: (Updatable) DEPRECATED - Start policy for continuous query
         :param Sequence[_builtins.str] regions: (Updatable) List of logging query regions
         :param Sequence['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs'] scheduled_query_scope_details: (Updatable) Target information in which scheduled query will be run
-        :param _builtins.int threshold: (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        :param _builtins.int threshold: (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
         if additional_entities_count is not None:
@@ -608,7 +608,7 @@ class CloudGuardDataSourceDataSourceDetails(dict):
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> Optional[_builtins.int]:
         """
-        (Updatable) Interval in minutes which query is run periodically.
+        (Updatable) Interval in seconds which query is run periodically.
         """
         return pulumi.get(self, "interval_in_seconds")
 
@@ -632,7 +632,7 @@ class CloudGuardDataSourceDataSourceDetails(dict):
     @pulumi.getter
     def operator(self) -> Optional[_builtins.str]:
         """
-        (Updatable) Operator used in data source
+        (Updatable) DEPRECATED - Operator used in data source
         """
         return pulumi.get(self, "operator")
 
@@ -648,7 +648,7 @@ class CloudGuardDataSourceDataSourceDetails(dict):
     @pulumi.getter(name="queryStartTime")
     def query_start_time(self) -> Optional['outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime']:
         """
-        (Updatable) Start policy for continuous query
+        (Updatable) DEPRECATED - Start policy for continuous query
         """
         return pulumi.get(self, "query_start_time")
 
@@ -672,7 +672,7 @@ class CloudGuardDataSourceDataSourceDetails(dict):
     @pulumi.getter
     def threshold(self) -> Optional[_builtins.int]:
         """
-        (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         return pulumi.get(self, "threshold")
 
@@ -7110,15 +7110,15 @@ class GetDataSourceDataSourceDetailResult(dict):
         :param _builtins.str data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
         :param _builtins.str description: Description text for the query
         :param _builtins.int interval_in_minutes: Interval in minutes that query is run periodically.
-        :param _builtins.int interval_in_seconds: Interval in minutes which query is run periodically.
+        :param _builtins.int interval_in_seconds: Interval in seconds which query is run periodically.
         :param Sequence['GetDataSourceDataSourceDetailLoggingQueryDetailArgs'] logging_query_details: Details for a logging query for a data source.
         :param _builtins.str logging_query_type: Type of logging query for data source (Sighting/Insight)
-        :param _builtins.str operator: Operator used in data source
+        :param _builtins.str operator: DEPRECATED - Operator used in data source
         :param _builtins.str query: The continuous query expression that is run periodically.
         :param Sequence['GetDataSourceDataSourceDetailQueryStartTimeArgs'] query_start_times: Time when the query can start. If not specified it can start immediately
         :param Sequence[_builtins.str] regions: List of logging query regions
         :param Sequence['GetDataSourceDataSourceDetailScheduledQueryScopeDetailArgs'] scheduled_query_scope_details: Target information in which scheduled query will be run
-        :param _builtins.int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        :param _builtins.int threshold: DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         pulumi.set(__self__, "additional_entities_count", additional_entities_count)
         pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
@@ -7170,7 +7170,7 @@ class GetDataSourceDataSourceDetailResult(dict):
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> _builtins.int:
         """
-        Interval in minutes which query is run periodically.
+        Interval in seconds which query is run periodically.
         """
         return pulumi.get(self, "interval_in_seconds")
 
@@ -7194,7 +7194,7 @@ class GetDataSourceDataSourceDetailResult(dict):
     @pulumi.getter
     def operator(self) -> _builtins.str:
         """
-        Operator used in data source
+        DEPRECATED - Operator used in data source
         """
         return pulumi.get(self, "operator")
 
@@ -7234,7 +7234,7 @@ class GetDataSourceDataSourceDetailResult(dict):
     @pulumi.getter
     def threshold(self) -> _builtins.int:
         """
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         return pulumi.get(self, "threshold")
 
@@ -7910,15 +7910,15 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
         :param _builtins.str data_source_feed_provider: A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
         :param _builtins.str description: Description text for the query
         :param _builtins.int interval_in_minutes: Interval in minutes that query is run periodically.
-        :param _builtins.int interval_in_seconds: Interval in minutes which query is run periodically.
+        :param _builtins.int interval_in_seconds: Interval in seconds which query is run periodically.
         :param Sequence['GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs'] logging_query_details: Details for a logging query for a data source.
         :param _builtins.str logging_query_type: A filter to return only resources where their query type matches the given LoggingQueryType.
-        :param _builtins.str operator: Operator used in data source
+        :param _builtins.str operator: DEPRECATED - Operator used in data source
         :param _builtins.str query: The continuous query expression that is run periodically.
         :param Sequence['GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs'] query_start_times: Time when the query can start. If not specified it can start immediately
         :param Sequence[_builtins.str] regions: List of logging query regions
         :param Sequence['GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetailArgs'] scheduled_query_scope_details: Target information in which scheduled query will be run
-        :param _builtins.int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        :param _builtins.int threshold: DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         pulumi.set(__self__, "additional_entities_count", additional_entities_count)
         pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
@@ -7970,7 +7970,7 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> _builtins.int:
         """
-        Interval in minutes which query is run periodically.
+        Interval in seconds which query is run periodically.
         """
         return pulumi.get(self, "interval_in_seconds")
 
@@ -7994,7 +7994,7 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
     @pulumi.getter
     def operator(self) -> _builtins.str:
         """
-        Operator used in data source
+        DEPRECATED - Operator used in data source
         """
         return pulumi.get(self, "operator")
 
@@ -8034,7 +8034,7 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
     @pulumi.getter
     def threshold(self) -> _builtins.int:
         """
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         return pulumi.get(self, "threshold")
 
@@ -17786,6 +17786,7 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  inherited_by_compartments: Sequence[_builtins.str],
+                 is_inheritance_after_delete_enabled: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  security_zone_recipe_id: _builtins.str,
                  security_zone_target_id: _builtins.str,
@@ -17800,6 +17801,7 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The unique identifier of the security zone (`SecurityZone` resource).
         :param Sequence[_builtins.str] inherited_by_compartments: List of inherited compartments
+        :param _builtins.bool is_inheritance_after_delete_enabled: Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param _builtins.str security_zone_recipe_id: The OCID of the recipe (`SecurityRecipe` resource) for the security zone
         :param _builtins.str security_zone_target_id: The OCID of the target associated with the security zone
@@ -17814,6 +17816,7 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
+        pulumi.set(__self__, "is_inheritance_after_delete_enabled", is_inheritance_after_delete_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "security_zone_recipe_id", security_zone_recipe_id)
         pulumi.set(__self__, "security_zone_target_id", security_zone_target_id)
@@ -17876,6 +17879,14 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         List of inherited compartments
         """
         return pulumi.get(self, "inherited_by_compartments")
+
+    @_builtins.property
+    @pulumi.getter(name="isInheritanceAfterDeleteEnabled")
+    def is_inheritance_after_delete_enabled(self) -> _builtins.bool:
+        """
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        """
+        return pulumi.get(self, "is_inheritance_after_delete_enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

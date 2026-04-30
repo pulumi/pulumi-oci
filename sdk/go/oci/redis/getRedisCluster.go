@@ -58,6 +58,8 @@ type LookupRedisClusterArgs struct {
 
 // A collection of values returned by getRedisCluster.
 type LookupRedisClusterResult struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+	BackupId string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode string `pulumi:"clusterMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -74,6 +76,8 @@ type LookupRedisClusterResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id string `pulumi:"id"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails []GetRedisClusterImportFromObjectStorageDetail `pulumi:"importFromObjectStorageDetails"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The collection of  cluster nodes.
@@ -147,6 +151,11 @@ func (o LookupRedisClusterResultOutput) ToLookupRedisClusterResultOutputWithCont
 	return o
 }
 
+// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+func (o LookupRedisClusterResultOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
 // Specifies whether the cluster is sharded or non-sharded.
 func (o LookupRedisClusterResultOutput) ClusterMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.ClusterMode }).(pulumi.StringOutput)
@@ -185,6 +194,13 @@ func (o LookupRedisClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 func (o LookupRedisClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+func (o LookupRedisClusterResultOutput) ImportFromObjectStorageDetails() GetRedisClusterImportFromObjectStorageDetailArrayOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) []GetRedisClusterImportFromObjectStorageDetail {
+		return v.ImportFromObjectStorageDetails
+	}).(GetRedisClusterImportFromObjectStorageDetailArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.

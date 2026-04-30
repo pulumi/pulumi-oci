@@ -77,9 +77,9 @@ type LookupBatchBatchContextResult struct {
 	Id string `pulumi:"id"`
 	// List of job priority configurations related to the batch context.
 	JobPriorityConfigurations []GetBatchBatchContextJobPriorityConfiguration `pulumi:"jobPriorityConfigurations"`
-	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Logging configuration for batch context.
+	// Logging configuration of the batch context.
 	LoggingConfigurations []GetBatchBatchContextLoggingConfiguration `pulumi:"loggingConfigurations"`
 	// Network configuration of the batch context.
 	Networks []GetBatchBatchContextNetwork `pulumi:"networks"`
@@ -178,12 +178,12 @@ func (o LookupBatchBatchContextResultOutput) JobPriorityConfigurations() GetBatc
 	}).(GetBatchBatchContextJobPriorityConfigurationArrayOutput)
 }
 
-// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o LookupBatchBatchContextResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBatchBatchContextResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Logging configuration for batch context.
+// Logging configuration of the batch context.
 func (o LookupBatchBatchContextResultOutput) LoggingConfigurations() GetBatchBatchContextLoggingConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupBatchBatchContextResult) []GetBatchBatchContextLoggingConfiguration {
 		return v.LoggingConfigurations

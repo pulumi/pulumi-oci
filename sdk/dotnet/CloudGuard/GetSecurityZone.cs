@@ -152,6 +152,10 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<string> InheritedByCompartments;
         /// <summary>
+        /// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        /// </summary>
+        public readonly bool IsInheritanceAfterDeleteEnabled;
+        /// <summary>
         /// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<string> inheritedByCompartments,
 
+            bool isInheritanceAfterDeleteEnabled,
+
             string lifecycleDetails,
 
             string securityZoneId,
@@ -214,6 +220,7 @@ namespace Pulumi.Oci.CloudGuard
             FreeformTags = freeformTags;
             Id = id;
             InheritedByCompartments = inheritedByCompartments;
+            IsInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
             LifecycleDetails = lifecycleDetails;
             SecurityZoneId = securityZoneId;
             SecurityZoneRecipeId = securityZoneRecipeId;

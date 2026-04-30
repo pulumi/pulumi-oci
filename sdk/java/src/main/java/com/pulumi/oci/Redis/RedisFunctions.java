@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheBackupPlainArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
@@ -28,6 +32,8 @@ import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersPlainArgs;
+import com.pulumi.oci.Redis.outputs.GetOciCacheBackupResult;
+import com.pulumi.oci.Redis.outputs.GetOciCacheBackupsResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetsResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheDefaultConfigSetResult;
@@ -42,6 +48,538 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class RedisFunctions {
+    /**
+     * This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets an Oracle Cloud Infrastructure Cache Backup by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupResult> getOciCacheBackup(GetOciCacheBackupArgs args) {
+        return getOciCacheBackup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets an Oracle Cloud Infrastructure Cache Backup by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheBackupResult> getOciCacheBackupPlain(GetOciCacheBackupPlainArgs args) {
+        return getOciCacheBackupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets an Oracle Cloud Infrastructure Cache Backup by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupResult> getOciCacheBackup(GetOciCacheBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheBackup:getOciCacheBackup", TypeShape.of(GetOciCacheBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets an Oracle Cloud Infrastructure Cache Backup by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupResult> getOciCacheBackup(GetOciCacheBackupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheBackup:getOciCacheBackup", TypeShape.of(GetOciCacheBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Backup resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Gets an Oracle Cloud Infrastructure Cache Backup by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackup = RedisFunctions.getOciCacheBackup(GetOciCacheBackupArgs.builder()
+     *             .ociCacheBackupId(testOciCacheBackupOciRedisOciCacheBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheBackupResult> getOciCacheBackupPlain(GetOciCacheBackupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheBackup:getOciCacheBackup", TypeShape.of(GetOciCacheBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupsResult> getOciCacheBackups() {
+        return getOciCacheBackups(GetOciCacheBackupsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheBackupsResult> getOciCacheBackupsPlain() {
+        return getOciCacheBackupsPlain(GetOciCacheBackupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupsResult> getOciCacheBackups(GetOciCacheBackupsArgs args) {
+        return getOciCacheBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheBackupsResult> getOciCacheBackupsPlain(GetOciCacheBackupsPlainArgs args) {
+        return getOciCacheBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupsResult> getOciCacheBackups(GetOciCacheBackupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheBackups:getOciCacheBackups", TypeShape.of(GetOciCacheBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheBackupsResult> getOciCacheBackups(GetOciCacheBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheBackups:getOciCacheBackups", TypeShape.of(GetOciCacheBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Backups in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Returns a list of Oracle Cloud Infrastructure Cache Backups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheBackups = RedisFunctions.getOciCacheBackups(GetOciCacheBackupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheBackupDisplayName)
+     *             .ociCacheBackupId(testOciCacheBackup.id())
+     *             .sourceClusterId(testRedisCluster.id())
+     *             .state(ociCacheBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheBackupsResult> getOciCacheBackupsPlain(GetOciCacheBackupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheBackups:getOciCacheBackups", TypeShape.of(GetOciCacheBackupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
      * 

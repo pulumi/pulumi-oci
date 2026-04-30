@@ -54,12 +54,28 @@ public final class GetBatchBatchContextShapesPlainArgs extends com.pulumi.resour
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The type of a shape.
+     * 
+     */
+    @Import(name="shapeType")
+    private @Nullable String shapeType;
+
+    /**
+     * @return The type of a shape.
+     * 
+     */
+    public Optional<String> shapeType() {
+        return Optional.ofNullable(this.shapeType);
+    }
+
     private GetBatchBatchContextShapesPlainArgs() {}
 
     private GetBatchBatchContextShapesPlainArgs(GetBatchBatchContextShapesPlainArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.shapeType = $.shapeType;
     }
 
     public static Builder builder() {
@@ -109,6 +125,17 @@ public final class GetBatchBatchContextShapesPlainArgs extends com.pulumi.resour
 
         public Builder filters(GetBatchBatchContextShapesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param shapeType The type of a shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeType(@Nullable String shapeType) {
+            $.shapeType = shapeType;
+            return this;
         }
 
         public GetBatchBatchContextShapesPlainArgs build() {

@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBatchBatchContextFleet {
     /**
-     * @return A message that describes the current state of the service manage fleet configuration in more detail.
+     * @return A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     private String details;
@@ -39,14 +39,14 @@ public final class GetBatchBatchContextFleet {
      */
     private String state;
     /**
-     * @return Discriminator for sub-entities.
+     * @return Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     private String type;
 
     private GetBatchBatchContextFleet() {}
     /**
-     * @return A message that describes the current state of the service manage fleet configuration in more detail.
+     * @return A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     public String details() {
@@ -81,7 +81,7 @@ public final class GetBatchBatchContextFleet {
         return this.state;
     }
     /**
-     * @return Discriminator for sub-entities.
+     * @return Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     public String type() {

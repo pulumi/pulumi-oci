@@ -67,10 +67,14 @@ type LookupBatchBatchTaskProfileResult struct {
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`
+	// Extended information for the task profile.
+	ExtendedInformations []GetBatchBatchTaskProfileExtendedInformation `pulumi:"extendedInformations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
 	Id string `pulumi:"id"`
+	// The minimum required size of disk space in GBs.
+	MinDiskSizeInGbs int `pulumi:"minDiskSizeInGbs"`
 	// The minimum required memory.
 	MinMemoryInGbs int `pulumi:"minMemoryInGbs"`
 	// The minimum required OCPUs.
@@ -143,6 +147,13 @@ func (o LookupBatchBatchTaskProfileResultOutput) DisplayName() pulumi.StringOutp
 	return o.ApplyT(func(v LookupBatchBatchTaskProfileResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Extended information for the task profile.
+func (o LookupBatchBatchTaskProfileResultOutput) ExtendedInformations() GetBatchBatchTaskProfileExtendedInformationArrayOutput {
+	return o.ApplyT(func(v LookupBatchBatchTaskProfileResult) []GetBatchBatchTaskProfileExtendedInformation {
+		return v.ExtendedInformations
+	}).(GetBatchBatchTaskProfileExtendedInformationArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupBatchBatchTaskProfileResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupBatchBatchTaskProfileResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -151,6 +162,11 @@ func (o LookupBatchBatchTaskProfileResultOutput) FreeformTags() pulumi.StringMap
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
 func (o LookupBatchBatchTaskProfileResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBatchBatchTaskProfileResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The minimum required size of disk space in GBs.
+func (o LookupBatchBatchTaskProfileResultOutput) MinDiskSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupBatchBatchTaskProfileResult) int { return v.MinDiskSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The minimum required memory.

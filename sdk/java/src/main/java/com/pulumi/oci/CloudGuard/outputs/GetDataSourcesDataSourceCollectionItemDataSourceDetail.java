@@ -36,7 +36,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
      */
     private Integer intervalInMinutes;
     /**
-     * @return Interval in minutes which query is run periodically.
+     * @return Interval in seconds which query is run periodically.
      * 
      */
     private Integer intervalInSeconds;
@@ -51,7 +51,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
      */
     private String loggingQueryType;
     /**
-     * @return Operator used in data source
+     * @return DEPRECATED - Operator used in data source
      * 
      */
     private String operator;
@@ -76,7 +76,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
      */
     private List<GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetail> scheduledQueryScopeDetails;
     /**
-     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * @return DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     private Integer threshold;
@@ -111,7 +111,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
         return this.intervalInMinutes;
     }
     /**
-     * @return Interval in minutes which query is run periodically.
+     * @return Interval in seconds which query is run periodically.
      * 
      */
     public Integer intervalInSeconds() {
@@ -132,7 +132,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
         return this.loggingQueryType;
     }
     /**
-     * @return Operator used in data source
+     * @return DEPRECATED - Operator used in data source
      * 
      */
     public String operator() {
@@ -167,7 +167,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
         return this.scheduledQueryScopeDetails;
     }
     /**
-     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * @return DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Integer threshold() {

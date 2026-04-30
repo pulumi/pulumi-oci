@@ -26,7 +26,7 @@ class GetSecurityZoneResult:
     """
     A collection of values returned by getSecurityZone.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inherited_by_compartments=None, lifecycle_details=None, security_zone_id=None, security_zone_recipe_id=None, security_zone_target_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inherited_by_compartments=None, is_inheritance_after_delete_enabled=None, lifecycle_details=None, security_zone_id=None, security_zone_recipe_id=None, security_zone_target_id=None, state=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +48,9 @@ class GetSecurityZoneResult:
         if inherited_by_compartments and not isinstance(inherited_by_compartments, list):
             raise TypeError("Expected argument 'inherited_by_compartments' to be a list")
         pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
+        if is_inheritance_after_delete_enabled and not isinstance(is_inheritance_after_delete_enabled, bool):
+            raise TypeError("Expected argument 'is_inheritance_after_delete_enabled' to be a bool")
+        pulumi.set(__self__, "is_inheritance_after_delete_enabled", is_inheritance_after_delete_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -127,6 +130,14 @@ class GetSecurityZoneResult:
         return pulumi.get(self, "inherited_by_compartments")
 
     @_builtins.property
+    @pulumi.getter(name="isInheritanceAfterDeleteEnabled")
+    def is_inheritance_after_delete_enabled(self) -> _builtins.bool:
+        """
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+        """
+        return pulumi.get(self, "is_inheritance_after_delete_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -193,6 +204,7 @@ class AwaitableGetSecurityZoneResult(GetSecurityZoneResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             inherited_by_compartments=self.inherited_by_compartments,
+            is_inheritance_after_delete_enabled=self.is_inheritance_after_delete_enabled,
             lifecycle_details=self.lifecycle_details,
             security_zone_id=self.security_zone_id,
             security_zone_recipe_id=self.security_zone_recipe_id,
@@ -234,6 +246,7 @@ def get_security_zone(security_zone_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         inherited_by_compartments=pulumi.get(__ret__, 'inherited_by_compartments'),
+        is_inheritance_after_delete_enabled=pulumi.get(__ret__, 'is_inheritance_after_delete_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         security_zone_id=pulumi.get(__ret__, 'security_zone_id'),
         security_zone_recipe_id=pulumi.get(__ret__, 'security_zone_recipe_id'),
@@ -272,6 +285,7 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[_builtins.s
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         inherited_by_compartments=pulumi.get(__response__, 'inherited_by_compartments'),
+        is_inheritance_after_delete_enabled=pulumi.get(__response__, 'is_inheritance_after_delete_enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         security_zone_id=pulumi.get(__response__, 'security_zone_id'),
         security_zone_recipe_id=pulumi.get(__response__, 'security_zone_recipe_id'),

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.BatchBatchTaskProfileArgs;
 import com.pulumi.oci.oci.inputs.BatchBatchTaskProfileState;
+import com.pulumi.oci.oci.outputs.BatchBatchTaskProfileExtendedInformation;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -34,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.oci.BatchBatchTaskProfile;
  * import com.pulumi.oci.oci.BatchBatchTaskProfileArgs;
+ * import com.pulumi.oci.oci.inputs.BatchBatchTaskProfileExtendedInformationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -49,12 +51,17 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testBatchTaskProfile = new BatchBatchTaskProfile("testBatchTaskProfile", BatchBatchTaskProfileArgs.builder()
  *             .compartmentId(compartmentId)
- *             .minMemoryInGbs(batchTaskProfileMinMemoryInGbs)
- *             .minOcpus(batchTaskProfileMinOcpus)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(batchTaskProfileDescription)
  *             .displayName(batchTaskProfileDisplayName)
+ *             .extendedInformation(BatchBatchTaskProfileExtendedInformationArgs.builder()
+ *                 .type(batchTaskProfileExtendedInformationType)
+ *                 .architecture(batchTaskProfileExtendedInformationArchitecture)
+ *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .minDiskSizeInGbs(batchTaskProfileMinDiskSizeInGbs)
+ *             .minMemoryInGbs(batchTaskProfileMinMemoryInGbs)
+ *             .minOcpus(batchTaskProfileMinOcpus)
  *             .build());
  * 
  *     }
@@ -130,6 +137,20 @@ public class BatchBatchTaskProfile extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * Extended information for the task profile.
+     * 
+     */
+    @Export(name="extendedInformation", refs={BatchBatchTaskProfileExtendedInformation.class}, tree="[0]")
+    private Output<BatchBatchTaskProfileExtendedInformation> extendedInformation;
+
+    /**
+     * @return Extended information for the task profile.
+     * 
+     */
+    public Output<BatchBatchTaskProfileExtendedInformation> extendedInformation() {
+        return this.extendedInformation;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -142,6 +163,20 @@ public class BatchBatchTaskProfile extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * The minimum required size of disk space in GBs.
+     * 
+     */
+    @Export(name="minDiskSizeInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> minDiskSizeInGbs;
+
+    /**
+     * @return The minimum required size of disk space in GBs.
+     * 
+     */
+    public Output<Integer> minDiskSizeInGbs() {
+        return this.minDiskSizeInGbs;
     }
     /**
      * The minimum required memory.

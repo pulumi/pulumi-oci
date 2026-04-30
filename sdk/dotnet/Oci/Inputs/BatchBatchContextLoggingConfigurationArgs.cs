@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class BatchBatchContextLoggingConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
+        /// </summary>
+        [Input("isJobTaskEventsPropagationEnabled")]
+        public Input<bool>? IsJobTaskEventsPropagationEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         /// </summary>
         [Input("logGroupId", required: true)]
@@ -25,7 +31,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string> LogId { get; set; } = null!;
 
         /// <summary>
-        /// Discriminator for sub-entities.
+        /// (Updatable) Type of the logging configuration. Discriminator for sub-entities.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -8,16 +8,23 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class BatchBatchContextFleetShape {
     /**
-     * @return Amount of memory in GBs required by the shape.
+     * @return Amount of disk space in GBs required for the shape.
+     * 
+     */
+    private @Nullable Integer diskSizeInGbs;
+    /**
+     * @return Amount of memory in GBs required for the shape.
      * 
      */
     private Integer memoryInGbs;
     /**
-     * @return Number of OCPUs required by the shape.
+     * @return Number of OCPUs required for the shape.
      * 
      */
     private Integer ocpus;
@@ -25,18 +32,30 @@ public final class BatchBatchContextFleetShape {
      * @return The name of the shape.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
+    /**
+     * @return Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+     * 
+     */
+    private @Nullable String type;
 
     private BatchBatchContextFleetShape() {}
     /**
-     * @return Amount of memory in GBs required by the shape.
+     * @return Amount of disk space in GBs required for the shape.
+     * 
+     */
+    public Optional<Integer> diskSizeInGbs() {
+        return Optional.ofNullable(this.diskSizeInGbs);
+    }
+    /**
+     * @return Amount of memory in GBs required for the shape.
      * 
      */
     public Integer memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return Number of OCPUs required by the shape.
+     * @return Number of OCPUs required for the shape.
      * 
      */
     public Integer ocpus() {
@@ -46,8 +65,15 @@ public final class BatchBatchContextFleetShape {
      * @return The name of the shape.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
+    }
+    /**
+     * @return Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -59,17 +85,27 @@ public final class BatchBatchContextFleetShape {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Integer diskSizeInGbs;
         private Integer memoryInGbs;
         private Integer ocpus;
-        private String shapeName;
+        private @Nullable String shapeName;
+        private @Nullable String type;
         public Builder() {}
         public Builder(BatchBatchContextFleetShape defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.diskSizeInGbs = defaults.diskSizeInGbs;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
     	      this.shapeName = defaults.shapeName;
+    	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder diskSizeInGbs(@Nullable Integer diskSizeInGbs) {
+
+            this.diskSizeInGbs = diskSizeInGbs;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             if (memoryInGbs == null) {
@@ -87,18 +123,24 @@ public final class BatchBatchContextFleetShape {
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            if (shapeName == null) {
-              throw new MissingRequiredPropertyException("BatchBatchContextFleetShape", "shapeName");
-            }
+        public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+
+            this.type = type;
             return this;
         }
         public BatchBatchContextFleetShape build() {
             final var _resultValue = new BatchBatchContextFleetShape();
+            _resultValue.diskSizeInGbs = diskSizeInGbs;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
             _resultValue.shapeName = shapeName;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

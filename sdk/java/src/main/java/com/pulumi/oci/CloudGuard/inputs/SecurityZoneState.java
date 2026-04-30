@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -112,6 +113,21 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    @Import(name="isInheritanceAfterDeleteEnabled")
+    private @Nullable Output<Boolean> isInheritanceAfterDeleteEnabled;
+
+    /**
+     * @return (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    public Optional<Output<Boolean>> isInheritanceAfterDeleteEnabled() {
+        return Optional.ofNullable(this.isInheritanceAfterDeleteEnabled);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
@@ -216,6 +232,7 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.inheritedByCompartments = $.inheritedByCompartments;
+        this.isInheritanceAfterDeleteEnabled = $.isInheritanceAfterDeleteEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.securityZoneRecipeId = $.securityZoneRecipeId;
         this.securityZoneTargetId = $.securityZoneTargetId;
@@ -380,6 +397,27 @@ public final class SecurityZoneState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inheritedByCompartments(String... inheritedByCompartments) {
             return inheritedByCompartments(List.of(inheritedByCompartments));
+        }
+
+        /**
+         * @param isInheritanceAfterDeleteEnabled (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInheritanceAfterDeleteEnabled(@Nullable Output<Boolean> isInheritanceAfterDeleteEnabled) {
+            $.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInheritanceAfterDeleteEnabled (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInheritanceAfterDeleteEnabled(Boolean isInheritanceAfterDeleteEnabled) {
+            return isInheritanceAfterDeleteEnabled(Output.of(isInheritanceAfterDeleteEnabled));
         }
 
         /**

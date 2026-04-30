@@ -81,11 +81,11 @@ export interface GetBatchBatchContextResult {
      */
     readonly jobPriorityConfigurations: outputs.oci.GetBatchBatchContextJobPriorityConfiguration[];
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     readonly lifecycleDetails: string;
     /**
-     * Logging configuration for batch context.
+     * Logging configuration of the batch context.
      */
     readonly loggingConfigurations: outputs.oci.GetBatchBatchContextLoggingConfiguration[];
     /**

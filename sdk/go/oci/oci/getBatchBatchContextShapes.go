@@ -32,6 +32,7 @@ import (
 //			_, err := oci.GetBatchBatchContextShapes(ctx, &oci.GetBatchBatchContextShapesArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(batchContextShapeAvailabilityDomain),
+//				ShapeType:          pulumi.StringRef(batchContextShapeShapeType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetBatchBatchContextShapesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string                             `pulumi:"compartmentId"`
 	Filters       []GetBatchBatchContextShapesFilter `pulumi:"filters"`
+	// The type of a shape.
+	ShapeType *string `pulumi:"shapeType"`
 }
 
 // A collection of values returned by getBatchBatchContextShapes.
@@ -68,7 +71,8 @@ type GetBatchBatchContextShapesResult struct {
 	CompartmentId                string                                                  `pulumi:"compartmentId"`
 	Filters                      []GetBatchBatchContextShapesFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id        string  `pulumi:"id"`
+	ShapeType *string `pulumi:"shapeType"`
 }
 
 func GetBatchBatchContextShapesOutput(ctx *pulumi.Context, args GetBatchBatchContextShapesOutputArgs, opts ...pulumi.InvokeOption) GetBatchBatchContextShapesResultOutput {
@@ -87,6 +91,8 @@ type GetBatchBatchContextShapesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput                         `pulumi:"compartmentId"`
 	Filters       GetBatchBatchContextShapesFilterArrayInput `pulumi:"filters"`
+	// The type of a shape.
+	ShapeType pulumi.StringPtrInput `pulumi:"shapeType"`
 }
 
 func (GetBatchBatchContextShapesOutputArgs) ElementType() reflect.Type {
@@ -130,6 +136,10 @@ func (o GetBatchBatchContextShapesResultOutput) Filters() GetBatchBatchContextSh
 // The provider-assigned unique ID for this managed resource.
 func (o GetBatchBatchContextShapesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBatchBatchContextShapesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchContextShapesResultOutput) ShapeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesResult) *string { return v.ShapeType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

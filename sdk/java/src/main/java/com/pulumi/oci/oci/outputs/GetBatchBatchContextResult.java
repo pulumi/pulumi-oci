@@ -63,12 +63,12 @@ public final class GetBatchBatchContextResult {
      */
     private List<GetBatchBatchContextJobPriorityConfiguration> jobPriorityConfigurations;
     /**
-     * @return A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return Logging configuration for batch context.
+     * @return Logging configuration of the batch context.
      * 
      */
     private List<GetBatchBatchContextLoggingConfiguration> loggingConfigurations;
@@ -166,14 +166,14 @@ public final class GetBatchBatchContextResult {
         return this.jobPriorityConfigurations;
     }
     /**
-     * @return A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return Logging configuration for batch context.
+     * @return Logging configuration of the batch context.
      * 
      */
     public List<GetBatchBatchContextLoggingConfiguration> loggingConfigurations() {

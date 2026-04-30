@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +48,11 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      * 
      */
     private List<String> inheritedByCompartments;
+    /**
+     * @return Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    private Boolean isInheritanceAfterDeleteEnabled;
     /**
      * @return A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
@@ -129,6 +135,13 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
         return this.inheritedByCompartments;
     }
     /**
+     * @return Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    public Boolean isInheritanceAfterDeleteEnabled() {
+        return this.isInheritanceAfterDeleteEnabled;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
@@ -187,6 +200,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private List<String> inheritedByCompartments;
+        private Boolean isInheritanceAfterDeleteEnabled;
         private String lifecycleDetails;
         private String securityZoneRecipeId;
         private String securityZoneTargetId;
@@ -203,6 +217,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inheritedByCompartments = defaults.inheritedByCompartments;
+    	      this.isInheritanceAfterDeleteEnabled = defaults.isInheritanceAfterDeleteEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.securityZoneRecipeId = defaults.securityZoneRecipeId;
     	      this.securityZoneTargetId = defaults.securityZoneTargetId;
@@ -271,6 +286,14 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
             return inheritedByCompartments(List.of(inheritedByCompartments));
         }
         @CustomType.Setter
+        public Builder isInheritanceAfterDeleteEnabled(Boolean isInheritanceAfterDeleteEnabled) {
+            if (isInheritanceAfterDeleteEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSecurityZonesSecurityZoneCollectionItem", "isInheritanceAfterDeleteEnabled");
+            }
+            this.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetSecurityZonesSecurityZoneCollectionItem", "lifecycleDetails");
@@ -327,6 +350,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.inheritedByCompartments = inheritedByCompartments;
+            _resultValue.isInheritanceAfterDeleteEnabled = isInheritanceAfterDeleteEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.securityZoneRecipeId = securityZoneRecipeId;
             _resultValue.securityZoneTargetId = securityZoneTargetId;

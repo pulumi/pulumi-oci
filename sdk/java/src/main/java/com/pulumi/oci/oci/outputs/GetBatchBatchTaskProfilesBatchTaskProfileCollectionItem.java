@@ -5,8 +5,10 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -33,6 +35,11 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
      */
     private String displayName;
     /**
+     * @return Extended information for the task profile.
+     * 
+     */
+    private List<GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation> extendedInformations;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -42,6 +49,11 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return The minimum required size of disk space in GBs.
+     * 
+     */
+    private Integer minDiskSizeInGbs;
     /**
      * @return The minimum required memory.
      * 
@@ -103,6 +115,13 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
         return this.displayName;
     }
     /**
+     * @return Extended information for the task profile.
+     * 
+     */
+    public List<GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation> extendedInformations() {
+        return this.extendedInformations;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -115,6 +134,13 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The minimum required size of disk space in GBs.
+     * 
+     */
+    public Integer minDiskSizeInGbs() {
+        return this.minDiskSizeInGbs;
     }
     /**
      * @return The minimum required memory.
@@ -172,8 +198,10 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private List<GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation> extendedInformations;
         private Map<String,String> freeformTags;
         private String id;
+        private Integer minDiskSizeInGbs;
         private Integer minMemoryInGbs;
         private Integer minOcpus;
         private String state;
@@ -187,8 +215,10 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.extendedInformations = defaults.extendedInformations;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.minDiskSizeInGbs = defaults.minDiskSizeInGbs;
     	      this.minMemoryInGbs = defaults.minMemoryInGbs;
     	      this.minOcpus = defaults.minOcpus;
     	      this.state = defaults.state;
@@ -230,6 +260,17 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder extendedInformations(List<GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation> extendedInformations) {
+            if (extendedInformations == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem", "extendedInformations");
+            }
+            this.extendedInformations = extendedInformations;
+            return this;
+        }
+        public Builder extendedInformations(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemExtendedInformation... extendedInformations) {
+            return extendedInformations(List.of(extendedInformations));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem", "freeformTags");
@@ -243,6 +284,14 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
               throw new MissingRequiredPropertyException("GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder minDiskSizeInGbs(Integer minDiskSizeInGbs) {
+            if (minDiskSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem", "minDiskSizeInGbs");
+            }
+            this.minDiskSizeInGbs = minDiskSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -299,8 +348,10 @@ public final class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.extendedInformations = extendedInformations;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.minDiskSizeInGbs = minDiskSizeInGbs;
             _resultValue.minMemoryInGbs = minMemoryInGbs;
             _resultValue.minOcpus = minOcpus;
             _resultValue.state = state;

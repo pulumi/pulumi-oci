@@ -3595,6 +3595,7 @@ public final class OciFunctions {
      *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .shapeType(batchContextShapeShapeType)
      *             .build());
      * 
      *     }
@@ -3638,6 +3639,7 @@ public final class OciFunctions {
      *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .shapeType(batchContextShapeShapeType)
      *             .build());
      * 
      *     }
@@ -3681,6 +3683,7 @@ public final class OciFunctions {
      *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .shapeType(batchContextShapeShapeType)
      *             .build());
      * 
      *     }
@@ -3724,6 +3727,7 @@ public final class OciFunctions {
      *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .shapeType(batchContextShapeShapeType)
      *             .build());
      * 
      *     }
@@ -3767,6 +3771,7 @@ public final class OciFunctions {
      *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .shapeType(batchContextShapeShapeType)
      *             .build());
      * 
      *     }

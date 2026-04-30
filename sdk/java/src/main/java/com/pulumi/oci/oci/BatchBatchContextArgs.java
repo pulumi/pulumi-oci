@@ -143,14 +143,14 @@ public final class BatchBatchContextArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      * 
      */
     @Import(name="loggingConfiguration")
     private @Nullable Output<BatchBatchContextLoggingConfigurationArgs> loggingConfiguration;
 
     /**
-     * @return Logging configuration for batch context.
+     * @return (Updatable) Logging configuration of the batch context.
      * 
      */
     public Optional<Output<BatchBatchContextLoggingConfigurationArgs>> loggingConfiguration() {
@@ -416,7 +416,7 @@ public final class BatchBatchContextArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param loggingConfiguration Logging configuration for batch context.
+         * @param loggingConfiguration (Updatable) Logging configuration of the batch context.
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class BatchBatchContextArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param loggingConfiguration Logging configuration for batch context.
+         * @param loggingConfiguration (Updatable) Logging configuration of the batch context.
          * 
          * @return builder
          * 

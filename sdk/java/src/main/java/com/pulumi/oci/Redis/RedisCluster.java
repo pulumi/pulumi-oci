@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Redis.RedisClusterArgs;
 import com.pulumi.oci.Redis.inputs.RedisClusterState;
+import com.pulumi.oci.Redis.outputs.RedisClusterImportFromObjectStorageDetails;
 import com.pulumi.oci.Redis.outputs.RedisClusterNodeCollection;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
@@ -24,7 +25,9 @@ import javax.annotation.Nullable;
  * 
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
  * 
- * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+ * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+ * You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+ * For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  * 
  * ## Example Usage
  * 
@@ -37,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Redis.RedisCluster;
  * import com.pulumi.oci.Redis.RedisClusterArgs;
+ * import com.pulumi.oci.Redis.inputs.RedisClusterImportFromObjectStorageDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -57,9 +61,17 @@ import javax.annotation.Nullable;
  *             .nodeMemoryInGbs(redisClusterNodeMemoryInGbs)
  *             .softwareVersion(redisClusterSoftwareVersion)
  *             .subnetId(testSubnet.id())
+ *             .backupId(testBackup.id())
  *             .clusterMode(redisClusterClusterMode)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .importFromObjectStorageDetails(RedisClusterImportFromObjectStorageDetailsArgs.builder()
+ *                 .bucket(redisClusterImportFromObjectStorageDetailsBucket)
+ *                 .namespace(redisClusterImportFromObjectStorageDetailsNamespace)
+ *                 .objects(RedisClusterImportFromObjectStorageDetailsObjectArgs.builder()
+ *                     .object(redisClusterImportFromObjectStorageDetailsObjectsObject)
+ *                     .build())
+ *                 .build())
  *             .nsgIds(redisClusterNsgIds)
  *             .ociCacheConfigSetId(testOciCacheConfigSet.id())
  *             .securityAttributes(redisClusterSecurityAttributes)
@@ -82,6 +94,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Redis/redisCluster:RedisCluster")
 public class RedisCluster extends com.pulumi.resources.CustomResource {
+    /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+     * 
+     */
+    @Export(name="backupId", refs={String.class}, tree="[0]")
+    private Output<String> backupId;
+
+    /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+     * 
+     */
+    public Output<String> backupId() {
+        return this.backupId;
+    }
     /**
      * Specifies whether the cluster is sharded or non-sharded.
      * 
@@ -179,6 +205,20 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    @Export(name="importFromObjectStorageDetails", refs={RedisClusterImportFromObjectStorageDetails.class}, tree="[0]")
+    private Output<RedisClusterImportFromObjectStorageDetails> importFromObjectStorageDetails;
+
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    public Output<RedisClusterImportFromObjectStorageDetails> importFromObjectStorageDetails() {
+        return this.importFromObjectStorageDetails;
     }
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.

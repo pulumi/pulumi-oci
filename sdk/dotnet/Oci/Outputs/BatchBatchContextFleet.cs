@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class BatchBatchContextFleet
     {
         /// <summary>
-        /// A message that describes the current state of the service manage fleet configuration in more detail.
+        /// A message that describes the current state of the service managed fleet configuration in more detail.
         /// </summary>
         public readonly string? Details;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Shape of the fleet. Describes hardware resources of each node in the fleet.
+        /// Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         /// </summary>
         public readonly Outputs.BatchBatchContextFleetShape Shape;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// Type of the fleet. Also serves as a discriminator for sub-entities.
+        /// Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
         /// </summary>
         public readonly string Type;
 

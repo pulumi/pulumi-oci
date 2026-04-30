@@ -72,6 +72,8 @@ type LookupSecurityZoneResult struct {
 	Id string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
+	// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled bool `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	SecurityZoneId   string `pulumi:"securityZoneId"`
@@ -154,6 +156,11 @@ func (o LookupSecurityZoneResultOutput) Id() pulumi.StringOutput {
 // List of inherited compartments
 func (o LookupSecurityZoneResultOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) []string { return v.InheritedByCompartments }).(pulumi.StringArrayOutput)
+}
+
+// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+func (o LookupSecurityZoneResultOutput) IsInheritanceAfterDeleteEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSecurityZoneResult) bool { return v.IsInheritanceAfterDeleteEnabled }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.

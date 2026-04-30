@@ -28,7 +28,9 @@ import * as utilities from "../utilities";
  *         shape: {
  *             memoryInGbs: batchContextFleetsShapeMemoryInGbs,
  *             ocpus: batchContextFleetsShapeOcpus,
- *             shapeName: testShape.name,
+ *             shapeName: testBatchContextShapes.batchContextShapeCollection[0].items[0].name,
+ *             type: batchContextFleetsShapeType,
+ *             diskSizeInGbs: batchContextFleetsShapeDiskSizeInGbs,
  *         },
  *         type: batchContextFleetsType,
  *     }],
@@ -55,6 +57,7 @@ import * as utilities from "../utilities";
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *         type: batchContextLoggingConfigurationType,
+ *         isJobTaskEventsPropagationEnabled: batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled,
  *     },
  * });
  * ```
@@ -128,11 +131,11 @@ export class BatchBatchContext extends pulumi.CustomResource {
      */
     declare public readonly jobPriorityConfigurations: pulumi.Output<outputs.oci.BatchBatchContextJobPriorityConfiguration[]>;
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      */
     declare public readonly loggingConfiguration: pulumi.Output<outputs.oci.BatchBatchContextLoggingConfiguration>;
     /**
@@ -257,11 +260,11 @@ export interface BatchBatchContextState {
      */
     jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[]>;
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      */
     loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration>;
     /**
@@ -327,7 +330,7 @@ export interface BatchBatchContextArgs {
      */
     jobPriorityConfigurations?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextJobPriorityConfiguration>[]>;
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      */
     loggingConfiguration?: pulumi.Input<inputs.oci.BatchBatchContextLoggingConfiguration>;
     /**

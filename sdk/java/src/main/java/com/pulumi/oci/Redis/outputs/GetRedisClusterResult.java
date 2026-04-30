@@ -5,6 +5,7 @@ package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Redis.outputs.GetRedisClusterImportFromObjectStorageDetail;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterNodeCollection;
 import java.lang.Double;
 import java.lang.Integer;
@@ -15,6 +16,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRedisClusterResult {
+    /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+     * 
+     */
+    private String backupId;
     /**
      * @return Specifies whether the cluster is sharded or non-sharded.
      * 
@@ -55,6 +61,11 @@ public final class GetRedisClusterResult {
      * 
      */
     private String id;
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    private List<GetRedisClusterImportFromObjectStorageDetail> importFromObjectStorageDetails;
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
@@ -149,6 +160,13 @@ public final class GetRedisClusterResult {
 
     private GetRedisClusterResult() {}
     /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+     * 
+     */
+    public String backupId() {
+        return this.backupId;
+    }
+    /**
      * @return Specifies whether the cluster is sharded or non-sharded.
      * 
      */
@@ -203,6 +221,13 @@ public final class GetRedisClusterResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    public List<GetRedisClusterImportFromObjectStorageDetail> importFromObjectStorageDetails() {
+        return this.importFromObjectStorageDetails;
     }
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -343,6 +368,7 @@ public final class GetRedisClusterResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupId;
         private String clusterMode;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -351,6 +377,7 @@ public final class GetRedisClusterResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetRedisClusterImportFromObjectStorageDetail> importFromObjectStorageDetails;
         private String lifecycleDetails;
         private List<GetRedisClusterNodeCollection> nodeCollections;
         private Integer nodeCount;
@@ -373,6 +400,7 @@ public final class GetRedisClusterResult {
         public Builder() {}
         public Builder(GetRedisClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupId = defaults.backupId;
     	      this.clusterMode = defaults.clusterMode;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -381,6 +409,7 @@ public final class GetRedisClusterResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.importFromObjectStorageDetails = defaults.importFromObjectStorageDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.nodeCollections = defaults.nodeCollections;
     	      this.nodeCount = defaults.nodeCount;
@@ -402,6 +431,14 @@ public final class GetRedisClusterResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder backupId(String backupId) {
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "backupId");
+            }
+            this.backupId = backupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder clusterMode(String clusterMode) {
             if (clusterMode == null) {
@@ -465,6 +502,17 @@ public final class GetRedisClusterResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder importFromObjectStorageDetails(List<GetRedisClusterImportFromObjectStorageDetail> importFromObjectStorageDetails) {
+            if (importFromObjectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "importFromObjectStorageDetails");
+            }
+            this.importFromObjectStorageDetails = importFromObjectStorageDetails;
+            return this;
+        }
+        public Builder importFromObjectStorageDetails(GetRedisClusterImportFromObjectStorageDetail... importFromObjectStorageDetails) {
+            return importFromObjectStorageDetails(List.of(importFromObjectStorageDetails));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -626,6 +674,7 @@ public final class GetRedisClusterResult {
         }
         public GetRedisClusterResult build() {
             final var _resultValue = new GetRedisClusterResult();
+            _resultValue.backupId = backupId;
             _resultValue.clusterMode = clusterMode;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
@@ -634,6 +683,7 @@ public final class GetRedisClusterResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.importFromObjectStorageDetails = importFromObjectStorageDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.nodeCollections = nodeCollections;
             _resultValue.nodeCount = nodeCount;

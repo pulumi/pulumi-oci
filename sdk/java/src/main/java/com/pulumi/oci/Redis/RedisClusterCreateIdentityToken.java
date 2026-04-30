@@ -51,8 +51,6 @@ import javax.annotation.Nullable;
  *             .publicKey(redisClusterCreateIdentityTokenPublicKey)
  *             .redisClusterId(testRedisCluster.id())
  *             .redisUser(redisClusterCreateIdentityTokenRedisUser)
- *             .definedTags(redisClusterCreateIdentityTokenDefinedTags)
- *             .freeformTags(redisClusterCreateIdentityTokenFreeformTags)
  *             .build());
  * 
  *     }
@@ -67,31 +65,15 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken")
 public class RedisClusterCreateIdentityToken extends com.pulumi.resources.CustomResource {
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> definedTags;
 
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     public Output<Optional<Map<String,String>>> definedTags() {
         return Codegen.optional(this.definedTags);
     }
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output</* @Nullable */ Map<String,String>> freeformTags;
 
-    /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-     * 
-     */
     public Output<Optional<Map<String,String>>> freeformTags() {
         return Codegen.optional(this.freeformTags);
     }

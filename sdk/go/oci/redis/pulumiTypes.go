@@ -705,6 +705,280 @@ func (o RedisClusterGetOciCacheUserOciCacheUserArrayOutput) Index(i pulumi.IntIn
 	}).(RedisClusterGetOciCacheUserOciCacheUserOutput)
 }
 
+type RedisClusterImportFromObjectStorageDetails struct {
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects []RedisClusterImportFromObjectStorageDetailsObject `pulumi:"objects"`
+}
+
+// RedisClusterImportFromObjectStorageDetailsInput is an input type that accepts RedisClusterImportFromObjectStorageDetailsArgs and RedisClusterImportFromObjectStorageDetailsOutput values.
+// You can construct a concrete instance of `RedisClusterImportFromObjectStorageDetailsInput` via:
+//
+//	RedisClusterImportFromObjectStorageDetailsArgs{...}
+type RedisClusterImportFromObjectStorageDetailsInput interface {
+	pulumi.Input
+
+	ToRedisClusterImportFromObjectStorageDetailsOutput() RedisClusterImportFromObjectStorageDetailsOutput
+	ToRedisClusterImportFromObjectStorageDetailsOutputWithContext(context.Context) RedisClusterImportFromObjectStorageDetailsOutput
+}
+
+type RedisClusterImportFromObjectStorageDetailsArgs struct {
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects RedisClusterImportFromObjectStorageDetailsObjectArrayInput `pulumi:"objects"`
+}
+
+func (RedisClusterImportFromObjectStorageDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterImportFromObjectStorageDetails)(nil)).Elem()
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsArgs) ToRedisClusterImportFromObjectStorageDetailsOutput() RedisClusterImportFromObjectStorageDetailsOutput {
+	return i.ToRedisClusterImportFromObjectStorageDetailsOutputWithContext(context.Background())
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsArgs) ToRedisClusterImportFromObjectStorageDetailsOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterImportFromObjectStorageDetailsOutput)
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsArgs) ToRedisClusterImportFromObjectStorageDetailsPtrOutput() RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return i.ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsArgs) ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterImportFromObjectStorageDetailsOutput).ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(ctx)
+}
+
+// RedisClusterImportFromObjectStorageDetailsPtrInput is an input type that accepts RedisClusterImportFromObjectStorageDetailsArgs, RedisClusterImportFromObjectStorageDetailsPtr and RedisClusterImportFromObjectStorageDetailsPtrOutput values.
+// You can construct a concrete instance of `RedisClusterImportFromObjectStorageDetailsPtrInput` via:
+//
+//	        RedisClusterImportFromObjectStorageDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RedisClusterImportFromObjectStorageDetailsPtrInput interface {
+	pulumi.Input
+
+	ToRedisClusterImportFromObjectStorageDetailsPtrOutput() RedisClusterImportFromObjectStorageDetailsPtrOutput
+	ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(context.Context) RedisClusterImportFromObjectStorageDetailsPtrOutput
+}
+
+type redisClusterImportFromObjectStorageDetailsPtrType RedisClusterImportFromObjectStorageDetailsArgs
+
+func RedisClusterImportFromObjectStorageDetailsPtr(v *RedisClusterImportFromObjectStorageDetailsArgs) RedisClusterImportFromObjectStorageDetailsPtrInput {
+	return (*redisClusterImportFromObjectStorageDetailsPtrType)(v)
+}
+
+func (*redisClusterImportFromObjectStorageDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RedisClusterImportFromObjectStorageDetails)(nil)).Elem()
+}
+
+func (i *redisClusterImportFromObjectStorageDetailsPtrType) ToRedisClusterImportFromObjectStorageDetailsPtrOutput() RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return i.ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *redisClusterImportFromObjectStorageDetailsPtrType) ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterImportFromObjectStorageDetailsPtrOutput)
+}
+
+type RedisClusterImportFromObjectStorageDetailsOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterImportFromObjectStorageDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterImportFromObjectStorageDetails)(nil)).Elem()
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsOutput) ToRedisClusterImportFromObjectStorageDetailsOutput() RedisClusterImportFromObjectStorageDetailsOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsOutput) ToRedisClusterImportFromObjectStorageDetailsOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsOutput) ToRedisClusterImportFromObjectStorageDetailsPtrOutput() RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return o.ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsOutput) ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RedisClusterImportFromObjectStorageDetails) *RedisClusterImportFromObjectStorageDetails {
+		return &v
+	}).(RedisClusterImportFromObjectStorageDetailsPtrOutput)
+}
+
+// The Object Storage bucket name.
+func (o RedisClusterImportFromObjectStorageDetailsOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v RedisClusterImportFromObjectStorageDetails) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace name.
+func (o RedisClusterImportFromObjectStorageDetailsOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v RedisClusterImportFromObjectStorageDetails) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The list of objects to import from the specified bucket.
+func (o RedisClusterImportFromObjectStorageDetailsOutput) Objects() RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return o.ApplyT(func(v RedisClusterImportFromObjectStorageDetails) []RedisClusterImportFromObjectStorageDetailsObject {
+		return v.Objects
+	}).(RedisClusterImportFromObjectStorageDetailsObjectArrayOutput)
+}
+
+type RedisClusterImportFromObjectStorageDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterImportFromObjectStorageDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RedisClusterImportFromObjectStorageDetails)(nil)).Elem()
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) ToRedisClusterImportFromObjectStorageDetailsPtrOutput() RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) ToRedisClusterImportFromObjectStorageDetailsPtrOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsPtrOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) Elem() RedisClusterImportFromObjectStorageDetailsOutput {
+	return o.ApplyT(func(v *RedisClusterImportFromObjectStorageDetails) RedisClusterImportFromObjectStorageDetails {
+		if v != nil {
+			return *v
+		}
+		var ret RedisClusterImportFromObjectStorageDetails
+		return ret
+	}).(RedisClusterImportFromObjectStorageDetailsOutput)
+}
+
+// The Object Storage bucket name.
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisClusterImportFromObjectStorageDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Object Storage namespace name.
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RedisClusterImportFromObjectStorageDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The list of objects to import from the specified bucket.
+func (o RedisClusterImportFromObjectStorageDetailsPtrOutput) Objects() RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return o.ApplyT(func(v *RedisClusterImportFromObjectStorageDetails) []RedisClusterImportFromObjectStorageDetailsObject {
+		if v == nil {
+			return nil
+		}
+		return v.Objects
+	}).(RedisClusterImportFromObjectStorageDetailsObjectArrayOutput)
+}
+
+type RedisClusterImportFromObjectStorageDetailsObject struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object string `pulumi:"object"`
+}
+
+// RedisClusterImportFromObjectStorageDetailsObjectInput is an input type that accepts RedisClusterImportFromObjectStorageDetailsObjectArgs and RedisClusterImportFromObjectStorageDetailsObjectOutput values.
+// You can construct a concrete instance of `RedisClusterImportFromObjectStorageDetailsObjectInput` via:
+//
+//	RedisClusterImportFromObjectStorageDetailsObjectArgs{...}
+type RedisClusterImportFromObjectStorageDetailsObjectInput interface {
+	pulumi.Input
+
+	ToRedisClusterImportFromObjectStorageDetailsObjectOutput() RedisClusterImportFromObjectStorageDetailsObjectOutput
+	ToRedisClusterImportFromObjectStorageDetailsObjectOutputWithContext(context.Context) RedisClusterImportFromObjectStorageDetailsObjectOutput
+}
+
+type RedisClusterImportFromObjectStorageDetailsObjectArgs struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (RedisClusterImportFromObjectStorageDetailsObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsObject)(nil)).Elem()
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsObjectArgs) ToRedisClusterImportFromObjectStorageDetailsObjectOutput() RedisClusterImportFromObjectStorageDetailsObjectOutput {
+	return i.ToRedisClusterImportFromObjectStorageDetailsObjectOutputWithContext(context.Background())
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsObjectArgs) ToRedisClusterImportFromObjectStorageDetailsObjectOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterImportFromObjectStorageDetailsObjectOutput)
+}
+
+// RedisClusterImportFromObjectStorageDetailsObjectArrayInput is an input type that accepts RedisClusterImportFromObjectStorageDetailsObjectArray and RedisClusterImportFromObjectStorageDetailsObjectArrayOutput values.
+// You can construct a concrete instance of `RedisClusterImportFromObjectStorageDetailsObjectArrayInput` via:
+//
+//	RedisClusterImportFromObjectStorageDetailsObjectArray{ RedisClusterImportFromObjectStorageDetailsObjectArgs{...} }
+type RedisClusterImportFromObjectStorageDetailsObjectArrayInput interface {
+	pulumi.Input
+
+	ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutput() RedisClusterImportFromObjectStorageDetailsObjectArrayOutput
+	ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutputWithContext(context.Context) RedisClusterImportFromObjectStorageDetailsObjectArrayOutput
+}
+
+type RedisClusterImportFromObjectStorageDetailsObjectArray []RedisClusterImportFromObjectStorageDetailsObjectInput
+
+func (RedisClusterImportFromObjectStorageDetailsObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterImportFromObjectStorageDetailsObject)(nil)).Elem()
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsObjectArray) ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutput() RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return i.ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutputWithContext(context.Background())
+}
+
+func (i RedisClusterImportFromObjectStorageDetailsObjectArray) ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterImportFromObjectStorageDetailsObjectArrayOutput)
+}
+
+type RedisClusterImportFromObjectStorageDetailsObjectOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterImportFromObjectStorageDetailsObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsObject)(nil)).Elem()
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsObjectOutput) ToRedisClusterImportFromObjectStorageDetailsObjectOutput() RedisClusterImportFromObjectStorageDetailsObjectOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsObjectOutput) ToRedisClusterImportFromObjectStorageDetailsObjectOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsObjectOutput {
+	return o
+}
+
+// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+func (o RedisClusterImportFromObjectStorageDetailsObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v RedisClusterImportFromObjectStorageDetailsObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type RedisClusterImportFromObjectStorageDetailsObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterImportFromObjectStorageDetailsObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterImportFromObjectStorageDetailsObject)(nil)).Elem()
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsObjectArrayOutput) ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutput() RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsObjectArrayOutput) ToRedisClusterImportFromObjectStorageDetailsObjectArrayOutputWithContext(ctx context.Context) RedisClusterImportFromObjectStorageDetailsObjectArrayOutput {
+	return o
+}
+
+func (o RedisClusterImportFromObjectStorageDetailsObjectArrayOutput) Index(i pulumi.IntInput) RedisClusterImportFromObjectStorageDetailsObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterImportFromObjectStorageDetailsObject {
+		return vs[0].([]RedisClusterImportFromObjectStorageDetailsObject)[vs[1].(int)]
+	}).(RedisClusterImportFromObjectStorageDetailsObjectOutput)
+}
+
 type RedisClusterNodeCollection struct {
 	// Collection of node objects.
 	Items []RedisClusterNodeCollectionItem `pulumi:"items"`
@@ -915,6 +1189,473 @@ func (o RedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) Redi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterNodeCollectionItem {
 		return vs[0].([]RedisClusterNodeCollectionItem)[vs[1].(int)]
 	}).(RedisClusterNodeCollectionItemOutput)
+}
+
+type GetOciCacheBackupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOciCacheBackupsFilterInput is an input type that accepts GetOciCacheBackupsFilterArgs and GetOciCacheBackupsFilterOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsFilterInput` via:
+//
+//	GetOciCacheBackupsFilterArgs{...}
+type GetOciCacheBackupsFilterInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsFilterOutput() GetOciCacheBackupsFilterOutput
+	ToGetOciCacheBackupsFilterOutputWithContext(context.Context) GetOciCacheBackupsFilterOutput
+}
+
+type GetOciCacheBackupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOciCacheBackupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsFilterArgs) ToGetOciCacheBackupsFilterOutput() GetOciCacheBackupsFilterOutput {
+	return i.ToGetOciCacheBackupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsFilterArgs) ToGetOciCacheBackupsFilterOutputWithContext(ctx context.Context) GetOciCacheBackupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsFilterOutput)
+}
+
+// GetOciCacheBackupsFilterArrayInput is an input type that accepts GetOciCacheBackupsFilterArray and GetOciCacheBackupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsFilterArrayInput` via:
+//
+//	GetOciCacheBackupsFilterArray{ GetOciCacheBackupsFilterArgs{...} }
+type GetOciCacheBackupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsFilterArrayOutput() GetOciCacheBackupsFilterArrayOutput
+	ToGetOciCacheBackupsFilterArrayOutputWithContext(context.Context) GetOciCacheBackupsFilterArrayOutput
+}
+
+type GetOciCacheBackupsFilterArray []GetOciCacheBackupsFilterInput
+
+func (GetOciCacheBackupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsFilterArray) ToGetOciCacheBackupsFilterArrayOutput() GetOciCacheBackupsFilterArrayOutput {
+	return i.ToGetOciCacheBackupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsFilterArray) ToGetOciCacheBackupsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsFilterArrayOutput)
+}
+
+type GetOciCacheBackupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsFilterOutput) ToGetOciCacheBackupsFilterOutput() GetOciCacheBackupsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsFilterOutput) ToGetOciCacheBackupsFilterOutputWithContext(ctx context.Context) GetOciCacheBackupsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheBackupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOciCacheBackupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheBackupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsFilterArrayOutput) ToGetOciCacheBackupsFilterArrayOutput() GetOciCacheBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsFilterArrayOutput) ToGetOciCacheBackupsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetOciCacheBackupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheBackupsFilter {
+		return vs[0].([]GetOciCacheBackupsFilter)[vs[1].(int)]
+	}).(GetOciCacheBackupsFilterOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollection struct {
+	Items []GetOciCacheBackupsOciCacheBackupCollectionItem `pulumi:"items"`
+}
+
+// GetOciCacheBackupsOciCacheBackupCollectionInput is an input type that accepts GetOciCacheBackupsOciCacheBackupCollectionArgs and GetOciCacheBackupsOciCacheBackupCollectionOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsOciCacheBackupCollectionInput` via:
+//
+//	GetOciCacheBackupsOciCacheBackupCollectionArgs{...}
+type GetOciCacheBackupsOciCacheBackupCollectionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsOciCacheBackupCollectionOutput() GetOciCacheBackupsOciCacheBackupCollectionOutput
+	ToGetOciCacheBackupsOciCacheBackupCollectionOutputWithContext(context.Context) GetOciCacheBackupsOciCacheBackupCollectionOutput
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionArgs struct {
+	Items GetOciCacheBackupsOciCacheBackupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheBackupsOciCacheBackupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionArgs) ToGetOciCacheBackupsOciCacheBackupCollectionOutput() GetOciCacheBackupsOciCacheBackupCollectionOutput {
+	return i.ToGetOciCacheBackupsOciCacheBackupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionArgs) ToGetOciCacheBackupsOciCacheBackupCollectionOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsOciCacheBackupCollectionOutput)
+}
+
+// GetOciCacheBackupsOciCacheBackupCollectionArrayInput is an input type that accepts GetOciCacheBackupsOciCacheBackupCollectionArray and GetOciCacheBackupsOciCacheBackupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsOciCacheBackupCollectionArrayInput` via:
+//
+//	GetOciCacheBackupsOciCacheBackupCollectionArray{ GetOciCacheBackupsOciCacheBackupCollectionArgs{...} }
+type GetOciCacheBackupsOciCacheBackupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionArrayOutput
+	ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutputWithContext(context.Context) GetOciCacheBackupsOciCacheBackupCollectionArrayOutput
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionArray []GetOciCacheBackupsOciCacheBackupCollectionInput
+
+func (GetOciCacheBackupsOciCacheBackupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsOciCacheBackupCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionArray) ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionArrayOutput {
+	return i.ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionArray) ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsOciCacheBackupCollectionArrayOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsOciCacheBackupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionOutput) ToGetOciCacheBackupsOciCacheBackupCollectionOutput() GetOciCacheBackupsOciCacheBackupCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionOutput) ToGetOciCacheBackupsOciCacheBackupCollectionOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionOutput) Items() GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollection) []GetOciCacheBackupsOciCacheBackupCollectionItem {
+		return v.Items
+	}).(GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsOciCacheBackupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsOciCacheBackupCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionArrayOutput) ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionArrayOutput) ToGetOciCacheBackupsOciCacheBackupCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionArrayOutput) Index(i pulumi.IntInput) GetOciCacheBackupsOciCacheBackupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheBackupsOciCacheBackupCollection {
+		return vs[0].([]GetOciCacheBackupsOciCacheBackupCollection)[vs[1].(int)]
+	}).(GetOciCacheBackupsOciCacheBackupCollectionOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionItem struct {
+	// Backup size in GB.
+	BackupSizeInGbs float64 `pulumi:"backupSizeInGbs"`
+	// Specifies whether the backup was created from a replica or primary node
+	BackupSource string `pulumi:"backupSource"`
+	// Backup Type.
+	BackupType string `pulumi:"backupType"`
+	// The amount of memory allocated to the cluster, in gigabytes.
+	ClusterMemoryInGbs float64 `pulumi:"clusterMemoryInGbs"`
+	// Specifies whether the cluster is sharded or non-sharded.
+	ClusterMode string `pulumi:"clusterMode"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Backup description
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                  string `pulumi:"displayName"`
+	ExportToObjectStorageTrigger int    `pulumi:"exportToObjectStorageTrigger"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id string `pulumi:"id"`
+	// Backup retention period in days.
+	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+	ShardCount int `pulumi:"shardCount"`
+	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	SoftwareVersion string `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
+	SourceClusterId string `pulumi:"sourceClusterId"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOciCacheBackupsOciCacheBackupCollectionItemInput is an input type that accepts GetOciCacheBackupsOciCacheBackupCollectionItemArgs and GetOciCacheBackupsOciCacheBackupCollectionItemOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsOciCacheBackupCollectionItemInput` via:
+//
+//	GetOciCacheBackupsOciCacheBackupCollectionItemArgs{...}
+type GetOciCacheBackupsOciCacheBackupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsOciCacheBackupCollectionItemOutput() GetOciCacheBackupsOciCacheBackupCollectionItemOutput
+	ToGetOciCacheBackupsOciCacheBackupCollectionItemOutputWithContext(context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemOutput
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionItemArgs struct {
+	// Backup size in GB.
+	BackupSizeInGbs pulumi.Float64Input `pulumi:"backupSizeInGbs"`
+	// Specifies whether the backup was created from a replica or primary node
+	BackupSource pulumi.StringInput `pulumi:"backupSource"`
+	// Backup Type.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// The amount of memory allocated to the cluster, in gigabytes.
+	ClusterMemoryInGbs pulumi.Float64Input `pulumi:"clusterMemoryInGbs"`
+	// Specifies whether the cluster is sharded or non-sharded.
+	ClusterMode pulumi.StringInput `pulumi:"clusterMode"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Backup description
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName                  pulumi.StringInput `pulumi:"displayName"`
+	ExportToObjectStorageTrigger pulumi.IntInput    `pulumi:"exportToObjectStorageTrigger"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id pulumi.StringInput `pulumi:"id"`
+	// Backup retention period in days.
+	RetentionPeriodInDays pulumi.IntInput `pulumi:"retentionPeriodInDays"`
+	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+	ShardCount pulumi.IntInput `pulumi:"shardCount"`
+	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
+	SourceClusterId pulumi.StringInput `pulumi:"sourceClusterId"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOciCacheBackupsOciCacheBackupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionItemArgs) ToGetOciCacheBackupsOciCacheBackupCollectionItemOutput() GetOciCacheBackupsOciCacheBackupCollectionItemOutput {
+	return i.ToGetOciCacheBackupsOciCacheBackupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionItemArgs) ToGetOciCacheBackupsOciCacheBackupCollectionItemOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsOciCacheBackupCollectionItemOutput)
+}
+
+// GetOciCacheBackupsOciCacheBackupCollectionItemArrayInput is an input type that accepts GetOciCacheBackupsOciCacheBackupCollectionItemArray and GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheBackupsOciCacheBackupCollectionItemArrayInput` via:
+//
+//	GetOciCacheBackupsOciCacheBackupCollectionItemArray{ GetOciCacheBackupsOciCacheBackupCollectionItemArgs{...} }
+type GetOciCacheBackupsOciCacheBackupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput
+	ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutputWithContext(context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionItemArray []GetOciCacheBackupsOciCacheBackupCollectionItemInput
+
+func (GetOciCacheBackupsOciCacheBackupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsOciCacheBackupCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionItemArray) ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput {
+	return i.ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheBackupsOciCacheBackupCollectionItemArray) ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ToGetOciCacheBackupsOciCacheBackupCollectionItemOutput() GetOciCacheBackupsOciCacheBackupCollectionItemOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ToGetOciCacheBackupsOciCacheBackupCollectionItemOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemOutput {
+	return o
+}
+
+// Backup size in GB.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) BackupSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) float64 { return v.BackupSizeInGbs }).(pulumi.Float64Output)
+}
+
+// Specifies whether the backup was created from a replica or primary node
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) BackupSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.BackupSource }).(pulumi.StringOutput)
+}
+
+// Backup Type.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// The amount of memory allocated to the cluster, in gigabytes.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ClusterMemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) float64 { return v.ClusterMemoryInGbs }).(pulumi.Float64Output)
+}
+
+// Specifies whether the cluster is sharded or non-sharded.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ClusterMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.ClusterMode }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Backup description
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ExportToObjectStorageTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) int { return v.ExportToObjectStorageTrigger }).(pulumi.IntOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Unique identifier that is immutable on creation
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Backup retention period in days.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) ShardCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) int { return v.ShardCount }).(pulumi.IntOutput)
+}
+
+// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) SoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.SoftwareVersion }).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) SourceClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.SourceClusterId }).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheBackupsOciCacheBackupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheBackupsOciCacheBackupCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput) ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput() GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput) ToGetOciCacheBackupsOciCacheBackupCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheBackupsOciCacheBackupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheBackupsOciCacheBackupCollectionItem {
+		return vs[0].([]GetOciCacheBackupsOciCacheBackupCollectionItem)[vs[1].(int)]
+	}).(GetOciCacheBackupsOciCacheBackupCollectionItemOutput)
 }
 
 type GetOciCacheConfigSetConfigurationDetail struct {
@@ -3516,6 +4257,220 @@ func (o GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) Index(i pulumi.In
 	}).(GetOciCacheUsersOciCacheUserCollectionItemOutput)
 }
 
+type GetRedisClusterImportFromObjectStorageDetail struct {
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects []GetRedisClusterImportFromObjectStorageDetailObject `pulumi:"objects"`
+}
+
+// GetRedisClusterImportFromObjectStorageDetailInput is an input type that accepts GetRedisClusterImportFromObjectStorageDetailArgs and GetRedisClusterImportFromObjectStorageDetailOutput values.
+// You can construct a concrete instance of `GetRedisClusterImportFromObjectStorageDetailInput` via:
+//
+//	GetRedisClusterImportFromObjectStorageDetailArgs{...}
+type GetRedisClusterImportFromObjectStorageDetailInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterImportFromObjectStorageDetailOutput() GetRedisClusterImportFromObjectStorageDetailOutput
+	ToGetRedisClusterImportFromObjectStorageDetailOutputWithContext(context.Context) GetRedisClusterImportFromObjectStorageDetailOutput
+}
+
+type GetRedisClusterImportFromObjectStorageDetailArgs struct {
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects GetRedisClusterImportFromObjectStorageDetailObjectArrayInput `pulumi:"objects"`
+}
+
+func (GetRedisClusterImportFromObjectStorageDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailArgs) ToGetRedisClusterImportFromObjectStorageDetailOutput() GetRedisClusterImportFromObjectStorageDetailOutput {
+	return i.ToGetRedisClusterImportFromObjectStorageDetailOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailArgs) ToGetRedisClusterImportFromObjectStorageDetailOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterImportFromObjectStorageDetailOutput)
+}
+
+// GetRedisClusterImportFromObjectStorageDetailArrayInput is an input type that accepts GetRedisClusterImportFromObjectStorageDetailArray and GetRedisClusterImportFromObjectStorageDetailArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterImportFromObjectStorageDetailArrayInput` via:
+//
+//	GetRedisClusterImportFromObjectStorageDetailArray{ GetRedisClusterImportFromObjectStorageDetailArgs{...} }
+type GetRedisClusterImportFromObjectStorageDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterImportFromObjectStorageDetailArrayOutput() GetRedisClusterImportFromObjectStorageDetailArrayOutput
+	ToGetRedisClusterImportFromObjectStorageDetailArrayOutputWithContext(context.Context) GetRedisClusterImportFromObjectStorageDetailArrayOutput
+}
+
+type GetRedisClusterImportFromObjectStorageDetailArray []GetRedisClusterImportFromObjectStorageDetailInput
+
+func (GetRedisClusterImportFromObjectStorageDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailArray) ToGetRedisClusterImportFromObjectStorageDetailArrayOutput() GetRedisClusterImportFromObjectStorageDetailArrayOutput {
+	return i.ToGetRedisClusterImportFromObjectStorageDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailArray) ToGetRedisClusterImportFromObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterImportFromObjectStorageDetailArrayOutput)
+}
+
+type GetRedisClusterImportFromObjectStorageDetailOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterImportFromObjectStorageDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailOutput) ToGetRedisClusterImportFromObjectStorageDetailOutput() GetRedisClusterImportFromObjectStorageDetailOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailOutput) ToGetRedisClusterImportFromObjectStorageDetailOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailOutput {
+	return o
+}
+
+// The Object Storage bucket name.
+func (o GetRedisClusterImportFromObjectStorageDetailOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterImportFromObjectStorageDetail) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace name.
+func (o GetRedisClusterImportFromObjectStorageDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterImportFromObjectStorageDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The list of objects to import from the specified bucket.
+func (o GetRedisClusterImportFromObjectStorageDetailOutput) Objects() GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput {
+	return o.ApplyT(func(v GetRedisClusterImportFromObjectStorageDetail) []GetRedisClusterImportFromObjectStorageDetailObject {
+		return v.Objects
+	}).(GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput)
+}
+
+type GetRedisClusterImportFromObjectStorageDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterImportFromObjectStorageDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailArrayOutput) ToGetRedisClusterImportFromObjectStorageDetailArrayOutput() GetRedisClusterImportFromObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailArrayOutput) ToGetRedisClusterImportFromObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetRedisClusterImportFromObjectStorageDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterImportFromObjectStorageDetail {
+		return vs[0].([]GetRedisClusterImportFromObjectStorageDetail)[vs[1].(int)]
+	}).(GetRedisClusterImportFromObjectStorageDetailOutput)
+}
+
+type GetRedisClusterImportFromObjectStorageDetailObject struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object string `pulumi:"object"`
+}
+
+// GetRedisClusterImportFromObjectStorageDetailObjectInput is an input type that accepts GetRedisClusterImportFromObjectStorageDetailObjectArgs and GetRedisClusterImportFromObjectStorageDetailObjectOutput values.
+// You can construct a concrete instance of `GetRedisClusterImportFromObjectStorageDetailObjectInput` via:
+//
+//	GetRedisClusterImportFromObjectStorageDetailObjectArgs{...}
+type GetRedisClusterImportFromObjectStorageDetailObjectInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterImportFromObjectStorageDetailObjectOutput() GetRedisClusterImportFromObjectStorageDetailObjectOutput
+	ToGetRedisClusterImportFromObjectStorageDetailObjectOutputWithContext(context.Context) GetRedisClusterImportFromObjectStorageDetailObjectOutput
+}
+
+type GetRedisClusterImportFromObjectStorageDetailObjectArgs struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetRedisClusterImportFromObjectStorageDetailObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailObjectArgs) ToGetRedisClusterImportFromObjectStorageDetailObjectOutput() GetRedisClusterImportFromObjectStorageDetailObjectOutput {
+	return i.ToGetRedisClusterImportFromObjectStorageDetailObjectOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailObjectArgs) ToGetRedisClusterImportFromObjectStorageDetailObjectOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterImportFromObjectStorageDetailObjectOutput)
+}
+
+// GetRedisClusterImportFromObjectStorageDetailObjectArrayInput is an input type that accepts GetRedisClusterImportFromObjectStorageDetailObjectArray and GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput values.
+// You can construct a concrete instance of `GetRedisClusterImportFromObjectStorageDetailObjectArrayInput` via:
+//
+//	GetRedisClusterImportFromObjectStorageDetailObjectArray{ GetRedisClusterImportFromObjectStorageDetailObjectArgs{...} }
+type GetRedisClusterImportFromObjectStorageDetailObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutput() GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput
+	ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutputWithContext(context.Context) GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput
+}
+
+type GetRedisClusterImportFromObjectStorageDetailObjectArray []GetRedisClusterImportFromObjectStorageDetailObjectInput
+
+func (GetRedisClusterImportFromObjectStorageDetailObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailObjectArray) ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutput() GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput {
+	return i.ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClusterImportFromObjectStorageDetailObjectArray) ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput)
+}
+
+type GetRedisClusterImportFromObjectStorageDetailObjectOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterImportFromObjectStorageDetailObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailObjectOutput) ToGetRedisClusterImportFromObjectStorageDetailObjectOutput() GetRedisClusterImportFromObjectStorageDetailObjectOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailObjectOutput) ToGetRedisClusterImportFromObjectStorageDetailObjectOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailObjectOutput {
+	return o
+}
+
+// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+func (o GetRedisClusterImportFromObjectStorageDetailObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClusterImportFromObjectStorageDetailObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClusterImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput) ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutput() GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput) ToGetRedisClusterImportFromObjectStorageDetailObjectArrayOutputWithContext(ctx context.Context) GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput {
+	return o
+}
+
+func (o GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput) Index(i pulumi.IntInput) GetRedisClusterImportFromObjectStorageDetailObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClusterImportFromObjectStorageDetailObject {
+		return vs[0].([]GetRedisClusterImportFromObjectStorageDetailObject)[vs[1].(int)]
+	}).(GetRedisClusterImportFromObjectStorageDetailObjectOutput)
+}
+
 type GetRedisClusterNodeCollection struct {
 	// Collection of node objects.
 	Items []GetRedisClusterNodeCollectionItem `pulumi:"items"`
@@ -4272,6 +5227,8 @@ func (o GetRedisClustersRedisClusterCollectionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetRedisClustersRedisClusterCollectionItem struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+	BackupId string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode string `pulumi:"clusterMode"`
 	// The ID of the compartment in which to list resources.
@@ -4288,6 +5245,8 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id string `pulumi:"id"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail `pulumi:"importFromObjectStorageDetails"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The collection of  cluster nodes.
@@ -4338,6 +5297,8 @@ type GetRedisClustersRedisClusterCollectionItemInput interface {
 }
 
 type GetRedisClustersRedisClusterCollectionItemArgs struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+	BackupId pulumi.StringInput `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode pulumi.StringInput `pulumi:"clusterMode"`
 	// The ID of the compartment in which to list resources.
@@ -4354,6 +5315,8 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput `pulumi:"importFromObjectStorageDetails"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The collection of  cluster nodes.
@@ -4443,6 +5406,11 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) ToGetRedisClustersRedi
 	return o
 }
 
+// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
 // Specifies whether the cluster is sharded or non-sharded.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) ClusterMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ClusterMode }).(pulumi.StringOutput)
@@ -4481,6 +5449,13 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) FreeformTags() pulumi.
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) ImportFromObjectStorageDetails() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail {
+		return v.ImportFromObjectStorageDetails
+	}).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -4593,6 +5568,226 @@ func (o GetRedisClustersRedisClusterCollectionItemArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItem {
 		return vs[0].([]GetRedisClustersRedisClusterCollectionItem)[vs[1].(int)]
 	}).(GetRedisClustersRedisClusterCollectionItemOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail struct {
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject `pulumi:"objects"`
+}
+
+// GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs and GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs{...}
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs struct {
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The list of objects to import from the specified bucket.
+	Objects GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayInput `pulumi:"objects"`
+}
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput)
+}
+
+// GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray and GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray{ GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs{...} }
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput {
+	return o
+}
+
+// The Object Storage bucket name.
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace name.
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The list of objects to import from the specified bucket.
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput) Objects() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail) []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject {
+		return v.Objects
+	}).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail {
+		return vs[0].([]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetail)[vs[1].(int)]
+	}).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object string `pulumi:"object"`
+}
+
+// GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs and GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs{...}
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs struct {
+	// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput)
+}
+
+// GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray and GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput values.
+// You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayInput` via:
+//
+//	GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray{ GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs{...} }
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput
+	ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutputWithContext(context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray []GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput {
+	return i.ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput {
+	return o
+}
+
+// The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+type GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject)(nil)).Elem()
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput() GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput) ToGetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput {
+	return o
+}
+
+func (o GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject {
+		return vs[0].([]GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObject)[vs[1].(int)]
+	}).(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput)
 }
 
 type GetRedisClustersRedisClusterCollectionItemNodeCollection struct {
@@ -4826,10 +6021,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterArrayInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserArrayInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsInput)(nil)).Elem(), RedisClusterImportFromObjectStorageDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsPtrInput)(nil)).Elem(), RedisClusterImportFromObjectStorageDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsObjectInput)(nil)).Elem(), RedisClusterImportFromObjectStorageDetailsObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterImportFromObjectStorageDetailsObjectArrayInput)(nil)).Elem(), RedisClusterImportFromObjectStorageDetailsObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionInput)(nil)).Elem(), RedisClusterNodeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionArrayInput)(nil)).Elem(), RedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemInput)(nil)).Elem(), RedisClusterNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemArrayInput)(nil)).Elem(), RedisClusterNodeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsFilterInput)(nil)).Elem(), GetOciCacheBackupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsFilterArrayInput)(nil)).Elem(), GetOciCacheBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionInput)(nil)).Elem(), GetOciCacheBackupsOciCacheBackupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionArrayInput)(nil)).Elem(), GetOciCacheBackupsOciCacheBackupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionItemInput)(nil)).Elem(), GetOciCacheBackupsOciCacheBackupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheBackupsOciCacheBackupCollectionItemArrayInput)(nil)).Elem(), GetOciCacheBackupsOciCacheBackupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailItemArgs{})
@@ -4874,6 +6079,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailArrayInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailObjectInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterImportFromObjectStorageDetailObjectArrayInput)(nil)).Elem(), GetRedisClusterImportFromObjectStorageDetailObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionInput)(nil)).Elem(), GetRedisClusterNodeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionArrayInput)(nil)).Elem(), GetRedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionItemInput)(nil)).Elem(), GetRedisClusterNodeCollectionItemArgs{})
@@ -4890,6 +6099,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionItemInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs{})
@@ -4906,10 +6119,20 @@ func init() {
 	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserOutput{})
 	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserArrayOutput{})
+	pulumi.RegisterOutputType(RedisClusterImportFromObjectStorageDetailsOutput{})
+	pulumi.RegisterOutputType(RedisClusterImportFromObjectStorageDetailsPtrOutput{})
+	pulumi.RegisterOutputType(RedisClusterImportFromObjectStorageDetailsObjectOutput{})
+	pulumi.RegisterOutputType(RedisClusterImportFromObjectStorageDetailsObjectArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsFilterOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsOciCacheBackupCollectionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsOciCacheBackupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsOciCacheBackupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheBackupsOciCacheBackupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailItemOutput{})
@@ -4954,6 +6177,10 @@ func init() {
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailObjectOutput{})
+	pulumi.RegisterOutputType(GetRedisClusterImportFromObjectStorageDetailObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionItemOutput{})
@@ -4970,6 +6197,10 @@ func init() {
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectOutput{})
+	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput{})

@@ -142,14 +142,14 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -157,14 +157,14 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      * 
      */
     @Import(name="loggingConfiguration")
     private @Nullable Output<BatchBatchContextLoggingConfigurationArgs> loggingConfiguration;
 
     /**
-     * @return Logging configuration for batch context.
+     * @return (Updatable) Logging configuration of the batch context.
      * 
      */
     public Optional<Output<BatchBatchContextLoggingConfigurationArgs>> loggingConfiguration() {
@@ -479,7 +479,7 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param lifecycleDetails A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+         * @param lifecycleDetails A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param lifecycleDetails A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+         * @param lifecycleDetails A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param loggingConfiguration Logging configuration for batch context.
+         * @param loggingConfiguration (Updatable) Logging configuration of the batch context.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class BatchBatchContextState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param loggingConfiguration Logging configuration for batch context.
+         * @param loggingConfiguration (Updatable) Logging configuration of the batch context.
          * 
          * @return builder
          * 

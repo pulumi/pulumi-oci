@@ -7223,6 +7223,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Redis/ociCacheBackup",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheBackup:OciCacheBackup": "OciCacheBackup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/ociCacheBackupExportToObjectStorage",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheBackupExportToObjectStorage:OciCacheBackupExportToObjectStorage": "OciCacheBackupExportToObjectStorage"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Redis/ociCacheConfigSet",
   "fqn": "pulumi_oci.redis",
   "classes": {

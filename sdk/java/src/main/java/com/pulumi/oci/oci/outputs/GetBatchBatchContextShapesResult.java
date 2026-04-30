@@ -28,6 +28,7 @@ public final class GetBatchBatchContextShapesResult {
      * 
      */
     private String id;
+    private @Nullable String shapeType;
 
     private GetBatchBatchContextShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -53,6 +54,9 @@ public final class GetBatchBatchContextShapesResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> shapeType() {
+        return Optional.ofNullable(this.shapeType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -68,6 +72,7 @@ public final class GetBatchBatchContextShapesResult {
         private String compartmentId;
         private @Nullable List<GetBatchBatchContextShapesFilter> filters;
         private String id;
+        private @Nullable String shapeType;
         public Builder() {}
         public Builder(GetBatchBatchContextShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,6 +81,7 @@ public final class GetBatchBatchContextShapesResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.shapeType = defaults.shapeType;
         }
 
         @CustomType.Setter
@@ -120,6 +126,12 @@ public final class GetBatchBatchContextShapesResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder shapeType(@Nullable String shapeType) {
+
+            this.shapeType = shapeType;
+            return this;
+        }
         public GetBatchBatchContextShapesResult build() {
             final var _resultValue = new GetBatchBatchContextShapesResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -127,6 +139,7 @@ public final class GetBatchBatchContextShapesResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.shapeType = shapeType;
             return _resultValue;
         }
     }

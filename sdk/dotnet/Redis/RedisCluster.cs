@@ -15,7 +15,9 @@ namespace Pulumi.Oci.Redis
     /// 
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
     /// 
-    /// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+    /// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+    /// You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+    /// For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
     /// 
     /// ## Example Usage
     /// 
@@ -35,6 +37,7 @@ namespace Pulumi.Oci.Redis
     ///         NodeMemoryInGbs = redisClusterNodeMemoryInGbs,
     ///         SoftwareVersion = redisClusterSoftwareVersion,
     ///         SubnetId = testSubnet.Id,
+    ///         BackupId = testBackup.Id,
     ///         ClusterMode = redisClusterClusterMode,
     ///         DefinedTags = 
     ///         {
@@ -43,6 +46,18 @@ namespace Pulumi.Oci.Redis
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
+    ///         },
+    ///         ImportFromObjectStorageDetails = new Oci.Redis.Inputs.RedisClusterImportFromObjectStorageDetailsArgs
+    ///         {
+    ///             Bucket = redisClusterImportFromObjectStorageDetailsBucket,
+    ///             Namespace = redisClusterImportFromObjectStorageDetailsNamespace,
+    ///             Objects = new[]
+    ///             {
+    ///                 new Oci.Redis.Inputs.RedisClusterImportFromObjectStorageDetailsObjectArgs
+    ///                 {
+    ///                     Object = redisClusterImportFromObjectStorageDetailsObjectsObject,
+    ///                 },
+    ///             },
     ///         },
     ///         NsgIds = redisClusterNsgIds,
     ///         OciCacheConfigSetId = testOciCacheConfigSet.Id,
@@ -64,6 +79,12 @@ namespace Pulumi.Oci.Redis
     [OciResourceType("oci:Redis/redisCluster:RedisCluster")]
     public partial class RedisCluster : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        /// </summary>
+        [Output("backupId")]
+        public Output<string> BackupId { get; private set; } = null!;
+
         /// <summary>
         /// Specifies whether the cluster is sharded or non-sharded.
         /// </summary>
@@ -105,6 +126,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        /// </summary>
+        [Output("importFromObjectStorageDetails")]
+        public Output<Outputs.RedisClusterImportFromObjectStorageDetails> ImportFromObjectStorageDetails { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -265,6 +292,12 @@ namespace Pulumi.Oci.Redis
     public sealed class RedisClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        /// </summary>
+        [Input("backupId")]
+        public Input<string>? BackupId { get; set; }
+
+        /// <summary>
         /// Specifies whether the cluster is sharded or non-sharded.
         /// </summary>
         [Input("clusterMode")]
@@ -305,6 +338,12 @@ namespace Pulumi.Oci.Redis
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        /// </summary>
+        [Input("importFromObjectStorageDetails")]
+        public Input<Inputs.RedisClusterImportFromObjectStorageDetailsArgs>? ImportFromObjectStorageDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
@@ -379,6 +418,12 @@ namespace Pulumi.Oci.Redis
     public sealed class RedisClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        /// </summary>
+        [Input("backupId")]
+        public Input<string>? BackupId { get; set; }
+
+        /// <summary>
         /// Specifies whether the cluster is sharded or non-sharded.
         /// </summary>
         [Input("clusterMode")]
@@ -431,6 +476,12 @@ namespace Pulumi.Oci.Redis
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        /// </summary>
+        [Input("importFromObjectStorageDetails")]
+        public Input<Inputs.RedisClusterImportFromObjectStorageDetailsGetArgs>? ImportFromObjectStorageDetails { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.

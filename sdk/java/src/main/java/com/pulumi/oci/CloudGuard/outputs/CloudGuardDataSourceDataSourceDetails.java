@@ -38,7 +38,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable Integer intervalInMinutes;
     /**
-     * @return (Updatable) Interval in minutes which query is run periodically.
+     * @return (Updatable) Interval in seconds which query is run periodically.
      * 
      */
     private @Nullable Integer intervalInSeconds;
@@ -53,7 +53,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable String loggingQueryType;
     /**
-     * @return (Updatable) Operator used in data source
+     * @return (Updatable) DEPRECATED - Operator used in data source
      * 
      */
     private @Nullable String operator;
@@ -63,7 +63,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) Start policy for continuous query
+     * @return (Updatable) DEPRECATED - Start policy for continuous query
      * 
      */
     private @Nullable CloudGuardDataSourceDataSourceDetailsQueryStartTime queryStartTime;
@@ -78,7 +78,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail> scheduledQueryScopeDetails;
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * @return (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     private @Nullable Integer threshold;
@@ -113,7 +113,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.intervalInMinutes);
     }
     /**
-     * @return (Updatable) Interval in minutes which query is run periodically.
+     * @return (Updatable) Interval in seconds which query is run periodically.
      * 
      */
     public Optional<Integer> intervalInSeconds() {
@@ -134,7 +134,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.loggingQueryType);
     }
     /**
-     * @return (Updatable) Operator used in data source
+     * @return (Updatable) DEPRECATED - Operator used in data source
      * 
      */
     public Optional<String> operator() {
@@ -148,7 +148,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) Start policy for continuous query
+     * @return (Updatable) DEPRECATED - Start policy for continuous query
      * 
      */
     public Optional<CloudGuardDataSourceDataSourceDetailsQueryStartTime> queryStartTime() {
@@ -169,7 +169,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return this.scheduledQueryScopeDetails == null ? List.of() : this.scheduledQueryScopeDetails;
     }
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * @return (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Optional<Integer> threshold() {

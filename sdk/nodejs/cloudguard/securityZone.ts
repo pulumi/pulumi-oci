@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isInheritanceAfterDeleteEnabled: securityZoneIsInheritanceAfterDeleteEnabled,
  * });
  * ```
  *
@@ -96,6 +97,10 @@ export class SecurityZone extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly inheritedByCompartments: pulumi.Output<string[]>;
     /**
+     * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     */
+    declare public readonly isInheritanceAfterDeleteEnabled: pulumi.Output<boolean>;
+    /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
@@ -143,6 +148,7 @@ export class SecurityZone extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inheritedByCompartments"] = state?.inheritedByCompartments;
+            resourceInputs["isInheritanceAfterDeleteEnabled"] = state?.isInheritanceAfterDeleteEnabled;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["securityZoneRecipeId"] = state?.securityZoneRecipeId;
             resourceInputs["securityZoneTargetId"] = state?.securityZoneTargetId;
@@ -165,6 +171,7 @@ export class SecurityZone extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isInheritanceAfterDeleteEnabled"] = args?.isInheritanceAfterDeleteEnabled;
             resourceInputs["securityZoneRecipeId"] = args?.securityZoneRecipeId;
             resourceInputs["inheritedByCompartments"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -208,6 +215,10 @@ export interface SecurityZoneState {
      * List of inherited compartments
      */
     inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     */
+    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
@@ -264,6 +275,10 @@ export interface SecurityZoneArgs {
      * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     */
+    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *

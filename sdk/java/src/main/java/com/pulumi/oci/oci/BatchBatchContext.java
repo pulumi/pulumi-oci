@@ -64,7 +64,9 @@ import javax.annotation.Nullable;
  *                 .shape(BatchBatchContextFleetShapeArgs.builder()
  *                     .memoryInGbs(batchContextFleetsShapeMemoryInGbs)
  *                     .ocpus(batchContextFleetsShapeOcpus)
- *                     .shapeName(testShape.name())
+ *                     .shapeName(testBatchContextShapes.batchContextShapeCollection()[0].items()[0].name())
+ *                     .type(batchContextFleetsShapeType)
+ *                     .diskSizeInGbs(batchContextFleetsShapeDiskSizeInGbs)
  *                     .build())
  *                 .type(batchContextFleetsType)
  *                 .build())
@@ -87,6 +89,7 @@ import javax.annotation.Nullable;
  *                 .logGroupId(testLogGroup.id())
  *                 .logId(testLog.id())
  *                 .type(batchContextLoggingConfigurationType)
+ *                 .isJobTaskEventsPropagationEnabled(batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled)
  *                 .build())
  *             .build());
  * 
@@ -219,28 +222,28 @@ public class BatchBatchContext extends com.pulumi.resources.CustomResource {
         return this.jobPriorityConfigurations;
     }
     /**
-     * A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * Logging configuration for batch context.
+     * (Updatable) Logging configuration of the batch context.
      * 
      */
     @Export(name="loggingConfiguration", refs={BatchBatchContextLoggingConfiguration.class}, tree="[0]")
     private Output<BatchBatchContextLoggingConfiguration> loggingConfiguration;
 
     /**
-     * @return Logging configuration for batch context.
+     * @return (Updatable) Logging configuration of the batch context.
      * 
      */
     public Output<BatchBatchContextLoggingConfiguration> loggingConfiguration() {

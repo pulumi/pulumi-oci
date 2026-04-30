@@ -30,18 +30,24 @@ namespace Pulumi.Oci.Oci
     ///     var testBatchTaskProfile = new Oci.Oci.BatchBatchTaskProfile("test_batch_task_profile", new()
     ///     {
     ///         CompartmentId = compartmentId,
-    ///         MinMemoryInGbs = batchTaskProfileMinMemoryInGbs,
-    ///         MinOcpus = batchTaskProfileMinOcpus,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         Description = batchTaskProfileDescription,
     ///         DisplayName = batchTaskProfileDisplayName,
+    ///         ExtendedInformation = new Oci.Oci.Inputs.BatchBatchTaskProfileExtendedInformationArgs
+    ///         {
+    ///             Type = batchTaskProfileExtendedInformationType,
+    ///             Architecture = batchTaskProfileExtendedInformationArchitecture,
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         MinDiskSizeInGbs = batchTaskProfileMinDiskSizeInGbs,
+    ///         MinMemoryInGbs = batchTaskProfileMinMemoryInGbs,
+    ///         MinOcpus = batchTaskProfileMinOcpus,
     ///     });
     /// 
     /// });
@@ -83,10 +89,22 @@ namespace Pulumi.Oci.Oci
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Extended information for the task profile.
+        /// </summary>
+        [Output("extendedInformation")]
+        public Output<Outputs.BatchBatchTaskProfileExtendedInformation> ExtendedInformation { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The minimum required size of disk space in GBs.
+        /// </summary>
+        [Output("minDiskSizeInGbs")]
+        public Output<int> MinDiskSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The minimum required memory.
@@ -204,6 +222,12 @@ namespace Pulumi.Oci.Oci
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Extended information for the task profile.
+        /// </summary>
+        [Input("extendedInformation")]
+        public Input<Inputs.BatchBatchTaskProfileExtendedInformationArgs>? ExtendedInformation { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -217,10 +241,16 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// The minimum required size of disk space in GBs.
+        /// </summary>
+        [Input("minDiskSizeInGbs")]
+        public Input<int>? MinDiskSizeInGbs { get; set; }
+
+        /// <summary>
         /// The minimum required memory.
         /// </summary>
-        [Input("minMemoryInGbs", required: true)]
-        public Input<int> MinMemoryInGbs { get; set; } = null!;
+        [Input("minMemoryInGbs")]
+        public Input<int>? MinMemoryInGbs { get; set; }
 
         /// <summary>
         /// The minimum required OCPUs.
@@ -229,8 +259,8 @@ namespace Pulumi.Oci.Oci
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("minOcpus", required: true)]
-        public Input<int> MinOcpus { get; set; } = null!;
+        [Input("minOcpus")]
+        public Input<int>? MinOcpus { get; set; }
 
         public BatchBatchTaskProfileArgs()
         {
@@ -270,6 +300,12 @@ namespace Pulumi.Oci.Oci
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Extended information for the task profile.
+        /// </summary>
+        [Input("extendedInformation")]
+        public Input<Inputs.BatchBatchTaskProfileExtendedInformationGetArgs>? ExtendedInformation { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -281,6 +317,12 @@ namespace Pulumi.Oci.Oci
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The minimum required size of disk space in GBs.
+        /// </summary>
+        [Input("minDiskSizeInGbs")]
+        public Input<int>? MinDiskSizeInGbs { get; set; }
 
         /// <summary>
         /// The minimum required memory.

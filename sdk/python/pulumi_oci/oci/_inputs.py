@@ -41,6 +41,8 @@ __all__ = [
     'BatchBatchTaskEnvironmentSecurityContextArgsDict',
     'BatchBatchTaskEnvironmentVolumeArgs',
     'BatchBatchTaskEnvironmentVolumeArgsDict',
+    'BatchBatchTaskProfileExtendedInformationArgs',
+    'BatchBatchTaskProfileExtendedInformationArgsDict',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs',
@@ -703,15 +705,15 @@ class BatchBatchContextFleetArgsDict(TypedDict):
     """
     shape: pulumi.Input['BatchBatchContextFleetShapeArgsDict']
     """
-    Shape of the fleet. Describes hardware resources of each node in the fleet.
+    Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
     """
     type: pulumi.Input[_builtins.str]
     """
-    Type of the fleet. Also serves as a discriminator for sub-entities.
+    Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
     """
     details: NotRequired[pulumi.Input[_builtins.str]]
     """
-    A message that describes the current state of the service manage fleet configuration in more detail.
+    A message that describes the current state of the service managed fleet configuration in more detail.
     """
     state: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -734,9 +736,9 @@ class BatchBatchContextFleetArgs:
         """
         :param pulumi.Input[_builtins.int] max_concurrent_tasks: Maximum number of concurrent tasks for the service managed fleet.
         :param pulumi.Input[_builtins.str] name: Name of the service managed fleet.
-        :param pulumi.Input['BatchBatchContextFleetShapeArgs'] shape: Shape of the fleet. Describes hardware resources of each node in the fleet.
-        :param pulumi.Input[_builtins.str] type: Type of the fleet. Also serves as a discriminator for sub-entities.
-        :param pulumi.Input[_builtins.str] details: A message that describes the current state of the service manage fleet configuration in more detail.
+        :param pulumi.Input['BatchBatchContextFleetShapeArgs'] shape: Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
+        :param pulumi.Input[_builtins.str] type: Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
+        :param pulumi.Input[_builtins.str] details: A message that describes the current state of the service managed fleet configuration in more detail.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -780,7 +782,7 @@ class BatchBatchContextFleetArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input['BatchBatchContextFleetShapeArgs']:
         """
-        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         """
         return pulumi.get(self, "shape")
 
@@ -792,7 +794,7 @@ class BatchBatchContextFleetArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of the fleet. Also serves as a discriminator for sub-entities.
+        Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
         """
         return pulumi.get(self, "type")
 
@@ -804,7 +806,7 @@ class BatchBatchContextFleetArgs:
     @pulumi.getter
     def details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A message that describes the current state of the service manage fleet configuration in more detail.
+        A message that describes the current state of the service managed fleet configuration in more detail.
         """
         return pulumi.get(self, "details")
 
@@ -832,15 +834,23 @@ class BatchBatchContextFleetArgs:
 class BatchBatchContextFleetShapeArgsDict(TypedDict):
     memory_in_gbs: pulumi.Input[_builtins.int]
     """
-    Amount of memory in GBs required by the shape.
+    Amount of memory in GBs required for the shape.
     """
     ocpus: pulumi.Input[_builtins.int]
     """
-    Number of OCPUs required by the shape.
+    Number of OCPUs required for the shape.
     """
-    shape_name: pulumi.Input[_builtins.str]
+    disk_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Amount of disk space in GBs required for the shape.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
     """
     The name of the shape.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
     """
 
 @pulumi.input_type
@@ -848,21 +858,30 @@ class BatchBatchContextFleetShapeArgs:
     def __init__(__self__, *,
                  memory_in_gbs: pulumi.Input[_builtins.int],
                  ocpus: pulumi.Input[_builtins.int],
-                 shape_name: pulumi.Input[_builtins.str]):
+                 disk_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.int] memory_in_gbs: Amount of memory in GBs required by the shape.
-        :param pulumi.Input[_builtins.int] ocpus: Number of OCPUs required by the shape.
+        :param pulumi.Input[_builtins.int] memory_in_gbs: Amount of memory in GBs required for the shape.
+        :param pulumi.Input[_builtins.int] ocpus: Number of OCPUs required for the shape.
+        :param pulumi.Input[_builtins.int] disk_size_in_gbs: Amount of disk space in GBs required for the shape.
         :param pulumi.Input[_builtins.str] shape_name: The name of the shape.
+        :param pulumi.Input[_builtins.str] type: Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "shape_name", shape_name)
+        if disk_size_in_gbs is not None:
+            pulumi.set(__self__, "disk_size_in_gbs", disk_size_in_gbs)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> pulumi.Input[_builtins.int]:
         """
-        Amount of memory in GBs required by the shape.
+        Amount of memory in GBs required for the shape.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -874,7 +893,7 @@ class BatchBatchContextFleetShapeArgs:
     @pulumi.getter
     def ocpus(self) -> pulumi.Input[_builtins.int]:
         """
-        Number of OCPUs required by the shape.
+        Number of OCPUs required for the shape.
         """
         return pulumi.get(self, "ocpus")
 
@@ -883,16 +902,40 @@ class BatchBatchContextFleetShapeArgs:
         pulumi.set(self, "ocpus", value)
 
     @_builtins.property
+    @pulumi.getter(name="diskSizeInGbs")
+    def disk_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Amount of disk space in GBs required for the shape.
+        """
+        return pulumi.get(self, "disk_size_in_gbs")
+
+    @disk_size_in_gbs.setter
+    def disk_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "disk_size_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> pulumi.Input[_builtins.str]:
+    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name of the shape.
         """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: pulumi.Input[_builtins.str]):
+    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
 
 
 class BatchBatchContextJobPriorityConfigurationArgsDict(TypedDict):
@@ -991,7 +1034,11 @@ class BatchBatchContextLoggingConfigurationArgsDict(TypedDict):
     """
     type: pulumi.Input[_builtins.str]
     """
-    Discriminator for sub-entities.
+    (Updatable) Type of the logging configuration. Discriminator for sub-entities.
+    """
+    is_job_task_events_propagation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
     """
 
 @pulumi.input_type
@@ -999,15 +1046,19 @@ class BatchBatchContextLoggingConfigurationArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[_builtins.str],
                  log_id: pulumi.Input[_builtins.str],
-                 type: pulumi.Input[_builtins.str]):
+                 type: pulumi.Input[_builtins.str],
+                 is_job_task_events_propagation_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param pulumi.Input[_builtins.str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        :param pulumi.Input[_builtins.str] type: Discriminator for sub-entities.
+        :param pulumi.Input[_builtins.str] type: (Updatable) Type of the logging configuration. Discriminator for sub-entities.
+        :param pulumi.Input[_builtins.bool] is_job_task_events_propagation_enabled: (Updatable) A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
         """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
         pulumi.set(__self__, "type", type)
+        if is_job_task_events_propagation_enabled is not None:
+            pulumi.set(__self__, "is_job_task_events_propagation_enabled", is_job_task_events_propagation_enabled)
 
     @_builtins.property
     @pulumi.getter(name="logGroupId")
@@ -1037,13 +1088,25 @@ class BatchBatchContextLoggingConfigurationArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Discriminator for sub-entities.
+        (Updatable) Type of the logging configuration. Discriminator for sub-entities.
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isJobTaskEventsPropagationEnabled")
+    def is_job_task_events_propagation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) A switch to enable or disable propagation of job and task events to the customer's logs in Oracle Cloud Infrastructure logging service.
+        """
+        return pulumi.get(self, "is_job_task_events_propagation_enabled")
+
+    @is_job_task_events_propagation_enabled.setter
+    def is_job_task_events_propagation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_job_task_events_propagation_enabled", value)
 
 
 class BatchBatchContextNetworkArgsDict(TypedDict):
@@ -1334,6 +1397,74 @@ class BatchBatchTaskEnvironmentVolumeArgs:
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+
+class BatchBatchTaskProfileExtendedInformationArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of extended information.
+    """
+    architecture: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of CPU architecture.
+    """
+    shape_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A name of the CPU shape.
+    """
+
+@pulumi.input_type
+class BatchBatchTaskProfileExtendedInformationArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 shape_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of extended information.
+        :param pulumi.Input[_builtins.str] architecture: Type of CPU architecture.
+        :param pulumi.Input[_builtins.str] shape_name: A name of the CPU shape.
+        """
+        pulumi.set(__self__, "type", type)
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of extended information.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of CPU architecture.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A name of the CPU shape.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @shape_name.setter
+    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shape_name", value)
 
 
 class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):

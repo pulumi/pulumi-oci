@@ -37,8 +37,6 @@ import (
 //				PublicKey:      pulumi.Any(redisClusterCreateIdentityTokenPublicKey),
 //				RedisClusterId: pulumi.Any(testRedisCluster.Id),
 //				RedisUser:      pulumi.Any(redisClusterCreateIdentityTokenRedisUser),
-//				DefinedTags:    pulumi.Any(redisClusterCreateIdentityTokenDefinedTags),
-//				FreeformTags:   pulumi.Any(redisClusterCreateIdentityTokenFreeformTags),
 //			})
 //			if err != nil {
 //				return err
@@ -55,9 +53,7 @@ import (
 type RedisClusterCreateIdentityToken struct {
 	pulumi.CustomResourceState
 
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	DefinedTags  pulumi.StringMapOutput `pulumi:"definedTags"`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Generated Identity token
 	IdentityToken pulumi.StringOutput `pulumi:"identityToken"`
@@ -111,9 +107,7 @@ func GetRedisClusterCreateIdentityToken(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
 type redisClusterCreateIdentityTokenState struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	DefinedTags  map[string]string `pulumi:"definedTags"`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Generated Identity token
 	IdentityToken *string `pulumi:"identityToken"`
@@ -129,9 +123,7 @@ type redisClusterCreateIdentityTokenState struct {
 }
 
 type RedisClusterCreateIdentityTokenState struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	DefinedTags  pulumi.StringMapInput
 	FreeformTags pulumi.StringMapInput
 	// Generated Identity token
 	IdentityToken pulumi.StringPtrInput
@@ -151,9 +143,7 @@ func (RedisClusterCreateIdentityTokenState) ElementType() reflect.Type {
 }
 
 type redisClusterCreateIdentityTokenArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	DefinedTags  map[string]string `pulumi:"definedTags"`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// User public key pair
 	PublicKey string `pulumi:"publicKey"`
@@ -168,9 +158,7 @@ type redisClusterCreateIdentityTokenArgs struct {
 
 // The set of arguments for constructing a RedisClusterCreateIdentityToken resource.
 type RedisClusterCreateIdentityTokenArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	DefinedTags  pulumi.StringMapInput
 	FreeformTags pulumi.StringMapInput
 	// User public key pair
 	PublicKey pulumi.StringInput
@@ -270,12 +258,10 @@ func (o RedisClusterCreateIdentityTokenOutput) ToRedisClusterCreateIdentityToken
 	return o
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o RedisClusterCreateIdentityTokenOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *RedisClusterCreateIdentityToken) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o RedisClusterCreateIdentityTokenOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *RedisClusterCreateIdentityToken) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }

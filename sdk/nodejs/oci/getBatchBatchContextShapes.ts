@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testBatchContextShapes = oci.oci.getBatchBatchContextShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: batchContextShapeAvailabilityDomain,
+ *     shapeType: batchContextShapeShapeType,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getBatchBatchContextShapes(args: GetBatchBatchContextShapesArgs,
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "shapeType": args.shapeType,
     }, opts);
 }
 
@@ -45,6 +47,10 @@ export interface GetBatchBatchContextShapesArgs {
      */
     compartmentId: string;
     filters?: inputs.oci.GetBatchBatchContextShapesFilter[];
+    /**
+     * The type of a shape.
+     */
+    shapeType?: string;
 }
 
 /**
@@ -62,6 +68,7 @@ export interface GetBatchBatchContextShapesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly shapeType?: string;
 }
 /**
  * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
@@ -77,6 +84,7 @@ export interface GetBatchBatchContextShapesResult {
  * const testBatchContextShapes = oci.oci.getBatchBatchContextShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: batchContextShapeAvailabilityDomain,
+ *     shapeType: batchContextShapeShapeType,
  * });
  * ```
  */
@@ -86,6 +94,7 @@ export function getBatchBatchContextShapesOutput(args: GetBatchBatchContextShape
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "shapeType": args.shapeType,
     }, opts);
 }
 
@@ -102,4 +111,8 @@ export interface GetBatchBatchContextShapesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetBatchBatchContextShapesFilterArgs>[]>;
+    /**
+     * The type of a shape.
+     */
+    shapeType?: pulumi.Input<string>;
 }

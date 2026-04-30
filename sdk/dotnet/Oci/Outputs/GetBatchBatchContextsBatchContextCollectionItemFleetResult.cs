@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetBatchBatchContextsBatchContextCollectionItemFleetResult
     {
         /// <summary>
-        /// A message that describes the current state of the service manage fleet configuration in more detail.
+        /// A message that describes the current state of the service managed fleet configuration in more detail.
         /// </summary>
         public readonly string Details;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Discriminator for sub-entities.
+        /// Type of the logging configuration. Discriminator for sub-entities.
         /// </summary>
         public readonly string Type;
 

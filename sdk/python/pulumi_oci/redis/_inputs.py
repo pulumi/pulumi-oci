@@ -27,10 +27,16 @@ __all__ = [
     'OciCacheUserGetRedisClusterOciCacheClusterArgsDict',
     'RedisClusterGetOciCacheUserOciCacheUserArgs',
     'RedisClusterGetOciCacheUserOciCacheUserArgsDict',
+    'RedisClusterImportFromObjectStorageDetailsArgs',
+    'RedisClusterImportFromObjectStorageDetailsArgsDict',
+    'RedisClusterImportFromObjectStorageDetailsObjectArgs',
+    'RedisClusterImportFromObjectStorageDetailsObjectArgsDict',
     'RedisClusterNodeCollectionArgs',
     'RedisClusterNodeCollectionArgsDict',
     'RedisClusterNodeCollectionItemArgs',
     'RedisClusterNodeCollectionItemArgsDict',
+    'GetOciCacheBackupsFilterArgs',
+    'GetOciCacheBackupsFilterArgsDict',
     'GetOciCacheConfigSetsFilterArgs',
     'GetOciCacheConfigSetsFilterArgsDict',
     'GetOciCacheDefaultConfigSetsFilterArgs',
@@ -255,6 +261,100 @@ class RedisClusterGetOciCacheUserOciCacheUserArgs:
         pulumi.set(self, "oci_cache_user_id", value)
 
 
+class RedisClusterImportFromObjectStorageDetailsArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The Object Storage bucket name.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    The Object Storage namespace name.
+    """
+    objects: pulumi.Input[Sequence[pulumi.Input['RedisClusterImportFromObjectStorageDetailsObjectArgsDict']]]
+    """
+    The list of objects to import from the specified bucket.
+    """
+
+@pulumi.input_type
+class RedisClusterImportFromObjectStorageDetailsArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[_builtins.str],
+                 namespace: pulumi.Input[_builtins.str],
+                 objects: pulumi.Input[Sequence[pulumi.Input['RedisClusterImportFromObjectStorageDetailsObjectArgs']]]):
+        """
+        :param pulumi.Input[_builtins.str] bucket: The Object Storage bucket name.
+        :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace name.
+        :param pulumi.Input[Sequence[pulumi.Input['RedisClusterImportFromObjectStorageDetailsObjectArgs']]] objects: The list of objects to import from the specified bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "objects", objects)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> pulumi.Input[Sequence[pulumi.Input['RedisClusterImportFromObjectStorageDetailsObjectArgs']]]:
+        """
+        The list of objects to import from the specified bucket.
+        """
+        return pulumi.get(self, "objects")
+
+    @objects.setter
+    def objects(self, value: pulumi.Input[Sequence[pulumi.Input['RedisClusterImportFromObjectStorageDetailsObjectArgs']]]):
+        pulumi.set(self, "objects", value)
+
+
+class RedisClusterImportFromObjectStorageDetailsObjectArgsDict(TypedDict):
+    object: pulumi.Input[_builtins.str]
+    """
+    The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+    """
+
+@pulumi.input_type
+class RedisClusterImportFromObjectStorageDetailsObjectArgs:
+    def __init__(__self__, *,
+                 object: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] object: The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "object", value)
+
+
 class RedisClusterNodeCollectionArgsDict(TypedDict):
     items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]
     """
@@ -351,6 +451,50 @@ class RedisClusterNodeCollectionItemArgs:
     @private_endpoint_ip_address.setter
     def private_endpoint_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip_address", value)
+
+
+class GetOciCacheBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetOciCacheBackupsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetOciCacheConfigSetsFilterArgsDict(TypedDict):

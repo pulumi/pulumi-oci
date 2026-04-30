@@ -17,7 +17,9 @@ import (
 //
 // Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
 //
-// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+// You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+// For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 //
 // ## Example Usage
 //
@@ -40,12 +42,22 @@ import (
 //				NodeMemoryInGbs: pulumi.Any(redisClusterNodeMemoryInGbs),
 //				SoftwareVersion: pulumi.Any(redisClusterSoftwareVersion),
 //				SubnetId:        pulumi.Any(testSubnet.Id),
+//				BackupId:        pulumi.Any(testBackup.Id),
 //				ClusterMode:     pulumi.Any(redisClusterClusterMode),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
+//				},
+//				ImportFromObjectStorageDetails: &redis.RedisClusterImportFromObjectStorageDetailsArgs{
+//					Bucket:    pulumi.Any(redisClusterImportFromObjectStorageDetailsBucket),
+//					Namespace: pulumi.Any(redisClusterImportFromObjectStorageDetailsNamespace),
+//					Objects: redis.RedisClusterImportFromObjectStorageDetailsObjectArray{
+//						&redis.RedisClusterImportFromObjectStorageDetailsObjectArgs{
+//							Object: pulumi.Any(redisClusterImportFromObjectStorageDetailsObjectsObject),
+//						},
+//					},
 //				},
 //				NsgIds:              pulumi.Any(redisClusterNsgIds),
 //				OciCacheConfigSetId: pulumi.Any(testOciCacheConfigSet.Id),
@@ -71,6 +83,8 @@ import (
 type RedisCluster struct {
 	pulumi.CustomResourceState
 
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+	BackupId pulumi.StringOutput `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode pulumi.StringOutput `pulumi:"clusterMode"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -85,6 +99,8 @@ type RedisCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails RedisClusterImportFromObjectStorageDetailsOutput `pulumi:"importFromObjectStorageDetails"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The collection of  cluster nodes.
@@ -174,6 +190,8 @@ func GetRedisCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RedisCluster resources.
 type redisClusterState struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+	BackupId *string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode *string `pulumi:"clusterMode"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -188,6 +206,8 @@ type redisClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails *RedisClusterImportFromObjectStorageDetails `pulumi:"importFromObjectStorageDetails"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The collection of  cluster nodes.
@@ -230,6 +250,8 @@ type redisClusterState struct {
 }
 
 type RedisClusterState struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+	BackupId pulumi.StringPtrInput
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -244,6 +266,8 @@ type RedisClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails RedisClusterImportFromObjectStorageDetailsPtrInput
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The collection of  cluster nodes.
@@ -290,6 +314,8 @@ func (RedisClusterState) ElementType() reflect.Type {
 }
 
 type redisClusterArgs struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+	BackupId *string `pulumi:"backupId"`
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode *string `pulumi:"clusterMode"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -300,6 +326,8 @@ type redisClusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails *RedisClusterImportFromObjectStorageDetails `pulumi:"importFromObjectStorageDetails"`
 	// (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 	NodeCount int `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
@@ -323,6 +351,8 @@ type redisClusterArgs struct {
 
 // The set of arguments for constructing a RedisCluster resource.
 type RedisClusterArgs struct {
+	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+	BackupId pulumi.StringPtrInput
 	// Specifies whether the cluster is sharded or non-sharded.
 	ClusterMode pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
@@ -333,6 +363,8 @@ type RedisClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+	ImportFromObjectStorageDetails RedisClusterImportFromObjectStorageDetailsPtrInput
 	// (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 	NodeCount pulumi.IntInput
 	// (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
@@ -441,6 +473,11 @@ func (o RedisClusterOutput) ToRedisClusterOutputWithContext(ctx context.Context)
 	return o
 }
 
+// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+func (o RedisClusterOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.BackupId }).(pulumi.StringOutput)
+}
+
 // Specifies whether the cluster is sharded or non-sharded.
 func (o RedisClusterOutput) ClusterMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.ClusterMode }).(pulumi.StringOutput)
@@ -474,6 +511,13 @@ func (o RedisClusterOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o RedisClusterOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+func (o RedisClusterOutput) ImportFromObjectStorageDetails() RedisClusterImportFromObjectStorageDetailsOutput {
+	return o.ApplyT(func(v *RedisCluster) RedisClusterImportFromObjectStorageDetailsOutput {
+		return v.ImportFromObjectStorageDetails
+	}).(RedisClusterImportFromObjectStorageDetailsOutput)
 }
 
 // A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.

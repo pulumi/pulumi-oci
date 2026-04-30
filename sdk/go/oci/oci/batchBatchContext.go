@@ -40,9 +40,11 @@ import (
 //						MaxConcurrentTasks: pulumi.Any(batchContextFleetsMaxConcurrentTasks),
 //						Name:               pulumi.Any(batchContextFleetsName),
 //						Shape: &oci.BatchBatchContextFleetShapeArgs{
-//							MemoryInGbs: pulumi.Any(batchContextFleetsShapeMemoryInGbs),
-//							Ocpus:       pulumi.Any(batchContextFleetsShapeOcpus),
-//							ShapeName:   pulumi.Any(testShape.Name),
+//							MemoryInGbs:   pulumi.Any(batchContextFleetsShapeMemoryInGbs),
+//							Ocpus:         pulumi.Any(batchContextFleetsShapeOcpus),
+//							ShapeName:     pulumi.Any(testBatchContextShapes.BatchContextShapeCollection[0].Items[0].Name),
+//							Type:          pulumi.Any(batchContextFleetsShapeType),
+//							DiskSizeInGbs: pulumi.Any(batchContextFleetsShapeDiskSizeInGbs),
 //						},
 //						Type: pulumi.Any(batchContextFleetsType),
 //					},
@@ -69,9 +71,10 @@ import (
 //					},
 //				},
 //				LoggingConfiguration: &oci.BatchBatchContextLoggingConfigurationArgs{
-//					LogGroupId: pulumi.Any(testLogGroup.Id),
-//					LogId:      pulumi.Any(testLog.Id),
-//					Type:       pulumi.Any(batchContextLoggingConfigurationType),
+//					LogGroupId:                        pulumi.Any(testLogGroup.Id),
+//					LogId:                             pulumi.Any(testLog.Id),
+//					Type:                              pulumi.Any(batchContextLoggingConfigurationType),
+//					IsJobTaskEventsPropagationEnabled: pulumi.Any(batchContextLoggingConfigurationIsJobTaskEventsPropagationEnabled),
 //				},
 //			})
 //			if err != nil {
@@ -109,9 +112,9 @@ type BatchBatchContext struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) List of job priority configurations related to the batch context.
 	JobPriorityConfigurations BatchBatchContextJobPriorityConfigurationArrayOutput `pulumi:"jobPriorityConfigurations"`
-	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Logging configuration for batch context.
+	// (Updatable) Logging configuration of the batch context.
 	LoggingConfiguration BatchBatchContextLoggingConfigurationOutput `pulumi:"loggingConfiguration"`
 	// Network configuration of the batch context.
 	Network BatchBatchContextNetworkOutput `pulumi:"network"`
@@ -183,9 +186,9 @@ type batchBatchContextState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) List of job priority configurations related to the batch context.
 	JobPriorityConfigurations []BatchBatchContextJobPriorityConfiguration `pulumi:"jobPriorityConfigurations"`
-	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Logging configuration for batch context.
+	// (Updatable) Logging configuration of the batch context.
 	LoggingConfiguration *BatchBatchContextLoggingConfiguration `pulumi:"loggingConfiguration"`
 	// Network configuration of the batch context.
 	Network *BatchBatchContextNetwork `pulumi:"network"`
@@ -219,9 +222,9 @@ type BatchBatchContextState struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) List of job priority configurations related to the batch context.
 	JobPriorityConfigurations BatchBatchContextJobPriorityConfigurationArrayInput
-	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// Logging configuration for batch context.
+	// (Updatable) Logging configuration of the batch context.
 	LoggingConfiguration BatchBatchContextLoggingConfigurationPtrInput
 	// Network configuration of the batch context.
 	Network BatchBatchContextNetworkPtrInput
@@ -259,7 +262,7 @@ type batchBatchContextArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) List of job priority configurations related to the batch context.
 	JobPriorityConfigurations []BatchBatchContextJobPriorityConfiguration `pulumi:"jobPriorityConfigurations"`
-	// Logging configuration for batch context.
+	// (Updatable) Logging configuration of the batch context.
 	LoggingConfiguration *BatchBatchContextLoggingConfiguration `pulumi:"loggingConfiguration"`
 	// Network configuration of the batch context.
 	Network BatchBatchContextNetwork `pulumi:"network"`
@@ -288,7 +291,7 @@ type BatchBatchContextArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) List of job priority configurations related to the batch context.
 	JobPriorityConfigurations BatchBatchContextJobPriorityConfigurationArrayInput
-	// Logging configuration for batch context.
+	// (Updatable) Logging configuration of the batch context.
 	LoggingConfiguration BatchBatchContextLoggingConfigurationPtrInput
 	// Network configuration of the batch context.
 	Network BatchBatchContextNetworkInput
@@ -428,12 +431,12 @@ func (o BatchBatchContextOutput) JobPriorityConfigurations() BatchBatchContextJo
 	}).(BatchBatchContextJobPriorityConfigurationArrayOutput)
 }
 
-// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+// A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o BatchBatchContextOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *BatchBatchContext) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Logging configuration for batch context.
+// (Updatable) Logging configuration of the batch context.
 func (o BatchBatchContextOutput) LoggingConfiguration() BatchBatchContextLoggingConfigurationOutput {
 	return o.ApplyT(func(v *BatchBatchContext) BatchBatchContextLoggingConfigurationOutput { return v.LoggingConfiguration }).(BatchBatchContextLoggingConfigurationOutput)
 }

@@ -45,6 +45,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				IsInheritanceAfterDeleteEnabled: pulumi.Any(securityZoneIsInheritanceAfterDeleteEnabled),
 //			})
 //			if err != nil {
 //				return err
@@ -79,6 +80,8 @@ type SecurityZone struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
+	// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled pulumi.BoolOutput `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
@@ -149,6 +152,8 @@ type securityZoneState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
+	// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled *bool `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
@@ -181,6 +186,8 @@ type SecurityZoneState struct {
 	FreeformTags pulumi.StringMapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
+	// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
@@ -215,6 +222,8 @@ type securityZoneArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled *bool `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
@@ -236,6 +245,8 @@ type SecurityZoneArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
@@ -360,6 +371,11 @@ func (o SecurityZoneOutput) FreeformTags() pulumi.StringMapOutput {
 // List of inherited compartments
 func (o SecurityZoneOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringArrayOutput { return v.InheritedByCompartments }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+func (o SecurityZoneOutput) IsInheritanceAfterDeleteEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.BoolOutput { return v.IsInheritanceAfterDeleteEnabled }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.

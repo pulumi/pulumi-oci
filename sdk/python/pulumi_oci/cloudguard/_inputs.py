@@ -457,7 +457,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
     """
-    (Updatable) Interval in minutes which query is run periodically.
+    (Updatable) Interval in seconds which query is run periodically.
     """
     logging_query_details: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict']]
     """
@@ -469,7 +469,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     operator: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) Operator used in data source
+    (Updatable) DEPRECATED - Operator used in data source
     """
     query: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -477,7 +477,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     query_start_time: NotRequired[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict']]
     """
-    (Updatable) Start policy for continuous query
+    (Updatable) DEPRECATED - Start policy for continuous query
     """
     regions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
@@ -489,7 +489,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     threshold: NotRequired[pulumi.Input[_builtins.int]]
     """
-    (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+    (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
     """
 
 @pulumi.input_type
@@ -513,15 +513,15 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
         :param pulumi.Input[_builtins.int] additional_entities_count: (Updatable) The additional entities count used for data source query
         :param pulumi.Input[_builtins.str] description: (Updatable) Description text for the query
         :param pulumi.Input[_builtins.int] interval_in_minutes: (Updatable) Interval in minutes that query is run periodically.
-        :param pulumi.Input[_builtins.int] interval_in_seconds: (Updatable) Interval in minutes which query is run periodically.
+        :param pulumi.Input[_builtins.int] interval_in_seconds: (Updatable) Interval in seconds which query is run periodically.
         :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs'] logging_query_details: (Updatable) Details for a logging query for a data source.
         :param pulumi.Input[_builtins.str] logging_query_type: (Updatable) Type of logging query for data source (Sighting/Insight)
-        :param pulumi.Input[_builtins.str] operator: (Updatable) Operator used in data source
+        :param pulumi.Input[_builtins.str] operator: (Updatable) DEPRECATED - Operator used in data source
         :param pulumi.Input[_builtins.str] query: (Updatable) The continuous query expression that is run periodically.
-        :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs'] query_start_time: (Updatable) Start policy for continuous query
+        :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs'] query_start_time: (Updatable) DEPRECATED - Start policy for continuous query
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] regions: (Updatable) List of logging query regions
         :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]] scheduled_query_scope_details: (Updatable) Target information in which scheduled query will be run
-        :param pulumi.Input[_builtins.int] threshold: (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        :param pulumi.Input[_builtins.int] threshold: (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
         if additional_entities_count is not None:
@@ -601,7 +601,7 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Interval in minutes which query is run periodically.
+        (Updatable) Interval in seconds which query is run periodically.
         """
         return pulumi.get(self, "interval_in_seconds")
 
@@ -637,7 +637,7 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Operator used in data source
+        (Updatable) DEPRECATED - Operator used in data source
         """
         return pulumi.get(self, "operator")
 
@@ -661,7 +661,7 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
     @pulumi.getter(name="queryStartTime")
     def query_start_time(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]:
         """
-        (Updatable) Start policy for continuous query
+        (Updatable) DEPRECATED - Start policy for continuous query
         """
         return pulumi.get(self, "query_start_time")
 
@@ -697,7 +697,7 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         """
         return pulumi.get(self, "threshold")
 

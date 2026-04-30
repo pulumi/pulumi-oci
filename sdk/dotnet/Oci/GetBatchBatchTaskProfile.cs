@@ -141,6 +141,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Extended information for the task profile.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBatchBatchTaskProfileExtendedInformationResult> ExtendedInformations;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -148,6 +152,10 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The minimum required size of disk space in GBs.
+        /// </summary>
+        public readonly int MinDiskSizeInGbs;
         /// <summary>
         /// The minimum required memory.
         /// </summary>
@@ -185,9 +193,13 @@ namespace Pulumi.Oci.Oci
 
             string displayName,
 
+            ImmutableArray<Outputs.GetBatchBatchTaskProfileExtendedInformationResult> extendedInformations,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            int minDiskSizeInGbs,
 
             int minMemoryInGbs,
 
@@ -206,8 +218,10 @@ namespace Pulumi.Oci.Oci
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            ExtendedInformations = extendedInformations;
             FreeformTags = freeformTags;
             Id = id;
+            MinDiskSizeInGbs = minDiskSizeInGbs;
             MinMemoryInGbs = minMemoryInGbs;
             MinOcpus = minOcpus;
             State = state;

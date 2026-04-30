@@ -6,6 +6,7 @@ package com.pulumi.oci.Redis;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Redis.inputs.RedisClusterImportFromObjectStorageDetailsArgs;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -19,6 +20,21 @@ import javax.annotation.Nullable;
 public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final RedisClusterArgs Empty = new RedisClusterArgs();
+
+    /**
+     * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+     * 
+     */
+    @Import(name="backupId")
+    private @Nullable Output<String> backupId;
+
+    /**
+     * @return The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+     * 
+     */
+    public Optional<Output<String>> backupId() {
+        return Optional.ofNullable(this.backupId);
+    }
 
     /**
      * Specifies whether the cluster is sharded or non-sharded.
@@ -93,6 +109,21 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    @Import(name="importFromObjectStorageDetails")
+    private @Nullable Output<RedisClusterImportFromObjectStorageDetailsArgs> importFromObjectStorageDetails;
+
+    /**
+     * @return Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+     * 
+     */
+    public Optional<Output<RedisClusterImportFromObjectStorageDetailsArgs>> importFromObjectStorageDetails() {
+        return Optional.ofNullable(this.importFromObjectStorageDetails);
     }
 
     /**
@@ -224,11 +255,13 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     private RedisClusterArgs() {}
 
     private RedisClusterArgs(RedisClusterArgs $) {
+        this.backupId = $.backupId;
         this.clusterMode = $.clusterMode;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.importFromObjectStorageDetails = $.importFromObjectStorageDetails;
         this.nodeCount = $.nodeCount;
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
@@ -255,6 +288,27 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(RedisClusterArgs defaults) {
             $ = new RedisClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backupId The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupId(@Nullable Output<String> backupId) {
+            $.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * @param backupId The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with &#39;importFromObjectStorageDetails&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupId(String backupId) {
+            return backupId(Output.of(backupId));
         }
 
         /**
@@ -360,6 +414,27 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param importFromObjectStorageDetails Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importFromObjectStorageDetails(@Nullable Output<RedisClusterImportFromObjectStorageDetailsArgs> importFromObjectStorageDetails) {
+            $.importFromObjectStorageDetails = importFromObjectStorageDetails;
+            return this;
+        }
+
+        /**
+         * @param importFromObjectStorageDetails Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importFromObjectStorageDetails(RedisClusterImportFromObjectStorageDetailsArgs importFromObjectStorageDetails) {
+            return importFromObjectStorageDetails(Output.of(importFromObjectStorageDetails));
         }
 
         /**

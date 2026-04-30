@@ -13,13 +13,19 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class BatchBatchContextFleetShapeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Amount of memory in GBs required by the shape.
+        /// Amount of disk space in GBs required for the shape.
+        /// </summary>
+        [Input("diskSizeInGbs")]
+        public Input<int>? DiskSizeInGbs { get; set; }
+
+        /// <summary>
+        /// Amount of memory in GBs required for the shape.
         /// </summary>
         [Input("memoryInGbs", required: true)]
         public Input<int> MemoryInGbs { get; set; } = null!;
 
         /// <summary>
-        /// Number of OCPUs required by the shape.
+        /// Number of OCPUs required for the shape.
         /// </summary>
         [Input("ocpus", required: true)]
         public Input<int> Ocpus { get; set; } = null!;
@@ -27,8 +33,14 @@ namespace Pulumi.Oci.Oci.Inputs
         /// <summary>
         /// The name of the shape.
         /// </summary>
-        [Input("shapeName", required: true)]
-        public Input<string> ShapeName { get; set; } = null!;
+        [Input("shapeName")]
+        public Input<string>? ShapeName { get; set; }
+
+        /// <summary>
+        /// Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public BatchBatchContextFleetShapeArgs()
         {

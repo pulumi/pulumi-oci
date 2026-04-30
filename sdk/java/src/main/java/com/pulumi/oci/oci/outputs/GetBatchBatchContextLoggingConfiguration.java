@@ -5,11 +5,17 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetBatchBatchContextLoggingConfiguration {
+    /**
+     * @return A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    private Boolean isJobTaskEventsPropagationEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -21,12 +27,19 @@ public final class GetBatchBatchContextLoggingConfiguration {
      */
     private String logId;
     /**
-     * @return Discriminator for sub-entities.
+     * @return Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     private String type;
 
     private GetBatchBatchContextLoggingConfiguration() {}
+    /**
+     * @return A switch to enable or disable propagation of job and task events to the customer&#39;s logs in Oracle Cloud Infrastructure logging service.
+     * 
+     */
+    public Boolean isJobTaskEventsPropagationEnabled() {
+        return this.isJobTaskEventsPropagationEnabled;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -42,7 +55,7 @@ public final class GetBatchBatchContextLoggingConfiguration {
         return this.logId;
     }
     /**
-     * @return Discriminator for sub-entities.
+     * @return Type of the logging configuration. Discriminator for sub-entities.
      * 
      */
     public String type() {
@@ -58,17 +71,27 @@ public final class GetBatchBatchContextLoggingConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean isJobTaskEventsPropagationEnabled;
         private String logGroupId;
         private String logId;
         private String type;
         public Builder() {}
         public Builder(GetBatchBatchContextLoggingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isJobTaskEventsPropagationEnabled = defaults.isJobTaskEventsPropagationEnabled;
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder isJobTaskEventsPropagationEnabled(Boolean isJobTaskEventsPropagationEnabled) {
+            if (isJobTaskEventsPropagationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBatchBatchContextLoggingConfiguration", "isJobTaskEventsPropagationEnabled");
+            }
+            this.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
+            return this;
+        }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             if (logGroupId == null) {
@@ -95,6 +118,7 @@ public final class GetBatchBatchContextLoggingConfiguration {
         }
         public GetBatchBatchContextLoggingConfiguration build() {
             final var _resultValue = new GetBatchBatchContextLoggingConfiguration();
+            _resultValue.isJobTaskEventsPropagationEnabled = isJobTaskEventsPropagationEnabled;
             _resultValue.logGroupId = logGroupId;
             _resultValue.logId = logId;
             _resultValue.type = type;

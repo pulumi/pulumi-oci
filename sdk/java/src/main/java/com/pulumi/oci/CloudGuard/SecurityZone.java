@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudGuard.SecurityZoneArgs;
 import com.pulumi.oci.CloudGuard.inputs.SecurityZoneState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +56,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(securityZoneDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isInheritanceAfterDeleteEnabled(securityZoneIsInheritanceAfterDeleteEnabled)
  *             .build());
  * 
  *     }
@@ -160,6 +162,20 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> inheritedByCompartments() {
         return this.inheritedByCompartments;
+    }
+    /**
+     * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    @Export(name="isInheritanceAfterDeleteEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isInheritanceAfterDeleteEnabled;
+
+    /**
+     * @return (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+     * 
+     */
+    public Output<Boolean> isInheritanceAfterDeleteEnabled() {
+        return this.isInheritanceAfterDeleteEnabled;
     }
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.

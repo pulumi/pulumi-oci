@@ -22,8 +22,6 @@ import * as utilities from "../utilities";
  *     publicKey: redisClusterCreateIdentityTokenPublicKey,
  *     redisClusterId: testRedisCluster.id,
  *     redisUser: redisClusterCreateIdentityTokenRedisUser,
- *     definedTags: redisClusterCreateIdentityTokenDefinedTags,
- *     freeformTags: redisClusterCreateIdentityTokenFreeformTags,
  * });
  * ```
  *
@@ -59,13 +57,7 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
         return obj['__pulumiType'] === RedisClusterCreateIdentityToken.__pulumiType;
     }
 
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-     */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string} | undefined>;
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-     */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Generated Identity token
@@ -134,13 +126,7 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
  * Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
  */
 export interface RedisClusterCreateIdentityTokenState {
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Generated Identity token
@@ -168,13 +154,7 @@ export interface RedisClusterCreateIdentityTokenState {
  * The set of arguments for constructing a RedisClusterCreateIdentityToken resource.
  */
 export interface RedisClusterCreateIdentityTokenArgs {
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-     */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-     */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * User public key pair

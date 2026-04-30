@@ -37,7 +37,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<int>? IntervalInMinutes { get; set; }
 
         /// <summary>
-        /// (Updatable) Interval in minutes which query is run periodically.
+        /// (Updatable) Interval in seconds which query is run periodically.
         /// </summary>
         [Input("intervalInSeconds")]
         public Input<int>? IntervalInSeconds { get; set; }
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? LoggingQueryType { get; set; }
 
         /// <summary>
-        /// (Updatable) Operator used in data source
+        /// (Updatable) DEPRECATED - Operator used in data source
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// (Updatable) Start policy for continuous query
+        /// (Updatable) DEPRECATED - Start policy for continuous query
         /// </summary>
         [Input("queryStartTime")]
         public Input<Inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs>? QueryStartTime { get; set; }
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        /// (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         /// </summary>
         [Input("threshold")]
         public Input<int>? Threshold { get; set; }

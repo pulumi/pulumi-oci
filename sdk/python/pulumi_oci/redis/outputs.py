@@ -22,8 +22,13 @@ __all__ = [
     'OciCacheUserAuthenticationMode',
     'OciCacheUserGetRedisClusterOciCacheCluster',
     'RedisClusterGetOciCacheUserOciCacheUser',
+    'RedisClusterImportFromObjectStorageDetails',
+    'RedisClusterImportFromObjectStorageDetailsObject',
     'RedisClusterNodeCollection',
     'RedisClusterNodeCollectionItem',
+    'GetOciCacheBackupsFilterResult',
+    'GetOciCacheBackupsOciCacheBackupCollectionResult',
+    'GetOciCacheBackupsOciCacheBackupCollectionItemResult',
     'GetOciCacheConfigSetConfigurationDetailResult',
     'GetOciCacheConfigSetConfigurationDetailItemResult',
     'GetOciCacheConfigSetsFilterResult',
@@ -46,6 +51,8 @@ __all__ = [
     'GetOciCacheUsersFilterResult',
     'GetOciCacheUsersOciCacheUserCollectionResult',
     'GetOciCacheUsersOciCacheUserCollectionItemResult',
+    'GetRedisClusterImportFromObjectStorageDetailResult',
+    'GetRedisClusterImportFromObjectStorageDetailObjectResult',
     'GetRedisClusterNodeCollectionResult',
     'GetRedisClusterNodeCollectionItemResult',
     'GetRedisClusterNodesFilterResult',
@@ -54,6 +61,8 @@ __all__ = [
     'GetRedisClustersFilterResult',
     'GetRedisClustersRedisClusterCollectionResult',
     'GetRedisClustersRedisClusterCollectionItemResult',
+    'GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult',
+    'GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectResult',
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionResult',
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult',
 ]
@@ -265,6 +274,64 @@ class RedisClusterGetOciCacheUserOciCacheUser(dict):
 
 
 @pulumi.output_type
+class RedisClusterImportFromObjectStorageDetails(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 objects: Sequence['outputs.RedisClusterImportFromObjectStorageDetailsObject']):
+        """
+        :param _builtins.str bucket: The Object Storage bucket name.
+        :param _builtins.str namespace: The Object Storage namespace name.
+        :param Sequence['RedisClusterImportFromObjectStorageDetailsObjectArgs'] objects: The list of objects to import from the specified bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "objects", objects)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Sequence['outputs.RedisClusterImportFromObjectStorageDetailsObject']:
+        """
+        The list of objects to import from the specified bucket.
+        """
+        return pulumi.get(self, "objects")
+
+
+@pulumi.output_type
+class RedisClusterImportFromObjectStorageDetailsObject(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str):
+        """
+        :param _builtins.str object: The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        return pulumi.get(self, "object")
+
+
+@pulumi.output_type
 class RedisClusterNodeCollection(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.RedisClusterNodeCollectionItem']] = None):
@@ -345,6 +412,268 @@ class RedisClusterNodeCollectionItem(dict):
         The private IP address of the API endpoint to access a specific node.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
+
+
+@pulumi.output_type
+class GetOciCacheBackupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOciCacheBackupsOciCacheBackupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheBackupsOciCacheBackupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheBackupsOciCacheBackupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheBackupsOciCacheBackupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 backup_size_in_gbs: _builtins.float,
+                 backup_source: _builtins.str,
+                 backup_type: _builtins.str,
+                 cluster_memory_in_gbs: _builtins.float,
+                 cluster_mode: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 export_to_object_storage_trigger: _builtins.int,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 retention_period_in_days: _builtins.int,
+                 shard_count: _builtins.int,
+                 software_version: _builtins.str,
+                 source_cluster_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.float backup_size_in_gbs: Backup size in GB.
+        :param _builtins.str backup_source: Specifies whether the backup was created from a replica or primary node
+        :param _builtins.str backup_type: Backup Type.
+        :param _builtins.float cluster_memory_in_gbs: The amount of memory allocated to the cluster, in gigabytes.
+        :param _builtins.str cluster_mode: Specifies whether the cluster is sharded or non-sharded.
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: Backup description
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: Unique identifier that is immutable on creation
+        :param _builtins.int retention_period_in_days: Backup retention period in days.
+        :param _builtins.int shard_count: The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+        :param _builtins.str software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        :param _builtins.str source_cluster_id: A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
+        :param _builtins.str state: A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param _builtins.str time_updated: The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
+        pulumi.set(__self__, "backup_source", backup_source)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "cluster_memory_in_gbs", cluster_memory_in_gbs)
+        pulumi.set(__self__, "cluster_mode", cluster_mode)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "export_to_object_storage_trigger", export_to_object_storage_trigger)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+        pulumi.set(__self__, "shard_count", shard_count)
+        pulumi.set(__self__, "software_version", software_version)
+        pulumi.set(__self__, "source_cluster_id", source_cluster_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="backupSizeInGbs")
+    def backup_size_in_gbs(self) -> _builtins.float:
+        """
+        Backup size in GB.
+        """
+        return pulumi.get(self, "backup_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="backupSource")
+    def backup_source(self) -> _builtins.str:
+        """
+        Specifies whether the backup was created from a replica or primary node
+        """
+        return pulumi.get(self, "backup_source")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> _builtins.str:
+        """
+        Backup Type.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterMemoryInGbs")
+    def cluster_memory_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory allocated to the cluster, in gigabytes.
+        """
+        return pulumi.get(self, "cluster_memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterMode")
+    def cluster_mode(self) -> _builtins.str:
+        """
+        Specifies whether the cluster is sharded or non-sharded.
+        """
+        return pulumi.get(self, "cluster_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Backup description
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="exportToObjectStorageTrigger")
+    def export_to_object_storage_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "export_to_object_storage_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier that is immutable on creation
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> _builtins.int:
+        """
+        Backup retention period in days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @_builtins.property
+    @pulumi.getter(name="shardCount")
+    def shard_count(self) -> _builtins.int:
+        """
+        The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+        """
+        return pulumi.get(self, "shard_count")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareVersion")
+    def software_version(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
+        """
+        return pulumi.get(self, "software_version")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceClusterId")
+    def source_cluster_id(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
+        """
+        return pulumi.get(self, "source_cluster_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the backup was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the backup was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -1248,6 +1577,64 @@ class GetOciCacheUsersOciCacheUserCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetRedisClusterImportFromObjectStorageDetailResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 objects: Sequence['outputs.GetRedisClusterImportFromObjectStorageDetailObjectResult']):
+        """
+        :param _builtins.str bucket: The Object Storage bucket name.
+        :param _builtins.str namespace: The Object Storage namespace name.
+        :param Sequence['GetRedisClusterImportFromObjectStorageDetailObjectArgs'] objects: The list of objects to import from the specified bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "objects", objects)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Sequence['outputs.GetRedisClusterImportFromObjectStorageDetailObjectResult']:
+        """
+        The list of objects to import from the specified bucket.
+        """
+        return pulumi.get(self, "objects")
+
+
+@pulumi.output_type
+class GetRedisClusterImportFromObjectStorageDetailObjectResult(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str):
+        """
+        :param _builtins.str object: The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        return pulumi.get(self, "object")
+
+
+@pulumi.output_type
 class GetRedisClusterNodeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetRedisClusterNodeCollectionItemResult']):
@@ -1460,6 +1847,7 @@ class GetRedisClustersRedisClusterCollectionResult(dict):
 @pulumi.output_type
 class GetRedisClustersRedisClusterCollectionItemResult(dict):
     def __init__(__self__, *,
+                 backup_id: _builtins.str,
                  cluster_mode: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -1468,6 +1856,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 import_from_object_storage_details: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult'],
                  lifecycle_details: _builtins.str,
                  node_collections: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult'],
                  node_count: _builtins.int,
@@ -1487,6 +1876,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
+        :param _builtins.str backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
         :param _builtins.str cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1495,6 +1885,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        :param Sequence['GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailArgs'] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
         :param Sequence['GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs'] node_collections: The collection of  cluster nodes.
         :param _builtins.int node_count: The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
@@ -1514,6 +1905,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param _builtins.str time_created: The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param _builtins.str time_updated: The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
+        pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "cluster_mode", cluster_mode)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1522,6 +1914,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "import_from_object_storage_details", import_from_object_storage_details)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "node_collections", node_collections)
         pulumi.set(__self__, "node_count", node_count)
@@ -1540,6 +1933,14 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> _builtins.str:
+        """
+        The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.
+        """
+        return pulumi.get(self, "backup_id")
 
     @_builtins.property
     @pulumi.getter(name="clusterMode")
@@ -1604,6 +2005,14 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="importFromObjectStorageDetails")
+    def import_from_object_storage_details(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult']:
+        """
+        Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        """
+        return pulumi.get(self, "import_from_object_storage_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -1748,6 +2157,64 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 objects: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectResult']):
+        """
+        :param _builtins.str bucket: The Object Storage bucket name.
+        :param _builtins.str namespace: The Object Storage namespace name.
+        :param Sequence['GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectArgs'] objects: The list of objects to import from the specified bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "objects", objects)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectResult']:
+        """
+        The list of objects to import from the specified bucket.
+        """
+        return pulumi.get(self, "objects")
+
+
+@pulumi.output_type
+class GetRedisClustersRedisClusterCollectionItemImportFromObjectStorageDetailObjectResult(dict):
+    def __init__(__self__, *,
+                 object: _builtins.str):
+        """
+        :param _builtins.str object: The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The name of the object in the bucket (for example, 'customerA/exports/backup_ocid/dump.rdb').
+        """
+        return pulumi.get(self, "object")
 
 
 @pulumi.output_type

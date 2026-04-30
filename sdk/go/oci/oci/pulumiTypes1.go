@@ -13,6 +13,344 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPsaPsaServicesPsaServiceCollection struct {
+	// List of PsaServiceSummary.
+	Items []GetPsaPsaServicesPsaServiceCollectionItem `pulumi:"items"`
+}
+
+// GetPsaPsaServicesPsaServiceCollectionInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionArgs and GetPsaPsaServicesPsaServiceCollectionOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionArgs{...}
+type GetPsaPsaServicesPsaServiceCollectionInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput
+	ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArgs struct {
+	// List of PsaServiceSummary.
+	Items GetPsaPsaServicesPsaServiceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPsaPsaServicesPsaServiceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArgs) ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArgs) ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionOutput)
+}
+
+// GetPsaPsaServicesPsaServiceCollectionArrayInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionArray and GetPsaPsaServicesPsaServiceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionArrayInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionArray{ GetPsaPsaServicesPsaServiceCollectionArgs{...} }
+type GetPsaPsaServicesPsaServiceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput
+	ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArray []GetPsaPsaServicesPsaServiceCollectionInput
+
+func (GetPsaPsaServicesPsaServiceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArray) ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArray) ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return o
+}
+
+// List of PsaServiceSummary.
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) Items() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollection) []GetPsaPsaServicesPsaServiceCollectionItem {
+		return v.Items
+	}).(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesPsaServiceCollection {
+		return vs[0].([]GetPsaPsaServicesPsaServiceCollection)[vs[1].(int)]
+	}).(GetPsaPsaServicesPsaServiceCollectionOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItem struct {
+	// A description of the Oracle Cloud Infrastructure service.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+	Fqdns []string `pulumi:"fqdns"`
+	// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+	Id string `pulumi:"id"`
+	// This optional field will indicate that whether service is IPv6 enabled.
+	IsV6enabled bool `pulumi:"isV6enabled"`
+}
+
+// GetPsaPsaServicesPsaServiceCollectionItemInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionItemArgs and GetPsaPsaServicesPsaServiceCollectionItemOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionItemInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionItemArgs{...}
+type GetPsaPsaServicesPsaServiceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput
+	ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArgs struct {
+	// A description of the Oracle Cloud Infrastructure service.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+	Fqdns pulumi.StringArrayInput `pulumi:"fqdns"`
+	// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+	Id pulumi.StringInput `pulumi:"id"`
+	// This optional field will indicate that whether service is IPv6 enabled.
+	IsV6enabled pulumi.BoolInput `pulumi:"isV6enabled"`
+}
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArgs) ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArgs) ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionItemOutput)
+}
+
+// GetPsaPsaServicesPsaServiceCollectionItemArrayInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionItemArray and GetPsaPsaServicesPsaServiceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionItemArrayInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionItemArray{ GetPsaPsaServicesPsaServiceCollectionItemArgs{...} }
+type GetPsaPsaServicesPsaServiceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput
+	ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArray []GetPsaPsaServicesPsaServiceCollectionItemInput
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArray) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArray) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return o
+}
+
+// A description of the Oracle Cloud Infrastructure service.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Fqdns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) []string { return v.Fqdns }).(pulumi.StringArrayOutput)
+}
+
+// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This optional field will indicate that whether service is IPv6 enabled.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) IsV6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) bool { return v.IsV6enabled }).(pulumi.BoolOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesPsaServiceCollectionItem {
+		return vs[0].([]GetPsaPsaServicesPsaServiceCollectionItem)[vs[1].(int)]
+	}).(GetPsaPsaServicesPsaServiceCollectionItemOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaWorkRequestErrorsFilterInput is an input type that accepts GetPsaPsaWorkRequestErrorsFilterArgs and GetPsaPsaWorkRequestErrorsFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsFilterInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsFilterArgs{...}
+type GetPsaPsaWorkRequestErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput
+	ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsFilterOutput
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaWorkRequestErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArgs) ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArgs) ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsFilterOutput)
+}
+
+// GetPsaPsaWorkRequestErrorsFilterArrayInput is an input type that accepts GetPsaPsaWorkRequestErrorsFilterArray and GetPsaPsaWorkRequestErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsFilterArrayInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsFilterArray{ GetPsaPsaWorkRequestErrorsFilterArgs{...} }
+type GetPsaPsaWorkRequestErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput
+	ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArray []GetPsaPsaWorkRequestErrorsFilterInput
+
+func (GetPsaPsaWorkRequestErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArray) ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArray) ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsFilterArrayOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestErrorsFilter {
+		return vs[0].([]GetPsaPsaWorkRequestErrorsFilter)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestErrorsFilterOutput)
+}
+
 type GetPsaPsaWorkRequestErrorsWorkRequestError struct {
 	Code      string `pulumi:"code"`
 	Message   string `pulumi:"message"`
@@ -9988,6 +10326,12 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionArrayInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItemInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItemArrayInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilterInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilterArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestErrorInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsWorkRequestErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestLogsFilterInput)(nil)).Elem(), GetPsaPsaWorkRequestLogsFilterArgs{})
@@ -10144,6 +10488,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestLogsFilterOutput{})

@@ -19,14 +19,14 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
     public static final BatchBatchContextFleetArgs Empty = new BatchBatchContextFleetArgs();
 
     /**
-     * A message that describes the current state of the service manage fleet configuration in more detail.
+     * A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     @Import(name="details")
     private @Nullable Output<String> details;
 
     /**
-     * @return A message that describes the current state of the service manage fleet configuration in more detail.
+     * @return A message that describes the current state of the service managed fleet configuration in more detail.
      * 
      */
     public Optional<Output<String>> details() {
@@ -64,14 +64,14 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Shape of the fleet. Describes hardware resources of each node in the fleet.
+     * Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
      */
     @Import(name="shape", required=true)
     private Output<BatchBatchContextFleetShapeArgs> shape;
 
     /**
-     * @return Shape of the fleet. Describes hardware resources of each node in the fleet.
+     * @return Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
      * 
      */
     public Output<BatchBatchContextFleetShapeArgs> shape() {
@@ -100,14 +100,14 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Type of the fleet. Also serves as a discriminator for sub-entities.
+     * Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Type of the fleet. Also serves as a discriminator for sub-entities.
+     * @return Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
      * 
      */
     public Output<String> type() {
@@ -144,7 +144,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param details A message that describes the current state of the service manage fleet configuration in more detail.
+         * @param details A message that describes the current state of the service managed fleet configuration in more detail.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param details A message that describes the current state of the service manage fleet configuration in more detail.
+         * @param details A message that describes the current state of the service managed fleet configuration in more detail.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param shape Shape of the fleet. Describes hardware resources of each node in the fleet.
+         * @param shape Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param shape Shape of the fleet. Describes hardware resources of each node in the fleet.
+         * @param shape Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type Type of the fleet. Also serves as a discriminator for sub-entities.
+         * @param type Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class BatchBatchContextFleetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type Type of the fleet. Also serves as a discriminator for sub-entities.
+         * @param type Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
          * 
          * @return builder
          * 

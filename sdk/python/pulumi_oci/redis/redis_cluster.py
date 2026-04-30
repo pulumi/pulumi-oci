@@ -27,9 +27,11 @@ class RedisClusterArgs:
                  node_memory_in_gbs: pulumi.Input[_builtins.float],
                  software_version: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
+                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_from_object_storage_details: Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -47,9 +49,11 @@ class RedisClusterArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs'] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
@@ -61,12 +65,16 @@ class RedisClusterArgs:
         pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
         pulumi.set(__self__, "software_version", software_version)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
         if cluster_mode is not None:
             pulumi.set(__self__, "cluster_mode", cluster_mode)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if import_from_object_storage_details is not None:
+            pulumi.set(__self__, "import_from_object_storage_details", import_from_object_storage_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if oci_cache_config_set_id is not None:
@@ -153,6 +161,18 @@ class RedisClusterArgs:
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="clusterMode")
     def cluster_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -187,6 +207,18 @@ class RedisClusterArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="importFromObjectStorageDetails")
+    def import_from_object_storage_details(self) -> Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']]:
+        """
+        Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        """
+        return pulumi.get(self, "import_from_object_storage_details")
+
+    @import_from_object_storage_details.setter
+    def import_from_object_storage_details(self, value: Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']]):
+        pulumi.set(self, "import_from_object_storage_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
@@ -240,6 +272,7 @@ class RedisClusterArgs:
 @pulumi.input_type
 class _RedisClusterState:
     def __init__(__self__, *,
+                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -247,6 +280,7 @@ class _RedisClusterState:
                  discovery_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_from_object_storage_details: Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  node_collections: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -268,6 +302,7 @@ class _RedisClusterState:
         """
         Input properties used for looking up and filtering RedisCluster resources.
 
+        :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -275,6 +310,7 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.str] discovery_fqdn: The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs'] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
         :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]] node_collections: The collection of  cluster nodes.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
@@ -298,6 +334,8 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
         if cluster_mode is not None:
             pulumi.set(__self__, "cluster_mode", cluster_mode)
         if compartment_id is not None:
@@ -312,6 +350,8 @@ class _RedisClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if import_from_object_storage_details is not None:
+            pulumi.set(__self__, "import_from_object_storage_details", import_from_object_storage_details)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if node_collections is not None:
@@ -348,6 +388,18 @@ class _RedisClusterState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterMode")
@@ -432,6 +484,18 @@ class _RedisClusterState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="importFromObjectStorageDetails")
+    def import_from_object_storage_details(self) -> Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']]:
+        """
+        Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        """
+        return pulumi.get(self, "import_from_object_storage_details")
+
+    @import_from_object_storage_details.setter
+    def import_from_object_storage_details(self, value: Optional[pulumi.Input['RedisClusterImportFromObjectStorageDetailsArgs']]):
+        pulumi.set(self, "import_from_object_storage_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -660,11 +724,13 @@ class RedisCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_from_object_storage_details: Optional[pulumi.Input[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -680,7 +746,9 @@ class RedisCluster(pulumi.CustomResource):
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
 
-        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+        You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+        For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
         ## Example Usage
 
@@ -695,12 +763,20 @@ class RedisCluster(pulumi.CustomResource):
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
+            backup_id=test_backup["id"],
             cluster_mode=redis_cluster_cluster_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
+            },
+            import_from_object_storage_details={
+                "bucket": redis_cluster_import_from_object_storage_details_bucket,
+                "namespace": redis_cluster_import_from_object_storage_details_namespace,
+                "objects": [{
+                    "object": redis_cluster_import_from_object_storage_details_objects_object,
+                }],
             },
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
@@ -719,11 +795,13 @@ class RedisCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict']] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
@@ -749,7 +827,9 @@ class RedisCluster(pulumi.CustomResource):
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
 
-        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution.
+        You can optionally initialize the cluster data by restoring from an Oracle Cloud Infrastructure Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+        For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
 
         ## Example Usage
 
@@ -764,12 +844,20 @@ class RedisCluster(pulumi.CustomResource):
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
+            backup_id=test_backup["id"],
             cluster_mode=redis_cluster_cluster_mode,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
+            },
+            import_from_object_storage_details={
+                "bucket": redis_cluster_import_from_object_storage_details_bucket,
+                "namespace": redis_cluster_import_from_object_storage_details_namespace,
+                "objects": [{
+                    "object": redis_cluster_import_from_object_storage_details_objects_object,
+                }],
             },
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
@@ -801,11 +889,13 @@ class RedisCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_from_object_storage_details: Optional[pulumi.Input[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -823,6 +913,7 @@ class RedisCluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = RedisClusterArgs.__new__(RedisClusterArgs)
 
+            __props__.__dict__["backup_id"] = backup_id
             __props__.__dict__["cluster_mode"] = cluster_mode
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -832,6 +923,7 @@ class RedisCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["import_from_object_storage_details"] = import_from_object_storage_details
             if node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'node_count'")
             __props__.__dict__["node_count"] = node_count
@@ -870,6 +962,7 @@ class RedisCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            backup_id: Optional[pulumi.Input[_builtins.str]] = None,
             cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -877,6 +970,7 @@ class RedisCluster(pulumi.CustomResource):
             discovery_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            import_from_object_storage_details: Optional[pulumi.Input[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             node_collections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]]] = None,
             node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -902,6 +996,7 @@ class RedisCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -909,6 +1004,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] discovery_fqdn: The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict']] import_from_object_storage_details: Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]] node_collections: The collection of  cluster nodes.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
@@ -936,6 +1032,7 @@ class RedisCluster(pulumi.CustomResource):
 
         __props__ = _RedisClusterState.__new__(_RedisClusterState)
 
+        __props__.__dict__["backup_id"] = backup_id
         __props__.__dict__["cluster_mode"] = cluster_mode
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -943,6 +1040,7 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["discovery_fqdn"] = discovery_fqdn
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["import_from_object_storage_details"] = import_from_object_storage_details
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["node_collections"] = node_collections
         __props__.__dict__["node_count"] = node_count
@@ -962,6 +1060,14 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return RedisCluster(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+        """
+        return pulumi.get(self, "backup_id")
 
     @_builtins.property
     @pulumi.getter(name="clusterMode")
@@ -1018,6 +1124,14 @@ class RedisCluster(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="importFromObjectStorageDetails")
+    def import_from_object_storage_details(self) -> pulumi.Output['outputs.RedisClusterImportFromObjectStorageDetails']:
+        """
+        Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
+        """
+        return pulumi.get(self, "import_from_object_storage_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

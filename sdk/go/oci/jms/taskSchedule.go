@@ -157,7 +157,7 @@ type TaskSchedule struct {
 
 	// Name of the task creator.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
-	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences pulumi.StringOutput `pulumi:"executionRecurrences"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringOutput `pulumi:"fleetId"`
@@ -218,7 +218,7 @@ func GetTaskSchedule(ctx *pulumi.Context,
 type taskScheduleState struct {
 	// Name of the task creator.
 	CreatedBy *string `pulumi:"createdBy"`
-	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId *string `pulumi:"fleetId"`
@@ -241,7 +241,7 @@ type taskScheduleState struct {
 type TaskScheduleState struct {
 	// Name of the task creator.
 	CreatedBy pulumi.StringPtrInput
-	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringPtrInput
@@ -266,7 +266,7 @@ func (TaskScheduleState) ElementType() reflect.Type {
 }
 
 type taskScheduleArgs struct {
-	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
@@ -276,7 +276,7 @@ type taskScheduleArgs struct {
 
 // The set of arguments for constructing a TaskSchedule resource.
 type TaskScheduleArgs struct {
-	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 	ExecutionRecurrences pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput
@@ -376,7 +376,7 @@ func (o TaskScheduleOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *TaskSchedule) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
-// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+// (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
 func (o TaskScheduleOutput) ExecutionRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v *TaskSchedule) pulumi.StringOutput { return v.ExecutionRecurrences }).(pulumi.StringOutput)
 }

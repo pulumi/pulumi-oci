@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetBatchBatchTaskProfileResult',
@@ -26,7 +27,7 @@ class GetBatchBatchTaskProfileResult:
     """
     A collection of values returned by getBatchBatchTaskProfile.
     """
-    def __init__(__self__, batch_task_profile_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, min_memory_in_gbs=None, min_ocpus=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, batch_task_profile_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, extended_informations=None, freeform_tags=None, id=None, min_disk_size_in_gbs=None, min_memory_in_gbs=None, min_ocpus=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if batch_task_profile_id and not isinstance(batch_task_profile_id, str):
             raise TypeError("Expected argument 'batch_task_profile_id' to be a str")
         pulumi.set(__self__, "batch_task_profile_id", batch_task_profile_id)
@@ -42,12 +43,18 @@ class GetBatchBatchTaskProfileResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if extended_informations and not isinstance(extended_informations, list):
+            raise TypeError("Expected argument 'extended_informations' to be a list")
+        pulumi.set(__self__, "extended_informations", extended_informations)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if min_disk_size_in_gbs and not isinstance(min_disk_size_in_gbs, int):
+            raise TypeError("Expected argument 'min_disk_size_in_gbs' to be a int")
+        pulumi.set(__self__, "min_disk_size_in_gbs", min_disk_size_in_gbs)
         if min_memory_in_gbs and not isinstance(min_memory_in_gbs, int):
             raise TypeError("Expected argument 'min_memory_in_gbs' to be a int")
         pulumi.set(__self__, "min_memory_in_gbs", min_memory_in_gbs)
@@ -105,6 +112,14 @@ class GetBatchBatchTaskProfileResult:
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="extendedInformations")
+    def extended_informations(self) -> Sequence['outputs.GetBatchBatchTaskProfileExtendedInformationResult']:
+        """
+        Extended information for the task profile.
+        """
+        return pulumi.get(self, "extended_informations")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -119,6 +134,14 @@ class GetBatchBatchTaskProfileResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="minDiskSizeInGbs")
+    def min_disk_size_in_gbs(self) -> _builtins.int:
+        """
+        The minimum required size of disk space in GBs.
+        """
+        return pulumi.get(self, "min_disk_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="minMemoryInGbs")
@@ -180,8 +203,10 @@ class AwaitableGetBatchBatchTaskProfileResult(GetBatchBatchTaskProfileResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            extended_informations=self.extended_informations,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            min_disk_size_in_gbs=self.min_disk_size_in_gbs,
             min_memory_in_gbs=self.min_memory_in_gbs,
             min_ocpus=self.min_ocpus,
             state=self.state,
@@ -220,8 +245,10 @@ def get_batch_batch_task_profile(batch_task_profile_id: Optional[_builtins.str] 
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        extended_informations=pulumi.get(__ret__, 'extended_informations'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        min_disk_size_in_gbs=pulumi.get(__ret__, 'min_disk_size_in_gbs'),
         min_memory_in_gbs=pulumi.get(__ret__, 'min_memory_in_gbs'),
         min_ocpus=pulumi.get(__ret__, 'min_ocpus'),
         state=pulumi.get(__ret__, 'state'),
@@ -257,8 +284,10 @@ def get_batch_batch_task_profile_output(batch_task_profile_id: Optional[pulumi.I
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        extended_informations=pulumi.get(__response__, 'extended_informations'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        min_disk_size_in_gbs=pulumi.get(__response__, 'min_disk_size_in_gbs'),
         min_memory_in_gbs=pulumi.get(__response__, 'min_memory_in_gbs'),
         min_ocpus=pulumi.get(__response__, 'min_ocpus'),
         state=pulumi.get(__response__, 'state'),

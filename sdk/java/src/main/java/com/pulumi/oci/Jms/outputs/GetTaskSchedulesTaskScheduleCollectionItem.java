@@ -18,7 +18,7 @@ public final class GetTaskSchedulesTaskScheduleCollectionItem {
      */
     private String createdBy;
     /**
-     * @return Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be &#39;DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10&#39;. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be &#39;DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z&#39;.
+     * @return Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be &#39;DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10&#39;. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be &#39;DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z&#39;.
      * 
      */
     private String executionRecurrences;
@@ -77,7 +77,7 @@ public final class GetTaskSchedulesTaskScheduleCollectionItem {
         return this.createdBy;
     }
     /**
-     * @return Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be &#39;DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10&#39;. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be &#39;DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z&#39;.
+     * @return Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be &#39;DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10&#39;. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be &#39;DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z&#39;.
      * 
      */
     public String executionRecurrences() {

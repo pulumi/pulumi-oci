@@ -82,14 +82,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Interval in minutes which query is run periodically.
+     * (Updatable) Interval in seconds which query is run periodically.
      * 
      */
     @Import(name="intervalInSeconds")
     private @Nullable Output<Integer> intervalInSeconds;
 
     /**
-     * @return (Updatable) Interval in minutes which query is run periodically.
+     * @return (Updatable) Interval in seconds which query is run periodically.
      * 
      */
     public Optional<Output<Integer>> intervalInSeconds() {
@@ -127,14 +127,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Operator used in data source
+     * (Updatable) DEPRECATED - Operator used in data source
      * 
      */
     @Import(name="operator")
     private @Nullable Output<String> operator;
 
     /**
-     * @return (Updatable) Operator used in data source
+     * @return (Updatable) DEPRECATED - Operator used in data source
      * 
      */
     public Optional<Output<String>> operator() {
@@ -157,14 +157,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Start policy for continuous query
+     * (Updatable) DEPRECATED - Start policy for continuous query
      * 
      */
     @Import(name="queryStartTime")
     private @Nullable Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs> queryStartTime;
 
     /**
-     * @return (Updatable) Start policy for continuous query
+     * @return (Updatable) DEPRECATED - Start policy for continuous query
      * 
      */
     public Optional<Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs>> queryStartTime() {
@@ -202,14 +202,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     @Import(name="threshold")
     private @Nullable Output<Integer> threshold;
 
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+     * @return (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Optional<Output<Integer>> threshold() {
@@ -337,7 +337,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param intervalInSeconds (Updatable) Interval in minutes which query is run periodically.
+         * @param intervalInSeconds (Updatable) Interval in seconds which query is run periodically.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param intervalInSeconds (Updatable) Interval in minutes which query is run periodically.
+         * @param intervalInSeconds (Updatable) Interval in seconds which query is run periodically.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param operator (Updatable) Operator used in data source
+         * @param operator (Updatable) DEPRECATED - Operator used in data source
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param operator (Updatable) Operator used in data source
+         * @param operator (Updatable) DEPRECATED - Operator used in data source
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Start policy for continuous query
+         * @param queryStartTime (Updatable) DEPRECATED - Start policy for continuous query
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Start policy for continuous query
+         * @param queryStartTime (Updatable) DEPRECATED - Start policy for continuous query
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+         * @param threshold (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+         * @param threshold (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          * 
          * @return builder
          * 

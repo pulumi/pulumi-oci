@@ -28,7 +28,7 @@ class GetBatchBatchContextShapesResult:
     """
     A collection of values returned by getBatchBatchContextShapes.
     """
-    def __init__(__self__, availability_domain=None, batch_context_shape_collections=None, compartment_id=None, filters=None, id=None):
+    def __init__(__self__, availability_domain=None, batch_context_shape_collections=None, compartment_id=None, filters=None, id=None, shape_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetBatchBatchContextShapesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if shape_type and not isinstance(shape_type, str):
+            raise TypeError("Expected argument 'shape_type' to be a str")
+        pulumi.set(__self__, "shape_type", shape_type)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -76,6 +79,11 @@ class GetBatchBatchContextShapesResult:
         """
         return pulumi.get(self, "id")
 
+    @_builtins.property
+    @pulumi.getter(name="shapeType")
+    def shape_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "shape_type")
+
 
 class AwaitableGetBatchBatchContextShapesResult(GetBatchBatchContextShapesResult):
     # pylint: disable=using-constant-test
@@ -87,12 +95,14 @@ class AwaitableGetBatchBatchContextShapesResult(GetBatchBatchContextShapesResult
             batch_context_shape_collections=self.batch_context_shape_collections,
             compartment_id=self.compartment_id,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            shape_type=self.shape_type)
 
 
 def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] = None,
                                    compartment_id: Optional[_builtins.str] = None,
                                    filters: Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]] = None,
+                                   shape_type: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBatchBatchContextShapesResult:
     """
     This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
@@ -106,17 +116,20 @@ def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] 
     import pulumi_oci as oci
 
     test_batch_context_shapes = oci.oci.get_batch_batch_context_shapes(compartment_id=compartment_id,
-        availability_domain=batch_context_shape_availability_domain)
+        availability_domain=batch_context_shape_availability_domain,
+        shape_type=batch_context_shape_shape_type)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str shape_type: The type of a shape.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['shapeType'] = shape_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes', __args__, opts=opts, typ=GetBatchBatchContextShapesResult).value
 
@@ -125,10 +138,12 @@ def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] 
         batch_context_shape_collections=pulumi.get(__ret__, 'batch_context_shape_collections'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        shape_type=pulumi.get(__ret__, 'shape_type'))
 def get_batch_batch_context_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]]]] = None,
+                                          shape_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchContextShapesResult]:
     """
     This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
@@ -142,17 +157,20 @@ def get_batch_batch_context_shapes_output(availability_domain: Optional[pulumi.I
     import pulumi_oci as oci
 
     test_batch_context_shapes = oci.oci.get_batch_batch_context_shapes(compartment_id=compartment_id,
-        availability_domain=batch_context_shape_availability_domain)
+        availability_domain=batch_context_shape_availability_domain,
+        shape_type=batch_context_shape_shape_type)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str shape_type: The type of a shape.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['shapeType'] = shape_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes', __args__, opts=opts, typ=GetBatchBatchContextShapesResult)
     return __ret__.apply(lambda __response__: GetBatchBatchContextShapesResult(
@@ -160,4 +178,5 @@ def get_batch_batch_context_shapes_output(availability_domain: Optional[pulumi.I
         batch_context_shape_collections=pulumi.get(__response__, 'batch_context_shape_collections'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
-        id=pulumi.get(__response__, 'id')))
+        id=pulumi.get(__response__, 'id'),
+        shape_type=pulumi.get(__response__, 'shape_type')))

@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.ResourceArgs {
@@ -16,14 +18,29 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
     public static final BatchBatchContextFleetShapeArgs Empty = new BatchBatchContextFleetShapeArgs();
 
     /**
-     * Amount of memory in GBs required by the shape.
+     * Amount of disk space in GBs required for the shape.
+     * 
+     */
+    @Import(name="diskSizeInGbs")
+    private @Nullable Output<Integer> diskSizeInGbs;
+
+    /**
+     * @return Amount of disk space in GBs required for the shape.
+     * 
+     */
+    public Optional<Output<Integer>> diskSizeInGbs() {
+        return Optional.ofNullable(this.diskSizeInGbs);
+    }
+
+    /**
+     * Amount of memory in GBs required for the shape.
      * 
      */
     @Import(name="memoryInGbs", required=true)
     private Output<Integer> memoryInGbs;
 
     /**
-     * @return Amount of memory in GBs required by the shape.
+     * @return Amount of memory in GBs required for the shape.
      * 
      */
     public Output<Integer> memoryInGbs() {
@@ -31,14 +48,14 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
     }
 
     /**
-     * Number of OCPUs required by the shape.
+     * Number of OCPUs required for the shape.
      * 
      */
     @Import(name="ocpus", required=true)
     private Output<Integer> ocpus;
 
     /**
-     * @return Number of OCPUs required by the shape.
+     * @return Number of OCPUs required for the shape.
      * 
      */
     public Output<Integer> ocpus() {
@@ -49,23 +66,40 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
      * The name of the shape.
      * 
      */
-    @Import(name="shapeName", required=true)
-    private Output<String> shapeName;
+    @Import(name="shapeName")
+    private @Nullable Output<String> shapeName;
 
     /**
      * @return The name of the shape.
      * 
      */
-    public Output<String> shapeName() {
-        return this.shapeName;
+    public Optional<Output<String>> shapeName() {
+        return Optional.ofNullable(this.shapeName);
+    }
+
+    /**
+     * Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
     }
 
     private BatchBatchContextFleetShapeArgs() {}
 
     private BatchBatchContextFleetShapeArgs(BatchBatchContextFleetShapeArgs $) {
+        this.diskSizeInGbs = $.diskSizeInGbs;
         this.memoryInGbs = $.memoryInGbs;
         this.ocpus = $.ocpus;
         this.shapeName = $.shapeName;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -87,7 +121,28 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param memoryInGbs Amount of memory in GBs required by the shape.
+         * @param diskSizeInGbs Amount of disk space in GBs required for the shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder diskSizeInGbs(@Nullable Output<Integer> diskSizeInGbs) {
+            $.diskSizeInGbs = diskSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param diskSizeInGbs Amount of disk space in GBs required for the shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder diskSizeInGbs(Integer diskSizeInGbs) {
+            return diskSizeInGbs(Output.of(diskSizeInGbs));
+        }
+
+        /**
+         * @param memoryInGbs Amount of memory in GBs required for the shape.
          * 
          * @return builder
          * 
@@ -98,7 +153,7 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param memoryInGbs Amount of memory in GBs required by the shape.
+         * @param memoryInGbs Amount of memory in GBs required for the shape.
          * 
          * @return builder
          * 
@@ -108,7 +163,7 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param ocpus Number of OCPUs required by the shape.
+         * @param ocpus Number of OCPUs required for the shape.
          * 
          * @return builder
          * 
@@ -119,7 +174,7 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param ocpus Number of OCPUs required by the shape.
+         * @param ocpus Number of OCPUs required for the shape.
          * 
          * @return builder
          * 
@@ -134,7 +189,7 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
          * @return builder
          * 
          */
-        public Builder shapeName(Output<String> shapeName) {
+        public Builder shapeName(@Nullable Output<String> shapeName) {
             $.shapeName = shapeName;
             return this;
         }
@@ -149,15 +204,33 @@ public final class BatchBatchContextFleetShapeArgs extends com.pulumi.resources.
             return shapeName(Output.of(shapeName));
         }
 
+        /**
+         * @param type Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type Type of the GPU fleet shape. Required when `fleets.type=SERVICE_MANAGED_GPU_FLEET`. Also serves as a discriminator for sub-entities.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
+        }
+
         public BatchBatchContextFleetShapeArgs build() {
             if ($.memoryInGbs == null) {
                 throw new MissingRequiredPropertyException("BatchBatchContextFleetShapeArgs", "memoryInGbs");
             }
             if ($.ocpus == null) {
                 throw new MissingRequiredPropertyException("BatchBatchContextFleetShapeArgs", "ocpus");
-            }
-            if ($.shapeName == null) {
-                throw new MissingRequiredPropertyException("BatchBatchContextFleetShapeArgs", "shapeName");
             }
             return $;
         }

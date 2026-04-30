@@ -6,6 +6,7 @@ package com.pulumi.oci.oci;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.BatchBatchTaskProfileExtendedInformationArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -79,6 +80,21 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * Extended information for the task profile.
+     * 
+     */
+    @Import(name="extendedInformation")
+    private @Nullable Output<BatchBatchTaskProfileExtendedInformationArgs> extendedInformation;
+
+    /**
+     * @return Extended information for the task profile.
+     * 
+     */
+    public Optional<Output<BatchBatchTaskProfileExtendedInformationArgs>> extendedInformation() {
+        return Optional.ofNullable(this.extendedInformation);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -94,18 +110,33 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * The minimum required size of disk space in GBs.
+     * 
+     */
+    @Import(name="minDiskSizeInGbs")
+    private @Nullable Output<Integer> minDiskSizeInGbs;
+
+    /**
+     * @return The minimum required size of disk space in GBs.
+     * 
+     */
+    public Optional<Output<Integer>> minDiskSizeInGbs() {
+        return Optional.ofNullable(this.minDiskSizeInGbs);
+    }
+
+    /**
      * The minimum required memory.
      * 
      */
-    @Import(name="minMemoryInGbs", required=true)
-    private Output<Integer> minMemoryInGbs;
+    @Import(name="minMemoryInGbs")
+    private @Nullable Output<Integer> minMemoryInGbs;
 
     /**
      * @return The minimum required memory.
      * 
      */
-    public Output<Integer> minMemoryInGbs() {
-        return this.minMemoryInGbs;
+    public Optional<Output<Integer>> minMemoryInGbs() {
+        return Optional.ofNullable(this.minMemoryInGbs);
     }
 
     /**
@@ -115,8 +146,8 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="minOcpus", required=true)
-    private Output<Integer> minOcpus;
+    @Import(name="minOcpus")
+    private @Nullable Output<Integer> minOcpus;
 
     /**
      * @return The minimum required OCPUs.
@@ -125,8 +156,8 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> minOcpus() {
-        return this.minOcpus;
+    public Optional<Output<Integer>> minOcpus() {
+        return Optional.ofNullable(this.minOcpus);
     }
 
     private BatchBatchTaskProfileArgs() {}
@@ -136,7 +167,9 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.extendedInformation = $.extendedInformation;
         this.freeformTags = $.freeformTags;
+        this.minDiskSizeInGbs = $.minDiskSizeInGbs;
         this.minMemoryInGbs = $.minMemoryInGbs;
         this.minOcpus = $.minOcpus;
     }
@@ -244,6 +277,27 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param extendedInformation Extended information for the task profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendedInformation(@Nullable Output<BatchBatchTaskProfileExtendedInformationArgs> extendedInformation) {
+            $.extendedInformation = extendedInformation;
+            return this;
+        }
+
+        /**
+         * @param extendedInformation Extended information for the task profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extendedInformation(BatchBatchTaskProfileExtendedInformationArgs extendedInformation) {
+            return extendedInformation(Output.of(extendedInformation));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -265,12 +319,33 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param minDiskSizeInGbs The minimum required size of disk space in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minDiskSizeInGbs(@Nullable Output<Integer> minDiskSizeInGbs) {
+            $.minDiskSizeInGbs = minDiskSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param minDiskSizeInGbs The minimum required size of disk space in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minDiskSizeInGbs(Integer minDiskSizeInGbs) {
+            return minDiskSizeInGbs(Output.of(minDiskSizeInGbs));
+        }
+
+        /**
          * @param minMemoryInGbs The minimum required memory.
          * 
          * @return builder
          * 
          */
-        public Builder minMemoryInGbs(Output<Integer> minMemoryInGbs) {
+        public Builder minMemoryInGbs(@Nullable Output<Integer> minMemoryInGbs) {
             $.minMemoryInGbs = minMemoryInGbs;
             return this;
         }
@@ -294,7 +369,7 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder minOcpus(Output<Integer> minOcpus) {
+        public Builder minOcpus(@Nullable Output<Integer> minOcpus) {
             $.minOcpus = minOcpus;
             return this;
         }
@@ -315,12 +390,6 @@ public final class BatchBatchTaskProfileArgs extends com.pulumi.resources.Resour
         public BatchBatchTaskProfileArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("BatchBatchTaskProfileArgs", "compartmentId");
-            }
-            if ($.minMemoryInGbs == null) {
-                throw new MissingRequiredPropertyException("BatchBatchTaskProfileArgs", "minMemoryInGbs");
-            }
-            if ($.minOcpus == null) {
-                throw new MissingRequiredPropertyException("BatchBatchTaskProfileArgs", "minOcpus");
             }
             return $;
         }

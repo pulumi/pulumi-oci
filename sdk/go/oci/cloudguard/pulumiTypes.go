@@ -446,23 +446,23 @@ type CloudGuardDataSourceDataSourceDetails struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Interval in minutes that query is run periodically.
 	IntervalInMinutes *int `pulumi:"intervalInMinutes"`
-	// (Updatable) Interval in minutes which query is run periodically.
+	// (Updatable) Interval in seconds which query is run periodically.
 	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// (Updatable) Details for a logging query for a data source.
 	LoggingQueryDetails *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails `pulumi:"loggingQueryDetails"`
 	// (Updatable) Type of logging query for data source (Sighting/Insight)
 	LoggingQueryType *string `pulumi:"loggingQueryType"`
-	// (Updatable) Operator used in data source
+	// (Updatable) DEPRECATED - Operator used in data source
 	Operator *string `pulumi:"operator"`
 	// (Updatable) The continuous query expression that is run periodically.
 	Query *string `pulumi:"query"`
-	// (Updatable) Start policy for continuous query
+	// (Updatable) DEPRECATED - Start policy for continuous query
 	QueryStartTime *CloudGuardDataSourceDataSourceDetailsQueryStartTime `pulumi:"queryStartTime"`
 	// (Updatable) List of logging query regions
 	Regions []string `pulumi:"regions"`
 	// (Updatable) Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails []CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail `pulumi:"scheduledQueryScopeDetails"`
-	// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold *int `pulumi:"threshold"`
 }
 
@@ -486,23 +486,23 @@ type CloudGuardDataSourceDataSourceDetailsArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Interval in minutes that query is run periodically.
 	IntervalInMinutes pulumi.IntPtrInput `pulumi:"intervalInMinutes"`
-	// (Updatable) Interval in minutes which query is run periodically.
+	// (Updatable) Interval in seconds which query is run periodically.
 	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
 	// (Updatable) Details for a logging query for a data source.
 	LoggingQueryDetails CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput `pulumi:"loggingQueryDetails"`
 	// (Updatable) Type of logging query for data source (Sighting/Insight)
 	LoggingQueryType pulumi.StringPtrInput `pulumi:"loggingQueryType"`
-	// (Updatable) Operator used in data source
+	// (Updatable) DEPRECATED - Operator used in data source
 	Operator pulumi.StringPtrInput `pulumi:"operator"`
 	// (Updatable) The continuous query expression that is run periodically.
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// (Updatable) Start policy for continuous query
+	// (Updatable) DEPRECATED - Start policy for continuous query
 	QueryStartTime CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput `pulumi:"queryStartTime"`
 	// (Updatable) List of logging query regions
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// (Updatable) Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArrayInput `pulumi:"scheduledQueryScopeDetails"`
-	// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
 }
 
@@ -603,7 +603,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) IntervalInMinutes() pulumi.
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.IntervalInMinutes }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Interval in minutes which query is run periodically.
+// (Updatable) Interval in seconds which query is run periodically.
 func (o CloudGuardDataSourceDataSourceDetailsOutput) IntervalInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
@@ -620,7 +620,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) LoggingQueryType() pulumi.S
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.LoggingQueryType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Operator used in data source
+// (Updatable) DEPRECATED - Operator used in data source
 func (o CloudGuardDataSourceDataSourceDetailsOutput) Operator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
@@ -630,7 +630,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) Query() pulumi.StringPtrOut
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Start policy for continuous query
+// (Updatable) DEPRECATED - Start policy for continuous query
 func (o CloudGuardDataSourceDataSourceDetailsOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
 		return v.QueryStartTime
@@ -649,7 +649,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) ScheduledQueryScopeDetails(
 	}).(CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArrayOutput)
 }
 
-// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+// (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 func (o CloudGuardDataSourceDataSourceDetailsOutput) Threshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.Threshold }).(pulumi.IntPtrOutput)
 }
@@ -718,7 +718,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) IntervalInMinutes() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Interval in minutes which query is run periodically.
+// (Updatable) Interval in seconds which query is run periodically.
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) IntervalInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *int {
 		if v == nil {
@@ -748,7 +748,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) LoggingQueryType() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Operator used in data source
+// (Updatable) DEPRECATED - Operator used in data source
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Operator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
 		if v == nil {
@@ -768,7 +768,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Query() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Start policy for continuous query
+// (Updatable) DEPRECATED - Start policy for continuous query
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
 		if v == nil {
@@ -798,7 +798,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ScheduledQueryScopeDetai
 	}).(CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArrayOutput)
 }
 
-// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+// (Updatable) DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Threshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *int {
 		if v == nil {
@@ -11188,13 +11188,13 @@ type GetDataSourceDataSourceDetail struct {
 	Description string `pulumi:"description"`
 	// Interval in minutes that query is run periodically.
 	IntervalInMinutes int `pulumi:"intervalInMinutes"`
-	// Interval in minutes which query is run periodically.
+	// Interval in seconds which query is run periodically.
 	IntervalInSeconds int `pulumi:"intervalInSeconds"`
 	// Details for a logging query for a data source.
 	LoggingQueryDetails []GetDataSourceDataSourceDetailLoggingQueryDetail `pulumi:"loggingQueryDetails"`
 	// Type of logging query for data source (Sighting/Insight)
 	LoggingQueryType string `pulumi:"loggingQueryType"`
-	// Operator used in data source
+	// DEPRECATED - Operator used in data source
 	Operator string `pulumi:"operator"`
 	// The continuous query expression that is run periodically.
 	Query string `pulumi:"query"`
@@ -11204,7 +11204,7 @@ type GetDataSourceDataSourceDetail struct {
 	Regions []string `pulumi:"regions"`
 	// Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails []GetDataSourceDataSourceDetailScheduledQueryScopeDetail `pulumi:"scheduledQueryScopeDetails"`
-	// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold int `pulumi:"threshold"`
 }
 
@@ -11228,13 +11228,13 @@ type GetDataSourceDataSourceDetailArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Interval in minutes that query is run periodically.
 	IntervalInMinutes pulumi.IntInput `pulumi:"intervalInMinutes"`
-	// Interval in minutes which query is run periodically.
+	// Interval in seconds which query is run periodically.
 	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
 	// Details for a logging query for a data source.
 	LoggingQueryDetails GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput `pulumi:"loggingQueryDetails"`
 	// Type of logging query for data source (Sighting/Insight)
 	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
-	// Operator used in data source
+	// DEPRECATED - Operator used in data source
 	Operator pulumi.StringInput `pulumi:"operator"`
 	// The continuous query expression that is run periodically.
 	Query pulumi.StringInput `pulumi:"query"`
@@ -11244,7 +11244,7 @@ type GetDataSourceDataSourceDetailArgs struct {
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails GetDataSourceDataSourceDetailScheduledQueryScopeDetailArrayInput `pulumi:"scheduledQueryScopeDetails"`
-	// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold pulumi.IntInput `pulumi:"threshold"`
 }
 
@@ -11319,7 +11319,7 @@ func (o GetDataSourceDataSourceDetailOutput) IntervalInMinutes() pulumi.IntOutpu
 	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.IntervalInMinutes }).(pulumi.IntOutput)
 }
 
-// Interval in minutes which query is run periodically.
+// Interval in seconds which query is run periodically.
 func (o GetDataSourceDataSourceDetailOutput) IntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -11336,7 +11336,7 @@ func (o GetDataSourceDataSourceDetailOutput) LoggingQueryType() pulumi.StringOut
 	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.LoggingQueryType }).(pulumi.StringOutput)
 }
 
-// Operator used in data source
+// DEPRECATED - Operator used in data source
 func (o GetDataSourceDataSourceDetailOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.Operator }).(pulumi.StringOutput)
 }
@@ -11365,7 +11365,7 @@ func (o GetDataSourceDataSourceDetailOutput) ScheduledQueryScopeDetails() GetDat
 	}).(GetDataSourceDataSourceDetailScheduledQueryScopeDetailArrayOutput)
 }
 
-// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 func (o GetDataSourceDataSourceDetailOutput) Threshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.Threshold }).(pulumi.IntOutput)
 }
@@ -13017,13 +13017,13 @@ type GetDataSourcesDataSourceCollectionItemDataSourceDetail struct {
 	Description string `pulumi:"description"`
 	// Interval in minutes that query is run periodically.
 	IntervalInMinutes int `pulumi:"intervalInMinutes"`
-	// Interval in minutes which query is run periodically.
+	// Interval in seconds which query is run periodically.
 	IntervalInSeconds int `pulumi:"intervalInSeconds"`
 	// Details for a logging query for a data source.
 	LoggingQueryDetails []GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail `pulumi:"loggingQueryDetails"`
 	// A filter to return only resources where their query type matches the given LoggingQueryType.
 	LoggingQueryType string `pulumi:"loggingQueryType"`
-	// Operator used in data source
+	// DEPRECATED - Operator used in data source
 	Operator string `pulumi:"operator"`
 	// The continuous query expression that is run periodically.
 	Query string `pulumi:"query"`
@@ -13033,7 +13033,7 @@ type GetDataSourcesDataSourceCollectionItemDataSourceDetail struct {
 	Regions []string `pulumi:"regions"`
 	// Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails []GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetail `pulumi:"scheduledQueryScopeDetails"`
-	// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold int `pulumi:"threshold"`
 }
 
@@ -13057,13 +13057,13 @@ type GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Interval in minutes that query is run periodically.
 	IntervalInMinutes pulumi.IntInput `pulumi:"intervalInMinutes"`
-	// Interval in minutes which query is run periodically.
+	// Interval in seconds which query is run periodically.
 	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
 	// Details for a logging query for a data source.
 	LoggingQueryDetails GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput `pulumi:"loggingQueryDetails"`
 	// A filter to return only resources where their query type matches the given LoggingQueryType.
 	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
-	// Operator used in data source
+	// DEPRECATED - Operator used in data source
 	Operator pulumi.StringInput `pulumi:"operator"`
 	// The continuous query expression that is run periodically.
 	Query pulumi.StringInput `pulumi:"query"`
@@ -13073,7 +13073,7 @@ type GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs struct {
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
 	// Target information in which scheduled query will be run
 	ScheduledQueryScopeDetails GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetailArrayInput `pulumi:"scheduledQueryScopeDetails"`
-	// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+	// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 	Threshold pulumi.IntInput `pulumi:"threshold"`
 }
 
@@ -13148,7 +13148,7 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) IntervalIn
 	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.IntervalInMinutes }).(pulumi.IntOutput)
 }
 
-// Interval in minutes which query is run periodically.
+// Interval in seconds which query is run periodically.
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) IntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -13165,7 +13165,7 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) LoggingQue
 	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.LoggingQueryType }).(pulumi.StringOutput)
 }
 
-// Operator used in data source
+// DEPRECATED - Operator used in data source
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.Operator }).(pulumi.StringOutput)
 }
@@ -13194,7 +13194,7 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ScheduledQ
 	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailScheduledQueryScopeDetailArrayOutput)
 }
 
-// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+// DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Threshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.Threshold }).(pulumi.IntOutput)
 }
@@ -33699,6 +33699,8 @@ type GetSecurityZonesSecurityZoneCollectionItem struct {
 	Id string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
+	// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled bool `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
@@ -33739,6 +33741,8 @@ type GetSecurityZonesSecurityZoneCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput `pulumi:"inheritedByCompartments"`
+	// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+	IsInheritanceAfterDeleteEnabled pulumi.BoolInput `pulumi:"isInheritanceAfterDeleteEnabled"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
@@ -33837,6 +33841,11 @@ func (o GetSecurityZonesSecurityZoneCollectionItemOutput) Id() pulumi.StringOutp
 // List of inherited compartments
 func (o GetSecurityZonesSecurityZoneCollectionItemOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) []string { return v.InheritedByCompartments }).(pulumi.StringArrayOutput)
+}
+
+// Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) IsInheritanceAfterDeleteEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) bool { return v.IsInheritanceAfterDeleteEnabled }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.

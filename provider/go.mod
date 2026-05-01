@@ -9,7 +9,7 @@ replace (
 
 require (
 	github.com/oracle/terraform-provider-oci v0.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.127.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.128.0
 	github.com/pulumi/pulumi/pkg/v3 v3.228.0 // indirect
 	github.com/pulumi/pulumi/sdk/v3 v3.228.0
 )

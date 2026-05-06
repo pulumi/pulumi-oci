@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Limits.getServices({
+ * const testServices = oci.limits.getServices({
  *     compartmentId: tenancyOcid,
  *     subscriptionId: subscriptionOcid,
  * });
@@ -76,7 +76,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Limits.getServices({
+ * const testServices = oci.limits.getServices({
  *     compartmentId: tenancyOcid,
  *     subscriptionId: subscriptionOcid,
  * });

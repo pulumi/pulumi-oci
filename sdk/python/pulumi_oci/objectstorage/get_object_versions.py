@@ -184,7 +184,7 @@ def get_object_versions(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=object_version_bucket,
+    test_object_versions = oci.objectstorage.get_object_versions(bucket=object_version_bucket,
         namespace=object_version_namespace,
         delimiter=object_version_delimiter,
         end=object_version_end,
@@ -258,7 +258,7 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=object_version_bucket,
+    test_object_versions = oci.objectstorage.get_object_versions(bucket=object_version_bucket,
         namespace=object_version_namespace,
         delimiter=object_version_delimiter,
         end=object_version_end,

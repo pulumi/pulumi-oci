@@ -101,7 +101,7 @@ def get_volume_backup_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
+    test_volume_backup_policies = oci.core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
 
 
@@ -135,7 +135,7 @@ def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
+    test_volume_backup_policies = oci.core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
 
 

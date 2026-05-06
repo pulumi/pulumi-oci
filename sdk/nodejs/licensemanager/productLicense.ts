@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testProductLicense = new oci.licensemanager.ProductLicense("test_product_license", {
  *     compartmentId: compartmentId,
  *     displayName: productLicenseDisplayName,
- *     isVendorOracle: productLicenseIsVendorOracle,
+ *     isVendorOracle: productLicenseIsVendorOracle === "true",
  *     licenseUnit: productLicenseLicenseUnit,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

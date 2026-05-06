@@ -214,14 +214,14 @@ def get_domains_my_trusted_user_agents(attribute_sets: Optional[Sequence[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agents = oci.Identity.get_domains_my_trusted_user_agents(idcs_endpoint=test_domain["url"],
-        my_trusted_user_agent_count=my_trusted_user_agent_my_trusted_user_agent_count,
+    test_my_trusted_user_agents = oci.identity.get_domains_my_trusted_user_agents(idcs_endpoint=test_domain["url"],
+        my_trusted_user_agent_count=int(my_trusted_user_agent_my_trusted_user_agent_count),
         my_trusted_user_agent_filter=my_trusted_user_agent_my_trusted_user_agent_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_trusted_user_agent_authorization,
         resource_type_schema_version=my_trusted_user_agent_resource_type_schema_version,
-        start_index=my_trusted_user_agent_start_index)
+        start_index=int(my_trusted_user_agent_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_my_trusted_user_agents_output(attribute_sets: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agents = oci.Identity.get_domains_my_trusted_user_agents(idcs_endpoint=test_domain["url"],
-        my_trusted_user_agent_count=my_trusted_user_agent_my_trusted_user_agent_count,
+    test_my_trusted_user_agents = oci.identity.get_domains_my_trusted_user_agents(idcs_endpoint=test_domain["url"],
+        my_trusted_user_agent_count=int(my_trusted_user_agent_my_trusted_user_agent_count),
         my_trusted_user_agent_filter=my_trusted_user_agent_my_trusted_user_agent_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_trusted_user_agent_authorization,
         resource_type_schema_version=my_trusted_user_agent_resource_type_schema_version,
-        start_index=my_trusted_user_agent_start_index)
+        start_index=int(my_trusted_user_agent_start_index))
     ```
 
 

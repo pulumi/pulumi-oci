@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTools = oci.GenerativeAi.getAgentTools({
+ * const testTools = oci.generativeai.getAgentTools({
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     displayName: toolDisplayName,
@@ -101,7 +101,7 @@ export interface GetAgentToolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTools = oci.GenerativeAi.getAgentTools({
+ * const testTools = oci.generativeai.getAgentTools({
  *     agentId: testAgent.id,
  *     compartmentId: compartmentId,
  *     displayName: toolDisplayName,

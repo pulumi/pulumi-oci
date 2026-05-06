@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauth2clientCredential = oci.Identity.getDomainsOauth2clientCredential({
+ * const testOauth2clientCredential = oci.identity.getDomainsOauth2clientCredential({
  *     idcsEndpoint: testDomain.url,
  *     oAuth2clientCredentialId: testOAuth2clientCredential.id,
  *     attributeSets: [],
@@ -179,7 +179,7 @@ export interface GetDomainsOauth2clientCredentialResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauth2clientCredential = oci.Identity.getDomainsOauth2clientCredential({
+ * const testOauth2clientCredential = oci.identity.getDomainsOauth2clientCredential({
  *     idcsEndpoint: testDomain.url,
  *     oAuth2clientCredentialId: testOAuth2clientCredential.id,
  *     attributeSets: [],

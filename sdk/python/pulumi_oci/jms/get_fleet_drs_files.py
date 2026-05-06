@@ -95,7 +95,7 @@ def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilter
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_files = oci.Jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
+    test_fleet_drs_files = oci.jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_files = oci.Jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
+    test_fleet_drs_files = oci.jms.get_fleet_drs_files(fleet_id=test_fleet["id"])
     ```
 
 

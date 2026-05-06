@@ -242,7 +242,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             scan_listener_infos=[{
                 "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
                 "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+                "scan_listener_port": int(oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port),
             }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
@@ -296,7 +296,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             scan_listener_infos=[{
                 "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
                 "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+                "scan_listener_port": int(oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port),
             }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```

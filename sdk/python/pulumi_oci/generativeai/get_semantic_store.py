@@ -228,7 +228,7 @@ def get_semantic_store(semantic_store_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_store = oci.GenerativeAi.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
+    test_semantic_store = oci.generativeai.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_semantic_store_output(semantic_store_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_store = oci.GenerativeAi.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
+    test_semantic_store = oci.generativeai.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
     ```
 
 

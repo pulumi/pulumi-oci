@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
+ * const testComputeCapacityTopologyComputeHpcIslands = oci.core.getComputeCapacityTopologyComputeHpcIslands({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -84,7 +84,7 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
+ * const testComputeCapacityTopologyComputeHpcIslands = oci.core.getComputeCapacityTopologyComputeHpcIslands({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
  *     compartmentId: compartmentId,

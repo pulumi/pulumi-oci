@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplates = oci.StackMonitoring.getMonitoringTemplates({
+ * const testMonitoringTemplates = oci.stackmonitoring.getMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: monitoringTemplateDisplayName,
  *     metricNames: testMetric.name,
@@ -129,7 +129,7 @@ export interface GetMonitoringTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplates = oci.StackMonitoring.getMonitoringTemplates({
+ * const testMonitoringTemplates = oci.stackmonitoring.getMonitoringTemplates({
  *     compartmentId: compartmentId,
  *     displayName: monitoringTemplateDisplayName,
  *     metricNames: testMetric.name,

@@ -95,7 +95,7 @@ def get_subscription_line_items(filters: Optional[Sequence[Union['GetSubscriptio
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_line_items = oci.Tenantmanagercontrolplane.get_subscription_line_items(subscription_id=test_subscription["id"])
+    test_subscription_line_items = oci.tenantmanagercontrolplane.get_subscription_line_items(subscription_id=test_subscription["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_subscription_line_items_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_line_items = oci.Tenantmanagercontrolplane.get_subscription_line_items(subscription_id=test_subscription["id"])
+    test_subscription_line_items = oci.tenantmanagercontrolplane.get_subscription_line_items(subscription_id=test_subscription["id"])
     ```
 
 

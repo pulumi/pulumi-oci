@@ -73,8 +73,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -115,8 +115,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -157,8 +157,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -199,8 +199,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -241,8 +241,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -284,8 +284,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -331,8 +331,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -378,8 +378,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -425,8 +425,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -472,8 +472,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -519,8 +519,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -562,8 +562,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -605,8 +605,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -648,8 +648,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -734,8 +734,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -777,8 +777,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -833,8 +833,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -890,8 +890,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -947,8 +947,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1004,8 +1004,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1061,8 +1061,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1117,8 +1117,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1174,8 +1174,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1231,8 +1231,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1288,8 +1288,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1345,8 +1345,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1389,8 +1389,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1433,8 +1433,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1477,8 +1477,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1521,8 +1521,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1565,8 +1565,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1622,8 +1622,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1680,8 +1680,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1738,8 +1738,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1796,8 +1796,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1854,8 +1854,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1899,8 +1899,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1942,8 +1942,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1985,8 +1985,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2028,8 +2028,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2071,8 +2071,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2128,8 +2128,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2194,8 +2194,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2260,8 +2260,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2326,8 +2326,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2392,8 +2392,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2458,8 +2458,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2524,8 +2524,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2576,8 +2576,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2618,8 +2618,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2660,8 +2660,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2702,8 +2702,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2744,8 +2744,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2786,8 +2786,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2828,8 +2828,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2870,8 +2870,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2912,8 +2912,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2954,8 +2954,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2996,8 +2996,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3038,8 +3038,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3080,8 +3080,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3123,8 +3123,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3166,8 +3166,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3209,8 +3209,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3252,8 +3252,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3295,8 +3295,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3339,8 +3339,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3383,8 +3383,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3427,8 +3427,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3471,8 +3471,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3515,8 +3515,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3561,8 +3561,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3607,8 +3607,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3653,8 +3653,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3699,8 +3699,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3745,8 +3745,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3788,8 +3788,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3831,8 +3831,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3874,8 +3874,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3917,8 +3917,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3960,8 +3960,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4003,8 +4003,8 @@ public final class MarketplaceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
      * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -91,7 +91,7 @@ def get_repository_object_content(file_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=test_repository["id"],
+    test_repository_object_content = oci.devops.get_repository_object_content(repository_id=test_repository["id"],
         sha=repository_object_content_sha,
         file_path=repository_object_content_file_path)
     ```
@@ -128,7 +128,7 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object_content = oci.DevOps.get_repository_object_content(repository_id=test_repository["id"],
+    test_repository_object_content = oci.devops.get_repository_object_content(repository_id=test_repository["id"],
         sha=repository_object_content_sha,
         file_path=repository_object_content_file_path)
     ```

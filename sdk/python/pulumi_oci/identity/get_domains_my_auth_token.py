@@ -294,7 +294,7 @@ def get_domains_my_auth_token(authorization: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_auth_token = oci.Identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
+    test_my_auth_token = oci.identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
         my_auth_token_id=test_auth_token["id"],
         authorization=my_auth_token_authorization,
         resource_type_schema_version=my_auth_token_resource_type_schema_version)
@@ -352,7 +352,7 @@ def get_domains_my_auth_token_output(authorization: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_my_auth_token = oci.Identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
+    test_my_auth_token = oci.identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
         my_auth_token_id=test_auth_token["id"],
         authorization=my_auth_token_authorization,
         resource_type_schema_version=my_auth_token_resource_type_schema_version)

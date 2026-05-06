@@ -134,7 +134,7 @@ def get_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+    test_environments = oci.cloudbridge.get_environments(compartment_id=compartment_id,
         display_name=environment_display_name,
         environment_id=test_environment["id"],
         state=environment_state)
@@ -180,7 +180,7 @@ def get_environments_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+    test_environments = oci.cloudbridge.get_environments(compartment_id=compartment_id,
         display_name=environment_display_name,
         environment_id=test_environment["id"],
         state=environment_state)

@@ -390,12 +390,12 @@ class Session(pulumi.CustomResource):
                 "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
                 "target_resource_id": test_target_resource["id"],
                 "target_resource_operating_system_user_name": test_user["name"],
-                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_port": int(session_target_resource_details_target_resource_port),
                 "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
             },
             display_name=session_display_name,
             key_type=session_key_type,
-            session_ttl_in_seconds=session_session_ttl_in_seconds)
+            session_ttl_in_seconds=int(session_session_ttl_in_seconds))
         ```
 
         ## Import
@@ -446,12 +446,12 @@ class Session(pulumi.CustomResource):
                 "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
                 "target_resource_id": test_target_resource["id"],
                 "target_resource_operating_system_user_name": test_user["name"],
-                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_port": int(session_target_resource_details_target_resource_port),
                 "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
             },
             display_name=session_display_name,
             key_type=session_key_type,
-            session_ttl_in_seconds=session_session_ttl_in_seconds)
+            session_ttl_in_seconds=int(session_session_ttl_in_seconds))
         ```
 
         ## Import

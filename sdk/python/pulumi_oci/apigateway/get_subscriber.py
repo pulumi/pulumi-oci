@@ -225,7 +225,7 @@ def get_subscriber(subscriber_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriber = oci.ApiGateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
+    test_subscriber = oci.apigateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_subscriber_output(subscriber_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriber = oci.ApiGateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
+    test_subscriber = oci.apigateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
     ```
 
 

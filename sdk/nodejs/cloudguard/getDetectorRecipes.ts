@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDetectorRecipes = oci.CloudGuard.getDetectorRecipes({
+ * const testDetectorRecipes = oci.cloudguard.getDetectorRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: detectorRecipeAccessLevel,
- *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree === "true",
  *     displayName: detectorRecipeDisplayName,
- *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly,
+ *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly === "true",
  *     state: detectorRecipeState,
  * });
  * ```
@@ -139,12 +139,12 @@ export interface GetDetectorRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDetectorRecipes = oci.CloudGuard.getDetectorRecipes({
+ * const testDetectorRecipes = oci.cloudguard.getDetectorRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: detectorRecipeAccessLevel,
- *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree === "true",
  *     displayName: detectorRecipeDisplayName,
- *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly,
+ *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly === "true",
  *     state: detectorRecipeState,
  * });
  * ```

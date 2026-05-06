@@ -120,7 +120,7 @@ def get_db_system_connection_detail(db_system_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
+    test_db_system_connection_detail = oci.psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
     ```
 
 
@@ -151,7 +151,7 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
+    test_db_system_connection_detail = oci.psql.get_db_system_connection_detail(db_system_id=test_db_system["id"])
     ```
 
 

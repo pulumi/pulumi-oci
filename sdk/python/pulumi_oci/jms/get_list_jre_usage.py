@@ -140,7 +140,7 @@ def get_list_jre_usage(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+    test_list_jre_usage = oci.jms.get_list_jre_usage(application_id=test_application["id"],
         application_name=test_application["name"],
         compartment_id=compartment_id,
         host_id=test_host["id"],
@@ -193,7 +193,7 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+    test_list_jre_usage = oci.jms.get_list_jre_usage(application_id=test_application["id"],
         application_name=test_application["name"],
         compartment_id=compartment_id,
         host_id=test_host["id"],

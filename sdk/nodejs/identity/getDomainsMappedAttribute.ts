@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMappedAttribute = oci.Identity.getDomainsMappedAttribute({
+ * const testMappedAttribute = oci.identity.getDomainsMappedAttribute({
  *     idcsEndpoint: testDomain.url,
  *     mappedAttributeId: testMappedAttributeOciIdentityDomainsMappedAttribute.id,
  *     attributeSets: ["all"],
@@ -163,7 +163,7 @@ export interface GetDomainsMappedAttributeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMappedAttribute = oci.Identity.getDomainsMappedAttribute({
+ * const testMappedAttribute = oci.identity.getDomainsMappedAttribute({
  *     idcsEndpoint: testDomain.url,
  *     mappedAttributeId: testMappedAttributeOciIdentityDomainsMappedAttribute.id,
  *     attributeSets: ["all"],

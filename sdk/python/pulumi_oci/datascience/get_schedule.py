@@ -288,7 +288,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.DataScience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
+    test_schedule = oci.datascience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.DataScience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
+    test_schedule = oci.datascience.get_schedule(schedule_id=test_schedule_oci_datascience_schedule["id"])
     ```
 
 

@@ -212,7 +212,7 @@ def get_application_vip(application_vip_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vip = oci.Database.get_application_vip(application_vip_id=test_application_vip_oci_database_application_vip["id"])
+    test_application_vip = oci.database.get_application_vip(application_vip_id=test_application_vip_oci_database_application_vip["id"])
     ```
 
 
@@ -251,7 +251,7 @@ def get_application_vip_output(application_vip_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vip = oci.Database.get_application_vip(application_vip_id=test_application_vip_oci_database_application_vip["id"])
+    test_application_vip = oci.database.get_application_vip(application_vip_id=test_application_vip_oci_database_application_vip["id"])
     ```
 
 

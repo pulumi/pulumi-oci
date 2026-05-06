@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPasswordPolicies = oci.Identity.getDomainsPasswordPolicies({
+ * const testPasswordPolicies = oci.identity.getDomainsPasswordPolicies({
  *     idcsEndpoint: testDomain.url,
- *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
+ *     passwordPolicyCount: Number(passwordPolicyPasswordPolicyCount),
  *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: passwordPolicyAuthorization,
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
- *     startIndex: passwordPolicyStartIndex,
+ *     startIndex: Number(passwordPolicyStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsPasswordPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPasswordPolicies = oci.Identity.getDomainsPasswordPolicies({
+ * const testPasswordPolicies = oci.identity.getDomainsPasswordPolicies({
  *     idcsEndpoint: testDomain.url,
- *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
+ *     passwordPolicyCount: Number(passwordPolicyPasswordPolicyCount),
  *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: passwordPolicyAuthorization,
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
- *     startIndex: passwordPolicyStartIndex,
+ *     startIndex: Number(passwordPolicyStartIndex),
  * });
  * ```
  */

@@ -141,9 +141,9 @@ def get_system_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
+    test_system_versions = oci.database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
-        is_latest=system_version_is_latest,
+        is_latest=system_version_is_latest == "true",
         resource_id=test_resource["id"],
         shape=system_version_shape)
     ```
@@ -192,9 +192,9 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
+    test_system_versions = oci.database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
-        is_latest=system_version_is_latest,
+        is_latest=system_version_is_latest == "true",
         resource_id=test_resource["id"],
         shape=system_version_shape)
     ```

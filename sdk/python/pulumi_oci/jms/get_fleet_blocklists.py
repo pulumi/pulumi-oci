@@ -124,7 +124,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[Union['GetFleetBlocklistsFil
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
+    test_fleet_blocklists = oci.jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
         managed_instance_id=fleet_blocklist_managed_instance_id,
         operation=fleet_blocklist_operation)
     ```
@@ -165,7 +165,7 @@ def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_blocklists = oci.Jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
+    test_fleet_blocklists = oci.jms.get_fleet_blocklists(fleet_id=test_fleet["id"],
         managed_instance_id=fleet_blocklist_managed_instance_id,
         operation=fleet_blocklist_operation)
     ```

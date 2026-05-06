@@ -138,7 +138,7 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DataScience.get_projects(compartment_id=compartment_id,
+    test_projects = oci.datascience.get_projects(compartment_id=compartment_id,
         created_by=project_created_by,
         display_name=project_display_name,
         id=project_id,
@@ -188,7 +188,7 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DataScience.get_projects(compartment_id=compartment_id,
+    test_projects = oci.datascience.get_projects(compartment_id=compartment_id,
         created_by=project_created_by,
         display_name=project_display_name,
         id=project_id,

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroups = oci.Logging.getLogGroups({
+ * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -87,10 +87,10 @@ export interface GetLogGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroups = oci.Logging.getLogGroups({
+ * const testLogGroups = oci.logging.getLogGroups({
  *     compartmentId: compartmentId,
  *     displayName: logGroupDisplayName,
- *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */

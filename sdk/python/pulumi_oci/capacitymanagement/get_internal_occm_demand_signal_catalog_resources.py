@@ -147,7 +147,7 @@ def get_internal_occm_demand_signal_catalog_resources(compartment_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog_resources = oci.CapacityManagement.get_internal_occm_demand_signal_catalog_resources(compartment_id=compartment_id,
+    test_internal_occm_demand_signal_catalog_resources = oci.capacitymanagement.get_internal_occm_demand_signal_catalog_resources(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         occm_demand_signal_catalog_id=test_catalog["id"],
         demand_signal_namespace=internal_occm_demand_signal_catalog_resource_demand_signal_namespace,
@@ -198,7 +198,7 @@ def get_internal_occm_demand_signal_catalog_resources_output(compartment_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog_resources = oci.CapacityManagement.get_internal_occm_demand_signal_catalog_resources(compartment_id=compartment_id,
+    test_internal_occm_demand_signal_catalog_resources = oci.capacitymanagement.get_internal_occm_demand_signal_catalog_resources(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         occm_demand_signal_catalog_id=test_catalog["id"],
         demand_signal_namespace=internal_occm_demand_signal_catalog_resource_demand_signal_namespace,

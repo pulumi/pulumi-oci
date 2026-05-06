@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalNonContainerDatabases = oci.Database.getExternalNonContainerDatabases({
+ * const testExternalNonContainerDatabases = oci.database.getExternalNonContainerDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalNonContainerDatabaseDisplayName,
  *     state: externalNonContainerDatabaseState,
@@ -90,7 +90,7 @@ export interface GetExternalNonContainerDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalNonContainerDatabases = oci.Database.getExternalNonContainerDatabases({
+ * const testExternalNonContainerDatabases = oci.database.getExternalNonContainerDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalNonContainerDatabaseDisplayName,
  *     state: externalNonContainerDatabaseState,

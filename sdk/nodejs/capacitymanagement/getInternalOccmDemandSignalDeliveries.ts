@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalDeliveries = oci.CapacityManagement.getInternalOccmDemandSignalDeliveries({
+ * const testInternalOccmDemandSignalDeliveries = oci.capacitymanagement.getInternalOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     id: internalOccmDemandSignalDeliveryId,
@@ -93,7 +93,7 @@ export interface GetInternalOccmDemandSignalDeliveriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalDeliveries = oci.CapacityManagement.getInternalOccmDemandSignalDeliveries({
+ * const testInternalOccmDemandSignalDeliveries = oci.capacitymanagement.getInternalOccmDemandSignalDeliveries({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     id: internalOccmDemandSignalDeliveryId,

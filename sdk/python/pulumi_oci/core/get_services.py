@@ -86,7 +86,7 @@ def get_services(filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetS
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Core.get_services()
+    test_services = oci.core.get_services()
     ```
     """
     __args__ = dict()
@@ -112,7 +112,7 @@ def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Core.get_services()
+    test_services = oci.core.get_services()
     ```
     """
     __args__ = dict()

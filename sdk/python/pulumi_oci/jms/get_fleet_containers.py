@@ -177,7 +177,7 @@ def get_fleet_containers(application_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_containers = oci.Jms.get_fleet_containers(fleet_id=test_fleet["id"],
+    test_fleet_containers = oci.jms.get_fleet_containers(fleet_id=test_fleet["id"],
         application_name=test_application["name"],
         display_name=fleet_container_display_name,
         jre_security_status=fleet_container_jre_security_status,
@@ -243,7 +243,7 @@ def get_fleet_containers_output(application_name: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_containers = oci.Jms.get_fleet_containers(fleet_id=test_fleet["id"],
+    test_fleet_containers = oci.jms.get_fleet_containers(fleet_id=test_fleet["id"],
         application_name=test_application["name"],
         display_name=fleet_container_display_name,
         jre_security_status=fleet_container_jre_security_status,

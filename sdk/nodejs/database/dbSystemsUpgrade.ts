@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * const testDbSystemsUpgrade = new oci.database.DbSystemsUpgrade("test_db_systems_upgrade", {
  *     action: dbSystemsUpgradeAction,
  *     dbSystemId: testDbSystem.id,
- *     isSnapshotRetentionDaysForceUpdated: dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated,
+ *     isSnapshotRetentionDaysForceUpdated: dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated === "true",
  *     newGiVersion: dbSystemsUpgradeNewGiVersion,
- *     snapshotRetentionPeriodInDays: dbSystemsUpgradeSnapshotRetentionPeriodInDays,
+ *     snapshotRetentionPeriodInDays: Number(dbSystemsUpgradeSnapshotRetentionPeriodInDays),
  * });
  * ```
  *

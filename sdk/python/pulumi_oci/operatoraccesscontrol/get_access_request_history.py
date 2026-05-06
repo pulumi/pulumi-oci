@@ -84,7 +84,7 @@ def get_access_request_history(access_request_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=test_access_request["id"])
+    test_access_request_history = oci.operatoraccesscontrol.get_access_request_history(access_request_id=test_access_request["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_access_request_history_output(access_request_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=test_access_request["id"])
+    test_access_request_history = oci.operatoraccesscontrol.get_access_request_history(access_request_id=test_access_request["id"])
     ```
 
 

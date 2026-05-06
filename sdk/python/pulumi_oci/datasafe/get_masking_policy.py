@@ -294,7 +294,7 @@ def get_masking_policy(masking_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=test_masking_policy_oci_data_safe_masking_policy["id"])
+    test_masking_policy = oci.datasafe.get_masking_policy(masking_policy_id=test_masking_policy_oci_data_safe_masking_policy["id"])
     ```
 
 
@@ -340,7 +340,7 @@ def get_masking_policy_output(masking_policy_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=test_masking_policy_oci_data_safe_masking_policy["id"])
+    test_masking_policy = oci.datasafe.get_masking_policy(masking_policy_id=test_masking_policy_oci_data_safe_masking_policy["id"])
     ```
 
 

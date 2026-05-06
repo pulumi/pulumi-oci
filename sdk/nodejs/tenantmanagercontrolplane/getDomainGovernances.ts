@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomainGovernances = oci.Tenantmanagercontrolplane.getDomainGovernances({
+ * const testDomainGovernances = oci.tenantmanagercontrolplane.getDomainGovernances({
  *     compartmentId: compartmentId,
  *     domainGovernanceId: testDomainGovernance.id,
  *     domainId: testDomain.id,
@@ -101,7 +101,7 @@ export interface GetDomainGovernancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomainGovernances = oci.Tenantmanagercontrolplane.getDomainGovernances({
+ * const testDomainGovernances = oci.tenantmanagercontrolplane.getDomainGovernances({
  *     compartmentId: compartmentId,
  *     domainGovernanceId: testDomainGovernance.id,
  *     domainId: testDomain.id,

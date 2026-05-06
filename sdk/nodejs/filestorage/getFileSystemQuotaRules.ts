@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRules = oci.FileStorage.getFileSystemQuotaRules({
+ * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
- *     principalId: testPrincipal.id,
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  */
@@ -97,11 +97,11 @@ export interface GetFileSystemQuotaRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRules = oci.FileStorage.getFileSystemQuotaRules({
+ * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
- *     principalId: testPrincipal.id,
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  */

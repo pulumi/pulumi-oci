@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastLaunchJobConfigs = oci.DataScience.getFastLaunchJobConfigs({
+ * const testFastLaunchJobConfigs = oci.datascience.getFastLaunchJobConfigs({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetFastLaunchJobConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastLaunchJobConfigs = oci.DataScience.getFastLaunchJobConfigs({
+ * const testFastLaunchJobConfigs = oci.datascience.getFastLaunchJobConfigs({
  *     compartmentId: compartmentId,
  * });
  * ```

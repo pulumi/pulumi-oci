@@ -193,7 +193,7 @@ def get_security_attribute(security_attribute_name: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute = oci.SecurityAttribute.get_security_attribute(security_attribute_name=test_security_attribute_oci_security_attribute_security_attribute["name"],
+    test_security_attribute = oci.securityattribute.get_security_attribute(security_attribute_name=test_security_attribute_oci_security_attribute_security_attribute["name"],
         security_attribute_namespace_id=test_security_attribute_namespace["id"])
     ```
 
@@ -234,7 +234,7 @@ def get_security_attribute_output(security_attribute_name: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute = oci.SecurityAttribute.get_security_attribute(security_attribute_name=test_security_attribute_oci_security_attribute_security_attribute["name"],
+    test_security_attribute = oci.securityattribute.get_security_attribute(security_attribute_name=test_security_attribute_oci_security_attribute_security_attribute["name"],
         security_attribute_namespace_id=test_security_attribute_namespace["id"])
     ```
 

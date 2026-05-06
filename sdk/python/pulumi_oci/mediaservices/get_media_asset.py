@@ -357,7 +357,7 @@ def get_media_asset(media_asset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
+    test_media_asset = oci.mediaservices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
     ```
 
 
@@ -408,7 +408,7 @@ def get_media_asset_output(media_asset_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
+    test_media_asset = oci.mediaservices.get_media_asset(media_asset_id=test_media_asset_oci_media_services_media_asset["id"])
     ```
 
 

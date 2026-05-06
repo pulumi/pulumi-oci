@@ -188,9 +188,9 @@ def get_vtaps(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+    test_vtaps = oci.core.get_vtaps(compartment_id=compartment_id,
         display_name=vtap_display_name,
-        is_vtap_enabled=vtap_is_vtap_enabled,
+        is_vtap_enabled=vtap_is_vtap_enabled == "true",
         source=vtap_source,
         state=vtap_state,
         target_id=test_target["id"],
@@ -256,9 +256,9 @@ def get_vtaps_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+    test_vtaps = oci.core.get_vtaps(compartment_id=compartment_id,
         display_name=vtap_display_name,
-        is_vtap_enabled=vtap_is_vtap_enabled,
+        is_vtap_enabled=vtap_is_vtap_enabled == "true",
         source=vtap_source,
         state=vtap_state,
         target_id=test_target["id"],

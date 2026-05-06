@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicySchedulingWindows = oci.Database.getSchedulingPolicySchedulingWindows({
+ * const testSchedulingPolicySchedulingWindows = oci.database.getSchedulingPolicySchedulingWindows({
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicySchedulingWindowDisplayName,
@@ -100,7 +100,7 @@ export interface GetSchedulingPolicySchedulingWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicySchedulingWindows = oci.Database.getSchedulingPolicySchedulingWindows({
+ * const testSchedulingPolicySchedulingWindows = oci.database.getSchedulingPolicySchedulingWindows({
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicySchedulingWindowDisplayName,

@@ -111,7 +111,7 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_global_image_capability_schemas = oci.core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
 
@@ -147,7 +147,7 @@ def get_compute_global_image_capability_schemas_output(compartment_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_global_image_capability_schemas = oci.core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
 

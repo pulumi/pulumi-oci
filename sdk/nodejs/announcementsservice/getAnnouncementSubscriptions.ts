@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncementSubscriptions = oci.AnnouncementsService.getAnnouncementSubscriptions({
+ * const testAnnouncementSubscriptions = oci.announcementsservice.getAnnouncementSubscriptions({
  *     compartmentId: compartmentId,
  *     displayName: announcementSubscriptionDisplayName,
  *     id: announcementSubscriptionId,
@@ -100,7 +100,7 @@ export interface GetAnnouncementSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncementSubscriptions = oci.AnnouncementsService.getAnnouncementSubscriptions({
+ * const testAnnouncementSubscriptions = oci.announcementsservice.getAnnouncementSubscriptions({
  *     compartmentId: compartmentId,
  *     displayName: announcementSubscriptionDisplayName,
  *     id: announcementSubscriptionId,

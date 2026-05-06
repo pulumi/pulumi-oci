@@ -240,7 +240,7 @@ def get_datastore(datastore_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore = oci.Ocvp.get_datastore(datastore_id=test_datastore_oci_ocvp_datastore["id"])
+    test_datastore = oci.ocvp.get_datastore(datastore_id=test_datastore_oci_ocvp_datastore["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_datastore_output(datastore_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore = oci.Ocvp.get_datastore(datastore_id=test_datastore_oci_ocvp_datastore["id"])
+    test_datastore = oci.ocvp.get_datastore(datastore_id=test_datastore_oci_ocvp_datastore["id"])
     ```
 
 

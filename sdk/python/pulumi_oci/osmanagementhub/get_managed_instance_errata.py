@@ -138,7 +138,7 @@ def get_managed_instance_errata(classification_types: Optional[Sequence[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_errata = oci.OsManagementHub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_errata = oci.osmanagementhub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_errata_classification_type,
         compartment_id=compartment_id,
         names=managed_instance_errata_name,
@@ -189,7 +189,7 @@ def get_managed_instance_errata_output(classification_types: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_errata = oci.OsManagementHub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_errata = oci.osmanagementhub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_errata_classification_type,
         compartment_id=compartment_id,
         names=managed_instance_errata_name,

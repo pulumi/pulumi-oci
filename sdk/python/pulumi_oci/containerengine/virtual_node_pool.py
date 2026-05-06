@@ -568,7 +568,7 @@ class VirtualNodePool(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
             },
-            size=virtual_node_pool_size,
+            size=int(virtual_node_pool_size),
             taints=[{
                 "effect": virtual_node_pool_taints_effect,
                 "key": virtual_node_pool_taints_key,
@@ -653,7 +653,7 @@ class VirtualNodePool(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
             },
-            size=virtual_node_pool_size,
+            size=int(virtual_node_pool_size),
             taints=[{
                 "effect": virtual_node_pool_taints_effect,
                 "key": virtual_node_pool_taints_key,

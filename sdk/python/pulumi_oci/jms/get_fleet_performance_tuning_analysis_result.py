@@ -264,7 +264,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_result = oci.jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
         performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 
@@ -311,7 +311,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_result = oci.jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
         performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 

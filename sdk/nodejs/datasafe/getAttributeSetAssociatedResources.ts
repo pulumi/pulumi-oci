@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSetAssociatedResources = oci.DataSafe.getAttributeSetAssociatedResources({
+ * const testAttributeSetAssociatedResources = oci.datasafe.getAttributeSetAssociatedResources({
  *     attributeSetId: testAttributeSet.id,
  *     associatedResourceId: testResource.id,
  *     associatedResourceType: attributeSetAssociatedResourceAssociatedResourceType,
@@ -87,7 +87,7 @@ export interface GetAttributeSetAssociatedResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSetAssociatedResources = oci.DataSafe.getAttributeSetAssociatedResources({
+ * const testAttributeSetAssociatedResources = oci.datasafe.getAttributeSetAssociatedResources({
  *     attributeSetId: testAttributeSet.id,
  *     associatedResourceId: testResource.id,
  *     associatedResourceType: attributeSetAssociatedResourceAssociatedResourceType,

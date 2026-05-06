@@ -208,7 +208,7 @@ class RepositorySetting(pulumi.CustomResource):
             repository_id=test_repository["id"],
             approval_rules={
                 "items": [{
-                    "min_approvals_count": repository_setting_approval_rules_items_min_approvals_count,
+                    "min_approvals_count": int(repository_setting_approval_rules_items_min_approvals_count),
                     "name": repository_setting_approval_rules_items_name,
                     "destination_branch": repository_setting_approval_rules_items_destination_branch,
                     "reviewers": [{
@@ -269,7 +269,7 @@ class RepositorySetting(pulumi.CustomResource):
             repository_id=test_repository["id"],
             approval_rules={
                 "items": [{
-                    "min_approvals_count": repository_setting_approval_rules_items_min_approvals_count,
+                    "min_approvals_count": int(repository_setting_approval_rules_items_min_approvals_count),
                     "name": repository_setting_approval_rules_items_name,
                     "destination_branch": repository_setting_approval_rules_items_destination_branch,
                     "reviewers": [{

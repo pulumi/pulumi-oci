@@ -109,8 +109,8 @@ def get_namespaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
-        is_compartment_delete=namespace_is_compartment_delete)
+    test_namespaces = oci.loganalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete == "true")
     ```
 
 
@@ -146,8 +146,8 @@ def get_namespaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespaces = oci.LogAnalytics.get_namespaces(compartment_id=compartment_id,
-        is_compartment_delete=namespace_is_compartment_delete)
+    test_namespaces = oci.loganalytics.get_namespaces(compartment_id=compartment_id,
+        is_compartment_delete=namespace_is_compartment_delete == "true")
     ```
 
 

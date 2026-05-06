@@ -288,7 +288,7 @@ def get_dataset(dataset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
+    test_dataset = oci.datalabellingservice.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_dataset_output(dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
+    test_dataset = oci.datalabellingservice.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
+ * const testNamespaceStorageOverlappingRecalls = oci.loganalytics.getNamespaceStorageOverlappingRecalls({
  *     namespace: namespaceStorageOverlappingRecallNamespace,
  *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
@@ -87,7 +87,7 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
+ * const testNamespaceStorageOverlappingRecalls = oci.loganalytics.getNamespaceStorageOverlappingRecalls({
  *     namespace: namespaceStorageOverlappingRecallNamespace,
  *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,

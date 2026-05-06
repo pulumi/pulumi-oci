@@ -384,7 +384,7 @@ def get_assigned_subscription(assigned_subscription_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscription = oci.Tenantmanagercontrolplane.get_assigned_subscription(assigned_subscription_id=test_assigned_subscription_oci_tenantmanagercontrolplane_assigned_subscription["id"])
+    test_assigned_subscription = oci.tenantmanagercontrolplane.get_assigned_subscription(assigned_subscription_id=test_assigned_subscription_oci_tenantmanagercontrolplane_assigned_subscription["id"])
     ```
 
 
@@ -437,7 +437,7 @@ def get_assigned_subscription_output(assigned_subscription_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscription = oci.Tenantmanagercontrolplane.get_assigned_subscription(assigned_subscription_id=test_assigned_subscription_oci_tenantmanagercontrolplane_assigned_subscription["id"])
+    test_assigned_subscription = oci.tenantmanagercontrolplane.get_assigned_subscription(assigned_subscription_id=test_assigned_subscription_oci_tenantmanagercontrolplane_assigned_subscription["id"])
     ```
 
 

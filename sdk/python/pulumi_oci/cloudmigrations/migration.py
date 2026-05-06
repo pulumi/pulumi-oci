@@ -424,7 +424,7 @@ class Migration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_completed=migration_is_completed,
+            is_completed=migration_is_completed == "true",
             migration_config={
                 "subnet_id": test_subnet["id"],
             },
@@ -485,7 +485,7 @@ class Migration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_completed=migration_is_completed,
+            is_completed=migration_is_completed == "true",
             migration_config={
                 "subnet_id": test_subnet["id"],
             },

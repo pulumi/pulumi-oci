@@ -525,7 +525,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=test_esxi_host_oci_ocvp_esxi_host["id"])
+    test_esxi_host = oci.ocvp.get_exsi_host(esxi_host_id=test_esxi_host_oci_ocvp_esxi_host["id"])
     ```
 
 
@@ -590,7 +590,7 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_host = oci.Ocvp.get_exsi_host(esxi_host_id=test_esxi_host_oci_ocvp_esxi_host["id"])
+    test_esxi_host = oci.ocvp.get_exsi_host(esxi_host_id=test_esxi_host_oci_ocvp_esxi_host["id"])
     ```
 
 

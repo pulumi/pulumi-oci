@@ -191,7 +191,7 @@ def get_agent_provisioned_capacity(provisioned_capacity_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacity = oci.GenerativeAi.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
+    test_provisioned_capacity = oci.generativeai.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_agent_provisioned_capacity_output(provisioned_capacity_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_provisioned_capacity = oci.GenerativeAi.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
+    test_provisioned_capacity = oci.generativeai.get_agent_provisioned_capacity(provisioned_capacity_id=test_provisioned_capacity_oci_generative_ai_agent_provisioned_capacity["id"])
     ```
 
 

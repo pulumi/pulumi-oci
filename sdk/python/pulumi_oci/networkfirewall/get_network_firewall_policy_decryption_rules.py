@@ -115,8 +115,8 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
-        decryption_rule_priority_order=network_firewall_policy_decryption_rule_decryption_rule_priority_order,
+    test_network_firewall_policy_decryption_rules = oci.networkfirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        decryption_rule_priority_order=int(network_firewall_policy_decryption_rule_decryption_rule_priority_order),
         display_name=network_firewall_policy_decryption_rule_display_name)
     ```
 
@@ -156,8 +156,8 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
-        decryption_rule_priority_order=network_firewall_policy_decryption_rule_decryption_rule_priority_order,
+    test_network_firewall_policy_decryption_rules = oci.networkfirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        decryption_rule_priority_order=int(network_firewall_policy_decryption_rule_decryption_rule_priority_order),
         display_name=network_firewall_policy_decryption_rule_display_name)
     ```
 

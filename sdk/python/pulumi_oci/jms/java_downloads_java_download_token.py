@@ -522,7 +522,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=java_download_token_is_default)
+            is_default=java_download_token_is_default == "true")
         ```
 
         ## Import
@@ -580,7 +580,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=java_download_token_is_default)
+            is_default=java_download_token_is_default == "true")
         ```
 
         ## Import

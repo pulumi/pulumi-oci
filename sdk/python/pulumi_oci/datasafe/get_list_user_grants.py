@@ -190,11 +190,11 @@ def get_list_user_grants(depth_level: Optional[_builtins.int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
+    test_list_user_grants = oci.datasafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
         user_key=list_user_grant_user_key,
-        depth_level=list_user_grant_depth_level,
-        depth_level_greater_than_or_equal_to=list_user_grant_depth_level_greater_than_or_equal_to,
-        depth_level_less_than=list_user_grant_depth_level_less_than,
+        depth_level=int(list_user_grant_depth_level),
+        depth_level_greater_than_or_equal_to=int(list_user_grant_depth_level_greater_than_or_equal_to),
+        depth_level_less_than=int(list_user_grant_depth_level_less_than),
         grant_key=list_user_grant_grant_key,
         grant_name=list_user_grant_grant_name,
         privilege_category=list_user_grant_privilege_category,
@@ -264,11 +264,11 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
+    test_list_user_grants = oci.datasafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
         user_key=list_user_grant_user_key,
-        depth_level=list_user_grant_depth_level,
-        depth_level_greater_than_or_equal_to=list_user_grant_depth_level_greater_than_or_equal_to,
-        depth_level_less_than=list_user_grant_depth_level_less_than,
+        depth_level=int(list_user_grant_depth_level),
+        depth_level_greater_than_or_equal_to=int(list_user_grant_depth_level_greater_than_or_equal_to),
+        depth_level_less_than=int(list_user_grant_depth_level_less_than),
         grant_key=list_user_grant_grant_key,
         grant_name=list_user_grant_grant_name,
         privilege_category=list_user_grant_privilege_category,

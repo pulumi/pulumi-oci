@@ -349,7 +349,7 @@ def get_boot_volume(boot_volume_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume = oci.Core.get_boot_volume(boot_volume_id=test_boot_volume_oci_core_boot_volume["id"])
+    test_boot_volume = oci.core.get_boot_volume(boot_volume_id=test_boot_volume_oci_core_boot_volume["id"])
     ```
 
 
@@ -400,7 +400,7 @@ def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume = oci.Core.get_boot_volume(boot_volume_id=test_boot_volume_oci_core_boot_volume["id"])
+    test_boot_volume = oci.core.get_boot_volume(boot_volume_id=test_boot_volume_oci_core_boot_volume["id"])
     ```
 
 

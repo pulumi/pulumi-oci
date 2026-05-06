@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciConsoleSignOnPolicyConsent = oci.Identity.getDomainsOciConsoleSignOnPolicyConsent({
+ * const testOciConsoleSignOnPolicyConsent = oci.identity.getDomainsOciConsoleSignOnPolicyConsent({
  *     idcsEndpoint: testDomain.url,
  *     ociConsoleSignOnPolicyConsentId: testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,
@@ -179,7 +179,7 @@ export interface GetDomainsOciConsoleSignOnPolicyConsentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciConsoleSignOnPolicyConsent = oci.Identity.getDomainsOciConsoleSignOnPolicyConsent({
+ * const testOciConsoleSignOnPolicyConsent = oci.identity.getDomainsOciConsoleSignOnPolicyConsent({
  *     idcsEndpoint: testDomain.url,
  *     ociConsoleSignOnPolicyConsentId: testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,

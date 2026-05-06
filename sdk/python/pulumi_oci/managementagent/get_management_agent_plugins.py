@@ -141,7 +141,7 @@ def get_management_agent_plugins(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=compartment_id,
+    test_management_agent_plugins = oci.managementagent.get_management_agent_plugins(compartment_id=compartment_id,
         agent_id=management_agent_id,
         display_name=management_agent_plugin_display_name,
         platform_types=management_agent_plugin_platform_type,
@@ -192,7 +192,7 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=compartment_id,
+    test_management_agent_plugins = oci.managementagent.get_management_agent_plugins(compartment_id=compartment_id,
         agent_id=management_agent_id,
         display_name=management_agent_plugin_display_name,
         platform_types=management_agent_plugin_platform_type,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchClusterPipelines = oci.Opensearch.getOpensearchClusterPipelines({
+ * const testOpensearchClusterPipelines = oci.opensearch.getOpensearchClusterPipelines({
  *     compartmentId: compartmentId,
  *     displayName: opensearchClusterPipelineDisplayName,
  *     id: opensearchClusterPipelineId,
@@ -103,7 +103,7 @@ export interface GetOpensearchClusterPipelinesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchClusterPipelines = oci.Opensearch.getOpensearchClusterPipelines({
+ * const testOpensearchClusterPipelines = oci.opensearch.getOpensearchClusterPipelines({
  *     compartmentId: compartmentId,
  *     displayName: opensearchClusterPipelineDisplayName,
  *     id: opensearchClusterPipelineId,

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
+ * const testUnifiedAgentConfigurations = oci.logging.getUnifiedAgentConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });
@@ -111,11 +111,11 @@ export interface GetUnifiedAgentConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
+ * const testUnifiedAgentConfigurations = oci.logging.getUnifiedAgentConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: unifiedAgentConfigurationDisplayName,
  *     groupId: testGroup.id,
- *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree === "true",
  *     logId: testLog.id,
  *     state: unifiedAgentConfigurationState,
  * });

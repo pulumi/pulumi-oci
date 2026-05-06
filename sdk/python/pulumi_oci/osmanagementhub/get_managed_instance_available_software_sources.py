@@ -131,7 +131,7 @@ def get_managed_instance_available_software_sources(compartment_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_software_sources = oci.OsManagementHub.get_managed_instance_available_software_sources(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_software_sources = oci.osmanagementhub.get_managed_instance_available_software_sources(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_available_software_source_display_name,
         display_name_contains=managed_instance_available_software_source_display_name_contains)
@@ -177,7 +177,7 @@ def get_managed_instance_available_software_sources_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_software_sources = oci.OsManagementHub.get_managed_instance_available_software_sources(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_software_sources = oci.osmanagementhub.get_managed_instance_available_software_sources(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_available_software_source_display_name,
         display_name_contains=managed_instance_available_software_source_display_name_contains)

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleStage = oci.OsManagementHub.getLifecycleStage({
+ * const testLifecycleStage = oci.osmanagementhub.getLifecycleStage({
  *     lifecycleStageId: testLifecycleStageOciOsManagementHubLifecycleStage.id,
  * });
  * ```
@@ -124,7 +124,7 @@ export interface GetLifecycleStageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleStage = oci.OsManagementHub.getLifecycleStage({
+ * const testLifecycleStage = oci.osmanagementhub.getLifecycleStage({
  *     lifecycleStageId: testLifecycleStageOciOsManagementHubLifecycleStage.id,
  * });
  * ```

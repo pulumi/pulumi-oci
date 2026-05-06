@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributeNamespaces = oci.SecurityAttribute.getSecurityAttributeNamespaces({
+ * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });
@@ -98,9 +98,9 @@ export interface GetSecurityAttributeNamespacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributeNamespaces = oci.SecurityAttribute.getSecurityAttributeNamespaces({
+ * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });

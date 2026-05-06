@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTunnelSecurityAssociations = oci.Core.getTunnelSecurityAssociations({
+ * const testTunnelSecurityAssociations = oci.core.getTunnelSecurityAssociations({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });
@@ -74,7 +74,7 @@ export interface GetTunnelSecurityAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTunnelSecurityAssociations = oci.Core.getTunnelSecurityAssociations({
+ * const testTunnelSecurityAssociations = oci.core.getTunnelSecurityAssociations({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });

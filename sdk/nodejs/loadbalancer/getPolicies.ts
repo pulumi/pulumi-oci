@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerPolicies = oci.LoadBalancer.getPolicies({
+ * const testLoadBalancerPolicies = oci.loadbalancer.getPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerPolicies = oci.LoadBalancer.getPolicies({
+ * const testLoadBalancerPolicies = oci.loadbalancer.getPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```

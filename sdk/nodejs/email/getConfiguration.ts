@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.Email.getConfiguration({
+ * const testConfiguration = oci.email.getConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.Email.getConfiguration({
+ * const testConfiguration = oci.email.getConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```

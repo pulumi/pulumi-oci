@@ -59,8 +59,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -109,8 +109,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -159,8 +159,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -209,8 +209,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -309,8 +309,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -359,8 +359,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -408,8 +408,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -450,8 +450,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -492,8 +492,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -534,8 +534,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -576,8 +576,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -618,8 +618,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -702,8 +702,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -744,8 +744,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -786,8 +786,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -828,8 +828,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -870,8 +870,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -912,8 +912,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -954,8 +954,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -996,8 +996,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1038,8 +1038,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1083,8 +1083,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1128,8 +1128,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1173,8 +1173,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1218,8 +1218,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1263,8 +1263,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1307,8 +1307,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1351,8 +1351,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1395,8 +1395,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1439,8 +1439,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1483,8 +1483,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1525,8 +1525,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1567,8 +1567,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1609,8 +1609,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1651,8 +1651,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1693,8 +1693,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1735,8 +1735,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1777,8 +1777,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1819,8 +1819,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1861,8 +1861,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1903,8 +1903,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1948,8 +1948,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1993,8 +1993,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2038,8 +2038,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2083,8 +2083,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2128,8 +2128,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2173,8 +2173,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2218,8 +2218,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2263,8 +2263,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2308,8 +2308,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2353,8 +2353,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2398,8 +2398,8 @@ public final class ServiceCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
      * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -252,7 +252,7 @@ def get_scheduled_action(scheduled_action_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action = oci.Database.get_scheduled_action(scheduled_action_id=test_scheduled_action_oci_database_scheduled_action["id"])
+    test_scheduled_action = oci.database.get_scheduled_action(scheduled_action_id=test_scheduled_action_oci_database_scheduled_action["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_scheduled_action_output(scheduled_action_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action = oci.Database.get_scheduled_action(scheduled_action_id=test_scheduled_action_oci_database_scheduled_action["id"])
+    test_scheduled_action = oci.database.get_scheduled_action(scheduled_action_id=test_scheduled_action_oci_database_scheduled_action["id"])
     ```
 
 

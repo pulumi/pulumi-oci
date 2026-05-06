@@ -147,7 +147,7 @@ def get_delegation_controls(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_controls = oci.DelegateAccessControl.get_delegation_controls(compartment_id=compartment_id,
+    test_delegation_controls = oci.delegateaccesscontrol.get_delegation_controls(compartment_id=compartment_id,
         display_name=delegation_control_display_name,
         resource_id=test_resource["id"],
         resource_type=delegation_control_resource_type,
@@ -198,7 +198,7 @@ def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_controls = oci.DelegateAccessControl.get_delegation_controls(compartment_id=compartment_id,
+    test_delegation_controls = oci.delegateaccesscontrol.get_delegation_controls(compartment_id=compartment_id,
         display_name=delegation_control_display_name,
         resource_id=test_resource["id"],
         resource_type=delegation_control_resource_type,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstances = oci.Oce.getOceInstances({
+ * const testOceInstances = oci.oce.getOceInstances({
  *     compartmentId: compartmentId,
  *     displayName: oceInstanceDisplayName,
  *     state: oceInstanceState,
@@ -97,7 +97,7 @@ export interface GetOceInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstances = oci.Oce.getOceInstances({
+ * const testOceInstances = oci.oce.getOceInstances({
  *     compartmentId: compartmentId,
  *     displayName: oceInstanceDisplayName,
  *     state: oceInstanceState,

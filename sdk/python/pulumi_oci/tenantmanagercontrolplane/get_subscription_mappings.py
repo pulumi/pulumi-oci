@@ -134,7 +134,7 @@ def get_subscription_mappings(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mappings = oci.Tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
+    test_subscription_mappings = oci.tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
         compartment_id=compartment_id,
         state=subscription_mapping_state,
         subscription_mapping_id=test_subscription_mapping["id"])
@@ -180,7 +180,7 @@ def get_subscription_mappings_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mappings = oci.Tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
+    test_subscription_mappings = oci.tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
         compartment_id=compartment_id,
         state=subscription_mapping_state,
         subscription_mapping_id=test_subscription_mapping["id"])

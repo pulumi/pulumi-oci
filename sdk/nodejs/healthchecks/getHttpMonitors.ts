@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
+ * const testHttpMonitors = oci.healthchecks.getHttpMonitors({
  *     compartmentId: compartmentId,
  *     displayName: httpMonitorDisplayName,
  *     homeRegion: httpMonitorHomeRegion,
@@ -90,7 +90,7 @@ export interface GetHttpMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
+ * const testHttpMonitors = oci.healthchecks.getHttpMonitors({
  *     compartmentId: compartmentId,
  *     displayName: httpMonitorDisplayName,
  *     homeRegion: httpMonitorHomeRegion,

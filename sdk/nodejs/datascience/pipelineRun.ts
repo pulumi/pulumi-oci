@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     infrastructureConfigurationOverrideDetails: {
- *         blockStorageSizeInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
  *         shapeName: testShape.name,
  *         blockStorageSizeInGbsParameterized: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbsParameterized,
  *         shapeConfigDetails: {
@@ -49,8 +49,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     logConfigurationOverrideDetails: {
- *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
+ *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -91,11 +91,11 @@ import * as utilities from "../utilities";
  *                 ocpusParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpusParameterized,
  *             },
  *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
- *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
+ *             numExecutors: Number(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors),
  *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
  *         },
  *         stepInfrastructureConfigurationDetails: {
- *             blockStorageSizeInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *             blockStorageSizeInGbs: Number(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *             shapeName: testShape.name,
  *             blockStorageSizeInGbsParameterized: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbsParameterized,
  *             shapeConfigDetails: {

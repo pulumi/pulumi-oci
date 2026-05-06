@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppRole = oci.Identity.getDomainsAppRole({
+ * const testAppRole = oci.identity.getDomainsAppRole({
  *     appRoleId: testAppRoleOciIdentityDomainsAppRole.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -195,7 +195,7 @@ export interface GetDomainsAppRoleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppRole = oci.Identity.getDomainsAppRole({
+ * const testAppRole = oci.identity.getDomainsAppRole({
  *     appRoleId: testAppRoleOciIdentityDomainsAppRole.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

@@ -122,7 +122,7 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
+    test_log_analytics_unprocessed_data_bucket = oci.loganalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
     ```
 
 
@@ -153,7 +153,7 @@ def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
+    test_log_analytics_unprocessed_data_bucket = oci.loganalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
     ```
 
 

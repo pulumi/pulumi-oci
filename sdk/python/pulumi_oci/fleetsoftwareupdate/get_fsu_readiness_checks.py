@@ -147,7 +147,7 @@ def get_fsu_readiness_checks(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_checks = oci.FleetSoftwareUpdate.get_fsu_readiness_checks(compartment_id=compartment_id,
+    test_fsu_readiness_checks = oci.fleetsoftwareupdate.get_fsu_readiness_checks(compartment_id=compartment_id,
         display_name=fsu_readiness_check_display_name,
         resource_id=test_resource["id"],
         state=fsu_readiness_check_state,
@@ -198,7 +198,7 @@ def get_fsu_readiness_checks_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_checks = oci.FleetSoftwareUpdate.get_fsu_readiness_checks(compartment_id=compartment_id,
+    test_fsu_readiness_checks = oci.fleetsoftwareupdate.get_fsu_readiness_checks(compartment_id=compartment_id,
         display_name=fsu_readiness_check_display_name,
         resource_id=test_resource["id"],
         state=fsu_readiness_check_state,

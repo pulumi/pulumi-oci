@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaReleases = oci.Jms.getJavaReleases({
+ * const testJavaReleases = oci.jms.getJavaReleases({
  *     familyVersion: javaReleaseFamilyVersion,
  *     jreSecurityStatus: javaReleaseJreSecurityStatus,
  *     licenseType: javaReleaseLicenseType,
@@ -108,7 +108,7 @@ export interface GetJavaReleasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaReleases = oci.Jms.getJavaReleases({
+ * const testJavaReleases = oci.jms.getJavaReleases({
  *     familyVersion: javaReleaseFamilyVersion,
  *     jreSecurityStatus: javaReleaseJreSecurityStatus,
  *     licenseType: javaReleaseLicenseType,

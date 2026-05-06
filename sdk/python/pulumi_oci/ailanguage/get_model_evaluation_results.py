@@ -95,7 +95,7 @@ def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvalu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
+    test_model_evaluation_results = oci.ailanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
+    test_model_evaluation_results = oci.ailanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
 
 

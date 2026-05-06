@@ -303,7 +303,7 @@ def get_vcn(vcn_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn = oci.Core.get_vcn(vcn_id=test_vcn_oci_core_vcn["id"])
+    test_vcn = oci.core.get_vcn(vcn_id=test_vcn_oci_core_vcn["id"])
     ```
 
 
@@ -350,7 +350,7 @@ def get_vcn_output(vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn = oci.Core.get_vcn(vcn_id=test_vcn_oci_core_vcn["id"])
+    test_vcn = oci.core.get_vcn(vcn_id=test_vcn_oci_core_vcn["id"])
     ```
 
 

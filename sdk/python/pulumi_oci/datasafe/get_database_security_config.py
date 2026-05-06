@@ -237,7 +237,7 @@ def get_database_security_config(database_security_config_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_config = oci.DataSafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
+    test_database_security_config = oci.datasafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
     ```
 
 
@@ -278,7 +278,7 @@ def get_database_security_config_output(database_security_config_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_config = oci.DataSafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
+    test_database_security_config = oci.datasafe.get_database_security_config(database_security_config_id=test_database_security_config_oci_data_safe_database_security_config["id"])
     ```
 
 

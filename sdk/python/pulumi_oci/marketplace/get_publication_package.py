@@ -226,7 +226,7 @@ def get_publication_package(package_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+    test_publication_package = oci.marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
 
@@ -270,7 +270,7 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+    test_publication_package = oci.marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
 

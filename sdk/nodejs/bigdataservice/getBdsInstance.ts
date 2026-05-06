@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstance = oci.BigDataService.getBdsInstance({
+ * const testBdsInstance = oci.bigdataservice.getBdsInstance({
  *     bdsInstanceId: testBdsInstanceOciBdsBdsInstance.id,
  * });
  * ```
@@ -167,7 +167,7 @@ export interface GetBdsInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstance = oci.BigDataService.getBdsInstance({
+ * const testBdsInstance = oci.bigdataservice.getBdsInstance({
  *     bdsInstanceId: testBdsInstanceOciBdsBdsInstance.id,
  * });
  * ```

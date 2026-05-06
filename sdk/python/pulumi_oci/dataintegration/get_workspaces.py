@@ -121,7 +121,7 @@ def get_workspaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+    test_workspaces = oci.dataintegration.get_workspaces(compartment_id=compartment_id,
         name=workspace_name,
         state=workspace_state)
     ```
@@ -162,7 +162,7 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+    test_workspaces = oci.dataintegration.get_workspaces(compartment_id=compartment_id,
         name=workspace_name,
         state=workspace_state)
     ```

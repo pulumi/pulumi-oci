@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrorAnalytics = oci.Jms.getFleetErrorAnalytics({
+ * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetFleetErrorAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrorAnalytics = oci.Jms.getFleetErrorAnalytics({
+ * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */

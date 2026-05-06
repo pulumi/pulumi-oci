@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviderTemplate = oci.Identity.getDomainsIdentityProofingProviderTemplate({
+ * const testIdentityProofingProviderTemplate = oci.identity.getDomainsIdentityProofingProviderTemplate({
  *     idcsEndpoint: testDomain.url,
  *     identityProofingProviderTemplateId: testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id,
  *     attributeSets: ["all"],
@@ -167,7 +167,7 @@ export interface GetDomainsIdentityProofingProviderTemplateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviderTemplate = oci.Identity.getDomainsIdentityProofingProviderTemplate({
+ * const testIdentityProofingProviderTemplate = oci.identity.getDomainsIdentityProofingProviderTemplate({
  *     idcsEndpoint: testDomain.url,
  *     identityProofingProviderTemplateId: testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id,
  *     attributeSets: ["all"],

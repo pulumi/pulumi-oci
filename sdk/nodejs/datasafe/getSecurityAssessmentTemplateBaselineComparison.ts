@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateBaselineComparison = oci.DataSafe.getSecurityAssessmentTemplateBaselineComparison({
+ * const testSecurityAssessmentTemplateBaselineComparison = oci.datasafe.getSecurityAssessmentTemplateBaselineComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  *     category: securityAssessmentTemplateBaselineComparisonCategory,
@@ -135,7 +135,7 @@ export interface GetSecurityAssessmentTemplateBaselineComparisonResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateBaselineComparison = oci.DataSafe.getSecurityAssessmentTemplateBaselineComparison({
+ * const testSecurityAssessmentTemplateBaselineComparison = oci.datasafe.getSecurityAssessmentTemplateBaselineComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  *     category: securityAssessmentTemplateBaselineComparisonCategory,

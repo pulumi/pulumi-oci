@@ -264,7 +264,7 @@ def get_detector_recipe(detector_recipe_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
+    test_detector_recipe = oci.cloudguard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
+    test_detector_recipe = oci.cloudguard.get_detector_recipe(detector_recipe_id=test_detector_recipe_oci_cloud_guard_detector_recipe["id"])
     ```
 
 

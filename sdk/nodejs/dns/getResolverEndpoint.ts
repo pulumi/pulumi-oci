@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoint = oci.Dns.getResolverEndpoint({
+ * const testResolverEndpoint = oci.dns.getResolverEndpoint({
  *     resolverEndpointName: testResolverEndpointOciDnsResolverEndpoint.name,
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
@@ -127,7 +127,7 @@ export interface GetResolverEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoint = oci.Dns.getResolverEndpoint({
+ * const testResolverEndpoint = oci.dns.getResolverEndpoint({
  *     resolverEndpointName: testResolverEndpointOciDnsResolverEndpoint.name,
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
+ * const testSoftwareSources = oci.osmanagementhub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
  *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
@@ -27,8 +27,8 @@ import * as utilities from "../utilities";
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
- *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
- *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux === "true",
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed === "true",
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -201,7 +201,7 @@ export interface GetSoftwareSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
+ * const testSoftwareSources = oci.osmanagementhub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
  *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
@@ -210,8 +210,8 @@ export interface GetSoftwareSourcesResult {
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
- *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
- *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux === "true",
+ *     isMirrorSyncAllowed: softwareSourceIsMirrorSyncAllowed === "true",
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,

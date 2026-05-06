@@ -95,7 +95,7 @@ def get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster_instances = oci.Core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster_instances = oci.core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_compute_gpu_memory_cluster_instances_output(compute_gpu_memory_cluster_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster_instances = oci.Core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster_instances = oci.core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
     ```
 
 

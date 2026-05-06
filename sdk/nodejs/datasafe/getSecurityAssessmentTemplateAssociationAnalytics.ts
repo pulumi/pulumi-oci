@@ -31,10 +31,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAssociationAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAssociationAnalytics({
+ * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,
@@ -149,10 +149,10 @@ export interface GetSecurityAssessmentTemplateAssociationAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAssociationAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAssociationAnalytics({
+ * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,

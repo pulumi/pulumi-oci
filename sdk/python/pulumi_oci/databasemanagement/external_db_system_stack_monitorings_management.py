@@ -203,8 +203,8 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         test_external_db_system_stack_monitorings_management = oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_stack_monitoring=enable_stack_monitoring,
-            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            enable_stack_monitoring=enable_stack_monitoring == "true",
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled == "true",
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
 
@@ -242,8 +242,8 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         test_external_db_system_stack_monitorings_management = oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_stack_monitoring=enable_stack_monitoring,
-            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            enable_stack_monitoring=enable_stack_monitoring == "true",
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled == "true",
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
 

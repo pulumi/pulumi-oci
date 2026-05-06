@@ -2171,27 +2171,27 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_self_registration_profile = oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile",
-            activation_email_required=self_registration_profile_activation_email_required,
-            consent_text_present=self_registration_profile_consent_text_present,
+            activation_email_required=self_registration_profile_activation_email_required == "true",
+            consent_text_present=self_registration_profile_consent_text_present == "true",
             display_names=[{
                 "locale": self_registration_profile_display_name_locale,
                 "value": self_registration_profile_display_name_value,
-                "default": self_registration_profile_display_name_default,
+                "default": self_registration_profile_display_name_default == "true",
             }],
             email_template={
                 "value": self_registration_profile_email_template_value,
             },
             idcs_endpoint=test_domain["url"],
             name=self_registration_profile_name,
-            number_of_days_redirect_url_is_valid=self_registration_profile_number_of_days_redirect_url_is_valid,
+            number_of_days_redirect_url_is_valid=int(self_registration_profile_number_of_days_redirect_url_is_valid),
             redirect_url=self_registration_profile_redirect_url,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
-            show_on_login_page=self_registration_profile_show_on_login_page,
-            active=self_registration_profile_active,
+            show_on_login_page=self_registration_profile_show_on_login_page == "true",
+            active=self_registration_profile_active == "true",
             after_submit_texts=[{
                 "locale": self_registration_profile_after_submit_text_locale,
                 "value": self_registration_profile_after_submit_text_value,
-                "default": self_registration_profile_after_submit_text_default,
+                "default": self_registration_profile_after_submit_text_default == "true",
             }],
             allowed_email_domains=self_registration_profile_allowed_email_domains,
             attribute_sets=["all"],
@@ -2200,7 +2200,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             consent_texts=[{
                 "locale": self_registration_profile_consent_text_locale,
                 "value": self_registration_profile_consent_text_value,
-                "default": self_registration_profile_consent_text_default,
+                "default": self_registration_profile_consent_text_default == "true",
             }],
             default_groups=[{
                 "value": self_registration_profile_default_groups_value,
@@ -2211,13 +2211,13 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             footer_texts=[{
                 "locale": self_registration_profile_footer_text_locale,
                 "value": self_registration_profile_footer_text_value,
-                "default": self_registration_profile_footer_text_default,
+                "default": self_registration_profile_footer_text_default == "true",
             }],
             header_logo=self_registration_profile_header_logo,
             header_texts=[{
                 "locale": self_registration_profile_header_text_locale,
                 "value": self_registration_profile_header_text_value,
-                "default": self_registration_profile_header_text_default,
+                "default": self_registration_profile_header_text_default == "true",
             }],
             id=self_registration_profile_id,
             ocid=self_registration_profile_ocid,
@@ -2227,7 +2227,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                 "value": self_registration_profile_tags_value,
             }],
             user_attributes=[{
-                "seq_number": self_registration_profile_user_attributes_seq_number,
+                "seq_number": int(self_registration_profile_user_attributes_seq_number),
                 "value": self_registration_profile_user_attributes_value,
                 "fully_qualified_attribute_name": self_registration_profile_user_attributes_fully_qualified_attribute_name,
             }])
@@ -2515,27 +2515,27 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_self_registration_profile = oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile",
-            activation_email_required=self_registration_profile_activation_email_required,
-            consent_text_present=self_registration_profile_consent_text_present,
+            activation_email_required=self_registration_profile_activation_email_required == "true",
+            consent_text_present=self_registration_profile_consent_text_present == "true",
             display_names=[{
                 "locale": self_registration_profile_display_name_locale,
                 "value": self_registration_profile_display_name_value,
-                "default": self_registration_profile_display_name_default,
+                "default": self_registration_profile_display_name_default == "true",
             }],
             email_template={
                 "value": self_registration_profile_email_template_value,
             },
             idcs_endpoint=test_domain["url"],
             name=self_registration_profile_name,
-            number_of_days_redirect_url_is_valid=self_registration_profile_number_of_days_redirect_url_is_valid,
+            number_of_days_redirect_url_is_valid=int(self_registration_profile_number_of_days_redirect_url_is_valid),
             redirect_url=self_registration_profile_redirect_url,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
-            show_on_login_page=self_registration_profile_show_on_login_page,
-            active=self_registration_profile_active,
+            show_on_login_page=self_registration_profile_show_on_login_page == "true",
+            active=self_registration_profile_active == "true",
             after_submit_texts=[{
                 "locale": self_registration_profile_after_submit_text_locale,
                 "value": self_registration_profile_after_submit_text_value,
-                "default": self_registration_profile_after_submit_text_default,
+                "default": self_registration_profile_after_submit_text_default == "true",
             }],
             allowed_email_domains=self_registration_profile_allowed_email_domains,
             attribute_sets=["all"],
@@ -2544,7 +2544,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             consent_texts=[{
                 "locale": self_registration_profile_consent_text_locale,
                 "value": self_registration_profile_consent_text_value,
-                "default": self_registration_profile_consent_text_default,
+                "default": self_registration_profile_consent_text_default == "true",
             }],
             default_groups=[{
                 "value": self_registration_profile_default_groups_value,
@@ -2555,13 +2555,13 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
             footer_texts=[{
                 "locale": self_registration_profile_footer_text_locale,
                 "value": self_registration_profile_footer_text_value,
-                "default": self_registration_profile_footer_text_default,
+                "default": self_registration_profile_footer_text_default == "true",
             }],
             header_logo=self_registration_profile_header_logo,
             header_texts=[{
                 "locale": self_registration_profile_header_text_locale,
                 "value": self_registration_profile_header_text_value,
-                "default": self_registration_profile_header_text_default,
+                "default": self_registration_profile_header_text_default == "true",
             }],
             id=self_registration_profile_id,
             ocid=self_registration_profile_ocid,
@@ -2571,7 +2571,7 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                 "value": self_registration_profile_tags_value,
             }],
             user_attributes=[{
-                "seq_number": self_registration_profile_user_attributes_seq_number,
+                "seq_number": int(self_registration_profile_user_attributes_seq_number),
                 "value": self_registration_profile_user_attributes_value,
                 "fully_qualified_attribute_name": self_registration_profile_user_attributes_fully_qualified_attribute_name,
             }])

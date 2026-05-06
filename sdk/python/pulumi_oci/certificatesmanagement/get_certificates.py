@@ -151,7 +151,7 @@ def get_certificates(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=test_certificate["id"],
+    test_certificates = oci.certificatesmanagement.get_certificates(certificate_id=test_certificate["id"],
         compartment_id=compartment_id,
         issuer_certificate_authority_id=test_certificate_authority["id"],
         name=certificate_name,
@@ -203,7 +203,7 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=test_certificate["id"],
+    test_certificates = oci.certificatesmanagement.get_certificates(certificate_id=test_certificate["id"],
         compartment_id=compartment_id,
         issuer_certificate_authority_id=test_certificate_authority["id"],
         name=certificate_name,

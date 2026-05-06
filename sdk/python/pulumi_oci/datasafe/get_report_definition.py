@@ -396,7 +396,7 @@ def get_report_definition(report_definition_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report_definition = oci.DataSafe.get_report_definition(report_definition_id=test_report_definition_oci_data_safe_report_definition["id"])
+    test_report_definition = oci.datasafe.get_report_definition(report_definition_id=test_report_definition_oci_data_safe_report_definition["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_report_definition_output(report_definition_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_report_definition = oci.DataSafe.get_report_definition(report_definition_id=test_report_definition_oci_data_safe_report_definition["id"])
+    test_report_definition = oci.datasafe.get_report_definition(report_definition_id=test_report_definition_oci_data_safe_report_definition["id"])
     ```
 
 

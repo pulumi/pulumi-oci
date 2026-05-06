@@ -107,7 +107,7 @@ def get_managed_database_user_object_privilege(managed_database_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_object_privilege = oci.databasemanagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_object_privilege_name)
     ```
@@ -145,7 +145,7 @@ def get_managed_database_user_object_privilege_output(managed_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_object_privilege = oci.databasemanagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_object_privilege_name)
     ```

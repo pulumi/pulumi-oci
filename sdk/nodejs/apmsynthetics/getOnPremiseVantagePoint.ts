@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePoint = oci.ApmSynthetics.getOnPremiseVantagePoint({
+ * const testOnPremiseVantagePoint = oci.apmsynthetics.getOnPremiseVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     onPremiseVantagePointId: testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id,
  * });
@@ -103,7 +103,7 @@ export interface GetOnPremiseVantagePointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePoint = oci.ApmSynthetics.getOnPremiseVantagePoint({
+ * const testOnPremiseVantagePoint = oci.apmsynthetics.getOnPremiseVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     onPremiseVantagePointId: testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id,
  * });

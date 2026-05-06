@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseHighAvailabilityMembers = oci.DatabaseManagement.getManagedMySqlDatabaseHighAvailabilityMembers({
+ * const testManagedMySqlDatabaseHighAvailabilityMembers = oci.databasemanagement.getManagedMySqlDatabaseHighAvailabilityMembers({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetManagedMySqlDatabaseHighAvailabilityMembersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseHighAvailabilityMembers = oci.DatabaseManagement.getManagedMySqlDatabaseHighAvailabilityMembers({
+ * const testManagedMySqlDatabaseHighAvailabilityMembers = oci.databasemanagement.getManagedMySqlDatabaseHighAvailabilityMembers({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```

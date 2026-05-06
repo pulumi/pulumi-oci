@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRules = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRules({
+ * const testNetworkFirewallPolicyTunnelInspectionRules = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyTunnelInspectionRuleDisplayName,
- *     tunnelInspectionRulePriorityOrder: networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder,
+ *     tunnelInspectionRulePriorityOrder: Number(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder),
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRules = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRules({
+ * const testNetworkFirewallPolicyTunnelInspectionRules = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyTunnelInspectionRuleDisplayName,
- *     tunnelInspectionRulePriorityOrder: networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder,
+ *     tunnelInspectionRulePriorityOrder: Number(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder),
  * });
  * ```
  */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceSnaps = oci.OsManagementHub.getManagedInstanceSnaps({
+ * const testManagedInstanceSnaps = oci.osmanagementhub.getManagedInstanceSnaps({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceSnapName,
@@ -91,7 +91,7 @@ export interface GetManagedInstanceSnapsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceSnaps = oci.OsManagementHub.getManagedInstanceSnaps({
+ * const testManagedInstanceSnaps = oci.osmanagementhub.getManagedInstanceSnaps({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceSnapName,

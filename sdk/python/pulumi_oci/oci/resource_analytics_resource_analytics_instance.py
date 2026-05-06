@@ -528,7 +528,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required,
+            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required == "true",
             license_model=resource_analytics_instance_license_model,
             nsg_ids=resource_analytics_instance_nsg_ids)
         ```
@@ -595,7 +595,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required,
+            is_mutual_tls_required=resource_analytics_instance_is_mutual_tls_required == "true",
             license_model=resource_analytics_instance_license_model,
             nsg_ids=resource_analytics_instance_nsg_ids)
         ```

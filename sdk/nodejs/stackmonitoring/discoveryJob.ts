@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     shouldPropagateTagsToDiscoveredResources: discoveryJobShouldPropagateTagsToDiscoveredResources,
+ *     shouldPropagateTagsToDiscoveredResources: discoveryJobShouldPropagateTagsToDiscoveredResources === "true",
  * });
  * ```
  *

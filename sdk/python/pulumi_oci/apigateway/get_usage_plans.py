@@ -124,7 +124,7 @@ def get_usage_plans(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=compartment_id,
+    test_usage_plans = oci.apigateway.get_usage_plans(compartment_id=compartment_id,
         display_name=usage_plan_display_name,
         state=usage_plan_state)
     ```
@@ -165,7 +165,7 @@ def get_usage_plans_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=compartment_id,
+    test_usage_plans = oci.apigateway.get_usage_plans(compartment_id=compartment_id,
         display_name=usage_plan_display_name,
         state=usage_plan_state)
     ```

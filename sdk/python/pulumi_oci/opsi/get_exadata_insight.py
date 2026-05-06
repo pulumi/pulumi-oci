@@ -405,7 +405,7 @@ def get_exadata_insight(exadata_insight_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=test_exadata_insight_oci_opsi_exadata_insight["id"])
+    test_exadata_insight = oci.opsi.get_exadata_insight(exadata_insight_id=test_exadata_insight_oci_opsi_exadata_insight["id"])
     ```
 
 
@@ -460,7 +460,7 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=test_exadata_insight_oci_opsi_exadata_insight["id"])
+    test_exadata_insight = oci.opsi.get_exadata_insight(exadata_insight_id=test_exadata_insight_oci_opsi_exadata_insight["id"])
     ```
 
 

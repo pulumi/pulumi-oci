@@ -124,7 +124,7 @@ def get_external_listeners(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=compartment_id,
+    test_external_listeners = oci.databasemanagement.get_external_listeners(compartment_id=compartment_id,
         display_name=external_listener_display_name,
         external_db_system_id=test_external_db_system["id"])
     ```
@@ -165,7 +165,7 @@ def get_external_listeners_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listeners = oci.DatabaseManagement.get_external_listeners(compartment_id=compartment_id,
+    test_external_listeners = oci.databasemanagement.get_external_listeners(compartment_id=compartment_id,
         display_name=external_listener_display_name,
         external_db_system_id=test_external_db_system["id"])
     ```

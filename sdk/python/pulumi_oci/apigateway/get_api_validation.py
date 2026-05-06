@@ -84,7 +84,7 @@ def get_api_validation(api_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=test_api["id"])
+    test_api_validation = oci.apigateway.get_api_validation(api_id=test_api["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_api_validation_output(api_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=test_api["id"])
+    test_api_validation = oci.apigateway.get_api_validation(api_id=test_api["id"])
     ```
 
 

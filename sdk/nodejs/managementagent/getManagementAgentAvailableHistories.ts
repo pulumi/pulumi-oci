@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
+ * const testManagementAgentAvailableHistories = oci.managementagent.getManagementAgentAvailableHistories({
  *     managementAgentId: testManagementAgent.id,
  *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
@@ -84,7 +84,7 @@ export interface GetManagementAgentAvailableHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
+ * const testManagementAgentAvailableHistories = oci.managementagent.getManagementAgentAvailableHistories({
  *     managementAgentId: testManagementAgent.id,
  *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,

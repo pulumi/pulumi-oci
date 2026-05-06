@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuits = oci.Core.getVirtualCircuits({
+ * const testVirtualCircuits = oci.core.getVirtualCircuits({
  *     compartmentId: compartmentId,
  *     displayName: virtualCircuitDisplayName,
  *     state: virtualCircuitState,
@@ -90,7 +90,7 @@ export interface GetVirtualCircuitsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuits = oci.Core.getVirtualCircuits({
+ * const testVirtualCircuits = oci.core.getVirtualCircuits({
  *     compartmentId: compartmentId,
  *     displayName: virtualCircuitDisplayName,
  *     state: virtualCircuitState,

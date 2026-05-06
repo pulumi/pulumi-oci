@@ -218,10 +218,10 @@ def get_listings(categories: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+    test_listings = oci.marketplace.get_listings(categories=listing_category,
         compartment_id=compartment_id,
         image_id=test_image["id"],
-        is_featured=listing_is_featured,
+        is_featured=listing_is_featured == "true",
         listing_id=test_listing["id"],
         listing_types=listing_listing_types,
         names=listing_name,
@@ -313,10 +313,10 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+    test_listings = oci.marketplace.get_listings(categories=listing_category,
         compartment_id=compartment_id,
         image_id=test_image["id"],
-        is_featured=listing_is_featured,
+        is_featured=listing_is_featured == "true",
         listing_id=test_listing["id"],
         listing_types=listing_listing_types,
         names=listing_name,

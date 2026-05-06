@@ -200,9 +200,9 @@ def get_security_policy_configs(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_configs = oci.DataSafe.get_security_policy_configs(compartment_id=compartment_id,
+    test_security_policy_configs = oci.datasafe.get_security_policy_configs(compartment_id=compartment_id,
         access_level=security_policy_config_access_level,
-        compartment_id_in_subtree=security_policy_config_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_config_compartment_id_in_subtree == "true",
         display_name=security_policy_config_display_name,
         security_policy_config_id=test_security_policy_config["id"],
         security_policy_id=test_security_policy["id"],
@@ -288,9 +288,9 @@ def get_security_policy_configs_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_configs = oci.DataSafe.get_security_policy_configs(compartment_id=compartment_id,
+    test_security_policy_configs = oci.datasafe.get_security_policy_configs(compartment_id=compartment_id,
         access_level=security_policy_config_access_level,
-        compartment_id_in_subtree=security_policy_config_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_config_compartment_id_in_subtree == "true",
         display_name=security_policy_config_display_name,
         security_policy_config_id=test_security_policy_config["id"],
         security_policy_id=test_security_policy["id"],

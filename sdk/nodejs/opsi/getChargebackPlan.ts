@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlan = oci.Opsi.getChargebackPlan({
+ * const testChargebackPlan = oci.opsi.getChargebackPlan({
  *     chargebackplanId: testChargebackplan.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetChargebackPlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlan = oci.Opsi.getChargebackPlan({
+ * const testChargebackPlan = oci.opsi.getChargebackPlan({
  *     chargebackplanId: testChargebackplan.id,
  * });
  * ```

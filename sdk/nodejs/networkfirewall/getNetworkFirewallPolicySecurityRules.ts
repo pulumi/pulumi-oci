@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicySecurityRules = oci.NetworkFirewall.getNetworkFirewallPolicySecurityRules({
+ * const testNetworkFirewallPolicySecurityRules = oci.networkfirewall.getNetworkFirewallPolicySecurityRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicySecurityRuleDisplayName,
- *     securityRulePriorityOrder: networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
+ *     securityRulePriorityOrder: Number(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder),
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetNetworkFirewallPolicySecurityRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicySecurityRules = oci.NetworkFirewall.getNetworkFirewallPolicySecurityRules({
+ * const testNetworkFirewallPolicySecurityRules = oci.networkfirewall.getNetworkFirewallPolicySecurityRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicySecurityRuleDisplayName,
- *     securityRulePriorityOrder: networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
+ *     securityRulePriorityOrder: Number(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder),
  * });
  * ```
  */

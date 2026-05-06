@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
+ * const testServiceCatalogAssociations = oci.servicecatalog.getServiceCatalogAssociations({
  *     entityId: testEntity.id,
  *     entityType: serviceCatalogAssociationEntityType,
  *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,
@@ -98,7 +98,7 @@ export interface GetServiceCatalogAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
+ * const testServiceCatalogAssociations = oci.servicecatalog.getServiceCatalogAssociations({
  *     entityId: testEntity.id,
  *     entityType: serviceCatalogAssociationEntityType,
  *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,

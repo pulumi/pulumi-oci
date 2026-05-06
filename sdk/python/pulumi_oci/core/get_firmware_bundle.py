@@ -165,7 +165,7 @@ def get_firmware_bundle(firmware_bundle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_firmware_bundle = oci.Core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
+    test_firmware_bundle = oci.core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
     ```
 
 
@@ -200,7 +200,7 @@ def get_firmware_bundle_output(firmware_bundle_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_firmware_bundle = oci.Core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
+    test_firmware_bundle = oci.core.get_firmware_bundle(firmware_bundle_id=test_firmware_bundle_oci_core_firmware_bundle["id"])
     ```
 
 

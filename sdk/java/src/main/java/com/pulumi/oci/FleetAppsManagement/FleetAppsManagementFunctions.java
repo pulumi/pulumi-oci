@@ -205,8 +205,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -249,8 +249,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -293,8 +293,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -337,8 +337,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -381,8 +381,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -425,8 +425,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -467,8 +467,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -509,8 +509,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -551,8 +551,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -593,8 +593,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -635,8 +635,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -677,8 +677,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -719,8 +719,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -761,8 +761,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -803,8 +803,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemVariablesDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -845,8 +845,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -894,8 +894,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -943,8 +943,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -992,8 +992,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1041,8 +1041,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCatalogItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1091,8 +1091,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1138,8 +1138,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1185,8 +1185,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1232,8 +1232,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1279,8 +1279,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1326,8 +1326,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1373,8 +1373,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1419,8 +1419,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1461,8 +1461,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1503,8 +1503,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1545,8 +1545,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1587,8 +1587,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1629,8 +1629,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1671,8 +1671,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1713,8 +1713,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1755,8 +1755,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1797,8 +1797,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1839,8 +1839,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1886,8 +1886,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1933,8 +1933,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1980,8 +1980,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2027,8 +2027,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2074,8 +2074,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2121,8 +2121,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetCompliancePolicyRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2168,8 +2168,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2211,8 +2211,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2254,8 +2254,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2297,8 +2297,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2340,8 +2340,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2383,8 +2383,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2426,8 +2426,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2469,8 +2469,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2518,8 +2518,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2567,8 +2567,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2616,8 +2616,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2665,8 +2665,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2714,8 +2714,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2756,8 +2756,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2798,8 +2798,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2840,8 +2840,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2882,8 +2882,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2924,8 +2924,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2966,8 +2966,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3008,8 +3008,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3050,8 +3050,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3092,8 +3092,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3134,8 +3134,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3177,8 +3177,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3220,8 +3220,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3263,8 +3263,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3306,8 +3306,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetComplianceReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3349,8 +3349,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3392,8 +3392,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3435,8 +3435,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3478,8 +3478,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3521,8 +3521,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3564,8 +3564,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3612,8 +3612,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3660,8 +3660,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3708,8 +3708,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3756,8 +3756,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3804,8 +3804,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3850,8 +3850,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3896,8 +3896,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3942,8 +3942,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3988,8 +3988,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4034,8 +4034,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4079,8 +4079,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4124,8 +4124,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4169,8 +4169,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4214,8 +4214,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4259,8 +4259,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4302,8 +4302,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4345,8 +4345,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4388,8 +4388,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4431,8 +4431,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4474,8 +4474,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4517,8 +4517,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4560,8 +4560,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4603,8 +4603,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4646,8 +4646,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4689,8 +4689,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4735,8 +4735,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4781,8 +4781,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4827,8 +4827,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4873,8 +4873,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4919,8 +4919,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4966,8 +4966,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5013,8 +5013,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5060,8 +5060,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5107,8 +5107,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5155,8 +5155,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5205,8 +5205,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5255,8 +5255,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5305,8 +5305,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5355,8 +5355,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5405,8 +5405,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5455,8 +5455,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5505,8 +5505,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5553,8 +5553,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5601,8 +5601,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5649,8 +5649,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5697,8 +5697,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5744,8 +5744,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5790,8 +5790,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5836,8 +5836,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5882,8 +5882,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5928,8 +5928,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5975,8 +5975,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6026,8 +6026,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6077,8 +6077,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6128,8 +6128,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6179,8 +6179,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetInventoryResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6229,8 +6229,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6271,8 +6271,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6313,8 +6313,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6355,8 +6355,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6397,8 +6397,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6440,8 +6440,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6487,8 +6487,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6534,8 +6534,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6581,8 +6581,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6628,8 +6628,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6675,8 +6675,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6722,8 +6722,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6768,8 +6768,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6811,8 +6811,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6854,8 +6854,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6897,8 +6897,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6940,8 +6940,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6983,8 +6983,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7026,8 +7026,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7069,8 +7069,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7111,8 +7111,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7153,8 +7153,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7195,8 +7195,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7237,8 +7237,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7280,8 +7280,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7325,8 +7325,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7370,8 +7370,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7415,8 +7415,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7460,8 +7460,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7505,8 +7505,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7550,8 +7550,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7594,8 +7594,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7636,8 +7636,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7678,8 +7678,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7720,8 +7720,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7762,8 +7762,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7805,8 +7805,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7858,8 +7858,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7911,8 +7911,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7964,8 +7964,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8017,8 +8017,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8070,8 +8070,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8123,8 +8123,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8175,8 +8175,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8217,8 +8217,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8259,8 +8259,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8301,8 +8301,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8343,8 +8343,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8386,8 +8386,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8435,8 +8435,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8484,8 +8484,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8533,8 +8533,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8582,8 +8582,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8631,8 +8631,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8680,8 +8680,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPlatformConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8729,8 +8729,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8777,8 +8777,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8825,8 +8825,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8873,8 +8873,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8921,8 +8921,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8969,8 +8969,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9017,8 +9017,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9064,8 +9064,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9106,8 +9106,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9148,8 +9148,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9190,8 +9190,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9232,8 +9232,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetPropertyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9274,8 +9274,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9316,8 +9316,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9358,8 +9358,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9400,8 +9400,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9442,8 +9442,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9485,8 +9485,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9532,8 +9532,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9579,8 +9579,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9626,8 +9626,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9673,8 +9673,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9720,8 +9720,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9767,8 +9767,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetProvisionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9813,8 +9813,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9861,8 +9861,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9909,8 +9909,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9957,8 +9957,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10005,8 +10005,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRecommendedPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10053,8 +10053,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10096,8 +10096,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10139,8 +10139,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10182,8 +10182,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10225,8 +10225,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetReportMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10268,8 +10268,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10310,8 +10310,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10352,8 +10352,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10394,8 +10394,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10436,8 +10436,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10478,8 +10478,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10521,8 +10521,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10564,8 +10564,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10607,8 +10607,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10650,8 +10650,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10694,8 +10694,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10737,8 +10737,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10780,8 +10780,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10823,8 +10823,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10866,8 +10866,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookExportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10908,8 +10908,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10951,8 +10951,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10994,8 +10994,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11037,8 +11037,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11080,8 +11080,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11124,8 +11124,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11167,8 +11167,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11210,8 +11210,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11253,8 +11253,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11296,8 +11296,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookImportStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11338,8 +11338,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11380,8 +11380,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11422,8 +11422,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11464,8 +11464,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11506,8 +11506,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11548,8 +11548,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11594,8 +11594,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11640,8 +11640,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11686,8 +11686,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11732,8 +11732,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11778,8 +11778,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11824,8 +11824,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbookVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11871,8 +11871,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11920,8 +11920,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11969,8 +11969,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12018,8 +12018,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12067,8 +12067,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12116,8 +12116,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12165,8 +12165,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetRunbooksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12213,8 +12213,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12255,8 +12255,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12297,8 +12297,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12339,8 +12339,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12381,8 +12381,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12423,8 +12423,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionScheduledFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12466,8 +12466,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionScheduledFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12509,8 +12509,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionScheduledFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12552,8 +12552,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionScheduledFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12595,8 +12595,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionScheduledFleetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12639,8 +12639,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12692,8 +12692,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12745,8 +12745,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12798,8 +12798,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12851,8 +12851,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12904,8 +12904,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12957,8 +12957,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13009,8 +13009,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13062,8 +13062,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13115,8 +13115,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13168,8 +13168,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13221,8 +13221,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13274,8 +13274,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13327,8 +13327,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerExecutionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13380,8 +13380,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13423,8 +13423,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13466,8 +13466,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13509,8 +13509,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13552,8 +13552,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13595,8 +13595,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13638,8 +13638,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobCountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13681,8 +13681,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13728,8 +13728,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13775,8 +13775,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13822,8 +13822,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13869,8 +13869,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13916,8 +13916,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13963,8 +13963,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14010,8 +14010,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14057,8 +14057,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14104,8 +14104,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetSchedulerJobJobActivityStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14151,8 +14151,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14197,8 +14197,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14243,8 +14243,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14289,8 +14289,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14335,8 +14335,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14381,8 +14381,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14426,8 +14426,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14471,8 +14471,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14516,8 +14516,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14561,8 +14561,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTargetPropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14606,8 +14606,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14648,8 +14648,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14690,8 +14690,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14732,8 +14732,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14774,8 +14774,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14817,8 +14817,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14866,8 +14866,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14915,8 +14915,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14964,8 +14964,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15013,8 +15013,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15062,8 +15062,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15111,8 +15111,8 @@ public final class FleetAppsManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetAppsManagement.FleetAppsManagementFunctions;
      * import com.pulumi.oci.FleetAppsManagement.inputs.GetTaskRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

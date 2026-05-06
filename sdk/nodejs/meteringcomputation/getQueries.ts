@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueries = oci.MeteringComputation.getQueries({
+ * const testQueries = oci.meteringcomputation.getQueries({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueries = oci.MeteringComputation.getQueries({
+ * const testQueries = oci.meteringcomputation.getQueries({
  *     compartmentId: compartmentId,
  * });
  * ```

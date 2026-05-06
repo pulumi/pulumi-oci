@@ -155,7 +155,7 @@ def get_public_ip_pool(public_ip_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
+    test_public_ip_pool = oci.core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
     ```
 
 
@@ -189,7 +189,7 @@ def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
+    test_public_ip_pool = oci.core.get_public_ip_pool(public_ip_pool_id=test_public_ip_pool_oci_core_public_ip_pool["id"])
     ```
 
 

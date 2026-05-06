@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
+ * const testExascaleDbStorageVaults = oci.database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
  *     attachedShapeAttributes: exascaleDbStorageVaultAttachedShapeAttributes,
  *     attachedShapeAttributesNotEqualTo: exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
- *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
- *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
+ *     vmClusterCountGreaterThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo),
+ *     vmClusterCountLessThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo),
  * });
  * ```
  */
@@ -141,7 +141,7 @@ export interface GetExascaleDbStorageVaultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
+ * const testExascaleDbStorageVaults = oci.database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
  *     attachedShapeAttributes: exascaleDbStorageVaultAttachedShapeAttributes,
  *     attachedShapeAttributesNotEqualTo: exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
@@ -149,8 +149,8 @@ export interface GetExascaleDbStorageVaultsResult {
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
- *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
- *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
+ *     vmClusterCountGreaterThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo),
+ *     vmClusterCountLessThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo),
  * });
  * ```
  */

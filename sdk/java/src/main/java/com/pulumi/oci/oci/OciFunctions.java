@@ -394,8 +394,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -436,8 +436,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -478,8 +478,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -520,8 +520,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -562,8 +562,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -604,8 +604,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -651,8 +651,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -698,8 +698,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -745,8 +745,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -792,8 +792,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -839,8 +839,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -886,8 +886,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -933,8 +933,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -975,8 +975,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1017,8 +1017,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1059,8 +1059,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1101,8 +1101,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1143,8 +1143,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1188,8 +1188,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1233,8 +1233,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1278,8 +1278,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1323,8 +1323,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1368,8 +1368,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1413,8 +1413,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1458,8 +1458,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1500,8 +1500,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1542,8 +1542,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1584,8 +1584,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1626,8 +1626,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1668,8 +1668,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1713,8 +1713,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1758,8 +1758,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1803,8 +1803,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1848,8 +1848,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1893,8 +1893,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1938,8 +1938,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1983,8 +1983,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2028,8 +2028,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2073,8 +2073,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2118,8 +2118,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2163,8 +2163,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2208,8 +2208,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2253,8 +2253,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadatasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2298,8 +2298,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2340,8 +2340,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2382,8 +2382,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2424,8 +2424,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2466,8 +2466,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2508,8 +2508,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2554,8 +2554,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2600,8 +2600,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2646,8 +2646,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2692,8 +2692,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2738,8 +2738,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2784,8 +2784,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2830,8 +2830,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2872,8 +2872,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2914,8 +2914,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2956,8 +2956,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2998,8 +2998,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3040,8 +3040,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3087,8 +3087,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3134,8 +3134,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3181,8 +3181,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3228,8 +3228,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3275,8 +3275,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3322,8 +3322,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3369,8 +3369,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3411,8 +3411,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3453,8 +3453,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3495,8 +3495,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3537,8 +3537,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3579,8 +3579,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3623,8 +3623,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3667,8 +3667,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3711,8 +3711,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3755,8 +3755,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3799,8 +3799,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3844,8 +3844,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3889,8 +3889,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3934,8 +3934,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3979,8 +3979,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4024,8 +4024,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4069,8 +4069,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4114,8 +4114,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4156,8 +4156,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4198,8 +4198,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4240,8 +4240,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4282,8 +4282,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4324,8 +4324,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4370,8 +4370,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4416,8 +4416,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4462,8 +4462,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4508,8 +4508,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4554,8 +4554,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4600,8 +4600,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4646,8 +4646,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4688,8 +4688,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4730,8 +4730,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4772,8 +4772,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4814,8 +4814,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4856,8 +4856,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4901,8 +4901,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4946,8 +4946,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4991,8 +4991,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5036,8 +5036,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5081,8 +5081,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5126,8 +5126,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5171,8 +5171,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5213,8 +5213,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5255,8 +5255,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5297,8 +5297,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5339,8 +5339,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5381,8 +5381,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5426,8 +5426,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5471,8 +5471,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5516,8 +5516,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5561,8 +5561,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5606,8 +5606,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5651,8 +5651,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5696,8 +5696,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5744,8 +5744,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5792,8 +5792,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5840,8 +5840,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5888,8 +5888,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5936,8 +5936,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5978,8 +5978,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6020,8 +6020,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6062,8 +6062,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6104,8 +6104,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6146,8 +6146,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6188,8 +6188,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6230,8 +6230,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6272,8 +6272,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6314,8 +6314,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6356,8 +6356,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6401,8 +6401,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6446,8 +6446,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6491,8 +6491,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6536,8 +6536,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6581,8 +6581,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6623,8 +6623,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6665,8 +6665,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6707,8 +6707,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6749,8 +6749,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6791,8 +6791,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6837,8 +6837,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6883,8 +6883,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6929,8 +6929,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6975,8 +6975,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7021,8 +7021,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7063,8 +7063,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7105,8 +7105,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7147,8 +7147,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7189,8 +7189,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7231,8 +7231,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7278,8 +7278,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7325,8 +7325,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7372,8 +7372,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7419,8 +7419,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7466,8 +7466,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7508,8 +7508,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7550,8 +7550,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7592,8 +7592,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7634,8 +7634,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7676,8 +7676,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7723,8 +7723,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7770,8 +7770,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7817,8 +7817,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7864,8 +7864,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7911,8 +7911,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7953,8 +7953,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7995,8 +7995,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8037,8 +8037,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8079,8 +8079,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8121,8 +8121,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8167,8 +8167,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8213,8 +8213,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8259,8 +8259,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8305,8 +8305,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8351,8 +8351,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8393,8 +8393,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8435,8 +8435,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8477,8 +8477,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8519,8 +8519,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8561,8 +8561,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8607,8 +8607,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8653,8 +8653,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8699,8 +8699,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8745,8 +8745,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8791,8 +8791,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8833,8 +8833,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8875,8 +8875,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8917,8 +8917,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8959,8 +8959,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9001,8 +9001,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9043,8 +9043,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9085,8 +9085,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9127,8 +9127,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9169,8 +9169,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9211,8 +9211,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9258,8 +9258,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9305,8 +9305,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9352,8 +9352,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9399,8 +9399,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9446,8 +9446,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9493,8 +9493,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9540,8 +9540,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9587,8 +9587,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9634,8 +9634,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9681,8 +9681,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9723,8 +9723,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9765,8 +9765,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9807,8 +9807,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9849,8 +9849,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9891,8 +9891,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9936,8 +9936,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9981,8 +9981,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10026,8 +10026,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10071,8 +10071,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10116,8 +10116,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10158,8 +10158,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10200,8 +10200,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10242,8 +10242,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10284,8 +10284,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10326,8 +10326,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10368,8 +10368,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10410,8 +10410,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10452,8 +10452,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10494,8 +10494,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10536,8 +10536,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10582,8 +10582,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10628,8 +10628,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10674,8 +10674,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10720,8 +10720,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10766,8 +10766,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10812,8 +10812,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10858,8 +10858,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10904,8 +10904,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10950,8 +10950,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10996,8 +10996,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11038,8 +11038,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11080,8 +11080,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11122,8 +11122,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11164,8 +11164,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStackArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11206,8 +11206,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11251,8 +11251,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11296,8 +11296,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11341,8 +11341,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11386,8 +11386,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11431,8 +11431,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11476,8 +11476,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11577,8 +11577,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11620,8 +11620,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11663,8 +11663,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11706,8 +11706,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11749,8 +11749,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11891,8 +11891,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11933,8 +11933,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11975,8 +11975,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12017,8 +12017,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12059,8 +12059,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12101,8 +12101,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12145,8 +12145,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12189,8 +12189,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12233,8 +12233,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12277,8 +12277,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12322,8 +12322,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12365,8 +12365,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12408,8 +12408,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12451,8 +12451,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12494,8 +12494,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12581,8 +12581,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12624,8 +12624,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12667,8 +12667,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12710,8 +12710,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12753,8 +12753,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12796,8 +12796,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12840,8 +12840,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12884,8 +12884,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12928,8 +12928,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12972,8 +12972,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13016,8 +13016,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13060,8 +13060,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13104,8 +13104,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13146,8 +13146,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13188,8 +13188,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13230,8 +13230,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13272,8 +13272,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13314,8 +13314,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13361,8 +13361,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13408,8 +13408,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13455,8 +13455,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13502,8 +13502,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13549,8 +13549,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13591,8 +13591,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13633,8 +13633,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13675,8 +13675,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13717,8 +13717,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13760,8 +13760,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13804,8 +13804,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13848,8 +13848,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13892,8 +13892,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13936,8 +13936,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13979,8 +13979,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14026,8 +14026,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14073,8 +14073,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14120,8 +14120,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14167,8 +14167,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14214,8 +14214,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14256,8 +14256,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14298,8 +14298,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14340,8 +14340,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14382,8 +14382,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14424,8 +14424,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14466,8 +14466,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14508,8 +14508,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14550,8 +14550,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14592,8 +14592,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14634,8 +14634,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14680,8 +14680,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14726,8 +14726,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14772,8 +14772,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14818,8 +14818,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14864,8 +14864,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14906,8 +14906,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14948,8 +14948,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14990,8 +14990,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15032,8 +15032,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15074,8 +15074,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15122,8 +15122,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15170,8 +15170,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15218,8 +15218,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15266,8 +15266,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15314,8 +15314,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15356,8 +15356,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15398,8 +15398,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15440,8 +15440,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15482,8 +15482,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15524,8 +15524,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15566,8 +15566,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15608,8 +15608,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15650,8 +15650,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15692,8 +15692,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15734,8 +15734,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15780,8 +15780,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15826,8 +15826,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15872,8 +15872,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15918,8 +15918,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15964,8 +15964,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16010,8 +16010,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16056,8 +16056,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16102,8 +16102,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16148,8 +16148,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16194,8 +16194,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16236,8 +16236,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16278,8 +16278,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16320,8 +16320,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16362,8 +16362,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16404,8 +16404,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16446,8 +16446,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16488,8 +16488,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16530,8 +16530,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16572,8 +16572,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16614,8 +16614,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16657,8 +16657,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16700,8 +16700,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16743,8 +16743,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16786,8 +16786,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16829,8 +16829,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16871,8 +16871,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16913,8 +16913,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16955,8 +16955,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16997,8 +16997,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17039,8 +17039,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17084,8 +17084,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17129,8 +17129,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17174,8 +17174,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17219,8 +17219,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17264,8 +17264,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17309,8 +17309,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17354,8 +17354,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17399,8 +17399,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17444,8 +17444,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17489,8 +17489,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17534,8 +17534,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17579,8 +17579,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17624,8 +17624,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17669,8 +17669,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17712,8 +17712,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17755,8 +17755,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17798,8 +17798,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17841,8 +17841,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17884,8 +17884,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17927,8 +17927,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17970,8 +17970,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18014,8 +18014,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18058,8 +18058,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18102,8 +18102,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18146,8 +18146,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18190,8 +18190,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18235,8 +18235,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18280,8 +18280,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18325,8 +18325,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18370,8 +18370,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18415,8 +18415,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18464,8 +18464,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18513,8 +18513,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18562,8 +18562,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18611,8 +18611,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18660,8 +18660,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18703,8 +18703,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18746,8 +18746,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18789,8 +18789,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18832,8 +18832,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18875,8 +18875,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18921,8 +18921,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18967,8 +18967,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19013,8 +19013,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19059,8 +19059,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19105,8 +19105,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19157,8 +19157,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19209,8 +19209,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19261,8 +19261,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19313,8 +19313,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19365,8 +19365,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19417,8 +19417,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19469,8 +19469,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19512,8 +19512,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19555,8 +19555,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19598,8 +19598,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19641,8 +19641,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19685,8 +19685,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19728,8 +19728,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19771,8 +19771,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19814,8 +19814,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19857,8 +19857,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19899,8 +19899,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19945,8 +19945,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19991,8 +19991,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20037,8 +20037,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20083,8 +20083,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20129,8 +20129,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20174,8 +20174,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20219,8 +20219,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20264,8 +20264,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20309,8 +20309,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20354,8 +20354,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20404,8 +20404,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20454,8 +20454,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20504,8 +20504,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20554,8 +20554,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20604,8 +20604,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20654,8 +20654,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20705,8 +20705,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20753,8 +20753,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20801,8 +20801,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20849,8 +20849,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20897,8 +20897,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPrivateServiceAccessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20965,8 +20965,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21008,8 +21008,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21051,8 +21051,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21094,8 +21094,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21137,8 +21137,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21180,8 +21180,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21223,8 +21223,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21266,8 +21266,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21308,8 +21308,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21350,8 +21350,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21392,8 +21392,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21434,8 +21434,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21506,8 +21506,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21551,8 +21551,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21596,8 +21596,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21641,8 +21641,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21686,8 +21686,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21731,8 +21731,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21776,8 +21776,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21821,8 +21821,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21863,8 +21863,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21905,8 +21905,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21947,8 +21947,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21989,8 +21989,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22031,8 +22031,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22075,8 +22075,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22119,8 +22119,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22163,8 +22163,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22207,8 +22207,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22251,8 +22251,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22295,8 +22295,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22339,8 +22339,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22381,8 +22381,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22423,8 +22423,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22465,8 +22465,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22507,8 +22507,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22549,8 +22549,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22594,8 +22594,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22639,8 +22639,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22684,8 +22684,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22729,8 +22729,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22774,8 +22774,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22819,8 +22819,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22864,8 +22864,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22906,8 +22906,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22948,8 +22948,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22990,8 +22990,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23032,8 +23032,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23074,8 +23074,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23118,8 +23118,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23162,8 +23162,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23206,8 +23206,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23250,8 +23250,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23294,8 +23294,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23338,8 +23338,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23382,8 +23382,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23425,8 +23425,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23468,8 +23468,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23511,8 +23511,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23554,8 +23554,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23597,8 +23597,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23639,8 +23639,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23681,8 +23681,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23723,8 +23723,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23765,8 +23765,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23807,8 +23807,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23849,8 +23849,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23891,8 +23891,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23933,8 +23933,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23975,8 +23975,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24018,8 +24018,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24064,8 +24064,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24110,8 +24110,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24156,8 +24156,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24202,8 +24202,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24248,8 +24248,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24294,8 +24294,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24339,8 +24339,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24381,8 +24381,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24423,8 +24423,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24465,8 +24465,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24507,8 +24507,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24549,8 +24549,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24593,8 +24593,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24637,8 +24637,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24681,8 +24681,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24725,8 +24725,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24769,8 +24769,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24812,8 +24812,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24855,8 +24855,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24898,8 +24898,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24941,8 +24941,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24984,8 +24984,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25027,8 +25027,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25070,8 +25070,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25113,8 +25113,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25156,8 +25156,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25199,8 +25199,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25242,8 +25242,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25285,8 +25285,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25328,8 +25328,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25371,8 +25371,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25414,8 +25414,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25459,8 +25459,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25504,8 +25504,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25549,8 +25549,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25594,8 +25594,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25639,8 +25639,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25684,8 +25684,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25729,8 +25729,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25771,8 +25771,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25813,8 +25813,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25855,8 +25855,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25897,8 +25897,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25939,8 +25939,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25981,8 +25981,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26023,8 +26023,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26065,8 +26065,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26107,8 +26107,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainAgreementRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26149,8 +26149,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26191,8 +26191,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26233,8 +26233,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26275,8 +26275,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26317,8 +26317,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainApplicablePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26359,8 +26359,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26402,8 +26402,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26445,8 +26445,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26488,8 +26488,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26531,8 +26531,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainScanResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26574,8 +26574,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26617,8 +26617,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26660,8 +26660,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26703,8 +26703,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26746,8 +26746,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26789,8 +26789,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26833,8 +26833,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26877,8 +26877,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26921,8 +26921,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26965,8 +26965,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27009,8 +27009,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27053,8 +27053,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27097,8 +27097,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27141,8 +27141,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27185,8 +27185,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27229,8 +27229,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27272,8 +27272,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27315,8 +27315,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27358,8 +27358,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27401,8 +27401,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27444,8 +27444,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27487,8 +27487,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27530,8 +27530,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27573,8 +27573,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27616,8 +27616,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServerInstalledPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27659,8 +27659,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27702,8 +27702,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27745,8 +27745,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27788,8 +27788,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27831,8 +27831,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27874,8 +27874,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27922,8 +27922,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27970,8 +27970,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28018,8 +28018,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28066,8 +28066,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28114,8 +28114,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28162,8 +28162,8 @@ public final class OciFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
      * import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

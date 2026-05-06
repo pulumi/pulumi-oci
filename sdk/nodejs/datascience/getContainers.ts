@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainers = oci.DataScience.getContainers({
+ * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest,
+ *     isLatest: containerIsLatest === "true",
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,
@@ -122,10 +122,10 @@ export interface GetContainersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainers = oci.DataScience.getContainers({
+ * const testContainers = oci.datascience.getContainers({
  *     containerName: testContainer.name,
  *     displayName: containerDisplayName,
- *     isLatest: containerIsLatest,
+ *     isLatest: containerIsLatest === "true",
  *     state: containerState,
  *     tagQueryParam: containerTagQueryParam,
  *     targetWorkload: containerTargetWorkload,

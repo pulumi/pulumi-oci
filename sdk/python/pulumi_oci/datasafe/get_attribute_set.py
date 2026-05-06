@@ -227,7 +227,7 @@ def get_attribute_set(attribute_set_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set = oci.DataSafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
+    test_attribute_set = oci.datasafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_attribute_set_output(attribute_set_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set = oci.DataSafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
+    test_attribute_set = oci.datasafe.get_attribute_set(attribute_set_id=test_attribute_set_oci_data_safe_attribute_set["id"])
     ```
 
 

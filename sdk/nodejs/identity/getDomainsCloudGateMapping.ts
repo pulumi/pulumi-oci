@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateMapping = oci.Identity.getDomainsCloudGateMapping({
+ * const testCloudGateMapping = oci.identity.getDomainsCloudGateMapping({
  *     cloudGateMappingId: testCloudGateMappingOciIdentityDomainsCloudGateMapping.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -183,7 +183,7 @@ export interface GetDomainsCloudGateMappingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateMapping = oci.Identity.getDomainsCloudGateMapping({
+ * const testCloudGateMapping = oci.identity.getDomainsCloudGateMapping({
  *     cloudGateMappingId: testCloudGateMappingOciIdentityDomainsCloudGateMapping.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

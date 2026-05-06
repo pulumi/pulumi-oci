@@ -543,7 +543,7 @@ def get_database_insight(database_insight_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
+    test_database_insight = oci.opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
 
 
@@ -610,7 +610,7 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
+    test_database_insight = oci.opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
 
 

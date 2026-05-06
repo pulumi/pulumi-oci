@@ -108,7 +108,7 @@ def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_limits_and_usage = oci.Functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_limits_and_usage = oci.functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 
@@ -138,7 +138,7 @@ def get_fusion_environment_family_limits_and_usage_output(fusion_environment_fam
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_limits_and_usage = oci.Functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_limits_and_usage = oci.functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 

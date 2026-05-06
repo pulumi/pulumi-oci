@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessChecks = oci.FleetSoftwareUpdate.getFsuReadinessChecks({
+ * const testFsuReadinessChecks = oci.fleetsoftwareupdate.getFsuReadinessChecks({
  *     compartmentId: compartmentId,
  *     displayName: fsuReadinessCheckDisplayName,
  *     resourceId: testResource.id,
@@ -107,7 +107,7 @@ export interface GetFsuReadinessChecksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuReadinessChecks = oci.FleetSoftwareUpdate.getFsuReadinessChecks({
+ * const testFsuReadinessChecks = oci.fleetsoftwareupdate.getFsuReadinessChecks({
  *     compartmentId: compartmentId,
  *     displayName: fsuReadinessCheckDisplayName,
  *     resourceId: testResource.id,

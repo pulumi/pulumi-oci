@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
+ * const testAutonomousDbVersions = oci.database.getAutonomousDbVersions({
  *     compartmentId: compartmentId,
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
@@ -82,7 +82,7 @@ export interface GetAutonomousDbVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
+ * const testAutonomousDbVersions = oci.database.getAutonomousDbVersions({
  *     compartmentId: compartmentId,
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });

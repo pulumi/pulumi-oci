@@ -133,7 +133,7 @@ def get_limit_definitions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+    test_limit_definitions = oci.limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
         service_name=test_service["name"],
         subscription_id=subscription_ocid)
@@ -181,7 +181,7 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+    test_limit_definitions = oci.limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
         service_name=test_service["name"],
         subscription_id=subscription_ocid)

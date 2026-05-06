@@ -170,8 +170,8 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management",
-            grace_period=autonomous_database_regional_wallet_management_grace_period,
-            should_rotate=autonomous_database_regional_wallet_management_should_rotate)
+            grace_period=int(autonomous_database_regional_wallet_management_grace_period),
+            should_rotate=autonomous_database_regional_wallet_management_should_rotate == "true")
         ```
 
         ## Import
@@ -209,8 +209,8 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management",
-            grace_period=autonomous_database_regional_wallet_management_grace_period,
-            should_rotate=autonomous_database_regional_wallet_management_should_rotate)
+            grace_period=int(autonomous_database_regional_wallet_management_grace_period),
+            should_rotate=autonomous_database_regional_wallet_management_should_rotate == "true")
         ```
 
         ## Import

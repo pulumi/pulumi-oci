@@ -124,7 +124,7 @@ def get_subscribers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=compartment_id,
+    test_subscribers = oci.apigateway.get_subscribers(compartment_id=compartment_id,
         display_name=subscriber_display_name,
         state=subscriber_state)
     ```
@@ -165,7 +165,7 @@ def get_subscribers_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=compartment_id,
+    test_subscribers = oci.apigateway.get_subscribers(compartment_id=compartment_id,
         display_name=subscriber_display_name,
         state=subscriber_state)
     ```

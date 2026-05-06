@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalDbSystemDatabaseManagementsManagement = new oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management", {
  *     externalDbSystemId: testExternalDbSystem.id,
- *     enableDatabaseManagement: enableDatabaseManagement,
+ *     enableDatabaseManagement: enableDatabaseManagement === "true",
  *     licenseModel: externalDbSystemDatabaseManagementsManagementLicenseModel,
  * });
  * ```

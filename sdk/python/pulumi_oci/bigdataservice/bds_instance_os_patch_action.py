@@ -236,14 +236,14 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
             os_patch_version=bds_instance_os_patch_action_os_patch_version,
-            is_dry_run=is_dry_run,
+            is_dry_run=is_dry_run == "true",
             patching_configs={
                 "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
-                "batch_size": bds_instance_os_patch_action_batch_size,
-                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
-                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
-                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
-                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+                "batch_size": int(bds_instance_os_patch_action_batch_size),
+                "wait_time_between_batch_in_seconds": int(bds_instance_os_patch_action_wait_time_between_batch_in_seconds),
+                "tolerance_threshold_per_batch": int(bds_instance_os_patch_action_tolerance_threshold_per_batch),
+                "wait_time_between_domain_in_seconds": int(bds_instance_os_patch_action_wait_time_between_domain_in_seconds),
+                "tolerance_threshold_per_domain": int(bds_instance_os_patch_action_tolerance_threshold_per_domain),
             })
         ```
 
@@ -289,14 +289,14 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
             os_patch_version=bds_instance_os_patch_action_os_patch_version,
-            is_dry_run=is_dry_run,
+            is_dry_run=is_dry_run == "true",
             patching_configs={
                 "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
-                "batch_size": bds_instance_os_patch_action_batch_size,
-                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
-                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
-                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
-                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+                "batch_size": int(bds_instance_os_patch_action_batch_size),
+                "wait_time_between_batch_in_seconds": int(bds_instance_os_patch_action_wait_time_between_batch_in_seconds),
+                "tolerance_threshold_per_batch": int(bds_instance_os_patch_action_tolerance_threshold_per_batch),
+                "wait_time_between_domain_in_seconds": int(bds_instance_os_patch_action_wait_time_between_domain_in_seconds),
+                "tolerance_threshold_per_domain": int(bds_instance_os_patch_action_tolerance_threshold_per_domain),
             })
         ```
 

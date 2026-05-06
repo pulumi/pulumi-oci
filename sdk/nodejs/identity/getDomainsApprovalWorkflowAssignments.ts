@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflowAssignments = oci.Identity.getDomainsApprovalWorkflowAssignments({
+ * const testApprovalWorkflowAssignments = oci.identity.getDomainsApprovalWorkflowAssignments({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+ *     approvalWorkflowAssignmentCount: Number(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount),
  *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAssignmentAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
- *     startIndex: approvalWorkflowAssignmentStartIndex,
+ *     startIndex: Number(approvalWorkflowAssignmentStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsApprovalWorkflowAssignmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflowAssignments = oci.Identity.getDomainsApprovalWorkflowAssignments({
+ * const testApprovalWorkflowAssignments = oci.identity.getDomainsApprovalWorkflowAssignments({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+ *     approvalWorkflowAssignmentCount: Number(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount),
  *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAssignmentAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
- *     startIndex: approvalWorkflowAssignmentStartIndex,
+ *     startIndex: Number(approvalWorkflowAssignmentStartIndex),
  * });
  * ```
  */

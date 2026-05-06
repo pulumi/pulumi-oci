@@ -99,7 +99,7 @@ def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=test_user["id"])
+    test_auth_tokens = oci.identity.get_auth_tokens(user_id=test_user["id"])
     ```
 
 
@@ -131,7 +131,7 @@ def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_tokens = oci.Identity.get_auth_tokens(user_id=test_user["id"])
+    test_auth_tokens = oci.identity.get_auth_tokens(user_id=test_user["id"])
     ```
 
 

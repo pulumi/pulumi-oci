@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *         value: customerSecretKeyTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     user: {
  *         ocid: testUser.ocid,

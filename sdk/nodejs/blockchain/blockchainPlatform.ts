@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isByol: blockchainPlatformIsByol,
+ *     isByol: blockchainPlatformIsByol === "true",
  *     platformVersion: blockchainPlatformPlatformVersion,
  * });
  * ```

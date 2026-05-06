@@ -204,7 +204,7 @@ def get_java_downloads_java_license_acceptance_record(java_license_acceptance_re
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
+    test_java_license_acceptance_record = oci.jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_java_downloads_java_license_acceptance_record_output(java_license_accept
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_record = oci.Jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
+    test_java_license_acceptance_record = oci.jms.get_java_downloads_java_license_acceptance_record(java_license_acceptance_record_id=test_java_license_acceptance_record_oci_jms_java_downloads_java_license_acceptance_record["id"])
     ```
 
 

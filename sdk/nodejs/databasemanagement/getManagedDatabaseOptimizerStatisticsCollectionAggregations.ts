@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsCollectionAggregations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionAggregations({
+ * const testManagedDatabaseOptimizerStatisticsCollectionAggregations = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsCollectionAggregations({
  *     groupType: managedDatabaseOptimizerStatisticsCollectionAggregationGroupType,
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo,
@@ -108,7 +108,7 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResu
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsCollectionAggregations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionAggregations({
+ * const testManagedDatabaseOptimizerStatisticsCollectionAggregations = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsCollectionAggregations({
  *     groupType: managedDatabaseOptimizerStatisticsCollectionAggregationGroupType,
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo,

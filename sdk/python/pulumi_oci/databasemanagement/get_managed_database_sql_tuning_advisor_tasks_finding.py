@@ -157,7 +157,7 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id=test_begin_exec["id"],
         end_exec_id=test_end_exec["id"],
@@ -220,7 +220,7 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id=test_begin_exec["id"],
         end_exec_id=test_end_exec["id"],

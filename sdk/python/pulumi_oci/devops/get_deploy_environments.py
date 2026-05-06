@@ -138,7 +138,7 @@ def get_deploy_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=compartment_id,
+    test_deploy_environments = oci.devops.get_deploy_environments(compartment_id=compartment_id,
         display_name=deploy_environment_display_name,
         id=deploy_environment_id,
         project_id=test_project["id"],
@@ -188,7 +188,7 @@ def get_deploy_environments_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=compartment_id,
+    test_deploy_environments = oci.devops.get_deploy_environments(compartment_id=compartment_id,
         display_name=deploy_environment_display_name,
         id=deploy_environment_id,
         project_id=test_project["id"],

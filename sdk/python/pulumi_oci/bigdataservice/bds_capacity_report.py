@@ -142,9 +142,9 @@ class BdsCapacityReport(pulumi.CustomResource):
             shape_availabilities=[{
                 "shape": bds_capacity_report_shape_availabilities_shape,
                 "shape_config": {
-                    "memory_in_gbs": bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs,
-                    "nvmes": bds_capacity_report_shape_availabilities_shape_config_nvmes,
-                    "ocpus": bds_capacity_report_shape_availabilities_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_capacity_report_shape_availabilities_shape_config_nvmes),
+                    "ocpus": int(bds_capacity_report_shape_availabilities_shape_config_ocpus),
                 },
             }])
         ```
@@ -188,9 +188,9 @@ class BdsCapacityReport(pulumi.CustomResource):
             shape_availabilities=[{
                 "shape": bds_capacity_report_shape_availabilities_shape,
                 "shape_config": {
-                    "memory_in_gbs": bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs,
-                    "nvmes": bds_capacity_report_shape_availabilities_shape_config_nvmes,
-                    "ocpus": bds_capacity_report_shape_availabilities_shape_config_ocpus,
+                    "memory_in_gbs": int(bds_capacity_report_shape_availabilities_shape_config_memory_in_gbs),
+                    "nvmes": int(bds_capacity_report_shape_availabilities_shape_config_nvmes),
+                    "ocpus": int(bds_capacity_report_shape_availabilities_shape_config_ocpus),
                 },
             }])
         ```

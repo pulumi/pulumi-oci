@@ -24,12 +24,12 @@ import * as utilities from "../utilities";
  *     defaultBackendSetName: testBackendSet.name,
  *     loadBalancerId: testLoadBalancer.id,
  *     name: listenerName,
- *     port: listenerPort,
+ *     port: Number(listenerPort),
  *     protocol: listenerProtocol,
  *     connectionConfiguration: {
  *         idleTimeoutInSeconds: listenerConnectionConfigurationIdleTimeoutInSeconds,
  *         backendTcpProxyProtocolOptions: listenerConnectionConfigurationBackendTcpProxyProtocolOptions,
- *         backendTcpProxyProtocolVersion: listenerConnectionConfigurationBackendTcpProxyProtocolVersion,
+ *         backendTcpProxyProtocolVersion: Number(listenerConnectionConfigurationBackendTcpProxyProtocolVersion),
  *     },
  *     hostnameNames: [testHostname.name],
  *     pathRouteSetName: testPathRouteSet.name,
@@ -37,14 +37,14 @@ import * as utilities from "../utilities";
  *     ruleSetNames: [testRuleSet.name],
  *     sslConfiguration: {
  *         certificateName: testCertificate.name,
- *         hasSessionResumption: listenerSslConfigurationHasSessionResumption,
+ *         hasSessionResumption: listenerSslConfigurationHasSessionResumption === "true",
  *         certificateIds: listenerSslConfigurationCertificateIds,
  *         cipherSuiteName: listenerSslConfigurationCipherSuiteName,
  *         protocols: listenerSslConfigurationProtocols,
  *         serverOrderPreference: listenerSslConfigurationServerOrderPreference,
  *         trustedCertificateAuthorityIds: listenerSslConfigurationTrustedCertificateAuthorityIds,
- *         verifyDepth: listenerSslConfigurationVerifyDepth,
- *         verifyPeerCertificate: listenerSslConfigurationVerifyPeerCertificate,
+ *         verifyDepth: Number(listenerSslConfigurationVerifyDepth),
+ *         verifyPeerCertificate: listenerSslConfigurationVerifyPeerCertificate === "true",
  *     },
  * });
  * ```

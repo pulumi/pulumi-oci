@@ -99,7 +99,7 @@ def get_cost_tracking_tags(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=compartment_id)
+    test_cost_tracking_tags = oci.identity.get_cost_tracking_tags(compartment_id=compartment_id)
     ```
 
 
@@ -131,7 +131,7 @@ def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=compartment_id)
+    test_cost_tracking_tags = oci.identity.get_cost_tracking_tags(compartment_id=compartment_id)
     ```
 
 

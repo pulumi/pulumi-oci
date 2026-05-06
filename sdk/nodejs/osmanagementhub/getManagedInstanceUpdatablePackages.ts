@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
+ * const testManagedInstanceUpdatablePackages = oci.osmanagementhub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
  *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,
@@ -115,7 +115,7 @@ export interface GetManagedInstanceUpdatablePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
+ * const testManagedInstanceUpdatablePackages = oci.osmanagementhub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
  *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,

@@ -86,7 +86,7 @@ def get_stack_tf_state(local_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=test_stack["id"])
+    test_stack_tf_state = oci.resourcemanager.get_stack_tf_state(stack_id=test_stack["id"])
     ```
 
 
@@ -119,7 +119,7 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=test_stack["id"])
+    test_stack_tf_state = oci.resourcemanager.get_stack_tf_state(stack_id=test_stack["id"])
     ```
 
 

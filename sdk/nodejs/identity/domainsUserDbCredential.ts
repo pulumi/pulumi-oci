@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *         value: userDbCredentialTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     user: {
  *         value: testUser.id,

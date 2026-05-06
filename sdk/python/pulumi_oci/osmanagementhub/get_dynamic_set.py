@@ -228,7 +228,7 @@ def get_dynamic_set(dynamic_set_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set = oci.OsManagementHub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
+    test_dynamic_set = oci.osmanagementhub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_dynamic_set_output(dynamic_set_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set = oci.OsManagementHub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
+    test_dynamic_set = oci.osmanagementhub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
     ```
 
 

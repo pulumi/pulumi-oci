@@ -95,7 +95,7 @@ def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilter
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
+    test_path_route_sets = oci.loadbalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
+    test_path_route_sets = oci.loadbalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 

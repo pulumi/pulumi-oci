@@ -147,7 +147,7 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+    test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,
@@ -198,7 +198,7 @@ def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+    test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,

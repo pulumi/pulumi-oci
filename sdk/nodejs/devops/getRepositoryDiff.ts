@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryDiff = oci.DevOps.getRepositoryDiff({
+ * const testRepositoryDiff = oci.devops.getRepositoryDiff({
  *     baseVersion: repositoryDiffBaseVersion,
  *     filePath: repositoryDiffFilePath,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
  * });
  * ```
  */
@@ -120,12 +120,12 @@ export interface GetRepositoryDiffResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryDiff = oci.DevOps.getRepositoryDiff({
+ * const testRepositoryDiff = oci.devops.getRepositoryDiff({
  *     baseVersion: repositoryDiffBaseVersion,
  *     filePath: repositoryDiffFilePath,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
  * });
  * ```
  */

@@ -217,12 +217,12 @@ def get_events(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_events = oci.OsManagementHub.get_events(compartment_id=compartment_id,
+    test_events = oci.osmanagementhub.get_events(compartment_id=compartment_id,
         event_fingerprint=event_event_fingerprint,
         event_summary=event_event_summary,
         event_summary_contains=event_event_summary_contains,
         id=event_id,
-        is_managed_by_autonomous_linux=event_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=event_is_managed_by_autonomous_linux == "true",
         resource_id=test_resource["id"],
         state=event_state,
         time_created_greater_than_or_equal_to=event_time_created_greater_than_or_equal_to,
@@ -297,12 +297,12 @@ def get_events_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_events = oci.OsManagementHub.get_events(compartment_id=compartment_id,
+    test_events = oci.osmanagementhub.get_events(compartment_id=compartment_id,
         event_fingerprint=event_event_fingerprint,
         event_summary=event_event_summary,
         event_summary_contains=event_event_summary_contains,
         id=event_id,
-        is_managed_by_autonomous_linux=event_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=event_is_managed_by_autonomous_linux == "true",
         resource_id=test_resource["id"],
         state=event_state,
         time_created_greater_than_or_equal_to=event_time_created_greater_than_or_equal_to,

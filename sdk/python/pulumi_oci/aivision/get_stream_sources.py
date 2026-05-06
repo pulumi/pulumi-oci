@@ -125,7 +125,7 @@ def get_stream_sources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_sources = oci.AiVision.get_stream_sources(compartment_id=compartment_id,
+    test_stream_sources = oci.aivision.get_stream_sources(compartment_id=compartment_id,
         display_name=stream_source_display_name,
         id=stream_source_id,
         state=stream_source_state)
@@ -170,7 +170,7 @@ def get_stream_sources_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_sources = oci.AiVision.get_stream_sources(compartment_id=compartment_id,
+    test_stream_sources = oci.aivision.get_stream_sources(compartment_id=compartment_id,
         display_name=stream_source_display_name,
         id=stream_source_id,
         state=stream_source_state)

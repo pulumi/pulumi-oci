@@ -297,15 +297,15 @@ def get_user_assessment_profiles(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=compartment_id,
+    test_user_assessment_profiles = oci.datasafe.get_user_assessment_profiles(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_access_level,
-        compartment_id_in_subtree=user_assessment_profile_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_compartment_id_in_subtree == "true",
         failed_login_attempts_greater_than_or_equal=user_assessment_profile_failed_login_attempts_greater_than_or_equal,
         failed_login_attempts_less_than=user_assessment_profile_failed_login_attempts_less_than,
         inactive_account_time_greater_than_or_equal=user_assessment_profile_inactive_account_time_greater_than_or_equal,
         inactive_account_time_less_than=user_assessment_profile_inactive_account_time_less_than,
-        is_user_created=user_assessment_profile_is_user_created,
+        is_user_created=user_assessment_profile_is_user_created == "true",
         password_lock_time_greater_than_or_equal=user_assessment_profile_password_lock_time_greater_than_or_equal,
         password_lock_time_less_than=user_assessment_profile_password_lock_time_less_than,
         password_verification_function=user_assessment_profile_password_verification_function,
@@ -427,15 +427,15 @@ def get_user_assessment_profiles_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=compartment_id,
+    test_user_assessment_profiles = oci.datasafe.get_user_assessment_profiles(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_access_level,
-        compartment_id_in_subtree=user_assessment_profile_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_compartment_id_in_subtree == "true",
         failed_login_attempts_greater_than_or_equal=user_assessment_profile_failed_login_attempts_greater_than_or_equal,
         failed_login_attempts_less_than=user_assessment_profile_failed_login_attempts_less_than,
         inactive_account_time_greater_than_or_equal=user_assessment_profile_inactive_account_time_greater_than_or_equal,
         inactive_account_time_less_than=user_assessment_profile_inactive_account_time_less_than,
-        is_user_created=user_assessment_profile_is_user_created,
+        is_user_created=user_assessment_profile_is_user_created == "true",
         password_lock_time_greater_than_or_equal=user_assessment_profile_password_lock_time_greater_than_or_equal,
         password_lock_time_less_than=user_assessment_profile_password_lock_time_less_than,
         password_verification_function=user_assessment_profile_password_verification_function,

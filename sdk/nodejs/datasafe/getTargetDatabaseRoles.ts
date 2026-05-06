@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
+ * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
@@ -104,10 +104,10 @@ export interface GetTargetDatabaseRolesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
+ * const testTargetDatabaseRoles = oci.datasafe.getTargetDatabaseRoles({
  *     targetDatabaseId: testTargetDatabase.id,
  *     authenticationType: targetDatabaseRoleAuthenticationType,
- *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained === "true",
  *     roleNames: targetDatabaseRoleRoleName,
  *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });

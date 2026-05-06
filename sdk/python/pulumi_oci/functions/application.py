@@ -554,7 +554,7 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=application_network_security_group_ids,
             image_policy_config={
-                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -567,7 +567,7 @@ class Application(pulumi.CustomResource):
             syslog_url=application_syslog_url,
             trace_config={
                 "domain_id": test_domain["id"],
-                "is_enabled": application_trace_config_is_enabled,
+                "is_enabled": application_trace_config_is_enabled == "true",
             })
         ```
 
@@ -633,7 +633,7 @@ class Application(pulumi.CustomResource):
             },
             network_security_group_ids=application_network_security_group_ids,
             image_policy_config={
-                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -646,7 +646,7 @@ class Application(pulumi.CustomResource):
             syslog_url=application_syslog_url,
             trace_config={
                 "domain_id": test_domain["id"],
-                "is_enabled": application_trace_config_is_enabled,
+                "is_enabled": application_trace_config_is_enabled == "true",
             })
         ```
 

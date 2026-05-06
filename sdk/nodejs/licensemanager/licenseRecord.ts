@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testLicenseRecord = new oci.licensemanager.LicenseRecord("test_license_record", {
  *     displayName: licenseRecordDisplayName,
- *     isPerpetual: licenseRecordIsPerpetual,
- *     isUnlimited: licenseRecordIsUnlimited,
+ *     isPerpetual: licenseRecordIsPerpetual === "true",
+ *     isUnlimited: licenseRecordIsUnlimited === "true",
  *     productLicenseId: testProductLicense.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     licenseCount: licenseRecordLicenseCount,
+ *     licenseCount: Number(licenseRecordLicenseCount),
  *     productId: testProduct.id,
  *     supportEndDate: licenseRecordSupportEndDate,
  * });

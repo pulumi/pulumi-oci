@@ -95,7 +95,7 @@ def get_delegated_resource_access_request_histories(delegated_resource_access_re
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_histories = oci.DelegateAccessControl.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request_histories = oci.delegateaccesscontrol.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_delegated_resource_access_request_histories_output(delegated_resource_ac
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request_histories = oci.DelegateAccessControl.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request_histories = oci.delegateaccesscontrol.get_delegated_resource_access_request_histories(delegated_resource_access_request_id=test_delegated_resource_access_request["id"])
     ```
 
 

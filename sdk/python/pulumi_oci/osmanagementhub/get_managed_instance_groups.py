@@ -216,11 +216,11 @@ def get_managed_instance_groups(arch_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+    test_managed_instance_groups = oci.osmanagementhub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
-        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux == "true",
         locations=managed_instance_group_location,
         location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],
@@ -297,11 +297,11 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+    test_managed_instance_groups = oci.osmanagementhub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
-        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux == "true",
         locations=managed_instance_group_location,
         location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],

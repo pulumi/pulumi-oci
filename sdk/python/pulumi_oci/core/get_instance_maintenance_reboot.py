@@ -84,7 +84,7 @@ def get_instance_maintenance_reboot(instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
+    test_instance_maintenance_reboot = oci.core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
     ```
 
 
@@ -113,7 +113,7 @@ def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
+    test_instance_maintenance_reboot = oci.core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
     ```
 
 

@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
- *     sessionTokenLifeSpanDurationInHours: bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours,
+ *     sessionTokenLifeSpanDurationInHours: Number(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours),
  * });
  * ```
  *

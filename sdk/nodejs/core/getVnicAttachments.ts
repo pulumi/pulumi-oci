@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnicAttachments = oci.Core.getVnicAttachments({
+ * const testVnicAttachments = oci.core.getVnicAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: vnicAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -104,7 +104,7 @@ export interface GetVnicAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnicAttachments = oci.Core.getVnicAttachments({
+ * const testVnicAttachments = oci.core.getVnicAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: vnicAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,

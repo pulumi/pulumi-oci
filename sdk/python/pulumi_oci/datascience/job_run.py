@@ -663,7 +663,7 @@ class JobRun(pulumi.CustomResource):
             compartment_id=compartment_id,
             job_id=test_job["id"],
             project_id=test_project["id"],
-            asynchronous=asynchronous,
+            asynchronous=asynchronous == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -679,9 +679,9 @@ class JobRun(pulumi.CustomResource):
                 "startup_probe_details": {
                     "commands": job_run_job_configuration_override_details_startup_probe_details_command,
                     "job_probe_check_type": job_run_job_configuration_override_details_startup_probe_details_job_probe_check_type,
-                    "failure_threshold": job_run_job_configuration_override_details_startup_probe_details_failure_threshold,
-                    "initial_delay_in_seconds": job_run_job_configuration_override_details_startup_probe_details_initial_delay_in_seconds,
-                    "period_in_seconds": job_run_job_configuration_override_details_startup_probe_details_period_in_seconds,
+                    "failure_threshold": int(job_run_job_configuration_override_details_startup_probe_details_failure_threshold),
+                    "initial_delay_in_seconds": int(job_run_job_configuration_override_details_startup_probe_details_initial_delay_in_seconds),
+                    "period_in_seconds": int(job_run_job_configuration_override_details_startup_probe_details_period_in_seconds),
                 },
             },
             job_environment_configuration_override_details={
@@ -694,7 +694,7 @@ class JobRun(pulumi.CustomResource):
             },
             job_infrastructure_configuration_override_details={
                 "job_infrastructure_type": job_run_job_infrastructure_configuration_override_details_job_infrastructure_type,
-                "block_storage_size_in_gbs": job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs),
                 "job_shape_config_details": {
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
@@ -703,8 +703,8 @@ class JobRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             job_log_configuration_override_details={
-                "enable_auto_log_creation": job_run_job_log_configuration_override_details_enable_auto_log_creation,
-                "enable_logging": job_run_job_log_configuration_override_details_enable_logging,
+                "enable_auto_log_creation": job_run_job_log_configuration_override_details_enable_auto_log_creation == "true",
+                "enable_logging": job_run_job_log_configuration_override_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -724,9 +724,9 @@ class JobRun(pulumi.CustomResource):
                         "startup_probe_details": {
                             "commands": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
                             "job_probe_check_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
-                            "failure_threshold": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
-                            "initial_delay_in_seconds": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
-                            "period_in_seconds": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                            "failure_threshold": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold),
+                            "initial_delay_in_seconds": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
+                            "period_in_seconds": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds),
                         },
                     },
                     "job_environment_configuration_details": {
@@ -739,7 +739,7 @@ class JobRun(pulumi.CustomResource):
                     },
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
-                        "block_storage_size_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "block_storage_size_in_gbs": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                         "job_shape_config_details": {
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -747,8 +747,8 @@ class JobRun(pulumi.CustomResource):
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],
                     },
-                    "minimum_success_replicas": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_minimum_success_replicas,
-                    "replicas": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_replicas,
+                    "minimum_success_replicas": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_minimum_success_replicas),
+                    "replicas": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_replicas),
                 }],
                 "maximum_runtime_in_minutes": job_run_job_node_configuration_override_details_maximum_runtime_in_minutes,
                 "startup_order": job_run_job_node_configuration_override_details_startup_order,
@@ -819,7 +819,7 @@ class JobRun(pulumi.CustomResource):
             compartment_id=compartment_id,
             job_id=test_job["id"],
             project_id=test_project["id"],
-            asynchronous=asynchronous,
+            asynchronous=asynchronous == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -835,9 +835,9 @@ class JobRun(pulumi.CustomResource):
                 "startup_probe_details": {
                     "commands": job_run_job_configuration_override_details_startup_probe_details_command,
                     "job_probe_check_type": job_run_job_configuration_override_details_startup_probe_details_job_probe_check_type,
-                    "failure_threshold": job_run_job_configuration_override_details_startup_probe_details_failure_threshold,
-                    "initial_delay_in_seconds": job_run_job_configuration_override_details_startup_probe_details_initial_delay_in_seconds,
-                    "period_in_seconds": job_run_job_configuration_override_details_startup_probe_details_period_in_seconds,
+                    "failure_threshold": int(job_run_job_configuration_override_details_startup_probe_details_failure_threshold),
+                    "initial_delay_in_seconds": int(job_run_job_configuration_override_details_startup_probe_details_initial_delay_in_seconds),
+                    "period_in_seconds": int(job_run_job_configuration_override_details_startup_probe_details_period_in_seconds),
                 },
             },
             job_environment_configuration_override_details={
@@ -850,7 +850,7 @@ class JobRun(pulumi.CustomResource):
             },
             job_infrastructure_configuration_override_details={
                 "job_infrastructure_type": job_run_job_infrastructure_configuration_override_details_job_infrastructure_type,
-                "block_storage_size_in_gbs": job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs),
                 "job_shape_config_details": {
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
@@ -859,8 +859,8 @@ class JobRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             job_log_configuration_override_details={
-                "enable_auto_log_creation": job_run_job_log_configuration_override_details_enable_auto_log_creation,
-                "enable_logging": job_run_job_log_configuration_override_details_enable_logging,
+                "enable_auto_log_creation": job_run_job_log_configuration_override_details_enable_auto_log_creation == "true",
+                "enable_logging": job_run_job_log_configuration_override_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -880,9 +880,9 @@ class JobRun(pulumi.CustomResource):
                         "startup_probe_details": {
                             "commands": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
                             "job_probe_check_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
-                            "failure_threshold": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
-                            "initial_delay_in_seconds": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
-                            "period_in_seconds": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                            "failure_threshold": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold),
+                            "initial_delay_in_seconds": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds),
+                            "period_in_seconds": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds),
                         },
                     },
                     "job_environment_configuration_details": {
@@ -895,7 +895,7 @@ class JobRun(pulumi.CustomResource):
                     },
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
-                        "block_storage_size_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "block_storage_size_in_gbs": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
                         "job_shape_config_details": {
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
@@ -903,8 +903,8 @@ class JobRun(pulumi.CustomResource):
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],
                     },
-                    "minimum_success_replicas": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_minimum_success_replicas,
-                    "replicas": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_replicas,
+                    "minimum_success_replicas": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_minimum_success_replicas),
+                    "replicas": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_replicas),
                 }],
                 "maximum_runtime_in_minutes": job_run_job_node_configuration_override_details_maximum_runtime_in_minutes,
                 "startup_order": job_run_job_node_configuration_override_details_startup_order,

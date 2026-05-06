@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemOsPatchHistoryEntries = oci.Database.getDbSystemOsPatchHistoryEntries({
+ * const testDbSystemOsPatchHistoryEntries = oci.database.getDbSystemOsPatchHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     action: dbSystemOsPatchHistoryEntryAction,
  *     state: dbSystemOsPatchHistoryEntryState,
@@ -90,7 +90,7 @@ export interface GetDbSystemOsPatchHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemOsPatchHistoryEntries = oci.Database.getDbSystemOsPatchHistoryEntries({
+ * const testDbSystemOsPatchHistoryEntries = oci.database.getDbSystemOsPatchHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     action: dbSystemOsPatchHistoryEntryAction,
  *     state: dbSystemOsPatchHistoryEntryState,

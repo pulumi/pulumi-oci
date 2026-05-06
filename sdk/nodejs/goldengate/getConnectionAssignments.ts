@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
+ * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
@@ -107,7 +107,7 @@ export interface GetConnectionAssignmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
+ * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,

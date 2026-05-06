@@ -214,14 +214,14 @@ def get_domains_cloud_gate_mappings(attribute_sets: Optional[Sequence[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
-        cloud_gate_mapping_count=cloud_gate_mapping_cloud_gate_mapping_count,
+    test_cloud_gate_mappings = oci.identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
+        cloud_gate_mapping_count=int(cloud_gate_mapping_cloud_gate_mapping_count),
         cloud_gate_mapping_filter=cloud_gate_mapping_cloud_gate_mapping_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_mapping_authorization,
         resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
-        start_index=cloud_gate_mapping_start_index)
+        start_index=int(cloud_gate_mapping_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_cloud_gate_mappings_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
-        cloud_gate_mapping_count=cloud_gate_mapping_cloud_gate_mapping_count,
+    test_cloud_gate_mappings = oci.identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
+        cloud_gate_mapping_count=int(cloud_gate_mapping_cloud_gate_mapping_count),
         cloud_gate_mapping_filter=cloud_gate_mapping_cloud_gate_mapping_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_mapping_authorization,
         resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
-        start_index=cloud_gate_mapping_start_index)
+        start_index=int(cloud_gate_mapping_start_index))
     ```
 
 

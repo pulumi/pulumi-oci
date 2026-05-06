@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIps = oci.Core.getPublicIps({
+ * const testPublicIps = oci.core.getPublicIps({
  *     compartmentId: compartmentId,
  *     scope: publicIpScope,
  *     availabilityDomain: publicIpAvailabilityDomain,
@@ -154,7 +154,7 @@ export interface GetPublicIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIps = oci.Core.getPublicIps({
+ * const testPublicIps = oci.core.getPublicIps({
  *     compartmentId: compartmentId,
  *     scope: publicIpScope,
  *     availabilityDomain: publicIpAvailabilityDomain,

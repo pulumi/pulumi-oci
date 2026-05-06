@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabases = oci.Database.getPluggableDatabases({
+ * const testPluggableDatabases = oci.database.getPluggableDatabases({
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
  *     pdbName: pluggableDatabasePdbName,
@@ -98,7 +98,7 @@ export interface GetPluggableDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabases = oci.Database.getPluggableDatabases({
+ * const testPluggableDatabases = oci.database.getPluggableDatabases({
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
  *     pdbName: pluggableDatabasePdbName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemaTables = oci.GoldenGate.getPipelineSchemaTables({
+ * const testPipelineSchemaTables = oci.goldengate.getPipelineSchemaTables({
  *     pipelineId: testPipeline.id,
  *     sourceSchemaName: pipelineSchemaTableSourceSchemaName,
  *     targetSchemaName: pipelineSchemaTableTargetSchemaName,
@@ -94,7 +94,7 @@ export interface GetPipelineSchemaTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemaTables = oci.GoldenGate.getPipelineSchemaTables({
+ * const testPipelineSchemaTables = oci.goldengate.getPipelineSchemaTables({
  *     pipelineId: testPipeline.id,
  *     sourceSchemaName: pipelineSchemaTableSourceSchemaName,
  *     targetSchemaName: pipelineSchemaTableTargetSchemaName,

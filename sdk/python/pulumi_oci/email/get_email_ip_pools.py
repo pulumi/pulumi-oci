@@ -125,7 +125,7 @@ def get_email_ip_pools(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_ip_pools = oci.Email.get_email_ip_pools(compartment_id=compartment_id,
+    test_email_ip_pools = oci.email.get_email_ip_pools(compartment_id=compartment_id,
         id=email_ip_pool_id,
         name=email_ip_pool_name,
         state=email_ip_pool_state)
@@ -170,7 +170,7 @@ def get_email_ip_pools_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_email_ip_pools = oci.Email.get_email_ip_pools(compartment_id=compartment_id,
+    test_email_ip_pools = oci.email.get_email_ip_pools(compartment_id=compartment_id,
         id=email_ip_pool_id,
         name=email_ip_pool_name,
         state=email_ip_pool_state)

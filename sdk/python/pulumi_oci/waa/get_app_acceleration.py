@@ -215,7 +215,7 @@ def get_app_acceleration(web_app_acceleration_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration = oci.Waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
+    test_web_app_acceleration = oci.waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_app_acceleration_output(web_app_acceleration_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration = oci.Waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
+    test_web_app_acceleration = oci.waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
     ```
 
 

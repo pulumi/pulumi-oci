@@ -243,14 +243,14 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=compartment_id,
+    test_audit_profiles = oci.datasafe.get_audit_profiles(compartment_id=compartment_id,
         access_level=audit_profile_access_level,
         audit_collected_volume_greater_than_or_equal_to=audit_profile_audit_collected_volume_greater_than_or_equal_to,
         audit_profile_id=test_audit_profile["id"],
-        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree == "true",
         display_name=audit_profile_display_name,
-        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
-        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting == "true",
+        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled == "true",
         state=audit_profile_state,
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
@@ -343,14 +343,14 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=compartment_id,
+    test_audit_profiles = oci.datasafe.get_audit_profiles(compartment_id=compartment_id,
         access_level=audit_profile_access_level,
         audit_collected_volume_greater_than_or_equal_to=audit_profile_audit_collected_volume_greater_than_or_equal_to,
         audit_profile_id=test_audit_profile["id"],
-        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree == "true",
         display_name=audit_profile_display_name,
-        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
-        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting == "true",
+        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled == "true",
         state=audit_profile_state,
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],

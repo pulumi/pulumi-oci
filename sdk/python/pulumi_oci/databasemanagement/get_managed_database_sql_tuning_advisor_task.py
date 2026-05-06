@@ -127,7 +127,7 @@ def get_managed_database_sql_tuning_advisor_task(managed_database_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_task = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_task = oci.databasemanagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         status=managed_database_sql_tuning_advisor_task_status,
         time_greater_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
@@ -175,7 +175,7 @@ def get_managed_database_sql_tuning_advisor_task_output(managed_database_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_task = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_task = oci.databasemanagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         status=managed_database_sql_tuning_advisor_task_status,
         time_greater_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,

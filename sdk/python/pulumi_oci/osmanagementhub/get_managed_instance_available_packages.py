@@ -128,7 +128,7 @@ def get_managed_instance_available_packages(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_packages = oci.OsManagementHub.get_managed_instance_available_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_packages = oci.osmanagementhub.get_managed_instance_available_packages(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_available_package_display_name,
         display_name_contains=managed_instance_available_package_display_name_contains)
@@ -174,7 +174,7 @@ def get_managed_instance_available_packages_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_packages = oci.OsManagementHub.get_managed_instance_available_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_packages = oci.osmanagementhub.get_managed_instance_available_packages(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_available_package_display_name,
         display_name_contains=managed_instance_available_package_display_name_contains)

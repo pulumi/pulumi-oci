@@ -138,7 +138,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
@@ -189,7 +189,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],

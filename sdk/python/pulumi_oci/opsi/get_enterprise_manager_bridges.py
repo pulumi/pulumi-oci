@@ -136,8 +136,8 @@ def get_enterprise_manager_bridges(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
-        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+    test_enterprise_manager_bridges = oci.opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree == "true",
         display_name=enterprise_manager_bridge_display_name,
         id=enterprise_manager_bridge_id,
         states=enterprise_manager_bridge_state)
@@ -187,8 +187,8 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
-        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+    test_enterprise_manager_bridges = oci.opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree == "true",
         display_name=enterprise_manager_bridge_display_name,
         id=enterprise_manager_bridge_id,
         states=enterprise_manager_bridge_state)

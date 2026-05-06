@@ -124,7 +124,7 @@ def get_cloud_db_nodes(cloud_db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_nodes = oci.DatabaseManagement.get_cloud_db_nodes(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_db_nodes = oci.databasemanagement.get_cloud_db_nodes(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_db_node_display_name)
     ```
@@ -165,7 +165,7 @@ def get_cloud_db_nodes_output(cloud_db_system_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_nodes = oci.DatabaseManagement.get_cloud_db_nodes(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_db_nodes = oci.databasemanagement.get_cloud_db_nodes(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_db_node_display_name)
     ```

@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecords = oci.FleetAppsManagement.getComplianceRecords({
+ * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,
@@ -137,9 +137,9 @@ export interface GetComplianceRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecords = oci.FleetAppsManagement.getComplianceRecords({
+ * const testComplianceRecords = oci.fleetappsmanagement.getComplianceRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCompartmentIdInSubtree === "true",
  *     complianceState: complianceRecordComplianceState,
  *     entityId: testEntity.id,
  *     productName: complianceRecordProductName,

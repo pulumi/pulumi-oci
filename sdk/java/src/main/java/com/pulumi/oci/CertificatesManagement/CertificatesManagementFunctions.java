@@ -64,8 +64,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -148,8 +148,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -275,8 +275,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -323,8 +323,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -371,8 +371,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -419,8 +419,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -467,8 +467,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -515,8 +515,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -563,8 +563,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -610,8 +610,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -652,8 +652,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -694,8 +694,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -736,8 +736,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -778,8 +778,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -821,8 +821,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -867,8 +867,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -913,8 +913,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -959,8 +959,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1005,8 +1005,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1051,8 +1051,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1097,8 +1097,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1142,8 +1142,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1184,8 +1184,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1226,8 +1226,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1268,8 +1268,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1310,8 +1310,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1353,8 +1353,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1400,8 +1400,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1447,8 +1447,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1494,8 +1494,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1541,8 +1541,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1588,8 +1588,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1635,8 +1635,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1681,8 +1681,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1723,8 +1723,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1765,8 +1765,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1807,8 +1807,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1849,8 +1849,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1952,8 +1952,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1996,8 +1996,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2040,8 +2040,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2084,8 +2084,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2128,8 +2128,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2171,8 +2171,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2214,8 +2214,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2257,8 +2257,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2300,8 +2300,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2343,8 +2343,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2387,8 +2387,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2431,8 +2431,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2475,8 +2475,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2519,8 +2519,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2563,8 +2563,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2607,8 +2607,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2654,8 +2654,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2701,8 +2701,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2748,8 +2748,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2795,8 +2795,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2842,8 +2842,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2889,8 +2889,8 @@ public final class CertificatesManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
      * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -124,7 +124,7 @@ def get_scheduling_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policies = oci.Database.get_scheduling_policies(compartment_id=compartment_id,
+    test_scheduling_policies = oci.database.get_scheduling_policies(compartment_id=compartment_id,
         display_name=scheduling_policy_display_name,
         state=scheduling_policy_state)
     ```
@@ -165,7 +165,7 @@ def get_scheduling_policies_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policies = oci.Database.get_scheduling_policies(compartment_id=compartment_id,
+    test_scheduling_policies = oci.database.get_scheduling_policies(compartment_id=compartment_id,
         display_name=scheduling_policy_display_name,
         state=scheduling_policy_state)
     ```

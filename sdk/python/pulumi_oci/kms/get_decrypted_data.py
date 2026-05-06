@@ -125,7 +125,7 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, _builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+    test_decrypted_data = oci.kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
         crypto_endpoint=decrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         associated_data=decrypted_data_associated_data)
@@ -169,7 +169,7 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+    test_decrypted_data = oci.kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
         crypto_endpoint=decrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         associated_data=decrypted_data_associated_data)

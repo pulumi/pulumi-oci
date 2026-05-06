@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCollection = oci.FleetSoftwareUpdate.getFsuCollection({
+ * const testFsuCollection = oci.fleetsoftwareupdate.getFsuCollection({
  *     fsuCollectionId: testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id,
  * });
  * ```
@@ -128,7 +128,7 @@ export interface GetFsuCollectionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCollection = oci.FleetSoftwareUpdate.getFsuCollection({
+ * const testFsuCollection = oci.fleetsoftwareupdate.getFsuCollection({
  *     fsuCollectionId: testFsuCollectionOciFleetSoftwareUpdateFsuCollection.id,
  * });
  * ```

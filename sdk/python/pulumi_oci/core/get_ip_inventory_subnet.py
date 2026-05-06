@@ -132,7 +132,7 @@ def get_ip_inventory_subnet(subnet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_inventory_subnet = oci.Core.get_ip_inventory_subnet(subnet_id=test_subnet["id"])
+    test_ip_inventory_subnet = oci.core.get_ip_inventory_subnet(subnet_id=test_subnet["id"])
     ```
 
 
@@ -164,7 +164,7 @@ def get_ip_inventory_subnet_output(subnet_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_inventory_subnet = oci.Core.get_ip_inventory_subnet(subnet_id=test_subnet["id"])
+    test_ip_inventory_subnet = oci.core.get_ip_inventory_subnet(subnet_id=test_subnet["id"])
     ```
 
 

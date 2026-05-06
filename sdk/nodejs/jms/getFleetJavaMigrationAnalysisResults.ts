@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
+ * const testFleetJavaMigrationAnalysisResults = oci.jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
  *     hostName: fleetJavaMigrationAnalysisResultHostName,
@@ -114,7 +114,7 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
+ * const testFleetJavaMigrationAnalysisResults = oci.jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
  *     hostName: fleetJavaMigrationAnalysisResultHostName,

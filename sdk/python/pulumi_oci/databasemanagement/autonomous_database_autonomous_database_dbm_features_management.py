@@ -171,7 +171,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
 
         test_autonomous_database_autonomous_database_dbm_features_management = oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management",
             autonomous_database_id=test_autonomous_database["id"],
-            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature,
+            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature == "true",
             feature_details={
                 "feature": autonomous_database_autonomous_database_dbm_features_management_feature_details_feature,
                 "enable_autonomous_database_dbm_feature": enable_autonomous_database_dbm_feature,
@@ -186,7 +186,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                     },
                     "connection_string": {
                         "connection_type": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
@@ -232,7 +232,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
 
         test_autonomous_database_autonomous_database_dbm_features_management = oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management",
             autonomous_database_id=test_autonomous_database["id"],
-            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature,
+            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature == "true",
             feature_details={
                 "feature": autonomous_database_autonomous_database_dbm_features_management_feature_details_feature,
                 "enable_autonomous_database_dbm_feature": enable_autonomous_database_dbm_feature,
@@ -247,7 +247,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                     },
                     "connection_string": {
                         "connection_type": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },

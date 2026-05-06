@@ -121,7 +121,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+    test_log_analytics_log_groups = oci.loganalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
         namespace=log_analytics_log_group_namespace,
         display_name=log_analytics_log_group_display_name)
     ```
@@ -162,7 +162,7 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+    test_log_analytics_log_groups = oci.loganalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
         namespace=log_analytics_log_group_namespace,
         display_name=log_analytics_log_group_display_name)
     ```

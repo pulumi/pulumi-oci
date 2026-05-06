@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPools = oci.DataFlow.getPools({
+ * const testPools = oci.dataflow.getPools({
  *     compartmentId: compartmentId,
  *     displayName: poolDisplayName,
  *     displayNameStartsWith: poolDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetPoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPools = oci.DataFlow.getPools({
+ * const testPools = oci.dataflow.getPools({
  *     compartmentId: compartmentId,
  *     displayName: poolDisplayName,
  *     displayNameStartsWith: poolDisplayNameStartsWith,

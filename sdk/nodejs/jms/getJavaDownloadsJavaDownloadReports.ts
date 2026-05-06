@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
+ * const testJavaDownloadReports = oci.jms.getJavaDownloadsJavaDownloadReports({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadReportDisplayName,
  *     javaDownloadReportId: testJavaDownloadReport.id,
@@ -97,7 +97,7 @@ export interface GetJavaDownloadsJavaDownloadReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
+ * const testJavaDownloadReports = oci.jms.getJavaDownloadsJavaDownloadReports({
  *     compartmentId: tenancyOcid,
  *     displayName: javaDownloadReportDisplayName,
  *     javaDownloadReportId: testJavaDownloadReport.id,

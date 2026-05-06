@@ -150,7 +150,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=managed_database_optimizer_statistics_collection_aggregation_group_type,
+    test_managed_database_optimizer_statistics_collection_aggregations = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=managed_database_optimizer_statistics_collection_aggregation_group_type,
         managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
@@ -209,7 +209,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_aggregations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=managed_database_optimizer_statistics_collection_aggregation_group_type,
+    test_managed_database_optimizer_statistics_collection_aggregations = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_aggregations(group_type=managed_database_optimizer_statistics_collection_aggregation_group_type,
         managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,

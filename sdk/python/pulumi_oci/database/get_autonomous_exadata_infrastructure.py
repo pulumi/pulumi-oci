@@ -320,7 +320,7 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure = oci.Database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure = oci.database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
     ```
 
 
@@ -368,7 +368,7 @@ def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure = oci.Database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure = oci.database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
     ```
 
 

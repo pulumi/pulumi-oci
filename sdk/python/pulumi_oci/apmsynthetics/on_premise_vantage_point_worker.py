@@ -621,7 +621,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=on_premise_vantage_point_worker_priority,
+            priority=int(on_premise_vantage_point_worker_priority),
             status=on_premise_vantage_point_worker_status,
             worker_type=on_premise_vantage_point_worker_worker_type)
         ```
@@ -686,7 +686,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=on_premise_vantage_point_worker_priority,
+            priority=int(on_premise_vantage_point_worker_priority),
             status=on_premise_vantage_point_worker_status,
             worker_type=on_premise_vantage_point_worker_worker_type)
         ```

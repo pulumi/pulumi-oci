@@ -566,7 +566,7 @@ class Dataset(pulumi.CustomResource):
             dataset_format_details={
                 "format_type": dataset_dataset_format_details_format_type,
                 "text_file_type_metadata": {
-                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "column_index": int(dataset_dataset_format_details_text_file_type_metadata_column_index),
                     "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
                     "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
                     "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,
@@ -659,7 +659,7 @@ class Dataset(pulumi.CustomResource):
             dataset_format_details={
                 "format_type": dataset_dataset_format_details_format_type,
                 "text_file_type_metadata": {
-                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "column_index": int(dataset_dataset_format_details_text_file_type_metadata_column_index),
                     "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
                     "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
                     "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,

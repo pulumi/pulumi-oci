@@ -367,11 +367,11 @@ class UsagePlan(pulumi.CustomResource):
                     "operation_on_breach": usage_plan_entitlements_quota_operation_on_breach,
                     "reset_policy": usage_plan_entitlements_quota_reset_policy,
                     "unit": usage_plan_entitlements_quota_unit,
-                    "value": usage_plan_entitlements_quota_value,
+                    "value": int(usage_plan_entitlements_quota_value),
                 },
                 "rate_limit": {
                     "unit": usage_plan_entitlements_rate_limit_unit,
-                    "value": usage_plan_entitlements_rate_limit_value,
+                    "value": int(usage_plan_entitlements_rate_limit_value),
                 },
                 "targets": [{
                     "deployment_id": test_deployment["id"],
@@ -437,11 +437,11 @@ class UsagePlan(pulumi.CustomResource):
                     "operation_on_breach": usage_plan_entitlements_quota_operation_on_breach,
                     "reset_policy": usage_plan_entitlements_quota_reset_policy,
                     "unit": usage_plan_entitlements_quota_unit,
-                    "value": usage_plan_entitlements_quota_value,
+                    "value": int(usage_plan_entitlements_quota_value),
                 },
                 "rate_limit": {
                     "unit": usage_plan_entitlements_rate_limit_unit,
-                    "value": usage_plan_entitlements_rate_limit_value,
+                    "value": int(usage_plan_entitlements_rate_limit_value),
                 },
                 "targets": [{
                     "deployment_id": test_deployment["id"],

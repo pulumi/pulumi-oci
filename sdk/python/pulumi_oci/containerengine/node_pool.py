@@ -869,22 +869,22 @@ class NodePool(pulumi.CustomResource):
                     "preemptible_node_config": {
                         "preemption_action": {
                             "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
-                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume == "true",
                         },
                     },
                 }],
-                "size": node_pool_node_config_details_size,
+                "size": int(node_pool_node_config_details_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
                     "Department": "Finance",
                 },
-                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled == "true",
                 "kms_key_id": test_key["id"],
                 "node_pool_pod_network_option_details": {
                     "cni_type": node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-                    "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    "max_pods_per_node": int(node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node),
                     "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
@@ -892,14 +892,14 @@ class NodePool(pulumi.CustomResource):
             },
             node_eviction_node_pool_settings={
                 "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration,
-                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration == "true",
+                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration == "true",
             },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
             node_pool_cycling_details={
                 "cycle_modes": node_pool_node_pool_cycling_details_cycle_modes,
-                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled == "true",
                 "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,
             },
@@ -912,13 +912,13 @@ class NodePool(pulumi.CustomResource):
                 "source_type": node_pool_node_source_details_source_type,
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
-            quantity_per_subnet=node_pool_quantity_per_subnet,
+            quantity_per_subnet=int(node_pool_quantity_per_subnet),
             secondary_vnics=[{
                 "create_vnic_details": {
                     "subnet_id": test_subnet["id"],
                     "application_resources": node_pool_secondary_vnics_create_vnic_details_application_resources,
-                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip,
-                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip,
+                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
+                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "Operations.CostCenter": "42",
                     },
@@ -926,16 +926,16 @@ class NodePool(pulumi.CustomResource):
                     "freeform_tags": {
                         "Department": "Finance",
                     },
-                    "ip_count": node_pool_secondary_vnics_create_vnic_details_ip_count,
+                    "ip_count": int(node_pool_secondary_vnics_create_vnic_details_ip_count),
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6address": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
                         "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
                     "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
-                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                 },
                 "display_name": node_pool_secondary_vnics_display_name,
-                "nic_index": node_pool_secondary_vnics_nic_index,
+                "nic_index": int(node_pool_secondary_vnics_nic_index),
             }],
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)
@@ -1024,22 +1024,22 @@ class NodePool(pulumi.CustomResource):
                     "preemptible_node_config": {
                         "preemption_action": {
                             "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
-                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume == "true",
                         },
                     },
                 }],
-                "size": node_pool_node_config_details_size,
+                "size": int(node_pool_node_config_details_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
                     "Department": "Finance",
                 },
-                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled == "true",
                 "kms_key_id": test_key["id"],
                 "node_pool_pod_network_option_details": {
                     "cni_type": node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-                    "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    "max_pods_per_node": int(node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node),
                     "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
@@ -1047,14 +1047,14 @@ class NodePool(pulumi.CustomResource):
             },
             node_eviction_node_pool_settings={
                 "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration,
-                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration == "true",
+                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration == "true",
             },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
             node_pool_cycling_details={
                 "cycle_modes": node_pool_node_pool_cycling_details_cycle_modes,
-                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled == "true",
                 "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,
             },
@@ -1067,13 +1067,13 @@ class NodePool(pulumi.CustomResource):
                 "source_type": node_pool_node_source_details_source_type,
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
-            quantity_per_subnet=node_pool_quantity_per_subnet,
+            quantity_per_subnet=int(node_pool_quantity_per_subnet),
             secondary_vnics=[{
                 "create_vnic_details": {
                     "subnet_id": test_subnet["id"],
                     "application_resources": node_pool_secondary_vnics_create_vnic_details_application_resources,
-                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip,
-                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip,
+                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
+                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "Operations.CostCenter": "42",
                     },
@@ -1081,16 +1081,16 @@ class NodePool(pulumi.CustomResource):
                     "freeform_tags": {
                         "Department": "Finance",
                     },
-                    "ip_count": node_pool_secondary_vnics_create_vnic_details_ip_count,
+                    "ip_count": int(node_pool_secondary_vnics_create_vnic_details_ip_count),
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6address": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
                         "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
                     "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
-                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                 },
                 "display_name": node_pool_secondary_vnics_display_name,
-                "nic_index": node_pool_secondary_vnics_nic_index,
+                "nic_index": int(node_pool_secondary_vnics_nic_index),
             }],
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)

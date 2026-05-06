@@ -138,7 +138,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
+    test_filesystem_snapshot_policies = oci.filestorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
         compartment_id=compartment_id,
         display_name=filesystem_snapshot_policy_display_name,
         id=filesystem_snapshot_policy_id,
@@ -188,7 +188,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
+    test_filesystem_snapshot_policies = oci.filestorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
         compartment_id=compartment_id,
         display_name=filesystem_snapshot_policy_display_name,
         id=filesystem_snapshot_policy_id,

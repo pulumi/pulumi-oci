@@ -251,7 +251,7 @@ def get_datastore_cluster(datastore_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_cluster = oci.Ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
+    test_datastore_cluster = oci.ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_datastore_cluster_output(datastore_cluster_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_datastore_cluster = oci.Ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
+    test_datastore_cluster = oci.ocvp.get_datastore_cluster(datastore_cluster_id=test_datastore_cluster_oci_ocvp_datastore_cluster["id"])
     ```
 
 

@@ -216,7 +216,7 @@ def get_oci_cache_user(oci_cache_user_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_user = oci.Redis.get_oci_cache_user(oci_cache_user_id=test_oci_cache_user_oci_redis_oci_cache_user["id"])
+    test_oci_cache_user = oci.redis.get_oci_cache_user(oci_cache_user_id=test_oci_cache_user_oci_redis_oci_cache_user["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_oci_cache_user_output(oci_cache_user_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_user = oci.Redis.get_oci_cache_user(oci_cache_user_id=test_oci_cache_user_oci_redis_oci_cache_user["id"])
+    test_oci_cache_user = oci.redis.get_oci_cache_user(oci_cache_user_id=test_oci_cache_user_oci_redis_oci_cache_user["id"])
     ```
 
 

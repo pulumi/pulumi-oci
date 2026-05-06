@@ -1105,7 +1105,7 @@ class Application(pulumi.CustomResource):
             driver_shape=application_driver_shape,
             executor_shape=application_executor_shape,
             language=application_language,
-            num_executors=application_num_executors,
+            num_executors=int(application_num_executors),
             spark_version=application_spark_version,
             application_log_config={
                 "log_group_id": test_log_group["id"],
@@ -1217,7 +1217,7 @@ class Application(pulumi.CustomResource):
             driver_shape=application_driver_shape,
             executor_shape=application_executor_shape,
             language=application_language,
-            num_executors=application_num_executors,
+            num_executors=int(application_num_executors),
             spark_version=application_spark_version,
             application_log_config={
                 "log_group_id": test_log_group["id"],

@@ -217,7 +217,7 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
+    test_ccc_upgrade_schedule = oci.computecloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
     ```
 
 
@@ -257,7 +257,7 @@ def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
+    test_ccc_upgrade_schedule = oci.computecloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
     ```
 
 

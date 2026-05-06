@@ -342,7 +342,7 @@ def get_job_run(job_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_run = oci.DataScience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
+    test_job_run = oci.datascience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
     ```
 
 
@@ -392,7 +392,7 @@ def get_job_run_output(job_run_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_run = oci.DataScience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
+    test_job_run = oci.datascience.get_job_run(job_run_id=test_job_run_oci_datascience_job_run["id"])
     ```
 
 

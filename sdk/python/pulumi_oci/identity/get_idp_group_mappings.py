@@ -100,7 +100,7 @@ def get_idp_group_mappings(filters: Optional[Sequence[Union['GetIdpGroupMappings
     import pulumi
     import pulumi_oci as oci
 
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
+    test_idp_group_mappings = oci.identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
 
 
@@ -133,7 +133,7 @@ def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
+    test_idp_group_mappings = oci.identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
 
 

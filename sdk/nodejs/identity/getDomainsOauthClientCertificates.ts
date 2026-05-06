@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthClientCertificates = oci.Identity.getDomainsOauthClientCertificates({
+ * const testOauthClientCertificates = oci.identity.getDomainsOauthClientCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
+ *     oauthClientCertificateCount: Number(oauthClientCertificateOauthClientCertificateCount),
  *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
  *     authorization: oauthClientCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
- *     startIndex: oauthClientCertificateStartIndex,
+ *     startIndex: Number(oauthClientCertificateStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsOauthClientCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthClientCertificates = oci.Identity.getDomainsOauthClientCertificates({
+ * const testOauthClientCertificates = oci.identity.getDomainsOauthClientCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
+ *     oauthClientCertificateCount: Number(oauthClientCertificateOauthClientCertificateCount),
  *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
  *     authorization: oauthClientCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
- *     startIndex: oauthClientCertificateStartIndex,
+ *     startIndex: Number(oauthClientCertificateStartIndex),
  * });
  * ```
  */

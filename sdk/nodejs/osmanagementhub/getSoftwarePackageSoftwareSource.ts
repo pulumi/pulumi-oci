@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackageSoftwareSource = oci.OsManagementHub.getSoftwarePackageSoftwareSource({
+ * const testSoftwarePackageSoftwareSource = oci.osmanagementhub.getSoftwarePackageSoftwareSource({
  *     compartmentId: compartmentId,
  *     softwarePackageName: testSoftwarePackage.name,
  *     archTypes: softwarePackageSoftwareSourceArchType,
@@ -163,7 +163,7 @@ export interface GetSoftwarePackageSoftwareSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackageSoftwareSource = oci.OsManagementHub.getSoftwarePackageSoftwareSource({
+ * const testSoftwarePackageSoftwareSource = oci.osmanagementhub.getSoftwarePackageSoftwareSource({
  *     compartmentId: compartmentId,
  *     softwarePackageName: testSoftwarePackage.name,
  *     archTypes: softwarePackageSoftwareSourceArchType,

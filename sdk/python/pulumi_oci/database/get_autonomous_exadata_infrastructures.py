@@ -137,7 +137,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+    test_autonomous_exadata_infrastructures = oci.database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
         availability_domain=autonomous_exadata_infrastructure_availability_domain,
         display_name=autonomous_exadata_infrastructure_display_name,
         state=autonomous_exadata_infrastructure_state)
@@ -183,7 +183,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+    test_autonomous_exadata_infrastructures = oci.database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
         availability_domain=autonomous_exadata_infrastructure_availability_domain,
         display_name=autonomous_exadata_infrastructure_display_name,
         state=autonomous_exadata_infrastructure_state)

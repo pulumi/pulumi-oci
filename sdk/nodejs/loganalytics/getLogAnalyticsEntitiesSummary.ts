@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntitiesSummary = oci.LogAnalytics.getLogAnalyticsEntitiesSummary({
+ * const testLogAnalyticsEntitiesSummary = oci.loganalytics.getLogAnalyticsEntitiesSummary({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntitiesSummaryNamespace,
  * });
@@ -80,7 +80,7 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntitiesSummary = oci.LogAnalytics.getLogAnalyticsEntitiesSummary({
+ * const testLogAnalyticsEntitiesSummary = oci.loganalytics.getLogAnalyticsEntitiesSummary({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntitiesSummaryNamespace,
  * });

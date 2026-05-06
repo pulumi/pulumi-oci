@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceExportRequests = oci.DataIntegration.getWorkspaceExportRequests({
+ * const testWorkspaceExportRequests = oci.dataintegration.getWorkspaceExportRequests({
  *     workspaceId: testWorkspace.id,
  *     exportStatus: workspaceExportRequestExportStatus,
  *     name: workspaceExportRequestName,
@@ -111,7 +111,7 @@ export interface GetWorkspaceExportRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceExportRequests = oci.DataIntegration.getWorkspaceExportRequests({
+ * const testWorkspaceExportRequests = oci.dataintegration.getWorkspaceExportRequests({
  *     workspaceId: testWorkspace.id,
  *     exportStatus: workspaceExportRequestExportStatus,
  *     name: workspaceExportRequestName,

@@ -392,7 +392,7 @@ def get_scheduled_job(scheduled_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_job = oci.OsManagementHub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
+    test_scheduled_job = oci.osmanagementhub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
     ```
 
 
@@ -445,7 +445,7 @@ def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_job = oci.OsManagementHub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
+    test_scheduled_job = oci.osmanagementhub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
     ```
 
 

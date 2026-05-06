@@ -214,14 +214,14 @@ def get_domains_dynamic_resource_groups(attribute_sets: Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=test_domain["url"],
-        dynamic_resource_group_count=dynamic_resource_group_dynamic_resource_group_count,
+    test_dynamic_resource_groups = oci.identity.get_domains_dynamic_resource_groups(idcs_endpoint=test_domain["url"],
+        dynamic_resource_group_count=int(dynamic_resource_group_dynamic_resource_group_count),
         dynamic_resource_group_filter=dynamic_resource_group_dynamic_resource_group_filter,
         attribute_sets=[],
         attributes="",
         authorization=dynamic_resource_group_authorization,
         resource_type_schema_version=dynamic_resource_group_resource_type_schema_version,
-        start_index=dynamic_resource_group_start_index)
+        start_index=int(dynamic_resource_group_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_dynamic_resource_groups_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_groups = oci.Identity.get_domains_dynamic_resource_groups(idcs_endpoint=test_domain["url"],
-        dynamic_resource_group_count=dynamic_resource_group_dynamic_resource_group_count,
+    test_dynamic_resource_groups = oci.identity.get_domains_dynamic_resource_groups(idcs_endpoint=test_domain["url"],
+        dynamic_resource_group_count=int(dynamic_resource_group_dynamic_resource_group_count),
         dynamic_resource_group_filter=dynamic_resource_group_dynamic_resource_group_filter,
         attribute_sets=[],
         attributes="",
         authorization=dynamic_resource_group_authorization,
         resource_type_schema_version=dynamic_resource_group_resource_type_schema_version,
-        start_index=dynamic_resource_group_start_index)
+        start_index=int(dynamic_resource_group_start_index))
     ```
 
 

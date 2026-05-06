@@ -251,7 +251,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         test_connection_assignment = oci.goldengate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"],
-            is_lock_override=connection_assignment_is_lock_override)
+            is_lock_override=connection_assignment_is_lock_override == "true")
         ```
 
         ## Import
@@ -296,7 +296,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         test_connection_assignment = oci.goldengate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"],
-            is_lock_override=connection_assignment_is_lock_override)
+            is_lock_override=connection_assignment_is_lock_override == "true")
         ```
 
         ## Import

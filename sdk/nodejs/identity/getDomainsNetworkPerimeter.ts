@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkPerimeter = oci.Identity.getDomainsNetworkPerimeter({
+ * const testNetworkPerimeter = oci.identity.getDomainsNetworkPerimeter({
  *     idcsEndpoint: testDomain.url,
  *     networkPerimeterId: testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id,
  *     attributeSets: ["all"],
@@ -159,7 +159,7 @@ export interface GetDomainsNetworkPerimeterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkPerimeter = oci.Identity.getDomainsNetworkPerimeter({
+ * const testNetworkPerimeter = oci.identity.getDomainsNetworkPerimeter({
  *     idcsEndpoint: testDomain.url,
  *     networkPerimeterId: testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id,
  *     attributeSets: ["all"],

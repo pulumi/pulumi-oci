@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceParserActions = oci.LogAnalytics.getNamespaceParserActions({
+ * const testNamespaceParserActions = oci.loganalytics.getNamespaceParserActions({
  *     namespace: namespaceParserActionNamespace,
  *     actionDisplayText: namespaceParserActionActionDisplayText,
  *     name: namespaceParserActionName,
@@ -84,7 +84,7 @@ export interface GetNamespaceParserActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceParserActions = oci.LogAnalytics.getNamespaceParserActions({
+ * const testNamespaceParserActions = oci.loganalytics.getNamespaceParserActions({
  *     namespace: namespaceParserActionNamespace,
  *     actionDisplayText: namespaceParserActionActionDisplayText,
  *     name: namespaceParserActionName,

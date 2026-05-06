@@ -214,14 +214,14 @@ def get_domains_my_devices(attribute_sets: Optional[Sequence[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=test_domain["url"],
-        my_device_count=my_device_my_device_count,
+    test_my_devices = oci.identity.get_domains_my_devices(idcs_endpoint=test_domain["url"],
+        my_device_count=int(my_device_my_device_count),
         my_device_filter=my_device_my_device_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_device_authorization,
         resource_type_schema_version=my_device_resource_type_schema_version,
-        start_index=my_device_start_index)
+        start_index=int(my_device_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_my_devices_output(attribute_sets: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_my_devices = oci.Identity.get_domains_my_devices(idcs_endpoint=test_domain["url"],
-        my_device_count=my_device_my_device_count,
+    test_my_devices = oci.identity.get_domains_my_devices(idcs_endpoint=test_domain["url"],
+        my_device_count=int(my_device_my_device_count),
         my_device_filter=my_device_my_device_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_device_authorization,
         resource_type_schema_version=my_device_resource_type_schema_version,
-        start_index=my_device_start_index)
+        start_index=int(my_device_start_index))
     ```
 
 

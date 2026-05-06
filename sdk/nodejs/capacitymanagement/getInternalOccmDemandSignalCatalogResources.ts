@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogResources = oci.CapacityManagement.getInternalOccmDemandSignalCatalogResources({
+ * const testInternalOccmDemandSignalCatalogResources = oci.capacitymanagement.getInternalOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     occmDemandSignalCatalogId: testCatalog.id,
@@ -107,7 +107,7 @@ export interface GetInternalOccmDemandSignalCatalogResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogResources = oci.CapacityManagement.getInternalOccmDemandSignalCatalogResources({
+ * const testInternalOccmDemandSignalCatalogResources = oci.capacitymanagement.getInternalOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     occmDemandSignalCatalogId: testCatalog.id,

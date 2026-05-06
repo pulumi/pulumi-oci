@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
- *     isEcmpEnabled: drgRouteTableIsEcmpEnabled,
+ *     isEcmpEnabled: drgRouteTableIsEcmpEnabled === "true",
  * });
  * ```
  *

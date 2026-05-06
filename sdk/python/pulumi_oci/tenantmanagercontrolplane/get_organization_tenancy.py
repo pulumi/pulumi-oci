@@ -168,7 +168,7 @@ def get_organization_tenancy(organization_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancy = oci.Tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
+    test_organization_tenancy = oci.tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
         tenancy_id=test_tenancy["id"])
     ```
 
@@ -207,7 +207,7 @@ def get_organization_tenancy_output(organization_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancy = oci.Tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
+    test_organization_tenancy = oci.tenantmanagercontrolplane.get_organization_tenancy(organization_id=test_organization["id"],
         tenancy_id=test_tenancy["id"])
     ```
 

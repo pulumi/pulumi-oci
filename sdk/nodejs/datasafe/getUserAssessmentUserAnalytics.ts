@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
+ * const testUserAssessmentUserAnalytics = oci.datasafe.getUserAssessmentUserAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAnalyticAccessLevel,
  *     accountStatus: userAssessmentUserAnalyticAccountStatus,
  *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
@@ -213,12 +213,12 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
+ * const testUserAssessmentUserAnalytics = oci.datasafe.getUserAssessmentUserAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAnalyticAccessLevel,
  *     accountStatus: userAssessmentUserAnalyticAccountStatus,
  *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
  *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,

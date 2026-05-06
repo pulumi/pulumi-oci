@@ -480,7 +480,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
+    test_application = oci.dataflow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
 
 
@@ -541,7 +541,7 @@ def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
+    test_application = oci.dataflow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
 
 

@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPoliciesMaskingColumns = oci.DataSafe.getMaskingPoliciesMaskingColumns({
+ * const testMaskingPoliciesMaskingColumns = oci.datasafe.getMaskingPoliciesMaskingColumns({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPoliciesMaskingColumnColumnName,
  *     dataTypes: maskingPoliciesMaskingColumnDataType,
- *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled,
- *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired,
+ *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled === "true",
+ *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired === "true",
  *     maskingColumnGroups: maskingPoliciesMaskingColumnMaskingColumnGroup,
  *     maskingColumnLifecycleState: maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
  *     objects: maskingPoliciesMaskingColumnObject,
@@ -196,12 +196,12 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPoliciesMaskingColumns = oci.DataSafe.getMaskingPoliciesMaskingColumns({
+ * const testMaskingPoliciesMaskingColumns = oci.datasafe.getMaskingPoliciesMaskingColumns({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPoliciesMaskingColumnColumnName,
  *     dataTypes: maskingPoliciesMaskingColumnDataType,
- *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled,
- *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired,
+ *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled === "true",
+ *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired === "true",
  *     maskingColumnGroups: maskingPoliciesMaskingColumnMaskingColumnGroup,
  *     maskingColumnLifecycleState: maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
  *     objects: maskingPoliciesMaskingColumnObject,

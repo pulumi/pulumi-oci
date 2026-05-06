@@ -170,7 +170,7 @@ def get_metric_extensions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+    test_metric_extensions = oci.stackmonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
         metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,
@@ -231,7 +231,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+    test_metric_extensions = oci.stackmonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
         metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,

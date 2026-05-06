@@ -177,7 +177,7 @@ def get_network_firewall_policy_nat_rule(nat_rule_name: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_nat_rule = oci.NetworkFirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
+    test_network_firewall_policy_nat_rule = oci.networkfirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
         network_firewall_policy_id=test_network_firewall_policy["id"])
     ```
 
@@ -217,7 +217,7 @@ def get_network_firewall_policy_nat_rule_output(nat_rule_name: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_nat_rule = oci.NetworkFirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
+    test_network_firewall_policy_nat_rule = oci.networkfirewall.get_network_firewall_policy_nat_rule(nat_rule_name=test_rule["name"],
         network_firewall_policy_id=test_network_firewall_policy["id"])
     ```
 

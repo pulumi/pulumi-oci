@@ -203,7 +203,7 @@ def get_generic_artifact(artifact_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
+    test_generic_artifact = oci.artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
+    test_generic_artifact = oci.artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
     ```
 
 

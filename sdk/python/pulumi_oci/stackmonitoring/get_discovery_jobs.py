@@ -108,7 +108,7 @@ def get_discovery_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=compartment_id,
+    test_discovery_jobs = oci.stackmonitoring.get_discovery_jobs(compartment_id=compartment_id,
         name=discovery_job_name)
     ```
 
@@ -144,7 +144,7 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=compartment_id,
+    test_discovery_jobs = oci.stackmonitoring.get_discovery_jobs(compartment_id=compartment_id,
         name=discovery_job_name)
     ```
 

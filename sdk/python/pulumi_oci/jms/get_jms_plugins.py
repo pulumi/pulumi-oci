@@ -204,11 +204,11 @@ def get_jms_plugins(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+    test_jms_plugins = oci.jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
         agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
+        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
         hostname_contains=jms_plugin_hostname_contains,
         id=jms_plugin_id,
@@ -284,11 +284,11 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+    test_jms_plugins = oci.jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
         agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
+        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
         hostname_contains=jms_plugin_hostname_contains,
         id=jms_plugin_id,

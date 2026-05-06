@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OspGateway.getSubscriptions({
+ * const testSubscriptions = oci.ospgateway.getSubscriptions({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: subscriptionOspHomeRegion,
  * });
@@ -74,7 +74,7 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OspGateway.getSubscriptions({
+ * const testSubscriptions = oci.ospgateway.getSubscriptions({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: subscriptionOspHomeRegion,
  * });

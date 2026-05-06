@@ -155,7 +155,7 @@ def get_software_source_module_stream_profile(module_name: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagementHub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
+    test_software_source_module_stream_profile = oci.osmanagementhub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
         profile_name=test_profile["name"],
         software_source_id=test_software_source["id"],
         stream_name=test_stream["name"])
@@ -201,7 +201,7 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagementHub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
+    test_software_source_module_stream_profile = oci.osmanagementhub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
         profile_name=test_profile["name"],
         software_source_id=test_software_source["id"],
         stream_name=test_stream["name"])

@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrorAnalytics = oci.Jms.getPluginErrorAnalytics({
+ * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetPluginErrorAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrorAnalytics = oci.Jms.getPluginErrorAnalytics({
+ * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
  * });
  * ```
  */

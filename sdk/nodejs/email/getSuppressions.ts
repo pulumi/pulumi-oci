@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppressions = oci.Email.getSuppressions({
+ * const testSuppressions = oci.email.getSuppressions({
  *     compartmentId: tenancyOcid,
  *     emailAddress: suppressionEmailAddress,
  *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,
@@ -102,7 +102,7 @@ export interface GetSuppressionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppressions = oci.Email.getSuppressions({
+ * const testSuppressions = oci.email.getSuppressions({
  *     compartmentId: tenancyOcid,
  *     emailAddress: suppressionEmailAddress,
  *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,

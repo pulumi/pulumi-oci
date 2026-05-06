@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOutboundConnectors = oci.FileStorage.getOutboundConnectors({
+ * const testOutboundConnectors = oci.filestorage.getOutboundConnectors({
  *     availabilityDomain: outboundConnectorAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: outboundConnectorDisplayName,
@@ -106,7 +106,7 @@ export interface GetOutboundConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOutboundConnectors = oci.FileStorage.getOutboundConnectors({
+ * const testOutboundConnectors = oci.filestorage.getOutboundConnectors({
  *     availabilityDomain: outboundConnectorAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: outboundConnectorDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUser = oci.Identity.getDomainsUser({
+ * const testUser = oci.identity.getDomainsUser({
  *     idcsEndpoint: testDomain.url,
  *     userId: testUserOciIdentityUser.id,
  *     attributeSets: [],
@@ -319,7 +319,7 @@ export interface GetDomainsUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUser = oci.Identity.getDomainsUser({
+ * const testUser = oci.identity.getDomainsUser({
  *     idcsEndpoint: testDomain.url,
  *     userId: testUserOciIdentityUser.id,
  *     attributeSets: [],

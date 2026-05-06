@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateVersions = oci.CertificatesManagement.getCertificateVersions({
+ * const testCertificateVersions = oci.certificatesmanagement.getCertificateVersions({
  *     certificateId: testCertificate.id,
  *     versionNumber: certificateVersionVersionNumber,
  * });
@@ -82,7 +82,7 @@ export interface GetCertificateVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateVersions = oci.CertificatesManagement.getCertificateVersions({
+ * const testCertificateVersions = oci.certificatesmanagement.getCertificateVersions({
  *     certificateId: testCertificate.id,
  *     versionNumber: certificateVersionVersionNumber,
  * });

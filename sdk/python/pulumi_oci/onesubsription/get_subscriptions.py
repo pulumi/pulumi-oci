@@ -138,9 +138,9 @@ def get_subscriptions(buyer_email: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.onesubsription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required,
+        is_commit_info_required=subscription_is_commit_info_required == "true",
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"])
     ```
@@ -192,9 +192,9 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.onesubsription.get_subscriptions(compartment_id=compartment_id,
         buyer_email=subscription_buyer_email,
-        is_commit_info_required=subscription_is_commit_info_required,
+        is_commit_info_required=subscription_is_commit_info_required == "true",
         plan_number=subscription_plan_number,
         subscription_id=test_subscription["id"])
     ```

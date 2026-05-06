@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
+ * const testSensitiveDataModelSensitiveObjects = oci.datasafe.getSensitiveDataModelSensitiveObjects({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     objects: sensitiveDataModelSensitiveObjectObject,
  *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,
@@ -97,7 +97,7 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
+ * const testSensitiveDataModelSensitiveObjects = oci.datasafe.getSensitiveDataModelSensitiveObjects({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     objects: sensitiveDataModelSensitiveObjectObject,
  *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,

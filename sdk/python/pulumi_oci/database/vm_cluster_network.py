@@ -528,9 +528,9 @@ class VmClusterNetwork(pulumi.CustomResource):
             scans=[{
                 "hostname": vm_cluster_network_scans_hostname,
                 "ips": vm_cluster_network_scans_ips,
-                "port": vm_cluster_network_scans_port,
-                "scan_listener_port_tcp": vm_cluster_network_scans_scan_listener_port_tcp,
-                "scan_listener_port_tcp_ssl": vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+                "port": int(vm_cluster_network_scans_port),
+                "scan_listener_port_tcp": int(vm_cluster_network_scans_scan_listener_port_tcp),
+                "scan_listener_port_tcp_ssl": int(vm_cluster_network_scans_scan_listener_port_tcp_ssl),
             }],
             vm_networks=[{
                 "network_type": vm_cluster_network_vm_networks_network_type,
@@ -552,14 +552,14 @@ class VmClusterNetwork(pulumi.CustomResource):
             dr_scans=[{
                 "hostname": vm_cluster_network_dr_scans_hostname,
                 "ips": vm_cluster_network_dr_scans_ips,
-                "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
-                "scan_listener_port_tcp_ssl": vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl,
+                "scan_listener_port_tcp": int(vm_cluster_network_dr_scans_scan_listener_port_tcp),
+                "scan_listener_port_tcp_ssl": int(vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl),
             }],
             freeform_tags={
                 "Department": "Finance",
             },
             ntps=vm_cluster_network_ntp,
-            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network)
+            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network == "true")
         ```
 
         ## Import
@@ -613,9 +613,9 @@ class VmClusterNetwork(pulumi.CustomResource):
             scans=[{
                 "hostname": vm_cluster_network_scans_hostname,
                 "ips": vm_cluster_network_scans_ips,
-                "port": vm_cluster_network_scans_port,
-                "scan_listener_port_tcp": vm_cluster_network_scans_scan_listener_port_tcp,
-                "scan_listener_port_tcp_ssl": vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+                "port": int(vm_cluster_network_scans_port),
+                "scan_listener_port_tcp": int(vm_cluster_network_scans_scan_listener_port_tcp),
+                "scan_listener_port_tcp_ssl": int(vm_cluster_network_scans_scan_listener_port_tcp_ssl),
             }],
             vm_networks=[{
                 "network_type": vm_cluster_network_vm_networks_network_type,
@@ -637,14 +637,14 @@ class VmClusterNetwork(pulumi.CustomResource):
             dr_scans=[{
                 "hostname": vm_cluster_network_dr_scans_hostname,
                 "ips": vm_cluster_network_dr_scans_ips,
-                "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
-                "scan_listener_port_tcp_ssl": vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl,
+                "scan_listener_port_tcp": int(vm_cluster_network_dr_scans_scan_listener_port_tcp),
+                "scan_listener_port_tcp_ssl": int(vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl),
             }],
             freeform_tags={
                 "Department": "Finance",
             },
             ntps=vm_cluster_network_ntp,
-            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network)
+            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network == "true")
         ```
 
         ## Import

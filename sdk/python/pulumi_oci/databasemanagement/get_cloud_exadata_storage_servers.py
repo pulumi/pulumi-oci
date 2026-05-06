@@ -118,7 +118,7 @@ def get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_servers = oci.DatabaseManagement.get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_servers = oci.databasemanagement.get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_server_display_name)
     ```
@@ -159,7 +159,7 @@ def get_cloud_exadata_storage_servers_output(cloud_exadata_infrastructure_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_servers = oci.DatabaseManagement.get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_servers = oci.databasemanagement.get_cloud_exadata_storage_servers(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_server_display_name)
     ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKey = oci.Identity.getDomainsCustomerSecretKey({
+ * const testCustomerSecretKey = oci.identity.getDomainsCustomerSecretKey({
  *     customerSecretKeyId: testCustomerSecretKeyOciIdentityCustomerSecretKey.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
@@ -175,7 +175,7 @@ export interface GetDomainsCustomerSecretKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKey = oci.Identity.getDomainsCustomerSecretKey({
+ * const testCustomerSecretKey = oci.identity.getDomainsCustomerSecretKey({
  *     customerSecretKeyId: testCustomerSecretKeyOciIdentityCustomerSecretKey.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],

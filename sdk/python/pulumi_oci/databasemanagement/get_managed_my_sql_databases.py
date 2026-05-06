@@ -108,7 +108,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+    test_managed_my_sql_databases = oci.databasemanagement.get_managed_my_sql_databases(compartment_id=compartment_id,
         filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 
@@ -144,7 +144,7 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+    test_managed_my_sql_databases = oci.databasemanagement.get_managed_my_sql_databases(compartment_id=compartment_id,
         filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 

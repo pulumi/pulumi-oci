@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeys = oci.Kms.getKeys({
+ * const testKeys = oci.kms.getKeys({
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: keyLength,
+ *     length: Number(keyLength),
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });
@@ -130,11 +130,11 @@ export interface GetKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeys = oci.Kms.getKeys({
+ * const testKeys = oci.kms.getKeys({
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: keyLength,
+ *     length: Number(keyLength),
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });

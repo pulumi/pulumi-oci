@@ -124,7 +124,7 @@ def get_virtual_circuits(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=compartment_id,
+    test_virtual_circuits = oci.core.get_virtual_circuits(compartment_id=compartment_id,
         display_name=virtual_circuit_display_name,
         state=virtual_circuit_state)
     ```
@@ -165,7 +165,7 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=compartment_id,
+    test_virtual_circuits = oci.core.get_virtual_circuits(compartment_id=compartment_id,
         display_name=virtual_circuit_display_name,
         state=virtual_circuit_state)
     ```

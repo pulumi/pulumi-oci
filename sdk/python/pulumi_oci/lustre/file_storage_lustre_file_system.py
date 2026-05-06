@@ -798,7 +798,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
 
         test_lustre_file_system = oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system",
             availability_domain=lustre_file_system_availability_domain,
-            capacity_in_gbs=lustre_file_system_capacity_in_gbs,
+            capacity_in_gbs=int(lustre_file_system_capacity_in_gbs),
             compartment_id=compartment_id,
             file_system_name=test_file_system["name"],
             performance_tier=lustre_file_system_performance_tier,
@@ -881,7 +881,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
 
         test_lustre_file_system = oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system",
             availability_domain=lustre_file_system_availability_domain,
-            capacity_in_gbs=lustre_file_system_capacity_in_gbs,
+            capacity_in_gbs=int(lustre_file_system_capacity_in_gbs),
             compartment_id=compartment_id,
             file_system_name=test_file_system["name"],
             performance_tier=lustre_file_system_performance_tier,

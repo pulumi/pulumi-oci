@@ -158,10 +158,10 @@ def get_software_packages(architecture: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_packages = oci.OsManagementHub.get_software_packages(architecture=software_package_architecture,
+    test_software_packages = oci.osmanagementhub.get_software_packages(architecture=software_package_architecture,
         display_name=software_package_display_name,
         display_name_contains=software_package_display_name_contains,
-        is_latest=software_package_is_latest,
+        is_latest=software_package_is_latest == "true",
         os_family=software_package_os_family,
         version=software_package_version)
     ```
@@ -215,10 +215,10 @@ def get_software_packages_output(architecture: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_software_packages = oci.OsManagementHub.get_software_packages(architecture=software_package_architecture,
+    test_software_packages = oci.osmanagementhub.get_software_packages(architecture=software_package_architecture,
         display_name=software_package_display_name,
         display_name_contains=software_package_display_name_contains,
-        is_latest=software_package_is_latest,
+        is_latest=software_package_is_latest == "true",
         os_family=software_package_os_family,
         version=software_package_version)
     ```

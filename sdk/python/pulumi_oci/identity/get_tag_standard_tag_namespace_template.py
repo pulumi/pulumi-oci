@@ -121,7 +121,7 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
+    test_tag_standard_tag_namespace_template = oci.identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
         standard_tag_namespace_name=test_tag_namespace["name"])
     ```
 
@@ -156,7 +156,7 @@ def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
+    test_tag_standard_tag_namespace_template = oci.identity.get_tag_standard_tag_namespace_template(compartment_id=compartment_id,
         standard_tag_namespace_name=test_tag_namespace["name"])
     ```
 

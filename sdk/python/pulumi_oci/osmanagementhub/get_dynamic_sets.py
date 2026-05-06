@@ -131,7 +131,7 @@ def get_dynamic_sets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_sets = oci.OsManagementHub.get_dynamic_sets(compartment_id=compartment_id,
+    test_dynamic_sets = oci.osmanagementhub.get_dynamic_sets(compartment_id=compartment_id,
         display_name=dynamic_set_display_name,
         display_name_contains=dynamic_set_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"])
@@ -177,7 +177,7 @@ def get_dynamic_sets_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_sets = oci.OsManagementHub.get_dynamic_sets(compartment_id=compartment_id,
+    test_dynamic_sets = oci.osmanagementhub.get_dynamic_sets(compartment_id=compartment_id,
         display_name=dynamic_set_display_name,
         display_name_contains=dynamic_set_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"])

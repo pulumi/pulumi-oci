@@ -1088,7 +1088,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
             authorization=identity_proofing_provider_template_authorization,
             configurations=[{
                 "name": identity_proofing_provider_template_configuration_name,
-                "sensitivity": identity_proofing_provider_template_configuration_sensitivity,
+                "sensitivity": identity_proofing_provider_template_configuration_sensitivity == "true",
                 "type": identity_proofing_provider_template_configuration_type,
             }],
             ocid=identity_proofing_provider_template_ocid,
@@ -1210,7 +1210,7 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
             authorization=identity_proofing_provider_template_authorization,
             configurations=[{
                 "name": identity_proofing_provider_template_configuration_name,
-                "sensitivity": identity_proofing_provider_template_configuration_sensitivity,
+                "sensitivity": identity_proofing_provider_template_configuration_sensitivity == "true",
                 "type": identity_proofing_provider_template_configuration_type,
             }],
             ocid=identity_proofing_provider_template_ocid,

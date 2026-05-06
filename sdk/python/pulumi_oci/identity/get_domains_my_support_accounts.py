@@ -194,12 +194,12 @@ def get_domains_my_support_accounts(authorization: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
-        my_support_account_count=my_support_account_my_support_account_count,
+    test_my_support_accounts = oci.identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
+        my_support_account_count=int(my_support_account_my_support_account_count),
         my_support_account_filter=my_support_account_my_support_account_filter,
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version,
-        start_index=my_support_account_start_index)
+        start_index=int(my_support_account_start_index))
     ```
 
 
@@ -259,12 +259,12 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
-        my_support_account_count=my_support_account_my_support_account_count,
+    test_my_support_accounts = oci.identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
+        my_support_account_count=int(my_support_account_my_support_account_count),
         my_support_account_filter=my_support_account_my_support_account_filter,
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version,
-        start_index=my_support_account_start_index)
+        start_index=int(my_support_account_start_index))
     ```
 
 

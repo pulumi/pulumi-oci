@@ -93,7 +93,7 @@ def get_target_database_group_group_member(target_database_group_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group_group_member = oci.DataSafe.get_target_database_group_group_member(target_database_group_id=test_target_database_group["id"],
+    test_target_database_group_group_member = oci.datasafe.get_target_database_group_group_member(target_database_group_id=test_target_database_group["id"],
         target_database_id=test_target_database["id"])
     ```
 
@@ -126,7 +126,7 @@ def get_target_database_group_group_member_output(target_database_group_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group_group_member = oci.DataSafe.get_target_database_group_group_member(target_database_group_id=test_target_database_group["id"],
+    test_target_database_group_group_member = oci.datasafe.get_target_database_group_group_member(target_database_group_id=test_target_database_group["id"],
         target_database_id=test_target_database["id"])
     ```
 

@@ -150,7 +150,7 @@ def get_cloud_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_systems = oci.DatabaseManagement.get_cloud_db_systems(compartment_id=compartment_id,
+    test_cloud_db_systems = oci.databasemanagement.get_cloud_db_systems(compartment_id=compartment_id,
         dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
         deployment_type=cloud_db_system_deployment_type,
         display_name=cloud_db_system_display_name,
@@ -201,7 +201,7 @@ def get_cloud_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_systems = oci.DatabaseManagement.get_cloud_db_systems(compartment_id=compartment_id,
+    test_cloud_db_systems = oci.databasemanagement.get_cloud_db_systems(compartment_id=compartment_id,
         dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
         deployment_type=cloud_db_system_deployment_type,
         display_name=cloud_db_system_display_name,

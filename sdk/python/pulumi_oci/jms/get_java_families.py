@@ -125,9 +125,9 @@ def get_java_families(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=java_family_display_name,
+    test_java_families = oci.jms.get_java_families(display_name=java_family_display_name,
         family_version=java_family_family_version,
-        is_supported_version=java_family_is_supported_version)
+        is_supported_version=java_family_is_supported_version == "true")
     ```
 
 
@@ -167,9 +167,9 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=java_family_display_name,
+    test_java_families = oci.jms.get_java_families(display_name=java_family_display_name,
         family_version=java_family_family_version,
-        is_supported_version=java_family_is_supported_version)
+        is_supported_version=java_family_is_supported_version == "true")
     ```
 
 

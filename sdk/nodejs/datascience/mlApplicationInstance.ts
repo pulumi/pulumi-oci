@@ -44,7 +44,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: mlApplicationInstanceIsEnabled,
+ *     isEnabled: mlApplicationInstanceIsEnabled === "true",
  * });
  * ```
  *

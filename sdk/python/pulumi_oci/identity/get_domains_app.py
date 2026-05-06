@@ -1526,7 +1526,7 @@ def get_domains_app(app_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app = oci.Identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
+    test_app = oci.identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -1695,7 +1695,7 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app = oci.Identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
+    test_app = oci.identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

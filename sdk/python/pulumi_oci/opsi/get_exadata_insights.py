@@ -162,8 +162,8 @@ def get_exadata_insights(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+    test_exadata_insights = oci.opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree == "true",
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_types=exadata_insight_exadata_type,
         id=exadata_insight_id,
@@ -223,8 +223,8 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+    test_exadata_insights = oci.opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree == "true",
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_types=exadata_insight_exadata_type,
         id=exadata_insight_id,

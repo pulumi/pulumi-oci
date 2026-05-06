@@ -1348,7 +1348,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
             description=oauth2client_credential_description,
             expires_on=oauth2client_credential_expires_on,
             id=oauth2client_credential_id,
-            is_reset_secret=oauth2client_credential_is_reset_secret,
+            is_reset_secret=oauth2client_credential_is_reset_secret == "true",
             ocid=oauth2client_credential_ocid,
             resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
             status=oauth2client_credential_status,
@@ -1357,7 +1357,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
                 "value": oauth2client_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],
@@ -1528,7 +1528,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
             description=oauth2client_credential_description,
             expires_on=oauth2client_credential_expires_on,
             id=oauth2client_credential_id,
-            is_reset_secret=oauth2client_credential_is_reset_secret,
+            is_reset_secret=oauth2client_credential_is_reset_secret == "true",
             ocid=oauth2client_credential_ocid,
             resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
             status=oauth2client_credential_status,
@@ -1537,7 +1537,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
                 "value": oauth2client_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],

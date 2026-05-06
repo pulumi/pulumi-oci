@@ -137,7 +137,7 @@ def get_fusion_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environments = oci.Functions.get_fusion_environments(compartment_id=compartment_id,
+    test_fusion_environments = oci.functions.get_fusion_environments(compartment_id=compartment_id,
         display_name=fusion_environment_display_name,
         fusion_environment_family_id=test_fusion_environment_family["id"],
         state=fusion_environment_state)
@@ -183,7 +183,7 @@ def get_fusion_environments_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environments = oci.Functions.get_fusion_environments(compartment_id=compartment_id,
+    test_fusion_environments = oci.functions.get_fusion_environments(compartment_id=compartment_id,
         display_name=fusion_environment_display_name,
         fusion_environment_family_id=test_fusion_environment_family["id"],
         state=fusion_environment_state)

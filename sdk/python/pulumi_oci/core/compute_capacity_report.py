@@ -183,7 +183,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 "instance_shape_config": {
                     "baseline_ocpu_utilization": compute_capacity_report_shape_availabilities_instance_shape_config_baseline_ocpu_utilization,
                     "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "nvmes": int(compute_capacity_report_shape_availabilities_instance_shape_config_nvmes),
                     "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 },
             }])
@@ -238,7 +238,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 "instance_shape_config": {
                     "baseline_ocpu_utilization": compute_capacity_report_shape_availabilities_instance_shape_config_baseline_ocpu_utilization,
                     "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "nvmes": int(compute_capacity_report_shape_availabilities_instance_shape_config_nvmes),
                     "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 },
             }])

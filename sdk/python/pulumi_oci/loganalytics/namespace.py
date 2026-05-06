@@ -150,7 +150,7 @@ class Namespace(pulumi.CustomResource):
 
         test_namespace = oci.loganalytics.Namespace("test_namespace",
             compartment_id=compartment_id,
-            is_onboarded=is_onboarded,
+            is_onboarded=is_onboarded == "true",
             namespace=namespace_namespace)
         ```
 
@@ -188,7 +188,7 @@ class Namespace(pulumi.CustomResource):
 
         test_namespace = oci.loganalytics.Namespace("test_namespace",
             compartment_id=compartment_id,
-            is_onboarded=is_onboarded,
+            is_onboarded=is_onboarded == "true",
             namespace=namespace_namespace)
         ```
 

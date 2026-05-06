@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviders = oci.Identity.getDomainsIdentityProofingProviders({
+ * const testIdentityProofingProviders = oci.identity.getDomainsIdentityProofingProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderCount: identityProofingProviderIdentityProofingProviderCount,
+ *     identityProofingProviderCount: Number(identityProofingProviderIdentityProofingProviderCount),
  *     identityProofingProviderFilter: identityProofingProviderIdentityProofingProviderFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderResourceTypeSchemaVersion,
- *     startIndex: identityProofingProviderStartIndex,
+ *     startIndex: Number(identityProofingProviderStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsIdentityProofingProvidersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviders = oci.Identity.getDomainsIdentityProofingProviders({
+ * const testIdentityProofingProviders = oci.identity.getDomainsIdentityProofingProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderCount: identityProofingProviderIdentityProofingProviderCount,
+ *     identityProofingProviderCount: Number(identityProofingProviderIdentityProofingProviderCount),
  *     identityProofingProviderFilter: identityProofingProviderIdentityProofingProviderFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderResourceTypeSchemaVersion,
- *     startIndex: identityProofingProviderStartIndex,
+ *     startIndex: Number(identityProofingProviderStartIndex),
  * });
  * ```
  */

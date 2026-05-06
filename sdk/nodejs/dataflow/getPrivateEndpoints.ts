@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.dataflow.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.dataflow.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,

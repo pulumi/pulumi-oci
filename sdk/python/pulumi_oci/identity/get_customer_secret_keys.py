@@ -99,7 +99,7 @@ def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecret
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=test_user["id"])
+    test_customer_secret_keys = oci.identity.get_customer_secret_keys(user_id=test_user["id"])
     ```
 
 
@@ -131,7 +131,7 @@ def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=test_user["id"])
+    test_customer_secret_keys = oci.identity.get_customer_secret_keys(user_id=test_user["id"])
     ```
 
 

@@ -34,8 +34,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -77,8 +77,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -120,8 +120,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -163,8 +163,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -206,8 +206,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -249,8 +249,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -298,8 +298,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -347,8 +347,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -396,8 +396,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -445,8 +445,8 @@ public final class ApmConfigFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmConfig.ApmConfigFunctions;
      * import com.pulumi.oci.ApmConfig.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

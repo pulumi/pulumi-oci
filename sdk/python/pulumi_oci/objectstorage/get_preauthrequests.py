@@ -121,7 +121,7 @@ def get_preauthrequests(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_requests = oci.objectstorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```
@@ -162,7 +162,7 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_requests = oci.objectstorage.get_preauthrequests(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```

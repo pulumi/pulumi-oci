@@ -667,8 +667,8 @@ class DelegationControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance,
-            num_approvals_required=delegation_control_num_approvals_required,
+            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance == "true",
+            num_approvals_required=int(delegation_control_num_approvals_required),
             pre_approved_service_provider_action_names=delegation_control_pre_approved_service_provider_action_names,
             vault_id=test_vault["id"],
             vault_key_id=test_key["id"])
@@ -737,8 +737,8 @@ class DelegationControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance,
-            num_approvals_required=delegation_control_num_approvals_required,
+            is_auto_approve_during_maintenance=delegation_control_is_auto_approve_during_maintenance == "true",
+            num_approvals_required=int(delegation_control_num_approvals_required),
             pre_approved_service_provider_action_names=delegation_control_pre_approved_service_provider_action_names,
             vault_id=test_vault["id"],
             vault_key_id=test_key["id"])

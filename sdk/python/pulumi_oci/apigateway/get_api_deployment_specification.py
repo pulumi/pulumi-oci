@@ -108,7 +108,7 @@ def get_api_deployment_specification(api_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=test_api["id"])
+    test_api_deployment_specification = oci.apigateway.get_api_deployment_specification(api_id=test_api["id"])
     ```
 
 
@@ -138,7 +138,7 @@ def get_api_deployment_specification_output(api_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=test_api["id"])
+    test_api_deployment_specification = oci.apigateway.get_api_deployment_specification(api_id=test_api["id"])
     ```
 
 

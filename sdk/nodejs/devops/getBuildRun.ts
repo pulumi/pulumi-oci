@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildRun = oci.DevOps.getBuildRun({
+ * const testBuildRun = oci.devops.getBuildRun({
  *     buildRunId: testBuildRunOciDevopsBuildRun.id,
  * });
  * ```
@@ -124,7 +124,7 @@ export interface GetBuildRunResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildRun = oci.DevOps.getBuildRun({
+ * const testBuildRun = oci.devops.getBuildRun({
  *     buildRunId: testBuildRunOciDevopsBuildRun.id,
  * });
  * ```

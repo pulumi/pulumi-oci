@@ -94,7 +94,7 @@ def get_runbook_import_statuses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_import_statuses = oci.FleetAppsManagement.get_runbook_import_statuses(compartment_id=compartment_id)
+    test_runbook_import_statuses = oci.fleetappsmanagement.get_runbook_import_statuses(compartment_id=compartment_id)
     ```
 
 
@@ -128,7 +128,7 @@ def get_runbook_import_statuses_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_import_statuses = oci.FleetAppsManagement.get_runbook_import_statuses(compartment_id=compartment_id)
+    test_runbook_import_statuses = oci.fleetappsmanagement.get_runbook_import_statuses(compartment_id=compartment_id)
     ```
 
 

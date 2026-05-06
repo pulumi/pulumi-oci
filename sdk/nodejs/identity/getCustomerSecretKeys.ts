@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKeys = oci.Identity.getCustomerSecretKeys({
+ * const testCustomerSecretKeys = oci.identity.getCustomerSecretKeys({
  *     userId: testUser.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetCustomerSecretKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKeys = oci.Identity.getCustomerSecretKeys({
+ * const testCustomerSecretKeys = oci.identity.getCustomerSecretKeys({
  *     userId: testUser.id,
  * });
  * ```

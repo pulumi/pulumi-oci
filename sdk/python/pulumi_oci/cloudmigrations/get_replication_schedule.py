@@ -191,7 +191,7 @@ def get_replication_schedule(replication_schedule_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
+    test_replication_schedule = oci.cloudmigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_replication_schedule_output(replication_schedule_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
+    test_replication_schedule = oci.cloudmigrations.get_replication_schedule(replication_schedule_id=test_replication_schedule_oci_cloud_migrations_replication_schedule["id"])
     ```
 
 

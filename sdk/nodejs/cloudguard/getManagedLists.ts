@@ -30,13 +30,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedLists = oci.CloudGuard.getManagedLists({
+ * const testManagedLists = oci.cloudguard.getManagedLists({
  *     compartmentId: compartmentId,
  *     accessLevel: managedListAccessLevel,
- *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree === "true",
  *     displayName: managedListDisplayName,
  *     listType: managedListListType,
- *     resourceMetadataOnly: managedListResourceMetadataOnly,
+ *     resourceMetadataOnly: managedListResourceMetadataOnly === "true",
  *     state: managedListState,
  * });
  * ```
@@ -147,13 +147,13 @@ export interface GetManagedListsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedLists = oci.CloudGuard.getManagedLists({
+ * const testManagedLists = oci.cloudguard.getManagedLists({
  *     compartmentId: compartmentId,
  *     accessLevel: managedListAccessLevel,
- *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree === "true",
  *     displayName: managedListDisplayName,
  *     listType: managedListListType,
- *     resourceMetadataOnly: managedListResourceMetadataOnly,
+ *     resourceMetadataOnly: managedListResourceMetadataOnly === "true",
  *     state: managedListState,
  * });
  * ```

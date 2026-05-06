@@ -137,7 +137,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_autonomous_vm_clusters = oci.database.get_autonomous_vm_clusters(compartment_id=compartment_id,
         display_name=autonomous_vm_cluster_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=autonomous_vm_cluster_state)
@@ -183,7 +183,7 @@ def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_clusters = oci.Database.get_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_autonomous_vm_clusters = oci.database.get_autonomous_vm_clusters(compartment_id=compartment_id,
         display_name=autonomous_vm_cluster_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=autonomous_vm_cluster_state)

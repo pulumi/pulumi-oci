@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseGroups = oci.DataSafe.getTargetDatabaseGroups({
+ * const testTargetDatabaseGroups = oci.datasafe.getTargetDatabaseGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseGroupAccessLevel,
- *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree === "true",
  *     displayName: targetDatabaseGroupDisplayName,
  *     state: targetDatabaseGroupState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -136,10 +136,10 @@ export interface GetTargetDatabaseGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabaseGroups = oci.DataSafe.getTargetDatabaseGroups({
+ * const testTargetDatabaseGroups = oci.datasafe.getTargetDatabaseGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseGroupAccessLevel,
- *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseGroupCompartmentIdInSubtree === "true",
  *     displayName: targetDatabaseGroupDisplayName,
  *     state: targetDatabaseGroupState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

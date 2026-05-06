@@ -131,7 +131,7 @@ def get_scheduled_run(scheduled_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
+    test_scheduled_run = oci.meteringcomputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
     ```
 
 
@@ -163,7 +163,7 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
+    test_scheduled_run = oci.meteringcomputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
     ```
 
 

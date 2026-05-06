@@ -124,7 +124,7 @@ def get_bds_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=compartment_id,
+    test_bds_instances = oci.bigdataservice.get_bds_instances(compartment_id=compartment_id,
         display_name=bds_instance_display_name,
         state=bds_instance_state)
     ```
@@ -165,7 +165,7 @@ def get_bds_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=compartment_id,
+    test_bds_instances = oci.bigdataservice.get_bds_instances(compartment_id=compartment_id,
         display_name=bds_instance_display_name,
         state=bds_instance_state)
     ```

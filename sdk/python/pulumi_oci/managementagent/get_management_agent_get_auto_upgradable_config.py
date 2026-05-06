@@ -84,7 +84,7 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
+    test_management_agent_get_auto_upgradable_config = oci.managementagent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
 
 
@@ -113,7 +113,7 @@ def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
+    test_management_agent_get_auto_upgradable_config = oci.managementagent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
 
 

@@ -661,7 +661,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
+            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -676,7 +676,7 @@ class Function(pulumi.CustomResource):
             image_digest=function_image_digest,
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": function_provisioned_concurrency_config_count,
+                "count": int(function_provisioned_concurrency_config_count),
             },
             source_details={
                 "pbf_listing_id": test_pbf_listing["id"],
@@ -689,9 +689,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=function_timeout_in_seconds,
+            timeout_in_seconds=int(function_timeout_in_seconds),
             trace_config={
-                "is_enabled": function_trace_config_is_enabled,
+                "is_enabled": function_trace_config_is_enabled == "true",
             })
         ```
 
@@ -752,7 +752,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
+            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -767,7 +767,7 @@ class Function(pulumi.CustomResource):
             image_digest=function_image_digest,
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": function_provisioned_concurrency_config_count,
+                "count": int(function_provisioned_concurrency_config_count),
             },
             source_details={
                 "pbf_listing_id": test_pbf_listing["id"],
@@ -780,9 +780,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=function_timeout_in_seconds,
+            timeout_in_seconds=int(function_timeout_in_seconds),
             trace_config={
-                "is_enabled": function_trace_config_is_enabled,
+                "is_enabled": function_trace_config_is_enabled == "true",
             })
         ```
 

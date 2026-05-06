@@ -436,7 +436,7 @@ def get_config(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=test_apm_domain["id"],
+    test_config = oci.apmconfig.get_config(apm_domain_id=test_apm_domain["id"],
         config_id=test_config_oci_apm_config_config["id"])
     ```
 
@@ -498,7 +498,7 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=test_apm_domain["id"],
+    test_config = oci.apmconfig.get_config(apm_domain_id=test_apm_domain["id"],
         config_id=test_config_oci_apm_config_config["id"])
     ```
 

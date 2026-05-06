@@ -321,7 +321,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.DevOps.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
+    test_deployment = oci.devops.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
     ```
 
 
@@ -369,7 +369,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.DevOps.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
+    test_deployment = oci.devops.get_deployment(deployment_id=test_deployment_oci_devops_deployment["id"])
     ```
 
 

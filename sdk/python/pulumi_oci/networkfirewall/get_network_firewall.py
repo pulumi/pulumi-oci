@@ -276,7 +276,7 @@ def get_network_firewall(network_firewall_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall = oci.NetworkFirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
+    test_network_firewall = oci.networkfirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_network_firewall_output(network_firewall_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall = oci.NetworkFirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
+    test_network_firewall = oci.networkfirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
     ```
 
 

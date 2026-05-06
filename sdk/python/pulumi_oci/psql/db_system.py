@@ -854,13 +854,13 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
-                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled == "true",
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },
             shape=db_system_shape,
             storage_details={
-                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable == "true",
                 "system_type": db_system_storage_details_system_type,
                 "availability_domain": db_system_storage_details_availability_domain,
                 "iops": db_system_storage_details_iops,
@@ -873,9 +873,9 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_count=db_system_instance_count,
-            instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
-            instance_ocpu_count=db_system_instance_ocpu_count,
+            instance_count=int(db_system_instance_count),
+            instance_memory_size_in_gbs=int(db_system_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(db_system_instance_ocpu_count),
             instances_details=[{
                 "description": db_system_instances_details_description,
                 "display_name": db_system_instances_details_display_name,
@@ -887,19 +887,19 @@ class DbSystem(pulumi.CustomResource):
                     "copy_policy": {
                         "compartment_id": compartment_id,
                         "regions": db_system_management_policy_backup_policy_copy_policy_regions,
-                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                        "retention_period": int(db_system_management_policy_backup_policy_copy_policy_retention_period),
                     },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,
-                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                    "retention_days": int(db_system_management_policy_backup_policy_retention_days),
                 },
                 "maintenance_window_start": db_system_management_policy_maintenance_window_start,
             },
             source={
                 "source_type": db_system_source_source_type,
                 "backup_id": test_backup["id"],
-                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides == "true",
             },
             system_type=db_system_system_type,
             patch_operations=[{
@@ -980,13 +980,13 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
-                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled == "true",
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },
             shape=db_system_shape,
             storage_details={
-                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable == "true",
                 "system_type": db_system_storage_details_system_type,
                 "availability_domain": db_system_storage_details_availability_domain,
                 "iops": db_system_storage_details_iops,
@@ -999,9 +999,9 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_count=db_system_instance_count,
-            instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
-            instance_ocpu_count=db_system_instance_ocpu_count,
+            instance_count=int(db_system_instance_count),
+            instance_memory_size_in_gbs=int(db_system_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(db_system_instance_ocpu_count),
             instances_details=[{
                 "description": db_system_instances_details_description,
                 "display_name": db_system_instances_details_display_name,
@@ -1013,19 +1013,19 @@ class DbSystem(pulumi.CustomResource):
                     "copy_policy": {
                         "compartment_id": compartment_id,
                         "regions": db_system_management_policy_backup_policy_copy_policy_regions,
-                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                        "retention_period": int(db_system_management_policy_backup_policy_copy_policy_retention_period),
                     },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,
-                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                    "retention_days": int(db_system_management_policy_backup_policy_retention_days),
                 },
                 "maintenance_window_start": db_system_management_policy_maintenance_window_start,
             },
             source={
                 "source_type": db_system_source_source_type,
                 "backup_id": test_backup["id"],
-                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides == "true",
             },
             system_type=db_system_system_type,
             patch_operations=[{

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKey = oci.Identity.getDomainsApiKey({
+ * const testApiKey = oci.identity.getDomainsApiKey({
  *     apiKeyId: testApiKeyOciIdentityApiKey.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
@@ -163,7 +163,7 @@ export interface GetDomainsApiKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKey = oci.Identity.getDomainsApiKey({
+ * const testApiKey = oci.identity.getDomainsApiKey({
  *     apiKeyId: testApiKeyOciIdentityApiKey.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],

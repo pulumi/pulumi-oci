@@ -474,7 +474,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
-            cidr_prefix_length=ipv6_cidr_prefix_length,
+            cidr_prefix_length=int(ipv6_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -539,7 +539,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
-            cidr_prefix_length=ipv6_cidr_prefix_length,
+            cidr_prefix_length=int(ipv6_cidr_prefix_length),
             defined_tags={
                 "Operations.CostCenter": "42",
             },

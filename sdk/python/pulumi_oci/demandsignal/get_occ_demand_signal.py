@@ -213,7 +213,7 @@ def get_occ_demand_signal(occ_demand_signal_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signal = oci.DemandSignal.get_occ_demand_signal(occ_demand_signal_id=test_occ_demand_signal_oci_demand_signal_occ_demand_signal["id"])
+    test_occ_demand_signal = oci.demandsignal.get_occ_demand_signal(occ_demand_signal_id=test_occ_demand_signal_oci_demand_signal_occ_demand_signal["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_occ_demand_signal_output(occ_demand_signal_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signal = oci.DemandSignal.get_occ_demand_signal(occ_demand_signal_id=test_occ_demand_signal_oci_demand_signal_occ_demand_signal["id"])
+    test_occ_demand_signal = oci.demandsignal.get_occ_demand_signal(occ_demand_signal_id=test_occ_demand_signal_oci_demand_signal_occ_demand_signal["id"])
     ```
 
 

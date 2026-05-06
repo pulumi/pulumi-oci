@@ -336,7 +336,7 @@ def get_discovery_jobs_result(discovery_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_result = oci.datasafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
         result_key=discovery_jobs_result_result_key)
     ```
 
@@ -389,7 +389,7 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_result = oci.datasafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
         result_key=discovery_jobs_result_result_key)
     ```
 

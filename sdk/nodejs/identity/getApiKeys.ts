@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getApiKeys({
+ * const testApiKeys = oci.identity.getApiKeys({
  *     userId: testUser.id,
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetApiKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getApiKeys({
+ * const testApiKeys = oci.identity.getApiKeys({
  *     userId: testUser.id,
  * });
  * ```

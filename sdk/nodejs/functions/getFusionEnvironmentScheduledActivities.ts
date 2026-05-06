@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
+ * const testFusionEnvironmentScheduledActivities = oci.functions.getFusionEnvironmentScheduledActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentScheduledActivityDisplayName,
  *     runCycle: fusionEnvironmentScheduledActivityRunCycle,
@@ -114,7 +114,7 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
+ * const testFusionEnvironmentScheduledActivities = oci.functions.getFusionEnvironmentScheduledActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentScheduledActivityDisplayName,
  *     runCycle: fusionEnvironmentScheduledActivityRunCycle,

@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     name: newsReportName,
  *     newsFrequency: newsReportNewsFrequency,
  *     onsTopicId: testOnsTopic.id,
- *     areChildCompartmentsIncluded: newsReportAreChildCompartmentsIncluded,
+ *     areChildCompartmentsIncluded: newsReportAreChildCompartmentsIncluded === "true",
  *     dayOfWeek: newsReportDayOfWeek,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
+ * const testOrganizationSubscriptions = oci.osuborganizationsubscription.getOrganizationSubscriptions({
  *     compartmentId: compartmentId,
  *     subscriptionIds: organizationSubscriptionSubscriptionIds,
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
@@ -81,7 +81,7 @@ export interface GetOrganizationSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
+ * const testOrganizationSubscriptions = oci.osuborganizationsubscription.getOrganizationSubscriptions({
  *     compartmentId: compartmentId,
  *     subscriptionIds: organizationSubscriptionSubscriptionIds,
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,

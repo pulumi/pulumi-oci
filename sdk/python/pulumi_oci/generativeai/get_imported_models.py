@@ -133,7 +133,7 @@ def get_imported_models(capabilities: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_models = oci.GenerativeAi.get_imported_models(compartment_id=compartment_id,
+    test_imported_models = oci.generativeai.get_imported_models(compartment_id=compartment_id,
         capabilities=imported_model_capability,
         display_name=imported_model_display_name,
         id=imported_model_id,
@@ -188,7 +188,7 @@ def get_imported_models_output(capabilities: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_models = oci.GenerativeAi.get_imported_models(compartment_id=compartment_id,
+    test_imported_models = oci.generativeai.get_imported_models(compartment_id=compartment_id,
         capabilities=imported_model_capability,
         display_name=imported_model_display_name,
         id=imported_model_id,

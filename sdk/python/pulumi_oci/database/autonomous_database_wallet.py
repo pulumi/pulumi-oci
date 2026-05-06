@@ -284,7 +284,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             password=autonomous_database_wallet_password,
             base64_encode_content=False,
             generate_type=autonomous_database_wallet_generate_type,
-            is_regional=autonomous_database_wallet_is_regional)
+            is_regional=autonomous_database_wallet_is_regional == "true")
         ```
 
         ## Import
@@ -340,7 +340,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             password=autonomous_database_wallet_password,
             base64_encode_content=False,
             generate_type=autonomous_database_wallet_generate_type,
-            is_regional=autonomous_database_wallet_is_regional)
+            is_regional=autonomous_database_wallet_is_regional == "true")
         ```
 
         ## Import

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testSubscriptionAcknowledgmentConfiguration = new oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration", {
  *     compartmentId: compartmentId,
- *     isAcknowledged: subscriptionAcknowledgmentConfigurationIsAcknowledged,
+ *     isAcknowledged: subscriptionAcknowledgmentConfigurationIsAcknowledged === "true",
  * });
  * ```
  *

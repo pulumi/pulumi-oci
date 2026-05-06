@@ -30,12 +30,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinitions = oci.DataSafe.getUnifiedAuditPolicyDefinitions({
+ * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,
@@ -161,12 +161,12 @@ export interface GetUnifiedAuditPolicyDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinitions = oci.DataSafe.getUnifiedAuditPolicyDefinitions({
+ * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,

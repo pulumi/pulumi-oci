@@ -166,7 +166,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
 
         test_subscription_acknowledgment_configuration = oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration",
             compartment_id=compartment_id,
-            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged)
+            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged == "true")
         ```
 
         ## Import
@@ -206,7 +206,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
 
         test_subscription_acknowledgment_configuration = oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration",
             compartment_id=compartment_id,
-            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged)
+            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged == "true")
         ```
 
         ## Import

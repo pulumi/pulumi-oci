@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * const testAnalyticsInstance = new oci.analytics.AnalyticsInstance("test_analytics_instance", {
  *     capacity: {
  *         capacityType: analyticsInstanceCapacityCapacityType,
- *         capacityValue: analyticsInstanceCapacityCapacityValue,
+ *         capacityValue: Number(analyticsInstanceCapacityCapacityValue),
  *     },
  *     compartmentId: compartmentId,
  *     featureSet: analyticsInstanceFeatureSet,

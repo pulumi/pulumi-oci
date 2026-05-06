@@ -148,7 +148,7 @@ def get_scheduled_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_actions = oci.Database.get_scheduled_actions(compartment_id=compartment_id,
+    test_scheduled_actions = oci.database.get_scheduled_actions(compartment_id=compartment_id,
         display_name=scheduled_action_display_name,
         id=scheduled_action_id,
         scheduling_plan_id=test_scheduling_plan["id"],
@@ -203,7 +203,7 @@ def get_scheduled_actions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_actions = oci.Database.get_scheduled_actions(compartment_id=compartment_id,
+    test_scheduled_actions = oci.database.get_scheduled_actions(compartment_id=compartment_id,
         display_name=scheduled_action_display_name,
         id=scheduled_action_id,
         scheduling_plan_id=test_scheduling_plan["id"],

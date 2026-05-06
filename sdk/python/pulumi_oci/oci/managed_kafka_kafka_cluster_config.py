@@ -306,7 +306,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                 "properties": kafka_cluster_config_latest_config_properties,
                 "config_id": test_config["id"],
                 "time_created": kafka_cluster_config_latest_config_time_created,
-                "version_number": kafka_cluster_config_latest_config_version_number,
+                "version_number": int(kafka_cluster_config_latest_config_version_number),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -360,7 +360,7 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                 "properties": kafka_cluster_config_latest_config_properties,
                 "config_id": test_config["id"],
                 "time_created": kafka_cluster_config_latest_config_time_created,
-                "version_number": kafka_cluster_config_latest_config_version_number,
+                "version_number": int(kafka_cluster_config_latest_config_version_number),
             },
             defined_tags={
                 "Operations.CostCenter": "42",

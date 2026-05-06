@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExportSets = oci.FileStorage.getExportSets({
+ * const testExportSets = oci.filestorage.getExportSets({
  *     availabilityDomain: exportSetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: exportSetDisplayName,
@@ -106,7 +106,7 @@ export interface GetExportSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExportSets = oci.FileStorage.getExportSets({
+ * const testExportSets = oci.filestorage.getExportSets({
  *     availabilityDomain: exportSetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: exportSetDisplayName,

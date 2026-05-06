@@ -282,7 +282,7 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
+    test_external_exadata_storage_connector = oci.databasemanagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
 
 
@@ -327,7 +327,7 @@ def get_external_exadata_storage_connector_output(external_exadata_storage_conne
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
+    test_external_exadata_storage_connector = oci.databasemanagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
 
 

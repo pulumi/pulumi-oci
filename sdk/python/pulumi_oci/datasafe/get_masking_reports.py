@@ -154,9 +154,9 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+    test_masking_reports = oci.datasafe.get_masking_reports(compartment_id=compartment_id,
         access_level=masking_report_access_level,
-        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree == "true",
         masking_policy_id=test_masking_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
@@ -210,9 +210,9 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+    test_masking_reports = oci.datasafe.get_masking_reports(compartment_id=compartment_id,
         access_level=masking_report_access_level,
-        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree == "true",
         masking_policy_id=test_masking_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])

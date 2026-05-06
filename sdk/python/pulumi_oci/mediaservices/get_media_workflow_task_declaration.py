@@ -120,10 +120,10 @@ def get_media_workflow_task_declaration(compartment_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
-        is_current=media_workflow_task_declaration_is_current,
+    test_media_workflow_task_declaration = oci.mediaservices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current == "true",
         name=media_workflow_task_declaration_name,
-        version=media_workflow_task_declaration_version)
+        version=int(media_workflow_task_declaration_version))
     ```
 
 
@@ -163,10 +163,10 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
-        is_current=media_workflow_task_declaration_is_current,
+    test_media_workflow_task_declaration = oci.mediaservices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current == "true",
         name=media_workflow_task_declaration_name,
-        version=media_workflow_task_declaration_version)
+        version=int(media_workflow_task_declaration_version))
     ```
 
 

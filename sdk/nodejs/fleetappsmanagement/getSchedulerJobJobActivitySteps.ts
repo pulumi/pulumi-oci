@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobJobActivitySteps = oci.FleetAppsManagement.getSchedulerJobJobActivitySteps({
+ * const testSchedulerJobJobActivitySteps = oci.fleetappsmanagement.getSchedulerJobJobActivitySteps({
  *     jobActivityId: testJobActivity.id,
  *     schedulerJobId: testJob.id,
  *     resourceTaskId: testResourceTask.id,
@@ -108,7 +108,7 @@ export interface GetSchedulerJobJobActivityStepsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobJobActivitySteps = oci.FleetAppsManagement.getSchedulerJobJobActivitySteps({
+ * const testSchedulerJobJobActivitySteps = oci.fleetappsmanagement.getSchedulerJobJobActivitySteps({
  *     jobActivityId: testJobActivity.id,
  *     schedulerJobId: testJob.id,
  *     resourceTaskId: testResourceTask.id,

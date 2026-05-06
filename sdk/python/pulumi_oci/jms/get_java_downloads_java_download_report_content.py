@@ -71,7 +71,7 @@ def get_java_downloads_java_download_report_content(java_download_report_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report_content = oci.Jms.get_java_downloads_java_download_report_content(java_download_report_id=test_java_download_report["id"])
+    test_java_download_report_content = oci.jms.get_java_downloads_java_download_report_content(java_download_report_id=test_java_download_report["id"])
     ```
 
 
@@ -98,7 +98,7 @@ def get_java_downloads_java_download_report_content_output(java_download_report_
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report_content = oci.Jms.get_java_downloads_java_download_report_content(java_download_report_id=test_java_download_report["id"])
+    test_java_download_report_content = oci.jms.get_java_downloads_java_download_report_content(java_download_report_id=test_java_download_report["id"])
     ```
 
 

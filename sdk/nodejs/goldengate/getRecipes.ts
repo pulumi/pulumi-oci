@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipes = oci.GoldenGate.getRecipes({
+ * const testRecipes = oci.goldengate.getRecipes({
  *     compartmentId: compartmentId,
  *     displayName: recipeDisplayName,
  *     recipeType: recipeRecipeType,
@@ -87,7 +87,7 @@ export interface GetRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipes = oci.GoldenGate.getRecipes({
+ * const testRecipes = oci.goldengate.getRecipes({
  *     compartmentId: compartmentId,
  *     displayName: recipeDisplayName,
  *     recipeType: recipeRecipeType,

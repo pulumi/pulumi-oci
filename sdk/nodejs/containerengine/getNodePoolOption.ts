@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
+ * const testNodePoolOption = oci.containerengine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */
@@ -111,13 +111,13 @@ export interface GetNodePoolOptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
+ * const testNodePoolOption = oci.containerengine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */

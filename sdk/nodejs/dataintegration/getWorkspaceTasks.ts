@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceTasks = oci.DataIntegration.getWorkspaceTasks({
+ * const testWorkspaceTasks = oci.dataintegration.getWorkspaceTasks({
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceTaskFields,
  *     folderId: testFolder.id,
@@ -124,7 +124,7 @@ export interface GetWorkspaceTasksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceTasks = oci.DataIntegration.getWorkspaceTasks({
+ * const testWorkspaceTasks = oci.dataintegration.getWorkspaceTasks({
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceTaskFields,
  *     folderId: testFolder.id,

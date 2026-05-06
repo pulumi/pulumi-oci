@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.DataScience.getProjects({
+ * const testProjects = oci.datascience.getProjects({
  *     compartmentId: compartmentId,
  *     createdBy: projectCreatedBy,
  *     displayName: projectDisplayName,
@@ -106,7 +106,7 @@ export interface GetProjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.DataScience.getProjects({
+ * const testProjects = oci.datascience.getProjects({
  *     compartmentId: compartmentId,
  *     createdBy: projectCreatedBy,
  *     displayName: projectDisplayName,

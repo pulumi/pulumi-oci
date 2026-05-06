@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunStatements = oci.DataFlow.getRunStatements({
+ * const testRunStatements = oci.dataflow.getRunStatements({
  *     runId: testRun.id,
  *     state: runStatementState,
  * });
@@ -80,7 +80,7 @@ export interface GetRunStatementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunStatements = oci.DataFlow.getRunStatements({
+ * const testRunStatements = oci.dataflow.getRunStatements({
  *     runId: testRun.id,
  *     state: runStatementState,
  * });

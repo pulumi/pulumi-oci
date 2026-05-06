@@ -378,7 +378,7 @@ def get_secret(secret_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
+    test_secret = oci.vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
 
 
@@ -431,7 +431,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
+    test_secret = oci.vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
 
 

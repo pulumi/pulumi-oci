@@ -276,7 +276,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse = oci.opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
 
 
@@ -321,7 +321,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse = oci.opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
 
 

@@ -167,7 +167,7 @@ def get_mysql_configurations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=compartment_id,
+    test_mysql_configurations = oci.mysql.get_mysql_configurations(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         display_name=mysql_configuration_display_name,
         shape_name=mysql_shape_name,
@@ -230,7 +230,7 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=compartment_id,
+    test_mysql_configurations = oci.mysql.get_mysql_configurations(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         display_name=mysql_configuration_display_name,
         shape_name=mysql_shape_name,

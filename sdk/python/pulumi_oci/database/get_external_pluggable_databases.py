@@ -138,7 +138,7 @@ def get_external_pluggable_databases(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=compartment_id,
+    test_external_pluggable_databases = oci.database.get_external_pluggable_databases(compartment_id=compartment_id,
         display_name=external_pluggable_database_display_name,
         external_container_database_id=test_external_container_database["id"],
         state=external_pluggable_database_state)
@@ -185,7 +185,7 @@ def get_external_pluggable_databases_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=compartment_id,
+    test_external_pluggable_databases = oci.database.get_external_pluggable_databases(compartment_id=compartment_id,
         display_name=external_pluggable_database_display_name,
         external_container_database_id=test_external_container_database["id"],
         state=external_pluggable_database_state)

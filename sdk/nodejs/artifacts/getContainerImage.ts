@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImage = oci.Artifacts.getContainerImage({
+ * const testContainerImage = oci.artifacts.getContainerImage({
  *     imageId: containerImageId,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetContainerImageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImage = oci.Artifacts.getContainerImage({
+ * const testContainerImage = oci.artifacts.getContainerImage({
  *     imageId: containerImageId,
  * });
  * ```

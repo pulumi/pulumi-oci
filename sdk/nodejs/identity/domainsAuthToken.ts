@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *         value: authTokenTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: authTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     user: {
  *         ocid: testUser.ocid,

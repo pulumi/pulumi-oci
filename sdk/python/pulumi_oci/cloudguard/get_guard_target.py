@@ -276,7 +276,7 @@ def get_guard_target(target_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target = oci.CloudGuard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
+    test_target = oci.cloudguard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_target = oci.CloudGuard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
+    test_target = oci.cloudguard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
     ```
 
 

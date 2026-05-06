@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMarketplaceMetadataPublicKeys = oci.Marketplace.getMarketplaceMetadataPublicKeys({
+ * const testMarketplaceMetadataPublicKeys = oci.marketplace.getMarketplaceMetadataPublicKeys({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -68,7 +68,7 @@ export interface GetMarketplaceMetadataPublicKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMarketplaceMetadataPublicKeys = oci.Marketplace.getMarketplaceMetadataPublicKeys({
+ * const testMarketplaceMetadataPublicKeys = oci.marketplace.getMarketplaceMetadataPublicKeys({
  *     compartmentId: compartmentId,
  * });
  * ```

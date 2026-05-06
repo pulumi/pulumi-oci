@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionInDays: mysqlBackupRetentionInDays,
+ *     retentionInDays: Number(mysqlBackupRetentionInDays),
  *     softDelete: mysqlBackupSoftDelete,
  * });
  * ```

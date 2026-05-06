@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystem = oci.DatabaseManagement.getExternalDbSystem({
+ * const testExternalDbSystem = oci.databasemanagement.getExternalDbSystem({
  *     externalDbSystemId: testExternalDbSystemOciDatabaseManagementExternalDbSystem.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetExternalDbSystemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystem = oci.DatabaseManagement.getExternalDbSystem({
+ * const testExternalDbSystem = oci.databasemanagement.getExternalDbSystem({
  *     externalDbSystemId: testExternalDbSystemOciDatabaseManagementExternalDbSystem.id,
  * });
  * ```

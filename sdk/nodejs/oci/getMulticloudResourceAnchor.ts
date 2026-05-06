@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     resourceAnchorId: resourceAnchorId,
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  * });
  * ```
  */
@@ -153,7 +153,7 @@ export interface GetMulticloudResourceAnchorResult {
  *     resourceAnchorId: resourceAnchorId,
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  * });
  * ```
  */

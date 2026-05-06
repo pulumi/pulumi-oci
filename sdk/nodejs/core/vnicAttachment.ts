@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *
  * const testVnicAttachment = new oci.core.VnicAttachment("test_vnic_attachment", {
  *     createVnicDetails: {
- *         assignIpv6ip: vnicAttachmentCreateVnicDetailsAssignIpv6ip,
- *         assignPrivateDnsRecord: vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord,
+ *         assignIpv6ip: vnicAttachmentCreateVnicDetailsAssignIpv6ip === "true",
+ *         assignPrivateDnsRecord: vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord === "true",
  *         assignPublicIp: vnicAttachmentCreateVnicDetailsAssignPublicIp,
  *         definedTags: vnicAttachmentCreateVnicDetailsDefinedTags,
  *         displayName: vnicAttachmentCreateVnicDetailsDisplayName,
@@ -40,14 +40,14 @@ import * as utilities from "../utilities";
  *         privateIp: vnicAttachmentCreateVnicDetailsPrivateIp,
  *         privateIpId: testPrivateIp.id,
  *         securityAttributes: vnicAttachmentCreateVnicDetailsSecurityAttributes,
- *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
+ *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck === "true",
  *         subnetCidr: vnicAttachmentCreateVnicDetailsSubnetCidr,
  *         subnetId: testSubnet.id,
  *         vlanId: testVlan.id,
  *     },
  *     instanceId: testInstance.id,
  *     displayName: vnicAttachmentDisplayName,
- *     nicIndex: vnicAttachmentNicIndex,
+ *     nicIndex: Number(vnicAttachmentNicIndex),
  * });
  * ```
  *

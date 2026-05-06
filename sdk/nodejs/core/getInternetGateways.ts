@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternetGateways = oci.Core.getInternetGateways({
+ * const testInternetGateways = oci.core.getInternetGateways({
  *     compartmentId: compartmentId,
  *     displayName: internetGatewayDisplayName,
  *     state: internetGatewayState,
@@ -102,7 +102,7 @@ export interface GetInternetGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternetGateways = oci.Core.getInternetGateways({
+ * const testInternetGateways = oci.core.getInternetGateways({
  *     compartmentId: compartmentId,
  *     displayName: internetGatewayDisplayName,
  *     state: internetGatewayState,

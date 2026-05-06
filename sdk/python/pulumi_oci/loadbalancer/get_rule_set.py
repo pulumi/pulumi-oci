@@ -103,7 +103,7 @@ def get_rule_set(load_balancer_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=test_load_balancer["id"],
+    test_rule_set = oci.loadbalancer.get_rule_set(load_balancer_id=test_load_balancer["id"],
         name=rule_set_name)
     ```
 
@@ -137,7 +137,7 @@ def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=test_load_balancer["id"],
+    test_rule_set = oci.loadbalancer.get_rule_set(load_balancer_id=test_load_balancer["id"],
         name=rule_set_name)
     ```
 

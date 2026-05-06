@@ -31,11 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetManagedInstanceUpdatablePackages(ctx, &osmanagementhub.GetManagedInstanceUpdatablePackagesArgs{
 //				ManagedInstanceId:   testManagedInstance.Id,
-//				AdvisoryNames:       managedInstanceUpdatablePackageAdvisoryName,
-//				AdvisorySeverities:  managedInstanceUpdatablePackageAdvisorySeverity,
-//				ClassificationTypes: managedInstanceUpdatablePackageClassificationType,
+//				AdvisoryNames:       pulumi.ToArray(managedInstanceUpdatablePackageAdvisoryName),
+//				AdvisorySeverities:  pulumi.ToArray(managedInstanceUpdatablePackageAdvisorySeverity),
+//				ClassificationTypes: pulumi.ToArray(managedInstanceUpdatablePackageClassificationType),
 //				CompartmentId:       pulumi.StringRef(compartmentId),
-//				DisplayNames:        managedInstanceUpdatablePackageDisplayName,
+//				DisplayNames:        pulumi.ToArray(managedInstanceUpdatablePackageDisplayName),
 //				DisplayNameContains: pulumi.StringRef(managedInstanceUpdatablePackageDisplayNameContains),
 //			}, nil)
 //			if err != nil {

@@ -151,7 +151,7 @@ def get_mount_targets(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+    test_mount_targets = oci.filestorage.get_mount_targets(availability_domain=mount_target_availability_domain,
         compartment_id=compartment_id,
         display_name=mount_target_display_name,
         export_set_id=test_export_set["id"],
@@ -206,7 +206,7 @@ def get_mount_targets_output(availability_domain: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+    test_mount_targets = oci.filestorage.get_mount_targets(availability_domain=mount_target_availability_domain,
         compartment_id=compartment_id,
         display_name=mount_target_display_name,
         export_set_id=test_export_set["id"],

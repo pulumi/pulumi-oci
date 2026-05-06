@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlans = oci.Opsi.getChargebackPlans({
+ * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -85,10 +85,10 @@ export interface GetChargebackPlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlans = oci.Opsi.getChargebackPlans({
+ * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
  * });
  * ```
  */

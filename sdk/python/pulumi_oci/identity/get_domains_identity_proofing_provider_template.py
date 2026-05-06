@@ -338,7 +338,7 @@ def get_domains_identity_proofing_provider_template(attribute_sets: Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_proofing_provider_template = oci.Identity.get_domains_identity_proofing_provider_template(idcs_endpoint=test_domain["url"],
+    test_identity_proofing_provider_template = oci.identity.get_domains_identity_proofing_provider_template(idcs_endpoint=test_domain["url"],
         identity_proofing_provider_template_id=test_identity_proofing_provider_template_oci_identity_domains_identity_proofing_provider_template["id"],
         attribute_sets=["all"],
         attributes="",
@@ -408,7 +408,7 @@ def get_domains_identity_proofing_provider_template_output(attribute_sets: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_proofing_provider_template = oci.Identity.get_domains_identity_proofing_provider_template(idcs_endpoint=test_domain["url"],
+    test_identity_proofing_provider_template = oci.identity.get_domains_identity_proofing_provider_template(idcs_endpoint=test_domain["url"],
         identity_proofing_provider_template_id=test_identity_proofing_provider_template_oci_identity_domains_identity_proofing_provider_template["id"],
         attribute_sets=["all"],
         attributes="",

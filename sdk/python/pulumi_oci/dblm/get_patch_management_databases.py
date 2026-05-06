@@ -184,11 +184,11 @@ def get_patch_management_databases(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_patch_management_databases = oci.Dblm.get_patch_management_databases(compartment_id=compartment_id,
+    test_patch_management_databases = oci.dblm.get_patch_management_databases(compartment_id=compartment_id,
         database_release=patch_management_database_database_release,
         database_type=patch_management_database_database_type,
         display_name=patch_management_database_display_name,
-        drifter_patch_id=test_patch["id"],
+        drifter_patch_id=int(test_patch["id"]),
         image_compliance=patch_management_database_image_compliance,
         image_id=test_image["id"],
         severity_types=patch_management_database_severity_type,
@@ -255,11 +255,11 @@ def get_patch_management_databases_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_patch_management_databases = oci.Dblm.get_patch_management_databases(compartment_id=compartment_id,
+    test_patch_management_databases = oci.dblm.get_patch_management_databases(compartment_id=compartment_id,
         database_release=patch_management_database_database_release,
         database_type=patch_management_database_database_type,
         display_name=patch_management_database_display_name,
-        drifter_patch_id=test_patch["id"],
+        drifter_patch_id=int(test_patch["id"]),
         image_compliance=patch_management_database_image_compliance,
         image_id=test_image["id"],
         severity_types=patch_management_database_severity_type,

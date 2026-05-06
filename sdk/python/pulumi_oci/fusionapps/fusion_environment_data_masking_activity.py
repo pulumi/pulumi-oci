@@ -186,7 +186,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         test_fusion_environment_data_masking_activity = oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity",
             fusion_environment_id=test_fusion_environment["id"],
-            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking)
+            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking == "true")
         ```
 
         ## Import
@@ -229,7 +229,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         test_fusion_environment_data_masking_activity = oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity",
             fusion_environment_id=test_fusion_environment["id"],
-            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking)
+            is_resume_data_masking=fusion_environment_data_masking_activity_is_resume_data_masking == "true")
         ```
 
         ## Import

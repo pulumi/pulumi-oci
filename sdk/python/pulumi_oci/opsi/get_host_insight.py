@@ -380,7 +380,7 @@ def get_host_insight(host_insight_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
+    test_host_insight = oci.opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
     ```
 
 
@@ -433,7 +433,7 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
+    test_host_insight = oci.opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
     ```
 
 

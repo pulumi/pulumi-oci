@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrations = oci.CloudMigrations.getMigrations({
+ * const testMigrations = oci.cloudmigrations.getMigrations({
  *     compartmentId: compartmentId,
  *     displayName: migrationDisplayName,
  *     migrationId: testMigration.id,
@@ -98,7 +98,7 @@ export interface GetMigrationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrations = oci.CloudMigrations.getMigrations({
+ * const testMigrations = oci.cloudmigrations.getMigrations({
  *     compartmentId: compartmentId,
  *     displayName: migrationDisplayName,
  *     migrationId: testMigration.id,

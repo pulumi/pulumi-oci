@@ -308,7 +308,7 @@ def get_sql_collection(sql_collection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
+    test_sql_collection = oci.datasafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
+    test_sql_collection = oci.datasafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
     ```
 
 

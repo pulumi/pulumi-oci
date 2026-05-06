@@ -98,7 +98,7 @@ def get_cpes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpes = oci.Core.get_cpes(compartment_id=compartment_id)
+    test_cpes = oci.core.get_cpes(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_cpes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cpes = oci.Core.get_cpes(compartment_id=compartment_id)
+    test_cpes = oci.core.get_cpes(compartment_id=compartment_id)
     ```
 
 

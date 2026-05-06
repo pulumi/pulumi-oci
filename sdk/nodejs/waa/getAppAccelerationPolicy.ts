@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAccelerationPolicy = oci.Waa.getAppAccelerationPolicy({
+ * const testWebAppAccelerationPolicy = oci.waa.getAppAccelerationPolicy({
  *     webAppAccelerationPolicyId: testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetAppAccelerationPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAccelerationPolicy = oci.Waa.getAppAccelerationPolicy({
+ * const testWebAppAccelerationPolicy = oci.waa.getAppAccelerationPolicy({
  *     webAppAccelerationPolicyId: testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id,
  * });
  * ```

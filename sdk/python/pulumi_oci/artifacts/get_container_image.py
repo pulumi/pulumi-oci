@@ -288,7 +288,7 @@ def get_container_image(image_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image = oci.Artifacts.get_container_image(image_id=container_image_id)
+    test_container_image = oci.artifacts.get_container_image(image_id=container_image_id)
     ```
 
 
@@ -333,7 +333,7 @@ def get_container_image_output(image_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image = oci.Artifacts.get_container_image(image_id=container_image_id)
+    test_container_image = oci.artifacts.get_container_image(image_id=container_image_id)
     ```
 
 

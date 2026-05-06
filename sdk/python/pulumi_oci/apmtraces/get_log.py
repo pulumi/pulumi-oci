@@ -261,7 +261,7 @@ def get_log(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.ApmTraces.get_log(apm_domain_id=test_apm_domain["id"],
+    test_log = oci.apmtraces.get_log(apm_domain_id=test_apm_domain["id"],
         log_key=log_log_key,
         time_log_ended_less_than=log_time_log_ended_less_than,
         time_log_started_greater_than_or_equal_to=log_time_log_started_greater_than_or_equal_to)
@@ -316,7 +316,7 @@ def get_log_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.ApmTraces.get_log(apm_domain_id=test_apm_domain["id"],
+    test_log = oci.apmtraces.get_log(apm_domain_id=test_apm_domain["id"],
         log_key=log_log_key,
         time_log_ended_less_than=log_time_log_ended_less_than,
         time_log_started_greater_than_or_equal_to=log_time_log_started_greater_than_or_equal_to)

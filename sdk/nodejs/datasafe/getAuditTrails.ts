@@ -30,11 +30,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrails = oci.DataSafe.getAuditTrails({
+ * const testAuditTrails = oci.datasafe.getAuditTrails({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAccessLevel,
  *     auditTrailId: testAuditTrail.id,
- *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree === "true",
  *     displayName: auditTrailDisplayName,
  *     state: auditTrailState,
  *     status: auditTrailStatus,
@@ -164,11 +164,11 @@ export interface GetAuditTrailsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrails = oci.DataSafe.getAuditTrails({
+ * const testAuditTrails = oci.datasafe.getAuditTrails({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAccessLevel,
  *     auditTrailId: testAuditTrail.id,
- *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree === "true",
  *     displayName: auditTrailDisplayName,
  *     state: auditTrailState,
  *     status: auditTrailStatus,

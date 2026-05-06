@@ -165,8 +165,8 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameter = oci.databasemanagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         source=managed_databases_database_parameter_source)
     ```
@@ -212,8 +212,8 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameter = oci.DatabaseManagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameter = oci.databasemanagement.get_managed_databases_database_parameter(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         source=managed_databases_database_parameter_source)
     ```

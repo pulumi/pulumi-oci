@@ -127,7 +127,7 @@ def get_drg_route_distributions(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=test_drg["id"],
+    test_drg_route_distributions = oci.core.get_drg_route_distributions(drg_id=test_drg["id"],
         display_name=drg_route_distribution_display_name,
         state=drg_route_distribution_state)
     ```
@@ -171,7 +171,7 @@ def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=test_drg["id"],
+    test_drg_route_distributions = oci.core.get_drg_route_distributions(drg_id=test_drg["id"],
         display_name=drg_route_distribution_display_name,
         state=drg_route_distribution_state)
     ```

@@ -188,7 +188,7 @@ def get_drg_attachments(attachment_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+    test_drg_attachments = oci.core.get_drg_attachments(compartment_id=compartment_id,
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],
@@ -259,7 +259,7 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+    test_drg_attachments = oci.core.get_drg_attachments(compartment_id=compartment_id,
         attachment_type=drg_attachment_attachment_type,
         display_name=drg_attachment_display_name,
         drg_id=test_drg["id"],

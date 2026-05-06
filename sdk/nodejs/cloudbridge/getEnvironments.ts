@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnvironments = oci.CloudBridge.getEnvironments({
+ * const testEnvironments = oci.cloudbridge.getEnvironments({
  *     compartmentId: compartmentId,
  *     displayName: environmentDisplayName,
  *     environmentId: testEnvironment.id,
@@ -97,7 +97,7 @@ export interface GetEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnvironments = oci.CloudBridge.getEnvironments({
+ * const testEnvironments = oci.cloudbridge.getEnvironments({
  *     compartmentId: compartmentId,
  *     displayName: environmentDisplayName,
  *     environmentId: testEnvironment.id,

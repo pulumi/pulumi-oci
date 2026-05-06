@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *         type: monitoredResourceCredentialsType,
  *     },
  *     databaseConnectionDetails: {
- *         port: monitoredResourceDatabaseConnectionDetailsPort,
+ *         port: Number(monitoredResourceDatabaseConnectionDetailsPort),
  *         protocol: monitoredResourceDatabaseConnectionDetailsProtocol,
  *         serviceName: monitoredResourceDatabaseServiceName,
  *         connectorId: monitoredResourceDatabaseConnectorId,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVirtualMachines = oci.Database.getAutonomousVirtualMachines({
+ * const testAutonomousVirtualMachines = oci.database.getAutonomousVirtualMachines({
  *     autonomousVmClusterId: testAutonomousVmCluster.id,
  *     compartmentId: compartmentId,
  *     state: autonomousVirtualMachineState,
@@ -90,7 +90,7 @@ export interface GetAutonomousVirtualMachinesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVirtualMachines = oci.Database.getAutonomousVirtualMachines({
+ * const testAutonomousVirtualMachines = oci.database.getAutonomousVirtualMachines({
  *     autonomousVmClusterId: testAutonomousVmCluster.id,
  *     compartmentId: compartmentId,
  *     state: autonomousVirtualMachineState,

@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Identity.getDomains({
+ * const testDomains = oci.identity.getDomains({
  *     compartmentId: compartmentId,
  *     displayName: domainDisplayName,
  *     homeRegionUrl: domainHomeRegionUrl,
- *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
  *     licenseType: domainLicenseType,
  *     name: domainName,
  *     state: domainState,
@@ -149,11 +149,11 @@ export interface GetDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomains = oci.Identity.getDomains({
+ * const testDomains = oci.identity.getDomains({
  *     compartmentId: compartmentId,
  *     displayName: domainDisplayName,
  *     homeRegionUrl: domainHomeRegionUrl,
- *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
  *     licenseType: domainLicenseType,
  *     name: domainName,
  *     state: domainState,

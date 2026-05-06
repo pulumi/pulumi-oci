@@ -204,7 +204,7 @@ def get_stream_group(stream_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_group = oci.AiVision.get_stream_group(stream_group_id=test_stream_group_oci_ai_vision_stream_group["id"])
+    test_stream_group = oci.aivision.get_stream_group(stream_group_id=test_stream_group_oci_ai_vision_stream_group["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_stream_group_output(stream_group_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_group = oci.AiVision.get_stream_group(stream_group_id=test_stream_group_oci_ai_vision_stream_group["id"])
+    test_stream_group = oci.aivision.get_stream_group(stream_group_id=test_stream_group_oci_ai_vision_stream_group["id"])
     ```
 
 

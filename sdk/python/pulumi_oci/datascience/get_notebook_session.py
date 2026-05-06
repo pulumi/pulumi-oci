@@ -240,7 +240,7 @@ def get_notebook_session(notebook_session_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
+    test_notebook_session = oci.datascience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
+    test_notebook_session = oci.datascience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
     ```
 
 

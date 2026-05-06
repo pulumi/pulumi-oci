@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetInstallationSite = oci.Jms.getInstallationSite({
+ * const testFleetInstallationSite = oci.jms.getInstallationSite({
  *     fleetId: testFleet.id,
  *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,
@@ -144,7 +144,7 @@ export interface GetInstallationSiteResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetInstallationSite = oci.Jms.getInstallationSite({
+ * const testFleetInstallationSite = oci.jms.getInstallationSite({
  *     fleetId: testFleet.id,
  *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackends = oci.LoadBalancer.getBackends({
+ * const testBackends = oci.loadbalancer.getBackends({
  *     backendsetName: testBackendSet.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });
@@ -74,7 +74,7 @@ export interface GetBackendsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackends = oci.LoadBalancer.getBackends({
+ * const testBackends = oci.loadbalancer.getBackends({
  *     backendsetName: testBackendSet.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });

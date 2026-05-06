@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isDefaultProfile: profileIsDefaultProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     managementStationId: testManagementStation.id,

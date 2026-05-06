@@ -94,7 +94,7 @@ def get_cloud_asm_configuration(cloud_asm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_configuration = oci.DatabaseManagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_configuration = oci.databasemanagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_configuration_opc_named_credential_id)
     ```
 
@@ -127,7 +127,7 @@ def get_cloud_asm_configuration_output(cloud_asm_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_configuration = oci.DatabaseManagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_configuration = oci.databasemanagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_configuration_opc_named_credential_id)
     ```
 

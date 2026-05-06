@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCustomerSecretKeys = oci.Identity.getDomainsMyCustomerSecretKeys({
+ * const testMyCustomerSecretKeys = oci.identity.getDomainsMyCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     myCustomerSecretKeyCount: myCustomerSecretKeyMyCustomerSecretKeyCount,
+ *     myCustomerSecretKeyCount: Number(myCustomerSecretKeyMyCustomerSecretKeyCount),
  *     myCustomerSecretKeyFilter: myCustomerSecretKeyMyCustomerSecretKeyFilter,
  *     authorization: myCustomerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: myCustomerSecretKeyStartIndex,
+ *     startIndex: Number(myCustomerSecretKeyStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyCustomerSecretKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCustomerSecretKeys = oci.Identity.getDomainsMyCustomerSecretKeys({
+ * const testMyCustomerSecretKeys = oci.identity.getDomainsMyCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     myCustomerSecretKeyCount: myCustomerSecretKeyMyCustomerSecretKeyCount,
+ *     myCustomerSecretKeyCount: Number(myCustomerSecretKeyMyCustomerSecretKeyCount),
  *     myCustomerSecretKeyFilter: myCustomerSecretKeyMyCustomerSecretKeyFilter,
  *     authorization: myCustomerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: myCustomerSecretKeyStartIndex,
+ *     startIndex: Number(myCustomerSecretKeyStartIndex),
  * });
  * ```
  */

@@ -1052,7 +1052,7 @@ class DomainsApiKey(pulumi.CustomResource):
                 "value": api_key_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],
@@ -1179,7 +1179,7 @@ class DomainsApiKey(pulumi.CustomResource):
                 "value": api_key_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],

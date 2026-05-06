@@ -121,7 +121,7 @@ def get_services(comms_manager_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.AnnouncementsService.get_services(compartment_id=compartment_id,
+    test_services = oci.announcementsservice.get_services(compartment_id=compartment_id,
         comms_manager_name=service_comms_manager_name,
         platform_type=service_platform_type)
     ```
@@ -162,7 +162,7 @@ def get_services_output(comms_manager_name: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.AnnouncementsService.get_services(compartment_id=compartment_id,
+    test_services = oci.announcementsservice.get_services(compartment_id=compartment_id,
         comms_manager_name=service_comms_manager_name,
         platform_type=service_platform_type)
     ```

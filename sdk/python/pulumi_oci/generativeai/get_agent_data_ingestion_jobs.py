@@ -139,7 +139,7 @@ def get_agent_data_ingestion_jobs(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_jobs = oci.GenerativeAi.get_agent_data_ingestion_jobs(compartment_id=compartment_id,
+    test_data_ingestion_jobs = oci.generativeai.get_agent_data_ingestion_jobs(compartment_id=compartment_id,
         data_source_id=test_data_source["id"],
         display_name=data_ingestion_job_display_name,
         state=data_ingestion_job_state)
@@ -187,7 +187,7 @@ def get_agent_data_ingestion_jobs_output(compartment_id: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_jobs = oci.GenerativeAi.get_agent_data_ingestion_jobs(compartment_id=compartment_id,
+    test_data_ingestion_jobs = oci.generativeai.get_agent_data_ingestion_jobs(compartment_id=compartment_id,
         data_source_id=test_data_source["id"],
         display_name=data_ingestion_job_display_name,
         state=data_ingestion_job_state)

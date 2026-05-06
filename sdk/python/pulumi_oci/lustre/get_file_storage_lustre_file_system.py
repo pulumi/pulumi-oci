@@ -390,7 +390,7 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 
@@ -444,7 +444,7 @@ def get_file_storage_lustre_file_system_output(lustre_file_system_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_system = oci.Lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
+    test_lustre_file_system = oci.lustre.get_file_storage_lustre_file_system(lustre_file_system_id=test_lustre_file_system_oci_lustre_file_storage_lustre_file_system["id"])
     ```
 
 

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
  *     frequency: occMetricAlarmFrequency,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  *     resourceConfiguration: {
  *         resource: occMetricAlarmResourceConfigurationResource,
  *         usageType: occMetricAlarmResourceConfigurationUsageType,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *         shape: occMetricAlarmResourceConfigurationShape,
  *         storageType: occMetricAlarmResourceConfigurationStorageType,
  *     },
- *     threshold: occMetricAlarmThreshold,
+ *     threshold: Number(occMetricAlarmThreshold),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

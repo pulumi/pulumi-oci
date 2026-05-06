@@ -260,7 +260,7 @@ def get_oneoff_patch(oneoff_patch_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=test_oneoff_patch_oci_database_oneoff_patch["id"])
+    test_oneoff_patch = oci.database.get_oneoff_patch(oneoff_patch_id=test_oneoff_patch_oci_database_oneoff_patch["id"])
     ```
 
 
@@ -303,7 +303,7 @@ def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=test_oneoff_patch_oci_database_oneoff_patch["id"])
+    test_oneoff_patch = oci.database.get_oneoff_patch(oneoff_patch_id=test_oneoff_patch_oci_database_oneoff_patch["id"])
     ```
 
 

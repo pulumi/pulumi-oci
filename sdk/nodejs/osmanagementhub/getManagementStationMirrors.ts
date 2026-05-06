@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
+ * const testManagementStationMirrors = oci.osmanagementhub.getManagementStationMirrors({
  *     managementStationId: testManagementStation.id,
  *     displayName: managementStationMirrorDisplayName,
  *     displayNameContains: managementStationMirrorDisplayNameContains,
@@ -91,7 +91,7 @@ export interface GetManagementStationMirrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
+ * const testManagementStationMirrors = oci.osmanagementhub.getManagementStationMirrors({
  *     managementStationId: testManagementStation.id,
  *     displayName: managementStationMirrorDisplayName,
  *     displayNameContains: managementStationMirrorDisplayNameContains,

@@ -412,13 +412,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             data_source_details={
                 "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
-                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "additional_entities_count": int(data_source_data_source_details_additional_entities_count),
                 "description": data_source_data_source_details_description,
-                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
-                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "interval_in_minutes": int(data_source_data_source_details_interval_in_minutes),
+                "interval_in_seconds": int(data_source_data_source_details_interval_in_seconds),
                 "logging_query_details": {
                     "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
-                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                    "key_entities_count": int(data_source_data_source_details_logging_query_details_key_entities_count),
                 },
                 "logging_query_type": data_source_data_source_details_logging_query_type,
                 "operator": data_source_data_source_details_operator,
@@ -433,7 +433,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
                     "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
                 }],
-                "threshold": data_source_data_source_details_threshold,
+                "threshold": int(data_source_data_source_details_threshold),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -496,13 +496,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             data_source_details={
                 "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
-                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "additional_entities_count": int(data_source_data_source_details_additional_entities_count),
                 "description": data_source_data_source_details_description,
-                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
-                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "interval_in_minutes": int(data_source_data_source_details_interval_in_minutes),
+                "interval_in_seconds": int(data_source_data_source_details_interval_in_seconds),
                 "logging_query_details": {
                     "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
-                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                    "key_entities_count": int(data_source_data_source_details_logging_query_details_key_entities_count),
                 },
                 "logging_query_type": data_source_data_source_details_logging_query_type,
                 "operator": data_source_data_source_details_operator,
@@ -517,7 +517,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
                     "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
                 }],
-                "threshold": data_source_data_source_details_threshold,
+                "threshold": int(data_source_data_source_details_threshold),
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",

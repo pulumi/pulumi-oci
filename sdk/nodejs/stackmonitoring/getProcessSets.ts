@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessSets = oci.StackMonitoring.getProcessSets({
+ * const testProcessSets = oci.stackmonitoring.getProcessSets({
  *     compartmentId: compartmentId,
  *     displayName: processSetDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetProcessSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessSets = oci.StackMonitoring.getProcessSets({
+ * const testProcessSets = oci.stackmonitoring.getProcessSets({
  *     compartmentId: compartmentId,
  *     displayName: processSetDisplayName,
  * });

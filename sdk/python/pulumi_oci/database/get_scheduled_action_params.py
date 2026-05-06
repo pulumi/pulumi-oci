@@ -95,7 +95,7 @@ def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledAc
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action_params = oci.Database.get_scheduled_action_params(type=scheduled_action_param_type)
+    test_scheduled_action_params = oci.database.get_scheduled_action_params(type=scheduled_action_param_type)
     ```
 
 
@@ -126,7 +126,7 @@ def get_scheduled_action_params_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action_params = oci.Database.get_scheduled_action_params(type=scheduled_action_param_type)
+    test_scheduled_action_params = oci.database.get_scheduled_action_params(type=scheduled_action_param_type)
     ```
 
 

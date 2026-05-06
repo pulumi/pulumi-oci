@@ -299,7 +299,7 @@ def get_file_storage_object_storage_link(object_storage_link_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link = oci.Lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
+    test_object_storage_link = oci.lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_file_storage_object_storage_link_output(object_storage_link_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link = oci.Lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
+    test_object_storage_link = oci.lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
     ```
 
 

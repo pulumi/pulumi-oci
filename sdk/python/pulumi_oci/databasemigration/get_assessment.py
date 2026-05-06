@@ -339,7 +339,7 @@ def get_assessment(assessment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment = oci.DatabaseMigration.get_assessment(assessment_id=test_assessment_oci_database_migration_assessment["id"])
+    test_assessment = oci.databasemigration.get_assessment(assessment_id=test_assessment_oci_database_migration_assessment["id"])
     ```
 
 
@@ -389,7 +389,7 @@ def get_assessment_output(assessment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment = oci.DatabaseMigration.get_assessment(assessment_id=test_assessment_oci_database_migration_assessment["id"])
+    test_assessment = oci.databasemigration.get_assessment(assessment_id=test_assessment_oci_database_migration_assessment["id"])
     ```
 
 

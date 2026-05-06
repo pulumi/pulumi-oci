@@ -84,7 +84,7 @@ def get_fusion_environment_time_available_for_refresh(fusion_environment_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refresh = oci.functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_fusion_environment_time_available_for_refresh_output(fusion_environment_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refresh = oci.Functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refresh = oci.functions.get_fusion_environment_time_available_for_refresh(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

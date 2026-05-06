@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAvailablePlugins = oci.ComputeInstanceAgent.getInstanceAvailablePlugin({
+ * const testInstanceAvailablePlugins = oci.computeinstanceagent.getInstanceAvailablePlugin({
  *     osName: instanceAvailablePluginOsName,
  *     osVersion: instanceAvailablePluginOsVersion,
  *     name: instanceAvailablePluginName,
@@ -87,7 +87,7 @@ export interface GetInstanceAvailablePluginResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAvailablePlugins = oci.ComputeInstanceAgent.getInstanceAvailablePlugin({
+ * const testInstanceAvailablePlugins = oci.computeinstanceagent.getInstanceAvailablePlugin({
  *     osName: instanceAvailablePluginOsName,
  *     osVersion: instanceAvailablePluginOsVersion,
  *     name: instanceAvailablePluginName,

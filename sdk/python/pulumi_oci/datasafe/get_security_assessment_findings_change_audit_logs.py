@@ -200,10 +200,10 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_findings_change_audit_logs = oci.datasafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
         finding_key=security_assessment_findings_change_audit_log_finding_key,
         finding_title=security_assessment_findings_change_audit_log_finding_title,
-        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred == "true",
         modified_by=security_assessment_findings_change_audit_log_modified_by,
         severity=security_assessment_findings_change_audit_log_severity,
         time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
@@ -280,10 +280,10 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_findings_change_audit_logs = oci.datasafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
         finding_key=security_assessment_findings_change_audit_log_finding_key,
         finding_title=security_assessment_findings_change_audit_log_finding_title,
-        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred == "true",
         modified_by=security_assessment_findings_change_audit_log_modified_by,
         severity=security_assessment_findings_change_audit_log_severity,
         time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,

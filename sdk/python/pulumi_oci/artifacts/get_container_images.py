@@ -203,12 +203,12 @@ def get_container_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_images = oci.Artifacts.get_container_images(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_compartment_id_in_subtree,
+    test_container_images = oci.artifacts.get_container_images(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_compartment_id_in_subtree == "true",
         display_name=container_image_display_name,
         image_digest=container_image_image_digest,
         image_id=test_image["id"],
-        is_versioned=container_image_is_versioned,
+        is_versioned=container_image_is_versioned == "true",
         repository_id=test_repository["id"],
         repository_name=test_repository["name"],
         state=container_image_state,
@@ -279,12 +279,12 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_container_images = oci.Artifacts.get_container_images(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_compartment_id_in_subtree,
+    test_container_images = oci.artifacts.get_container_images(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_compartment_id_in_subtree == "true",
         display_name=container_image_display_name,
         image_digest=container_image_image_digest,
         image_id=test_image["id"],
-        is_versioned=container_image_is_versioned,
+        is_versioned=container_image_is_versioned == "true",
         repository_id=test_repository["id"],
         repository_name=test_repository["name"],
         state=container_image_state,

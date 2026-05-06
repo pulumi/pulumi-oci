@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGate = oci.Identity.getDomainsCloudGate({
+ * const testCloudGate = oci.identity.getDomainsCloudGate({
  *     cloudGateId: testCloudGateOciIdentityDomainsCloudGate.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -187,7 +187,7 @@ export interface GetDomainsCloudGateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGate = oci.Identity.getDomainsCloudGate({
+ * const testCloudGate = oci.identity.getDomainsCloudGate({
  *     cloudGateId: testCloudGateOciIdentityDomainsCloudGate.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

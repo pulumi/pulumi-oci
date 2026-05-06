@@ -100,7 +100,7 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
+    test_allowed_domain_license_types = oci.identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
     ```
 
 
@@ -136,7 +136,7 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
+    test_allowed_domain_license_types = oci.identity.get_allowed_domain_license_types(current_license_type_name=allowed_domain_license_type_current_license_type_name)
     ```
 
 

@@ -408,7 +408,7 @@ def get_cloud_listener(cloud_listener_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener = oci.DatabaseManagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
+    test_cloud_listener = oci.databasemanagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
     ```
 
 
@@ -463,7 +463,7 @@ def get_cloud_listener_output(cloud_listener_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener = oci.DatabaseManagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
+    test_cloud_listener = oci.databasemanagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
     ```
 
 

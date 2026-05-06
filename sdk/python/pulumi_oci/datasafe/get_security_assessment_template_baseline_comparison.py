@@ -247,7 +247,7 @@ def get_security_assessment_template_baseline_comparison(category: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_baseline_comparison = oci.DataSafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_template_baseline_comparison = oci.datasafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"],
         category=security_assessment_template_baseline_comparison_category,
         finding_key=security_assessment_template_baseline_comparison_finding_key,
@@ -305,7 +305,7 @@ def get_security_assessment_template_baseline_comparison_output(category: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_baseline_comparison = oci.DataSafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_template_baseline_comparison = oci.datasafe.get_security_assessment_template_baseline_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"],
         category=security_assessment_template_baseline_comparison_category,
         finding_key=security_assessment_template_baseline_comparison_finding_key,

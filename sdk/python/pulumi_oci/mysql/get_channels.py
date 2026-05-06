@@ -160,11 +160,11 @@ def get_channels(channel_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=compartment_id,
+    test_channels = oci.mysql.get_channels(compartment_id=compartment_id,
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled,
+        is_enabled=channel_is_enabled == "true",
         state=channel_state)
     ```
 
@@ -216,11 +216,11 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_channels = oci.Mysql.get_channels(compartment_id=compartment_id,
+    test_channels = oci.mysql.get_channels(compartment_id=compartment_id,
         channel_id=test_channel["id"],
         db_system_id=test_db_system["id"],
         display_name=channel_display_name,
-        is_enabled=channel_is_enabled,
+        is_enabled=channel_is_enabled == "true",
         state=channel_state)
     ```
 

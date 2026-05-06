@@ -223,14 +223,14 @@ def get_domains_my_requests(attribute_sets: Optional[Sequence[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
-        my_request_count=my_request_my_request_count,
+    test_my_requests = oci.identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=int(my_request_my_request_count),
         my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_request_authorization,
         resource_type_schema_version=my_request_resource_type_schema_version,
-        start_index=my_request_start_index)
+        start_index=int(my_request_start_index))
     ```
 
 
@@ -298,14 +298,14 @@ def get_domains_my_requests_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
-        my_request_count=my_request_my_request_count,
+    test_my_requests = oci.identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=int(my_request_my_request_count),
         my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_request_authorization,
         resource_type_schema_version=my_request_resource_type_schema_version,
-        start_index=my_request_start_index)
+        start_index=int(my_request_start_index))
     ```
 
 

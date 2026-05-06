@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *             ocpus: computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOcpus,
  *         },
  *     }],
- *     isDefaultReservation: computeCapacityReservationIsDefaultReservation,
+ *     isDefaultReservation: computeCapacityReservationIsDefaultReservation === "true",
  * });
  * ```
  *

@@ -30,15 +30,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSets = oci.DataSafe.getAttributeSets({
+ * const testAttributeSets = oci.datasafe.getAttributeSets({
  *     compartmentId: compartmentId,
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined,
+ *     isUserDefined: attributeSetIsUserDefined === "true",
  *     state: attributeSetState,
  * });
  * ```
@@ -167,15 +167,15 @@ export interface GetAttributeSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSets = oci.DataSafe.getAttributeSets({
+ * const testAttributeSets = oci.datasafe.getAttributeSets({
  *     compartmentId: compartmentId,
  *     accessLevel: attributeSetAccessLevel,
  *     attributeSetId: testAttributeSet.id,
  *     attributeSetType: attributeSetAttributeSetType,
- *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: attributeSetCompartmentIdInSubtree === "true",
  *     displayName: attributeSetDisplayName,
  *     inUse: attributeSetInUse,
- *     isUserDefined: attributeSetIsUserDefined,
+ *     isUserDefined: attributeSetIsUserDefined === "true",
  *     state: attributeSetState,
  * });
  * ```

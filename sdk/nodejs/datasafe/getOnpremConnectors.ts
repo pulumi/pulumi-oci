@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremConnectors = oci.DataSafe.getOnpremConnectors({
+ * const testOnPremConnectors = oci.datasafe.getOnpremConnectors({
  *     compartmentId: compartmentId,
  *     accessLevel: onPremConnectorAccessLevel,
- *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree === "true",
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
  *     state: onPremConnectorState,
@@ -111,10 +111,10 @@ export interface GetOnpremConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremConnectors = oci.DataSafe.getOnpremConnectors({
+ * const testOnPremConnectors = oci.datasafe.getOnpremConnectors({
  *     compartmentId: compartmentId,
  *     accessLevel: onPremConnectorAccessLevel,
- *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree === "true",
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
  *     state: onPremConnectorState,

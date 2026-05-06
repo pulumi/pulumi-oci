@@ -1599,7 +1599,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             backup_policy={
                 "copy_policies": [{
                     "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
-                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                    "backup_copy_retention_in_days": int(mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days),
                 }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
@@ -1607,11 +1607,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "freeform_tags": {
                     "bar-key": "value",
                 },
-                "is_enabled": mysql_db_system_backup_policy_is_enabled,
+                "is_enabled": mysql_db_system_backup_policy_is_enabled == "true",
                 "pitr_policy": {
-                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled,
+                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled == "true",
                 },
-                "retention_in_days": mysql_db_system_backup_policy_retention_in_days,
+                "retention_in_days": int(mysql_db_system_backup_policy_retention_in_days),
                 "soft_delete": mysql_db_system_backup_policy_soft_delete,
                 "window_start_time": mysql_db_system_backup_policy_window_start_time,
             },
@@ -1621,13 +1621,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "email": mysql_db_system_customer_contacts_email,
             }],
             data_storage={
-                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
-                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled == "true",
+                "max_storage_size_in_gbs": int(mysql_db_system_data_storage_max_storage_size_in_gbs),
             },
-            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            data_storage_size_in_gb=int(mysql_db_system_data_storage_size_in_gb),
             database_console={
                 "status": mysql_db_system_database_console_status,
-                "port": mysql_db_system_database_console_port,
+                "port": int(mysql_db_system_database_console_port),
             },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
@@ -1637,7 +1637,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             deletion_policies=[{
                 "automatic_backup_retention": mysql_db_system_deletion_policy_automatic_backup_retention,
                 "final_backup": mysql_db_system_deletion_policy_final_backup,
-                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected,
+                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected == "true",
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
@@ -1651,7 +1651,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
-            is_highly_available=mysql_db_system_is_highly_available,
+            is_highly_available=mysql_db_system_is_highly_available == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1663,17 +1663,17 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
-            port=mysql_db_system_port,
-            port_x=mysql_db_system_port_x,
+            port=int(mysql_db_system_port),
+            port_x=int(mysql_db_system_port_x),
             read_endpoint={
                 "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
-                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
-                "port": mysql_db_system_rest_port,
+                "port": int(mysql_db_system_rest_port),
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
@@ -1800,7 +1800,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             backup_policy={
                 "copy_policies": [{
                     "copy_to_region": mysql_db_system_backup_policy_copy_policies_copy_to_region,
-                    "backup_copy_retention_in_days": mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days,
+                    "backup_copy_retention_in_days": int(mysql_db_system_backup_policy_copy_policies_backup_copy_retention_in_days),
                 }],
                 "defined_tags": {
                     "foo-namespace.bar-key": "value",
@@ -1808,11 +1808,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "freeform_tags": {
                     "bar-key": "value",
                 },
-                "is_enabled": mysql_db_system_backup_policy_is_enabled,
+                "is_enabled": mysql_db_system_backup_policy_is_enabled == "true",
                 "pitr_policy": {
-                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled,
+                    "is_enabled": mysql_db_system_backup_policy_pitr_policy_is_enabled == "true",
                 },
-                "retention_in_days": mysql_db_system_backup_policy_retention_in_days,
+                "retention_in_days": int(mysql_db_system_backup_policy_retention_in_days),
                 "soft_delete": mysql_db_system_backup_policy_soft_delete,
                 "window_start_time": mysql_db_system_backup_policy_window_start_time,
             },
@@ -1822,13 +1822,13 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "email": mysql_db_system_customer_contacts_email,
             }],
             data_storage={
-                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled,
-                "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
+                "is_auto_expand_storage_enabled": mysql_db_system_data_storage_is_auto_expand_storage_enabled == "true",
+                "max_storage_size_in_gbs": int(mysql_db_system_data_storage_max_storage_size_in_gbs),
             },
-            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            data_storage_size_in_gb=int(mysql_db_system_data_storage_size_in_gb),
             database_console={
                 "status": mysql_db_system_database_console_status,
-                "port": mysql_db_system_database_console_port,
+                "port": int(mysql_db_system_database_console_port),
             },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
@@ -1838,7 +1838,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             deletion_policies=[{
                 "automatic_backup_retention": mysql_db_system_deletion_policy_automatic_backup_retention,
                 "final_backup": mysql_db_system_deletion_policy_final_backup,
-                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected,
+                "is_delete_protected": mysql_db_system_deletion_policy_is_delete_protected == "true",
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
@@ -1852,7 +1852,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
-            is_highly_available=mysql_db_system_is_highly_available,
+            is_highly_available=mysql_db_system_is_highly_available == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1864,17 +1864,17 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "version_track_preference": mysql_db_system_maintenance_version_track_preference,
             },
             nsg_ids=mysql_db_system_nsg_ids,
-            port=mysql_db_system_port,
-            port_x=mysql_db_system_port_x,
+            port=int(mysql_db_system_port),
+            port_x=int(mysql_db_system_port_x),
             read_endpoint={
                 "exclude_ips": mysql_db_system_read_endpoint_exclude_ips,
-                "is_enabled": mysql_db_system_read_endpoint_is_enabled,
+                "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
-                "port": mysql_db_system_rest_port,
+                "port": int(mysql_db_system_rest_port),
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,

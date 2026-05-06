@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpRedirects = oci.Waas.getHttpRedirects({
+ * const testHttpRedirects = oci.waas.getHttpRedirects({
  *     compartmentId: compartmentId,
  *     displayNames: httpRedirectDisplayNames,
  *     ids: httpRedirectIds,
@@ -105,7 +105,7 @@ export interface GetHttpRedirectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpRedirects = oci.Waas.getHttpRedirects({
+ * const testHttpRedirects = oci.waas.getHttpRedirects({
  *     compartmentId: compartmentId,
  *     displayNames: httpRedirectDisplayNames,
  *     ids: httpRedirectIds,

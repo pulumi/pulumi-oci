@@ -226,7 +226,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activity = oci.functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
         refresh_activity_id=test_refresh_activity["id"])
     ```
 
@@ -270,7 +270,7 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activity = oci.functions.get_fusion_environment_refresh_activity(fusion_environment_id=test_fusion_environment["id"],
         refresh_activity_id=test_refresh_activity["id"])
     ```
 

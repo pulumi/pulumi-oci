@@ -95,7 +95,7 @@ def get_bds_instance_list_os_patches(bds_instance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_list_os_patches = oci.bigdataservice.get_bds_instance_list_os_patches(bds_instance_id=test_bds_instance["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_bds_instance_list_os_patches_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_list_os_patches = oci.bigdataservice.get_bds_instance_list_os_patches(bds_instance_id=test_bds_instance["id"])
     ```
 
 

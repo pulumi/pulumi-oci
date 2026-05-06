@@ -38,9 +38,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
- *     isFlexible: configurationIsFlexible,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
+ *     isFlexible: configurationIsFlexible === "true",
  *     shape: configurationShape,
  *     systemTags: configurationSystemTags,
  * });

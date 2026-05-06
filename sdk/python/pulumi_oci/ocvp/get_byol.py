@@ -258,7 +258,7 @@ def get_byol(byol_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol = oci.Ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
+    test_byol = oci.ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
     ```
 
 
@@ -300,7 +300,7 @@ def get_byol_output(byol_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol = oci.Ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
+    test_byol = oci.ocvp.get_byol(byol_id=test_byol_oci_ocvp_byol["id"])
     ```
 
 

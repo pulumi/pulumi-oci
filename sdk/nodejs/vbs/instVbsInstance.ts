@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAccessToken: vbsInstanceIdcsAccessToken,
- *     isResourceUsageAgreementGranted: vbsInstanceIsResourceUsageAgreementGranted,
+ *     isResourceUsageAgreementGranted: vbsInstanceIsResourceUsageAgreementGranted === "true",
  *     resourceCompartmentId: resourceCompartmentId,
  * });
  * ```

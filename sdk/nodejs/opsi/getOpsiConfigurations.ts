@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
+ * const testOpsiConfigurations = oci.opsi.getOpsiConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: opsiConfigurationDisplayName,
  *     opsiConfigTypes: opsiConfigurationOpsiConfigType,
@@ -100,7 +100,7 @@ export interface GetOpsiConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
+ * const testOpsiConfigurations = oci.opsi.getOpsiConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: opsiConfigurationDisplayName,
  *     opsiConfigTypes: opsiConfigurationOpsiConfigType,

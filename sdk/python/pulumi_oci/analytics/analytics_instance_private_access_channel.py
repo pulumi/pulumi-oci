@@ -360,7 +360,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             network_security_group_ids=analytics_instance_private_access_channel_network_security_group_ids,
             private_source_scan_hosts=[{
                 "scan_hostname": analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
-                "scan_port": analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
+                "scan_port": int(analytics_instance_private_access_channel_private_source_scan_hosts_scan_port),
                 "description": analytics_instance_private_access_channel_private_source_scan_hosts_description,
             }])
         ```
@@ -421,7 +421,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             network_security_group_ids=analytics_instance_private_access_channel_network_security_group_ids,
             private_source_scan_hosts=[{
                 "scan_hostname": analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
-                "scan_port": analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
+                "scan_port": int(analytics_instance_private_access_channel_private_source_scan_hosts_scan_port),
                 "description": analytics_instance_private_access_channel_private_source_scan_hosts_description,
             }])
         ```

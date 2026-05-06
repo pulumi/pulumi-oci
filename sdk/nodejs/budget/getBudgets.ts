@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudgets = oci.Budget.getBudgets({
+ * const testBudgets = oci.budget.getBudgets({
  *     compartmentId: tenancyOcid,
  *     displayName: budgetDisplayName,
  *     state: budgetState,
@@ -115,7 +115,7 @@ export interface GetBudgetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudgets = oci.Budget.getBudgets({
+ * const testBudgets = oci.budget.getBudgets({
  *     compartmentId: tenancyOcid,
  *     displayName: budgetDisplayName,
  *     state: budgetState,

@@ -512,7 +512,7 @@ class Byol(pulumi.CustomResource):
             software_type=byol_software_type,
             time_term_end=byol_time_term_end,
             time_term_start=byol_time_term_start,
-            total_units=byol_total_units,
+            total_units=int(byol_total_units),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -585,7 +585,7 @@ class Byol(pulumi.CustomResource):
             software_type=byol_software_type,
             time_term_end=byol_time_term_end,
             time_term_start=byol_time_term_start,
-            total_units=byol_total_units,
+            total_units=int(byol_total_units),
             defined_tags={
                 "Operations.CostCenter": "42",
             },

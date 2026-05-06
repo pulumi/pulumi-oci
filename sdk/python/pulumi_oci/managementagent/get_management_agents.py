@@ -277,10 +277,10 @@ def get_management_agents(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=compartment_id,
+    test_management_agents = oci.managementagent.get_management_agents(compartment_id=compartment_id,
         access_level=management_agent_access_level,
         availability_status=management_agent_availability_status,
-        compartment_id_in_subtree=management_agent_compartment_id_in_subtree,
+        compartment_id_in_subtree=management_agent_compartment_id_in_subtree == "true",
         data_source_names=test_management_agent_data_source["name"],
         data_source_type=management_agent_data_source_type,
         display_name=management_agent_display_name,
@@ -288,7 +288,7 @@ def get_management_agents(access_level: Optional[_builtins.str] = None,
         host_id=test_host["id"],
         wait_for_host_id=10,
         install_type=management_agent_install_type,
-        is_customer_deployed=management_agent_is_customer_deployed,
+        is_customer_deployed=management_agent_is_customer_deployed == "true",
         platform_types=management_agent_platform_type,
         plugin_names=management_agent_plugin_name,
         state=management_agent_state,
@@ -385,10 +385,10 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=compartment_id,
+    test_management_agents = oci.managementagent.get_management_agents(compartment_id=compartment_id,
         access_level=management_agent_access_level,
         availability_status=management_agent_availability_status,
-        compartment_id_in_subtree=management_agent_compartment_id_in_subtree,
+        compartment_id_in_subtree=management_agent_compartment_id_in_subtree == "true",
         data_source_names=test_management_agent_data_source["name"],
         data_source_type=management_agent_data_source_type,
         display_name=management_agent_display_name,
@@ -396,7 +396,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[_b
         host_id=test_host["id"],
         wait_for_host_id=10,
         install_type=management_agent_install_type,
-        is_customer_deployed=management_agent_is_customer_deployed,
+        is_customer_deployed=management_agent_is_customer_deployed == "true",
         platform_types=management_agent_platform_type,
         plugin_names=management_agent_plugin_name,
         state=management_agent_state,

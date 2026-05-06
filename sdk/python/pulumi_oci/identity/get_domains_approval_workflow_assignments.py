@@ -214,14 +214,14 @@ def get_domains_approval_workflow_assignments(approval_workflow_assignment_count
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
-        approval_workflow_assignment_count=approval_workflow_assignment_approval_workflow_assignment_count,
+    test_approval_workflow_assignments = oci.identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
+        approval_workflow_assignment_count=int(approval_workflow_assignment_approval_workflow_assignment_count),
         approval_workflow_assignment_filter=approval_workflow_assignment_approval_workflow_assignment_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=approval_workflow_assignment_authorization,
         resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
-        start_index=approval_workflow_assignment_start_index)
+        start_index=int(approval_workflow_assignment_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
-        approval_workflow_assignment_count=approval_workflow_assignment_approval_workflow_assignment_count,
+    test_approval_workflow_assignments = oci.identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
+        approval_workflow_assignment_count=int(approval_workflow_assignment_approval_workflow_assignment_count),
         approval_workflow_assignment_filter=approval_workflow_assignment_approval_workflow_assignment_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=approval_workflow_assignment_authorization,
         resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
-        start_index=approval_workflow_assignment_start_index)
+        start_index=int(approval_workflow_assignment_start_index))
     ```
 
 

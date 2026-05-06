@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testDatabaseDbmFeaturesManagement = new oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management", {
  *     databaseId: testDatabase.id,
- *     enableDatabaseDbmFeature: enableDatabaseDbmFeature,
+ *     enableDatabaseDbmFeature: enableDatabaseDbmFeature === "true",
  *     featureDetails: {
  *         feature: databaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enableDatabaseDbmFeature: enableDatabaseDbmFeature,
@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 port: Number(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
  *                 protocol: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },
  *         },
- *         canEnableAllCurrentPdbs: databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
- *         isAutoEnablePluggableDatabase: databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         canEnableAllCurrentPdbs: databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
+ *         isAutoEnablePluggableDatabase: databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
  *         managementType: databaseDbmFeaturesManagementFeatureDetailsManagementType,
  *     },
  * });

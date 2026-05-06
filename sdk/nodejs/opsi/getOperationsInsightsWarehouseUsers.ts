@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
+ * const testOperationsInsightsWarehouseUsers = oci.opsi.getOperationsInsightsWarehouseUsers({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: operationsInsightsWarehouseUserDisplayName,
@@ -103,7 +103,7 @@ export interface GetOperationsInsightsWarehouseUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
+ * const testOperationsInsightsWarehouseUsers = oci.opsi.getOperationsInsightsWarehouseUsers({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: operationsInsightsWarehouseUserDisplayName,

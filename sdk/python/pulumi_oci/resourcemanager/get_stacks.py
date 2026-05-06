@@ -129,7 +129,7 @@ def get_stacks(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+    test_stacks = oci.resourcemanager.get_stacks(compartment_id=compartment_id,
         display_name=stack_display_name,
         id=stack_id,
         state=stack_state)
@@ -178,7 +178,7 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+    test_stacks = oci.resourcemanager.get_stacks(compartment_id=compartment_id,
         display_name=stack_display_name,
         id=stack_id,
         state=stack_state)

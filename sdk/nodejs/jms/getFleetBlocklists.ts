@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
+ * const testFleetBlocklists = oci.jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
  *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,
@@ -90,7 +90,7 @@ export interface GetFleetBlocklistsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
+ * const testFleetBlocklists = oci.jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
  *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,

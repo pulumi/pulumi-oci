@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRunStages = oci.Adm.getRemediationRunStages({
+ * const testRemediationRunStages = oci.adm.getRemediationRunStages({
  *     remediationRunId: testRemediationRun.id,
  *     status: remediationRunStageStatus,
  *     type: remediationRunStageType,
@@ -90,7 +90,7 @@ export interface GetRemediationRunStagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRunStages = oci.Adm.getRemediationRunStages({
+ * const testRemediationRunStages = oci.adm.getRemediationRunStages({
  *     remediationRunId: testRemediationRun.id,
  *     status: remediationRunStageStatus,
  *     type: remediationRunStageType,

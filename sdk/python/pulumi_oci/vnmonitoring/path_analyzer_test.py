@@ -428,7 +428,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 "vlan_id": test_vlan["id"],
                 "vnic_id": test_vnic_attachment["id"],
             },
-            protocol=path_analyzer_test_protocol,
+            protocol=int(path_analyzer_test_protocol),
             source_endpoint={
                 "type": path_analyzer_test_source_endpoint_type,
                 "address": path_analyzer_test_source_endpoint_address,
@@ -450,13 +450,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
             },
             protocol_parameters={
                 "type": path_analyzer_test_protocol_parameters_type,
-                "destination_port": path_analyzer_test_protocol_parameters_destination_port,
-                "icmp_code": path_analyzer_test_protocol_parameters_icmp_code,
-                "icmp_type": path_analyzer_test_protocol_parameters_icmp_type,
-                "source_port": path_analyzer_test_protocol_parameters_source_port,
+                "destination_port": int(path_analyzer_test_protocol_parameters_destination_port),
+                "icmp_code": int(path_analyzer_test_protocol_parameters_icmp_code),
+                "icmp_type": int(path_analyzer_test_protocol_parameters_icmp_type),
+                "source_port": int(path_analyzer_test_protocol_parameters_source_port),
             },
             query_options={
-                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis,
+                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis == "true",
             })
         ```
 
@@ -515,7 +515,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 "vlan_id": test_vlan["id"],
                 "vnic_id": test_vnic_attachment["id"],
             },
-            protocol=path_analyzer_test_protocol,
+            protocol=int(path_analyzer_test_protocol),
             source_endpoint={
                 "type": path_analyzer_test_source_endpoint_type,
                 "address": path_analyzer_test_source_endpoint_address,
@@ -537,13 +537,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
             },
             protocol_parameters={
                 "type": path_analyzer_test_protocol_parameters_type,
-                "destination_port": path_analyzer_test_protocol_parameters_destination_port,
-                "icmp_code": path_analyzer_test_protocol_parameters_icmp_code,
-                "icmp_type": path_analyzer_test_protocol_parameters_icmp_type,
-                "source_port": path_analyzer_test_protocol_parameters_source_port,
+                "destination_port": int(path_analyzer_test_protocol_parameters_destination_port),
+                "icmp_code": int(path_analyzer_test_protocol_parameters_icmp_code),
+                "icmp_type": int(path_analyzer_test_protocol_parameters_icmp_type),
+                "source_port": int(path_analyzer_test_protocol_parameters_source_port),
             },
             query_options={
-                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis,
+                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis == "true",
             })
         ```
 

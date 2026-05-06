@@ -125,7 +125,7 @@ def get_vision_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoints = oci.AiVision.get_vision_private_endpoints(compartment_id=compartment_id,
+    test_vision_private_endpoints = oci.aivision.get_vision_private_endpoints(compartment_id=compartment_id,
         display_name=vision_private_endpoint_display_name,
         id=vision_private_endpoint_id,
         state=vision_private_endpoint_state)
@@ -170,7 +170,7 @@ def get_vision_private_endpoints_output(compartment_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoints = oci.AiVision.get_vision_private_endpoints(compartment_id=compartment_id,
+    test_vision_private_endpoints = oci.aivision.get_vision_private_endpoints(compartment_id=compartment_id,
         display_name=vision_private_endpoint_display_name,
         id=vision_private_endpoint_id,
         state=vision_private_endpoint_state)

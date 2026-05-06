@@ -86,7 +86,7 @@ def get_network_load_balancers_protocols(filters: Optional[Sequence[Union['GetNe
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
+    test_network_load_balancers_protocols = oci.networkloadbalancer.get_network_load_balancers_protocols()
     ```
     """
     __args__ = dict()
@@ -112,7 +112,7 @@ def get_network_load_balancers_protocols_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
+    test_network_load_balancers_protocols = oci.networkloadbalancer.get_network_load_balancers_protocols()
     ```
     """
     __args__ = dict()

@@ -99,7 +99,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequ
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
+    test_iam_work_request_errors = oci.identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
     ```
 
 
@@ -134,7 +134,7 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
+    test_iam_work_request_errors = oci.identity.get_iam_work_request_errors(iam_work_request_id=test_iam_work_request["id"])
     ```
 
 

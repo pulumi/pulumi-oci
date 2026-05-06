@@ -118,7 +118,7 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
+    test_dedicated_vm_host_shapes = oci.core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_shape_availability_domain,
         instance_shape_name=dedicated_vm_host_shape_instance_shape_name)
     ```
@@ -159,7 +159,7 @@ def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
+    test_dedicated_vm_host_shapes = oci.core.get_dedicated_vm_host_shapes(compartment_id=compartment_id,
         availability_domain=dedicated_vm_host_shape_availability_domain,
         instance_shape_name=dedicated_vm_host_shape_instance_shape_name)
     ```

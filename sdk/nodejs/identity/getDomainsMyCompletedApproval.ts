@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCompletedApproval = oci.Identity.getDomainsMyCompletedApproval({
+ * const testMyCompletedApproval = oci.identity.getDomainsMyCompletedApproval({
  *     idcsEndpoint: testDomain.url,
  *     myCompletedApprovalId: testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id,
  *     authorization: myCompletedApprovalAuthorization,
@@ -169,7 +169,7 @@ export interface GetDomainsMyCompletedApprovalResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCompletedApproval = oci.Identity.getDomainsMyCompletedApproval({
+ * const testMyCompletedApproval = oci.identity.getDomainsMyCompletedApproval({
  *     idcsEndpoint: testDomain.url,
  *     myCompletedApprovalId: testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id,
  *     authorization: myCompletedApprovalAuthorization,

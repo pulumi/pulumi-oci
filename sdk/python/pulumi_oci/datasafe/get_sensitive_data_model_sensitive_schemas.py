@@ -108,7 +108,7 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_schemas = oci.datasafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=test_sensitive_data_model["id"],
         schema_names=sensitive_data_model_sensitive_schema_schema_name)
     ```
 
@@ -144,7 +144,7 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_schemas = oci.datasafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=test_sensitive_data_model["id"],
         schema_names=sensitive_data_model_sensitive_schema_schema_name)
     ```
 

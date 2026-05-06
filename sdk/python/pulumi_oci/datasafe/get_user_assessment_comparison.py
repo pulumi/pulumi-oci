@@ -118,7 +118,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_comparison = oci.datasafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
         user_assessment_id=test_user_assessment["id"])
     ```
 
@@ -153,7 +153,7 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_comparison = oci.datasafe.get_user_assessment_comparison(comparison_user_assessment_id=test_user_assessment["id"],
         user_assessment_id=test_user_assessment["id"])
     ```
 

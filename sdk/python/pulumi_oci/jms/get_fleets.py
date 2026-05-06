@@ -136,7 +136,7 @@ def get_fleets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+    test_fleets = oci.jms.get_fleets(compartment_id=compartment_id,
         display_name=fleet_display_name,
         display_name_contains=fleet_display_name_contains,
         id=fleet_id,
@@ -187,7 +187,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+    test_fleets = oci.jms.get_fleets(compartment_id=compartment_id,
         display_name=fleet_display_name,
         display_name_contains=fleet_display_name_contains,
         id=fleet_id,

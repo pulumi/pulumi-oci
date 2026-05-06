@@ -156,7 +156,7 @@ def get_fleet_drs_file(drs_file_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
+    test_fleet_drs_file = oci.jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
         fleet_id=test_fleet["id"])
     ```
 
@@ -194,7 +194,7 @@ def get_fleet_drs_file_output(drs_file_key: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_drs_file = oci.Jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
+    test_fleet_drs_file = oci.jms.get_fleet_drs_file(drs_file_key=fleet_drs_file_drs_file_key,
         fleet_id=test_fleet["id"])
     ```
 

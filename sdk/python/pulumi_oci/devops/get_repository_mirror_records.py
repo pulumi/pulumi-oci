@@ -95,7 +95,7 @@ def get_repository_mirror_records(filters: Optional[Sequence[Union['GetRepositor
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=test_repository["id"])
+    test_repository_mirror_records = oci.devops.get_repository_mirror_records(repository_id=test_repository["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=test_repository["id"])
+    test_repository_mirror_records = oci.devops.get_repository_mirror_records(repository_id=test_repository["id"])
     ```
 
 

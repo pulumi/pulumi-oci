@@ -28,30 +28,30 @@ import * as utilities from "../utilities";
  *     destination: networkSecurityGroupSecurityRuleDestination,
  *     destinationType: networkSecurityGroupSecurityRuleDestinationType,
  *     icmpOptions: {
- *         type: networkSecurityGroupSecurityRuleIcmpOptionsType,
- *         code: networkSecurityGroupSecurityRuleIcmpOptionsCode,
+ *         type: Number(networkSecurityGroupSecurityRuleIcmpOptionsType),
+ *         code: Number(networkSecurityGroupSecurityRuleIcmpOptionsCode),
  *     },
  *     source: networkSecurityGroupSecurityRuleSource,
  *     sourceType: networkSecurityGroupSecurityRuleSourceType,
- *     stateless: networkSecurityGroupSecurityRuleStateless,
+ *     stateless: networkSecurityGroupSecurityRuleStateless === "true",
  *     tcpOptions: {
  *         destinationPortRange: {
- *             max: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax,
- *             min: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin),
  *         },
  *         sourcePortRange: {
- *             max: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax,
- *             min: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin),
  *         },
  *     },
  *     udpOptions: {
  *         destinationPortRange: {
- *             max: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax,
- *             min: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin),
  *         },
  *         sourcePortRange: {
- *             max: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax,
- *             min: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin,
+ *             max: Number(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax),
+ *             min: Number(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin),
  *         },
  *     },
  * });

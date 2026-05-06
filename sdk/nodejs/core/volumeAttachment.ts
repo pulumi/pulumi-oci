@@ -27,11 +27,11 @@ import * as utilities from "../utilities";
  *     device: volumeAttachmentDevice,
  *     displayName: volumeAttachmentDisplayName,
  *     encryptionInTransitType: volumeAttachmentEncryptionInTransitType,
- *     isAgentAutoIscsiLoginEnabled: volumeAttachmentIsAgentAutoIscsiLoginEnabled,
- *     isPvEncryptionInTransitEnabled: volumeAttachmentIsPvEncryptionInTransitEnabled,
- *     isReadOnly: volumeAttachmentIsReadOnly,
- *     isShareable: volumeAttachmentIsShareable,
- *     useChap: volumeAttachmentUseChap,
+ *     isAgentAutoIscsiLoginEnabled: volumeAttachmentIsAgentAutoIscsiLoginEnabled === "true",
+ *     isPvEncryptionInTransitEnabled: volumeAttachmentIsPvEncryptionInTransitEnabled === "true",
+ *     isReadOnly: volumeAttachmentIsReadOnly === "true",
+ *     isShareable: volumeAttachmentIsShareable === "true",
+ *     useChap: volumeAttachmentUseChap === "true",
  * });
  * ```
  *

@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHistories = oci.Optimizer.getHistories({
+ * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
- *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
+ *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -148,10 +148,10 @@ export interface GetHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHistories = oci.Optimizer.getHistories({
+ * const testHistories = oci.optimizer.getHistories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
- *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree === "true",
+ *     includeResourceMetadata: historyIncludeResourceMetadata === "true",
  *     name: historyName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,

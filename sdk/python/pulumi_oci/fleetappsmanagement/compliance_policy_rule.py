@@ -466,14 +466,14 @@ class CompliancePolicyRule(pulumi.CustomResource):
             display_name=compliance_policy_rule_display_name,
             patch_selection={
                 "selection_type": compliance_policy_rule_patch_selection_selection_type,
-                "days_since_release": compliance_policy_rule_patch_selection_days_since_release,
+                "days_since_release": int(compliance_policy_rule_patch_selection_days_since_release),
                 "patch_level": compliance_policy_rule_patch_selection_patch_level,
                 "patch_name": test_patch["name"],
             },
             patch_type_ids=test_patch_type["id"],
             product_version={
                 "version": compliance_policy_rule_product_version_version,
-                "is_applicable_for_all_higher_versions": compliance_policy_rule_product_version_is_applicable_for_all_higher_versions,
+                "is_applicable_for_all_higher_versions": compliance_policy_rule_product_version_is_applicable_for_all_higher_versions == "true",
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -535,14 +535,14 @@ class CompliancePolicyRule(pulumi.CustomResource):
             display_name=compliance_policy_rule_display_name,
             patch_selection={
                 "selection_type": compliance_policy_rule_patch_selection_selection_type,
-                "days_since_release": compliance_policy_rule_patch_selection_days_since_release,
+                "days_since_release": int(compliance_policy_rule_patch_selection_days_since_release),
                 "patch_level": compliance_policy_rule_patch_selection_patch_level,
                 "patch_name": test_patch["name"],
             },
             patch_type_ids=test_patch_type["id"],
             product_version={
                 "version": compliance_policy_rule_product_version_version,
-                "is_applicable_for_all_higher_versions": compliance_policy_rule_product_version_is_applicable_for_all_higher_versions,
+                "is_applicable_for_all_higher_versions": compliance_policy_rule_product_version_is_applicable_for_all_higher_versions == "true",
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",

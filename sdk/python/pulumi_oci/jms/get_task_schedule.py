@@ -193,7 +193,7 @@ def get_task_schedule(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedule = oci.Jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
+    test_task_schedule = oci.jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
         fleet_id=test_fleet["id"])
     ```
 
@@ -234,7 +234,7 @@ def get_task_schedule_output(fleet_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedule = oci.Jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
+    test_task_schedule = oci.jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
         fleet_id=test_fleet["id"])
     ```
 

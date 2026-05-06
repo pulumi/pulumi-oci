@@ -393,11 +393,11 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             },
             response_caching_policy={
-                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled == "true",
             },
             response_compression_policy={
                 "gzip_compression": {
-                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled == "true",
                 },
             },
             system_tags=web_app_acceleration_policy_system_tags)
@@ -460,11 +460,11 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             },
             response_caching_policy={
-                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled == "true",
             },
             response_compression_policy={
                 "gzip_compression": {
-                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled == "true",
                 },
             },
             system_tags=web_app_acceleration_policy_system_tags)

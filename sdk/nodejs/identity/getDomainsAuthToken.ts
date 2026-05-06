@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthToken = oci.Identity.getDomainsAuthToken({
+ * const testAuthToken = oci.identity.getDomainsAuthToken({
  *     authTokenId: testAuthTokenOciIdentityAuthToken.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
@@ -167,7 +167,7 @@ export interface GetDomainsAuthTokenResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthToken = oci.Identity.getDomainsAuthToken({
+ * const testAuthToken = oci.identity.getDomainsAuthToken({
  *     authTokenId: testAuthTokenOciIdentityAuthToken.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],

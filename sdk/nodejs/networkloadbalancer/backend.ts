@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  * const testBackend = new oci.networkloadbalancer.Backend("test_backend", {
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
- *     port: backendPort,
+ *     port: Number(backendPort),
  *     ipAddress: backendIpAddress,
- *     isBackup: backendIsBackup,
- *     isDrain: backendIsDrain,
- *     isOffline: backendIsOffline,
+ *     isBackup: backendIsBackup === "true",
+ *     isDrain: backendIsDrain === "true",
+ *     isOffline: backendIsOffline === "true",
  *     name: backendName,
  *     targetId: testTarget.id,
- *     weight: backendWeight,
+ *     weight: Number(backendWeight),
  * });
  * ```
  *

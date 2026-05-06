@@ -1294,7 +1294,7 @@ class DomainsGroup(pulumi.CustomResource):
             attributes="",
             authorization=group_authorization,
             external_id="externalId",
-            force_delete=group_force_delete,
+            force_delete=group_force_delete == "true",
             id=group_id,
             members=[{
                 "type": group_members_type,
@@ -1332,10 +1332,10 @@ class DomainsGroup(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionposix_group={
-                "gid_number": group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number,
+                "gid_number": int(group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number),
             },
             urnietfparamsscimschemasoracleidcsextensionrequestable_group={
-                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable,
+                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable == "true",
             })
         ```
 
@@ -1474,7 +1474,7 @@ class DomainsGroup(pulumi.CustomResource):
             attributes="",
             authorization=group_authorization,
             external_id="externalId",
-            force_delete=group_force_delete,
+            force_delete=group_force_delete == "true",
             id=group_id,
             members=[{
                 "type": group_members_type,
@@ -1512,10 +1512,10 @@ class DomainsGroup(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionposix_group={
-                "gid_number": group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number,
+                "gid_number": int(group_urnietfparamsscimschemasoracleidcsextensionposix_group_gid_number),
             },
             urnietfparamsscimschemasoracleidcsextensionrequestable_group={
-                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable,
+                "requestable": group_urnietfparamsscimschemasoracleidcsextensionrequestable_group_requestable == "true",
             })
         ```
 

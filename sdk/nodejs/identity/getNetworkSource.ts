@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSource = oci.Identity.getNetworkSource({
+ * const testNetworkSource = oci.identity.getNetworkSource({
  *     networkSourceId: testNetworkSourceOciIdentityNetworkSource.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetNetworkSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSource = oci.Identity.getNetworkSource({
+ * const testNetworkSource = oci.identity.getNetworkSource({
  *     networkSourceId: testNetworkSourceOciIdentityNetworkSource.id,
  * });
  * ```

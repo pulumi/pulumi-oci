@@ -1056,8 +1056,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=log_analytics_object_collection_rule_is_enabled,
-            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection,
+            is_enabled=log_analytics_object_collection_rule_is_enabled == "true",
+            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection == "true",
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,
@@ -1153,8 +1153,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=log_analytics_object_collection_rule_is_enabled,
-            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection,
+            is_enabled=log_analytics_object_collection_rule_is_enabled == "true",
+            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection == "true",
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,

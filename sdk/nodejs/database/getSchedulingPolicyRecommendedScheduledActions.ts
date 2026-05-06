@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicyRecommendedScheduledActions = oci.Database.getSchedulingPolicyRecommendedScheduledActions({
+ * const testSchedulingPolicyRecommendedScheduledActions = oci.database.getSchedulingPolicyRecommendedScheduledActions({
  *     planIntent: schedulingPolicyRecommendedScheduledActionPlanIntent,
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     schedulingPolicyTargetResourceId: testResource.id,
@@ -81,7 +81,7 @@ export interface GetSchedulingPolicyRecommendedScheduledActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicyRecommendedScheduledActions = oci.Database.getSchedulingPolicyRecommendedScheduledActions({
+ * const testSchedulingPolicyRecommendedScheduledActions = oci.database.getSchedulingPolicyRecommendedScheduledActions({
  *     planIntent: schedulingPolicyRecommendedScheduledActionPlanIntent,
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     schedulingPolicyTargetResourceId: testResource.id,

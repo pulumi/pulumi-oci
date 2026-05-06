@@ -200,10 +200,10 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+    test_domains = oci.identity.get_domains(compartment_id=compartment_id,
         display_name=domain_display_name,
         home_region_url=domain_home_region_url,
-        is_hidden_on_login=domain_is_hidden_on_login,
+        is_hidden_on_login=domain_is_hidden_on_login == "true",
         license_type=domain_license_type,
         name=domain_name,
         state=domain_state,
@@ -272,10 +272,10 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+    test_domains = oci.identity.get_domains(compartment_id=compartment_id,
         display_name=domain_display_name,
         home_region_url=domain_home_region_url,
-        is_hidden_on_login=domain_is_hidden_on_login,
+        is_hidden_on_login=domain_is_hidden_on_login == "true",
         license_type=domain_license_type,
         name=domain_name,
         state=domain_state,

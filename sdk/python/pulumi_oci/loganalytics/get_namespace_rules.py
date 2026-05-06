@@ -160,7 +160,7 @@ def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+    test_namespace_rules = oci.loganalytics.get_namespace_rules(compartment_id=compartment_id,
         namespace=namespace_rule_namespace,
         display_name=namespace_rule_display_name,
         kind=namespace_rule_kind,
@@ -216,7 +216,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+    test_namespace_rules = oci.loganalytics.get_namespace_rules(compartment_id=compartment_id,
         namespace=namespace_rule_namespace,
         display_name=namespace_rule_display_name,
         kind=namespace_rule_kind,

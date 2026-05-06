@@ -187,13 +187,13 @@ def get_mysql_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=compartment_id,
+    test_mysql_db_systems = oci.mysql.get_mysql_db_systems(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
-        is_up_to_date=mysql_db_system_is_up_to_date,
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
+        is_up_to_date=mysql_db_system_is_up_to_date == "true",
         state=mysql_db_system_state)
     ```
 
@@ -254,13 +254,13 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=compartment_id,
+    test_mysql_db_systems = oci.mysql.get_mysql_db_systems(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
-        is_up_to_date=mysql_db_system_is_up_to_date,
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
+        is_up_to_date=mysql_db_system_is_up_to_date == "true",
         state=mysql_db_system_state)
     ```
 

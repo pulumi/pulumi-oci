@@ -413,7 +413,7 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
                 "edge_token_key": stream_cdn_config_config_edge_token_key,
                 "edge_token_salt": stream_cdn_config_config_edge_token_salt,
-                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth == "true",
                 "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
                 "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
                 "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
@@ -429,7 +429,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=stream_cdn_config_is_enabled,
+            is_enabled=stream_cdn_config_is_enabled == "true",
             locks=[{
                 "compartment_id": compartment_id,
                 "type": stream_cdn_config_locks_type,
@@ -485,7 +485,7 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
                 "edge_token_key": stream_cdn_config_config_edge_token_key,
                 "edge_token_salt": stream_cdn_config_config_edge_token_salt,
-                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth == "true",
                 "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
                 "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
                 "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
@@ -501,7 +501,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=stream_cdn_config_is_enabled,
+            is_enabled=stream_cdn_config_is_enabled == "true",
             locks=[{
                 "compartment_id": compartment_id,
                 "type": stream_cdn_config_locks_type,

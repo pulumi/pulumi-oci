@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
+ * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
@@ -163,9 +163,9 @@ export interface GetSchedulerExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
+ * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,

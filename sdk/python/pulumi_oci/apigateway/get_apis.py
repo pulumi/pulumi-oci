@@ -124,7 +124,7 @@ def get_apis(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_apis = oci.ApiGateway.get_apis(compartment_id=compartment_id,
+    test_apis = oci.apigateway.get_apis(compartment_id=compartment_id,
         display_name=api_display_name,
         state=api_state)
     ```
@@ -165,7 +165,7 @@ def get_apis_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_apis = oci.ApiGateway.get_apis(compartment_id=compartment_id,
+    test_apis = oci.apigateway.get_apis(compartment_id=compartment_id,
         display_name=api_display_name,
         state=api_state)
     ```

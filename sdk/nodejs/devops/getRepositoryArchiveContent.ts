@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
+ * const testRepositoryArchiveContent = oci.devops.getRepositoryArchiveContent({
  *     repositoryId: testRepository.id,
  *     format: repositoryArchiveContentFormat,
  *     refName: repositoryArchiveContentRefName,
@@ -72,7 +72,7 @@ export interface GetRepositoryArchiveContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
+ * const testRepositoryArchiveContent = oci.devops.getRepositoryArchiveContent({
  *     repositoryId: testRepository.id,
  *     format: repositoryArchiveContentFormat,
  *     refName: repositoryArchiveContentRefName,

@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicies = oci.Identity.getDomainsPolicies({
+ * const testPolicies = oci.identity.getDomainsPolicies({
  *     idcsEndpoint: testDomain.url,
- *     policyCount: policyPolicyCount,
+ *     policyCount: Number(policyPolicyCount),
  *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
- *     startIndex: policyStartIndex,
+ *     startIndex: Number(policyStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicies = oci.Identity.getDomainsPolicies({
+ * const testPolicies = oci.identity.getDomainsPolicies({
  *     idcsEndpoint: testDomain.url,
- *     policyCount: policyPolicyCount,
+ *     policyCount: Number(policyPolicyCount),
  *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
- *     startIndex: policyStartIndex,
+ *     startIndex: Number(policyStartIndex),
  * });
  * ```
  */

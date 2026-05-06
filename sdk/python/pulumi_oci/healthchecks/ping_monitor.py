@@ -482,7 +482,7 @@ class PingMonitor(pulumi.CustomResource):
         test_ping_monitor = oci.healthchecks.PingMonitor("test_ping_monitor",
             compartment_id=compartment_id,
             display_name=ping_monitor_display_name,
-            interval_in_seconds=ping_monitor_interval_in_seconds,
+            interval_in_seconds=int(ping_monitor_interval_in_seconds),
             protocol=ping_monitor_protocol,
             targets=ping_monitor_targets,
             defined_tags={
@@ -491,9 +491,9 @@ class PingMonitor(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=ping_monitor_is_enabled,
-            port=ping_monitor_port,
-            timeout_in_seconds=ping_monitor_timeout_in_seconds,
+            is_enabled=ping_monitor_is_enabled == "true",
+            port=int(ping_monitor_port),
+            timeout_in_seconds=int(ping_monitor_timeout_in_seconds),
             vantage_point_names=ping_monitor_vantage_point_names)
         ```
 
@@ -549,7 +549,7 @@ class PingMonitor(pulumi.CustomResource):
         test_ping_monitor = oci.healthchecks.PingMonitor("test_ping_monitor",
             compartment_id=compartment_id,
             display_name=ping_monitor_display_name,
-            interval_in_seconds=ping_monitor_interval_in_seconds,
+            interval_in_seconds=int(ping_monitor_interval_in_seconds),
             protocol=ping_monitor_protocol,
             targets=ping_monitor_targets,
             defined_tags={
@@ -558,9 +558,9 @@ class PingMonitor(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=ping_monitor_is_enabled,
-            port=ping_monitor_port,
-            timeout_in_seconds=ping_monitor_timeout_in_seconds,
+            is_enabled=ping_monitor_is_enabled == "true",
+            port=int(ping_monitor_port),
+            timeout_in_seconds=int(ping_monitor_timeout_in_seconds),
             vantage_point_names=ping_monitor_vantage_point_names)
         ```
 

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
+ * const testSoftwareSourceVendors = oci.osmanagementhub.getSoftwareSourceVendors({
  *     compartmentId: compartmentId,
  *     name: softwareSourceVendorName,
  * });
@@ -79,7 +79,7 @@ export interface GetSoftwareSourceVendorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
+ * const testSoftwareSourceVendors = oci.osmanagementhub.getSoftwareSourceVendors({
  *     compartmentId: compartmentId,
  *     name: softwareSourceVendorName,
  * });

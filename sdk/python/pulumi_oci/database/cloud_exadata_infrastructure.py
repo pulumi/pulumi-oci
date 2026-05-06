@@ -953,7 +953,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             display_name=cloud_exadata_infrastructure_display_name,
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
-            compute_count=cloud_exadata_infrastructure_compute_count,
+            compute_count=int(cloud_exadata_infrastructure_compute_count),
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
@@ -963,14 +963,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window={
-                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 }],
                 "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_months_name,
                 }],
@@ -978,7 +978,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "preference": cloud_exadata_infrastructure_maintenance_window_preference,
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
-            storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_count=int(cloud_exadata_infrastructure_storage_count),
             storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```
@@ -1039,7 +1039,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             display_name=cloud_exadata_infrastructure_display_name,
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
-            compute_count=cloud_exadata_infrastructure_compute_count,
+            compute_count=int(cloud_exadata_infrastructure_compute_count),
             customer_contacts=[{
                 "email": cloud_exadata_infrastructure_customer_contacts_email,
             }],
@@ -1049,14 +1049,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window={
-                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 }],
                 "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_exadata_infrastructure_maintenance_window_months_name,
                 }],
@@ -1064,7 +1064,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "preference": cloud_exadata_infrastructure_maintenance_window_preference,
                 "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             },
-            storage_count=cloud_exadata_infrastructure_storage_count,
+            storage_count=int(cloud_exadata_infrastructure_storage_count),
             storage_server_type=cloud_exadata_infrastructure_storage_server_type,
             subscription_id=tenant_subscription_id)
         ```

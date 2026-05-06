@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testExternalDbSystemStackMonitoringsManagement = new oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management", {
  *     externalDbSystemId: testExternalDbSystem.id,
- *     enableStackMonitoring: enableStackMonitoring,
- *     isEnabled: externalDbSystemStackMonitoringsManagementIsEnabled,
+ *     enableStackMonitoring: enableStackMonitoring === "true",
+ *     isEnabled: externalDbSystemStackMonitoringsManagementIsEnabled === "true",
  *     metadata: externalDbSystemStackMonitoringsManagementMetadata,
  * });
  * ```

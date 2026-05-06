@@ -134,7 +134,7 @@ def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
+    test_service_catalogs = oci.servicecatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"],
         status=service_catalog_status)
@@ -180,7 +180,7 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
+    test_service_catalogs = oci.servicecatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"],
         status=service_catalog_status)

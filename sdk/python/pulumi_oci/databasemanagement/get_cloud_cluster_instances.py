@@ -124,7 +124,7 @@ def get_cloud_cluster_instances(cloud_cluster_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instances = oci.DatabaseManagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
+    test_cloud_cluster_instances = oci.databasemanagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
         compartment_id=compartment_id,
         display_name=cloud_cluster_instance_display_name)
     ```
@@ -165,7 +165,7 @@ def get_cloud_cluster_instances_output(cloud_cluster_id: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instances = oci.DatabaseManagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
+    test_cloud_cluster_instances = oci.databasemanagement.get_cloud_cluster_instances(cloud_cluster_id=test_cloud_cluster["id"],
         compartment_id=compartment_id,
         display_name=cloud_cluster_instance_display_name)
     ```

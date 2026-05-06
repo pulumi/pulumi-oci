@@ -403,7 +403,7 @@ def get_address(address_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+    test_address = oci.ospgateway.get_address(address_id=test_addres["id"],
         compartment_id=compartment_id,
         osp_home_region=address_osp_home_region)
     ```
@@ -466,7 +466,7 @@ def get_address_output(address_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+    test_address = oci.ospgateway.get_address(address_id=test_addres["id"],
         compartment_id=compartment_id,
         osp_home_region=address_osp_home_region)
     ```

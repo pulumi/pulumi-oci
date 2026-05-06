@@ -267,7 +267,7 @@ def get_user(user_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_user(user_id=test_user_oci_identity_user["id"])
+    test_user = oci.identity.get_user(user_id=test_user_oci_identity_user["id"])
     ```
 
 
@@ -310,7 +310,7 @@ def get_user_output(user_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_user(user_id=test_user_oci_identity_user["id"])
+    test_user = oci.identity.get_user(user_id=test_user_oci_identity_user["id"])
     ```
 
 

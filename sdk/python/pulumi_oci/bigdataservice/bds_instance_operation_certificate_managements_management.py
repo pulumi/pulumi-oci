@@ -335,8 +335,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management,
-            renew_operation_certificate_management=renew_operation_certificate_management,
+            enable_operation_certificate_management=enable_operation_certificate_management == "true",
+            renew_operation_certificate_management=renew_operation_certificate_management == "true",
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
@@ -385,8 +385,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management,
-            renew_operation_certificate_management=renew_operation_certificate_management,
+            enable_operation_certificate_management=enable_operation_certificate_management == "true",
+            renew_operation_certificate_management=renew_operation_certificate_management == "true",
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,

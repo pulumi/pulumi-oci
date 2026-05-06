@@ -138,7 +138,7 @@ def get_target_components(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_components = oci.FleetAppsManagement.get_target_components(compartment_id=compartment_id,
+    test_target_components = oci.fleetappsmanagement.get_target_components(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         name=target_component_name,
@@ -189,7 +189,7 @@ def get_target_components_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_target_components = oci.FleetAppsManagement.get_target_components(compartment_id=compartment_id,
+    test_target_components = oci.fleetappsmanagement.get_target_components(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         name=target_component_name,

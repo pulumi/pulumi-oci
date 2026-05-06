@@ -106,7 +106,7 @@ def get_services(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=tenancy_ocid,
+    test_services = oci.limits.get_services(compartment_id=tenancy_ocid,
         subscription_id=subscription_ocid)
     ```
 
@@ -143,7 +143,7 @@ def get_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=tenancy_ocid,
+    test_services = oci.limits.get_services(compartment_id=tenancy_ocid,
         subscription_id=subscription_ocid)
     ```
 

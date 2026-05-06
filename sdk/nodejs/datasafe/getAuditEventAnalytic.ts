@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEventAnalytic = oci.DataSafe.getAuditEventAnalytic({
+ * const testAuditEventAnalytic = oci.datasafe.getAuditEventAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: auditEventAnalyticGroupBy,
  *     queryTimeZone: auditEventAnalyticQueryTimeZone,
  *     scimQuery: auditEventAnalyticScimQuery,
@@ -138,10 +138,10 @@ export interface GetAuditEventAnalyticResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEventAnalytic = oci.DataSafe.getAuditEventAnalytic({
+ * const testAuditEventAnalytic = oci.datasafe.getAuditEventAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: auditEventAnalyticGroupBy,
  *     queryTimeZone: auditEventAnalyticQueryTimeZone,
  *     scimQuery: auditEventAnalyticScimQuery,

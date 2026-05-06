@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplication = oci.FileStorage.getReplication({
+ * const testReplication = oci.filestorage.getReplication({
  *     replicationId: testReplicationOciFileStorageReplication.id,
  * });
  * ```
@@ -133,7 +133,7 @@ export interface GetReplicationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplication = oci.FileStorage.getReplication({
+ * const testReplication = oci.filestorage.getReplication({
  *     replicationId: testReplicationOciFileStorageReplication.id,
  * });
  * ```

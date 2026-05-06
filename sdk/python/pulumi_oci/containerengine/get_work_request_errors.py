@@ -105,7 +105,7 @@ def get_work_request_errors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_work_request_errors = oci.ContainerEngine.get_work_request_errors(compartment_id=compartment_id,
+    test_work_request_errors = oci.containerengine.get_work_request_errors(compartment_id=compartment_id,
         work_request_id=test_work_request["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_work_request_errors_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_work_request_errors = oci.ContainerEngine.get_work_request_errors(compartment_id=compartment_id,
+    test_work_request_errors = oci.containerengine.get_work_request_errors(compartment_id=compartment_id,
         work_request_id=test_work_request["id"])
     ```
 

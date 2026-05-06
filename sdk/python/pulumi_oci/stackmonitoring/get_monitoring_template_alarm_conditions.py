@@ -167,7 +167,7 @@ def get_monitoring_template_alarm_conditions(alarm_condition_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_conditions = oci.StackMonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
+    test_monitoring_template_alarm_conditions = oci.stackmonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
         metric_names=test_metric["name"],
         resource_types=monitoring_template_alarm_condition_resource_types,
         state=monitoring_template_alarm_condition_state,
@@ -224,7 +224,7 @@ def get_monitoring_template_alarm_conditions_output(alarm_condition_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_conditions = oci.StackMonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
+    test_monitoring_template_alarm_conditions = oci.stackmonitoring.get_monitoring_template_alarm_conditions(monitoring_template_id=test_monitoring_template["id"],
         metric_names=test_metric["name"],
         resource_types=monitoring_template_alarm_condition_resource_types,
         state=monitoring_template_alarm_condition_state,

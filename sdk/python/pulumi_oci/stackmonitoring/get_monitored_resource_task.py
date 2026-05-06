@@ -216,7 +216,7 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
+    test_monitored_resource_task = oci.stackmonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
+    test_monitored_resource_task = oci.stackmonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
     ```
 
 

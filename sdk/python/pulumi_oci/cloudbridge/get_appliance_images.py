@@ -108,7 +108,7 @@ def get_appliance_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_images = oci.CloudBridge.get_appliance_images(compartment_id=compartment_id,
+    test_appliance_images = oci.cloudbridge.get_appliance_images(compartment_id=compartment_id,
         display_name=appliance_image_display_name)
     ```
 
@@ -144,7 +144,7 @@ def get_appliance_images_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_images = oci.CloudBridge.get_appliance_images(compartment_id=compartment_id,
+    test_appliance_images = oci.cloudbridge.get_appliance_images(compartment_id=compartment_id,
         display_name=appliance_image_display_name)
     ```
 

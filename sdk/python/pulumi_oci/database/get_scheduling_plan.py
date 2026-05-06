@@ -251,7 +251,7 @@ def get_scheduling_plan(scheduling_plan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plan = oci.Database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
+    test_scheduling_plan = oci.database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_scheduling_plan_output(scheduling_plan_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plan = oci.Database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
+    test_scheduling_plan = oci.database.get_scheduling_plan(scheduling_plan_id=test_scheduling_plan_oci_database_scheduling_plan["id"])
     ```
 
 

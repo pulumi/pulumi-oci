@@ -87,7 +87,7 @@ def get_problem_entity(problem_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=test_problem["id"])
+    test_problem_entity = oci.cloudguard.get_problem_entity(problem_id=test_problem["id"])
     ```
 
 
@@ -115,7 +115,7 @@ def get_problem_entity_output(problem_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=test_problem["id"])
+    test_problem_entity = oci.cloudguard.get_problem_entity(problem_id=test_problem["id"])
     ```
 
 

@@ -135,7 +135,7 @@ def get_semantic_stores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_stores = oci.GenerativeAi.get_semantic_stores(compartment_id=compartment_id,
+    test_semantic_stores = oci.generativeai.get_semantic_stores(compartment_id=compartment_id,
         data_source_querying_connection_id=test_connection["id"],
         display_name=semantic_store_display_name,
         id=semantic_store_id,
@@ -185,7 +185,7 @@ def get_semantic_stores_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_stores = oci.GenerativeAi.get_semantic_stores(compartment_id=compartment_id,
+    test_semantic_stores = oci.generativeai.get_semantic_stores(compartment_id=compartment_id,
         data_source_querying_connection_id=test_connection["id"],
         display_name=semantic_store_display_name,
         id=semantic_store_id,

@@ -95,7 +95,7 @@ def get_bds_instance_software_updates(bds_instance_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_updates = oci.BigDataService.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_software_updates = oci.bigdataservice.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_bds_instance_software_updates_output(bds_instance_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_updates = oci.BigDataService.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_software_updates = oci.bigdataservice.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
     ```
 
 

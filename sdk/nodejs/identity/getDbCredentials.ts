@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbCredentials = oci.Identity.getDbCredentials({
+ * const testDbCredentials = oci.identity.getDbCredentials({
  *     userId: testUser.id,
  *     name: dbCredentialName,
  *     state: dbCredentialState,
@@ -87,7 +87,7 @@ export interface GetDbCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbCredentials = oci.Identity.getDbCredentials({
+ * const testDbCredentials = oci.identity.getDbCredentials({
  *     userId: testUser.id,
  *     name: dbCredentialName,
  *     state: dbCredentialState,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabase = oci.Database.getDatabase({
+ * const testDatabase = oci.database.getDatabase({
  *     databaseId: databaseId,
  * });
  * ```
@@ -206,7 +206,7 @@ export interface GetDatabaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabase = oci.Database.getDatabase({
+ * const testDatabase = oci.database.getDatabase({
  *     databaseId: databaseId,
  * });
  * ```

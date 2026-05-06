@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureUnAllocatedResource = oci.Database.getExadataInfrastructureUnAllocatedResource({
+ * const testExadataInfrastructureUnAllocatedResource = oci.database.getExadataInfrastructureUnAllocatedResource({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });
@@ -91,7 +91,7 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureUnAllocatedResource = oci.Database.getExadataInfrastructureUnAllocatedResource({
+ * const testExadataInfrastructureUnAllocatedResource = oci.database.getExadataInfrastructureUnAllocatedResource({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });

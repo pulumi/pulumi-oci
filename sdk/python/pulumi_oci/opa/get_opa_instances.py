@@ -125,7 +125,7 @@ def get_opa_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+    test_opa_instances = oci.opa.get_opa_instances(compartment_id=compartment_id,
         display_name=opa_instance_display_name,
         id=opa_instance_id,
         state=opa_instance_state)
@@ -170,7 +170,7 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+    test_opa_instances = oci.opa.get_opa_instances(compartment_id=compartment_id,
         display_name=opa_instance_display_name,
         id=opa_instance_id,
         state=opa_instance_state)

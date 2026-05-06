@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *         nsgIds: virtualNodePoolPodConfigurationNsgIds,
  *     },
- *     size: virtualNodePoolSize,
+ *     size: Number(virtualNodePoolSize),
  *     taints: [{
  *         effect: virtualNodePoolTaintsEffect,
  *         key: virtualNodePoolTaintsKey,

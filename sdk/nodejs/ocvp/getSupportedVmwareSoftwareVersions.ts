@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
+ * const testSupportedVmwareSoftwareVersions = oci.ocvp.getSupportedVmwareSoftwareVersions({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  *     version: supportedVmwareSoftwareVersionVersion,
@@ -93,7 +93,7 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
+ * const testSupportedVmwareSoftwareVersions = oci.ocvp.getSupportedVmwareSoftwareVersions({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  *     version: supportedVmwareSoftwareVersionVersion,

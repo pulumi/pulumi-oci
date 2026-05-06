@@ -150,7 +150,7 @@ def get_pluggable_database_snapshots(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshots = oci.Database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
+    test_pluggable_database_snapshots = oci.database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         name=pluggable_database_snapshot_name,
         pluggable_database_id=test_pluggable_database["id"],
@@ -201,7 +201,7 @@ def get_pluggable_database_snapshots_output(cluster_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshots = oci.Database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
+    test_pluggable_database_snapshots = oci.database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         name=pluggable_database_snapshot_name,
         pluggable_database_id=test_pluggable_database["id"],

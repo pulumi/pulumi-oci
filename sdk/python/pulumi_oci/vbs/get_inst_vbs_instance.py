@@ -236,7 +236,7 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
+    test_vbs_instance = oci.vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
     ```
 
 
@@ -277,7 +277,7 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
+    test_vbs_instance = oci.vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
     ```
 
 

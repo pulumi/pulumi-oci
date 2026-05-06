@@ -105,7 +105,7 @@ def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_block_details = oci.CapacityManagement.get_internal_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
+    test_internal_occ_handover_resource_block_details = oci.capacitymanagement.get_internal_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
         host_id=test_host["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_internal_occ_handover_resource_block_details_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_block_details = oci.CapacityManagement.get_internal_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
+    test_internal_occ_handover_resource_block_details = oci.capacitymanagement.get_internal_occ_handover_resource_block_details(occ_handover_resource_block_id=test_occ_handover_resource_block["id"],
         host_id=test_host["id"])
     ```
 

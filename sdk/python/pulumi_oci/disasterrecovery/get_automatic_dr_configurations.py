@@ -144,7 +144,7 @@ def get_automatic_dr_configurations(automatic_dr_configuration_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configurations = oci.DisasterRecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
+    test_automatic_dr_configurations = oci.disasterrecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
         automatic_dr_configuration_id=test_automatic_dr_configuration["id"],
         display_name=automatic_dr_configuration_display_name,
         lifecycle_state_not_equal_to=automatic_dr_configuration_lifecycle_state_not_equal_to,
@@ -195,7 +195,7 @@ def get_automatic_dr_configurations_output(automatic_dr_configuration_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configurations = oci.DisasterRecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
+    test_automatic_dr_configurations = oci.disasterrecovery.get_automatic_dr_configurations(dr_protection_group_id=test_dr_protection_group["id"],
         automatic_dr_configuration_id=test_automatic_dr_configuration["id"],
         display_name=automatic_dr_configuration_display_name,
         lifecycle_state_not_equal_to=automatic_dr_configuration_lifecycle_state_not_equal_to,

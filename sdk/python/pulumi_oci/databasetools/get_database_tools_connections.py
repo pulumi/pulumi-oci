@@ -173,7 +173,7 @@ def get_database_tools_connections(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+    test_database_tools_connections = oci.databasetools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
         runtime_identities=database_tools_connection_runtime_identity,
@@ -234,7 +234,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+    test_database_tools_connections = oci.databasetools.get_database_tools_connections(compartment_id=compartment_id,
         display_name=database_tools_connection_display_name,
         related_resource_identifier=database_tools_connection_related_resource_identifier,
         runtime_identities=database_tools_connection_runtime_identity,

@@ -105,8 +105,8 @@ def get_fleet_error_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_error_analytics = oci.Jms.get_fleet_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree)
+    test_fleet_error_analytics = oci.jms.get_fleet_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 
@@ -141,8 +141,8 @@ def get_fleet_error_analytics_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_error_analytics = oci.Jms.get_fleet_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree)
+    test_fleet_error_analytics = oci.jms.get_fleet_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 

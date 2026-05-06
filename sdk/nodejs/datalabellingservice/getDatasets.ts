@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatasets = oci.DataLabellingService.getDatasets({
+ * const testDatasets = oci.datalabellingservice.getDatasets({
  *     compartmentId: compartmentId,
  *     annotationFormat: datasetAnnotationFormat,
  *     displayName: datasetDisplayName,
@@ -106,7 +106,7 @@ export interface GetDatasetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatasets = oci.DataLabellingService.getDatasets({
+ * const testDatasets = oci.datalabellingservice.getDatasets({
  *     compartmentId: compartmentId,
  *     annotationFormat: datasetAnnotationFormat,
  *     displayName: datasetDisplayName,

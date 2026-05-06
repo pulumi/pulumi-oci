@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatches = oci.Database.getOneoffPatches({
+ * const testOneoffPatches = oci.database.getOneoffPatches({
  *     compartmentId: compartmentId,
  *     displayName: oneoffPatchDisplayName,
  *     state: oneoffPatchState,
@@ -90,7 +90,7 @@ export interface GetOneoffPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatches = oci.Database.getOneoffPatches({
+ * const testOneoffPatches = oci.database.getOneoffPatches({
  *     compartmentId: compartmentId,
  *     displayName: oneoffPatchDisplayName,
  *     state: oneoffPatchState,

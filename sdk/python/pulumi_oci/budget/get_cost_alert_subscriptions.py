@@ -124,7 +124,7 @@ def get_cost_alert_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_alert_subscriptions = oci.Budget.get_cost_alert_subscriptions(compartment_id=compartment_id,
+    test_cost_alert_subscriptions = oci.budget.get_cost_alert_subscriptions(compartment_id=compartment_id,
         name=cost_alert_subscription_name,
         state=cost_alert_subscription_state)
     ```
@@ -165,7 +165,7 @@ def get_cost_alert_subscriptions_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_alert_subscriptions = oci.Budget.get_cost_alert_subscriptions(compartment_id=compartment_id,
+    test_cost_alert_subscriptions = oci.budget.get_cost_alert_subscriptions(compartment_id=compartment_id,
         name=cost_alert_subscription_name,
         state=cost_alert_subscription_state)
     ```

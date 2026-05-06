@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
+ * const testBlockchainPlatforms = oci.blockchain.getBlockchainPlatforms({
  *     compartmentId: compartmentId,
  *     displayName: blockchainPlatformDisplayName,
  *     state: blockchainPlatformState,
@@ -90,7 +90,7 @@ export interface GetBlockchainPlatformsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
+ * const testBlockchainPlatforms = oci.blockchain.getBlockchainPlatforms({
  *     compartmentId: compartmentId,
  *     displayName: blockchainPlatformDisplayName,
  *     state: blockchainPlatformState,

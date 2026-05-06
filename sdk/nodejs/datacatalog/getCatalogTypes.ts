@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
+ * const testCatalogTypes = oci.datacatalog.getCatalogTypes({
  *     catalogId: testCatalog.id,
  *     externalTypeName: catalogTypeExternalTypeName,
  *     fields: catalogTypeFields,
@@ -147,7 +147,7 @@ export interface GetCatalogTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
+ * const testCatalogTypes = oci.datacatalog.getCatalogTypes({
  *     catalogId: testCatalog.id,
  *     externalTypeName: catalogTypeExternalTypeName,
  *     fields: catalogTypeFields,

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecConnectionTunnelError = oci.Core.getIpsecConnectionTunnelError({
+ * const testIpsecConnectionTunnelError = oci.core.getIpsecConnectionTunnelError({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });
@@ -85,7 +85,7 @@ export interface GetIpsecConnectionTunnelErrorResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecConnectionTunnelError = oci.Core.getIpsecConnectionTunnelError({
+ * const testIpsecConnectionTunnelError = oci.core.getIpsecConnectionTunnelError({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });

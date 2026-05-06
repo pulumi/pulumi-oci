@@ -491,12 +491,12 @@ class ExecutionWindow(pulumi.CustomResource):
             compartment_id=compartment_id,
             execution_resource_id=test_resource["id"],
             time_scheduled=execution_window_time_scheduled,
-            window_duration_in_mins=execution_window_window_duration_in_mins,
+            window_duration_in_mins=int(execution_window_window_duration_in_mins),
             defined_tags=execution_window_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enforced_duration=execution_window_is_enforced_duration)
+            is_enforced_duration=execution_window_is_enforced_duration == "true")
         ```
 
         ## Import
@@ -543,12 +543,12 @@ class ExecutionWindow(pulumi.CustomResource):
             compartment_id=compartment_id,
             execution_resource_id=test_resource["id"],
             time_scheduled=execution_window_time_scheduled,
-            window_duration_in_mins=execution_window_window_duration_in_mins,
+            window_duration_in_mins=int(execution_window_window_duration_in_mins),
             defined_tags=execution_window_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enforced_duration=execution_window_is_enforced_duration)
+            is_enforced_duration=execution_window_is_enforced_duration == "true")
         ```
 
         ## Import

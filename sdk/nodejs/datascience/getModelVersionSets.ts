@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelVersionSets = oci.DataScience.getModelVersionSets({
+ * const testModelVersionSets = oci.datascience.getModelVersionSets({
  *     compartmentId: compartmentId,
  *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,
@@ -126,7 +126,7 @@ export interface GetModelVersionSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelVersionSets = oci.DataScience.getModelVersionSets({
+ * const testModelVersionSets = oci.datascience.getModelVersionSets({
  *     compartmentId: compartmentId,
  *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicy = oci.Identity.getDomainsPolicy({
+ * const testPolicy = oci.identity.getDomainsPolicy({
  *     idcsEndpoint: testDomain.url,
  *     policyId: testPolicyOciIdentityPolicy.id,
  *     attributeSets: ["all"],
@@ -171,7 +171,7 @@ export interface GetDomainsPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicy = oci.Identity.getDomainsPolicy({
+ * const testPolicy = oci.identity.getDomainsPolicy({
  *     idcsEndpoint: testDomain.url,
  *     policyId: testPolicyOciIdentityPolicy.id,
  *     attributeSets: ["all"],

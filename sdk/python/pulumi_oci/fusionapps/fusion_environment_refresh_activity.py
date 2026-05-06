@@ -329,7 +329,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"],
-            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted == "true",
             time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
         ```
 
@@ -371,7 +371,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"],
-            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted == "true",
             time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
         ```
 

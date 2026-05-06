@@ -394,7 +394,7 @@ def get_monitor(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
+    test_monitor = oci.apmsynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
         monitor_id=test_monitor_oci_apm_synthetics_monitor["id"])
     ```
 
@@ -452,7 +452,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
+    test_monitor = oci.apmsynthetics.get_monitor(apm_domain_id=test_apm_domain["id"],
         monitor_id=test_monitor_oci_apm_synthetics_monitor["id"])
     ```
 

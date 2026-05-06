@@ -302,7 +302,7 @@ def get_domains_approval_workflow_assignment(approval_workflow_assignment_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
+    test_approval_workflow_assignment = oci.identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -369,7 +369,7 @@ def get_domains_approval_workflow_assignment_output(approval_workflow_assignment
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
+    test_approval_workflow_assignment = oci.identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

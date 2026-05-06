@@ -60,8 +60,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -110,8 +110,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -210,8 +210,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -260,8 +260,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -310,8 +310,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -363,8 +363,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -416,8 +416,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -469,8 +469,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -522,8 +522,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -579,8 +579,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -639,8 +639,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -699,8 +699,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -759,8 +759,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -819,8 +819,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -875,8 +875,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -925,8 +925,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -975,8 +975,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1025,8 +1025,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1075,8 +1075,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1125,8 +1125,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1182,8 +1182,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1239,8 +1239,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1296,8 +1296,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1353,8 +1353,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1410,8 +1410,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1467,8 +1467,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1524,8 +1524,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1577,8 +1577,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1630,8 +1630,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1683,8 +1683,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1736,8 +1736,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1789,8 +1789,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1846,8 +1846,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1903,8 +1903,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1960,8 +1960,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2017,8 +2017,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2074,8 +2074,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2130,8 +2130,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2186,8 +2186,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2242,8 +2242,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2298,8 +2298,8 @@ public final class MonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Monitoring.MonitoringFunctions;
      * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

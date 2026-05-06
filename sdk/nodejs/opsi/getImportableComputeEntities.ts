@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportableComputeEntities = oci.Opsi.getImportableComputeEntities({
+ * const testImportableComputeEntities = oci.opsi.getImportableComputeEntities({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -79,7 +79,7 @@ export interface GetImportableComputeEntitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportableComputeEntities = oci.Opsi.getImportableComputeEntities({
+ * const testImportableComputeEntities = oci.opsi.getImportableComputeEntities({
  *     compartmentId: compartmentId,
  * });
  * ```

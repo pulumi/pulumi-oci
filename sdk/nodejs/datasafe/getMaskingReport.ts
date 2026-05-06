@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReport = oci.DataSafe.getMaskingReport({
+ * const testMaskingReport = oci.datasafe.getMaskingReport({
  *     maskingReportId: testMaskingReportOciDataSafeMaskingReport.id,
  * });
  * ```
@@ -142,7 +142,7 @@ export interface GetMaskingReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReport = oci.DataSafe.getMaskingReport({
+ * const testMaskingReport = oci.datasafe.getMaskingReport({
  *     maskingReportId: testMaskingReportOciDataSafeMaskingReport.id,
  * });
  * ```

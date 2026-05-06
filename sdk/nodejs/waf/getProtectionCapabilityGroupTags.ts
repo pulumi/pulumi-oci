@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
+ * const testProtectionCapabilityGroupTags = oci.waf.getProtectionCapabilityGroupTags({
  *     compartmentId: compartmentId,
  *     name: protectionCapabilityGroupTagName,
  *     type: protectionCapabilityGroupTagType,
@@ -84,7 +84,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
+ * const testProtectionCapabilityGroupTags = oci.waf.getProtectionCapabilityGroupTags({
  *     compartmentId: compartmentId,
  *     name: protectionCapabilityGroupTagName,
  *     type: protectionCapabilityGroupTagType,

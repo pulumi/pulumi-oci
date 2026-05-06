@@ -286,7 +286,7 @@ def get_image(image_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
+    test_image = oci.core.get_image(image_id=test_image_oci_core_image["id"])
     ```
 
 
@@ -331,7 +331,7 @@ def get_image_output(image_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
+    test_image = oci.core.get_image(image_id=test_image_oci_core_image["id"])
     ```
 
 

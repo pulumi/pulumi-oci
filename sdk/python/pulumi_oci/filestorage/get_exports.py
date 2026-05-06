@@ -137,7 +137,7 @@ def get_exports(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+    test_exports = oci.filestorage.get_exports(compartment_id=compartment_id,
         export_set_id=test_export_set["id"],
         file_system_id=test_file_system["id"],
         id=export_id,
@@ -189,7 +189,7 @@ def get_exports_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+    test_exports = oci.filestorage.get_exports(compartment_id=compartment_id,
         export_set_id=test_export_set["id"],
         file_system_id=test_file_system["id"],
         id=export_id,

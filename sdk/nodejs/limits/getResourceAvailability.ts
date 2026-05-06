@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAvailability = oci.Limits.getResourceAvailability({
+ * const testResourceAvailability = oci.limits.getResourceAvailability({
  *     compartmentId: tenancyOcid,
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
@@ -121,7 +121,7 @@ export interface GetResourceAvailabilityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAvailability = oci.Limits.getResourceAvailability({
+ * const testResourceAvailability = oci.limits.getResourceAvailability({
  *     compartmentId: tenancyOcid,
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,

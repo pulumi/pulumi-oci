@@ -263,7 +263,7 @@ def get_baselineable_metric(baselineable_metric_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
+    test_baselineable_metric = oci.stackmonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_baselineable_metric_output(baselineable_metric_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metric = oci.StackMonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
+    test_baselineable_metric = oci.stackmonitoring.get_baselineable_metric(baselineable_metric_id=test_baselineable_metric_oci_stack_monitoring_baselineable_metric["id"])
     ```
 
 

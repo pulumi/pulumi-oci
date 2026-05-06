@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageConnectors = oci.DatabaseManagement.getCloudExadataStorageConnectors({
+ * const testCloudExadataStorageConnectors = oci.databasemanagement.getCloudExadataStorageConnectors({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudExadataStorageConnectorDisplayName,
@@ -84,7 +84,7 @@ export interface GetCloudExadataStorageConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageConnectors = oci.DatabaseManagement.getCloudExadataStorageConnectors({
+ * const testCloudExadataStorageConnectors = oci.databasemanagement.getCloudExadataStorageConnectors({
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudExadataStorageConnectorDisplayName,

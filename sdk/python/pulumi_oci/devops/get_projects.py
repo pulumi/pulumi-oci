@@ -125,7 +125,7 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+    test_projects = oci.devops.get_projects(compartment_id=compartment_id,
         id=project_id,
         name=project_name,
         state=project_state)
@@ -170,7 +170,7 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+    test_projects = oci.devops.get_projects(compartment_id=compartment_id,
         id=project_id,
         name=project_name,
         state=project_state)

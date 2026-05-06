@@ -184,7 +184,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"],
+    test_auto_scaling_configuration = oci.bigdataservice.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 
@@ -225,7 +225,7 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"],
+    test_auto_scaling_configuration = oci.bigdataservice.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 

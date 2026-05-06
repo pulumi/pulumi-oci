@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testAwrHubSourceAwrhubsourcesManagement = new oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management", {
  *     awrHubSourceId: testAwrHubSource.id,
- *     enableAwrhubsource: enableAwrhubsource,
+ *     enableAwrhubsource: enableAwrhubsource === "true",
  * });
  * ```
  */

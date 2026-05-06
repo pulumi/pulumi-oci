@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionWindows = oci.Database.getExecutionWindows({
+ * const testExecutionWindows = oci.database.getExecutionWindows({
  *     compartmentId: compartmentId,
  *     displayName: executionWindowDisplayName,
  *     executionResourceId: testResource.id,
@@ -100,7 +100,7 @@ export interface GetExecutionWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionWindows = oci.Database.getExecutionWindows({
+ * const testExecutionWindows = oci.database.getExecutionWindows({
  *     compartmentId: compartmentId,
  *     displayName: executionWindowDisplayName,
  *     executionResourceId: testResource.id,

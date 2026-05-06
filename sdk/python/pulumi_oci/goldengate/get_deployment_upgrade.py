@@ -409,7 +409,7 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
+    test_deployment_upgrade = oci.goldengate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
     ```
 
 
@@ -464,7 +464,7 @@ def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
+    test_deployment_upgrade = oci.goldengate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
     ```
 
 

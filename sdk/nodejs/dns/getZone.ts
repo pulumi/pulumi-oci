@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const target = oci.Dns.getZone({
+ * const target = oci.dns.getZone({
  *     zoneNameOrId: zoneOcid,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const targetByName = oci.Dns.getZone({
+ * const targetByName = oci.dns.getZone({
  *     zoneNameOrId: `${testTenancy.name}.example.internal.`,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -179,7 +179,7 @@ export interface GetZoneResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const target = oci.Dns.getZone({
+ * const target = oci.dns.getZone({
  *     zoneNameOrId: zoneOcid,
  *     scope: "PRIVATE",
  *     viewId: testView.id,
@@ -191,7 +191,7 @@ export interface GetZoneResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const targetByName = oci.Dns.getZone({
+ * const targetByName = oci.dns.getZone({
  *     zoneNameOrId: `${testTenancy.name}.example.internal.`,
  *     scope: "PRIVATE",
  *     viewId: testView.id,

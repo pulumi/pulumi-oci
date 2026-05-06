@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
+ * const testExternalListenerServices = oci.databasemanagement.getExternalListenerServices({
  *     externalListenerId: testExternalListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,
@@ -86,7 +86,7 @@ export interface GetExternalListenerServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
+ * const testExternalListenerServices = oci.databasemanagement.getExternalListenerServices({
  *     externalListenerId: testExternalListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,

@@ -228,7 +228,7 @@ def get_cost_anomaly_monitor(cost_anomaly_monitor_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitor = oci.Budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
+    test_cost_anomaly_monitor = oci.budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_cost_anomaly_monitor_output(cost_anomaly_monitor_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitor = oci.Budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
+    test_cost_anomaly_monitor = oci.budget.get_cost_anomaly_monitor(cost_anomaly_monitor_id=test_cost_anomaly_monitor_oci_budget_cost_anomaly_monitor["id"])
     ```
 
 

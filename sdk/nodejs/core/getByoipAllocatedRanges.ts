@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipAllocatedRanges = oci.Core.getByoipAllocatedRanges({
+ * const testByoipAllocatedRanges = oci.core.getByoipAllocatedRanges({
  *     byoipRangeId: testByoipRange.id,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetByoipAllocatedRangesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipAllocatedRanges = oci.Core.getByoipAllocatedRanges({
+ * const testByoipAllocatedRanges = oci.core.getByoipAllocatedRanges({
  *     byoipRangeId: testByoipRange.id,
  * });
  * ```

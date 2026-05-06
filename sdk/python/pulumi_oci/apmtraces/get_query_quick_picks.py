@@ -96,7 +96,7 @@ def get_query_quick_picks(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
+    test_query_quick_picks = oci.apmtraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
     ```
 
 
@@ -128,7 +128,7 @@ def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
+    test_query_quick_picks = oci.apmtraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
     ```
 
 

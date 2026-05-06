@@ -181,11 +181,11 @@ def get_all_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_all_applications = oci.ServiceCatalog.get_all_applications(compartment_id=compartment_id,
+    test_all_applications = oci.servicecatalog.get_all_applications(compartment_id=compartment_id,
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured,
+        is_featured=all_application_is_featured == "true",
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])
@@ -248,11 +248,11 @@ def get_all_applications_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_all_applications = oci.ServiceCatalog.get_all_applications(compartment_id=compartment_id,
+    test_all_applications = oci.servicecatalog.get_all_applications(compartment_id=compartment_id,
         display_name=all_application_display_name,
         entity_id=test_entity["id"],
         entity_type=all_application_entity_type,
-        is_featured=all_application_is_featured,
+        is_featured=all_application_is_featured == "true",
         package_types=all_application_package_type,
         pricings=all_application_pricing,
         publisher_ids=test_publisher["id"])

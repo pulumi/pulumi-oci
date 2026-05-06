@@ -191,7 +191,7 @@ def get_ml_application(ml_application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application = oci.DataScience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
+    test_ml_application = oci.datascience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_ml_application_output(ml_application_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application = oci.DataScience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
+    test_ml_application = oci.datascience.get_ml_application(ml_application_id=test_ml_application_oci_datascience_ml_application["id"])
     ```
 
 

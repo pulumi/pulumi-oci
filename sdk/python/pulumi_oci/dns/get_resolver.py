@@ -253,7 +253,7 @@ def get_resolver(resolver_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver = oci.Dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
+    test_resolver = oci.dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
         scope="PRIVATE")
     ```
 
@@ -302,7 +302,7 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver = oci.Dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
+    test_resolver = oci.dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
         scope="PRIVATE")
     ```
 

@@ -185,7 +185,7 @@ def get_replication_policy(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+    test_replication_policy = oci.objectstorage.get_replication_policy(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace,
         replication_id=test_replication["id"])
     ```
@@ -230,7 +230,7 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+    test_replication_policy = oci.objectstorage.get_replication_policy(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace,
         replication_id=test_replication["id"])
     ```

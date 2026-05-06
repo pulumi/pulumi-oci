@@ -131,7 +131,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_patch_histories = oci.bigdataservice.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
         patch_type=bds_instance_patch_history_patch_type,
         patch_version=bds_instance_patch_history_patch_version,
         state=bds_instance_patch_history_state)
@@ -177,7 +177,7 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_patch_histories = oci.bigdataservice.get_bds_instance_patch_histories(bds_instance_id=test_bds_instance["id"],
         patch_type=bds_instance_patch_history_patch_type,
         patch_version=bds_instance_patch_history_patch_version,
         state=bds_instance_patch_history_state)

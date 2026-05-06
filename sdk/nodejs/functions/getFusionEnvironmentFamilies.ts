@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilies = oci.Functions.getFusionEnvironmentFamilies({
+ * const testFusionEnvironmentFamilies = oci.functions.getFusionEnvironmentFamilies({
  *     compartmentId: compartmentId,
  *     displayName: fusionEnvironmentFamilyDisplayName,
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
@@ -97,7 +97,7 @@ export interface GetFusionEnvironmentFamiliesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamilies = oci.Functions.getFusionEnvironmentFamilies({
+ * const testFusionEnvironmentFamilies = oci.functions.getFusionEnvironmentFamilies({
  *     compartmentId: compartmentId,
  *     displayName: fusionEnvironmentFamilyDisplayName,
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,

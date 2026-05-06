@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAccelerations = oci.Waa.getAppAccelerations({
+ * const testWebAppAccelerations = oci.waa.getAppAccelerations({
  *     compartmentId: compartmentId,
  *     displayName: webAppAccelerationDisplayName,
  *     id: webAppAccelerationId,
@@ -106,7 +106,7 @@ export interface GetAppAccelerationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAccelerations = oci.Waa.getAppAccelerations({
+ * const testWebAppAccelerations = oci.waa.getAppAccelerations({
  *     compartmentId: compartmentId,
  *     displayName: webAppAccelerationDisplayName,
  *     id: webAppAccelerationId,

@@ -138,7 +138,7 @@ def get_build_pipelines(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=compartment_id,
+    test_build_pipelines = oci.devops.get_build_pipelines(compartment_id=compartment_id,
         display_name=build_pipeline_display_name,
         id=build_pipeline_id,
         project_id=test_project["id"],
@@ -188,7 +188,7 @@ def get_build_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=compartment_id,
+    test_build_pipelines = oci.devops.get_build_pipelines(compartment_id=compartment_id,
         display_name=build_pipeline_display_name,
         id=build_pipeline_id,
         project_id=test_project["id"],

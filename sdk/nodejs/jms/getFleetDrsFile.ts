@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetDrsFile = oci.Jms.getFleetDrsFile({
+ * const testFleetDrsFile = oci.jms.getFleetDrsFile({
  *     drsFileKey: fleetDrsFileDrsFileKey,
  *     fleetId: testFleet.id,
  * });
@@ -92,7 +92,7 @@ export interface GetFleetDrsFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetDrsFile = oci.Jms.getFleetDrsFile({
+ * const testFleetDrsFile = oci.jms.getFleetDrsFile({
  *     drsFileKey: fleetDrsFileDrsFileKey,
  *     fleetId: testFleet.id,
  * });

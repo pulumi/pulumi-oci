@@ -214,14 +214,14 @@ def get_domains_identity_propagation_trusts(attribute_sets: Optional[Sequence[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
-        identity_propagation_trust_count=identity_propagation_trust_identity_propagation_trust_count,
+    test_identity_propagation_trusts = oci.identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
+        identity_propagation_trust_count=int(identity_propagation_trust_identity_propagation_trust_count),
         identity_propagation_trust_filter=identity_propagation_trust_identity_propagation_trust_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_propagation_trust_authorization,
         resource_type_schema_version=identity_propagation_trust_resource_type_schema_version,
-        start_index=identity_propagation_trust_start_index)
+        start_index=int(identity_propagation_trust_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_identity_propagation_trusts_output(attribute_sets: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
-        identity_propagation_trust_count=identity_propagation_trust_identity_propagation_trust_count,
+    test_identity_propagation_trusts = oci.identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
+        identity_propagation_trust_count=int(identity_propagation_trust_identity_propagation_trust_count),
         identity_propagation_trust_filter=identity_propagation_trust_identity_propagation_trust_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_propagation_trust_authorization,
         resource_type_schema_version=identity_propagation_trust_resource_type_schema_version,
-        start_index=identity_propagation_trust_start_index)
+        start_index=int(identity_propagation_trust_start_index))
     ```
 
 

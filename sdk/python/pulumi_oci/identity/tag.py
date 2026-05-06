@@ -414,7 +414,7 @@ class Tag(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=tag_is_cost_tracking,
+            is_cost_tracking=tag_is_cost_tracking == "true",
             validator={
                 "validator_type": tag_validator_validator_type,
                 "values": tag_validator_values,
@@ -501,7 +501,7 @@ class Tag(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=tag_is_cost_tracking,
+            is_cost_tracking=tag_is_cost_tracking == "true",
             validator={
                 "validator_type": tag_validator_validator_type,
                 "values": tag_validator_values,

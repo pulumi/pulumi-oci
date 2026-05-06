@@ -594,7 +594,7 @@ def get_domains_social_identity_provider(authorization: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_provider = oci.Identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
+    test_social_identity_provider = oci.identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
         social_identity_provider_id=test_identity_provider["id"],
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version)
@@ -677,7 +677,7 @@ def get_domains_social_identity_provider_output(authorization: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_provider = oci.Identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
+    test_social_identity_provider = oci.identity.get_domains_social_identity_provider(idcs_endpoint=test_domain["url"],
         social_identity_provider_id=test_identity_provider["id"],
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version)

@@ -151,7 +151,7 @@ def get_build_runs(build_pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
+    test_build_runs = oci.devops.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
         compartment_id=compartment_id,
         display_name=build_run_display_name,
         id=build_run_id,
@@ -206,7 +206,7 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
+    test_build_runs = oci.devops.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
         compartment_id=compartment_id,
         display_name=build_run_display_name,
         id=build_run_id,

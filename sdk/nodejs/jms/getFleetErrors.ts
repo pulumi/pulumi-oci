@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrors = oci.Jms.getFleetErrors({
+ * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,
@@ -116,9 +116,9 @@ export interface GetFleetErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetErrors = oci.Jms.getFleetErrors({
+ * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,

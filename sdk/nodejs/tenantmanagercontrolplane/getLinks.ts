@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLinks = oci.Tenantmanagercontrolplane.getLinks({
+ * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,
@@ -91,7 +91,7 @@ export interface GetLinksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLinks = oci.Tenantmanagercontrolplane.getLinks({
+ * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,

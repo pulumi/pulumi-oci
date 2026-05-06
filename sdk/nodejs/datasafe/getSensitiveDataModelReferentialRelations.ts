@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelReferentialRelations = oci.DataSafe.getSensitiveDataModelReferentialRelations({
+ * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,
@@ -117,10 +117,10 @@ export interface GetSensitiveDataModelReferentialRelationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelReferentialRelations = oci.DataSafe.getSensitiveDataModelReferentialRelations({
+ * const testSensitiveDataModelReferentialRelations = oci.datasafe.getSensitiveDataModelReferentialRelations({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnNames: sensitiveDataModelReferentialRelationColumnName,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  *     objects: sensitiveDataModelReferentialRelationObject,
  *     relationTypes: sensitiveDataModelReferentialRelationRelationType,
  *     schemaNames: sensitiveDataModelReferentialRelationSchemaName,

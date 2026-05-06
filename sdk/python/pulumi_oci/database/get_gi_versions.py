@@ -135,7 +135,7 @@ def get_gi_versions(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
+    test_gi_versions = oci.database.get_gi_versions(compartment_id=compartment_id,
         availability_domain=gi_version_availability_domain,
         resource_id=test_resource["id"],
         shape=gi_version_shape,
@@ -186,7 +186,7 @@ def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
+    test_gi_versions = oci.database.get_gi_versions(compartment_id=compartment_id,
         availability_domain=gi_version_availability_domain,
         resource_id=test_resource["id"],
         shape=gi_version_shape,

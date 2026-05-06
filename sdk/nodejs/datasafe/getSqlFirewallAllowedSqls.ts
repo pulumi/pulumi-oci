@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallAllowedSqls = oci.DataSafe.getSqlFirewallAllowedSqls({
+ * const testSqlFirewallAllowedSqls = oci.datasafe.getSqlFirewallAllowedSqls({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlCompartmentIdInSubtree === "true",
  *     scimQuery: sqlFirewallAllowedSqlScimQuery,
  * });
  * ```
@@ -119,10 +119,10 @@ export interface GetSqlFirewallAllowedSqlsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallAllowedSqls = oci.DataSafe.getSqlFirewallAllowedSqls({
+ * const testSqlFirewallAllowedSqls = oci.datasafe.getSqlFirewallAllowedSqls({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlCompartmentIdInSubtree === "true",
  *     scimQuery: sqlFirewallAllowedSqlScimQuery,
  * });
  * ```

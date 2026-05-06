@@ -143,7 +143,7 @@ def get_managed_my_sql_database_binary_log_information(managed_my_sql_database_i
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_binary_log_information = oci.DatabaseManagement.get_managed_my_sql_database_binary_log_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_binary_log_information = oci.databasemanagement.get_managed_my_sql_database_binary_log_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_managed_my_sql_database_binary_log_information_output(managed_my_sql_dat
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_binary_log_information = oci.DatabaseManagement.get_managed_my_sql_database_binary_log_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_binary_log_information = oci.databasemanagement.get_managed_my_sql_database_binary_log_information(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

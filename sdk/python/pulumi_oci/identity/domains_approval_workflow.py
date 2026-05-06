@@ -1060,7 +1060,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             max_duration={
                 "unit": approval_workflow_max_duration_unit,
-                "value": approval_workflow_max_duration_value,
+                "value": int(approval_workflow_max_duration_value),
             },
             name=approval_workflow_name,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow"],
@@ -1201,7 +1201,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             max_duration={
                 "unit": approval_workflow_max_duration_unit,
-                "value": approval_workflow_max_duration_value,
+                "value": int(approval_workflow_max_duration_value),
             },
             name=approval_workflow_name,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow"],

@@ -200,7 +200,7 @@ def get_zpr_policy(zpr_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policy = oci.Zpr.get_zpr_policy(zpr_policy_id=test_zpr_policy_oci_zpr_zpr_policy["id"])
+    test_zpr_policy = oci.zpr.get_zpr_policy(zpr_policy_id=test_zpr_policy_oci_zpr_zpr_policy["id"])
     ```
 
 
@@ -238,7 +238,7 @@ def get_zpr_policy_output(zpr_policy_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policy = oci.Zpr.get_zpr_policy(zpr_policy_id=test_zpr_policy_oci_zpr_zpr_policy["id"])
+    test_zpr_policy = oci.zpr.get_zpr_policy(zpr_policy_id=test_zpr_policy_oci_zpr_zpr_policy["id"])
     ```
 
 

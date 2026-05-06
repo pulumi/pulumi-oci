@@ -135,7 +135,7 @@ def get_invoices(ar_customer_transaction_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
+    test_invoices = oci.onesubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
         compartment_id=compartment_id,
         fields=invoice_fields,
         time_from=invoice_time_from,
@@ -186,7 +186,7 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
+    test_invoices = oci.onesubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
         compartment_id=compartment_id,
         fields=invoice_fields,
         time_from=invoice_time_from,

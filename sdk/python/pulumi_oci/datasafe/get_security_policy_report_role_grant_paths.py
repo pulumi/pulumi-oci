@@ -123,7 +123,7 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_role_grant_paths = oci.DataSafe.get_security_policy_report_role_grant_paths(granted_role=security_policy_report_role_grant_path_granted_role,
+    test_security_policy_report_role_grant_paths = oci.datasafe.get_security_policy_report_role_grant_paths(granted_role=security_policy_report_role_grant_path_granted_role,
         grantee=security_policy_report_role_grant_path_grantee,
         security_policy_report_id=test_security_policy_report["id"])
     ```
@@ -166,7 +166,7 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_role_grant_paths = oci.DataSafe.get_security_policy_report_role_grant_paths(granted_role=security_policy_report_role_grant_path_granted_role,
+    test_security_policy_report_role_grant_paths = oci.datasafe.get_security_policy_report_role_grant_paths(granted_role=security_policy_report_role_grant_path_granted_role,
         grantee=security_policy_report_role_grant_path_grantee,
         security_policy_report_id=test_security_policy_report["id"])
     ```

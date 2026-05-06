@@ -33,15 +33,15 @@ import (
 //			_, err := opsi.GetDatabaseInsights(ctx, &opsi.GetDatabaseInsightsArgs{
 //				CompartmentId:             pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree:    pulumi.BoolRef(databaseInsightCompartmentIdInSubtree),
-//				DatabaseIds:               testDatabase.Id,
-//				DatabaseTypes:             databaseInsightDatabaseType,
+//				DatabaseIds:               pulumi.ToArray(testDatabase.Id),
+//				DatabaseTypes:             pulumi.ToArray(databaseInsightDatabaseType),
 //				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
 //				ExadataInsightId:          pulumi.StringRef(testExadataInsight.Id),
-//				Fields:                    databaseInsightFields,
+//				Fields:                    pulumi.ToArray(databaseInsightFields),
 //				Id:                        pulumi.StringRef(databaseInsightId),
 //				OpsiPrivateEndpointId:     pulumi.StringRef(testPrivateEndpoint.Id),
-//				States:                    databaseInsightState,
-//				Statuses:                  databaseInsightStatus,
+//				States:                    pulumi.ToArray(databaseInsightState),
+//				Statuses:                  pulumi.ToArray(databaseInsightStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

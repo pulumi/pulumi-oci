@@ -759,7 +759,7 @@ class RedisCluster(pulumi.CustomResource):
         test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
             compartment_id=compartment_id,
             display_name=redis_cluster_display_name,
-            node_count=redis_cluster_node_count,
+            node_count=int(redis_cluster_node_count),
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
@@ -781,7 +781,7 @@ class RedisCluster(pulumi.CustomResource):
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
             security_attributes=redis_cluster_security_attributes,
-            shard_count=redis_cluster_shard_count)
+            shard_count=int(redis_cluster_shard_count))
         ```
 
         ## Import
@@ -840,7 +840,7 @@ class RedisCluster(pulumi.CustomResource):
         test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
             compartment_id=compartment_id,
             display_name=redis_cluster_display_name,
-            node_count=redis_cluster_node_count,
+            node_count=int(redis_cluster_node_count),
             node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
             software_version=redis_cluster_software_version,
             subnet_id=test_subnet["id"],
@@ -862,7 +862,7 @@ class RedisCluster(pulumi.CustomResource):
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
             security_attributes=redis_cluster_security_attributes,
-            shard_count=redis_cluster_shard_count)
+            shard_count=int(redis_cluster_shard_count))
         ```
 
         ## Import

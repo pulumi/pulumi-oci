@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomain = oci.Identity.getDomain({
+ * const testDomain = oci.identity.getDomain({
  *     domainId: testDomainOciIdentityDomain.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomain = oci.Identity.getDomain({
+ * const testDomain = oci.identity.getDomain({
  *     domainId: testDomainOciIdentityDomain.id,
  * });
  * ```

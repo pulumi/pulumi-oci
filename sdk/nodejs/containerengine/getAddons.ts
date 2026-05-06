@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddons = oci.ContainerEngine.getAddons({
+ * const testAddons = oci.containerengine.getAddons({
  *     clusterId: testCluster.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetAddonsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddons = oci.ContainerEngine.getAddons({
+ * const testAddons = oci.containerengine.getAddons({
  *     clusterId: testCluster.id,
  * });
  * ```

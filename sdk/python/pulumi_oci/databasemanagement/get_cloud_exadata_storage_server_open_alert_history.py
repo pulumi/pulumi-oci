@@ -84,7 +84,7 @@ def get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_se
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server_open_alert_history = oci.databasemanagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_cloud_exadata_storage_server_open_alert_history_output(cloud_exadata_sto
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server_open_alert_history = oci.databasemanagement.get_cloud_exadata_storage_server_open_alert_history(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server["id"])
     ```
 
 

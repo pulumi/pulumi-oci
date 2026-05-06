@@ -92,7 +92,7 @@ def get_utils_analyze_applications_configuration(compartment_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_analyze_applications_configuration = oci.Jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
+    test_analyze_applications_configuration = oci.jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -121,7 +121,7 @@ def get_utils_analyze_applications_configuration_output(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_analyze_applications_configuration = oci.Jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
+    test_analyze_applications_configuration = oci.jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
     ```
 
 

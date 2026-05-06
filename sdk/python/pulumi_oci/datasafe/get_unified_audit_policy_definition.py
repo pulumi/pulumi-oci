@@ -239,7 +239,7 @@ def get_unified_audit_policy_definition(unified_audit_policy_definition_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definition = oci.DataSafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
+    test_unified_audit_policy_definition = oci.datasafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_unified_audit_policy_definition_output(unified_audit_policy_definition_i
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definition = oci.DataSafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
+    test_unified_audit_policy_definition = oci.datasafe.get_unified_audit_policy_definition(unified_audit_policy_definition_id=test_unified_audit_policy_definition_oci_data_safe_unified_audit_policy_definition["id"])
     ```
 
 

@@ -394,7 +394,7 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system = oci.Psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
+    test_db_system = oci.psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
         excluded_fields=db_system_excluded_fields)
     ```
 
@@ -453,7 +453,7 @@ def get_db_system_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system = oci.Psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
+    test_db_system = oci.psql.get_db_system(db_system_id=test_db_system_oci_psql_db_system["id"],
         excluded_fields=db_system_excluded_fields)
     ```
 

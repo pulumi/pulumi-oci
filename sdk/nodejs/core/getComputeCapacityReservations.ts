@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
+ * const testComputeCapacityReservations = oci.core.getComputeCapacityReservations({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
  *     displayName: computeCapacityReservationDisplayName,
@@ -106,7 +106,7 @@ export interface GetComputeCapacityReservationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
+ * const testComputeCapacityReservations = oci.core.getComputeCapacityReservations({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
  *     displayName: computeCapacityReservationDisplayName,

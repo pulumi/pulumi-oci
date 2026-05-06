@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSession = oci.DataScience.getNotebookSession({
+ * const testNotebookSession = oci.datascience.getNotebookSession({
  *     notebookSessionId: testNotebookSessionOciDatascienceNotebookSession.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetNotebookSessionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSession = oci.DataScience.getNotebookSession({
+ * const testNotebookSession = oci.datascience.getNotebookSession({
  *     notebookSessionId: testNotebookSessionOciDatascienceNotebookSession.id,
  * });
  * ```

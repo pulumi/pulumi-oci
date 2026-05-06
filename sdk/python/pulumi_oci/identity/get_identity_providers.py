@@ -142,7 +142,7 @@ def get_identity_providers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=tenancy_ocid,
+    test_identity_providers = oci.identity.get_identity_providers(compartment_id=tenancy_ocid,
         protocol=identity_provider_protocol,
         name=identity_provider_name,
         state=identity_provider_state)
@@ -193,7 +193,7 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=tenancy_ocid,
+    test_identity_providers = oci.identity.get_identity_providers(compartment_id=tenancy_ocid,
         protocol=identity_provider_protocol,
         name=identity_provider_name,
         state=identity_provider_state)

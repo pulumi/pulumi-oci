@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupArtifactContent = oci.DataScience.getModelGroupArtifactContent({
+ * const testModelGroupArtifactContent = oci.datascience.getModelGroupArtifactContent({
  *     modelGroupId: testModelGroup.id,
  *     range: modelGroupArtifactContentRange,
  * });
@@ -65,7 +65,7 @@ export interface GetModelGroupArtifactContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupArtifactContent = oci.DataScience.getModelGroupArtifactContent({
+ * const testModelGroupArtifactContent = oci.datascience.getModelGroupArtifactContent({
  *     modelGroupId: testModelGroup.id,
  *     range: modelGroupArtifactContentRange,
  * });

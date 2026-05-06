@@ -648,10 +648,10 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
             high_capacity_database_storage={
-                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+                "total_size_in_gbs": int(exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs),
             },
-            additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
-            autoscale_limit_in_gbs=exascale_db_storage_vault_autoscale_limit_in_gbs,
+            additional_flash_cache_in_percent=int(exascale_db_storage_vault_additional_flash_cache_in_percent),
+            autoscale_limit_in_gbs=int(exascale_db_storage_vault_autoscale_limit_in_gbs),
             cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -659,7 +659,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled,
+            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled == "true",
             subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```
@@ -719,10 +719,10 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
             high_capacity_database_storage={
-                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+                "total_size_in_gbs": int(exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs),
             },
-            additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
-            autoscale_limit_in_gbs=exascale_db_storage_vault_autoscale_limit_in_gbs,
+            additional_flash_cache_in_percent=int(exascale_db_storage_vault_additional_flash_cache_in_percent),
+            autoscale_limit_in_gbs=int(exascale_db_storage_vault_autoscale_limit_in_gbs),
             cluster_placement_group_id=test_cluster_placement_group["id"],
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -730,7 +730,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled,
+            is_autoscale_enabled=exascale_db_storage_vault_is_autoscale_enabled == "true",
             subscription_id=tenant_subscription_id,
             time_zone=exascale_db_storage_vault_time_zone)
         ```

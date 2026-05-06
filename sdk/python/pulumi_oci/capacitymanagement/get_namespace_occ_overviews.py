@@ -138,7 +138,7 @@ def get_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_occ_overviews = oci.CapacityManagement.get_namespace_occ_overviews(compartment_id=compartment_id,
+    test_namespace_occ_overviews = oci.capacitymanagement.get_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=namespace_occ_overview_namespace,
         from_=namespace_occ_overview_from,
         to=namespace_occ_overview_to,
@@ -189,7 +189,7 @@ def get_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_occ_overviews = oci.CapacityManagement.get_namespace_occ_overviews(compartment_id=compartment_id,
+    test_namespace_occ_overviews = oci.capacitymanagement.get_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=namespace_occ_overview_namespace,
         from_=namespace_occ_overview_from,
         to=namespace_occ_overview_to,

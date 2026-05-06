@@ -441,7 +441,7 @@ class StreamPackagingConfig(pulumi.CustomResource):
         test_stream_packaging_config = oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config",
             display_name=stream_packaging_config_display_name,
             distribution_channel_id=test_channel["id"],
-            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            segment_time_in_seconds=int(stream_packaging_config_segment_time_in_seconds),
             stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -509,7 +509,7 @@ class StreamPackagingConfig(pulumi.CustomResource):
         test_stream_packaging_config = oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config",
             display_name=stream_packaging_config_display_name,
             distribution_channel_id=test_channel["id"],
-            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            segment_time_in_seconds=int(stream_packaging_config_segment_time_in_seconds),
             stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",

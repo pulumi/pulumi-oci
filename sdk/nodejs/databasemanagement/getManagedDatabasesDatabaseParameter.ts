@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameter = oci.DatabaseManagement.getManagedDatabasesDatabaseParameter({
+ * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });
@@ -104,9 +104,9 @@ export interface GetManagedDatabasesDatabaseParameterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameter = oci.DatabaseManagement.getManagedDatabasesDatabaseParameter({
+ * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });

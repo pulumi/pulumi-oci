@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
+ * const testVmClusterNetworkDownloadConfigFile = oci.database.getVmClusterNetworkDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,
@@ -76,7 +76,7 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
+ * const testVmClusterNetworkDownloadConfigFile = oci.database.getVmClusterNetworkDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,

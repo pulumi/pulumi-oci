@@ -252,7 +252,7 @@ def get_pool(pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
+    test_pool = oci.dataflow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_pool_output(pool_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
+    test_pool = oci.dataflow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
 
 

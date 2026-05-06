@@ -132,7 +132,7 @@ def get_job_executions_status(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=compartment_id,
+    test_job_executions_status = oci.databasemanagement.get_job_executions_status(compartment_id=compartment_id,
         end_time=job_executions_status_end_time,
         start_time=job_executions_status_start_time,
         id=job_executions_status_id,
@@ -189,7 +189,7 @@ def get_job_executions_status_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=compartment_id,
+    test_job_executions_status = oci.databasemanagement.get_job_executions_status(compartment_id=compartment_id,
         end_time=job_executions_status_end_time,
         start_time=job_executions_status_start_time,
         id=job_executions_status_id,

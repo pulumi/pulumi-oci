@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportedModels = oci.GenerativeAi.getImportedModels({
+ * const testImportedModels = oci.generativeai.getImportedModels({
  *     compartmentId: compartmentId,
  *     capabilities: importedModelCapability,
  *     displayName: importedModelDisplayName,
@@ -98,7 +98,7 @@ export interface GetImportedModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportedModels = oci.GenerativeAi.getImportedModels({
+ * const testImportedModels = oci.generativeai.getImportedModels({
  *     compartmentId: compartmentId,
  *     capabilities: importedModelCapability,
  *     displayName: importedModelDisplayName,

@@ -420,7 +420,7 @@ def get_management_agent(management_agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
+    test_management_agent = oci.managementagent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
     ```
 
 
@@ -477,7 +477,7 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
+    test_management_agent = oci.managementagent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
     ```
 
 

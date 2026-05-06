@@ -95,7 +95,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
+    test_drg_route_distribution_statements = oci.core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_drg_route_distribution_statements_output(drg_route_distribution_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distribution_statements = oci.Core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
+    test_drg_route_distribution_statements = oci.core.get_drg_route_distribution_statements(drg_route_distribution_id=test_drg_route_distribution["id"])
     ```
 
 

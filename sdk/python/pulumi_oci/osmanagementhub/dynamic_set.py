@@ -403,7 +403,7 @@ class DynamicSet(pulumi.CustomResource):
             matching_rule={
                 "architectures": dynamic_set_matching_rule_architectures,
                 "display_names": dynamic_set_matching_rule_display_names,
-                "is_reboot_required": dynamic_set_matching_rule_is_reboot_required,
+                "is_reboot_required": dynamic_set_matching_rule_is_reboot_required == "true",
                 "locations": dynamic_set_matching_rule_locations,
                 "managed_instance_group_ids": dynamic_set_matching_rule_managed_instance_group_ids,
                 "managed_instance_ids": dynamic_set_matching_rule_managed_instance_ids,
@@ -419,7 +419,7 @@ class DynamicSet(pulumi.CustomResource):
             },
             target_compartments=[{
                 "compartment_id": compartment_id,
-                "does_include_children": dynamic_set_target_compartments_does_include_children,
+                "does_include_children": dynamic_set_target_compartments_does_include_children == "true",
             }],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -477,7 +477,7 @@ class DynamicSet(pulumi.CustomResource):
             matching_rule={
                 "architectures": dynamic_set_matching_rule_architectures,
                 "display_names": dynamic_set_matching_rule_display_names,
-                "is_reboot_required": dynamic_set_matching_rule_is_reboot_required,
+                "is_reboot_required": dynamic_set_matching_rule_is_reboot_required == "true",
                 "locations": dynamic_set_matching_rule_locations,
                 "managed_instance_group_ids": dynamic_set_matching_rule_managed_instance_group_ids,
                 "managed_instance_ids": dynamic_set_matching_rule_managed_instance_ids,
@@ -493,7 +493,7 @@ class DynamicSet(pulumi.CustomResource):
             },
             target_compartments=[{
                 "compartment_id": compartment_id,
-                "does_include_children": dynamic_set_target_compartments_does_include_children,
+                "does_include_children": dynamic_set_target_compartments_does_include_children == "true",
             }],
             defined_tags={
                 "Operations.CostCenter": "42",

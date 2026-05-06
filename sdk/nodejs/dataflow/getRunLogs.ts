@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLogs = oci.DataFlow.getRunLogs({
+ * const testRunLogs = oci.dataflow.getRunLogs({
  *     runId: testRun.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetRunLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLogs = oci.DataFlow.getRunLogs({
+ * const testRunLogs = oci.dataflow.getRunLogs({
  *     runId: testRun.id,
  * });
  * ```

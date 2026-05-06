@@ -214,14 +214,14 @@ def get_domains_policies(attribute_sets: Optional[Sequence[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_domains_policies(idcs_endpoint=test_domain["url"],
-        policy_count=policy_policy_count,
+    test_policies = oci.identity.get_domains_policies(idcs_endpoint=test_domain["url"],
+        policy_count=int(policy_policy_count),
         policy_filter=policy_policy_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=policy_authorization,
         resource_type_schema_version=policy_resource_type_schema_version,
-        start_index=policy_start_index)
+        start_index=int(policy_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_policies_output(attribute_sets: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_domains_policies(idcs_endpoint=test_domain["url"],
-        policy_count=policy_policy_count,
+    test_policies = oci.identity.get_domains_policies(idcs_endpoint=test_domain["url"],
+        policy_count=int(policy_policy_count),
         policy_filter=policy_policy_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=policy_authorization,
         resource_type_schema_version=policy_resource_type_schema_version,
-        start_index=policy_start_index)
+        start_index=int(policy_start_index))
     ```
 
 

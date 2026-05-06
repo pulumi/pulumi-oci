@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionRules = oci.Waas.getProtectionRules({
+ * const testProtectionRules = oci.waas.getProtectionRules({
  *     waasPolicyId: testWaasPolicy.id,
  *     actions: protectionRuleAction,
  *     modSecurityRuleIds: testRule.id,
@@ -86,7 +86,7 @@ export interface GetProtectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionRules = oci.Waas.getProtectionRules({
+ * const testProtectionRules = oci.waas.getProtectionRules({
  *     waasPolicyId: testWaasPolicy.id,
  *     actions: protectionRuleAction,
  *     modSecurityRuleIds: testRule.id,

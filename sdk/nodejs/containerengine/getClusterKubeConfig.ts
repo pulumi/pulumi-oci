@@ -15,10 +15,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterKubeConfig = oci.ContainerEngine.getClusterKubeConfig({
+ * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: clusterKubeConfigExpiration,
+ *     expiration: Number(clusterKubeConfigExpiration),
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```
@@ -83,10 +83,10 @@ export interface GetClusterKubeConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterKubeConfig = oci.ContainerEngine.getClusterKubeConfig({
+ * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: clusterKubeConfigExpiration,
+ *     expiration: Number(clusterKubeConfigExpiration),
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```

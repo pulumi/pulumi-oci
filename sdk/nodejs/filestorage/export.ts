@@ -32,10 +32,10 @@ import * as utilities from "../utilities";
  *         anonymousGid: exportExportOptionsAnonymousGid,
  *         anonymousUid: exportExportOptionsAnonymousUid,
  *         identitySquash: exportExportOptionsIdentitySquash,
- *         isAnonymousAccessAllowed: exportExportOptionsIsAnonymousAccessAllowed,
- *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort,
+ *         isAnonymousAccessAllowed: exportExportOptionsIsAnonymousAccessAllowed === "true",
+ *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort === "true",
  *     }],
- *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth,
+ *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth === "true",
  *     locks: [{
  *         type: exportLocksType,
  *         message: exportLocksMessage,

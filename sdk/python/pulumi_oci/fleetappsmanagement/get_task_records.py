@@ -162,7 +162,7 @@ def get_task_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_task_records = oci.FleetAppsManagement.get_task_records(compartment_id=compartment_id,
+    test_task_records = oci.fleetappsmanagement.get_task_records(compartment_id=compartment_id,
         display_name=task_record_display_name,
         id=task_record_id,
         operation=task_record_operation,
@@ -223,7 +223,7 @@ def get_task_records_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_task_records = oci.FleetAppsManagement.get_task_records(compartment_id=compartment_id,
+    test_task_records = oci.fleetappsmanagement.get_task_records(compartment_id=compartment_id,
         display_name=task_record_display_name,
         id=task_record_id,
         operation=task_record_operation,

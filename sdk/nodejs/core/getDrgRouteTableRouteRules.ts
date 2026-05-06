@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTableRouteRules = oci.Core.getDrgRouteTableRouteRules({
+ * const testDrgRouteTableRouteRules = oci.core.getDrgRouteTableRouteRules({
  *     drgRouteTableId: testDrgRouteTable.id,
  *     routeType: drgRouteTableRouteRuleRouteType,
  * });
@@ -77,7 +77,7 @@ export interface GetDrgRouteTableRouteRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTableRouteRules = oci.Core.getDrgRouteTableRouteRules({
+ * const testDrgRouteTableRouteRules = oci.core.getDrgRouteTableRouteRules({
  *     drgRouteTableId: testDrgRouteTable.id,
  *     routeType: drgRouteTableRouteRuleRouteType,
  * });

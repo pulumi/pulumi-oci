@@ -129,7 +129,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
+    test_fusion_environment_data_masking_activity = oci.functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
         fusion_environment_id=test_fusion_environment["id"])
     ```
 
@@ -165,7 +165,7 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
+    test_fusion_environment_data_masking_activity = oci.functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
         fusion_environment_id=test_fusion_environment["id"])
     ```
 

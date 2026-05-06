@@ -147,7 +147,7 @@ def get_migration_plans(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=compartment_id,
+    test_migration_plans = oci.cloudmigrations.get_migration_plans(compartment_id=compartment_id,
         display_name=migration_plan_display_name,
         migration_id=test_migration["id"],
         migration_plan_id=test_migration_plan["id"],
@@ -198,7 +198,7 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=compartment_id,
+    test_migration_plans = oci.cloudmigrations.get_migration_plans(compartment_id=compartment_id,
         display_name=migration_plan_display_name,
         migration_id=test_migration["id"],
         migration_plan_id=test_migration_plan["id"],

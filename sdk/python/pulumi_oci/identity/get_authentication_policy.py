@@ -97,7 +97,7 @@ def get_authentication_policy(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
+    test_authentication_policy = oci.identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
 
 
@@ -127,7 +127,7 @@ def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
+    test_authentication_policy = oci.identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
 
 

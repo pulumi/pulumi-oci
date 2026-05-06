@@ -31,15 +31,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
+ * const testAuditProfiles = oci.datasafe.getAuditProfiles({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAccessLevel,
  *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
  *     auditProfileId: testAuditProfile.id,
- *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree === "true",
  *     displayName: auditProfileDisplayName,
- *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
- *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting === "true",
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled === "true",
  *     state: auditProfileState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
@@ -196,15 +196,15 @@ export interface GetAuditProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
+ * const testAuditProfiles = oci.datasafe.getAuditProfiles({
  *     compartmentId: compartmentId,
  *     accessLevel: auditProfileAccessLevel,
  *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
  *     auditProfileId: testAuditProfile.id,
- *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree === "true",
  *     displayName: auditProfileDisplayName,
- *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
- *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting === "true",
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled === "true",
  *     state: auditProfileState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,

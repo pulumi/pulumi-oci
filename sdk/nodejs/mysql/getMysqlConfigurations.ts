@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
+ * const testMysqlConfigurations = oci.mysql.getMysqlConfigurations({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     displayName: mysqlConfigurationDisplayName,
@@ -131,7 +131,7 @@ export interface GetMysqlConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
+ * const testMysqlConfigurations = oci.mysql.getMysqlConfigurations({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     displayName: mysqlConfigurationDisplayName,

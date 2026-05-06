@@ -126,7 +126,7 @@ def get_awr_hub_awr_snapshots(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshots = oci.Opsi.get_awr_hub_awr_snapshots(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_snapshots = oci.opsi.get_awr_hub_awr_snapshots(awr_hub_id=test_awr_hub["id"],
         awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
@@ -173,7 +173,7 @@ def get_awr_hub_awr_snapshots_output(awr_hub_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshots = oci.Opsi.get_awr_hub_awr_snapshots(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_snapshots = oci.opsi.get_awr_hub_awr_snapshots(awr_hub_id=test_awr_hub["id"],
         awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)

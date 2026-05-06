@@ -178,7 +178,7 @@ def get_bds_instance_node_replace_configuration(bds_instance_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_replace_configuration = oci.BigDataService.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_replace_configuration = oci.bigdataservice.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
         node_replace_configuration_id=test_configuration["id"])
     ```
 
@@ -218,7 +218,7 @@ def get_bds_instance_node_replace_configuration_output(bds_instance_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_replace_configuration = oci.BigDataService.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_replace_configuration = oci.bigdataservice.get_bds_instance_node_replace_configuration(bds_instance_id=test_bds_instance["id"],
         node_replace_configuration_id=test_configuration["id"])
     ```
 

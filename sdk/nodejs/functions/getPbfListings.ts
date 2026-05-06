@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListings = oci.Functions.getPbfListings({
+ * const testPbfListings = oci.functions.getPbfListings({
  *     name: pbfListingName,
  *     nameContains: pbfListingNameContains,
  *     nameStartsWith: pbfListingNameStartsWith,
@@ -111,7 +111,7 @@ export interface GetPbfListingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListings = oci.Functions.getPbfListings({
+ * const testPbfListings = oci.functions.getPbfListings({
  *     name: pbfListingName,
  *     nameContains: pbfListingNameContains,
  *     nameStartsWith: pbfListingNameStartsWith,

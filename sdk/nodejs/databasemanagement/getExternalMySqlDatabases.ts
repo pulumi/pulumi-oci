@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabases = oci.DatabaseManagement.getExternalMySqlDatabases({
+ * const testExternalMySqlDatabases = oci.databasemanagement.getExternalMySqlDatabases({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseName,
  * });
@@ -77,7 +77,7 @@ export interface GetExternalMySqlDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabases = oci.DatabaseManagement.getExternalMySqlDatabases({
+ * const testExternalMySqlDatabases = oci.databasemanagement.getExternalMySqlDatabases({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseName,
  * });

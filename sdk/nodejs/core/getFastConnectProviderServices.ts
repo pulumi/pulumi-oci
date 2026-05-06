@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServices = oci.Core.getFastConnectProviderServices({
+ * const testFastConnectProviderServices = oci.core.getFastConnectProviderServices({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -79,7 +79,7 @@ export interface GetFastConnectProviderServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServices = oci.Core.getFastConnectProviderServices({
+ * const testFastConnectProviderServices = oci.core.getFastConnectProviderServices({
  *     compartmentId: compartmentId,
  * });
  * ```

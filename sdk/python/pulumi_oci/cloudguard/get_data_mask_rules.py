@@ -180,7 +180,7 @@ def get_data_mask_rules(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+    test_data_mask_rules = oci.cloudguard.get_data_mask_rules(compartment_id=compartment_id,
         access_level=data_mask_rule_access_level,
         data_mask_rule_status=data_mask_rule_data_mask_rule_status,
         display_name=data_mask_rule_display_name,
@@ -246,7 +246,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+    test_data_mask_rules = oci.cloudguard.get_data_mask_rules(compartment_id=compartment_id,
         access_level=data_mask_rule_access_level,
         data_mask_rule_status=data_mask_rule_data_mask_rule_status,
         display_name=data_mask_rule_display_name,

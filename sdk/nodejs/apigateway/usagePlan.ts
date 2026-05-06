@@ -29,11 +29,11 @@ import * as utilities from "../utilities";
  *             operationOnBreach: usagePlanEntitlementsQuotaOperationOnBreach,
  *             resetPolicy: usagePlanEntitlementsQuotaResetPolicy,
  *             unit: usagePlanEntitlementsQuotaUnit,
- *             value: usagePlanEntitlementsQuotaValue,
+ *             value: Number(usagePlanEntitlementsQuotaValue),
  *         },
  *         rateLimit: {
  *             unit: usagePlanEntitlementsRateLimitUnit,
- *             value: usagePlanEntitlementsRateLimitValue,
+ *             value: Number(usagePlanEntitlementsRateLimitValue),
  *         },
  *         targets: [{
  *             deploymentId: testDeployment.id,

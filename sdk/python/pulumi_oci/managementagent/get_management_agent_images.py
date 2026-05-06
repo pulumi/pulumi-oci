@@ -128,7 +128,7 @@ def get_management_agent_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+    test_management_agent_images = oci.managementagent.get_management_agent_images(compartment_id=compartment_id,
         install_type=management_agent_image_install_type,
         name=management_agent_image_name,
         state=management_agent_image_state)
@@ -174,7 +174,7 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+    test_management_agent_images = oci.managementagent.get_management_agent_images(compartment_id=compartment_id,
         install_type=management_agent_image_install_type,
         name=management_agent_image_name,
         state=management_agent_image_state)

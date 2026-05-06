@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplicas = oci.Core.getVolumeGroupReplicas({
+ * const testVolumeGroupReplicas = oci.core.getVolumeGroupReplicas({
  *     availabilityDomain: volumeGroupReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupReplicaDisplayName,
@@ -102,7 +102,7 @@ export interface GetVolumeGroupReplicasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplicas = oci.Core.getVolumeGroupReplicas({
+ * const testVolumeGroupReplicas = oci.core.getVolumeGroupReplicas({
  *     availabilityDomain: volumeGroupReplicaAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupReplicaDisplayName,

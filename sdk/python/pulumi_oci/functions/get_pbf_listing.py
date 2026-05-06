@@ -192,7 +192,7 @@ def get_pbf_listing(pbf_listing_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=test_pbf_listing_oci_functions_pbf_listing["id"])
+    test_pbf_listing = oci.functions.get_pbf_listing(pbf_listing_id=test_pbf_listing_oci_functions_pbf_listing["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=test_pbf_listing_oci_functions_pbf_listing["id"])
+    test_pbf_listing = oci.functions.get_pbf_listing(pbf_listing_id=test_pbf_listing_oci_functions_pbf_listing["id"])
     ```
 
 

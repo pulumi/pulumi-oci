@@ -41,7 +41,7 @@ import * as utilities from "../utilities";
  *     },
  *     hostOcpuCount: esxiHostHostOcpuCount,
  *     hostShapeName: testShape.name,
- *     isVsanByolEnabled: esxiHostIsVsanByolEnabled,
+ *     isVsanByolEnabled: esxiHostIsVsanByolEnabled === "true",
  *     nextCommitment: esxiHostNextCommitment,
  *     vcfByolAllocationId: testByolAllocation.id,
  * });

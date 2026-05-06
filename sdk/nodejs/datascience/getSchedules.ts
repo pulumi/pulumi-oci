@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.DataScience.getSchedules({
+ * const testSchedules = oci.datascience.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     id: scheduleId,
@@ -106,7 +106,7 @@ export interface GetSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.DataScience.getSchedules({
+ * const testSchedules = oci.datascience.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     id: scheduleId,

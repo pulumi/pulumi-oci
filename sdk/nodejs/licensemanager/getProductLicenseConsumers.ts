@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProductLicenseConsumers = oci.LicenseManager.getProductLicenseConsumers({
+ * const testProductLicenseConsumers = oci.licensemanager.getProductLicenseConsumers({
  *     compartmentId: compartmentId,
  *     productLicenseId: testProductLicense.id,
- *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -78,10 +78,10 @@ export interface GetProductLicenseConsumersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProductLicenseConsumers = oci.LicenseManager.getProductLicenseConsumers({
+ * const testProductLicenseConsumers = oci.licensemanager.getProductLicenseConsumers({
  *     compartmentId: compartmentId,
  *     productLicenseId: testProductLicense.id,
- *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */

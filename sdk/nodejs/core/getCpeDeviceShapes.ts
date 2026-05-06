@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
+ * const testCpeDeviceShapes = oci.core.getCpeDeviceShapes({});
  * ```
  */
 export function getCpeDeviceShapes(args?: GetCpeDeviceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapesResult> {
@@ -84,7 +84,7 @@ export interface GetCpeDeviceShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
+ * const testCpeDeviceShapes = oci.core.getCpeDeviceShapes({});
  * ```
  */
 export function getCpeDeviceShapesOutput(args?: GetCpeDeviceShapesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCpeDeviceShapesResult> {

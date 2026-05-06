@@ -430,7 +430,7 @@ def get_desktop_pool(desktop_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool = oci.Desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
+    test_desktop_pool = oci.desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
     ```
 
 
@@ -487,7 +487,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool = oci.Desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
+    test_desktop_pool = oci.desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
     ```
 
 

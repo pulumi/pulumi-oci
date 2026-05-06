@@ -884,8 +884,8 @@ class Subnet(pulumi.CustomResource):
             ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
-            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
-            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress == "true",
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic == "true",
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```
@@ -1025,8 +1025,8 @@ class Subnet(pulumi.CustomResource):
             ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
-            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
-            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress == "true",
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic == "true",
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```

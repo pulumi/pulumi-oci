@@ -176,7 +176,7 @@ def get_accepted_agreement(accepted_agreement_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreement = oci.Marketplace.get_accepted_agreement(accepted_agreement_id=test_accepted_agreement_oci_marketplace_accepted_agreement["id"])
+    test_accepted_agreement = oci.marketplace.get_accepted_agreement(accepted_agreement_id=test_accepted_agreement_oci_marketplace_accepted_agreement["id"])
     ```
 
 
@@ -212,7 +212,7 @@ def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_accepted_agreement = oci.Marketplace.get_accepted_agreement(accepted_agreement_id=test_accepted_agreement_oci_marketplace_accepted_agreement["id"])
+    test_accepted_agreement = oci.marketplace.get_accepted_agreement(accepted_agreement_id=test_accepted_agreement_oci_marketplace_accepted_agreement["id"])
     ```
 
 

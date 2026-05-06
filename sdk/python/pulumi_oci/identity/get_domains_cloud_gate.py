@@ -398,7 +398,7 @@ def get_domains_cloud_gate(attribute_sets: Optional[Sequence[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate = oci.Identity.get_domains_cloud_gate(cloud_gate_id=test_cloud_gate_oci_identity_domains_cloud_gate["id"],
+    test_cloud_gate = oci.identity.get_domains_cloud_gate(cloud_gate_id=test_cloud_gate_oci_identity_domains_cloud_gate["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -473,7 +473,7 @@ def get_domains_cloud_gate_output(attribute_sets: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate = oci.Identity.get_domains_cloud_gate(cloud_gate_id=test_cloud_gate_oci_identity_domains_cloud_gate["id"],
+    test_cloud_gate = oci.identity.get_domains_cloud_gate(cloud_gate_id=test_cloud_gate_oci_identity_domains_cloud_gate["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

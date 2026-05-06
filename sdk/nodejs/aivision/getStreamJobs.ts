@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamJobs = oci.AiVision.getStreamJobs({
+ * const testStreamJobs = oci.aivision.getStreamJobs({
  *     compartmentId: compartmentId,
  *     displayName: streamJobDisplayName,
  *     id: streamJobId,
@@ -97,7 +97,7 @@ export interface GetStreamJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamJobs = oci.AiVision.getStreamJobs({
+ * const testStreamJobs = oci.aivision.getStreamJobs({
  *     compartmentId: compartmentId,
  *     displayName: streamJobDisplayName,
  *     id: streamJobId,

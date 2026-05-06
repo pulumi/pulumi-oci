@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGates = oci.Identity.getDomainsCloudGates({
+ * const testCloudGates = oci.identity.getDomainsCloudGates({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateCount: cloudGateCloudGateCount,
+ *     cloudGateCount: Number(cloudGateCloudGateCount),
  *     cloudGateFilter: cloudGateCloudGateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateAuthorization,
  *     resourceTypeSchemaVersion: cloudGateResourceTypeSchemaVersion,
- *     startIndex: cloudGateStartIndex,
+ *     startIndex: Number(cloudGateStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsCloudGatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGates = oci.Identity.getDomainsCloudGates({
+ * const testCloudGates = oci.identity.getDomainsCloudGates({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateCount: cloudGateCloudGateCount,
+ *     cloudGateCount: Number(cloudGateCloudGateCount),
  *     cloudGateFilter: cloudGateCloudGateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateAuthorization,
  *     resourceTypeSchemaVersion: cloudGateResourceTypeSchemaVersion,
- *     startIndex: cloudGateStartIndex,
+ *     startIndex: Number(cloudGateStartIndex),
  * });
  * ```
  */

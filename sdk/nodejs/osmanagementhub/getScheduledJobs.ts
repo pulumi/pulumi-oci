@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJobs = oci.OsManagementHub.getScheduledJobs({
+ * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
- *     isRestricted: scheduledJobIsRestricted,
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
+ *     isRestricted: scheduledJobIsRestricted === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,
@@ -214,15 +214,15 @@ export interface GetScheduledJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJobs = oci.OsManagementHub.getScheduledJobs({
+ * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
- *     isRestricted: scheduledJobIsRestricted,
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
+ *     isRestricted: scheduledJobIsRestricted === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,

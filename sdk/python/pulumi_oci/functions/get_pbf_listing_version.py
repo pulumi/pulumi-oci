@@ -216,7 +216,7 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
+    test_pbf_listing_version = oci.functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
+    test_pbf_listing_version = oci.functions.get_pbf_listing_version(pbf_listing_version_id=test_pbf_listing_version_oci_functions_pbf_listing_version["id"])
     ```
 
 

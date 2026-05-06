@@ -341,7 +341,7 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier)
+            is_free_tier=apm_domain_is_free_tier == "true")
         ```
 
         ## Import
@@ -396,7 +396,7 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier)
+            is_free_tier=apm_domain_is_free_tier == "true")
         ```
 
         ## Import

@@ -320,7 +320,7 @@ def get_workspace(workspace_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
+    test_workspace = oci.dataintegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
     ```
 
 
@@ -369,7 +369,7 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
+    test_workspace = oci.dataintegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
     ```
 
 

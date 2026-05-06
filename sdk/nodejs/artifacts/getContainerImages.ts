@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImages = oci.Artifacts.getContainerImages({
+ * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned,
+ *     isVersioned: containerImageIsVersioned === "true",
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,
@@ -148,13 +148,13 @@ export interface GetContainerImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImages = oci.Artifacts.getContainerImages({
+ * const testContainerImages = oci.artifacts.getContainerImages({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree === "true",
  *     displayName: containerImageDisplayName,
  *     imageDigest: containerImageImageDigest,
  *     imageId: testImage.id,
- *     isVersioned: containerImageIsVersioned,
+ *     isVersioned: containerImageIsVersioned === "true",
  *     repositoryId: testRepository.id,
  *     repositoryName: testRepository.name,
  *     state: containerImageState,

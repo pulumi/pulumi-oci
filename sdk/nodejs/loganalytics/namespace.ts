@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespace = new oci.loganalytics.Namespace("test_namespace", {
  *     compartmentId: compartmentId,
- *     isOnboarded: isOnboarded,
+ *     isOnboarded: isOnboarded === "true",
  *     namespace: namespaceNamespace,
  * });
  * ```

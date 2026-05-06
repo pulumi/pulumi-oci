@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequests = oci.Identity.getDomainsMyRequests({
+ * const testMyRequests = oci.identity.getDomainsMyRequests({
  *     idcsEndpoint: testDomain.url,
- *     myRequestCount: myRequestMyRequestCount,
+ *     myRequestCount: Number(myRequestMyRequestCount),
  *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myRequestAuthorization,
  *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
- *     startIndex: myRequestStartIndex,
+ *     startIndex: Number(myRequestStartIndex),
  * });
  * ```
  */
@@ -137,15 +137,15 @@ export interface GetDomainsMyRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequests = oci.Identity.getDomainsMyRequests({
+ * const testMyRequests = oci.identity.getDomainsMyRequests({
  *     idcsEndpoint: testDomain.url,
- *     myRequestCount: myRequestMyRequestCount,
+ *     myRequestCount: Number(myRequestMyRequestCount),
  *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myRequestAuthorization,
  *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
- *     startIndex: myRequestStartIndex,
+ *     startIndex: Number(myRequestStartIndex),
  * });
  * ```
  */

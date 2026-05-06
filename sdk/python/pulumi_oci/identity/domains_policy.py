@@ -1270,7 +1270,7 @@ class DomainsPolicy(pulumi.CustomResource):
                 "value": "IdentityProvider",
             },
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
-            active=policy_active,
+            active=policy_active == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=policy_authorization,
@@ -1280,7 +1280,7 @@ class DomainsPolicy(pulumi.CustomResource):
             policy_groovy=policy_policy_groovy,
             resource_type_schema_version=policy_resource_type_schema_version,
             rules=[{
-                "sequence": policy_rules_sequence,
+                "sequence": int(policy_rules_sequence),
                 "value": "TODO",
             }],
             tags=[{
@@ -1441,7 +1441,7 @@ class DomainsPolicy(pulumi.CustomResource):
                 "value": "IdentityProvider",
             },
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
-            active=policy_active,
+            active=policy_active == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=policy_authorization,
@@ -1451,7 +1451,7 @@ class DomainsPolicy(pulumi.CustomResource):
             policy_groovy=policy_policy_groovy,
             resource_type_schema_version=policy_resource_type_schema_version,
             rules=[{
-                "sequence": policy_rules_sequence,
+                "sequence": int(policy_rules_sequence),
                 "value": "TODO",
             }],
             tags=[{

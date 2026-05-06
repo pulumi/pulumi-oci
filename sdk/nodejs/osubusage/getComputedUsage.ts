@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OsubUsage.getComputedUsage({
+ * const testComputedUsage = oci.osubusage.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
  *     fields: computedUsageFields,
@@ -177,7 +177,7 @@ export interface GetComputedUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputedUsage = oci.OsubUsage.getComputedUsage({
+ * const testComputedUsage = oci.osubusage.getComputedUsage({
  *     compartmentId: compartmentId,
  *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
  *     fields: computedUsageFields,

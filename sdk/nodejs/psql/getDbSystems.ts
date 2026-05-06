@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Psql.getDbSystems({
+ * const testDbSystems = oci.psql.getDbSystems({
  *     compartmentId: compartmentId,
  *     displayName: dbSystemDisplayName,
  *     id: dbSystemId,
@@ -97,7 +97,7 @@ export interface GetDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Psql.getDbSystems({
+ * const testDbSystems = oci.psql.getDbSystems({
  *     compartmentId: compartmentId,
  *     displayName: dbSystemDisplayName,
  *     id: dbSystemId,

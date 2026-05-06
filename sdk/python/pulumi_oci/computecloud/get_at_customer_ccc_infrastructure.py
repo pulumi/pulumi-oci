@@ -313,7 +313,7 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
+    test_ccc_infrastructure = oci.computecloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
 
 
@@ -361,7 +361,7 @@ def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
+    test_ccc_infrastructure = oci.computecloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
 
 

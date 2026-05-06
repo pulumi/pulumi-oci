@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyAuthTokens = oci.Identity.getDomainsMyAuthTokens({
+ * const testMyAuthTokens = oci.identity.getDomainsMyAuthTokens({
  *     idcsEndpoint: testDomain.url,
- *     myAuthTokenCount: myAuthTokenMyAuthTokenCount,
+ *     myAuthTokenCount: Number(myAuthTokenMyAuthTokenCount),
  *     myAuthTokenFilter: myAuthTokenMyAuthTokenFilter,
  *     authorization: myAuthTokenAuthorization,
  *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
- *     startIndex: myAuthTokenStartIndex,
+ *     startIndex: Number(myAuthTokenStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyAuthTokensResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyAuthTokens = oci.Identity.getDomainsMyAuthTokens({
+ * const testMyAuthTokens = oci.identity.getDomainsMyAuthTokens({
  *     idcsEndpoint: testDomain.url,
- *     myAuthTokenCount: myAuthTokenMyAuthTokenCount,
+ *     myAuthTokenCount: Number(myAuthTokenMyAuthTokenCount),
  *     myAuthTokenFilter: myAuthTokenMyAuthTokenFilter,
  *     authorization: myAuthTokenAuthorization,
  *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
- *     startIndex: myAuthTokenStartIndex,
+ *     startIndex: Number(myAuthTokenStartIndex),
  * });
  * ```
  */

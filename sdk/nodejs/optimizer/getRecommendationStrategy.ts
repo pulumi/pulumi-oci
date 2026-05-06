@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendationStrategy = oci.Optimizer.getRecommendationStrategy({
+ * const testRecommendationStrategy = oci.optimizer.getRecommendationStrategy({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -90,9 +90,9 @@ export interface GetRecommendationStrategyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendationStrategy = oci.Optimizer.getRecommendationStrategy({
+ * const testRecommendationStrategy = oci.optimizer.getRecommendationStrategy({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });

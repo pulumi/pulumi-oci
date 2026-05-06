@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowConfigurations = oci.MediaServices.getMediaWorkflowConfigurations({
+ * const testMediaWorkflowConfigurations = oci.mediaservices.getMediaWorkflowConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: mediaWorkflowConfigurationDisplayName,
  *     id: mediaWorkflowConfigurationId,
@@ -97,7 +97,7 @@ export interface GetMediaWorkflowConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowConfigurations = oci.MediaServices.getMediaWorkflowConfigurations({
+ * const testMediaWorkflowConfigurations = oci.mediaservices.getMediaWorkflowConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: mediaWorkflowConfigurationDisplayName,
  *     id: mediaWorkflowConfigurationId,

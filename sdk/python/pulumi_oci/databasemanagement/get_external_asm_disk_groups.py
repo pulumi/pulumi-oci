@@ -105,7 +105,7 @@ def get_external_asm_disk_groups(external_asm_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
+    test_external_asm_disk_groups = oci.databasemanagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
         opc_named_credential_id=external_asm_disk_group_opc_named_credential_id)
     ```
 
@@ -141,7 +141,7 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
+    test_external_asm_disk_groups = oci.databasemanagement.get_external_asm_disk_groups(external_asm_id=test_external_asm["id"],
         opc_named_credential_id=external_asm_disk_group_opc_named_credential_id)
     ```
 

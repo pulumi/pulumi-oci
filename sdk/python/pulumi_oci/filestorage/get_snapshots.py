@@ -141,7 +141,7 @@ def get_snapshots(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=compartment_id,
+    test_snapshots = oci.filestorage.get_snapshots(compartment_id=compartment_id,
         file_system_id=test_file_system["id"],
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
         id=snapshot_id,
@@ -197,7 +197,7 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=compartment_id,
+    test_snapshots = oci.filestorage.get_snapshots(compartment_id=compartment_id,
         file_system_id=test_file_system["id"],
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
         id=snapshot_id,

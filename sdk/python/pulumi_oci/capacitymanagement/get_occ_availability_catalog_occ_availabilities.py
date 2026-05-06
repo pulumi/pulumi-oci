@@ -147,7 +147,7 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_occ_availabilities = oci.CapacityManagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
+    test_occ_availability_catalog_occ_availabilities = oci.capacitymanagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
         date_expected_capacity_handover=occ_availability_catalog_occ_availability_date_expected_capacity_handover,
         resource_name=test_resource["name"],
         resource_type=occ_availability_catalog_occ_availability_resource_type,
@@ -198,7 +198,7 @@ def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacit
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_occ_availabilities = oci.CapacityManagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
+    test_occ_availability_catalog_occ_availabilities = oci.capacitymanagement.get_occ_availability_catalog_occ_availabilities(occ_availability_catalog_id=test_occ_availability_catalog["id"],
         date_expected_capacity_handover=occ_availability_catalog_occ_availability_date_expected_capacity_handover,
         resource_name=test_resource["name"],
         resource_type=occ_availability_catalog_occ_availability_resource_type,

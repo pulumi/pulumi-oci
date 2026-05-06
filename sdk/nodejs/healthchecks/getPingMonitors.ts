@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitors = oci.HealthChecks.getPingMonitors({
+ * const testPingMonitors = oci.healthchecks.getPingMonitors({
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
  *     homeRegion: pingMonitorHomeRegion,
@@ -96,7 +96,7 @@ export interface GetPingMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitors = oci.HealthChecks.getPingMonitors({
+ * const testPingMonitors = oci.healthchecks.getPingMonitors({
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
  *     homeRegion: pingMonitorHomeRegion,

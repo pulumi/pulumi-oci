@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviderTemplates = oci.Identity.getDomainsIdentityProofingProviderTemplates({
+ * const testIdentityProofingProviderTemplates = oci.identity.getDomainsIdentityProofingProviderTemplates({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderTemplateCount: identityProofingProviderTemplateIdentityProofingProviderTemplateCount,
+ *     identityProofingProviderTemplateCount: Number(identityProofingProviderTemplateIdentityProofingProviderTemplateCount),
  *     identityProofingProviderTemplateFilter: identityProofingProviderTemplateIdentityProofingProviderTemplateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderTemplateAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderTemplateResourceTypeSchemaVersion,
- *     startIndex: identityProofingProviderTemplateStartIndex,
+ *     startIndex: Number(identityProofingProviderTemplateStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsIdentityProofingProviderTemplatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProofingProviderTemplates = oci.Identity.getDomainsIdentityProofingProviderTemplates({
+ * const testIdentityProofingProviderTemplates = oci.identity.getDomainsIdentityProofingProviderTemplates({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderTemplateCount: identityProofingProviderTemplateIdentityProofingProviderTemplateCount,
+ *     identityProofingProviderTemplateCount: Number(identityProofingProviderTemplateIdentityProofingProviderTemplateCount),
  *     identityProofingProviderTemplateFilter: identityProofingProviderTemplateIdentityProofingProviderTemplateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderTemplateAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderTemplateResourceTypeSchemaVersion,
- *     startIndex: identityProofingProviderTemplateStartIndex,
+ *     startIndex: Number(identityProofingProviderTemplateStartIndex),
  * });
  * ```
  */

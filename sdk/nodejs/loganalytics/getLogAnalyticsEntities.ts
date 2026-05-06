@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ * const testLogAnalyticsEntities = oci.loganalytics.getLogAnalyticsEntities({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntityNamespace,
  *     cloudResourceId: logAnalyticsEntityCloudResourceId,
@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     hostname: logAnalyticsEntityHostname,
  *     hostnameContains: logAnalyticsEntityHostnameContains,
  *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount === "true",
  *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
  *     metadataEquals: logAnalyticsEntityMetadataEquals,
  *     name: logAnalyticsEntityName,
@@ -207,7 +207,7 @@ export interface GetLogAnalyticsEntitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ * const testLogAnalyticsEntities = oci.loganalytics.getLogAnalyticsEntities({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntityNamespace,
  *     cloudResourceId: logAnalyticsEntityCloudResourceId,
@@ -219,7 +219,7 @@ export interface GetLogAnalyticsEntitiesResult {
  *     hostname: logAnalyticsEntityHostname,
  *     hostnameContains: logAnalyticsEntityHostnameContains,
  *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount === "true",
  *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
  *     metadataEquals: logAnalyticsEntityMetadataEquals,
  *     name: logAnalyticsEntityName,

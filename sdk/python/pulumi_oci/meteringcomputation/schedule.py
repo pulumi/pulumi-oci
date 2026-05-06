@@ -531,7 +531,7 @@ class Schedule(pulumi.CustomResource):
                     "namespace": schedule_query_properties_group_by_tag_namespace,
                     "value": schedule_query_properties_group_by_tag_value,
                 }],
-                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time,
+                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time == "true",
                 "query_type": schedule_query_properties_query_type,
             },
             saved_report_id=test_report["id"])
@@ -619,7 +619,7 @@ class Schedule(pulumi.CustomResource):
                     "namespace": schedule_query_properties_group_by_tag_namespace,
                     "value": schedule_query_properties_group_by_tag_value,
                 }],
-                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time,
+                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time == "true",
                 "query_type": schedule_query_properties_query_type,
             },
             saved_report_id=test_report["id"])

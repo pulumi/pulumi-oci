@@ -52,8 +52,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -94,8 +94,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -136,8 +136,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -178,8 +178,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -220,8 +220,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -267,8 +267,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -316,8 +316,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -365,8 +365,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -414,8 +414,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -463,8 +463,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -507,8 +507,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -549,8 +549,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -591,8 +591,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -633,8 +633,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -675,8 +675,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -717,8 +717,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -759,8 +759,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -801,8 +801,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -843,8 +843,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -885,8 +885,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -931,8 +931,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -979,8 +979,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1027,8 +1027,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1075,8 +1075,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1123,8 +1123,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1172,8 +1172,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1220,8 +1220,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1268,8 +1268,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1316,8 +1316,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1364,8 +1364,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1407,8 +1407,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1450,8 +1450,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1493,8 +1493,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1536,8 +1536,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1579,8 +1579,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointScanProxyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1627,8 +1627,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1676,8 +1676,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1725,8 +1725,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1774,8 +1774,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1823,8 +1823,8 @@ public final class OdaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Oda.OdaFunctions;
      * import com.pulumi.oci.Oda.inputs.GetOdaPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -85,7 +85,7 @@ def get_bds_cluster_versions(filters: Optional[Sequence[Union['GetBdsClusterVers
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_cluster_versions = oci.BigDataService.get_bds_cluster_versions()
+    test_bds_cluster_versions = oci.bigdataservice.get_bds_cluster_versions()
     ```
     """
     __args__ = dict()
@@ -110,7 +110,7 @@ def get_bds_cluster_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_cluster_versions = oci.BigDataService.get_bds_cluster_versions()
+    test_bds_cluster_versions = oci.bigdataservice.get_bds_cluster_versions()
     ```
     """
     __args__ = dict()

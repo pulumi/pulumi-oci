@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
+ * const testContainerInstances = oci.containerinstances.getContainerInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceAvailabilityDomain,
  *     displayName: containerInstanceDisplayName,
@@ -100,7 +100,7 @@ export interface GetContainerInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
+ * const testContainerInstances = oci.containerinstances.getContainerInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceAvailabilityDomain,
  *     displayName: containerInstanceDisplayName,

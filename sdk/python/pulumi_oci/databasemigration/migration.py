@@ -905,8 +905,8 @@ class Migration(pulumi.CustomResource):
                 "value": migration_advanced_parameters_value,
             }],
             advisor_settings={
-                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
-                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors == "true",
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor == "true",
             },
             assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
@@ -939,16 +939,16 @@ class Migration(pulumi.CustomResource):
             display_name=migration_display_name,
             exclude_objects=[{
                 "object": migration_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_exclude_objects_owner,
                 "schema": migration_exclude_objects_schema,
                 "type": migration_exclude_objects_type,
             }],
             freeform_tags=migration_freeform_tags,
             ggs_details={
-                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "acceptable_lag": int(migration_ggs_details_acceptable_lag),
                 "extract": {
-                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_ggs_details_extract_long_trans_duration),
                     "performance_profile": migration_ggs_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -963,10 +963,10 @@ class Migration(pulumi.CustomResource):
                 },
                 "url": migration_hub_details_url,
                 "vault_id": test_vault["id"],
-                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "acceptable_lag": int(migration_hub_details_acceptable_lag),
                 "compute_id": test_compute["id"],
                 "extract": {
-                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_hub_details_extract_long_trans_duration),
                     "performance_profile": migration_hub_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -975,7 +975,7 @@ class Migration(pulumi.CustomResource):
             },
             include_objects=[{
                 "object": migration_include_objects_object,
-                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_include_objects_owner,
                 "schema": migration_include_objects_schema,
                 "type": migration_include_objects_type,
@@ -986,9 +986,9 @@ class Migration(pulumi.CustomResource):
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
                     "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "export_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_export_parallelism_degree),
+                    "import_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_import_parallelism_degree),
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster == "true",
                     "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
                 },
                 "export_directory_object": {
@@ -1000,9 +1000,9 @@ class Migration(pulumi.CustomResource):
                     "name": migration_initial_load_settings_import_directory_object_name,
                     "path": migration_initial_load_settings_import_directory_object_path,
                 },
-                "is_consistent": migration_initial_load_settings_is_consistent,
-                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
-                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "is_consistent": migration_initial_load_settings_is_consistent == "true",
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,
@@ -1012,9 +1012,9 @@ class Migration(pulumi.CustomResource):
                 "tablespace_details": {
                     "target_type": migration_initial_load_settings_tablespace_details_target_type,
                     "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
-                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "extend_size_in_mbs": int(migration_initial_load_settings_tablespace_details_extend_size_in_mbs),
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create == "true",
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file == "true",
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },
@@ -1095,8 +1095,8 @@ class Migration(pulumi.CustomResource):
                 "value": migration_advanced_parameters_value,
             }],
             advisor_settings={
-                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
-                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors == "true",
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor == "true",
             },
             assessment_id=test_assessment["id"],
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
@@ -1129,16 +1129,16 @@ class Migration(pulumi.CustomResource):
             display_name=migration_display_name,
             exclude_objects=[{
                 "object": migration_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_exclude_objects_owner,
                 "schema": migration_exclude_objects_schema,
                 "type": migration_exclude_objects_type,
             }],
             freeform_tags=migration_freeform_tags,
             ggs_details={
-                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "acceptable_lag": int(migration_ggs_details_acceptable_lag),
                 "extract": {
-                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_ggs_details_extract_long_trans_duration),
                     "performance_profile": migration_ggs_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -1153,10 +1153,10 @@ class Migration(pulumi.CustomResource):
                 },
                 "url": migration_hub_details_url,
                 "vault_id": test_vault["id"],
-                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "acceptable_lag": int(migration_hub_details_acceptable_lag),
                 "compute_id": test_compute["id"],
                 "extract": {
-                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "long_trans_duration": int(migration_hub_details_extract_long_trans_duration),
                     "performance_profile": migration_hub_details_extract_performance_profile,
                 },
                 "replicat": {
@@ -1165,7 +1165,7 @@ class Migration(pulumi.CustomResource):
             },
             include_objects=[{
                 "object": migration_include_objects_object,
-                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication == "true",
                 "owner": migration_include_objects_owner,
                 "schema": migration_include_objects_schema,
                 "type": migration_include_objects_type,
@@ -1176,9 +1176,9 @@ class Migration(pulumi.CustomResource):
                 "data_pump_parameters": {
                     "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
                     "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "export_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_export_parallelism_degree),
+                    "import_parallelism_degree": int(migration_initial_load_settings_data_pump_parameters_import_parallelism_degree),
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster == "true",
                     "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
                 },
                 "export_directory_object": {
@@ -1190,9 +1190,9 @@ class Migration(pulumi.CustomResource):
                     "name": migration_initial_load_settings_import_directory_object_name,
                     "path": migration_initial_load_settings_import_directory_object_path,
                 },
-                "is_consistent": migration_initial_load_settings_is_consistent,
-                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
-                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "is_consistent": migration_initial_load_settings_is_consistent == "true",
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects == "true",
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc == "true",
                 "metadata_remaps": [{
                     "new_value": migration_initial_load_settings_metadata_remaps_new_value,
                     "old_value": migration_initial_load_settings_metadata_remaps_old_value,
@@ -1202,9 +1202,9 @@ class Migration(pulumi.CustomResource):
                 "tablespace_details": {
                     "target_type": migration_initial_load_settings_tablespace_details_target_type,
                     "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
-                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "extend_size_in_mbs": int(migration_initial_load_settings_tablespace_details_extend_size_in_mbs),
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create == "true",
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file == "true",
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },

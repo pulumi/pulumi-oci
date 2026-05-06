@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
+ * const testIamWorkRequests = oci.identity.getIamWorkRequests({
  *     compartmentId: compartmentId,
  *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });
@@ -83,7 +83,7 @@ export interface GetIamWorkRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
+ * const testIamWorkRequests = oci.identity.getIamWorkRequests({
  *     compartmentId: compartmentId,
  *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });

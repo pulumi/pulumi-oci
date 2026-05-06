@@ -105,7 +105,7 @@ def get_replication_sources(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=replication_source_bucket,
+    test_replication_sources = oci.objectstorage.get_replication_sources(bucket=replication_source_bucket,
         namespace=replication_source_namespace)
     ```
 
@@ -141,7 +141,7 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=replication_source_bucket,
+    test_replication_sources = oci.objectstorage.get_replication_sources(bucket=replication_source_bucket,
         namespace=replication_source_namespace)
     ```
 

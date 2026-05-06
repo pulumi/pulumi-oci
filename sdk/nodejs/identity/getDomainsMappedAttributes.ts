@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMappedAttributes = oci.Identity.getDomainsMappedAttributes({
+ * const testMappedAttributes = oci.identity.getDomainsMappedAttributes({
  *     idcsEndpoint: testDomain.url,
- *     mappedAttributeCount: mappedAttributeMappedAttributeCount,
+ *     mappedAttributeCount: Number(mappedAttributeMappedAttributeCount),
  *     mappedAttributeFilter: mappedAttributeMappedAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: mappedAttributeAuthorization,
  *     resourceTypeSchemaVersion: mappedAttributeResourceTypeSchemaVersion,
- *     startIndex: mappedAttributeStartIndex,
+ *     startIndex: Number(mappedAttributeStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsMappedAttributesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMappedAttributes = oci.Identity.getDomainsMappedAttributes({
+ * const testMappedAttributes = oci.identity.getDomainsMappedAttributes({
  *     idcsEndpoint: testDomain.url,
- *     mappedAttributeCount: mappedAttributeMappedAttributeCount,
+ *     mappedAttributeCount: Number(mappedAttributeMappedAttributeCount),
  *     mappedAttributeFilter: mappedAttributeMappedAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: mappedAttributeAuthorization,
  *     resourceTypeSchemaVersion: mappedAttributeResourceTypeSchemaVersion,
- *     startIndex: mappedAttributeStartIndex,
+ *     startIndex: Number(mappedAttributeStartIndex),
  * });
  * ```
  */

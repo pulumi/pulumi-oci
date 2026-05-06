@@ -125,7 +125,7 @@ def get_compute_capacity_topologies(availability_domain: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topologies = oci.Core.get_compute_capacity_topologies(compartment_id=compartment_id,
+    test_compute_capacity_topologies = oci.core.get_compute_capacity_topologies(compartment_id=compartment_id,
         availability_domain=compute_capacity_topology_availability_domain,
         display_name=compute_capacity_topology_display_name)
     ```
@@ -167,7 +167,7 @@ def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topologies = oci.Core.get_compute_capacity_topologies(compartment_id=compartment_id,
+    test_compute_capacity_topologies = oci.core.get_compute_capacity_topologies(compartment_id=compartment_id,
         availability_domain=compute_capacity_topology_availability_domain,
         display_name=compute_capacity_topology_display_name)
     ```

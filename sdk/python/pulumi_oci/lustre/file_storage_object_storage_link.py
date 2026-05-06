@@ -607,7 +607,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
             availability_domain=object_storage_link_availability_domain,
             compartment_id=compartment_id,
             file_system_path=object_storage_link_file_system_path,
-            is_overwrite=object_storage_link_is_overwrite,
+            is_overwrite=object_storage_link_is_overwrite == "true",
             lustre_file_system_id=test_lustre_file_system["id"],
             object_storage_prefix=object_storage_link_object_storage_prefix,
             defined_tags={
@@ -669,7 +669,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
             availability_domain=object_storage_link_availability_domain,
             compartment_id=compartment_id,
             file_system_path=object_storage_link_file_system_path,
-            is_overwrite=object_storage_link_is_overwrite,
+            is_overwrite=object_storage_link_is_overwrite == "true",
             lustre_file_system_id=test_lustre_file_system["id"],
             object_storage_prefix=object_storage_link_object_storage_prefix,
             defined_tags={

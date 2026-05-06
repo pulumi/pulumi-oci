@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicies = oci.Core.getVolumeBackupPolicies({
+ * const testVolumeBackupPolicies = oci.core.getVolumeBackupPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -77,7 +77,7 @@ export interface GetVolumeBackupPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicies = oci.Core.getVolumeBackupPolicies({
+ * const testVolumeBackupPolicies = oci.core.getVolumeBackupPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```

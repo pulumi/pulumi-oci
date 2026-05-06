@@ -104,7 +104,7 @@ def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_acknowledgment_configuration = oci.Jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
+    test_subscription_acknowledgment_configuration = oci.jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -134,7 +134,7 @@ def get_utils_subscription_acknowledgment_configuration_output(compartment_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_acknowledgment_configuration = oci.Jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
+    test_subscription_acknowledgment_configuration = oci.jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
     ```
 
 

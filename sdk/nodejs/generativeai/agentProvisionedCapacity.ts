@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testProvisionedCapacity = new oci.generativeai.AgentProvisionedCapacity("test_provisioned_capacity", {
  *     compartmentId: compartmentId,
  *     displayName: provisionedCapacityDisplayName,
- *     numberOfUnits: provisionedCapacityNumberOfUnits,
+ *     numberOfUnits: Number(provisionedCapacityNumberOfUnits),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

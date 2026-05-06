@@ -321,7 +321,7 @@ def get_security_policy_report_database_view_access_entry(database_view_access_e
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entry = oci.DataSafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
+    test_security_policy_report_database_view_access_entry = oci.datasafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 
@@ -373,7 +373,7 @@ def get_security_policy_report_database_view_access_entry_output(database_view_a
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entry = oci.DataSafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
+    test_security_policy_report_database_view_access_entry = oci.datasafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 

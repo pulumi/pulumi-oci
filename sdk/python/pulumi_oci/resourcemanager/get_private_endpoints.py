@@ -138,7 +138,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.resourcemanager.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         private_endpoint_id=test_private_endpoint["id"],
         vcn_id=test_vcn["id"])
@@ -188,7 +188,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.resourcemanager.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         private_endpoint_id=test_private_endpoint["id"],
         vcn_id=test_vcn["id"])

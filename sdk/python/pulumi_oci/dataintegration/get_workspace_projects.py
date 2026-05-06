@@ -141,7 +141,7 @@ def get_workspace_projects(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+    test_workspace_projects = oci.dataintegration.get_workspace_projects(workspace_id=test_workspace["id"],
         fields=workspace_project_fields,
         identifiers=workspace_project_identifier,
         name=workspace_project_name,
@@ -192,7 +192,7 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+    test_workspace_projects = oci.dataintegration.get_workspace_projects(workspace_id=test_workspace["id"],
         fields=workspace_project_fields,
         identifiers=workspace_project_identifier,
         name=workspace_project_name,

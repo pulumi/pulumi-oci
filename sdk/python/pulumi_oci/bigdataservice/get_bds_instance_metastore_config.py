@@ -192,7 +192,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_config = oci.bigdataservice.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
         metastore_config_id=test_config["id"])
     ```
 
@@ -234,7 +234,7 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_metastore_config = oci.bigdataservice.get_bds_instance_metastore_config(bds_instance_id=test_bds_instance["id"],
         metastore_config_id=test_config["id"])
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryProtectedBranches = oci.DevOps.getRepositoryProtectedBranches({
+ * const testRepositoryProtectedBranches = oci.devops.getRepositoryProtectedBranches({
  *     repositoryId: testRepository.id,
  *     name: repositoryProtectedBranchName,
  * });
@@ -74,7 +74,7 @@ export interface GetRepositoryProtectedBranchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryProtectedBranches = oci.DevOps.getRepositoryProtectedBranches({
+ * const testRepositoryProtectedBranches = oci.devops.getRepositoryProtectedBranches({
  *     repositoryId: testRepository.id,
  *     name: repositoryProtectedBranchName,
  * });

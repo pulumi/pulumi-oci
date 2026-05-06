@@ -155,7 +155,7 @@ def get_installed_patches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_installed_patches = oci.FleetAppsManagement.get_installed_patches(compartment_id=compartment_id,
+    test_installed_patches = oci.fleetappsmanagement.get_installed_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_level=installed_patch_patch_level,
@@ -212,7 +212,7 @@ def get_installed_patches_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_installed_patches = oci.FleetAppsManagement.get_installed_patches(compartment_id=compartment_id,
+    test_installed_patches = oci.fleetappsmanagement.get_installed_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_level=installed_patch_patch_level,

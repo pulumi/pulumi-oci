@@ -154,7 +154,7 @@ def get_workspace_folders(aggregator_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=test_workspace["id"],
+    test_workspace_folders = oci.dataintegration.get_workspace_folders(workspace_id=test_workspace["id"],
         aggregator_key=workspace_folder_aggregator_key,
         fields=workspace_folder_fields,
         identifiers=workspace_folder_identifier,
@@ -210,7 +210,7 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=test_workspace["id"],
+    test_workspace_folders = oci.dataintegration.get_workspace_folders(workspace_id=test_workspace["id"],
         aggregator_key=workspace_folder_aggregator_key,
         fields=workspace_folder_fields,
         identifiers=workspace_folder_identifier,

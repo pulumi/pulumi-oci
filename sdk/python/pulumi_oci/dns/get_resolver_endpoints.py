@@ -134,7 +134,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
+    test_resolver_endpoints = oci.dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
         scope="PRIVATE",
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)
@@ -183,7 +183,7 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
+    test_resolver_endpoints = oci.dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
         scope="PRIVATE",
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)

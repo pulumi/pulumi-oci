@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
+ * const testJobExecutionsStatuses = oci.databasemanagement.getJobExecutionsStatuses({
  *     compartmentId: compartmentId,
  *     endTime: jobExecutionsStatusEndTime,
  *     startTime: jobExecutionsStatusStartTime,
@@ -105,7 +105,7 @@ export interface GetJobExecutionsStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
+ * const testJobExecutionsStatuses = oci.databasemanagement.getJobExecutionsStatuses({
  *     compartmentId: compartmentId,
  *     endTime: jobExecutionsStatusEndTime,
  *     startTime: jobExecutionsStatusStartTime,

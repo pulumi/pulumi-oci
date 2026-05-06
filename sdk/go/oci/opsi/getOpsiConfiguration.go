@@ -33,10 +33,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := opsi.GetOpsiConfiguration(ctx, &opsi.GetOpsiConfigurationArgs{
 //				OpsiConfigurationId:           testOpsiConfigurationOciOpsiOpsiConfiguration.Id,
-//				ConfigItemCustomStatuses:      opsiConfigurationConfigItemCustomStatus,
-//				ConfigItemFields:              opsiConfigurationConfigItemField,
-//				ConfigItemsApplicableContexts: opsiConfigurationConfigItemsApplicableContext,
-//				OpsiConfigFields:              opsiConfigurationOpsiConfigField,
+//				ConfigItemCustomStatuses:      pulumi.ToArray(opsiConfigurationConfigItemCustomStatus),
+//				ConfigItemFields:              pulumi.ToArray(opsiConfigurationConfigItemField),
+//				ConfigItemsApplicableContexts: pulumi.ToArray(opsiConfigurationConfigItemsApplicableContext),
+//				OpsiConfigFields:              pulumi.ToArray(opsiConfigurationOpsiConfigField),
 //			}, nil)
 //			if err != nil {
 //				return err

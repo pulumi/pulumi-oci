@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefaultConfigurations = oci.Psql.getDefaultConfigurations({
+ * const testDefaultConfigurations = oci.psql.getDefaultConfigurations({
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
- *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(defaultConfigurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(defaultConfigurationInstanceOcpuCount),
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });
@@ -128,12 +128,12 @@ export interface GetDefaultConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDefaultConfigurations = oci.Psql.getDefaultConfigurations({
+ * const testDefaultConfigurations = oci.psql.getDefaultConfigurations({
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
- *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(defaultConfigurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(defaultConfigurationInstanceOcpuCount),
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });

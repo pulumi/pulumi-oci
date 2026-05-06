@@ -137,7 +137,7 @@ def get_ml_application_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_instances = oci.DataScience.get_ml_application_instances(compartment_id=compartment_id,
+    test_ml_application_instances = oci.datascience.get_ml_application_instances(compartment_id=compartment_id,
         display_name=ml_application_instance_display_name,
         ml_application_id=test_ml_application["id"],
         state=ml_application_instance_state)
@@ -183,7 +183,7 @@ def get_ml_application_instances_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_instances = oci.DataScience.get_ml_application_instances(compartment_id=compartment_id,
+    test_ml_application_instances = oci.datascience.get_ml_application_instances(compartment_id=compartment_id,
         display_name=ml_application_instance_display_name,
         ml_application_id=test_ml_application["id"],
         state=ml_application_instance_state)

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositorySetting = oci.DevOps.getRepositorySetting({
+ * const testRepositorySetting = oci.devops.getRepositorySetting({
  *     repositoryId: testRepository.id,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetRepositorySettingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositorySetting = oci.DevOps.getRepositorySetting({
+ * const testRepositorySetting = oci.devops.getRepositorySetting({
  *     repositoryId: testRepository.id,
  * });
  * ```

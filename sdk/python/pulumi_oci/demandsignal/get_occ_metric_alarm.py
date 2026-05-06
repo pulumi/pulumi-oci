@@ -252,7 +252,7 @@ def get_occ_metric_alarm(occ_metric_alarm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_metric_alarm = oci.DemandSignal.get_occ_metric_alarm(occ_metric_alarm_id=test_occ_metric_alarm_oci_demand_signal_occ_metric_alarm["id"])
+    test_occ_metric_alarm = oci.demandsignal.get_occ_metric_alarm(occ_metric_alarm_id=test_occ_metric_alarm_oci_demand_signal_occ_metric_alarm["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_occ_metric_alarm_output(occ_metric_alarm_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_metric_alarm = oci.DemandSignal.get_occ_metric_alarm(occ_metric_alarm_id=test_occ_metric_alarm_oci_demand_signal_occ_metric_alarm["id"])
+    test_occ_metric_alarm = oci.demandsignal.get_occ_metric_alarm(occ_metric_alarm_id=test_occ_metric_alarm_oci_demand_signal_occ_metric_alarm["id"])
     ```
 
 

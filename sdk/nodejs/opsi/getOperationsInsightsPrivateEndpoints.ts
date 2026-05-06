@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
+ * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -125,11 +125,11 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
+ * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,

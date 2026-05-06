@@ -137,7 +137,7 @@ def get_repository_refs(commit_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+    test_repository_refs = oci.devops.get_repository_refs(repository_id=test_repository["id"],
         commit_id=test_commit["id"],
         ref_name=repository_ref_ref_name,
         ref_type=repository_ref_ref_type)
@@ -183,7 +183,7 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+    test_repository_refs = oci.devops.get_repository_refs(repository_id=test_repository["id"],
         commit_id=test_commit["id"],
         ref_name=repository_ref_ref_name,
         ref_type=repository_ref_ref_type)

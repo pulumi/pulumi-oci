@@ -131,7 +131,7 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.ComputeInstanceAgent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```
@@ -175,7 +175,7 @@ def get_instance_agent_plugins_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.ComputeInstanceAgent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```

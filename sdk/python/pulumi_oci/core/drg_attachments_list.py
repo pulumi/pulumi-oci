@@ -190,7 +190,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
             drg_id=test_drg["id"],
             attachment_type=drg_attachments_list_attachment_type,
-            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy == "true")
         ```
 
         ## Import
@@ -231,7 +231,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
             drg_id=test_drg["id"],
             attachment_type=drg_attachments_list_attachment_type,
-            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy == "true")
         ```
 
         ## Import

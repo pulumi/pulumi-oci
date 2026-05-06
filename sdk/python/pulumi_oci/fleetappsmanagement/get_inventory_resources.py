@@ -191,7 +191,7 @@ def get_inventory_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_resources = oci.FleetAppsManagement.get_inventory_resources(compartment_id=compartment_id,
+    test_inventory_resources = oci.fleetappsmanagement.get_inventory_resources(compartment_id=compartment_id,
         resource_compartment_id=test_compartment["id"],
         defined_tag_equals=inventory_resource_defined_tag_equals,
         display_name=inventory_resource_display_name,
@@ -263,7 +263,7 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_resources = oci.FleetAppsManagement.get_inventory_resources(compartment_id=compartment_id,
+    test_inventory_resources = oci.fleetappsmanagement.get_inventory_resources(compartment_id=compartment_id,
         resource_compartment_id=test_compartment["id"],
         defined_tag_equals=inventory_resource_defined_tag_equals,
         display_name=inventory_resource_display_name,

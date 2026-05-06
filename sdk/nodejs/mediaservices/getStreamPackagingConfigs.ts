@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfigs = oci.MediaServices.getStreamPackagingConfigs({
+ * const testStreamPackagingConfigs = oci.mediaservices.getStreamPackagingConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamPackagingConfigDisplayName,
  *     state: streamPackagingConfigState,
@@ -97,7 +97,7 @@ export interface GetStreamPackagingConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfigs = oci.MediaServices.getStreamPackagingConfigs({
+ * const testStreamPackagingConfigs = oci.mediaservices.getStreamPackagingConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamPackagingConfigDisplayName,
  *     state: streamPackagingConfigState,

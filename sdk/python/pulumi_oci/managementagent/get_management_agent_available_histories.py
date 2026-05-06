@@ -118,7 +118,7 @@ def get_management_agent_available_histories(filters: Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
+    test_management_agent_available_histories = oci.managementagent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
         time_availability_status_ended_greater_than=management_agent_available_history_time_availability_status_ended_greater_than,
         time_availability_status_started_less_than=management_agent_available_history_time_availability_status_started_less_than)
     ```
@@ -159,7 +159,7 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
+    test_management_agent_available_histories = oci.managementagent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
         time_availability_status_ended_greater_than=management_agent_available_history_time_availability_status_ended_greater_than,
         time_availability_status_started_less_than=management_agent_available_history_time_availability_status_started_less_than)
     ```

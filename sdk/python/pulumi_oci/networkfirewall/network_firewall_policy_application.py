@@ -283,12 +283,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application = oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
-            icmp_type=network_firewall_policy_application_icmp_type,
+            icmp_type=int(network_firewall_policy_application_icmp_type),
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
             description=network_firewall_policy_application_description,
-            icmp_code=network_firewall_policy_application_icmp_code)
+            icmp_code=int(network_firewall_policy_application_icmp_code))
         ```
 
         ## Import
@@ -334,12 +334,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application = oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
-            icmp_type=network_firewall_policy_application_icmp_type,
+            icmp_type=int(network_firewall_policy_application_icmp_type),
             name=network_firewall_policy_application_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_application_type,
             description=network_firewall_policy_application_description,
-            icmp_code=network_firewall_policy_application_icmp_code)
+            icmp_code=int(network_firewall_policy_application_icmp_code))
         ```
 
         ## Import

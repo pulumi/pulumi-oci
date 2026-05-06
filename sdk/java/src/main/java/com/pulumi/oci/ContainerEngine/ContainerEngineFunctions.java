@@ -91,8 +91,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -134,8 +134,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -177,8 +177,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -220,8 +220,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -263,8 +263,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -306,8 +306,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -350,8 +350,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -394,8 +394,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -438,8 +438,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -482,8 +482,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -526,8 +526,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -568,8 +568,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -610,8 +610,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -652,8 +652,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -694,8 +694,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetAddonsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -736,8 +736,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -779,8 +779,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -822,8 +822,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -865,8 +865,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -908,8 +908,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -951,8 +951,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -993,8 +993,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1035,8 +1035,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1077,8 +1077,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1119,8 +1119,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterCredentialRotationStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1161,8 +1161,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1206,8 +1206,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1251,8 +1251,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1296,8 +1296,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1341,8 +1341,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1386,8 +1386,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1430,8 +1430,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1474,8 +1474,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1518,8 +1518,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1562,8 +1562,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1606,8 +1606,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1648,8 +1648,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1690,8 +1690,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1732,8 +1732,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1774,8 +1774,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterPublicApiEndpointDecommissionStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1816,8 +1816,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1859,8 +1859,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1902,8 +1902,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1945,8 +1945,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1988,8 +1988,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2031,8 +2031,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2073,8 +2073,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2115,8 +2115,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2157,8 +2157,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2199,8 +2199,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClusterWorkloadMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2241,8 +2241,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2285,8 +2285,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2329,8 +2329,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2373,8 +2373,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2417,8 +2417,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2476,8 +2476,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2518,8 +2518,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2560,8 +2560,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2602,8 +2602,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2644,8 +2644,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2686,8 +2686,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2733,8 +2733,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2780,8 +2780,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2827,8 +2827,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2874,8 +2874,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2966,8 +2966,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3011,8 +3011,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3056,8 +3056,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3101,8 +3101,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3146,8 +3146,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3190,8 +3190,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3234,8 +3234,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3278,8 +3278,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3322,8 +3322,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetPodShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3366,8 +3366,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3408,8 +3408,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3450,8 +3450,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3492,8 +3492,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3534,8 +3534,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3631,8 +3631,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3674,8 +3674,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3717,8 +3717,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3760,8 +3760,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3803,8 +3803,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3846,8 +3846,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3889,8 +3889,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3932,8 +3932,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3975,8 +3975,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4018,8 +4018,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4061,8 +4061,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4107,8 +4107,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4153,8 +4153,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4199,8 +4199,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4245,8 +4245,8 @@ public final class ContainerEngineFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
      * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -158,7 +158,7 @@ def get_managed_instance_available_windows_updates(classification_types: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_windows_updates = oci.OsManagementHub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_windows_updates = oci.osmanagementhub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_available_windows_update_classification_type,
         compartment_id=compartment_id,
         display_name=managed_instance_available_windows_update_display_name,
@@ -219,7 +219,7 @@ def get_managed_instance_available_windows_updates_output(classification_types: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_available_windows_updates = oci.OsManagementHub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_available_windows_updates = oci.osmanagementhub.get_managed_instance_available_windows_updates(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_available_windows_update_classification_type,
         compartment_id=compartment_id,
         display_name=managed_instance_available_windows_update_display_name,

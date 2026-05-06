@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectHead = oci.ObjectStorage.getObjectHead({
+ * const testObjectHead = oci.objectstorage.getObjectHead({
  *     bucket: objectBucket,
  *     namespace: objectNamespace,
  *     object: objectObject,
@@ -94,7 +94,7 @@ export interface GetObjectHeadResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectHead = oci.ObjectStorage.getObjectHead({
+ * const testObjectHead = oci.objectstorage.getObjectHead({
  *     bucket: objectBucket,
  *     namespace: objectNamespace,
  *     object: objectObject,

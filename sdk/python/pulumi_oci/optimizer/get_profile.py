@@ -225,7 +225,7 @@ def get_profile(profile_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.Optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
+    test_profile = oci.optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.Optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
+    test_profile = oci.optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
     ```
 
 

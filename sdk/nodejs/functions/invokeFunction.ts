@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     invokeFunctionBody: invokeFunctionInvokeFunctionBody,
  *     fnIntent: invokeFunctionFnIntent,
  *     fnInvokeType: invokeFunctionFnInvokeType,
- *     isDryRun: invokeFunctionIsDryRun,
+ *     isDryRun: invokeFunctionIsDryRun === "true",
  *     base64EncodeContent: false,
  * });
  * ```

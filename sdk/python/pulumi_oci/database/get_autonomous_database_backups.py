@@ -186,7 +186,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
+    test_autonomous_database_backups = oci.database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
         backup_destination_id=test_backup_destination["id"],
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,
@@ -252,7 +252,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
+    test_autonomous_database_backups = oci.database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
         backup_destination_id=test_backup_destination["id"],
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,

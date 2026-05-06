@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     maxSessionTtlInSeconds: bastionMaxSessionTtlInSeconds,
+ *     maxSessionTtlInSeconds: Number(bastionMaxSessionTtlInSeconds),
  *     name: bastionName,
  *     phoneBookEntry: bastionPhoneBookEntry,
  *     securityAttributes: bastionSecurityAttributes,

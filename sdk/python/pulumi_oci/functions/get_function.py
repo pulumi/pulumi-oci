@@ -324,7 +324,7 @@ def get_function(function_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_function = oci.Functions.get_function(function_id=test_function_oci_functions_function["id"])
+    test_function = oci.functions.get_function(function_id=test_function_oci_functions_function["id"])
     ```
 
 
@@ -372,7 +372,7 @@ def get_function_output(function_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_function = oci.Functions.get_function(function_id=test_function_oci_functions_function["id"])
+    test_function = oci.functions.get_function(function_id=test_function_oci_functions_function["id"])
     ```
 
 

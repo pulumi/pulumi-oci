@@ -671,11 +671,11 @@ class AuditProfileManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage,
-            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
-            offline_months=audit_profile_offline_months,
-            online_months=audit_profile_online_months,
-            change_retention_trigger=retention_trigger,
+            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage == "true",
+            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled == "true",
+            offline_months=int(audit_profile_offline_months),
+            online_months=int(audit_profile_online_months),
+            change_retention_trigger=int(retention_trigger),
             is_override_global_retention_setting=True)
         ```
 
@@ -740,11 +740,11 @@ class AuditProfileManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage,
-            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
-            offline_months=audit_profile_offline_months,
-            online_months=audit_profile_online_months,
-            change_retention_trigger=retention_trigger,
+            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage == "true",
+            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled == "true",
+            offline_months=int(audit_profile_offline_months),
+            online_months=int(audit_profile_online_months),
+            change_retention_trigger=int(retention_trigger),
             is_override_global_retention_setting=True)
         ```
 

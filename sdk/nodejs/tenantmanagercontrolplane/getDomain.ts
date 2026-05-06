@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomain = oci.Tenantmanagercontrolplane.getDomain({
+ * const testDomain = oci.tenantmanagercontrolplane.getDomain({
  *     domainId: testDomainOciTenantmanagercontrolplaneDomain.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomain = oci.Tenantmanagercontrolplane.getDomain({
+ * const testDomain = oci.tenantmanagercontrolplane.getDomain({
  *     domainId: testDomainOciTenantmanagercontrolplaneDomain.id,
  * });
  * ```

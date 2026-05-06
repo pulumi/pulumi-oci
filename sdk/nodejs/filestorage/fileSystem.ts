@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  * const testFileSystem = new oci.filestorage.FileSystem("test_file_system", {
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     areQuotaRulesEnabled: fileSystemAreQuotaRulesEnabled,
+ *     areQuotaRulesEnabled: fileSystemAreQuotaRulesEnabled === "true",
  *     cloneAttachStatus: fileSystemCloneAttachStatus,
  *     definedTags: {
  *         "Operations.CostCenter": "42",

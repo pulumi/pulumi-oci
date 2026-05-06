@@ -239,7 +239,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
+    test_db_management_private_endpoint = oci.databasemanagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
+    test_db_management_private_endpoint = oci.databasemanagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
 
 

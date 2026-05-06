@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestions = oci.Identity.getDomainsSecurityQuestions({
+ * const testSecurityQuestions = oci.identity.getDomainsSecurityQuestions({
  *     idcsEndpoint: testDomain.url,
- *     securityQuestionCount: securityQuestionSecurityQuestionCount,
+ *     securityQuestionCount: Number(securityQuestionSecurityQuestionCount),
  *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: securityQuestionAuthorization,
  *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
- *     startIndex: securityQuestionStartIndex,
+ *     startIndex: Number(securityQuestionStartIndex),
  * });
  * ```
  */
@@ -132,15 +132,15 @@ export interface GetDomainsSecurityQuestionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestions = oci.Identity.getDomainsSecurityQuestions({
+ * const testSecurityQuestions = oci.identity.getDomainsSecurityQuestions({
  *     idcsEndpoint: testDomain.url,
- *     securityQuestionCount: securityQuestionSecurityQuestionCount,
+ *     securityQuestionCount: Number(securityQuestionSecurityQuestionCount),
  *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: securityQuestionAuthorization,
  *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
- *     startIndex: securityQuestionStartIndex,
+ *     startIndex: Number(securityQuestionStartIndex),
  * });
  * ```
  */

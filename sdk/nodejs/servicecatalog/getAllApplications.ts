@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllApplications = oci.ServiceCatalog.getAllApplications({
+ * const testAllApplications = oci.servicecatalog.getAllApplications({
  *     compartmentId: compartmentId,
  *     displayName: allApplicationDisplayName,
  *     entityId: testEntity.id,
  *     entityType: allApplicationEntityType,
- *     isFeatured: allApplicationIsFeatured,
+ *     isFeatured: allApplicationIsFeatured === "true",
  *     packageTypes: allApplicationPackageType,
  *     pricings: allApplicationPricing,
  *     publisherIds: testPublisher.id,
@@ -134,12 +134,12 @@ export interface GetAllApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllApplications = oci.ServiceCatalog.getAllApplications({
+ * const testAllApplications = oci.servicecatalog.getAllApplications({
  *     compartmentId: compartmentId,
  *     displayName: allApplicationDisplayName,
  *     entityId: testEntity.id,
  *     entityType: allApplicationEntityType,
- *     isFeatured: allApplicationIsFeatured,
+ *     isFeatured: allApplicationIsFeatured === "true",
  *     packageTypes: allApplicationPackageType,
  *     pricings: allApplicationPricing,
  *     publisherIds: testPublisher.id,

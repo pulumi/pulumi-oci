@@ -142,7 +142,7 @@ def get_desktop_pool_volumes(availability_domain: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool_volumes = oci.Desktops.get_desktop_pool_volumes(compartment_id=compartment_id,
+    test_desktop_pool_volumes = oci.desktops.get_desktop_pool_volumes(compartment_id=compartment_id,
         desktop_pool_id=test_desktop_pool["id"],
         availability_domain=desktop_pool_volume_availability_domain,
         display_name=desktop_pool_volume_display_name,
@@ -197,7 +197,7 @@ def get_desktop_pool_volumes_output(availability_domain: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool_volumes = oci.Desktops.get_desktop_pool_volumes(compartment_id=compartment_id,
+    test_desktop_pool_volumes = oci.desktops.get_desktop_pool_volumes(compartment_id=compartment_id,
         desktop_pool_id=test_desktop_pool["id"],
         availability_domain=desktop_pool_volume_availability_domain,
         display_name=desktop_pool_volume_display_name,

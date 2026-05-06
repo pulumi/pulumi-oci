@@ -252,7 +252,7 @@ def get_web_app_firewall_policy(web_app_firewall_policy_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall_policy = oci.Waf.get_web_app_firewall_policy(web_app_firewall_policy_id=test_web_app_firewall_policy_oci_waf_web_app_firewall_policy["id"])
+    test_web_app_firewall_policy = oci.waf.get_web_app_firewall_policy(web_app_firewall_policy_id=test_web_app_firewall_policy_oci_waf_web_app_firewall_policy["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_web_app_firewall_policy_output(web_app_firewall_policy_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall_policy = oci.Waf.get_web_app_firewall_policy(web_app_firewall_policy_id=test_web_app_firewall_policy_oci_waf_web_app_firewall_policy["id"])
+    test_web_app_firewall_policy = oci.waf.get_web_app_firewall_policy(web_app_firewall_policy_id=test_web_app_firewall_policy_oci_waf_web_app_firewall_policy["id"])
     ```
 
 

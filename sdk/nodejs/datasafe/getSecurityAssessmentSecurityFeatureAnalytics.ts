@@ -24,10 +24,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatureAnalytics = oci.DataSafe.getSecurityAssessmentSecurityFeatureAnalytics({
+ * const testSecurityAssessmentSecurityFeatureAnalytics = oci.datasafe.getSecurityAssessmentSecurityFeatureAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  * });
  * ```
@@ -102,10 +102,10 @@ export interface GetSecurityAssessmentSecurityFeatureAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatureAnalytics = oci.DataSafe.getSecurityAssessmentSecurityFeatureAnalytics({
+ * const testSecurityAssessmentSecurityFeatureAnalytics = oci.datasafe.getSecurityAssessmentSecurityFeatureAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  * });
  * ```

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookExport = oci.FleetAppsManagement.getRunbookExport({
+ * const testRunbookExport = oci.fleetappsmanagement.getRunbookExport({
  *     exportId: runbookExportId,
  *     runbookId: testRunbook.id,
  * });
@@ -88,7 +88,7 @@ export interface GetRunbookExportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunbookExport = oci.FleetAppsManagement.getRunbookExport({
+ * const testRunbookExport = oci.fleetappsmanagement.getRunbookExport({
  *     exportId: runbookExportId,
  *     runbookId: testRunbook.id,
  * });

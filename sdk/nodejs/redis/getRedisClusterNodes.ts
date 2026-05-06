@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRedisClusterNodes = oci.Redis.getRedisClusterNodes({
+ * const testRedisClusterNodes = oci.redis.getRedisClusterNodes({
  *     redisClusterId: testRedisCluster.id,
  *     displayName: redisClusterNodeDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetRedisClusterNodesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRedisClusterNodes = oci.Redis.getRedisClusterNodes({
+ * const testRedisClusterNodes = oci.redis.getRedisClusterNodes({
  *     redisClusterId: testRedisCluster.id,
  *     displayName: redisClusterNodeDisplayName,
  * });

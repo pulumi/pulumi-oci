@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
+ * const testManagedDatabaseUserRoles = oci.databasemanagement.getManagedDatabaseUserRoles({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserRoleName,
@@ -91,7 +91,7 @@ export interface GetManagedDatabaseUserRolesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
+ * const testManagedDatabaseUserRoles = oci.databasemanagement.getManagedDatabaseUserRoles({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserRoleName,

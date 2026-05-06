@@ -125,7 +125,7 @@ def get_stream_cdn_configs(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+    test_stream_cdn_configs = oci.mediaservices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_cdn_config_display_name,
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)
@@ -170,7 +170,7 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+    test_stream_cdn_configs = oci.mediaservices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_cdn_config_display_name,
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)

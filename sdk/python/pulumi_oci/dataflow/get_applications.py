@@ -147,7 +147,7 @@ def get_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=compartment_id,
+    test_applications = oci.dataflow.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         display_name_starts_with=application_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],
@@ -198,7 +198,7 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.DataFlow.get_applications(compartment_id=compartment_id,
+    test_applications = oci.dataflow.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         display_name_starts_with=application_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],

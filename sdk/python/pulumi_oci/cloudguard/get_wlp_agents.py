@@ -98,7 +98,7 @@ def get_wlp_agents(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_wlp_agents = oci.CloudGuard.get_wlp_agents(compartment_id=compartment_id)
+    test_wlp_agents = oci.cloudguard.get_wlp_agents(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_wlp_agents_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_wlp_agents = oci.CloudGuard.get_wlp_agents(compartment_id=compartment_id)
+    test_wlp_agents = oci.cloudguard.get_wlp_agents(compartment_id=compartment_id)
     ```
 
 

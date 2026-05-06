@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyMappedSecrets = oci.NetworkFirewall.getNetworkFirewallPolicyMappedSecrets({
+ * const testNetworkFirewallPolicyMappedSecrets = oci.networkfirewall.getNetworkFirewallPolicyMappedSecrets({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyMappedSecretDisplayName,
  * });
@@ -71,7 +71,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyMappedSecrets = oci.NetworkFirewall.getNetworkFirewallPolicyMappedSecrets({
+ * const testNetworkFirewallPolicyMappedSecrets = oci.networkfirewall.getNetworkFirewallPolicyMappedSecrets({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyMappedSecretDisplayName,
  * });

@@ -105,8 +105,8 @@ def get_plugin_error_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_error_analytics = oci.Jms.get_plugin_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree)
+    test_plugin_error_analytics = oci.jms.get_plugin_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 
@@ -141,8 +141,8 @@ def get_plugin_error_analytics_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_error_analytics = oci.Jms.get_plugin_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree)
+    test_plugin_error_analytics = oci.jms.get_plugin_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 

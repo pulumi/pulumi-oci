@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired,
+ *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired === "true",
  *     licenseModel: resourceAnalyticsInstanceLicenseModel,
  *     nsgIds: resourceAnalyticsInstanceNsgIds,
  * });

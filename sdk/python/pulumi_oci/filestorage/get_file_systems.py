@@ -178,7 +178,7 @@ def get_file_systems(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+    test_file_systems = oci.filestorage.get_file_systems(availability_domain=file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=file_system_display_name,
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
@@ -244,7 +244,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+    test_file_systems = oci.filestorage.get_file_systems(availability_domain=file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=file_system_display_name,
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],

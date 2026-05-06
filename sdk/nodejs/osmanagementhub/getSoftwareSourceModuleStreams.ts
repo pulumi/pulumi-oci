@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreams = oci.OsManagementHub.getSoftwareSourceModuleStreams({
+ * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest,
+ *     isLatest: softwareSourceModuleStreamIsLatest === "true",
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,
@@ -109,9 +109,9 @@ export interface GetSoftwareSourceModuleStreamsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreams = oci.OsManagementHub.getSoftwareSourceModuleStreams({
+ * const testSoftwareSourceModuleStreams = oci.osmanagementhub.getSoftwareSourceModuleStreams({
  *     softwareSourceId: testSoftwareSource.id,
- *     isLatest: softwareSourceModuleStreamIsLatest,
+ *     isLatest: softwareSourceModuleStreamIsLatest === "true",
  *     moduleName: softwareSourceModuleStreamModuleName,
  *     moduleNameContains: softwareSourceModuleStreamModuleNameContains,
  *     name: softwareSourceModuleStreamName,

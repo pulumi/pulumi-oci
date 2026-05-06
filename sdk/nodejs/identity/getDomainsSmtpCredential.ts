@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredential = oci.Identity.getDomainsSmtpCredential({
+ * const testSmtpCredential = oci.identity.getDomainsSmtpCredential({
  *     idcsEndpoint: testDomain.url,
  *     smtpCredentialId: testSmtpCredentialOciIdentitySmtpCredential.id,
  *     attributeSets: [],
@@ -171,7 +171,7 @@ export interface GetDomainsSmtpCredentialResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredential = oci.Identity.getDomainsSmtpCredential({
+ * const testSmtpCredential = oci.identity.getDomainsSmtpCredential({
  *     idcsEndpoint: testDomain.url,
  *     smtpCredentialId: testSmtpCredentialOciIdentitySmtpCredential.id,
  *     attributeSets: [],

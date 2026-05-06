@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsClusterVersions = oci.BigDataService.getBdsClusterVersions({});
+ * const testBdsClusterVersions = oci.bigdataservice.getBdsClusterVersions({});
  * ```
  */
 export function getBdsClusterVersions(args?: GetBdsClusterVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsClusterVersionsResult> {
@@ -60,7 +60,7 @@ export interface GetBdsClusterVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsClusterVersions = oci.BigDataService.getBdsClusterVersions({});
+ * const testBdsClusterVersions = oci.bigdataservice.getBdsClusterVersions({});
  * ```
  */
 export function getBdsClusterVersionsOutput(args?: GetBdsClusterVersionsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBdsClusterVersionsResult> {

@@ -175,7 +175,7 @@ def get_cost_anomaly_event_analytics(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event_analytics = oci.Budget.get_cost_anomaly_event_analytics(compartment_id=compartment_id,
+    test_cost_anomaly_event_analytics = oci.budget.get_cost_anomaly_event_analytics(compartment_id=compartment_id,
         cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
         cost_impact=cost_anomaly_event_analytic_cost_impact,
         cost_impact_percentage=cost_anomaly_event_analytic_cost_impact_percentage,
@@ -246,7 +246,7 @@ def get_cost_anomaly_event_analytics_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event_analytics = oci.Budget.get_cost_anomaly_event_analytics(compartment_id=compartment_id,
+    test_cost_anomaly_event_analytics = oci.budget.get_cost_anomaly_event_analytics(compartment_id=compartment_id,
         cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
         cost_impact=cost_anomaly_event_analytic_cost_impact,
         cost_impact_percentage=cost_anomaly_event_analytic_cost_impact_percentage,

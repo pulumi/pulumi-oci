@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitments = oci.OsubSubscription.getCommitments({
+ * const testCommitments = oci.osubsubscription.getCommitments({
  *     compartmentId: compartmentId,
  *     subscribedServiceId: testService.id,
  *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,
@@ -88,7 +88,7 @@ export interface GetCommitmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCommitments = oci.OsubSubscription.getCommitments({
+ * const testCommitments = oci.osubsubscription.getCommitments({
  *     compartmentId: compartmentId,
  *     subscribedServiceId: testService.id,
  *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,

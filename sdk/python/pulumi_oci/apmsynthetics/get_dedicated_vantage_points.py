@@ -134,7 +134,7 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
+    test_dedicated_vantage_points = oci.apmsynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
         display_name=dedicated_vantage_point_display_name,
         name=dedicated_vantage_point_name,
         status=dedicated_vantage_point_status)
@@ -180,7 +180,7 @@ def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vantage_points = oci.ApmSynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
+    test_dedicated_vantage_points = oci.apmsynthetics.get_dedicated_vantage_points(apm_domain_id=test_apm_domain["id"],
         display_name=dedicated_vantage_point_display_name,
         name=dedicated_vantage_point_name,
         status=dedicated_vantage_point_status)

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.Waas.getCertificates({
+ * const testCertificates = oci.waas.getCertificates({
  *     compartmentId: compartmentId,
  *     displayNames: certificateDisplayNames,
  *     ids: certificateIds,
@@ -105,7 +105,7 @@ export interface GetCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.Waas.getCertificates({
+ * const testCertificates = oci.waas.getCertificates({
  *     compartmentId: compartmentId,
  *     displayNames: certificateDisplayNames,
  *     ids: certificateIds,

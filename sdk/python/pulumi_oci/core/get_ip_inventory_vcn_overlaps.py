@@ -151,7 +151,7 @@ def get_ip_inventory_vcn_overlaps(compartment_lists: Optional[Sequence[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_inventory_vcn_overlaps = oci.Core.get_ip_inventory_vcn_overlaps(compartment_lists=ip_inventory_vcn_overlap_compartment_list,
+    test_ip_inventory_vcn_overlaps = oci.core.get_ip_inventory_vcn_overlaps(compartment_lists=ip_inventory_vcn_overlap_compartment_list,
         region_lists=ip_inventory_vcn_overlap_region_list,
         vcn_id=test_vcn["id"])
     ```
@@ -195,7 +195,7 @@ def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_inventory_vcn_overlaps = oci.Core.get_ip_inventory_vcn_overlaps(compartment_lists=ip_inventory_vcn_overlap_compartment_list,
+    test_ip_inventory_vcn_overlaps = oci.core.get_ip_inventory_vcn_overlaps(compartment_lists=ip_inventory_vcn_overlap_compartment_list,
         region_lists=ip_inventory_vcn_overlap_region_list,
         vcn_id=test_vcn["id"])
     ```

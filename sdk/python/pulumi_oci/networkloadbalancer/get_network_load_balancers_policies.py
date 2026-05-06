@@ -85,7 +85,7 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[Union['GetNet
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
+    test_network_load_balancers_policies = oci.networkloadbalancer.get_network_load_balancers_policies()
     ```
     """
     __args__ = dict()
@@ -110,7 +110,7 @@ def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
+    test_network_load_balancers_policies = oci.networkloadbalancer.get_network_load_balancers_policies()
     ```
     """
     __args__ = dict()

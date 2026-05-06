@@ -345,7 +345,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
@@ -418,7 +418,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],

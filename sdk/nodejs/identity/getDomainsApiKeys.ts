@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getDomainsApiKeys({
+ * const testApiKeys = oci.identity.getDomainsApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     apiKeyCount: apiKeyApiKeyCount,
+ *     apiKeyCount: Number(apiKeyApiKeyCount),
  *     apiKeyFilter: apiKeyApiKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: apiKeyAuthorization,
  *     resourceTypeSchemaVersion: apiKeyResourceTypeSchemaVersion,
- *     startIndex: apiKeyStartIndex,
+ *     startIndex: Number(apiKeyStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsApiKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKeys = oci.Identity.getDomainsApiKeys({
+ * const testApiKeys = oci.identity.getDomainsApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     apiKeyCount: apiKeyApiKeyCount,
+ *     apiKeyCount: Number(apiKeyApiKeyCount),
  *     apiKeyFilter: apiKeyApiKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: apiKeyAuthorization,
  *     resourceTypeSchemaVersion: apiKeyResourceTypeSchemaVersion,
- *     startIndex: apiKeyStartIndex,
+ *     startIndex: Number(apiKeyStartIndex),
  * });
  * ```
  */

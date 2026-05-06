@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCredentials = oci.FleetAppsManagement.getFleetCredentials({
+ * const testFleetCredentials = oci.fleetappsmanagement.getFleetCredentials({
  *     fleetId: testFleet.id,
  *     credentialLevel: fleetCredentialCredentialLevel,
  *     displayName: fleetCredentialDisplayName,
@@ -132,7 +132,7 @@ export interface GetFleetCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCredentials = oci.FleetAppsManagement.getFleetCredentials({
+ * const testFleetCredentials = oci.fleetappsmanagement.getFleetCredentials({
  *     fleetId: testFleet.id,
  *     credentialLevel: fleetCredentialCredentialLevel,
  *     displayName: fleetCredentialDisplayName,

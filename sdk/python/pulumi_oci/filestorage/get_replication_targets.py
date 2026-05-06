@@ -138,7 +138,7 @@ def get_replication_targets(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=replication_target_availability_domain,
+    test_replication_targets = oci.filestorage.get_replication_targets(availability_domain=replication_target_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_target_display_name,
         id=replication_target_id,
@@ -188,7 +188,7 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=replication_target_availability_domain,
+    test_replication_targets = oci.filestorage.get_replication_targets(availability_domain=replication_target_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_target_display_name,
         id=replication_target_id,

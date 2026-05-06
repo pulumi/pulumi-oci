@@ -240,7 +240,7 @@ def get_alert_rule(alert_rule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
+    test_alert_rule = oci.budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
         budget_id=test_budget["id"])
     ```
 
@@ -285,7 +285,7 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
+    test_alert_rule = oci.budget.get_alert_rule(alert_rule_id=test_alert_rule_oci_budget_alert_rule["id"],
         budget_id=test_budget["id"])
     ```
 

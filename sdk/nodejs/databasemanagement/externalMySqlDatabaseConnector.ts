@@ -29,10 +29,10 @@ import * as utilities from "../utilities";
  *         hostName: externalMySqlDatabaseConnectorConnectorDetailsHostName,
  *         macsAgentId: testAgent.id,
  *         networkProtocol: externalMySqlDatabaseConnectorConnectorDetailsNetworkProtocol,
- *         port: externalMySqlDatabaseConnectorConnectorDetailsPort,
+ *         port: Number(externalMySqlDatabaseConnectorConnectorDetailsPort),
  *         sslSecretId: testSecret.id,
  *     },
- *     isTestConnectionParam: externalMySqlDatabaseConnectorIsTestConnectionParam,
+ *     isTestConnectionParam: externalMySqlDatabaseConnectorIsTestConnectionParam === "true",
  * });
  * ```
  *

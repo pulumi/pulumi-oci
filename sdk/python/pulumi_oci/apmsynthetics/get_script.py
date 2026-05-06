@@ -226,7 +226,7 @@ def get_script(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=test_apm_domain["id"],
+    test_script = oci.apmsynthetics.get_script(apm_domain_id=test_apm_domain["id"],
         script_id=test_script_oci_apm_synthetics_script["id"])
     ```
 
@@ -270,7 +270,7 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=test_apm_domain["id"],
+    test_script = oci.apmsynthetics.get_script(apm_domain_id=test_apm_domain["id"],
         script_id=test_script_oci_apm_synthetics_script["id"])
     ```
 

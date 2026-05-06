@@ -95,7 +95,7 @@ def get_delegation_control_resources(delegation_control_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control_resources = oci.DelegateAccessControl.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
+    test_delegation_control_resources = oci.delegateaccesscontrol.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_delegation_control_resources_output(delegation_control_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control_resources = oci.DelegateAccessControl.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
+    test_delegation_control_resources = oci.delegateaccesscontrol.get_delegation_control_resources(delegation_control_id=test_delegation_control["id"])
     ```
 
 

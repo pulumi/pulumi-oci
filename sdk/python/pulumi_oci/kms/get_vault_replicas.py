@@ -100,7 +100,7 @@ def get_vault_replicas(filters: Optional[Sequence[Union['GetVaultReplicasFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=test_vault["id"])
+    test_vault_replicas = oci.kms.get_vault_replicas(vault_id=test_vault["id"])
     ```
 
 
@@ -136,7 +136,7 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=test_vault["id"])
+    test_vault_replicas = oci.kms.get_vault_replicas(vault_id=test_vault["id"])
     ```
 
 

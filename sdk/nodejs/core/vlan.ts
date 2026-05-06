@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     },
  *     nsgIds: vlanNsgIds,
  *     routeTableId: testRouteTable.id,
- *     vlanTag: vlanVlanTag,
+ *     vlanTag: Number(vlanVlanTag),
  * });
  * ```
  *

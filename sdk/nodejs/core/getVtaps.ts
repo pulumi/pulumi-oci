@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVtaps = oci.Core.getVtaps({
+ * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,
@@ -141,10 +141,10 @@ export interface GetVtapsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVtaps = oci.Core.getVtaps({
+ * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,

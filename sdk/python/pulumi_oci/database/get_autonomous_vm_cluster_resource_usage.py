@@ -324,7 +324,7 @@ def get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_resource_usage = oci.Database.get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"])
+    test_autonomous_vm_cluster_resource_usage = oci.database.get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"])
     ```
 
 
@@ -372,7 +372,7 @@ def get_autonomous_vm_cluster_resource_usage_output(autonomous_vm_cluster_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_resource_usage = oci.Database.get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"])
+    test_autonomous_vm_cluster_resource_usage = oci.database.get_autonomous_vm_cluster_resource_usage(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"])
     ```
 
 

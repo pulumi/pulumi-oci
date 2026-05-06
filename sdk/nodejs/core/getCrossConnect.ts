@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnect = oci.Core.getCrossConnect({
+ * const testCrossConnect = oci.core.getCrossConnect({
  *     crossConnectId: testCrossConnectOciCoreCrossConnect.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetCrossConnectResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnect = oci.Core.getCrossConnect({
+ * const testCrossConnect = oci.core.getCrossConnect({
  *     crossConnectId: testCrossConnectOciCoreCrossConnect.id,
  * });
  * ```

@@ -124,10 +124,10 @@ def get_repository_path(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_path = oci.DevOps.get_repository_path(repository_id=test_repository["id"],
+    test_repository_path = oci.devops.get_repository_path(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree,
+        paths_in_subtree=repository_path_paths_in_subtree == "true",
         ref=repository_path_ref)
     ```
 
@@ -172,10 +172,10 @@ def get_repository_path_output(display_name: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_path = oci.DevOps.get_repository_path(repository_id=test_repository["id"],
+    test_repository_path = oci.devops.get_repository_path(repository_id=test_repository["id"],
         display_name=repository_path_display_name,
         folder_path=repository_path_folder_path,
-        paths_in_subtree=repository_path_paths_in_subtree,
+        paths_in_subtree=repository_path_paths_in_subtree == "true",
         ref=repository_path_ref)
     ```
 

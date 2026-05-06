@@ -149,7 +149,7 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_states = oci.datasafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
         deployment_status=security_policy_deployment_security_policy_entry_state_deployment_status,
         security_policy_entry_id=test_security_policy_entry["id"],
         security_policy_entry_type=security_policy_deployment_security_policy_entry_state_security_policy_entry_type,
@@ -202,7 +202,7 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_states = oci.datasafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
         deployment_status=security_policy_deployment_security_policy_entry_state_deployment_status,
         security_policy_entry_id=test_security_policy_entry["id"],
         security_policy_entry_type=security_policy_deployment_security_policy_entry_state_security_policy_entry_type,

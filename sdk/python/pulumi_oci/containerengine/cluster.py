@@ -590,7 +590,7 @@ class Cluster(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             endpoint_config={
-                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled,
+                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled == "true",
                 "nsg_ids": cluster_endpoint_config_nsg_ids,
                 "subnet_id": test_subnet["id"],
             },
@@ -598,7 +598,7 @@ class Cluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             image_policy_config={
-                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -606,11 +606,11 @@ class Cluster(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             options={
                 "add_ons": {
-                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled,
-                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled,
+                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled == "true",
+                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled == "true",
                 },
                 "admission_controller_options": {
-                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled == "true",
                 },
                 "ip_families": cluster_options_ip_families,
                 "kubernetes_network_config": {
@@ -618,7 +618,7 @@ class Cluster(pulumi.CustomResource):
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
                 },
                 "open_id_connect_token_authentication_config": {
-                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled,
+                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled == "true",
                     "ca_certificate": cluster_options_open_id_connect_token_authentication_config_ca_certificate,
                     "client_id": test_client["id"],
                     "configuration_file": cluster_options_open_id_connect_token_authentication_config_configuration_file,
@@ -634,7 +634,7 @@ class Cluster(pulumi.CustomResource):
                     "username_prefix": cluster_options_open_id_connect_token_authentication_config_username_prefix,
                 },
                 "open_id_connect_discovery": {
-                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled,
+                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled == "true",
                 },
                 "persistent_volume_config": {
                     "defined_tags": {
@@ -718,7 +718,7 @@ class Cluster(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             endpoint_config={
-                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled,
+                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled == "true",
                 "nsg_ids": cluster_endpoint_config_nsg_ids,
                 "subnet_id": test_subnet["id"],
             },
@@ -726,7 +726,7 @@ class Cluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             image_policy_config={
-                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled,
+                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled == "true",
                 "key_details": [{
                     "kms_key_id": test_key["id"],
                 }],
@@ -734,11 +734,11 @@ class Cluster(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             options={
                 "add_ons": {
-                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled,
-                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled,
+                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled == "true",
+                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled == "true",
                 },
                 "admission_controller_options": {
-                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled == "true",
                 },
                 "ip_families": cluster_options_ip_families,
                 "kubernetes_network_config": {
@@ -746,7 +746,7 @@ class Cluster(pulumi.CustomResource):
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
                 },
                 "open_id_connect_token_authentication_config": {
-                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled,
+                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled == "true",
                     "ca_certificate": cluster_options_open_id_connect_token_authentication_config_ca_certificate,
                     "client_id": test_client["id"],
                     "configuration_file": cluster_options_open_id_connect_token_authentication_config_configuration_file,
@@ -762,7 +762,7 @@ class Cluster(pulumi.CustomResource):
                     "username_prefix": cluster_options_open_id_connect_token_authentication_config_username_prefix,
                 },
                 "open_id_connect_discovery": {
-                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled,
+                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled == "true",
                 },
                 "persistent_volume_config": {
                     "defined_tags": {

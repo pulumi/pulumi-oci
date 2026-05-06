@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyApiKeys = oci.Identity.getDomainsMyApiKeys({
+ * const testMyApiKeys = oci.identity.getDomainsMyApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     myApiKeyCount: myApiKeyMyApiKeyCount,
+ *     myApiKeyCount: Number(myApiKeyMyApiKeyCount),
  *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
  *     authorization: myApiKeyAuthorization,
  *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
- *     startIndex: myApiKeyStartIndex,
+ *     startIndex: Number(myApiKeyStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyApiKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyApiKeys = oci.Identity.getDomainsMyApiKeys({
+ * const testMyApiKeys = oci.identity.getDomainsMyApiKeys({
  *     idcsEndpoint: testDomain.url,
- *     myApiKeyCount: myApiKeyMyApiKeyCount,
+ *     myApiKeyCount: Number(myApiKeyMyApiKeyCount),
  *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
  *     authorization: myApiKeyAuthorization,
  *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
- *     startIndex: myApiKeyStartIndex,
+ *     startIndex: Number(myApiKeyStartIndex),
  * });
  * ```
  */

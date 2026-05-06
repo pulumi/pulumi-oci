@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConfigurations = oci.Core.getInstanceConfigurations({
+ * const testInstanceConfigurations = oci.core.getInstanceConfigurations({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetInstanceConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConfigurations = oci.Core.getInstanceConfigurations({
+ * const testInstanceConfigurations = oci.core.getInstanceConfigurations({
  *     compartmentId: compartmentId,
  * });
  * ```

@@ -138,7 +138,7 @@ def get_volume_groups(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+    test_volume_groups = oci.core.get_volume_groups(compartment_id=compartment_id,
         availability_domain=volume_group_availability_domain,
         display_name=volume_group_display_name,
         state=volume_group_state)
@@ -185,7 +185,7 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+    test_volume_groups = oci.core.get_volume_groups(compartment_id=compartment_id,
         availability_domain=volume_group_availability_domain,
         display_name=volume_group_display_name,
         state=volume_group_state)

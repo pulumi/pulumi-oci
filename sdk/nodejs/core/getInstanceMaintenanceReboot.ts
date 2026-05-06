@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceReboot = oci.Core.getInstanceMaintenanceReboot({
+ * const testInstanceMaintenanceReboot = oci.core.getInstanceMaintenanceReboot({
  *     instanceId: testInstance.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetInstanceMaintenanceRebootResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceReboot = oci.Core.getInstanceMaintenanceReboot({
+ * const testInstanceMaintenanceReboot = oci.core.getInstanceMaintenanceReboot({
  *     instanceId: testInstance.id,
  * });
  * ```

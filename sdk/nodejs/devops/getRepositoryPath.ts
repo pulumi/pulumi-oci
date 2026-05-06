@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryPath = oci.DevOps.getRepositoryPath({
+ * const testRepositoryPath = oci.devops.getRepositoryPath({
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
  *     ref: repositoryPathRef,
  * });
  * ```
@@ -92,11 +92,11 @@ export interface GetRepositoryPathResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryPath = oci.DevOps.getRepositoryPath({
+ * const testRepositoryPath = oci.devops.getRepositoryPath({
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
  *     ref: repositoryPathRef,
  * });
  * ```

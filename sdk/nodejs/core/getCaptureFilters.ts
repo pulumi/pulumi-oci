@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaptureFilters = oci.Core.getCaptureFilters({
+ * const testCaptureFilters = oci.core.getCaptureFilters({
  *     compartmentId: compartmentId,
  *     displayName: captureFilterDisplayName,
  *     filterType: captureFilterFilterType,
@@ -100,7 +100,7 @@ export interface GetCaptureFiltersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaptureFilters = oci.Core.getCaptureFilters({
+ * const testCaptureFilters = oci.core.getCaptureFilters({
  *     compartmentId: compartmentId,
  *     displayName: captureFilterDisplayName,
  *     filterType: captureFilterFilterType,

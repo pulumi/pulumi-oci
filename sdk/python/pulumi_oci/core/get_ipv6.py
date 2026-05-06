@@ -241,7 +241,7 @@ def get_ipv6(ipv6id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6 = oci.Core.get_ipv6(ipv6id=test_ipv6_oci_core_ipv6["id"])
+    test_ipv6 = oci.core.get_ipv6(ipv6id=test_ipv6_oci_core_ipv6["id"])
     ```
 
 
@@ -285,7 +285,7 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipv6 = oci.Core.get_ipv6(ipv6id=test_ipv6_oci_core_ipv6["id"])
+    test_ipv6 = oci.core.get_ipv6(ipv6id=test_ipv6_oci_core_ipv6["id"])
     ```
 
 

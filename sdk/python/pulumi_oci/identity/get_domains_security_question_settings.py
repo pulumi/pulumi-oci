@@ -173,7 +173,7 @@ def get_domains_security_question_settings(attribute_sets: Optional[Sequence[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
+    test_security_question_settings = oci.identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=security_question_setting_authorization,
@@ -228,7 +228,7 @@ def get_domains_security_question_settings_output(attribute_sets: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
+    test_security_question_settings = oci.identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=security_question_setting_authorization,

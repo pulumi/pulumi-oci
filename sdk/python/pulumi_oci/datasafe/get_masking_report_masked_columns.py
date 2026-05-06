@@ -173,7 +173,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
+    test_masking_reports_masked_columns = oci.datasafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
         column_names=masking_reports_masked_column_column_name,
         masking_column_groups=masking_reports_masked_column_masking_column_group,
         objects=masking_reports_masked_column_object,
@@ -234,7 +234,7 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
+    test_masking_reports_masked_columns = oci.datasafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
         column_names=masking_reports_masked_column_column_name,
         masking_column_groups=masking_reports_masked_column_masking_column_group,
         objects=masking_reports_masked_column_object,

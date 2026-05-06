@@ -115,7 +115,7 @@ def get_invoice_line_computed_usages(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
+    test_invoice_line_computed_usages = oci.onesubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```
@@ -156,7 +156,7 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
+    test_invoice_line_computed_usages = oci.onesubsription.get_invoice_line_computed_usages(compartment_id=compartment_id,
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```

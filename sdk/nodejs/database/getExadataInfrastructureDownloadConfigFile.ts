@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
+ * const testExadataInfrastructureDownloadConfigFile = oci.database.getExadataInfrastructureDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     base64EncodeContent: false,
  * });
@@ -69,7 +69,7 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
+ * const testExadataInfrastructureDownloadConfigFile = oci.database.getExadataInfrastructureDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     base64EncodeContent: false,
  * });

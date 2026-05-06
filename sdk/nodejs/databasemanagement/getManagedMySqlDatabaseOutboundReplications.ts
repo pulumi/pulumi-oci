@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseOutboundReplications = oci.DatabaseManagement.getManagedMySqlDatabaseOutboundReplications({
+ * const testManagedMySqlDatabaseOutboundReplications = oci.databasemanagement.getManagedMySqlDatabaseOutboundReplications({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetManagedMySqlDatabaseOutboundReplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseOutboundReplications = oci.DatabaseManagement.getManagedMySqlDatabaseOutboundReplications({
+ * const testManagedMySqlDatabaseOutboundReplications = oci.databasemanagement.getManagedMySqlDatabaseOutboundReplications({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```

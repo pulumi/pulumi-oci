@@ -548,7 +548,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             source_container_db_admin_password=pluggable_databases_remote_clone_source_container_db_admin_password,
             target_container_database_id=test_database["id"],
             pdb_admin_password=pluggable_databases_remote_clone_pdb_admin_password,
-            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
+            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked == "true",
             target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
 
@@ -599,7 +599,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             source_container_db_admin_password=pluggable_databases_remote_clone_source_container_db_admin_password,
             target_container_database_id=test_database["id"],
             pdb_admin_password=pluggable_databases_remote_clone_pdb_admin_password,
-            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
+            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked == "true",
             target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
 

@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
+ * const testSensitiveDataModelsSensitiveColumns = oci.datasafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
  *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
- *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
+ *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive === "true",
  *     objects: sensitiveDataModelsSensitiveColumnObject,
  *     objectTypes: sensitiveDataModelsSensitiveColumnObjectType,
  *     parentColumnKeys: sensitiveDataModelsSensitiveColumnParentColumnKey,
@@ -227,14 +227,14 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
+ * const testSensitiveDataModelsSensitiveColumns = oci.datasafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
  *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
- *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
+ *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive === "true",
  *     objects: sensitiveDataModelsSensitiveColumnObject,
  *     objectTypes: sensitiveDataModelsSensitiveColumnObjectType,
  *     parentColumnKeys: sensitiveDataModelsSensitiveColumnParentColumnKey,

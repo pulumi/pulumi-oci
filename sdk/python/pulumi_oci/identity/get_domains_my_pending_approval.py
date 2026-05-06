@@ -366,7 +366,7 @@ def get_domains_my_pending_approval(authorization: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approval = oci.Identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
+    test_my_pending_approval = oci.identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
         my_pending_approval_id=test_my_pending_approval_oci_identity_domains_my_pending_approval["id"],
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)
@@ -430,7 +430,7 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approval = oci.Identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
+    test_my_pending_approval = oci.identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
         my_pending_approval_id=test_my_pending_approval_oci_identity_domains_my_pending_approval["id"],
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)

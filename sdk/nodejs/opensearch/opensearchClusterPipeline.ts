@@ -24,9 +24,9 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dataPrepperConfigurationBody: opensearchClusterPipelineDataPrepperConfigurationBody,
  *     displayName: opensearchClusterPipelineDisplayName,
- *     memoryGb: opensearchClusterPipelineMemoryGb,
- *     nodeCount: opensearchClusterPipelineNodeCount,
- *     ocpuCount: opensearchClusterPipelineOcpuCount,
+ *     memoryGb: Number(opensearchClusterPipelineMemoryGb),
+ *     nodeCount: Number(opensearchClusterPipelineNodeCount),
+ *     ocpuCount: Number(opensearchClusterPipelineOcpuCount),
  *     pipelineConfigurationBody: opensearchClusterPipelinePipelineConfigurationBody,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     },
  *     nodeShape: opensearchClusterPipelineNodeShape,
  *     nsgId: testNsg.id,
- *     opcDryRun: opensearchClusterPipelineOpcDryRun,
+ *     opcDryRun: opensearchClusterPipelineOpcDryRun === "true",
  *     reverseConnectionEndpoints: [{
  *         customerFqdn: opensearchClusterPipelineReverseConnectionEndpointsCustomerFqdn,
  *         customerIp: opensearchClusterPipelineReverseConnectionEndpointsCustomerIp,

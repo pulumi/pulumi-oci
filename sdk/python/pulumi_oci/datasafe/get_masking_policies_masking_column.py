@@ -262,7 +262,7 @@ def get_masking_policies_masking_column(masking_column_key: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
+    test_masking_policies_masking_column = oci.datasafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
 
@@ -309,7 +309,7 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
+    test_masking_policies_masking_column = oci.datasafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
 

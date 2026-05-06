@@ -305,13 +305,13 @@ def get_sensitive_data_models_sensitive_columns(column_data_count_filter: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_models_sensitive_columns = oci.datasafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_data_count_filter=sensitive_data_models_sensitive_column_column_data_count_filter,
         column_group=sensitive_data_models_sensitive_column_column_group,
         column_names=sensitive_data_models_sensitive_column_column_name,
         confidence_levels=sensitive_data_models_sensitive_column_confidence_level,
         data_types=sensitive_data_models_sensitive_column_data_type,
-        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
+        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive == "true",
         objects=sensitive_data_models_sensitive_column_object,
         object_types=sensitive_data_models_sensitive_column_object_type,
         parent_column_keys=sensitive_data_models_sensitive_column_parent_column_key,
@@ -430,13 +430,13 @@ def get_sensitive_data_models_sensitive_columns_output(column_data_count_filter:
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_models_sensitive_columns = oci.datasafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_data_count_filter=sensitive_data_models_sensitive_column_column_data_count_filter,
         column_group=sensitive_data_models_sensitive_column_column_group,
         column_names=sensitive_data_models_sensitive_column_column_name,
         confidence_levels=sensitive_data_models_sensitive_column_confidence_level,
         data_types=sensitive_data_models_sensitive_column_data_type,
-        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
+        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive == "true",
         objects=sensitive_data_models_sensitive_column_object,
         object_types=sensitive_data_models_sensitive_column_object_type,
         parent_column_keys=sensitive_data_models_sensitive_column_parent_column_key,

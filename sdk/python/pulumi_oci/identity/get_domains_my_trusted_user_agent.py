@@ -374,7 +374,7 @@ def get_domains_my_trusted_user_agent(attribute_sets: Optional[Sequence[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+    test_my_trusted_user_agent = oci.identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
         my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",
@@ -447,7 +447,7 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+    test_my_trusted_user_agent = oci.identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
         my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",

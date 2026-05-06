@@ -912,7 +912,7 @@ def get_deploy_stage(deploy_stage_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
+    test_deploy_stage = oci.devops.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
     ```
 
 
@@ -1009,7 +1009,7 @@ def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
+    test_deploy_stage = oci.devops.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
     ```
 
 

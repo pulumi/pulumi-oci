@@ -91,7 +91,7 @@ def get_model_defined_metadata_artifact_content(metadatum_key_name: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_defined_metadata_artifact_content = oci.DataScience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
+    test_model_defined_metadata_artifact_content = oci.datascience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
         model_id=test_model["id"],
         range=model_defined_metadata_artifact_content_range)
     ```
@@ -128,7 +128,7 @@ def get_model_defined_metadata_artifact_content_output(metadatum_key_name: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_model_defined_metadata_artifact_content = oci.DataScience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
+    test_model_defined_metadata_artifact_content = oci.datascience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
         model_id=test_model["id"],
         range=model_defined_metadata_artifact_content_range)
     ```

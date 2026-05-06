@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFaultDomains = oci.Identity.getFaultDomains({
+ * const testFaultDomains = oci.identity.getFaultDomains({
  *     availabilityDomain: faultDomainAvailabilityDomain,
  *     compartmentId: compartmentId,
  * });
@@ -84,7 +84,7 @@ export interface GetFaultDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFaultDomains = oci.Identity.getFaultDomains({
+ * const testFaultDomains = oci.identity.getFaultDomains({
  *     availabilityDomain: faultDomainAvailabilityDomain,
  *     compartmentId: compartmentId,
  * });

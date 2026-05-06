@@ -309,7 +309,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
+    test_pipeline = oci.datascience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
+    test_pipeline = oci.datascience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
     ```
 
 

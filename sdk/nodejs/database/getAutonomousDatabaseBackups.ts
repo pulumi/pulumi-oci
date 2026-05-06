@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
+ * const testAutonomousDatabaseBackups = oci.database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,
@@ -138,7 +138,7 @@ export interface GetAutonomousDatabaseBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
+ * const testAutonomousDatabaseBackups = oci.database.getAutonomousDatabaseBackups({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     backupDestinationId: testBackupDestination.id,
  *     compartmentId: compartmentId,

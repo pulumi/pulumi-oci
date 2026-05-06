@@ -140,7 +140,7 @@ def get_dhcp_options(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=compartment_id,
+    test_dhcp_options = oci.core.get_dhcp_options(compartment_id=compartment_id,
         display_name=dhcp_options_display_name,
         state=dhcp_options_state,
         vcn_id=test_vcn["id"])
@@ -189,7 +189,7 @@ def get_dhcp_options_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=compartment_id,
+    test_dhcp_options = oci.core.get_dhcp_options(compartment_id=compartment_id,
         display_name=dhcp_options_display_name,
         state=dhcp_options_state,
         vcn_id=test_vcn["id"])

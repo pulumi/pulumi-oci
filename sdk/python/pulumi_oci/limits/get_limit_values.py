@@ -165,7 +165,7 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+    test_limit_values = oci.limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         external_location=limit_value_external_location,
@@ -227,7 +227,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+    test_limit_values = oci.limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         external_location=limit_value_external_location,

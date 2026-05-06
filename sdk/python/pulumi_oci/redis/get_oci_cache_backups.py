@@ -147,7 +147,7 @@ def get_oci_cache_backups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backups = oci.Redis.get_oci_cache_backups(compartment_id=compartment_id,
+    test_oci_cache_backups = oci.redis.get_oci_cache_backups(compartment_id=compartment_id,
         display_name=oci_cache_backup_display_name,
         oci_cache_backup_id=test_oci_cache_backup["id"],
         source_cluster_id=test_redis_cluster["id"],
@@ -198,7 +198,7 @@ def get_oci_cache_backups_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_backups = oci.Redis.get_oci_cache_backups(compartment_id=compartment_id,
+    test_oci_cache_backups = oci.redis.get_oci_cache_backups(compartment_id=compartment_id,
         display_name=oci_cache_backup_display_name,
         oci_cache_backup_id=test_oci_cache_backup["id"],
         source_cluster_id=test_redis_cluster["id"],

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLibraryMaskingFormat = oci.DataSafe.getLibraryMaskingFormat({
+ * const testLibraryMaskingFormat = oci.datasafe.getLibraryMaskingFormat({
  *     libraryMaskingFormatId: testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id,
  * });
  * ```
@@ -107,7 +107,7 @@ export interface GetLibraryMaskingFormatResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLibraryMaskingFormat = oci.DataSafe.getLibraryMaskingFormat({
+ * const testLibraryMaskingFormat = oci.datasafe.getLibraryMaskingFormat({
  *     libraryMaskingFormatId: testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id,
  * });
  * ```

@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
+ * const testUserAssessmentProfileAnalytics = oci.datasafe.getUserAssessmentProfileAnalytics({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });
@@ -130,11 +130,11 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
+ * const testUserAssessmentProfileAnalytics = oci.datasafe.getUserAssessmentProfileAnalytics({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });

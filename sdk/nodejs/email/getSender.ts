@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSender = oci.Email.getSender({
+ * const testSender = oci.email.getSender({
  *     senderId: testSenderOciEmailSender.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetSenderResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSender = oci.Email.getSender({
+ * const testSender = oci.email.getSender({
  *     senderId: testSenderOciEmailSender.id,
  * });
  * ```

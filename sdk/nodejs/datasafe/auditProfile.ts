@@ -32,11 +32,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isOverrideGlobalPaidUsage: auditProfileIsOverrideGlobalPaidUsage,
- *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
- *     offlineMonths: auditProfileOfflineMonths,
- *     onlineMonths: auditProfileOnlineMonths,
- *     changeRetentionTrigger: retentionTrigger,
+ *     isOverrideGlobalPaidUsage: auditProfileIsOverrideGlobalPaidUsage === "true",
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled === "true",
+ *     offlineMonths: Number(auditProfileOfflineMonths),
+ *     onlineMonths: Number(auditProfileOnlineMonths),
+ *     changeRetentionTrigger: Number(retentionTrigger),
  *     isOverrideGlobalRetentionSetting: true,
  * });
  * ```

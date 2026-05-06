@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalMySqlDatabaseExternalMysqlDatabasesManagement = new oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management", {
  *     externalMySqlDatabaseId: testExternalMySqlDatabase.id,
- *     enableExternalMysqlDatabase: enableExternalMysqlDatabase,
+ *     enableExternalMysqlDatabase: enableExternalMysqlDatabase === "true",
  *     connectorId: testConnector.id,
  * });
  * ```

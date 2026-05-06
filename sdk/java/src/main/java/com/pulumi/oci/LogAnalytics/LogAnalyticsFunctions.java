@@ -142,8 +142,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -187,8 +187,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -277,8 +277,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -322,8 +322,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -367,8 +367,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -410,8 +410,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -453,8 +453,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -496,8 +496,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -539,8 +539,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -582,8 +582,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -641,8 +641,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -700,8 +700,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -759,8 +759,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -818,8 +818,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -877,8 +877,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -920,8 +920,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -963,8 +963,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1006,8 +1006,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1049,8 +1049,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1092,8 +1092,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1136,8 +1136,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1180,8 +1180,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1224,8 +1224,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1268,8 +1268,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1312,8 +1312,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1356,8 +1356,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1400,8 +1400,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1444,8 +1444,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1488,8 +1488,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1532,8 +1532,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1578,8 +1578,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1624,8 +1624,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1670,8 +1670,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1716,8 +1716,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1762,8 +1762,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1805,8 +1805,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1848,8 +1848,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1891,8 +1891,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1934,8 +1934,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1977,8 +1977,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2023,8 +2023,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2069,8 +2069,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2115,8 +2115,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2161,8 +2161,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2207,8 +2207,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2250,8 +2250,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2293,8 +2293,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2336,8 +2336,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2379,8 +2379,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2422,8 +2422,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2466,8 +2466,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2510,8 +2510,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2554,8 +2554,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2598,8 +2598,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2642,8 +2642,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2685,8 +2685,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2728,8 +2728,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2771,8 +2771,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2814,8 +2814,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2857,8 +2857,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2900,8 +2900,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2943,8 +2943,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2986,8 +2986,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3029,8 +3029,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3072,8 +3072,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3117,8 +3117,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3162,8 +3162,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3207,8 +3207,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3252,8 +3252,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3297,8 +3297,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3339,8 +3339,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3381,8 +3381,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3423,8 +3423,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3465,8 +3465,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3507,8 +3507,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3553,8 +3553,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3599,8 +3599,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3645,8 +3645,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3691,8 +3691,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3737,8 +3737,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3779,8 +3779,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3821,8 +3821,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3863,8 +3863,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3905,8 +3905,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3947,8 +3947,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3989,8 +3989,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4031,8 +4031,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4073,8 +4073,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4115,8 +4115,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4157,8 +4157,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4199,8 +4199,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4241,8 +4241,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4283,8 +4283,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4325,8 +4325,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4367,8 +4367,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4416,8 +4416,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4465,8 +4465,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4514,8 +4514,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4563,8 +4563,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceEffectivePropertiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4612,8 +4612,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceFieldUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4655,8 +4655,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceFieldUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4698,8 +4698,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceFieldUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4741,8 +4741,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceFieldUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4784,8 +4784,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceFieldUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4827,8 +4827,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4870,8 +4870,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4913,8 +4913,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4956,8 +4956,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4999,8 +4999,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5042,8 +5042,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5090,8 +5090,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5138,8 +5138,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5186,8 +5186,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5234,8 +5234,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5282,8 +5282,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceLookupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5325,8 +5325,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceLookupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5368,8 +5368,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceLookupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5411,8 +5411,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceLookupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5454,8 +5454,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceLookupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5497,8 +5497,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceParserActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5541,8 +5541,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceParserActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5585,8 +5585,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceParserActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5629,8 +5629,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceParserActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5673,8 +5673,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceParserActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5717,8 +5717,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5763,8 +5763,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5809,8 +5809,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5855,8 +5855,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5901,8 +5901,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePropertiesMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5947,8 +5947,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5994,8 +5994,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6041,8 +6041,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6088,8 +6088,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6135,8 +6135,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6182,8 +6182,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6225,8 +6225,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6268,8 +6268,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6311,8 +6311,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6354,8 +6354,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6397,8 +6397,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6440,8 +6440,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6483,8 +6483,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6526,8 +6526,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6569,8 +6569,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6612,8 +6612,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6659,8 +6659,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6706,8 +6706,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6753,8 +6753,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6800,8 +6800,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6847,8 +6847,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageArchivalConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6889,8 +6889,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageArchivalConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6931,8 +6931,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageArchivalConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6973,8 +6973,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageArchivalConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7015,8 +7015,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageArchivalConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7057,8 +7057,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7099,8 +7099,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7141,8 +7141,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7183,8 +7183,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7225,8 +7225,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7267,8 +7267,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7311,8 +7311,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7355,8 +7355,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7399,8 +7399,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7443,8 +7443,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageOverlappingRecallsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7487,8 +7487,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7529,8 +7529,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7571,8 +7571,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7613,8 +7613,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7655,8 +7655,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecallCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7697,8 +7697,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7741,8 +7741,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7785,8 +7785,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7829,8 +7829,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7873,8 +7873,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageRecalledDataSizeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7917,8 +7917,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7960,8 +7960,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8003,8 +8003,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8046,8 +8046,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8089,8 +8089,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8132,8 +8132,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8180,8 +8180,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8228,8 +8228,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8276,8 +8276,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8324,8 +8324,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8373,8 +8373,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8417,8 +8417,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8461,8 +8461,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8505,8 +8505,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8549,8 +8549,8 @@ public final class LogAnalyticsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
      * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

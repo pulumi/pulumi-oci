@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSelfRegistrationProfile = oci.Identity.getDomainsSelfRegistrationProfile({
+ * const testSelfRegistrationProfile = oci.identity.getDomainsSelfRegistrationProfile({
  *     idcsEndpoint: testDomain.url,
  *     selfRegistrationProfileId: testProfile.id,
  *     attributeSets: ["all"],
@@ -239,7 +239,7 @@ export interface GetDomainsSelfRegistrationProfileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSelfRegistrationProfile = oci.Identity.getDomainsSelfRegistrationProfile({
+ * const testSelfRegistrationProfile = oci.identity.getDomainsSelfRegistrationProfile({
  *     idcsEndpoint: testDomain.url,
  *     selfRegistrationProfileId: testProfile.id,
  *     attributeSets: ["all"],

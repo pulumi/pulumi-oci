@@ -193,7 +193,7 @@ def get_subscription(subscription_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
+    test_subscription = oci.ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
     ```
 
 
@@ -232,7 +232,7 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
+    test_subscription = oci.ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
     ```
 
 

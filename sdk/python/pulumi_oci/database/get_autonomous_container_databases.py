@@ -202,7 +202,7 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=compartment_id,
+    test_autonomous_container_databases = oci.database.get_autonomous_container_databases(compartment_id=compartment_id,
         autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
         autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         availability_domain=autonomous_container_database_availability_domain,
@@ -273,7 +273,7 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=compartment_id,
+    test_autonomous_container_databases = oci.database.get_autonomous_container_databases(compartment_id=compartment_id,
         autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
         autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         availability_domain=autonomous_container_database_availability_domain,

@@ -137,7 +137,7 @@ def get_fsu_collections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_collections = oci.FleetSoftwareUpdate.get_fsu_collections(compartment_id=compartment_id,
+    test_fsu_collections = oci.fleetsoftwareupdate.get_fsu_collections(compartment_id=compartment_id,
         display_name=fsu_collection_display_name,
         state=fsu_collection_state,
         type=fsu_collection_type)
@@ -183,7 +183,7 @@ def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_collections = oci.FleetSoftwareUpdate.get_fsu_collections(compartment_id=compartment_id,
+    test_fsu_collections = oci.fleetsoftwareupdate.get_fsu_collections(compartment_id=compartment_id,
         display_name=fsu_collection_display_name,
         state=fsu_collection_state,
         type=fsu_collection_type)

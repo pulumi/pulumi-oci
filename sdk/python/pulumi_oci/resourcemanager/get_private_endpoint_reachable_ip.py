@@ -96,7 +96,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
+    test_private_endpoint_reachable_ip = oci.resourcemanager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
         private_ip=private_endpoint_reachable_ip_private_ip)
     ```
 
@@ -132,7 +132,7 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
+    test_private_endpoint_reachable_ip = oci.resourcemanager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
         private_ip=private_endpoint_reachable_ip_private_ip)
     ```
 

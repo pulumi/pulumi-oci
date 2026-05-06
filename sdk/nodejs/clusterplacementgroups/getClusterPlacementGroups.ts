@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroups = oci.ClusterPlacementGroups.getClusterPlacementGroups({
+ * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,
@@ -111,10 +111,10 @@ export interface GetClusterPlacementGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroups = oci.ClusterPlacementGroups.getClusterPlacementGroups({
+ * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,

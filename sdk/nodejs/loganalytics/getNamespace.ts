@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespace = oci.LogAnalytics.getNamespace({
+ * const testNamespace = oci.loganalytics.getNamespace({
  *     namespace: namespaceNamespace,
  * });
  * ```
@@ -83,7 +83,7 @@ export interface GetNamespaceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespace = oci.LogAnalytics.getNamespace({
+ * const testNamespace = oci.loganalytics.getNamespace({
  *     namespace: namespaceNamespace,
  * });
  * ```

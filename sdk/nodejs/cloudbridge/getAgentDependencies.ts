@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentDependencies = oci.CloudBridge.getAgentDependencies({
+ * const testAgentDependencies = oci.cloudbridge.getAgentDependencies({
  *     compartmentId: compartmentId,
  *     agentId: testAgent.id,
  *     displayName: agentDependencyDisplayName,
@@ -104,7 +104,7 @@ export interface GetAgentDependenciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentDependencies = oci.CloudBridge.getAgentDependencies({
+ * const testAgentDependencies = oci.cloudbridge.getAgentDependencies({
  *     compartmentId: compartmentId,
  *     agentId: testAgent.id,
  *     displayName: agentDependencyDisplayName,

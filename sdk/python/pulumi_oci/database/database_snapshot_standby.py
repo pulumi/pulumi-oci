@@ -734,7 +734,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
             database_admin_password=database_snapshot_standby_database_admin_password,
             database_id=test_database["id"],
             standby_conversion_type=database_snapshot_standby_standby_conversion_type,
-            snapshot_duration_in_days=database_snapshot_standby_snapshot_duration_in_days)
+            snapshot_duration_in_days=int(database_snapshot_standby_snapshot_duration_in_days))
         ```
 
         ## Import
@@ -789,7 +789,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
             database_admin_password=database_snapshot_standby_database_admin_password,
             database_id=test_database["id"],
             standby_conversion_type=database_snapshot_standby_standby_conversion_type,
-            snapshot_duration_in_days=database_snapshot_standby_snapshot_duration_in_days)
+            snapshot_duration_in_days=int(database_snapshot_standby_snapshot_duration_in_days))
         ```
 
         ## Import

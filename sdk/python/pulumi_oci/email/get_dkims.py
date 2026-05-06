@@ -125,7 +125,7 @@ def get_dkims(email_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dkims = oci.Email.get_dkims(email_domain_id=test_email_domain["id"],
+    test_dkims = oci.email.get_dkims(email_domain_id=test_email_domain["id"],
         id=dkim_id,
         name=dkim_name,
         state=dkim_state)
@@ -170,7 +170,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_dkims = oci.Email.get_dkims(email_domain_id=test_email_domain["id"],
+    test_dkims = oci.email.get_dkims(email_domain_id=test_email_domain["id"],
         id=dkim_id,
         name=dkim_name,
         state=dkim_state)

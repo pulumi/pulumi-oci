@@ -522,7 +522,7 @@ def get_domains_self_registration_profile(attribute_sets: Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+    test_self_registration_profile = oci.identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
         self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",
@@ -606,7 +606,7 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+    test_self_registration_profile = oci.identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
         self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDefinedMetadataArtifactContent = oci.DataScience.getModelDefinedMetadataArtifactContent({
+ * const testModelDefinedMetadataArtifactContent = oci.datascience.getModelDefinedMetadataArtifactContent({
  *     metadatumKeyName: testKey.name,
  *     modelId: testModel.id,
  *     range: modelDefinedMetadataArtifactContentRange,
@@ -72,7 +72,7 @@ export interface GetModelDefinedMetadataArtifactContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDefinedMetadataArtifactContent = oci.DataScience.getModelDefinedMetadataArtifactContent({
+ * const testModelDefinedMetadataArtifactContent = oci.datascience.getModelDefinedMetadataArtifactContent({
  *     metadatumKeyName: testKey.name,
  *     modelId: testModel.id,
  *     range: modelDefinedMetadataArtifactContentRange,

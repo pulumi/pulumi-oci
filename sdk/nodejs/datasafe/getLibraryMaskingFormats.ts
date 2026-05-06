@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLibraryMaskingFormats = oci.DataSafe.getLibraryMaskingFormats({
+ * const testLibraryMaskingFormats = oci.datasafe.getLibraryMaskingFormats({
  *     compartmentId: compartmentId,
  *     accessLevel: libraryMaskingFormatAccessLevel,
- *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree === "true",
  *     displayName: libraryMaskingFormatDisplayName,
  *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
  *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,
@@ -139,10 +139,10 @@ export interface GetLibraryMaskingFormatsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLibraryMaskingFormats = oci.DataSafe.getLibraryMaskingFormats({
+ * const testLibraryMaskingFormats = oci.datasafe.getLibraryMaskingFormats({
  *     compartmentId: compartmentId,
  *     accessLevel: libraryMaskingFormatAccessLevel,
- *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree === "true",
  *     displayName: libraryMaskingFormatDisplayName,
  *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
  *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,

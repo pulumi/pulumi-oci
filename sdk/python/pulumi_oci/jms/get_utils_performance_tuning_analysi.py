@@ -205,7 +205,7 @@ def get_utils_performance_tuning_analysi(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysi = oci.Jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
+    test_performance_tuning_analysi = oci.jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
     ```
 
 
@@ -246,7 +246,7 @@ def get_utils_performance_tuning_analysi_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysi = oci.Jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
+    test_performance_tuning_analysi = oci.jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
     ```
 
 

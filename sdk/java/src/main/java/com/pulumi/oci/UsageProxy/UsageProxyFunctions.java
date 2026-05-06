@@ -62,8 +62,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -107,8 +107,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -152,8 +152,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -197,8 +197,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -242,8 +242,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourceQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -287,8 +287,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -332,8 +332,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -377,8 +377,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -422,8 +422,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -467,8 +467,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -511,8 +511,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -556,8 +556,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -646,8 +646,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -736,8 +736,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -781,8 +781,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -826,8 +826,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -871,8 +871,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -916,8 +916,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -961,8 +961,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1004,8 +1004,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1047,8 +1047,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1090,8 +1090,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1133,8 +1133,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1176,8 +1176,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1219,8 +1219,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1262,8 +1262,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1305,8 +1305,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1348,8 +1348,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1391,8 +1391,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1436,8 +1436,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1481,8 +1481,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1526,8 +1526,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1571,8 +1571,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1616,8 +1616,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1661,8 +1661,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1706,8 +1706,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1751,8 +1751,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1796,8 +1796,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1841,8 +1841,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1884,8 +1884,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1927,8 +1927,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1970,8 +1970,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2013,8 +2013,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2056,8 +2056,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2099,8 +2099,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2142,8 +2142,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2185,8 +2185,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2228,8 +2228,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2271,8 +2271,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2317,8 +2317,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2363,8 +2363,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2409,8 +2409,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2455,8 +2455,8 @@ public final class UsageProxyFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
      * import com.pulumi.oci.UsageProxy.inputs.GetUsagelimitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

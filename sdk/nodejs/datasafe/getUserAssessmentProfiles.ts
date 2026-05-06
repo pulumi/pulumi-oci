@@ -31,16 +31,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfiles = oci.DataSafe.getUserAssessmentProfiles({
+ * const testUserAssessmentProfiles = oci.datasafe.getUserAssessmentProfiles({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree === "true",
  *     failedLoginAttemptsGreaterThanOrEqual: userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual,
  *     failedLoginAttemptsLessThan: userAssessmentProfileFailedLoginAttemptsLessThan,
  *     inactiveAccountTimeGreaterThanOrEqual: userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual,
  *     inactiveAccountTimeLessThan: userAssessmentProfileInactiveAccountTimeLessThan,
- *     isUserCreated: userAssessmentProfileIsUserCreated,
+ *     isUserCreated: userAssessmentProfileIsUserCreated === "true",
  *     passwordLockTimeGreaterThanOrEqual: userAssessmentProfilePasswordLockTimeGreaterThanOrEqual,
  *     passwordLockTimeLessThan: userAssessmentProfilePasswordLockTimeLessThan,
  *     passwordVerificationFunction: userAssessmentProfilePasswordVerificationFunction,
@@ -232,16 +232,16 @@ export interface GetUserAssessmentProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfiles = oci.DataSafe.getUserAssessmentProfiles({
+ * const testUserAssessmentProfiles = oci.datasafe.getUserAssessmentProfiles({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree === "true",
  *     failedLoginAttemptsGreaterThanOrEqual: userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual,
  *     failedLoginAttemptsLessThan: userAssessmentProfileFailedLoginAttemptsLessThan,
  *     inactiveAccountTimeGreaterThanOrEqual: userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual,
  *     inactiveAccountTimeLessThan: userAssessmentProfileInactiveAccountTimeLessThan,
- *     isUserCreated: userAssessmentProfileIsUserCreated,
+ *     isUserCreated: userAssessmentProfileIsUserCreated === "true",
  *     passwordLockTimeGreaterThanOrEqual: userAssessmentProfilePasswordLockTimeGreaterThanOrEqual,
  *     passwordLockTimeLessThan: userAssessmentProfilePasswordLockTimeLessThan,
  *     passwordVerificationFunction: userAssessmentProfilePasswordVerificationFunction,

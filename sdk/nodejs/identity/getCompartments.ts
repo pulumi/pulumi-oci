@@ -34,10 +34,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartments = oci.Identity.getCompartments({
+ * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
  *     name: compartmentName,
  *     state: compartmentState,
  * });
@@ -140,10 +140,10 @@ export interface GetCompartmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartments = oci.Identity.getCompartments({
+ * const testCompartments = oci.identity.getCompartments({
  *     compartmentId: compartmentId,
  *     accessLevel: compartmentAccessLevel,
- *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree === "true",
  *     name: compartmentName,
  *     state: compartmentState,
  * });

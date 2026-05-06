@@ -138,7 +138,7 @@ def get_firewalls(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=compartment_id,
+    test_web_app_firewalls = oci.waf.get_firewalls(compartment_id=compartment_id,
         display_name=web_app_firewall_display_name,
         id=web_app_firewall_id,
         states=web_app_firewall_state,
@@ -188,7 +188,7 @@ def get_firewalls_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=compartment_id,
+    test_web_app_firewalls = oci.waf.get_firewalls(compartment_id=compartment_id,
         display_name=web_app_firewall_display_name,
         id=web_app_firewall_id,
         states=web_app_firewall_state,

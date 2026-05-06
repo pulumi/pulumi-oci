@@ -214,14 +214,14 @@ def get_domains_rules(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Identity.get_domains_rules(idcs_endpoint=test_domain["url"],
-        rule_count=rule_rule_count,
+    test_rules = oci.identity.get_domains_rules(idcs_endpoint=test_domain["url"],
+        rule_count=int(rule_rule_count),
         rule_filter=rule_rule_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=rule_authorization,
         resource_type_schema_version=rule_resource_type_schema_version,
-        start_index=rule_start_index)
+        start_index=int(rule_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_rules_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Identity.get_domains_rules(idcs_endpoint=test_domain["url"],
-        rule_count=rule_rule_count,
+    test_rules = oci.identity.get_domains_rules(idcs_endpoint=test_domain["url"],
+        rule_count=int(rule_rule_count),
         rule_filter=rule_rule_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=rule_authorization,
         resource_type_schema_version=rule_resource_type_schema_version,
-        start_index=rule_start_index)
+        start_index=int(rule_start_index))
     ```
 
 

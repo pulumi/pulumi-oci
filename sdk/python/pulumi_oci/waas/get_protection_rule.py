@@ -166,7 +166,7 @@ def get_protection_rule(protection_rule_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
+    test_protection_rule = oci.waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
         waas_policy_id=test_waas_policy["id"])
     ```
 
@@ -205,7 +205,7 @@ def get_protection_rule_output(protection_rule_key: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
+    test_protection_rule = oci.waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
         waas_policy_id=test_waas_policy["id"])
     ```
 

@@ -95,7 +95,7 @@ def get_job_advisor_report_checks(filters: Optional[Sequence[Union['GetJobAdviso
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_checks = oci.DatabaseMigration.get_job_advisor_report_checks(job_id=test_job["id"])
+    test_job_advisor_report_checks = oci.databasemigration.get_job_advisor_report_checks(job_id=test_job["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_job_advisor_report_checks_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_checks = oci.DatabaseMigration.get_job_advisor_report_checks(job_id=test_job["id"])
+    test_job_advisor_report_checks = oci.databasemigration.get_job_advisor_report_checks(job_id=test_job["id"])
     ```
 
 

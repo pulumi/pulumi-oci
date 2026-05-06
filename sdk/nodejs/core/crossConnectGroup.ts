@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     macsecProperties: {
  *         state: crossConnectGroupMacsecPropertiesState,
  *         encryptionCipher: crossConnectGroupMacsecPropertiesEncryptionCipher,
- *         isUnprotectedTrafficAllowed: crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed,
+ *         isUnprotectedTrafficAllowed: crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed === "true",
  *         primaryKey: {
  *             connectivityAssociationKeySecretId: testSecret.id,
  *             connectivityAssociationNameSecretId: testSecret.id,

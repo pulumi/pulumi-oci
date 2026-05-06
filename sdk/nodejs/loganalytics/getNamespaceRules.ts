@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
+ * const testNamespaceRules = oci.loganalytics.getNamespaceRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceRuleNamespace,
  *     displayName: namespaceRuleDisplayName,
@@ -117,7 +117,7 @@ export interface GetNamespaceRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
+ * const testNamespaceRules = oci.loganalytics.getNamespaceRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceRuleNamespace,
  *     displayName: namespaceRuleDisplayName,

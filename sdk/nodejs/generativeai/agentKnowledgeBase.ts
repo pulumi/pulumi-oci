@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *             idcsUrl: knowledgeBaseIndexConfigSecretDetailIdcsUrl,
  *             scopeUrl: knowledgeBaseIndexConfigSecretDetailScopeUrl,
  *         },
- *         shouldEnableHybridSearch: knowledgeBaseIndexConfigShouldEnableHybridSearch,
+ *         shouldEnableHybridSearch: knowledgeBaseIndexConfigShouldEnableHybridSearch === "true",
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",

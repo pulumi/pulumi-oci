@@ -350,7 +350,7 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+    test_smtp_credential = oci.identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
         smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",
@@ -421,7 +421,7 @@ def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+    test_smtp_credential = oci.identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
         smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",

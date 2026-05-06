@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
+ * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
@@ -171,10 +171,10 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
+ * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,

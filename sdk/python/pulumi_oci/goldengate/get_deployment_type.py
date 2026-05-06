@@ -97,7 +97,7 @@ def get_deployment_type(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=compartment_id,
+    test_deployment_type = oci.goldengate.get_deployment_type(compartment_id=compartment_id,
         display_name=deployment_type_display_name)
     ```
 
@@ -130,7 +130,7 @@ def get_deployment_type_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=compartment_id,
+    test_deployment_type = oci.goldengate.get_deployment_type(compartment_id=compartment_id,
         display_name=deployment_type_display_name)
     ```
 

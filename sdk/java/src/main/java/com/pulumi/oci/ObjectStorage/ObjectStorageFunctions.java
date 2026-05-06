@@ -76,8 +76,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -119,8 +119,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -162,8 +162,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -205,8 +205,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -248,8 +248,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -299,8 +299,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -350,8 +350,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -401,8 +401,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -452,8 +452,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -503,8 +503,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetBucketSummariesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -552,8 +552,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -600,8 +600,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -648,8 +648,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -696,8 +696,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -744,8 +744,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -792,8 +792,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -840,8 +840,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetNamespaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -897,8 +897,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -948,8 +948,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -999,8 +999,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1050,8 +1050,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1101,8 +1101,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1152,8 +1152,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1196,8 +1196,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1240,8 +1240,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1284,8 +1284,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1328,8 +1328,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectHeadArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1372,8 +1372,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1415,8 +1415,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1458,8 +1458,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1501,8 +1501,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1544,8 +1544,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectLifecyclePolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1594,8 +1594,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1650,8 +1650,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1706,8 +1706,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1762,8 +1762,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1818,8 +1818,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetObjectVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1967,8 +1967,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2011,8 +2011,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2055,8 +2055,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2099,8 +2099,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2143,8 +2143,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2187,8 +2187,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2231,8 +2231,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2275,8 +2275,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2319,8 +2319,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2363,8 +2363,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2437,8 +2437,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2480,8 +2480,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2523,8 +2523,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2566,8 +2566,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2609,8 +2609,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2652,8 +2652,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2696,8 +2696,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2740,8 +2740,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2784,8 +2784,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2828,8 +2828,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2872,8 +2872,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2915,8 +2915,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2958,8 +2958,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3001,8 +3001,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3044,8 +3044,8 @@ public final class ObjectStorageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
      * import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

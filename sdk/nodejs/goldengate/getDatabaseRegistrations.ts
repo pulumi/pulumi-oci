@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistrations = oci.GoldenGate.getDatabaseRegistrations({
+ * const testDatabaseRegistrations = oci.goldengate.getDatabaseRegistrations({
  *     compartmentId: compartmentId,
  *     displayName: databaseRegistrationDisplayName,
  *     state: databaseRegistrationState,
@@ -92,7 +92,7 @@ export interface GetDatabaseRegistrationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistrations = oci.GoldenGate.getDatabaseRegistrations({
+ * const testDatabaseRegistrations = oci.goldengate.getDatabaseRegistrations({
  *     compartmentId: compartmentId,
  *     displayName: databaseRegistrationDisplayName,
  *     state: databaseRegistrationState,

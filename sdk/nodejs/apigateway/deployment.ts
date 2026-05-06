@@ -27,10 +27,10 @@ import * as utilities from "../utilities";
  *     specification: {
  *         loggingPolicies: {
  *             accessLog: {
- *                 isEnabled: deploymentSpecificationLoggingPoliciesAccessLogIsEnabled,
+ *                 isEnabled: deploymentSpecificationLoggingPoliciesAccessLogIsEnabled === "true",
  *             },
  *             executionLog: {
- *                 isEnabled: deploymentSpecificationLoggingPoliciesExecutionLogIsEnabled,
+ *                 isEnabled: deploymentSpecificationLoggingPoliciesExecutionLogIsEnabled === "true",
  *                 logLevel: deploymentSpecificationLoggingPoliciesExecutionLogLogLevel,
  *             },
  *         },
@@ -40,13 +40,13 @@ import * as utilities from "../utilities";
  *                 audiences: deploymentSpecificationRequestPoliciesAuthenticationAudiences,
  *                 cacheKeys: deploymentSpecificationRequestPoliciesAuthenticationCacheKey,
  *                 functionId: testFunction.id,
- *                 isAnonymousAccessAllowed: deploymentSpecificationRequestPoliciesAuthenticationIsAnonymousAccessAllowed,
+ *                 isAnonymousAccessAllowed: deploymentSpecificationRequestPoliciesAuthenticationIsAnonymousAccessAllowed === "true",
  *                 issuers: deploymentSpecificationRequestPoliciesAuthenticationIssuers,
  *                 maxClockSkewInSeconds: deploymentSpecificationRequestPoliciesAuthenticationMaxClockSkewInSeconds,
  *                 parameters: deploymentSpecificationRequestPoliciesAuthenticationParameters,
  *                 publicKeys: {
  *                     type: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysType,
- *                     isSslVerifyDisabled: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysIsSslVerifyDisabled,
+ *                     isSslVerifyDisabled: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysIsSslVerifyDisabled === "true",
  *                     keys: [{
  *                         format: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysFormat,
  *                         alg: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysAlg,
@@ -58,7 +58,7 @@ import * as utilities from "../utilities";
  *                         n: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysN,
  *                         use: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysUse,
  *                     }],
- *                     maxCacheDurationInHours: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysMaxCacheDurationInHours,
+ *                     maxCacheDurationInHours: Number(deploymentSpecificationRequestPoliciesAuthenticationPublicKeysMaxCacheDurationInHours),
  *                     uri: deploymentSpecificationRequestPoliciesAuthenticationPublicKeysUri,
  *                 },
  *                 tokenAuthScheme: deploymentSpecificationRequestPoliciesAuthenticationTokenAuthScheme,
@@ -74,7 +74,7 @@ import * as utilities from "../utilities";
  *                     },
  *                     fallbackRedirectPath: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyFallbackRedirectPath,
  *                     logoutPath: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyLogoutPath,
- *                     maxExpiryDurationInHours: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyMaxExpiryDurationInHours,
+ *                     maxExpiryDurationInHours: Number(deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyMaxExpiryDurationInHours),
  *                     responseCode: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseCode,
  *                     responseHeaderTransformations: {
  *                         filterHeaders: {
@@ -104,9 +104,9 @@ import * as utilities from "../utilities";
  *                         type: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsType,
  *                         uri: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsUri,
  *                     },
- *                     useCookiesForIntermediateSteps: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForIntermediateSteps,
- *                     useCookiesForSession: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForSession,
- *                     usePkce: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUsePkce,
+ *                     useCookiesForIntermediateSteps: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForIntermediateSteps === "true",
+ *                     useCookiesForSession: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForSession === "true",
+ *                     usePkce: deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUsePkce === "true",
  *                 },
  *                 validationPolicy: {
  *                     type: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyType,
@@ -114,7 +114,7 @@ import * as utilities from "../utilities";
  *                         audiences: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyAudiences,
  *                         issuers: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyIssuers,
  *                         verifyClaims: [{
- *                             isRequired: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired,
+ *                             isRequired: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired === "true",
  *                             key: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsKey,
  *                             values: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsValues,
  *                         }],
@@ -125,7 +125,7 @@ import * as utilities from "../utilities";
  *                         clientSecretId: testSecret.id,
  *                         clientSecretVersionNumber: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsClientSecretVersionNumber,
  *                     },
- *                     isSslVerifyDisabled: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyIsSslVerifyDisabled,
+ *                     isSslVerifyDisabled: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyIsSslVerifyDisabled === "true",
  *                     keys: [{
  *                         format: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysFormat,
  *                         alg: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysAlg,
@@ -137,7 +137,7 @@ import * as utilities from "../utilities";
  *                         n: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysN,
  *                         use: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysUse,
  *                     }],
- *                     maxCacheDurationInHours: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyMaxCacheDurationInHours,
+ *                     maxCacheDurationInHours: Number(deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyMaxCacheDurationInHours),
  *                     sourceUriDetails: {
  *                         type: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsType,
  *                         uri: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsUri,
@@ -145,7 +145,7 @@ import * as utilities from "../utilities";
  *                     uri: deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyUri,
  *                 },
  *                 verifyClaims: [{
- *                     isRequired: deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsIsRequired,
+ *                     isRequired: deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsIsRequired === "true",
  *                     key: deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsKey,
  *                     values: deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsValues,
  *                 }],
@@ -155,8 +155,8 @@ import * as utilities from "../utilities";
  *                 allowedHeaders: deploymentSpecificationRequestPoliciesCorsAllowedHeaders,
  *                 allowedMethods: deploymentSpecificationRequestPoliciesCorsAllowedMethods,
  *                 exposedHeaders: deploymentSpecificationRequestPoliciesCorsExposedHeaders,
- *                 isAllowCredentialsEnabled: deploymentSpecificationRequestPoliciesCorsIsAllowCredentialsEnabled,
- *                 maxAgeInSeconds: deploymentSpecificationRequestPoliciesCorsMaxAgeInSeconds,
+ *                 isAllowCredentialsEnabled: deploymentSpecificationRequestPoliciesCorsIsAllowCredentialsEnabled === "true",
+ *                 maxAgeInSeconds: Number(deploymentSpecificationRequestPoliciesCorsMaxAgeInSeconds),
  *             },
  *             dynamicAuthentication: {
  *                 authenticationServers: [{
@@ -164,12 +164,12 @@ import * as utilities from "../utilities";
  *                         type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailType,
  *                         audiences: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailAudiences,
  *                         functionId: testFunction.id,
- *                         isAnonymousAccessAllowed: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailIsAnonymousAccessAllowed,
+ *                         isAnonymousAccessAllowed: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailIsAnonymousAccessAllowed === "true",
  *                         issuers: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailIssuers,
  *                         maxClockSkewInSeconds: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailMaxClockSkewInSeconds,
  *                         publicKeys: {
  *                             type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysType,
- *                             isSslVerifyDisabled: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysIsSslVerifyDisabled,
+ *                             isSslVerifyDisabled: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysIsSslVerifyDisabled === "true",
  *                             keys: [{
  *                                 format: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysFormat,
  *                                 alg: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysAlg,
@@ -181,7 +181,7 @@ import * as utilities from "../utilities";
  *                                 n: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysN,
  *                                 use: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysUse,
  *                             }],
- *                             maxCacheDurationInHours: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysMaxCacheDurationInHours,
+ *                             maxCacheDurationInHours: Number(deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysMaxCacheDurationInHours),
  *                             uri: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysUri,
  *                         },
  *                         tokenAuthScheme: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailTokenAuthScheme,
@@ -197,7 +197,7 @@ import * as utilities from "../utilities";
  *                             },
  *                             fallbackRedirectPath: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyFallbackRedirectPath,
  *                             logoutPath: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyLogoutPath,
- *                             maxExpiryDurationInHours: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyMaxExpiryDurationInHours,
+ *                             maxExpiryDurationInHours: Number(deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyMaxExpiryDurationInHours),
  *                             responseCode: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseCode,
  *                             responseHeaderTransformations: {
  *                                 filterHeaders: {
@@ -227,9 +227,9 @@ import * as utilities from "../utilities";
  *                                 type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsType,
  *                                 uri: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsUri,
  *                             },
- *                             useCookiesForIntermediateSteps: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForIntermediateSteps,
- *                             useCookiesForSession: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForSession,
- *                             usePkce: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUsePkce,
+ *                             useCookiesForIntermediateSteps: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForIntermediateSteps === "true",
+ *                             useCookiesForSession: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForSession === "true",
+ *                             usePkce: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUsePkce === "true",
  *                         },
  *                         validationPolicy: {
  *                             type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyType,
@@ -237,7 +237,7 @@ import * as utilities from "../utilities";
  *                                 audiences: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyAudiences,
  *                                 issuers: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyIssuers,
  *                                 verifyClaims: [{
- *                                     isRequired: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired,
+ *                                     isRequired: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired === "true",
  *                                     key: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsKey,
  *                                     values: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsValues,
  *                                 }],
@@ -248,7 +248,7 @@ import * as utilities from "../utilities";
  *                                 clientSecretId: testSecret.id,
  *                                 clientSecretVersionNumber: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsClientSecretVersionNumber,
  *                             },
- *                             isSslVerifyDisabled: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyIsSslVerifyDisabled,
+ *                             isSslVerifyDisabled: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyIsSslVerifyDisabled === "true",
  *                             keys: [{
  *                                 format: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysFormat,
  *                                 alg: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysAlg,
@@ -260,7 +260,7 @@ import * as utilities from "../utilities";
  *                                 n: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysN,
  *                                 use: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysUse,
  *                             }],
- *                             maxCacheDurationInHours: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyMaxCacheDurationInHours,
+ *                             maxCacheDurationInHours: Number(deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyMaxCacheDurationInHours),
  *                             sourceUriDetails: {
  *                                 type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsType,
  *                                 uri: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsUri,
@@ -268,7 +268,7 @@ import * as utilities from "../utilities";
  *                             uri: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyUri,
  *                         },
  *                         verifyClaims: [{
- *                             isRequired: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsIsRequired,
+ *                             isRequired: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsIsRequired === "true",
  *                             key: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsKey,
  *                             values: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsValues,
  *                         }],
@@ -276,7 +276,7 @@ import * as utilities from "../utilities";
  *                     key: {
  *                         name: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyName,
  *                         expression: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyExpression,
- *                         isDefault: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault,
+ *                         isDefault: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault === "true",
  *                         type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyType,
  *                         values: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyValues,
  *                     },
@@ -288,10 +288,10 @@ import * as utilities from "../utilities";
  *             },
  *             mutualTls: {
  *                 allowedSans: deploymentSpecificationRequestPoliciesMutualTlsAllowedSans,
- *                 isVerifiedCertificateRequired: deploymentSpecificationRequestPoliciesMutualTlsIsVerifiedCertificateRequired,
+ *                 isVerifiedCertificateRequired: deploymentSpecificationRequestPoliciesMutualTlsIsVerifiedCertificateRequired === "true",
  *             },
  *             rateLimiting: {
- *                 rateInRequestsPerSecond: deploymentSpecificationRequestPoliciesRateLimitingRateInRequestsPerSecond,
+ *                 rateInRequestsPerSecond: Number(deploymentSpecificationRequestPoliciesRateLimitingRateInRequestsPerSecond),
  *                 rateKey: deploymentSpecificationRequestPoliciesRateLimitingRateKey,
  *             },
  *             usagePlans: {
@@ -309,7 +309,7 @@ import * as utilities from "../utilities";
  *                     name: deploymentSpecificationRoutesBackendHeadersName,
  *                     value: deploymentSpecificationRoutesBackendHeadersValue,
  *                 }],
- *                 isSslVerifyDisabled: deploymentSpecificationRoutesBackendIsSslVerifyDisabled,
+ *                 isSslVerifyDisabled: deploymentSpecificationRoutesBackendIsSslVerifyDisabled === "true",
  *                 postLogoutState: deploymentSpecificationRoutesBackendPostLogoutState,
  *                 readTimeoutInSeconds: deploymentSpecificationRoutesBackendReadTimeoutInSeconds,
  *                 routingBackends: [{
@@ -322,17 +322,17 @@ import * as utilities from "../utilities";
  *                             name: deploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersName,
  *                             value: deploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersValue,
  *                         }],
- *                         isSslVerifyDisabled: deploymentSpecificationRoutesBackendRoutingBackendsBackendIsSslVerifyDisabled,
+ *                         isSslVerifyDisabled: deploymentSpecificationRoutesBackendRoutingBackendsBackendIsSslVerifyDisabled === "true",
  *                         readTimeoutInSeconds: deploymentSpecificationRoutesBackendRoutingBackendsBackendReadTimeoutInSeconds,
  *                         sendTimeoutInSeconds: deploymentSpecificationRoutesBackendRoutingBackendsBackendSendTimeoutInSeconds,
- *                         status: deploymentSpecificationRoutesBackendRoutingBackendsBackendStatus,
+ *                         status: Number(deploymentSpecificationRoutesBackendRoutingBackendsBackendStatus),
  *                         url: deploymentSpecificationRoutesBackendRoutingBackendsBackendUrl,
  *                     },
  *                     key: {
  *                         name: deploymentSpecificationRoutesBackendRoutingBackendsKeyName,
  *                         type: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyType,
  *                         expression: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyExpression,
- *                         isDefault: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault,
+ *                         isDefault: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault === "true",
  *                         values: deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyValues,
  *                     },
  *                 }],
@@ -341,16 +341,16 @@ import * as utilities from "../utilities";
  *                     type: deploymentSpecificationRoutesBackendSelectionSourceType,
  *                 },
  *                 sendTimeoutInSeconds: deploymentSpecificationRoutesBackendSendTimeoutInSeconds,
- *                 status: deploymentSpecificationRoutesBackendStatus,
+ *                 status: Number(deploymentSpecificationRoutesBackendStatus),
  *                 url: deploymentSpecificationRoutesBackendUrl,
  *             },
  *             path: deploymentSpecificationRoutesPath,
  *             loggingPolicies: {
  *                 accessLog: {
- *                     isEnabled: deploymentSpecificationRoutesLoggingPoliciesAccessLogIsEnabled,
+ *                     isEnabled: deploymentSpecificationRoutesLoggingPoliciesAccessLogIsEnabled === "true",
  *                 },
  *                 executionLog: {
- *                     isEnabled: deploymentSpecificationRoutesLoggingPoliciesExecutionLogIsEnabled,
+ *                     isEnabled: deploymentSpecificationRoutesLoggingPoliciesExecutionLogIsEnabled === "true",
  *                     logLevel: deploymentSpecificationRoutesLoggingPoliciesExecutionLogLogLevel,
  *                 },
  *             },
@@ -365,7 +365,7 @@ import * as utilities from "../utilities";
  *                         mediaType: deploymentSpecificationRoutesRequestPoliciesBodyValidationContentMediaType,
  *                         validationType: deploymentSpecificationRoutesRequestPoliciesBodyValidationContentValidationType,
  *                     }],
- *                     required: deploymentSpecificationRoutesRequestPoliciesBodyValidationRequired,
+ *                     required: deploymentSpecificationRoutesRequestPoliciesBodyValidationRequired === "true",
  *                     validationMode: deploymentSpecificationRoutesRequestPoliciesBodyValidationValidationMode,
  *                 },
  *                 cors: {
@@ -373,8 +373,8 @@ import * as utilities from "../utilities";
  *                     allowedHeaders: deploymentSpecificationRoutesRequestPoliciesCorsAllowedHeaders,
  *                     allowedMethods: deploymentSpecificationRoutesRequestPoliciesCorsAllowedMethods,
  *                     exposedHeaders: deploymentSpecificationRoutesRequestPoliciesCorsExposedHeaders,
- *                     isAllowCredentialsEnabled: deploymentSpecificationRoutesRequestPoliciesCorsIsAllowCredentialsEnabled,
- *                     maxAgeInSeconds: deploymentSpecificationRoutesRequestPoliciesCorsMaxAgeInSeconds,
+ *                     isAllowCredentialsEnabled: deploymentSpecificationRoutesRequestPoliciesCorsIsAllowCredentialsEnabled === "true",
+ *                     maxAgeInSeconds: Number(deploymentSpecificationRoutesRequestPoliciesCorsMaxAgeInSeconds),
  *                 },
  *                 headerTransformations: {
  *                     filterHeaders: {
@@ -400,7 +400,7 @@ import * as utilities from "../utilities";
  *                 headerValidations: {
  *                     headers: [{
  *                         name: deploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersName,
- *                         required: deploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersRequired,
+ *                         required: deploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersRequired === "true",
  *                     }],
  *                     validationMode: deploymentSpecificationRoutesRequestPoliciesHeaderValidationsValidationMode,
  *                 },
@@ -428,15 +428,15 @@ import * as utilities from "../utilities";
  *                 queryParameterValidations: {
  *                     parameters: [{
  *                         name: deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersName,
- *                         required: deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersRequired,
+ *                         required: deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersRequired === "true",
  *                     }],
  *                     validationMode: deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsValidationMode,
  *                 },
  *                 responseCacheLookup: {
  *                     type: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupType,
  *                     cacheKeyAdditions: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupCacheKeyAdditions,
- *                     isEnabled: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsEnabled,
- *                     isPrivateCachingEnabled: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsPrivateCachingEnabled,
+ *                     isEnabled: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsEnabled === "true",
+ *                     isPrivateCachingEnabled: deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsPrivateCachingEnabled === "true",
  *                 },
  *             },
  *             responsePolicies: {
@@ -462,7 +462,7 @@ import * as utilities from "../utilities";
  *                     },
  *                 },
  *                 responseCacheStore: {
- *                     timeToLiveInSeconds: deploymentSpecificationRoutesResponsePoliciesResponseCacheStoreTimeToLiveInSeconds,
+ *                     timeToLiveInSeconds: Number(deploymentSpecificationRoutesResponsePoliciesResponseCacheStoreTimeToLiveInSeconds),
  *                     type: deploymentSpecificationRoutesResponsePoliciesResponseCacheStoreType,
  *                 },
  *             },

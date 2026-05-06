@@ -294,7 +294,7 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.Waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
+    test_certificate = oci.waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
     ```
 
 
@@ -340,7 +340,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.Waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
+    test_certificate = oci.waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
     ```
 
 

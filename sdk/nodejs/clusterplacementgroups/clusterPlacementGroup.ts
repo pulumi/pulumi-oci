@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     opcDryRun: clusterPlacementGroupOpcDryRun,
+ *     opcDryRun: clusterPlacementGroupOpcDryRun === "true",
  *     placementInstruction: {
  *         type: clusterPlacementGroupPlacementInstructionType,
  *         value: clusterPlacementGroupPlacementInstructionValue,

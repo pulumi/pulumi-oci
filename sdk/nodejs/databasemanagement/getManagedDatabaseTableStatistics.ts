@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseTableStatistics = oci.DatabaseManagement.getManagedDatabaseTableStatistics({
+ * const testManagedDatabaseTableStatistics = oci.databasemanagement.getManagedDatabaseTableStatistics({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
@@ -69,7 +69,7 @@ export interface GetManagedDatabaseTableStatisticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseTableStatistics = oci.DatabaseManagement.getManagedDatabaseTableStatistics({
+ * const testManagedDatabaseTableStatistics = oci.databasemanagement.getManagedDatabaseTableStatistics({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```

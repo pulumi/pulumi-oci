@@ -204,7 +204,7 @@ def get_adhoc_query(adhoc_query_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_adhoc_query = oci.CloudGuard.get_adhoc_query(adhoc_query_id=test_adhoc_query_oci_cloud_guard_adhoc_query["id"])
+    test_adhoc_query = oci.cloudguard.get_adhoc_query(adhoc_query_id=test_adhoc_query_oci_cloud_guard_adhoc_query["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_adhoc_query_output(adhoc_query_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_adhoc_query = oci.CloudGuard.get_adhoc_query(adhoc_query_id=test_adhoc_query_oci_cloud_guard_adhoc_query["id"])
+    test_adhoc_query = oci.cloudguard.get_adhoc_query(adhoc_query_id=test_adhoc_query_oci_cloud_guard_adhoc_query["id"])
     ```
 
 

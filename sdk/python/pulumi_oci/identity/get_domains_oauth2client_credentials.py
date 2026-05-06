@@ -214,14 +214,14 @@ def get_domains_oauth2client_credentials(attribute_sets: Optional[Sequence[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credentials = oci.Identity.get_domains_oauth2client_credentials(idcs_endpoint=test_domain["url"],
-        oauth2client_credential_count=oauth2client_credential_oauth2client_credential_count,
+    test_oauth2client_credentials = oci.identity.get_domains_oauth2client_credentials(idcs_endpoint=test_domain["url"],
+        oauth2client_credential_count=int(oauth2client_credential_oauth2client_credential_count),
         oauth2client_credential_filter=oauth2client_credential_oauth2client_credential_filter,
         attribute_sets=[],
         attributes="",
         authorization=oauth2client_credential_authorization,
         resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
-        start_index=oauth2client_credential_start_index)
+        start_index=int(oauth2client_credential_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_oauth2client_credentials_output(attribute_sets: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credentials = oci.Identity.get_domains_oauth2client_credentials(idcs_endpoint=test_domain["url"],
-        oauth2client_credential_count=oauth2client_credential_oauth2client_credential_count,
+    test_oauth2client_credentials = oci.identity.get_domains_oauth2client_credentials(idcs_endpoint=test_domain["url"],
+        oauth2client_credential_count=int(oauth2client_credential_oauth2client_credential_count),
         oauth2client_credential_filter=oauth2client_credential_oauth2client_credential_filter,
         attribute_sets=[],
         attributes="",
         authorization=oauth2client_credential_authorization,
         resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
-        start_index=oauth2client_credential_start_index)
+        start_index=int(oauth2client_credential_start_index))
     ```
 
 

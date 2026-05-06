@@ -144,7 +144,7 @@ def get_runbook_export(export_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_export = oci.FleetAppsManagement.get_runbook_export(export_id=runbook_export_id,
+    test_runbook_export = oci.fleetappsmanagement.get_runbook_export(export_id=runbook_export_id,
         runbook_id=test_runbook["id"])
     ```
 
@@ -181,7 +181,7 @@ def get_runbook_export_output(export_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_export = oci.FleetAppsManagement.get_runbook_export(export_id=runbook_export_id,
+    test_runbook_export = oci.fleetappsmanagement.get_runbook_export(export_id=runbook_export_id,
         runbook_id=test_runbook["id"])
     ```
 

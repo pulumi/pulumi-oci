@@ -327,7 +327,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
+    test_job = oci.datascience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
 
 
@@ -377,7 +377,7 @@ def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
+    test_job = oci.datascience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
 
 

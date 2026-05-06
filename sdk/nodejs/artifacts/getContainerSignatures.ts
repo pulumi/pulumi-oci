@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
+ * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,
@@ -148,9 +148,9 @@ export interface GetContainerSignaturesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
+ * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,

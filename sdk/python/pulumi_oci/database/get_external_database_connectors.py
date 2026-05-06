@@ -137,7 +137,7 @@ def get_external_database_connectors(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+    test_external_database_connectors = oci.database.get_external_database_connectors(compartment_id=compartment_id,
         external_database_id=test_database["id"],
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)
@@ -183,7 +183,7 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+    test_external_database_connectors = oci.database.get_external_database_connectors(compartment_id=compartment_id,
         external_database_id=test_database["id"],
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)

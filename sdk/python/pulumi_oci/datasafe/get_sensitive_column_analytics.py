@@ -232,10 +232,10 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_column_analytics = oci.DataSafe.get_sensitive_column_analytics(compartment_id=compartment_id,
+    test_sensitive_column_analytics = oci.datasafe.get_sensitive_column_analytics(compartment_id=compartment_id,
         access_level=sensitive_column_analytic_access_level,
         column_names=sensitive_column_analytic_column_name,
-        compartment_id_in_subtree=sensitive_column_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_column_analytic_compartment_id_in_subtree == "true",
         group_bies=sensitive_column_analytic_group_by,
         objects=sensitive_column_analytic_object,
         schema_names=sensitive_column_analytic_schema_name,
@@ -327,10 +327,10 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_column_analytics = oci.DataSafe.get_sensitive_column_analytics(compartment_id=compartment_id,
+    test_sensitive_column_analytics = oci.datasafe.get_sensitive_column_analytics(compartment_id=compartment_id,
         access_level=sensitive_column_analytic_access_level,
         column_names=sensitive_column_analytic_column_name,
-        compartment_id_in_subtree=sensitive_column_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_column_analytic_compartment_id_in_subtree == "true",
         group_bies=sensitive_column_analytic_group_by,
         objects=sensitive_column_analytic_object,
         schema_names=sensitive_column_analytic_schema_name,

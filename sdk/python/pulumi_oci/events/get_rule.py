@@ -205,7 +205,7 @@ def get_rule(rule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
+    test_rule = oci.events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
 
 
@@ -243,7 +243,7 @@ def get_rule_output(rule_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
+    test_rule = oci.events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
 
 

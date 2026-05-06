@@ -444,7 +444,7 @@ def get_listing(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing = oci.Marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
+    test_listing = oci.marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
         compartment_id=compartment_id)
     ```
 
@@ -519,7 +519,7 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_listing = oci.Marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
+    test_listing = oci.marketplace.get_listing(listing_id=test_listing_oci_marketplace_listing["id"],
         compartment_id=compartment_id)
     ```
 

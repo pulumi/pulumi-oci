@@ -204,7 +204,7 @@ def get_network_source(network_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
+    test_network_source = oci.identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
+    test_network_source = oci.identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
 
 

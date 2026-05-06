@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     numberOfApprovers: privilegedApiControlNumberOfApprovers,
+ *     numberOfApprovers: Number(privilegedApiControlNumberOfApprovers),
  * });
  * ```
  *

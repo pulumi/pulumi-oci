@@ -120,7 +120,7 @@ def get_catalog_item_variables_definition(catalog_item_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item_variables_definition = oci.FleetAppsManagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
+    test_catalog_item_variables_definition = oci.fleetappsmanagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
     ```
 
 
@@ -151,7 +151,7 @@ def get_catalog_item_variables_definition_output(catalog_item_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item_variables_definition = oci.FleetAppsManagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
+    test_catalog_item_variables_definition = oci.fleetappsmanagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
     ```
 
 

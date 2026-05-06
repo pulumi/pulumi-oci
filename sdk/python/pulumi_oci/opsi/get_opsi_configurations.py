@@ -137,7 +137,7 @@ def get_opsi_configurations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configurations = oci.Opsi.get_opsi_configurations(compartment_id=compartment_id,
+    test_opsi_configurations = oci.opsi.get_opsi_configurations(compartment_id=compartment_id,
         display_name=opsi_configuration_display_name,
         opsi_config_types=opsi_configuration_opsi_config_type,
         states=opsi_configuration_state)
@@ -183,7 +183,7 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configurations = oci.Opsi.get_opsi_configurations(compartment_id=compartment_id,
+    test_opsi_configurations = oci.opsi.get_opsi_configurations(compartment_id=compartment_id,
         display_name=opsi_configuration_display_name,
         opsi_config_types=opsi_configuration_opsi_config_type,
         states=opsi_configuration_state)

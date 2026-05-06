@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatch = oci.FleetAppsManagement.getPatch({
+ * const testPatch = oci.fleetappsmanagement.getPatch({
  *     patchId: testPatchOciFleetAppsManagementPatch.id,
  * });
  * ```
@@ -129,7 +129,7 @@ export interface GetPatchResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatch = oci.FleetAppsManagement.getPatch({
+ * const testPatch = oci.fleetappsmanagement.getPatch({
  *     patchId: testPatchOciFleetAppsManagementPatch.id,
  * });
  * ```

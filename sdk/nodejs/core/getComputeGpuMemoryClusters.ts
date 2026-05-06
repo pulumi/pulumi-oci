@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusters = oci.Core.getComputeGpuMemoryClusters({
+ * const testComputeGpuMemoryClusters = oci.core.getComputeGpuMemoryClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,
@@ -107,7 +107,7 @@ export interface GetComputeGpuMemoryClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusters = oci.Core.getComputeGpuMemoryClusters({
+ * const testComputeGpuMemoryClusters = oci.core.getComputeGpuMemoryClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,

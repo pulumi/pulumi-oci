@@ -96,7 +96,7 @@ def get_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Psql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.psql.get_shapes(compartment_id=compartment_id,
         id=shape_id)
     ```
 
@@ -131,7 +131,7 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Psql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.psql.get_shapes(compartment_id=compartment_id,
         id=shape_id)
     ```
 

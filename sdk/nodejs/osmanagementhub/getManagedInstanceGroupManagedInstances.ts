@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupManagedInstances = oci.OsManagementHub.getManagedInstanceGroupManagedInstances({
+ * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,
@@ -108,10 +108,10 @@ export interface GetManagedInstanceGroupManagedInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupManagedInstances = oci.OsManagementHub.getManagedInstanceGroupManagedInstances({
+ * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,

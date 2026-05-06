@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentNamedCredentialsMetadata = oci.ManagementAgent.getManagementAgentNamedCredentialsMetadata({
+ * const testManagementAgentNamedCredentialsMetadata = oci.managementagent.getManagementAgentNamedCredentialsMetadata({
  *     compartmentId: compartmentId,
  *     managementAgentId: testManagementAgent.id,
  * });
@@ -71,7 +71,7 @@ export interface GetManagementAgentNamedCredentialsMetadataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentNamedCredentialsMetadata = oci.ManagementAgent.getManagementAgentNamedCredentialsMetadata({
+ * const testManagementAgentNamedCredentialsMetadata = oci.managementagent.getManagementAgentNamedCredentialsMetadata({
  *     compartmentId: compartmentId,
  *     managementAgentId: testManagementAgent.id,
  * });

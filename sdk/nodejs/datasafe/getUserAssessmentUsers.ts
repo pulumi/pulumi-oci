@@ -20,13 +20,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUsers = oci.DataSafe.getUserAssessmentUsers({
+ * const testUserAssessmentUsers = oci.datasafe.getUserAssessmentUsers({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAccessLevel,
  *     accountStatus: userAssessmentUserAccountStatus,
- *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible,
+ *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
@@ -255,13 +255,13 @@ export interface GetUserAssessmentUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUsers = oci.DataSafe.getUserAssessmentUsers({
+ * const testUserAssessmentUsers = oci.datasafe.getUserAssessmentUsers({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAccessLevel,
  *     accountStatus: userAssessmentUserAccountStatus,
- *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible,
+ *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,

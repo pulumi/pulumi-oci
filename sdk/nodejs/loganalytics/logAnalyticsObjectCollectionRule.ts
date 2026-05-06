@@ -37,8 +37,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: logAnalyticsObjectCollectionRuleIsEnabled,
- *     isForceHistoricCollection: logAnalyticsObjectCollectionRuleIsForceHistoricCollection,
+ *     isEnabled: logAnalyticsObjectCollectionRuleIsEnabled === "true",
+ *     isForceHistoricCollection: logAnalyticsObjectCollectionRuleIsForceHistoricCollection === "true",
  *     logSet: logAnalyticsObjectCollectionRuleLogSet,
  *     logSetExtRegex: logAnalyticsObjectCollectionRuleLogSetExtRegex,
  *     logSetKey: logAnalyticsObjectCollectionRuleLogSetKey,

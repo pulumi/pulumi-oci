@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
+ * const testMaskingReportsMaskedColumns = oci.datasafe.getMaskingReportMaskedColumns({
  *     maskingReportId: testMaskingReport.id,
  *     columnNames: maskingReportsMaskedColumnColumnName,
  *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
@@ -127,7 +127,7 @@ export interface GetMaskingReportMaskedColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
+ * const testMaskingReportsMaskedColumns = oci.datasafe.getMaskingReportMaskedColumns({
  *     maskingReportId: testMaskingReport.id,
  *     columnNames: maskingReportsMaskedColumnColumnName,
  *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,

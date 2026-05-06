@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystemConnectors = oci.DatabaseManagement.getCloudDbSystemConnectors({
+ * const testCloudDbSystemConnectors = oci.databasemanagement.getCloudDbSystemConnectors({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbSystemConnectorDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudDbSystemConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystemConnectors = oci.DatabaseManagement.getCloudDbSystemConnectors({
+ * const testCloudDbSystemConnectors = oci.databasemanagement.getCloudDbSystemConnectors({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbSystemConnectorDisplayName,

@@ -191,12 +191,12 @@ def get_exsi_hosts(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+    test_esxi_hosts = oci.ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only,
-        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
+        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```
@@ -265,12 +265,12 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+    test_esxi_hosts = oci.ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         compute_instance_id=test_instance["id"],
         display_name=esxi_host_display_name,
-        is_billing_donors_only=esxi_host_is_billing_donors_only,
-        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        is_billing_donors_only=esxi_host_is_billing_donors_only == "true",
+        is_swap_billing_only=esxi_host_is_swap_billing_only == "true",
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```

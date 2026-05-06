@@ -84,7 +84,7 @@ def get_fusion_environment_family_subscription_detail(fusion_environment_family_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_subscription_detail = oci.functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_fusion_environment_family_subscription_detail_output(fusion_environment_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_subscription_detail = oci.functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActions = oci.Database.getScheduledActions({
+ * const testScheduledActions = oci.database.getScheduledActions({
  *     compartmentId: compartmentId,
  *     displayName: scheduledActionDisplayName,
  *     id: scheduledActionId,
@@ -113,7 +113,7 @@ export interface GetScheduledActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActions = oci.Database.getScheduledActions({
+ * const testScheduledActions = oci.database.getScheduledActions({
  *     compartmentId: compartmentId,
  *     displayName: scheduledActionDisplayName,
  *     id: scheduledActionId,

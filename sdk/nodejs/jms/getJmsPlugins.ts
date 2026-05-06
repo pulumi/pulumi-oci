@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugins = oci.Jms.getJmsPlugins({
+ * const testJmsPlugins = oci.jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
  *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     hostnameContains: jmsPluginHostnameContains,
  *     id: jmsPluginId,
@@ -155,12 +155,12 @@ export interface GetJmsPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugins = oci.Jms.getJmsPlugins({
+ * const testJmsPlugins = oci.jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
  *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     hostnameContains: jmsPluginHostnameContains,
  *     id: jmsPluginId,

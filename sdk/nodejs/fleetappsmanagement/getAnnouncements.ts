@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ * const testAnnouncements = oci.fleetappsmanagement.getAnnouncements({
  *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,
@@ -87,7 +87,7 @@ export interface GetAnnouncementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ * const testAnnouncements = oci.fleetappsmanagement.getAnnouncements({
  *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,

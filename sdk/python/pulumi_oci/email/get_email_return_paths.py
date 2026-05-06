@@ -138,7 +138,7 @@ def get_email_return_paths(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_paths = oci.Email.get_email_return_paths(compartment_id=compartment_id,
+    test_email_return_paths = oci.email.get_email_return_paths(compartment_id=compartment_id,
         id=email_return_path_id,
         name=email_return_path_name,
         parent_resource_id=test_resource["id"],
@@ -188,7 +188,7 @@ def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_paths = oci.Email.get_email_return_paths(compartment_id=compartment_id,
+    test_email_return_paths = oci.email.get_email_return_paths(compartment_id=compartment_id,
         id=email_return_path_id,
         name=email_return_path_name,
         parent_resource_id=test_resource["id"],

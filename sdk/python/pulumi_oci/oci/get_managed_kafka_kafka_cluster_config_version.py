@@ -121,7 +121,7 @@ def get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id: Opti
     import pulumi_oci as oci
 
     test_kafka_cluster_config_version = oci.oci.get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id=test_kafka_cluster_config["id"],
-        version_number=kafka_cluster_config_version_version_number)
+        version_number=int(kafka_cluster_config_version_version_number))
     ```
 
 
@@ -156,7 +156,7 @@ def get_managed_kafka_kafka_cluster_config_version_output(kafka_cluster_config_i
     import pulumi_oci as oci
 
     test_kafka_cluster_config_version = oci.oci.get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id=test_kafka_cluster_config["id"],
-        version_number=kafka_cluster_config_version_version_number)
+        version_number=int(kafka_cluster_config_version_version_number))
     ```
 
 

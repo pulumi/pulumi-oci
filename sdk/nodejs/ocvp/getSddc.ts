@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddc = oci.Ocvp.getSddc({
+ * const testSddc = oci.ocvp.getSddc({
  *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```
@@ -369,7 +369,7 @@ export interface GetSddcResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddc = oci.Ocvp.getSddc({
+ * const testSddc = oci.ocvp.getSddc({
  *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```

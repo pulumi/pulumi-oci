@@ -33,10 +33,10 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(sqlFirewallViolationAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlFirewallViolationAnalyticCompartmentIdInSubtree),
-//				GroupBies:              sqlFirewallViolationAnalyticGroupBy,
+//				GroupBies:              pulumi.ToArray(sqlFirewallViolationAnalyticGroupBy),
 //				QueryTimeZone:          pulumi.StringRef(sqlFirewallViolationAnalyticQueryTimeZone),
 //				ScimQuery:              pulumi.StringRef(sqlFirewallViolationAnalyticScimQuery),
-//				SummaryFields:          sqlFirewallViolationAnalyticSummaryField,
+//				SummaryFields:          pulumi.ToArray(sqlFirewallViolationAnalyticSummaryField),
 //				TimeEnded:              pulumi.StringRef(sqlFirewallViolationAnalyticTimeEnded),
 //				TimeStarted:            pulumi.StringRef(sqlFirewallViolationAnalyticTimeStarted),
 //			}, nil)

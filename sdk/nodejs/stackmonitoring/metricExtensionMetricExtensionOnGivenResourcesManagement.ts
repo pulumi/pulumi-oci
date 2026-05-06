@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testMetricExtensionMetricExtensionOnGivenResourcesManagement = new oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management", {
  *     metricExtensionId: testMetricExtension.id,
  *     resourceIds: metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0],
- *     enableMetricExtensionOnGivenResources: enableMetricExtensionOnGivenResources,
+ *     enableMetricExtensionOnGivenResources: enableMetricExtensionOnGivenResources === "true",
  * });
  * ```
  */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportMetadata = oci.FleetAppsManagement.getReportMetadata({
+ * const testReportMetadata = oci.fleetappsmanagement.getReportMetadata({
  *     compartmentId: compartmentId,
  *     reportName: reportName,
  * });
@@ -74,7 +74,7 @@ export interface GetReportMetadataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportMetadata = oci.FleetAppsManagement.getReportMetadata({
+ * const testReportMetadata = oci.fleetappsmanagement.getReportMetadata({
  *     compartmentId: compartmentId,
  *     reportName: reportName,
  * });

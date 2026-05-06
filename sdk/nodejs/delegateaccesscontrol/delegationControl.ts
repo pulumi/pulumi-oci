@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoApproveDuringMaintenance: delegationControlIsAutoApproveDuringMaintenance,
- *     numApprovalsRequired: delegationControlNumApprovalsRequired,
+ *     isAutoApproveDuringMaintenance: delegationControlIsAutoApproveDuringMaintenance === "true",
+ *     numApprovalsRequired: Number(delegationControlNumApprovalsRequired),
  *     preApprovedServiceProviderActionNames: delegationControlPreApprovedServiceProviderActionNames,
  *     vaultId: testVault.id,
  *     vaultKeyId: testKey.id,

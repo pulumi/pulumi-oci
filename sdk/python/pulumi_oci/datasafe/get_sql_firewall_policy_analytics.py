@@ -182,9 +182,9 @@ def get_sql_firewall_policy_analytics(access_level: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
+    test_sql_firewall_policy_analytics = oci.datasafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_policy_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_policy_analytic_group_by,
         security_policy_id=test_security_policy["id"],
         state=sql_firewall_policy_analytic_state,
@@ -259,9 +259,9 @@ def get_sql_firewall_policy_analytics_output(access_level: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
+    test_sql_firewall_policy_analytics = oci.datasafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_policy_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_policy_analytic_group_by,
         security_policy_id=test_security_policy["id"],
         state=sql_firewall_policy_analytic_state,

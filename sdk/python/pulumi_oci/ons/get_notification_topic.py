@@ -191,7 +191,7 @@ def get_notification_topic(topic_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
+    test_notification_topic = oci.ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
 
 
@@ -230,7 +230,7 @@ def get_notification_topic_output(topic_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
+    test_notification_topic = oci.ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
 
 

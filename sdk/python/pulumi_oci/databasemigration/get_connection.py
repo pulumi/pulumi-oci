@@ -551,7 +551,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
+    test_connection = oci.databasemigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
     ```
 
 
@@ -621,7 +621,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
+    test_connection = oci.databasemigration.get_connection(connection_id=test_connection_oci_database_migration_connection["id"])
     ```
 
 

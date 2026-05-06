@@ -399,7 +399,7 @@ class ClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             instance_pools=[{
                 "instance_configuration_id": test_instance_configuration["id"],
-                "size": cluster_network_instance_pools_size,
+                "size": int(cluster_network_instance_pools_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -415,7 +415,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -423,7 +423,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             },
             cluster_configuration={
@@ -500,7 +500,7 @@ class ClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             instance_pools=[{
                 "instance_configuration_id": test_instance_configuration["id"],
-                "size": cluster_network_instance_pools_size,
+                "size": int(cluster_network_instance_pools_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -516,7 +516,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -524,7 +524,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             },
             cluster_configuration={

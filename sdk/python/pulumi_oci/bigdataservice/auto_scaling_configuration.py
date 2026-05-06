@@ -375,38 +375,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
-            is_enabled=auto_scaling_configuration_is_enabled,
+            is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
                 "scale_down_config": {
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
                         },
                     },
-                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                    "min_memory_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
+                    "min_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
                 },
                 "scale_up_config": {
-                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "max_memory_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
+                    "max_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
                         },
                     },
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
             })
         ```
@@ -463,38 +463,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
-            is_enabled=auto_scaling_configuration_is_enabled,
+            is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
                 "scale_down_config": {
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
                         },
                     },
-                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                    "min_memory_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
+                    "min_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
                 },
                 "scale_up_config": {
-                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "max_memory_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
+                    "max_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
                         },
                     },
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
             })
         ```

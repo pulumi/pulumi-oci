@@ -138,7 +138,7 @@ def get_recovery_service_subnets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=compartment_id,
+    test_recovery_service_subnets = oci.recoverymod.get_recovery_service_subnets(compartment_id=compartment_id,
         display_name=recovery_service_subnet_display_name,
         id=recovery_service_subnet_id,
         state=recovery_service_subnet_state,
@@ -188,7 +188,7 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=compartment_id,
+    test_recovery_service_subnets = oci.recoverymod.get_recovery_service_subnets(compartment_id=compartment_id,
         display_name=recovery_service_subnet_display_name,
         id=recovery_service_subnet_id,
         state=recovery_service_subnet_state,

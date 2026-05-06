@@ -150,7 +150,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+    test_data_science_private_endpoints = oci.datascience.get_private_endpoints(compartment_id=compartment_id,
         created_by=data_science_private_endpoint_created_by,
         data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
         display_name=data_science_private_endpoint_display_name,
@@ -201,7 +201,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+    test_data_science_private_endpoints = oci.datascience.get_private_endpoints(compartment_id=compartment_id,
         created_by=data_science_private_endpoint_created_by,
         data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
         display_name=data_science_private_endpoint_display_name,

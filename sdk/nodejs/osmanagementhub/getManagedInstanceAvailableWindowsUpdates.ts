@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailableWindowsUpdates = oci.OsManagementHub.getManagedInstanceAvailableWindowsUpdates({
+ * const testManagedInstanceAvailableWindowsUpdates = oci.osmanagementhub.getManagedInstanceAvailableWindowsUpdates({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceAvailableWindowsUpdateClassificationType,
  *     compartmentId: compartmentId,
@@ -112,7 +112,7 @@ export interface GetManagedInstanceAvailableWindowsUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceAvailableWindowsUpdates = oci.OsManagementHub.getManagedInstanceAvailableWindowsUpdates({
+ * const testManagedInstanceAvailableWindowsUpdates = oci.osmanagementhub.getManagedInstanceAvailableWindowsUpdates({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceAvailableWindowsUpdateClassificationType,
  *     compartmentId: compartmentId,

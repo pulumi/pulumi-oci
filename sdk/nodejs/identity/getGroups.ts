@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGroups = oci.Identity.getGroups({
+ * const testGroups = oci.identity.getGroups({
  *     compartmentId: tenancyOcid,
  *     name: groupName,
  *     state: groupState,
@@ -94,7 +94,7 @@ export interface GetGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGroups = oci.Identity.getGroups({
+ * const testGroups = oci.identity.getGroups({
  *     compartmentId: tenancyOcid,
  *     name: groupName,
  *     state: groupState,

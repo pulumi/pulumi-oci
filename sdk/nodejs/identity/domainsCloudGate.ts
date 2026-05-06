@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     displayName: cloudGateDisplayName,
  *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:CloudGate"],
- *     active: cloudGateActive,
+ *     active: cloudGateActive === "true",
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateAuthorization,

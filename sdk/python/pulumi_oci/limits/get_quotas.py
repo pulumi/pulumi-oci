@@ -124,7 +124,7 @@ def get_quotas(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quotas = oci.Limits.get_quotas(compartment_id=tenancy_ocid,
+    test_quotas = oci.limits.get_quotas(compartment_id=tenancy_ocid,
         name=quota_name,
         state=quota_state)
     ```
@@ -165,7 +165,7 @@ def get_quotas_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_quotas = oci.Limits.get_quotas(compartment_id=tenancy_ocid,
+    test_quotas = oci.limits.get_quotas(compartment_id=tenancy_ocid,
         name=quota_name,
         state=quota_state)
     ```

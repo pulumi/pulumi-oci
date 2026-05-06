@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplicationVip = oci.Database.getApplicationVip({
+ * const testApplicationVip = oci.database.getApplicationVip({
  *     applicationVipId: testApplicationVipOciDatabaseApplicationVip.id,
  * });
  * ```
@@ -103,7 +103,7 @@ export interface GetApplicationVipResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplicationVip = oci.Database.getApplicationVip({
+ * const testApplicationVip = oci.database.getApplicationVip({
  *     applicationVipId: testApplicationVipOciDatabaseApplicationVip.id,
  * });
  * ```

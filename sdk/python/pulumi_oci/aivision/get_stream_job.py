@@ -228,7 +228,7 @@ def get_stream_job(stream_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_job = oci.AiVision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
+    test_stream_job = oci.aivision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_stream_job_output(stream_job_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_job = oci.AiVision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
+    test_stream_job = oci.aivision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
     ```
 
 

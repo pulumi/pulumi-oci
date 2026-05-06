@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         include: {
  *             compartments: [{
  *                 id: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsId,
- *                 isIncludeSubtree: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsIsIncludeSubtree,
+ *                 isIncludeSubtree: targetDatabaseGroupMatchingCriteriaIncludeCompartmentsIsIncludeSubtree === "true",
  *             }],
  *             definedTags: {
  *                 "Operations.CostCenter": "42",

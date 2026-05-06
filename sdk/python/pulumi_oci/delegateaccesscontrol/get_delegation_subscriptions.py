@@ -124,7 +124,7 @@ def get_delegation_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_subscriptions = oci.DelegateAccessControl.get_delegation_subscriptions(compartment_id=compartment_id,
+    test_delegation_subscriptions = oci.delegateaccesscontrol.get_delegation_subscriptions(compartment_id=compartment_id,
         display_name=delegation_subscription_display_name,
         state=delegation_subscription_state)
     ```
@@ -165,7 +165,7 @@ def get_delegation_subscriptions_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_subscriptions = oci.DelegateAccessControl.get_delegation_subscriptions(compartment_id=compartment_id,
+    test_delegation_subscriptions = oci.delegateaccesscontrol.get_delegation_subscriptions(compartment_id=compartment_id,
         display_name=delegation_subscription_display_name,
         state=delegation_subscription_state)
     ```

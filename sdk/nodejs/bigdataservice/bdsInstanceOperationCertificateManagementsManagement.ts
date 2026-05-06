@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
  *     services: bdsInstanceOperationCertificateManagementsManagementServices,
- *     enableOperationCertificateManagement: enableOperationCertificateManagement,
- *     renewOperationCertificateManagement: renewOperationCertificateManagement,
+ *     enableOperationCertificateManagement: enableOperationCertificateManagement === "true",
+ *     renewOperationCertificateManagement: renewOperationCertificateManagement === "true",
  *     hostCertDetails: [{
  *         certificate: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate,
  *         hostName: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName,

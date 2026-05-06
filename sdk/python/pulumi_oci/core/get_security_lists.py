@@ -138,7 +138,7 @@ def get_security_lists(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_lists = oci.Core.get_security_lists(compartment_id=compartment_id,
+    test_security_lists = oci.core.get_security_lists(compartment_id=compartment_id,
         display_name=security_list_display_name,
         state=security_list_state,
         vcn_id=test_vcn["id"])
@@ -185,7 +185,7 @@ def get_security_lists_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_security_lists = oci.Core.get_security_lists(compartment_id=compartment_id,
+    test_security_lists = oci.core.get_security_lists(compartment_id=compartment_id,
         display_name=security_list_display_name,
         state=security_list_state,
         vcn_id=test_vcn["id"])

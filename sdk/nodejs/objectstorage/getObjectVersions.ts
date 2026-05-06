@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
+ * const testObjectVersions = oci.objectstorage.getObjectVersions({
  *     bucket: objectVersionBucket,
  *     namespace: objectVersionNamespace,
  *     delimiter: objectVersionDelimiter,
@@ -134,7 +134,7 @@ export interface GetObjectVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
+ * const testObjectVersions = oci.objectstorage.getObjectVersions({
  *     bucket: objectVersionBucket,
  *     namespace: objectVersionNamespace,
  *     delimiter: objectVersionDelimiter,

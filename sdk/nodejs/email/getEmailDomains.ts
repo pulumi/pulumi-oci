@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomains = oci.Email.getEmailDomains({
+ * const testEmailDomains = oci.email.getEmailDomains({
  *     compartmentId: compartmentId,
  *     id: emailDomainId,
  *     name: emailDomainName,
@@ -96,7 +96,7 @@ export interface GetEmailDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomains = oci.Email.getEmailDomains({
+ * const testEmailDomains = oci.email.getEmailDomains({
  *     compartmentId: compartmentId,
  *     id: emailDomainId,
  *     name: emailDomainName,

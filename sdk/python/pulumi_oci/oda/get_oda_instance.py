@@ -336,7 +336,7 @@ def get_oda_instance(oda_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=test_oda_instance_oci_oda_oda_instance["id"])
+    test_oda_instance = oci.oda.get_oda_instance(oda_instance_id=test_oda_instance_oci_oda_oda_instance["id"])
     ```
 
 
@@ -385,7 +385,7 @@ def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=test_oda_instance_oci_oda_oda_instance["id"])
+    test_oda_instance = oci.oda.get_oda_instance(oda_instance_id=test_oda_instance_oci_oda_oda_instance["id"])
     ```
 
 

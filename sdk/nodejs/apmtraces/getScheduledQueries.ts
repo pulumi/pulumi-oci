@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledQueries = oci.ApmTraces.getScheduledQueries({
+ * const testScheduledQueries = oci.apmtraces.getScheduledQueries({
  *     apmDomainId: testApmDomain.id,
  *     displayName: scheduledQueryDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetScheduledQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledQueries = oci.ApmTraces.getScheduledQueries({
+ * const testScheduledQueries = oci.apmtraces.getScheduledQueries({
  *     apmDomainId: testApmDomain.id,
  *     displayName: scheduledQueryDisplayName,
  * });

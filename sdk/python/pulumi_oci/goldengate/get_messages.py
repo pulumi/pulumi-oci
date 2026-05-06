@@ -95,7 +95,7 @@ def get_messages(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_messages = oci.GoldenGate.get_messages(deployment_id=test_deployment["id"])
+    test_messages = oci.goldengate.get_messages(deployment_id=test_deployment["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_messages_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_messages = oci.GoldenGate.get_messages(deployment_id=test_deployment["id"])
+    test_messages = oci.goldengate.get_messages(deployment_id=test_deployment["id"])
     ```
 
 

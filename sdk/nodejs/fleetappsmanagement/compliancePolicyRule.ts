@@ -25,14 +25,14 @@ import * as utilities from "../utilities";
  *     displayName: compliancePolicyRuleDisplayName,
  *     patchSelection: {
  *         selectionType: compliancePolicyRulePatchSelectionSelectionType,
- *         daysSinceRelease: compliancePolicyRulePatchSelectionDaysSinceRelease,
+ *         daysSinceRelease: Number(compliancePolicyRulePatchSelectionDaysSinceRelease),
  *         patchLevel: compliancePolicyRulePatchSelectionPatchLevel,
  *         patchName: testPatch.name,
  *     },
  *     patchTypeIds: testPatchType.id,
  *     productVersion: {
  *         version: compliancePolicyRuleProductVersionVersion,
- *         isApplicableForAllHigherVersions: compliancePolicyRuleProductVersionIsApplicableForAllHigherVersions,
+ *         isApplicableForAllHigherVersions: compliancePolicyRuleProductVersionIsApplicableForAllHigherVersions === "true",
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

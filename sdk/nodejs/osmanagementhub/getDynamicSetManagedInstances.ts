@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSetManagedInstances = oci.OsManagementHub.getDynamicSetManagedInstances({
+ * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });
@@ -101,10 +101,10 @@ export interface GetDynamicSetManagedInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSetManagedInstances = oci.OsManagementHub.getDynamicSetManagedInstances({
+ * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });

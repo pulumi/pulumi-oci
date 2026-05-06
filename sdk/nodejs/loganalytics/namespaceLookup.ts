@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     categories: [{
  *         description: namespaceLookupCategoriesDescription,
  *         displayName: namespaceLookupCategoriesDisplayName,
- *         isSystem: namespaceLookupCategoriesIsSystem,
+ *         isSystem: namespaceLookupCategoriesIsSystem === "true",
  *         name: namespaceLookupCategoriesName,
  *         type: namespaceLookupCategoriesType,
  *     }],
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *         commonFieldName: namespaceLookupFieldsCommonFieldName,
  *         defaultMatchValue: namespaceLookupFieldsDefaultMatchValue,
  *         displayName: namespaceLookupFieldsDisplayName,
- *         isCommonField: namespaceLookupFieldsIsCommonField,
+ *         isCommonField: namespaceLookupFieldsIsCommonField === "true",
  *         matchOperator: namespaceLookupFieldsMatchOperator,
  *         name: namespaceLookupFieldsName,
  *         position: namespaceLookupFieldsPosition,
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isHidden: namespaceLookupIsHidden,
+ *     isHidden: namespaceLookupIsHidden === "true",
  *     maxMatches: namespaceLookupMaxMatches,
  * });
  * ```

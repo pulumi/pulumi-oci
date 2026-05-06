@@ -228,7 +228,7 @@ def get_stream_pool(stream_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=test_stream_pool_oci_streaming_stream_pool["id"])
+    test_stream_pool = oci.streaming.get_stream_pool(stream_pool_id=test_stream_pool_oci_streaming_stream_pool["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pool = oci.Streaming.get_stream_pool(stream_pool_id=test_stream_pool_oci_streaming_stream_pool["id"])
+    test_stream_pool = oci.streaming.get_stream_pool(stream_pool_id=test_stream_pool_oci_streaming_stream_pool["id"])
     ```
 
 

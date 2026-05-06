@@ -137,7 +137,7 @@ def get_agent_tools(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tools = oci.GenerativeAi.get_agent_tools(agent_id=test_agent["id"],
+    test_tools = oci.generativeai.get_agent_tools(agent_id=test_agent["id"],
         compartment_id=compartment_id,
         display_name=tool_display_name,
         state=tool_state)
@@ -183,7 +183,7 @@ def get_agent_tools_output(agent_id: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_tools = oci.GenerativeAi.get_agent_tools(agent_id=test_agent["id"],
+    test_tools = oci.generativeai.get_agent_tools(agent_id=test_agent["id"],
         compartment_id=compartment_id,
         display_name=tool_display_name,
         state=tool_state)

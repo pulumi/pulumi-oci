@@ -95,7 +95,7 @@ def get_assessment_object_types(connection_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_object_types = oci.DatabaseMigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
+    test_assessment_object_types = oci.databasemigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
     ```
 
 
@@ -126,7 +126,7 @@ def get_assessment_object_types_output(connection_type: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_object_types = oci.DatabaseMigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
+    test_assessment_object_types = oci.databasemigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
     ```
 
 

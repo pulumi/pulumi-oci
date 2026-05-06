@@ -193,7 +193,7 @@ def get_view(scope: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_view = oci.Dns.get_view(view_id=test_view_oci_dns_view["id"],
+    test_view = oci.dns.get_view(view_id=test_view_oci_dns_view["id"],
         scope="PRIVATE")
     ```
 
@@ -238,7 +238,7 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[_builtins.str]]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_view = oci.Dns.get_view(view_id=test_view_oci_dns_view["id"],
+    test_view = oci.dns.get_view(view_id=test_view_oci_dns_view["id"],
         scope="PRIVATE")
     ```
 

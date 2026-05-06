@@ -139,7 +139,7 @@ def get_provisions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_provisions = oci.FleetAppsManagement.get_provisions(compartment_id=compartment_id,
+    test_provisions = oci.fleetappsmanagement.get_provisions(compartment_id=compartment_id,
         display_name=provision_display_name,
         fleet_id=test_fleet["id"],
         id=provision_id,
@@ -190,7 +190,7 @@ def get_provisions_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_provisions = oci.FleetAppsManagement.get_provisions(compartment_id=compartment_id,
+    test_provisions = oci.fleetappsmanagement.get_provisions(compartment_id=compartment_id,
         display_name=provision_display_name,
         fleet_id=test_fleet["id"],
         id=provision_id,

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDecryptedData = oci.Kms.getDecryptedData({
+ * const testDecryptedData = oci.kms.getDecryptedData({
  *     ciphertext: decryptedDataCiphertext,
  *     cryptoEndpoint: decryptedDataCryptoEndpoint,
  *     keyId: testKey.id,
@@ -87,7 +87,7 @@ export interface GetDecryptedDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDecryptedData = oci.Kms.getDecryptedData({
+ * const testDecryptedData = oci.kms.getDecryptedData({
  *     ciphertext: decryptedDataCiphertext,
  *     cryptoEndpoint: decryptedDataCryptoEndpoint,
  *     keyId: testKey.id,

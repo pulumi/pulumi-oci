@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     protocol: pingProbeProtocol,
  *     targets: pingProbeTargets,
- *     port: pingProbePort,
- *     timeoutInSeconds: pingProbeTimeoutInSeconds,
+ *     port: Number(pingProbePort),
+ *     timeoutInSeconds: Number(pingProbeTimeoutInSeconds),
  *     vantagePointNames: pingProbeVantagePointNames,
  * });
  * ```

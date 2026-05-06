@@ -137,7 +137,7 @@ def get_pipelines(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.GoldenGate.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.goldengate.get_pipelines(compartment_id=compartment_id,
         display_name=pipeline_display_name,
         lifecycle_sub_state=pipeline_lifecycle_sub_state,
         state=pipeline_state)
@@ -183,7 +183,7 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.GoldenGate.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.goldengate.get_pipelines(compartment_id=compartment_id,
         display_name=pipeline_display_name,
         lifecycle_sub_state=pipeline_lifecycle_sub_state,
         state=pipeline_state)

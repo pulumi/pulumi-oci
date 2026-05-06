@@ -173,7 +173,7 @@ def get_domains_account_recovery_settings(attribute_sets: Optional[Sequence[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
+    test_account_recovery_settings = oci.identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=account_recovery_setting_authorization,
@@ -228,7 +228,7 @@ def get_domains_account_recovery_settings_output(attribute_sets: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
+    test_account_recovery_settings = oci.identity.get_domains_account_recovery_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=account_recovery_setting_authorization,

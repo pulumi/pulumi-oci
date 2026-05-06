@@ -168,12 +168,12 @@ def get_namespace_effective_properties(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+    test_namespace_effective_properties = oci.loganalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
         agent_id=test_agent["id"],
         entity_id=test_log_analytics_entity["id"],
-        is_include_patterns=namespace_effective_property_is_include_patterns,
+        is_include_patterns=namespace_effective_property_is_include_patterns == "true",
         name=namespace_effective_property_name,
-        pattern_id=test_pattern["id"],
+        pattern_id=int(test_pattern["id"]),
         pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```
@@ -234,12 +234,12 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+    test_namespace_effective_properties = oci.loganalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
         agent_id=test_agent["id"],
         entity_id=test_log_analytics_entity["id"],
-        is_include_patterns=namespace_effective_property_is_include_patterns,
+        is_include_patterns=namespace_effective_property_is_include_patterns == "true",
         name=namespace_effective_property_name,
-        pattern_id=test_pattern["id"],
+        pattern_id=int(test_pattern["id"]),
         pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```

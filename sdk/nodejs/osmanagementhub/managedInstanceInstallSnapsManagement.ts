@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     snapDetails: [{
  *         name: managedInstanceInstallSnapsManagementSnapDetailsName,
  *         channel: managedInstanceInstallSnapsManagementSnapDetailsChannel,
- *         isSigned: managedInstanceInstallSnapsManagementSnapDetailsIsSigned,
+ *         isSigned: managedInstanceInstallSnapsManagementSnapDetailsIsSigned === "true",
  *         mode: managedInstanceInstallSnapsManagementSnapDetailsMode,
  *         revision: managedInstanceInstallSnapsManagementSnapDetailsRevision,
  *     }],

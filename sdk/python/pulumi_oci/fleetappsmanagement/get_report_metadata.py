@@ -105,7 +105,7 @@ def get_report_metadata(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report_metadata = oci.FleetAppsManagement.get_report_metadata(compartment_id=compartment_id,
+    test_report_metadata = oci.fleetappsmanagement.get_report_metadata(compartment_id=compartment_id,
         report_name=report_name)
     ```
 
@@ -141,7 +141,7 @@ def get_report_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_report_metadata = oci.FleetAppsManagement.get_report_metadata(compartment_id=compartment_id,
+    test_report_metadata = oci.fleetappsmanagement.get_report_metadata(compartment_id=compartment_id,
         report_name=report_name)
     ```
 

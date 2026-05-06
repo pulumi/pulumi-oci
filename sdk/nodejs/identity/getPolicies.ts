@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicies = oci.Identity.getPolicies({
+ * const testPolicies = oci.identity.getPolicies({
  *     compartmentId: tenancyOcid,
  *     name: policyName,
  *     state: policyState,
@@ -98,7 +98,7 @@ export interface GetPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicies = oci.Identity.getPolicies({
+ * const testPolicies = oci.identity.getPolicies({
  *     compartmentId: tenancyOcid,
  *     name: policyName,
  *     state: policyState,

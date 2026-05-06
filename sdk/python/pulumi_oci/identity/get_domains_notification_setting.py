@@ -362,7 +362,7 @@ def get_domains_notification_setting(attribute_sets: Optional[Sequence[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
+    test_notification_setting = oci.identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
         notification_setting_id=test_notification_setting_oci_identity_domains_notification_setting["id"],
         attribute_sets=["all"],
         attributes="",
@@ -434,7 +434,7 @@ def get_domains_notification_setting_output(attribute_sets: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
+    test_notification_setting = oci.identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
         notification_setting_id=test_notification_setting_oci_identity_domains_notification_setting["id"],
         attribute_sets=["all"],
         attributes="",

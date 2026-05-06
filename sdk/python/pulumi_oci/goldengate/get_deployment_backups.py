@@ -137,7 +137,7 @@ def get_deployment_backups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backups = oci.GoldenGate.get_deployment_backups(compartment_id=compartment_id,
+    test_deployment_backups = oci.goldengate.get_deployment_backups(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         display_name=deployment_backup_display_name,
         state=deployment_backup_state)
@@ -183,7 +183,7 @@ def get_deployment_backups_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backups = oci.GoldenGate.get_deployment_backups(compartment_id=compartment_id,
+    test_deployment_backups = oci.goldengate.get_deployment_backups(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         display_name=deployment_backup_display_name,
         state=deployment_backup_state)

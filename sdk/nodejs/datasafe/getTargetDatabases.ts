@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
+ * const testTargetDatabases = oci.datasafe.getTargetDatabases({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseAccessLevel,
  *     associatedResourceId: testAssociatedResource.id,
- *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
  *     infrastructureType: targetDatabaseInfrastructureType,
@@ -138,11 +138,11 @@ export interface GetTargetDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
+ * const testTargetDatabases = oci.datasafe.getTargetDatabases({
  *     compartmentId: compartmentId,
  *     accessLevel: targetDatabaseAccessLevel,
  *     associatedResourceId: testAssociatedResource.id,
- *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree === "true",
  *     databaseType: targetDatabaseDatabaseType,
  *     displayName: targetDatabaseDisplayName,
  *     infrastructureType: targetDatabaseInfrastructureType,

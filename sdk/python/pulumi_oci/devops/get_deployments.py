@@ -171,7 +171,7 @@ def get_deployments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.devops.get_deployments(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deployment_display_name,
         id=deployment_id,
@@ -236,7 +236,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.devops.get_deployments(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deployment_display_name,
         id=deployment_id,

@@ -151,7 +151,7 @@ def get_model_deployments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=compartment_id,
+    test_model_deployments = oci.datascience.get_model_deployments(compartment_id=compartment_id,
         created_by=model_deployment_created_by,
         display_name=model_deployment_display_name,
         id=model_deployment_id,
@@ -206,7 +206,7 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=compartment_id,
+    test_model_deployments = oci.datascience.get_model_deployments(compartment_id=compartment_id,
         created_by=model_deployment_created_by,
         display_name=model_deployment_display_name,
         id=model_deployment_id,

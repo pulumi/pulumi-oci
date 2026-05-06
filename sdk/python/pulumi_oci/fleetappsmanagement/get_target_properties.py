@@ -125,7 +125,7 @@ def get_target_properties(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_properties = oci.FleetAppsManagement.get_target_properties(compartment_id=compartment_id,
+    test_target_properties = oci.fleetappsmanagement.get_target_properties(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         severity=target_property_severity)
@@ -171,7 +171,7 @@ def get_target_properties_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_target_properties = oci.FleetAppsManagement.get_target_properties(compartment_id=compartment_id,
+    test_target_properties = oci.fleetappsmanagement.get_target_properties(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         severity=target_property_severity)

@@ -318,7 +318,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
+    test_analytics_instance = oci.analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
     ```
 
 
@@ -366,7 +366,7 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
+    test_analytics_instance = oci.analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
     ```
 
 

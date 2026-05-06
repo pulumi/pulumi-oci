@@ -374,7 +374,7 @@ def get_domains_oci_console_sign_on_policy_consent(attribute_sets: Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consent = oci.Identity.get_domains_oci_console_sign_on_policy_consent(idcs_endpoint=test_domain["url"],
+    test_oci_console_sign_on_policy_consent = oci.identity.get_domains_oci_console_sign_on_policy_consent(idcs_endpoint=test_domain["url"],
         oci_console_sign_on_policy_consent_id=test_oci_console_sign_on_policy_consent_oci_identity_domains_oci_console_sign_on_policy_consent["id"],
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,
@@ -447,7 +447,7 @@ def get_domains_oci_console_sign_on_policy_consent_output(attribute_sets: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consent = oci.Identity.get_domains_oci_console_sign_on_policy_consent(idcs_endpoint=test_domain["url"],
+    test_oci_console_sign_on_policy_consent = oci.identity.get_domains_oci_console_sign_on_policy_consent(idcs_endpoint=test_domain["url"],
         oci_console_sign_on_policy_consent_id=test_oci_console_sign_on_policy_consent_oci_identity_domains_oci_console_sign_on_policy_consent["id"],
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,

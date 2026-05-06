@@ -1090,7 +1090,7 @@ class Alarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             destinations=[test_notification_topic["id"]],
             display_name=alarm_display_name,
-            is_enabled=alarm_is_enabled,
+            is_enabled=alarm_is_enabled == "true",
             metric_compartment_id=alarm_metric_compartment_id,
             namespace=alarm_namespace,
             query=alarm_query,
@@ -1104,9 +1104,9 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled,
+            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled == "true",
             message_format=alarm_message_format,
-            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree,
+            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree == "true",
             notification_title=alarm_notification_title,
             notification_version=alarm_notification_version,
             overrides=[{
@@ -1236,7 +1236,7 @@ class Alarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             destinations=[test_notification_topic["id"]],
             display_name=alarm_display_name,
-            is_enabled=alarm_is_enabled,
+            is_enabled=alarm_is_enabled == "true",
             metric_compartment_id=alarm_metric_compartment_id,
             namespace=alarm_namespace,
             query=alarm_query,
@@ -1250,9 +1250,9 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled,
+            is_notifications_per_metric_dimension_enabled=alarm_is_notifications_per_metric_dimension_enabled == "true",
             message_format=alarm_message_format,
-            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree,
+            metric_compartment_id_in_subtree=alarm_metric_compartment_id_in_subtree == "true",
             notification_title=alarm_notification_title,
             notification_version=alarm_notification_version,
             overrides=[{

@@ -126,7 +126,7 @@ def get_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+    test_groups = oci.identity.get_groups(compartment_id=tenancy_ocid,
         name=group_name,
         state=group_state)
     ```
@@ -169,7 +169,7 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+    test_groups = oci.identity.get_groups(compartment_id=tenancy_ocid,
         name=group_name,
         state=group_state)
     ```

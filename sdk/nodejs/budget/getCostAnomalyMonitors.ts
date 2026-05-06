@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyMonitors = oci.Budget.getCostAnomalyMonitors({
+ * const testCostAnomalyMonitors = oci.budget.getCostAnomalyMonitors({
  *     compartmentId: compartmentId,
  *     name: costAnomalyMonitorName,
  *     regions: costAnomalyMonitorRegion,
@@ -104,7 +104,7 @@ export interface GetCostAnomalyMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyMonitors = oci.Budget.getCostAnomalyMonitors({
+ * const testCostAnomalyMonitors = oci.budget.getCostAnomalyMonitors({
  *     compartmentId: compartmentId,
  *     name: costAnomalyMonitorName,
  *     regions: costAnomalyMonitorRegion,

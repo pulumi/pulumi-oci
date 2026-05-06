@@ -161,12 +161,12 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 "network_source_ids": authentication_policy_network_policy_network_source_ids,
             },
             password_policy={
-                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
-                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
-                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
-                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
-                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
-                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required == "true",
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required == "true",
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required == "true",
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required == "true",
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed == "true",
+                "minimum_password_length": int(authentication_policy_password_policy_minimum_password_length),
             })
         ```
 
@@ -211,12 +211,12 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 "network_source_ids": authentication_policy_network_policy_network_source_ids,
             },
             password_policy={
-                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
-                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
-                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
-                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
-                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
-                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required == "true",
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required == "true",
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required == "true",
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required == "true",
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed == "true",
+                "minimum_password_length": int(authentication_policy_password_policy_minimum_password_length),
             })
         ```
 

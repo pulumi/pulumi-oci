@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testErratum = oci.OsManagementHub.getErratum({
+ * const testErratum = oci.osmanagementhub.getErratum({
  *     compartmentId: compartmentId,
  *     name: erratumName,
  * });
@@ -126,7 +126,7 @@ export interface GetErratumResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testErratum = oci.OsManagementHub.getErratum({
+ * const testErratum = oci.osmanagementhub.getErratum({
  *     compartmentId: compartmentId,
  *     name: erratumName,
  * });

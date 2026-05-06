@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalExadataInfrastructureExadataManagement = new oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management", {
  *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
- *     enableExadata: enableExadata,
+ *     enableExadata: enableExadata === "true",
  *     licenseModel: externalExadataInfrastructureExadataManagementLicenseModel,
  * });
  * ```

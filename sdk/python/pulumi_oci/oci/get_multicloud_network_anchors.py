@@ -201,10 +201,10 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree,
+        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
@@ -283,10 +283,10 @@ def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree,
+        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 

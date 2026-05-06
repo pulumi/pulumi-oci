@@ -219,12 +219,12 @@ def get_security_assessment_template_analytics(access_level: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_analytics = oci.DataSafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_analytics = oci.datasafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree,
-        is_compared=security_assessment_template_analytic_is_compared,
-        is_compliant=security_assessment_template_analytic_is_compliant,
-        is_group=security_assessment_template_analytic_is_group,
+        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree == "true",
+        is_compared=security_assessment_template_analytic_is_compared == "true",
+        is_compliant=security_assessment_template_analytic_is_compliant == "true",
+        is_group=security_assessment_template_analytic_is_group == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],
@@ -308,12 +308,12 @@ def get_security_assessment_template_analytics_output(access_level: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_analytics = oci.DataSafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_analytics = oci.datasafe.get_security_assessment_template_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree,
-        is_compared=security_assessment_template_analytic_is_compared,
-        is_compliant=security_assessment_template_analytic_is_compliant,
-        is_group=security_assessment_template_analytic_is_group,
+        compartment_id_in_subtree=security_assessment_template_analytic_compartment_id_in_subtree == "true",
+        is_compared=security_assessment_template_analytic_is_compared == "true",
+        is_compliant=security_assessment_template_analytic_is_compliant == "true",
+        is_group=security_assessment_template_analytic_is_group == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
  *     compartmentId: compartmentId,
  *     displayName: protectedDatabaseDisplayName,
  *     id: protectedDatabaseId,
@@ -116,7 +116,7 @@ export interface GetProtectedDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
  *     compartmentId: compartmentId,
  *     displayName: protectedDatabaseDisplayName,
  *     id: protectedDatabaseId,

@@ -255,7 +255,7 @@ def get_byol_allocation(byol_allocation_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocation = oci.Ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
+    test_byol_allocation = oci.ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
     ```
 
 
@@ -297,7 +297,7 @@ def get_byol_allocation_output(byol_allocation_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocation = oci.Ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
+    test_byol_allocation = oci.ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
     ```
 
 

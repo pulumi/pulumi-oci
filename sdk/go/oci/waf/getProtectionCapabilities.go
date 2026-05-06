@@ -32,8 +32,8 @@ import (
 //			_, err := waf.GetProtectionCapabilities(ctx, &waf.GetProtectionCapabilitiesArgs{
 //				CompartmentId:    compartmentId,
 //				DisplayName:      pulumi.StringRef(protectionCapabilityDisplayName),
-//				GroupTags:        protectionCapabilityGroupTag,
-//				IsLatestVersions: protectionCapabilityIsLatestVersion,
+//				GroupTags:        pulumi.ToArray(protectionCapabilityGroupTag),
+//				IsLatestVersions: pulumi.ToArray(protectionCapabilityIsLatestVersion),
 //				Key:              pulumi.StringRef(protectionCapabilityKey),
 //				Type:             pulumi.StringRef(protectionCapabilityType),
 //			}, nil)

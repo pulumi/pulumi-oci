@@ -105,7 +105,7 @@ def get_repository_setting(repository_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_setting = oci.DevOps.get_repository_setting(repository_id=test_repository["id"])
+    test_repository_setting = oci.devops.get_repository_setting(repository_id=test_repository["id"])
     ```
 
 
@@ -135,7 +135,7 @@ def get_repository_setting_output(repository_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_setting = oci.DevOps.get_repository_setting(repository_id=test_repository["id"])
+    test_repository_setting = oci.devops.get_repository_setting(repository_id=test_repository["id"])
     ```
 
 

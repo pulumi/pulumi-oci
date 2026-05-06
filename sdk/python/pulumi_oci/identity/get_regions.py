@@ -85,7 +85,7 @@ def get_regions(filters: Optional[Sequence[Union['GetRegionsFilterArgs', 'GetReg
     import pulumi
     import pulumi_oci as oci
 
-    test_regions = oci.Identity.get_regions()
+    test_regions = oci.identity.get_regions()
     ```
     """
     __args__ = dict()
@@ -110,7 +110,7 @@ def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_regions = oci.Identity.get_regions()
+    test_regions = oci.identity.get_regions()
     ```
     """
     __args__ = dict()

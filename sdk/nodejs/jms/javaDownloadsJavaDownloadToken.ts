@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDefault: javaDownloadTokenIsDefault,
+ *     isDefault: javaDownloadTokenIsDefault === "true",
  * });
  * ```
  *

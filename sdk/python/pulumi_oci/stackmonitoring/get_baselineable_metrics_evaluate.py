@@ -111,7 +111,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics_evaluate = oci.stackmonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[{
             "evaluation_data_points": [{
                 "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
@@ -159,7 +159,7 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics_evaluate = oci.stackmonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[{
             "evaluation_data_points": [{
                 "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,

@@ -88,7 +88,7 @@ def get_importable_agent_entities(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=compartment_id)
+    test_importable_agent_entities = oci.opsi.get_importable_agent_entities(compartment_id=compartment_id)
     ```
 
 
@@ -120,7 +120,7 @@ def get_importable_agent_entities_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=compartment_id)
+    test_importable_agent_entities = oci.opsi.get_importable_agent_entities(compartment_id=compartment_id)
     ```
 
 

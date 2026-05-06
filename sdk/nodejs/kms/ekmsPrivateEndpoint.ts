@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     port: ekmsPrivateEndpointPort,
+ *     port: Number(ekmsPrivateEndpointPort),
  * });
  * ```
  *

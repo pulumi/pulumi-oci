@@ -26,10 +26,10 @@ import * as utilities from "../utilities";
  *     name: workspaceTaskName,
  *     registryMetadata: {
  *         aggregatorKey: workspaceTaskRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceTaskRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceTaskRegistryMetadataIsFavorite === "true",
  *         key: workspaceTaskRegistryMetadataKey,
  *         labels: workspaceTaskRegistryMetadataLabels,
- *         registryVersion: workspaceTaskRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceTaskRegistryMetadataRegistryVersion),
  *     },
  *     workspaceId: testWorkspace.id,
  *     apiCallMode: workspaceTaskApiCallMode,
@@ -374,7 +374,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskInputPortsModelType,
  *         configValues: {
  *             configParamValues: {
- *                 intValue: workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue,
+ *                 intValue: Number(workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue),
  *                 objectValue: workspaceTaskInputPortsConfigValuesConfigParamValuesObjectValue,
  *                 parameterValue: workspaceTaskInputPortsConfigValuesConfigParamValuesParameterValue,
  *                 refValue: workspaceTaskInputPortsConfigValuesConfigParamValuesRefValue,
@@ -391,19 +391,19 @@ import * as utilities from "../utilities";
  *         key: workspaceTaskInputPortsKey,
  *         modelVersion: workspaceTaskInputPortsModelVersion,
  *         name: workspaceTaskInputPortsName,
- *         objectStatus: workspaceTaskInputPortsObjectStatus,
+ *         objectStatus: Number(workspaceTaskInputPortsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskInputPortsParentRefParent,
  *             rootDocId: testRootDoc.id,
  *         },
  *         portType: workspaceTaskInputPortsPortType,
  *     }],
- *     isSingleLoad: workspaceTaskIsSingleLoad,
+ *     isSingleLoad: workspaceTaskIsSingleLoad === "true",
  *     jsonData: workspaceTaskJsonData,
  *     key: workspaceTaskKey,
  *     methodType: workspaceTaskMethodType,
  *     modelVersion: workspaceTaskModelVersion,
- *     objectStatus: workspaceTaskObjectStatus,
+ *     objectStatus: Number(workspaceTaskObjectStatus),
  *     opConfigValues: {
  *         configParamValues: {
  *             intValue: workspaceTaskOpConfigValuesConfigParamValuesIntValue,
@@ -423,7 +423,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskOutputPortsModelType,
  *         configValues: {
  *             configParamValues: {
- *                 intValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue,
+ *                 intValue: Number(workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue),
  *                 objectValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesObjectValue,
  *                 parameterValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesParameterValue,
  *                 refValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesRefValue,
@@ -440,14 +440,14 @@ import * as utilities from "../utilities";
  *         key: workspaceTaskOutputPortsKey,
  *         modelVersion: workspaceTaskOutputPortsModelVersion,
  *         name: workspaceTaskOutputPortsName,
- *         objectStatus: workspaceTaskOutputPortsObjectStatus,
+ *         objectStatus: Number(workspaceTaskOutputPortsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskOutputPortsParentRefParent,
  *             rootDocId: testRootDoc.id,
  *         },
  *         portType: workspaceTaskOutputPortsPortType,
  *     }],
- *     parallelLoadLimit: workspaceTaskParallelLoadLimit,
+ *     parallelLoadLimit: Number(workspaceTaskParallelLoadLimit),
  *     parameters: [{
  *         modelType: workspaceTaskParametersModelType,
  *         configValues: {
@@ -466,12 +466,12 @@ import * as utilities from "../utilities";
  *         },
  *         defaultValue: workspaceTaskParametersDefaultValue,
  *         description: workspaceTaskParametersDescription,
- *         isInput: workspaceTaskParametersIsInput,
- *         isOutput: workspaceTaskParametersIsOutput,
+ *         isInput: workspaceTaskParametersIsInput === "true",
+ *         isOutput: workspaceTaskParametersIsOutput === "true",
  *         key: workspaceTaskParametersKey,
  *         modelVersion: workspaceTaskParametersModelVersion,
  *         name: workspaceTaskParametersName,
- *         objectStatus: workspaceTaskParametersObjectStatus,
+ *         objectStatus: Number(workspaceTaskParametersObjectStatus),
  *         outputAggregationType: workspaceTaskParametersOutputAggregationType,
  *         parentRef: {
  *             parent: workspaceTaskParametersParentRefParent,
@@ -710,7 +710,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskTypedExpressionsModelType,
  *         modelVersion: workspaceTaskTypedExpressionsModelVersion,
  *         name: workspaceTaskTypedExpressionsName,
- *         objectStatus: workspaceTaskTypedExpressionsObjectStatus,
+ *         objectStatus: Number(workspaceTaskTypedExpressionsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskTypedExpressionsParentRefParent,
  *             rootDocId: testRootDoc.id,

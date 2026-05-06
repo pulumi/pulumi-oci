@@ -84,7 +84,7 @@ def get_log_analytics_preference(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=log_analytics_preference_namespace)
+    test_log_analytics_preference = oci.loganalytics.get_log_analytics_preference(namespace=log_analytics_preference_namespace)
     ```
 
 
@@ -112,7 +112,7 @@ def get_log_analytics_preference_output(namespace: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_preference = oci.LogAnalytics.get_log_analytics_preference(namespace=log_analytics_preference_namespace)
+    test_log_analytics_preference = oci.loganalytics.get_log_analytics_preference(namespace=log_analytics_preference_namespace)
     ```
 
 

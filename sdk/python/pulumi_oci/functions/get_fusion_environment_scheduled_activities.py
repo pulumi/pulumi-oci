@@ -157,7 +157,7 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activities = oci.functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_scheduled_activity_display_name,
         run_cycle=fusion_environment_scheduled_activity_run_cycle,
         state=fusion_environment_scheduled_activity_state,
@@ -213,7 +213,7 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activities = oci.functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_scheduled_activity_display_name,
         run_cycle=fusion_environment_scheduled_activity_run_cycle,
         state=fusion_environment_scheduled_activity_state,

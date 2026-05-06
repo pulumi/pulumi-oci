@@ -327,7 +327,7 @@ def get_external_my_sql_database_connector(external_my_sql_database_connector_id
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connector = oci.DatabaseManagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
+    test_external_my_sql_database_connector = oci.databasemanagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
     ```
 
 
@@ -376,7 +376,7 @@ def get_external_my_sql_database_connector_output(external_my_sql_database_conne
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connector = oci.DatabaseManagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
+    test_external_my_sql_database_connector = oci.databasemanagement.get_external_my_sql_database_connector(external_my_sql_database_connector_id=test_external_my_sql_database_connector_oci_database_management_external_my_sql_database_connector["id"])
     ```
 
 

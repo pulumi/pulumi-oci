@@ -738,8 +738,8 @@ class Vtap(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=vtap_is_vtap_enabled,
-            max_packet_size=vtap_max_packet_size,
+            is_vtap_enabled=vtap_is_vtap_enabled == "true",
+            max_packet_size=int(vtap_max_packet_size),
             source_private_endpoint_ip=vtap_source_private_endpoint_ip,
             source_private_endpoint_subnet_id=test_subnet["id"],
             source_type=vtap_source_type,
@@ -827,8 +827,8 @@ class Vtap(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=vtap_is_vtap_enabled,
-            max_packet_size=vtap_max_packet_size,
+            is_vtap_enabled=vtap_is_vtap_enabled == "true",
+            max_packet_size=int(vtap_max_packet_size),
             source_private_endpoint_ip=vtap_source_private_endpoint_ip,
             source_private_endpoint_subnet_id=test_subnet["id"],
             source_type=vtap_source_type,

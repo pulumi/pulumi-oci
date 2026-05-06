@@ -494,8 +494,8 @@ class ManagementAppliance(pulumi.CustomResource):
 
         test_management_appliance = oci.ocvp.ManagementAppliance("test_management_appliance",
             configuration={
-                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled,
-                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled,
+                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled == "true",
+                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled == "true",
                 "metrics": management_appliance_configuration_metrics,
                 "support_bundle_bucket_id": test_bucket["id"],
             },
@@ -559,8 +559,8 @@ class ManagementAppliance(pulumi.CustomResource):
 
         test_management_appliance = oci.ocvp.ManagementAppliance("test_management_appliance",
             configuration={
-                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled,
-                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled,
+                "is_log_ingestion_enabled": management_appliance_configuration_is_log_ingestion_enabled == "true",
+                "is_metrics_collection_enabled": management_appliance_configuration_is_metrics_collection_enabled == "true",
                 "metrics": management_appliance_configuration_metrics,
                 "support_bundle_bucket_id": test_bucket["id"],
             },

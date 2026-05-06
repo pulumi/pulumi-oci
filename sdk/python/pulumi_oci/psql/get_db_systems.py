@@ -125,7 +125,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
         state=db_system_state)
@@ -170,7 +170,7 @@ def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
         state=db_system_state)

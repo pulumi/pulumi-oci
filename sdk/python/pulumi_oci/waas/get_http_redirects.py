@@ -148,7 +148,7 @@ def get_http_redirects(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=compartment_id,
+    test_http_redirects = oci.waas.get_http_redirects(compartment_id=compartment_id,
         display_names=http_redirect_display_names,
         ids=http_redirect_ids,
         states=http_redirect_states,
@@ -204,7 +204,7 @@ def get_http_redirects_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=compartment_id,
+    test_http_redirects = oci.waas.get_http_redirects(compartment_id=compartment_id,
         display_names=http_redirect_display_names,
         ids=http_redirect_ids,
         states=http_redirect_states,

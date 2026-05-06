@@ -99,7 +99,7 @@ def get_backend_sets(filters: Optional[Sequence[Union['GetBackendSetsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
+    test_backend_sets = oci.loadbalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -134,7 +134,7 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
+    test_backend_sets = oci.loadbalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 

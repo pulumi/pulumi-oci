@@ -26,11 +26,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveColumnAnalytics = oci.DataSafe.getSensitiveColumnAnalytics({
+ * const testSensitiveColumnAnalytics = oci.datasafe.getSensitiveColumnAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveColumnAnalyticAccessLevel,
  *     columnNames: sensitiveColumnAnalyticColumnName,
- *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sensitiveColumnAnalyticGroupBy,
  *     objects: sensitiveColumnAnalyticObject,
  *     schemaNames: sensitiveColumnAnalyticSchemaName,
@@ -180,11 +180,11 @@ export interface GetSensitiveColumnAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveColumnAnalytics = oci.DataSafe.getSensitiveColumnAnalytics({
+ * const testSensitiveColumnAnalytics = oci.datasafe.getSensitiveColumnAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveColumnAnalyticAccessLevel,
  *     columnNames: sensitiveColumnAnalyticColumnName,
- *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sensitiveColumnAnalyticGroupBy,
  *     objects: sensitiveColumnAnalyticObject,
  *     schemaNames: sensitiveColumnAnalyticSchemaName,

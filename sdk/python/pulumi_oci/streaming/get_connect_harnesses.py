@@ -125,7 +125,7 @@ def get_connect_harnesses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=compartment_id,
+    test_connect_harnesses = oci.streaming.get_connect_harnesses(compartment_id=compartment_id,
         id=connect_harness_id,
         name=connect_harness_name,
         state=connect_harness_state)
@@ -170,7 +170,7 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=compartment_id,
+    test_connect_harnesses = oci.streaming.get_connect_harnesses(compartment_id=compartment_id,
         id=connect_harness_id,
         name=connect_harness_name,
         state=connect_harness_state)

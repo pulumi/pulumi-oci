@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
+ * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetSchedulerJobCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
+ * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */

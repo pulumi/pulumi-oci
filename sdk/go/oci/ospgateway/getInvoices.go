@@ -34,12 +34,12 @@ import (
 //				OspHomeRegion:    invoiceOspHomeRegion,
 //				InvoiceId:        pulumi.StringRef(testInvoice.Id),
 //				SearchText:       pulumi.StringRef(invoiceSearchText),
-//				Statuses:         invoiceStatus,
+//				Statuses:         pulumi.ToArray(invoiceStatus),
 //				TimeInvoiceEnd:   pulumi.StringRef(invoiceTimeInvoiceEnd),
 //				TimeInvoiceStart: pulumi.StringRef(invoiceTimeInvoiceStart),
 //				TimePaymentEnd:   pulumi.StringRef(invoiceTimePaymentEnd),
 //				TimePaymentStart: pulumi.StringRef(invoiceTimePaymentStart),
-//				Types:            invoiceType,
+//				Types:            pulumi.ToArray(invoiceType),
 //			}, nil)
 //			if err != nil {
 //				return err

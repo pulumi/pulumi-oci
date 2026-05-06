@@ -85,7 +85,7 @@ def get_management_dashboards_export(export_dashboard_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
+    test_management_dashboards_export = oci.managementdashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
     ```
 
 
@@ -115,7 +115,7 @@ def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
+    test_management_dashboards_export = oci.managementdashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
     ```
 
 

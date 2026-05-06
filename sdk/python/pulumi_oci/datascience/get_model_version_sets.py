@@ -164,7 +164,7 @@ def get_model_version_sets(category: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+    test_model_version_sets = oci.datascience.get_model_version_sets(compartment_id=compartment_id,
         category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,
@@ -224,7 +224,7 @@ def get_model_version_sets_output(category: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+    test_model_version_sets = oci.datascience.get_model_version_sets(compartment_id=compartment_id,
         category=model_version_set_category,
         created_by=model_version_set_created_by,
         id=model_version_set_id,

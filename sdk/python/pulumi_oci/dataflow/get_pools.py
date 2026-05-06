@@ -147,7 +147,7 @@ def get_pools(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pools = oci.DataFlow.get_pools(compartment_id=compartment_id,
+    test_pools = oci.dataflow.get_pools(compartment_id=compartment_id,
         display_name=pool_display_name,
         display_name_starts_with=pool_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],
@@ -198,7 +198,7 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_pools = oci.DataFlow.get_pools(compartment_id=compartment_id,
+    test_pools = oci.dataflow.get_pools(compartment_id=compartment_id,
         display_name=pool_display_name,
         display_name_starts_with=pool_display_name_starts_with,
         owner_principal_id=test_owner_principal["id"],

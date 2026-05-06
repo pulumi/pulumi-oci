@@ -273,7 +273,7 @@ def get_target_database(target_database_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
+    test_target_database = oci.datasafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_target_database_output(target_database_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
+    test_target_database = oci.datasafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
 
 

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReports = oci.DataSafe.getMaskingReports({
+ * const testMaskingReports = oci.datasafe.getMaskingReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingReportAccessLevel,
- *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree === "true",
  *     maskingPolicyId: testMaskingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
@@ -111,10 +111,10 @@ export interface GetMaskingReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReports = oci.DataSafe.getMaskingReports({
+ * const testMaskingReports = oci.datasafe.getMaskingReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingReportAccessLevel,
- *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree === "true",
  *     maskingPolicyId: testMaskingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,

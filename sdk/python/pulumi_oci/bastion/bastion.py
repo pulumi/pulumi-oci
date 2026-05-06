@@ -604,7 +604,7 @@ class Bastion(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            max_session_ttl_in_seconds=int(bastion_max_session_ttl_in_seconds),
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
             security_attributes=bastion_security_attributes,
@@ -671,7 +671,7 @@ class Bastion(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            max_session_ttl_in_seconds=int(bastion_max_session_ttl_in_seconds),
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
             security_attributes=bastion_security_attributes,

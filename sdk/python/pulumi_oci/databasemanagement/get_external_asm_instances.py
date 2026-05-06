@@ -124,7 +124,7 @@ def get_external_asm_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=compartment_id,
+    test_external_asm_instances = oci.databasemanagement.get_external_asm_instances(compartment_id=compartment_id,
         display_name=external_asm_instance_display_name,
         external_asm_id=test_external_asm["id"])
     ```
@@ -165,7 +165,7 @@ def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=compartment_id,
+    test_external_asm_instances = oci.databasemanagement.get_external_asm_instances(compartment_id=compartment_id,
         display_name=external_asm_instance_display_name,
         external_asm_id=test_external_asm["id"])
     ```

@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityPropagationTrusts = oci.Identity.getDomainsIdentityPropagationTrusts({
+ * const testIdentityPropagationTrusts = oci.identity.getDomainsIdentityPropagationTrusts({
  *     idcsEndpoint: testDomain.url,
- *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
+ *     identityPropagationTrustCount: Number(identityPropagationTrustIdentityPropagationTrustCount),
  *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
- *     startIndex: identityPropagationTrustStartIndex,
+ *     startIndex: Number(identityPropagationTrustStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsIdentityPropagationTrustsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityPropagationTrusts = oci.Identity.getDomainsIdentityPropagationTrusts({
+ * const testIdentityPropagationTrusts = oci.identity.getDomainsIdentityPropagationTrusts({
  *     idcsEndpoint: testDomain.url,
- *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
+ *     identityPropagationTrustCount: Number(identityPropagationTrustIdentityPropagationTrustCount),
  *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
- *     startIndex: identityPropagationTrustStartIndex,
+ *     startIndex: Number(identityPropagationTrustStartIndex),
  * });
  * ```
  */

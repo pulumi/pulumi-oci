@@ -170,7 +170,7 @@ def get_workspace_tasks(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+    test_workspace_tasks = oci.dataintegration.get_workspace_tasks(workspace_id=test_workspace["id"],
         fields=workspace_task_fields,
         folder_id=test_folder["id"],
         identifiers=workspace_task_identifier,
@@ -231,7 +231,7 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[_
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+    test_workspace_tasks = oci.dataintegration.get_workspace_tasks(workspace_id=test_workspace["id"],
         fields=workspace_task_fields,
         folder_id=test_folder["id"],
         identifiers=workspace_task_identifier,

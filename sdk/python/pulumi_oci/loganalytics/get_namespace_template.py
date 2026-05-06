@@ -274,7 +274,7 @@ def get_namespace_template(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_template = oci.LogAnalytics.get_namespace_template(namespace=namespace_template_namespace,
+    test_namespace_template = oci.loganalytics.get_namespace_template(namespace=namespace_template_namespace,
         template_id=test_template["id"])
     ```
 
@@ -322,7 +322,7 @@ def get_namespace_template_output(namespace: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_template = oci.LogAnalytics.get_namespace_template(namespace=namespace_template_namespace,
+    test_namespace_template = oci.loganalytics.get_namespace_template(namespace=namespace_template_namespace,
         template_id=test_template["id"])
     ```
 

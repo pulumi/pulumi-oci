@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
+ * const testExternalDatabases = oci.databasemanagement.getExternalDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalDatabaseDisplayName,
  *     externalDatabaseId: testExternalDatabase.id,
@@ -95,7 +95,7 @@ export interface GetExternalDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
+ * const testExternalDatabases = oci.databasemanagement.getExternalDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalDatabaseDisplayName,
  *     externalDatabaseId: testExternalDatabase.id,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
+ * const testNamespacePropertiesMetadata = oci.loganalytics.getNamespacePropertiesMetadata({
  *     namespace: namespacePropertiesMetadataNamespace,
  *     constraints: namespacePropertiesMetadataConstraints,
  *     displayText: namespacePropertiesMetadataDisplayText,
@@ -101,7 +101,7 @@ export interface GetNamespacePropertiesMetadataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
+ * const testNamespacePropertiesMetadata = oci.loganalytics.getNamespacePropertiesMetadata({
  *     namespace: namespacePropertiesMetadataNamespace,
  *     constraints: namespacePropertiesMetadataConstraints,
  *     displayText: namespacePropertiesMetadataDisplayText,

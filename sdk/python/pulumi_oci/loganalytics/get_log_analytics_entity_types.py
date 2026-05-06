@@ -144,7 +144,7 @@ def get_log_analytics_entity_types(cloud_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_types = oci.LogAnalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
+    test_log_analytics_entity_types = oci.loganalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
         cloud_type=log_analytics_entity_type_cloud_type,
         name=log_analytics_entity_type_name,
         name_contains=log_analytics_entity_type_name_contains,
@@ -195,7 +195,7 @@ def get_log_analytics_entity_types_output(cloud_type: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_types = oci.LogAnalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
+    test_log_analytics_entity_types = oci.loganalytics.get_log_analytics_entity_types(namespace=log_analytics_entity_type_namespace,
         cloud_type=log_analytics_entity_type_cloud_type,
         name=log_analytics_entity_type_name,
         name_contains=log_analytics_entity_type_name_contains,

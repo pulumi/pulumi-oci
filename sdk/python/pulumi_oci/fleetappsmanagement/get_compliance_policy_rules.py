@@ -151,7 +151,7 @@ def get_compliance_policy_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy_rules = oci.FleetAppsManagement.get_compliance_policy_rules(compartment_id=compartment_id,
+    test_compliance_policy_rules = oci.fleetappsmanagement.get_compliance_policy_rules(compartment_id=compartment_id,
         compliance_policy_id=test_compliance_policy["id"],
         display_name=compliance_policy_rule_display_name,
         id=compliance_policy_rule_id,
@@ -206,7 +206,7 @@ def get_compliance_policy_rules_output(compartment_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy_rules = oci.FleetAppsManagement.get_compliance_policy_rules(compartment_id=compartment_id,
+    test_compliance_policy_rules = oci.fleetappsmanagement.get_compliance_policy_rules(compartment_id=compartment_id,
         compliance_policy_id=test_compliance_policy["id"],
         display_name=compliance_policy_rule_display_name,
         id=compliance_policy_rule_id,

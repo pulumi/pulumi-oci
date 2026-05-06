@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.Audit.getEvents({
+ * const testAuditEvents = oci.audit.getEvents({
  *     compartmentId: compartmentId,
  *     endTime: auditEventEndTime,
  *     startTime: auditEventStartTime,
@@ -90,7 +90,7 @@ export interface GetEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditEvents = oci.Audit.getEvents({
+ * const testAuditEvents = oci.audit.getEvents({
  *     compartmentId: compartmentId,
  *     endTime: auditEventEndTime,
  *     startTime: auditEventStartTime,

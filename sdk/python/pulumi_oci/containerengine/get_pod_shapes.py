@@ -118,7 +118,7 @@ def get_pod_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=compartment_id,
+    test_pod_shapes = oci.containerengine.get_pod_shapes(compartment_id=compartment_id,
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```
@@ -159,7 +159,7 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=compartment_id,
+    test_pod_shapes = oci.containerengine.get_pod_shapes(compartment_id=compartment_id,
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```

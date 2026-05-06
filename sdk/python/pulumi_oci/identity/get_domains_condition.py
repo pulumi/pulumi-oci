@@ -358,7 +358,7 @@ def get_domains_condition(attribute_sets: Optional[Sequence[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_condition = oci.Identity.get_domains_condition(condition_id=test_condition_oci_identity_domains_condition["id"],
+    test_condition = oci.identity.get_domains_condition(condition_id=test_condition_oci_identity_domains_condition["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -429,7 +429,7 @@ def get_domains_condition_output(attribute_sets: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_condition = oci.Identity.get_domains_condition(condition_id=test_condition_oci_identity_domains_condition["id"],
+    test_condition = oci.identity.get_domains_condition(condition_id=test_condition_oci_identity_domains_condition["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

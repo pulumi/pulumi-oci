@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testBdsInstanceNodeReplaceConfiguration = new oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
- *     durationInMinutes: bdsInstanceNodeReplaceConfigurationDurationInMinutes,
+ *     durationInMinutes: Number(bdsInstanceNodeReplaceConfigurationDurationInMinutes),
  *     levelTypeDetails: {
  *         levelType: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType,
  *         nodeHostName: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeHostName,

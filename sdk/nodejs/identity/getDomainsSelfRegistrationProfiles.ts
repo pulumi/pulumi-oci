@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSelfRegistrationProfiles = oci.Identity.getDomainsSelfRegistrationProfiles({
+ * const testSelfRegistrationProfiles = oci.identity.getDomainsSelfRegistrationProfiles({
  *     idcsEndpoint: testDomain.url,
- *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
+ *     selfRegistrationProfileCount: Number(selfRegistrationProfileSelfRegistrationProfileCount),
  *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: selfRegistrationProfileAuthorization,
  *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
- *     startIndex: selfRegistrationProfileStartIndex,
+ *     startIndex: Number(selfRegistrationProfileStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSelfRegistrationProfiles = oci.Identity.getDomainsSelfRegistrationProfiles({
+ * const testSelfRegistrationProfiles = oci.identity.getDomainsSelfRegistrationProfiles({
  *     idcsEndpoint: testDomain.url,
- *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
+ *     selfRegistrationProfileCount: Number(selfRegistrationProfileSelfRegistrationProfileCount),
  *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: selfRegistrationProfileAuthorization,
  *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
- *     startIndex: selfRegistrationProfileStartIndex,
+ *     startIndex: Number(selfRegistrationProfileStartIndex),
  * });
  * ```
  */

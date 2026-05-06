@@ -95,7 +95,7 @@ def get_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=compartment_id)
+    test_load_balancer_shapes = oci.loadbalancer.get_shapes(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=compartment_id)
+    test_load_balancer_shapes = oci.loadbalancer.get_shapes(compartment_id=compartment_id)
     ```
 
 

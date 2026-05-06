@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceDevices = oci.Core.getInstanceDevices({
+ * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable,
+ *     isAvailable: instanceDeviceIsAvailable === "true",
  *     name: instanceDeviceName,
  * });
  * ```
@@ -87,9 +87,9 @@ export interface GetInstanceDevicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceDevices = oci.Core.getInstanceDevices({
+ * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable,
+ *     isAvailable: instanceDeviceIsAvailable === "true",
  *     name: instanceDeviceName,
  * });
  * ```

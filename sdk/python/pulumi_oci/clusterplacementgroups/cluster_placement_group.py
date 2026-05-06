@@ -514,7 +514,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            opc_dry_run=cluster_placement_group_opc_dry_run,
+            opc_dry_run=cluster_placement_group_opc_dry_run == "true",
             placement_instruction={
                 "type": cluster_placement_group_placement_instruction_type,
                 "value": cluster_placement_group_placement_instruction_value,
@@ -586,7 +586,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            opc_dry_run=cluster_placement_group_opc_dry_run,
+            opc_dry_run=cluster_placement_group_opc_dry_run == "true",
             placement_instruction={
                 "type": cluster_placement_group_placement_instruction_type,
                 "value": cluster_placement_group_placement_instruction_value,

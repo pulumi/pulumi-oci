@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DatabaseMigration.getConnections({
+ * const testConnections = oci.databasemigration.getConnections({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionConnectionType,
  *     displayName: connectionDisplayName,
@@ -128,7 +128,7 @@ export interface GetConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DatabaseMigration.getConnections({
+ * const testConnections = oci.databasemigration.getConnections({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionConnectionType,
  *     displayName: connectionDisplayName,

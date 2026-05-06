@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     },
  *     relationType: sensitiveDataModelReferentialRelationRelationType,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
- *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive,
+ *     isSensitive: sensitiveDataModelReferentialRelationIsSensitive === "true",
  * });
  * ```
  *

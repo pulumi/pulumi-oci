@@ -113,7 +113,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.Ons.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ons.get_subscriptions(compartment_id=compartment_id,
         topic_id=test_notification_topic["id"])
     ```
 
@@ -151,7 +151,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.Ons.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ons.get_subscriptions(compartment_id=compartment_id,
         topic_id=test_notification_topic["id"])
     ```
 

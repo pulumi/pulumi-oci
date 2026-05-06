@@ -326,7 +326,7 @@ def get_domains_mapped_attribute(attribute_sets: Optional[Sequence[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_mapped_attribute = oci.Identity.get_domains_mapped_attribute(idcs_endpoint=test_domain["url"],
+    test_mapped_attribute = oci.identity.get_domains_mapped_attribute(idcs_endpoint=test_domain["url"],
         mapped_attribute_id=test_mapped_attribute_oci_identity_domains_mapped_attribute["id"],
         attribute_sets=["all"],
         attributes="",
@@ -395,7 +395,7 @@ def get_domains_mapped_attribute_output(attribute_sets: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_mapped_attribute = oci.Identity.get_domains_mapped_attribute(idcs_endpoint=test_domain["url"],
+    test_mapped_attribute = oci.identity.get_domains_mapped_attribute(idcs_endpoint=test_domain["url"],
         mapped_attribute_id=test_mapped_attribute_oci_identity_domains_mapped_attribute["id"],
         attribute_sets=["all"],
         attributes="",

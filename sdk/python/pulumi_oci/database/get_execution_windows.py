@@ -137,7 +137,7 @@ def get_execution_windows(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_windows = oci.Database.get_execution_windows(compartment_id=compartment_id,
+    test_execution_windows = oci.database.get_execution_windows(compartment_id=compartment_id,
         display_name=execution_window_display_name,
         execution_resource_id=test_resource["id"],
         state=execution_window_state)
@@ -183,7 +183,7 @@ def get_execution_windows_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_windows = oci.Database.get_execution_windows(compartment_id=compartment_id,
+    test_execution_windows = oci.database.get_execution_windows(compartment_id=compartment_id,
         display_name=execution_window_display_name,
         execution_resource_id=test_resource["id"],
         state=execution_window_state)

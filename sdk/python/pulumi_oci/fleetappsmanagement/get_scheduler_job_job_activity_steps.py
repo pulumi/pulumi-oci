@@ -151,7 +151,7 @@ def get_scheduler_job_job_activity_steps(filters: Optional[Sequence[Union['GetSc
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_job_activity_steps = oci.FleetAppsManagement.get_scheduler_job_job_activity_steps(job_activity_id=test_job_activity["id"],
+    test_scheduler_job_job_activity_steps = oci.fleetappsmanagement.get_scheduler_job_job_activity_steps(job_activity_id=test_job_activity["id"],
         scheduler_job_id=test_job["id"],
         resource_task_id=test_resource_task["id"],
         sequence=scheduler_job_job_activity_step_sequence,
@@ -207,7 +207,7 @@ def get_scheduler_job_job_activity_steps_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_job_activity_steps = oci.FleetAppsManagement.get_scheduler_job_job_activity_steps(job_activity_id=test_job_activity["id"],
+    test_scheduler_job_job_activity_steps = oci.fleetappsmanagement.get_scheduler_job_job_activity_steps(job_activity_id=test_job_activity["id"],
         scheduler_job_id=test_job["id"],
         resource_task_id=test_resource_task["id"],
         sequence=scheduler_job_job_activity_step_sequence,

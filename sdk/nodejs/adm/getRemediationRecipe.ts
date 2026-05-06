@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRecipe = oci.Adm.getRemediationRecipe({
+ * const testRemediationRecipe = oci.adm.getRemediationRecipe({
  *     remediationRecipeId: testRemediationRecipeOciAdmRemediationRecipe.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetRemediationRecipeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRecipe = oci.Adm.getRemediationRecipe({
+ * const testRemediationRecipe = oci.adm.getRemediationRecipe({
  *     remediationRecipeId: testRemediationRecipeOciAdmRemediationRecipe.id,
  * });
  * ```

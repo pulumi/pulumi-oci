@@ -175,9 +175,9 @@ def get_audit_event_analytic(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=compartment_id,
+    test_audit_event_analytic = oci.datasafe.get_audit_event_analytic(compartment_id=compartment_id,
         access_level=audit_event_analytic_access_level,
-        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_event_analytic_group_by,
         query_time_zone=audit_event_analytic_query_time_zone,
         scim_query=audit_event_analytic_scim_query,
@@ -250,9 +250,9 @@ def get_audit_event_analytic_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event_analytic = oci.DataSafe.get_audit_event_analytic(compartment_id=compartment_id,
+    test_audit_event_analytic = oci.datasafe.get_audit_event_analytic(compartment_id=compartment_id,
         access_level=audit_event_analytic_access_level,
-        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_analytic_compartment_id_in_subtree == "true",
         group_bies=audit_event_analytic_group_by,
         query_time_zone=audit_event_analytic_query_time_zone,
         scim_query=audit_event_analytic_scim_query,

@@ -134,7 +134,7 @@ def get_subscribed_services(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=compartment_id,
+    test_subscribed_services = oci.onesubsription.get_subscribed_services(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         order_line_id=test_order_line["id"],
         status=subscribed_service_status)
@@ -180,7 +180,7 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=compartment_id,
+    test_subscribed_services = oci.onesubsription.get_subscribed_services(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         order_line_id=test_order_line["id"],
         status=subscribed_service_status)

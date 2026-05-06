@@ -95,7 +95,7 @@ def get_job_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_shapes = oci.DataScience.get_job_shapes(compartment_id=compartment_id)
+    test_job_shapes = oci.datascience.get_job_shapes(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_job_shapes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_job_shapes = oci.DataScience.get_job_shapes(compartment_id=compartment_id)
+    test_job_shapes = oci.datascience.get_job_shapes(compartment_id=compartment_id)
     ```
 
 

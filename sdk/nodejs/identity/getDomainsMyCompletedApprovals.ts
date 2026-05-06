@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCompletedApprovals = oci.Identity.getDomainsMyCompletedApprovals({
+ * const testMyCompletedApprovals = oci.identity.getDomainsMyCompletedApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
+ *     myCompletedApprovalCount: Number(myCompletedApprovalMyCompletedApprovalCount),
  *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
  *     authorization: myCompletedApprovalAuthorization,
  *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
- *     startIndex: myCompletedApprovalStartIndex,
+ *     startIndex: Number(myCompletedApprovalStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyCompletedApprovalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyCompletedApprovals = oci.Identity.getDomainsMyCompletedApprovals({
+ * const testMyCompletedApprovals = oci.identity.getDomainsMyCompletedApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
+ *     myCompletedApprovalCount: Number(myCompletedApprovalMyCompletedApprovalCount),
  *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
  *     authorization: myCompletedApprovalAuthorization,
  *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
- *     startIndex: myCompletedApprovalStartIndex,
+ *     startIndex: Number(myCompletedApprovalStartIndex),
  * });
  * ```
  */

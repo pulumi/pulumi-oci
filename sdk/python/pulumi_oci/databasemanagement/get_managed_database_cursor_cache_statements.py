@@ -128,7 +128,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[Unio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+    test_managed_database_cursor_cache_statements = oci.databasemanagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
@@ -172,7 +172,7 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+    test_managed_database_cursor_cache_statements = oci.databasemanagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```

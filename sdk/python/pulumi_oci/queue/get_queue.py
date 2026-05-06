@@ -294,7 +294,7 @@ def get_queue(queue_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
+    test_queue = oci.queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
     ```
 
 
@@ -340,7 +340,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queue = oci.Queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
+    test_queue = oci.queue.get_queue(queue_id=test_queue_oci_queue_queue["id"])
     ```
 
 

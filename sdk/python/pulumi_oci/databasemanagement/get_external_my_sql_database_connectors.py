@@ -111,7 +111,7 @@ def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connectors = oci.DatabaseManagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
+    test_external_my_sql_database_connectors = oci.databasemanagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
         name=external_my_sql_database_connector_name)
     ```
 
@@ -147,7 +147,7 @@ def get_external_my_sql_database_connectors_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database_connectors = oci.DatabaseManagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
+    test_external_my_sql_database_connectors = oci.databasemanagement.get_external_my_sql_database_connectors(compartment_id=compartment_id,
         name=external_my_sql_database_connector_name)
     ```
 

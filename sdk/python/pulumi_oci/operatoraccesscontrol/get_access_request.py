@@ -516,7 +516,7 @@ def get_access_request(access_request_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
+    test_access_request = oci.operatoraccesscontrol.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
     ```
 
 
@@ -580,7 +580,7 @@ def get_access_request_output(access_request_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
+    test_access_request = oci.operatoraccesscontrol.get_access_request(access_request_id=test_access_request_oci_operator_access_control_access_request["id"])
     ```
 
 

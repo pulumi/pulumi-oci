@@ -482,7 +482,7 @@ def get_domains_identity_propagation_trust(attribute_sets: Optional[Sequence[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trust = oci.Identity.get_domains_identity_propagation_trust(idcs_endpoint=test_domain["url"],
+    test_identity_propagation_trust = oci.identity.get_domains_identity_propagation_trust(idcs_endpoint=test_domain["url"],
         identity_propagation_trust_id=test_identity_propagation_trust_oci_identity_domains_identity_propagation_trust["id"],
         attribute_sets=["all"],
         attributes="",
@@ -564,7 +564,7 @@ def get_domains_identity_propagation_trust_output(attribute_sets: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trust = oci.Identity.get_domains_identity_propagation_trust(idcs_endpoint=test_domain["url"],
+    test_identity_propagation_trust = oci.identity.get_domains_identity_propagation_trust(idcs_endpoint=test_domain["url"],
         identity_propagation_trust_id=test_identity_propagation_trust_oci_identity_domains_identity_propagation_trust["id"],
         attribute_sets=["all"],
         attributes="",

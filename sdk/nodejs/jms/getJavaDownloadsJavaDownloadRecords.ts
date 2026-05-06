@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
+ * const testJavaDownloadRecords = oci.jms.getJavaDownloadsJavaDownloadRecords({
  *     compartmentId: compartmentId,
  *     architecture: javaDownloadRecordArchitecture,
  *     familyVersion: javaDownloadRecordFamilyVersion,
@@ -135,7 +135,7 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
+ * const testJavaDownloadRecords = oci.jms.getJavaDownloadsJavaDownloadRecords({
  *     compartmentId: compartmentId,
  *     architecture: javaDownloadRecordArchitecture,
  *     familyVersion: javaDownloadRecordFamilyVersion,

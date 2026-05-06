@@ -104,7 +104,7 @@ def get_external_my_sql_database(external_my_sql_database_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database = oci.DatabaseManagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
+    test_external_my_sql_database = oci.databasemanagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
     ```
 
 
@@ -134,7 +134,7 @@ def get_external_my_sql_database_output(external_my_sql_database_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_my_sql_database = oci.DatabaseManagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
+    test_external_my_sql_database = oci.databasemanagement.get_external_my_sql_database(external_my_sql_database_id=test_external_my_sql_database_oci_database_management_external_my_sql_database["id"])
     ```
 
 

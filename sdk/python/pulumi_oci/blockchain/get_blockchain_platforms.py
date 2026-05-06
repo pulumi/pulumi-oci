@@ -124,7 +124,7 @@ def get_blockchain_platforms(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platforms = oci.Blockchain.get_blockchain_platforms(compartment_id=compartment_id,
+    test_blockchain_platforms = oci.blockchain.get_blockchain_platforms(compartment_id=compartment_id,
         display_name=blockchain_platform_display_name,
         state=blockchain_platform_state)
     ```
@@ -165,7 +165,7 @@ def get_blockchain_platforms_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platforms = oci.Blockchain.get_blockchain_platforms(compartment_id=compartment_id,
+    test_blockchain_platforms = oci.blockchain.get_blockchain_platforms(compartment_id=compartment_id,
         display_name=blockchain_platform_display_name,
         state=blockchain_platform_state)
     ```

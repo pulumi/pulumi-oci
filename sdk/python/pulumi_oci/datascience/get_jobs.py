@@ -151,7 +151,7 @@ def get_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.DataScience.get_jobs(compartment_id=compartment_id,
+    test_jobs = oci.datascience.get_jobs(compartment_id=compartment_id,
         created_by=job_created_by,
         display_name=job_display_name,
         id=job_id,
@@ -206,7 +206,7 @@ def get_jobs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.DataScience.get_jobs(compartment_id=compartment_id,
+    test_jobs = oci.datascience.get_jobs(compartment_id=compartment_id,
         created_by=job_created_by,
         display_name=job_display_name,
         id=job_id,

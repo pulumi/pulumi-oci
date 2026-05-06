@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKeys = oci.Identity.getDomainsCustomerSecretKeys({
+ * const testCustomerSecretKeys = oci.identity.getDomainsCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     customerSecretKeyCount: customerSecretKeyCustomerSecretKeyCount,
+ *     customerSecretKeyCount: Number(customerSecretKeyCustomerSecretKeyCount),
  *     customerSecretKeyFilter: customerSecretKeyCustomerSecretKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: customerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: customerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: customerSecretKeyStartIndex,
+ *     startIndex: Number(customerSecretKeyStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsCustomerSecretKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKeys = oci.Identity.getDomainsCustomerSecretKeys({
+ * const testCustomerSecretKeys = oci.identity.getDomainsCustomerSecretKeys({
  *     idcsEndpoint: testDomain.url,
- *     customerSecretKeyCount: customerSecretKeyCustomerSecretKeyCount,
+ *     customerSecretKeyCount: Number(customerSecretKeyCustomerSecretKeyCount),
  *     customerSecretKeyFilter: customerSecretKeyCustomerSecretKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: customerSecretKeyAuthorization,
  *     resourceTypeSchemaVersion: customerSecretKeyResourceTypeSchemaVersion,
- *     startIndex: customerSecretKeyStartIndex,
+ *     startIndex: Number(customerSecretKeyStartIndex),
  * });
  * ```
  */

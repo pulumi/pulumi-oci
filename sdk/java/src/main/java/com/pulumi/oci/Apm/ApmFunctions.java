@@ -37,8 +37,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -79,8 +79,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -121,8 +121,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -163,8 +163,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -205,8 +205,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -247,8 +247,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -291,8 +291,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -335,8 +335,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -379,8 +379,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -423,8 +423,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -468,8 +468,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -512,8 +512,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -556,8 +556,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -600,8 +600,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -644,8 +644,8 @@ public final class ApmFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Apm.ApmFunctions;
      * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

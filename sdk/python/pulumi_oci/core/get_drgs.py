@@ -98,7 +98,7 @@ def get_drgs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drgs = oci.Core.get_drgs(compartment_id=compartment_id)
+    test_drgs = oci.core.get_drgs(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_drgs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_drgs = oci.Core.get_drgs(compartment_id=compartment_id)
+    test_drgs = oci.core.get_drgs(compartment_id=compartment_id)
     ```
 
 

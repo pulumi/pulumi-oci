@@ -109,7 +109,7 @@ def get_software_source_vendors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
+    test_software_source_vendors = oci.osmanagementhub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
 
@@ -146,7 +146,7 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
+    test_software_source_vendors = oci.osmanagementhub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
 

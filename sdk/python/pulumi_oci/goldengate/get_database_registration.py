@@ -378,7 +378,7 @@ def get_database_registration(database_registration_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
+    test_database_registration = oci.goldengate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
     ```
 
 
@@ -432,7 +432,7 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
+    test_database_registration = oci.goldengate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
     ```
 
 

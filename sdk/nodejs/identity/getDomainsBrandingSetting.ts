@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBrandingSetting = oci.Identity.getDomainsBrandingSetting({
+ * const testBrandingSetting = oci.identity.getDomainsBrandingSetting({
  *     brandingSettingId: "BrandingSettings",
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -215,7 +215,7 @@ export interface GetDomainsBrandingSettingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBrandingSetting = oci.Identity.getDomainsBrandingSetting({
+ * const testBrandingSetting = oci.identity.getDomainsBrandingSetting({
  *     brandingSettingId: "BrandingSettings",
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

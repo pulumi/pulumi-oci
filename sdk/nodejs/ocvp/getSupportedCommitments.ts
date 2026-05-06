@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
+ * const testSupportedCommitments = oci.ocvp.getSupportedCommitments({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  * });
@@ -74,7 +74,7 @@ export interface GetSupportedCommitmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
+ * const testSupportedCommitments = oci.ocvp.getSupportedCommitments({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  * });

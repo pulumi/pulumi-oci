@@ -157,9 +157,9 @@ def get_managed_database_alert_log_count(group_by: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_alert_log_count = oci.DatabaseManagement.get_managed_database_alert_log_count(managed_database_id=test_managed_database["id"],
+    test_managed_database_alert_log_count = oci.databasemanagement.get_managed_database_alert_log_count(managed_database_id=test_managed_database["id"],
         group_by=managed_database_alert_log_count_group_by,
-        is_regular_expression=managed_database_alert_log_count_is_regular_expression,
+        is_regular_expression=managed_database_alert_log_count_is_regular_expression == "true",
         level_filter=managed_database_alert_log_count_level_filter,
         log_search_text=managed_database_alert_log_count_log_search_text,
         time_greater_than_or_equal_to=managed_database_alert_log_count_time_greater_than_or_equal_to,
@@ -220,9 +220,9 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_alert_log_count = oci.DatabaseManagement.get_managed_database_alert_log_count(managed_database_id=test_managed_database["id"],
+    test_managed_database_alert_log_count = oci.databasemanagement.get_managed_database_alert_log_count(managed_database_id=test_managed_database["id"],
         group_by=managed_database_alert_log_count_group_by,
-        is_regular_expression=managed_database_alert_log_count_is_regular_expression,
+        is_regular_expression=managed_database_alert_log_count_is_regular_expression == "true",
         level_filter=managed_database_alert_log_count_level_filter,
         log_search_text=managed_database_alert_log_count_log_search_text,
         time_greater_than_or_equal_to=managed_database_alert_log_count_time_greater_than_or_equal_to,

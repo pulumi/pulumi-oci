@@ -177,7 +177,7 @@ def get_generic_artifacts(artifact_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+    test_generic_artifacts = oci.artifacts.get_generic_artifacts(compartment_id=compartment_id,
         repository_id=test_repository["id"],
         artifact_path=generic_artifact_artifact_path,
         display_name=generic_artifact_display_name,
@@ -242,7 +242,7 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+    test_generic_artifacts = oci.artifacts.get_generic_artifacts(compartment_id=compartment_id,
         repository_id=test_repository["id"],
         artifact_path=generic_artifact_artifact_path,
         display_name=generic_artifact_display_name,

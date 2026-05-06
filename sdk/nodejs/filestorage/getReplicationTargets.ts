@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
+ * const testReplicationTargets = oci.filestorage.getReplicationTargets({
  *     availabilityDomain: replicationTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: replicationTargetDisplayName,
@@ -106,7 +106,7 @@ export interface GetReplicationTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
+ * const testReplicationTargets = oci.filestorage.getReplicationTargets({
  *     availabilityDomain: replicationTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: replicationTargetDisplayName,

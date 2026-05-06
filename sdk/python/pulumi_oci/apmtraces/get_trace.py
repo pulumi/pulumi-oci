@@ -343,7 +343,7 @@ def get_trace(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+    test_trace = oci.apmtraces.get_trace(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_trace_key,
         time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
         time_trace_started_less_than=trace_time_trace_started_less_than,
@@ -409,7 +409,7 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+    test_trace = oci.apmtraces.get_trace(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_trace_key,
         time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
         time_trace_started_less_than=trace_time_trace_started_less_than,

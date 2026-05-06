@@ -194,11 +194,11 @@ def get_alarm_suppressions(alarm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
+    test_alarm_suppressions = oci.monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_suppression_compartment_id_in_subtree,
+        compartment_id_in_subtree=alarm_suppression_compartment_id_in_subtree == "true",
         display_name=alarm_suppression_display_name,
-        is_all_suppressions=alarm_suppression_is_all_suppressions,
+        is_all_suppressions=alarm_suppression_is_all_suppressions == "true",
         level=alarm_suppression_level,
         state=alarm_suppression_state,
         target_type=alarm_suppression_target_type)
@@ -276,11 +276,11 @@ def get_alarm_suppressions_output(alarm_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
+    test_alarm_suppressions = oci.monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_suppression_compartment_id_in_subtree,
+        compartment_id_in_subtree=alarm_suppression_compartment_id_in_subtree == "true",
         display_name=alarm_suppression_display_name,
-        is_all_suppressions=alarm_suppression_is_all_suppressions,
+        is_all_suppressions=alarm_suppression_is_all_suppressions == "true",
         level=alarm_suppression_level,
         state=alarm_suppression_state,
         target_type=alarm_suppression_target_type)

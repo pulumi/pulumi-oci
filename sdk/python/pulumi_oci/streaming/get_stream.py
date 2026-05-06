@@ -203,7 +203,7 @@ def get_stream(stream_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream = oci.Streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
+    test_stream = oci.streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_stream_output(stream_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream = oci.Streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
+    test_stream = oci.streaming.get_stream(stream_id=test_stream_oci_streaming_stream["id"])
     ```
 
 

@@ -125,7 +125,7 @@ def get_stream_distribution_channels(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=compartment_id,
+    test_stream_distribution_channels = oci.mediaservices.get_stream_distribution_channels(compartment_id=compartment_id,
         display_name=stream_distribution_channel_display_name,
         id=stream_distribution_channel_id,
         state=stream_distribution_channel_state)
@@ -170,7 +170,7 @@ def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channels = oci.MediaServices.get_stream_distribution_channels(compartment_id=compartment_id,
+    test_stream_distribution_channels = oci.mediaservices.get_stream_distribution_channels(compartment_id=compartment_id,
         display_name=stream_distribution_channel_display_name,
         id=stream_distribution_channel_id,
         state=stream_distribution_channel_state)

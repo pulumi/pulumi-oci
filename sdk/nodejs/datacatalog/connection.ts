@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     typeKey: connectionTypeKey,
  *     description: connectionDescription,
  *     encProperties: connectionEncProperties,
- *     isDefault: connectionIsDefault,
+ *     isDefault: connectionIsDefault === "true",
  * });
  * ```
  *

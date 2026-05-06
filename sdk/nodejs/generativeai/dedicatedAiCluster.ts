@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDedicatedAiCluster = new oci.generativeai.DedicatedAiCluster("test_dedicated_ai_cluster", {
  *     compartmentId: compartmentId,
  *     type: dedicatedAiClusterType,
- *     unitCount: dedicatedAiClusterUnitCount,
+ *     unitCount: Number(dedicatedAiClusterUnitCount),
  *     unitShape: dedicatedAiClusterUnitShape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",

@@ -275,7 +275,7 @@ def get_external_db_node(external_db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=test_external_db_node_oci_database_management_external_db_node["id"])
+    test_external_db_node = oci.databasemanagement.get_external_db_node(external_db_node_id=test_external_db_node_oci_database_management_external_db_node["id"])
     ```
 
 
@@ -319,7 +319,7 @@ def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=test_external_db_node_oci_database_management_external_db_node["id"])
+    test_external_db_node = oci.databasemanagement.get_external_db_node(external_db_node_id=test_external_db_node_oci_database_management_external_db_node["id"])
     ```
 
 

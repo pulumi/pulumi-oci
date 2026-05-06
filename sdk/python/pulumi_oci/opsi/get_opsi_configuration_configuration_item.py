@@ -131,7 +131,7 @@ def get_opsi_configuration_configuration_item(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
+    test_opsi_configuration_configuration_item = oci.opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
         config_item_fields=opsi_configuration_configuration_item_config_item_field,
         config_items_applicable_contexts=opsi_configuration_configuration_item_config_items_applicable_context,
         name=opsi_configuration_configuration_item_name,
@@ -180,7 +180,7 @@ def get_opsi_configuration_configuration_item_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
+    test_opsi_configuration_configuration_item = oci.opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
         config_item_fields=opsi_configuration_configuration_item_config_item_field,
         config_items_applicable_contexts=opsi_configuration_configuration_item_config_items_applicable_context,
         name=opsi_configuration_configuration_item_name,

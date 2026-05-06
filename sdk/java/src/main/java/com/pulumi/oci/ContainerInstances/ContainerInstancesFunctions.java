@@ -40,8 +40,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -293,8 +293,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -336,8 +336,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -379,8 +379,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -422,8 +422,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -465,8 +465,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -508,8 +508,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -551,8 +551,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -594,8 +594,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -637,8 +637,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstanceShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -680,8 +680,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -725,8 +725,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -770,8 +770,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -815,8 +815,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -860,8 +860,8 @@ public final class ContainerInstancesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ContainerInstances.ContainerInstancesFunctions;
      * import com.pulumi.oci.ContainerInstances.inputs.GetContainerInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

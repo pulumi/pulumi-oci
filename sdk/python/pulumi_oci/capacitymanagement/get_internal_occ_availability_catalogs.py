@@ -151,7 +151,7 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+    test_internal_occ_availability_catalogs = oci.capacitymanagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         catalog_state=internal_occ_availability_catalog_catalog_state,
         display_name=internal_occ_availability_catalog_display_name,
@@ -206,7 +206,7 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+    test_internal_occ_availability_catalogs = oci.capacitymanagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
         occ_customer_group_id=test_occ_customer_group["id"],
         catalog_state=internal_occ_availability_catalog_catalog_state,
         display_name=internal_occ_availability_catalog_display_name,

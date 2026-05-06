@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * const testCloudVmClusterIormConfig = new oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config", {
  *     dbPlans: [{
  *         dbName: cloudVmClusterIormConfigDbPlansDbName,
- *         share: cloudVmClusterIormConfigDbPlansShare,
+ *         share: Number(cloudVmClusterIormConfigDbPlansShare),
  *     }],
  *     cloudVmClusterId: testCloudVmCluster.id,
  *     objective: "AUTO",

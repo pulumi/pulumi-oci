@@ -252,7 +252,7 @@ def get_chargeback_plan(chargebackplan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_chargeback_plan = oci.Opsi.get_chargeback_plan(chargebackplan_id=test_chargebackplan["id"])
+    test_chargeback_plan = oci.opsi.get_chargeback_plan(chargebackplan_id=test_chargebackplan["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_chargeback_plan_output(chargebackplan_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_chargeback_plan = oci.Opsi.get_chargeback_plan(chargebackplan_id=test_chargebackplan["id"])
+    test_chargeback_plan = oci.opsi.get_chargeback_plan(chargebackplan_id=test_chargebackplan["id"])
     ```
 
 

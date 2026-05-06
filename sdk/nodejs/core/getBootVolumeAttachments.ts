@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ * const testBootVolumeAttachments = oci.core.getBootVolumeAttachments({
  *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     bootVolumeId: testBootVolume.id,
@@ -103,7 +103,7 @@ export interface GetBootVolumeAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
+ * const testBootVolumeAttachments = oci.core.getBootVolumeAttachments({
  *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     bootVolumeId: testBootVolume.id,

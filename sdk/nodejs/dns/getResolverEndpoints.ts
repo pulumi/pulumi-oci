@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
+ * const testResolverEndpoints = oci.dns.getResolverEndpoints({
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
  *     name: resolverEndpointName,
@@ -100,7 +100,7 @@ export interface GetResolverEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
+ * const testResolverEndpoints = oci.dns.getResolverEndpoints({
  *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
  *     name: resolverEndpointName,

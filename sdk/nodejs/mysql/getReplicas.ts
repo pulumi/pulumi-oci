@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicas = oci.Mysql.getReplicas({
+ * const testReplicas = oci.mysql.getReplicas({
  *     compartmentId: compartmentId,
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate,
+ *     isUpToDate: replicaIsUpToDate === "true",
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });
@@ -124,12 +124,12 @@ export interface GetReplicasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicas = oci.Mysql.getReplicas({
+ * const testReplicas = oci.mysql.getReplicas({
  *     compartmentId: compartmentId,
  *     configurationId: testMysqlConfiguration.id,
  *     dbSystemId: testMysqlDbSystem.id,
  *     displayName: replicaDisplayName,
- *     isUpToDate: replicaIsUpToDate,
+ *     isUpToDate: replicaIsUpToDate === "true",
  *     replicaId: testReplica.id,
  *     state: replicaState,
  * });

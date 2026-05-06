@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageServer = oci.DatabaseManagement.getCloudExadataStorageServer({
+ * const testCloudExadataStorageServer = oci.databasemanagement.getCloudExadataStorageServer({
  *     cloudExadataStorageServerId: testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id,
  * });
  * ```
@@ -156,7 +156,7 @@ export interface GetCloudExadataStorageServerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataStorageServer = oci.DatabaseManagement.getCloudExadataStorageServer({
+ * const testCloudExadataStorageServer = oci.databasemanagement.getCloudExadataStorageServer({
  *     cloudExadataStorageServerId: testCloudExadataStorageServerOciDatabaseManagementCloudExadataStorageServer.id,
  * });
  * ```

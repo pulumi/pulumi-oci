@@ -145,9 +145,9 @@ def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_password_expiry_date_analytics = oci.DataSafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```
@@ -206,9 +206,9 @@ def get_user_assessment_password_expiry_date_analytics_output(access_level: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_password_expiry_date_analytics = oci.DataSafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```

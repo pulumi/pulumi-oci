@@ -168,7 +168,7 @@ def get_fleet_library_managed_instances(application_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_managed_instances = oci.Jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_library_managed_instances = oci.jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
         library_key=fleet_library_managed_instance_library_key,
         application_id=test_application["id"],
         host_name=fleet_library_managed_instance_host_name,
@@ -234,7 +234,7 @@ def get_fleet_library_managed_instances_output(application_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_managed_instances = oci.Jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
+    test_fleet_library_managed_instances = oci.jms.get_fleet_library_managed_instances(fleet_id=test_fleet["id"],
         library_key=fleet_library_managed_instance_library_key,
         application_id=test_application["id"],
         host_name=fleet_library_managed_instance_host_name,

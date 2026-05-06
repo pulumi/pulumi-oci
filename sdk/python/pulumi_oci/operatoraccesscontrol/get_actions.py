@@ -131,7 +131,7 @@ def get_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+    test_operator_actions = oci.operatoraccesscontrol.get_actions(compartment_id=compartment_id,
         name=operator_action_name,
         resource_type=operator_action_resource_type,
         state=operator_action_state)
@@ -177,7 +177,7 @@ def get_actions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+    test_operator_actions = oci.operatoraccesscontrol.get_actions(compartment_id=compartment_id,
         name=operator_action_name,
         resource_type=operator_action_resource_type,
         state=operator_action_state)

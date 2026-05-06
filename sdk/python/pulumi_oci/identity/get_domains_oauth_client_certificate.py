@@ -378,7 +378,7 @@ def get_domains_oauth_client_certificate(authorization: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+    test_oauth_client_certificate = oci.identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
         o_auth_client_certificate_id=test_certificate["id"],
         authorization=oauth_client_certificate_authorization,
         resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
@@ -443,7 +443,7 @@ def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+    test_oauth_client_certificate = oci.identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
         o_auth_client_certificate_id=test_certificate["id"],
         authorization=oauth_client_certificate_authorization,
         resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)

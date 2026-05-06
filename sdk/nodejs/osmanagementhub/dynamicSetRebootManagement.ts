@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDynamicSetRebootManagement = new oci.osmanagementhub.DynamicSetRebootManagement("test_dynamic_set_reboot_management", {
  *     dynamicSetId: testDynamicSet.id,
  *     managedInstances: dynamicSetRebootManagementManagedInstances,
- *     rebootTimeoutInMins: dynamicSetRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(dynamicSetRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: dynamicSetRebootManagementWorkRequestDetailsDescription,
  *         displayName: dynamicSetRebootManagementWorkRequestDetailsDisplayName,

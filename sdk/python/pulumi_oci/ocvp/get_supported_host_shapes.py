@@ -142,9 +142,9 @@ def get_supported_host_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=compartment_id,
+    test_supported_host_shapes = oci.ocvp.get_supported_host_shapes(compartment_id=compartment_id,
         initial_host_shape_name=test_shape["name"],
-        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported,
+        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported == "true",
         name=supported_host_shape_name)
     ```
 
@@ -192,9 +192,9 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=compartment_id,
+    test_supported_host_shapes = oci.ocvp.get_supported_host_shapes(compartment_id=compartment_id,
         initial_host_shape_name=test_shape["name"],
-        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported,
+        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported == "true",
         name=supported_host_shape_name)
     ```
 

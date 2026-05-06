@@ -156,7 +156,7 @@ def get_compute_cluster(compute_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_cluster = oci.Core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
+    test_compute_cluster = oci.core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
     ```
 
 
@@ -191,7 +191,7 @@ def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_cluster = oci.Core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
+    test_compute_cluster = oci.core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
     ```
 
 

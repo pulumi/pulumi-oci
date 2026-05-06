@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyGroups = oci.Identity.getDomainsMyGroups({
+ * const testMyGroups = oci.identity.getDomainsMyGroups({
  *     idcsEndpoint: testDomain.url,
- *     myGroupCount: myGroupMyGroupCount,
+ *     myGroupCount: Number(myGroupMyGroupCount),
  *     myGroupFilter: myGroupMyGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myGroupAuthorization,
  *     resourceTypeSchemaVersion: myGroupResourceTypeSchemaVersion,
- *     startIndex: myGroupStartIndex,
+ *     startIndex: Number(myGroupStartIndex),
  * });
  * ```
  */
@@ -137,15 +137,15 @@ export interface GetDomainsMyGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyGroups = oci.Identity.getDomainsMyGroups({
+ * const testMyGroups = oci.identity.getDomainsMyGroups({
  *     idcsEndpoint: testDomain.url,
- *     myGroupCount: myGroupMyGroupCount,
+ *     myGroupCount: Number(myGroupMyGroupCount),
  *     myGroupFilter: myGroupMyGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myGroupAuthorization,
  *     resourceTypeSchemaVersion: myGroupResourceTypeSchemaVersion,
- *     startIndex: myGroupStartIndex,
+ *     startIndex: Number(myGroupStartIndex),
  * });
  * ```
  */

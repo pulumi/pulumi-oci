@@ -452,7 +452,7 @@ class ChargebackPlan(pulumi.CustomResource):
             plan_custom_items=[{
                 "name": chargeback_plan_plan_custom_items_name,
                 "value": chargeback_plan_plan_custom_items_value,
-                "is_customizable": chargeback_plan_plan_custom_items_is_customizable,
+                "is_customizable": chargeback_plan_plan_custom_items_is_customizable == "true",
             }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -515,7 +515,7 @@ class ChargebackPlan(pulumi.CustomResource):
             plan_custom_items=[{
                 "name": chargeback_plan_plan_custom_items_name,
                 "value": chargeback_plan_plan_custom_items_value,
-                "is_customizable": chargeback_plan_plan_custom_items_is_customizable,
+                "is_customizable": chargeback_plan_plan_custom_items_is_customizable == "true",
             }],
             defined_tags={
                 "foo-namespace.bar-key": "value",

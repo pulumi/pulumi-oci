@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     dedicatedAiClusterId: testDedicatedAiCluster.id,
  *     modelId: testModel.id,
  *     contentModerationConfig: {
- *         isEnabled: endpointContentModerationConfigIsEnabled,
+ *         isEnabled: endpointContentModerationConfigIsEnabled === "true",
  *         mode: endpointContentModerationConfigMode,
  *         modelId: testModel.id,
  *     },

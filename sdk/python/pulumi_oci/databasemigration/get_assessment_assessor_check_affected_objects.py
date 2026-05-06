@@ -115,7 +115,7 @@ def get_assessment_assessor_check_affected_objects(assessment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_check_affected_objects = oci.DatabaseMigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
+    test_assessment_assessor_check_affected_objects = oci.databasemigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_affected_object_assessor_name,
         check_name=assessment_assessor_check_affected_object_check_name)
     ```
@@ -156,7 +156,7 @@ def get_assessment_assessor_check_affected_objects_output(assessment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor_check_affected_objects = oci.DatabaseMigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
+    test_assessment_assessor_check_affected_objects = oci.databasemigration.get_assessment_assessor_check_affected_objects(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_check_affected_object_assessor_name,
         check_name=assessment_assessor_check_affected_object_check_name)
     ```

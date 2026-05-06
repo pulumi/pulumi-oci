@@ -703,14 +703,14 @@ class Gateway(pulumi.CustomResource):
                 "type": gateway_response_cache_details_type,
                 "authentication_secret_id": test_secret["id"],
                 "authentication_secret_version_number": gateway_response_cache_details_authentication_secret_version_number,
-                "connect_timeout_in_ms": gateway_response_cache_details_connect_timeout_in_ms,
-                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled,
-                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled,
-                "read_timeout_in_ms": gateway_response_cache_details_read_timeout_in_ms,
-                "send_timeout_in_ms": gateway_response_cache_details_send_timeout_in_ms,
+                "connect_timeout_in_ms": int(gateway_response_cache_details_connect_timeout_in_ms),
+                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled == "true",
+                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled == "true",
+                "read_timeout_in_ms": int(gateway_response_cache_details_read_timeout_in_ms),
+                "send_timeout_in_ms": int(gateway_response_cache_details_send_timeout_in_ms),
                 "servers": [{
                     "host": gateway_response_cache_details_servers_host,
-                    "port": gateway_response_cache_details_servers_port,
+                    "port": int(gateway_response_cache_details_servers_port),
                 }],
             })
         ```
@@ -799,14 +799,14 @@ class Gateway(pulumi.CustomResource):
                 "type": gateway_response_cache_details_type,
                 "authentication_secret_id": test_secret["id"],
                 "authentication_secret_version_number": gateway_response_cache_details_authentication_secret_version_number,
-                "connect_timeout_in_ms": gateway_response_cache_details_connect_timeout_in_ms,
-                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled,
-                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled,
-                "read_timeout_in_ms": gateway_response_cache_details_read_timeout_in_ms,
-                "send_timeout_in_ms": gateway_response_cache_details_send_timeout_in_ms,
+                "connect_timeout_in_ms": int(gateway_response_cache_details_connect_timeout_in_ms),
+                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled == "true",
+                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled == "true",
+                "read_timeout_in_ms": int(gateway_response_cache_details_read_timeout_in_ms),
+                "send_timeout_in_ms": int(gateway_response_cache_details_send_timeout_in_ms),
                 "servers": [{
                     "host": gateway_response_cache_details_servers_host,
-                    "port": gateway_response_cache_details_servers_port,
+                    "port": int(gateway_response_cache_details_servers_port),
                 }],
             })
         ```

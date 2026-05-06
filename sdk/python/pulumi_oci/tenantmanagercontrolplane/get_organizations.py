@@ -98,7 +98,7 @@ def get_organizations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organizations = oci.Tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
+    test_organizations = oci.tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_organizations_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_organizations = oci.Tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
+    test_organizations = oci.tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
     ```
 
 

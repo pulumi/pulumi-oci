@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseBinaryLogInformation = oci.DatabaseManagement.getManagedMySqlDatabaseBinaryLogInformation({
+ * const testManagedMySqlDatabaseBinaryLogInformation = oci.databasemanagement.getManagedMySqlDatabaseBinaryLogInformation({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
@@ -82,7 +82,7 @@ export interface GetManagedMySqlDatabaseBinaryLogInformationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseBinaryLogInformation = oci.DatabaseManagement.getManagedMySqlDatabaseBinaryLogInformation({
+ * const testManagedMySqlDatabaseBinaryLogInformation = oci.databasemanagement.getManagedMySqlDatabaseBinaryLogInformation({
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```

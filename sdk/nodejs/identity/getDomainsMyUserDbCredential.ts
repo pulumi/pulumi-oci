@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyUserDbCredential = oci.Identity.getDomainsMyUserDbCredential({
+ * const testMyUserDbCredential = oci.identity.getDomainsMyUserDbCredential({
  *     idcsEndpoint: testDomain.url,
  *     myUserDbCredentialId: testDbCredential.id,
  *     authorization: myUserDbCredentialAuthorization,
@@ -173,7 +173,7 @@ export interface GetDomainsMyUserDbCredentialResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyUserDbCredential = oci.Identity.getDomainsMyUserDbCredential({
+ * const testMyUserDbCredential = oci.identity.getDomainsMyUserDbCredential({
  *     idcsEndpoint: testDomain.url,
  *     myUserDbCredentialId: testDbCredential.id,
  *     authorization: myUserDbCredentialAuthorization,

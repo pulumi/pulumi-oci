@@ -141,7 +141,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
+    test_repository_mirror_record = oci.devops.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
         repository_id=test_repository["id"])
     ```
 
@@ -178,7 +178,7 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
+    test_repository_mirror_record = oci.devops.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
         repository_id=test_repository["id"])
     ```
 

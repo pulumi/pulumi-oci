@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */
@@ -156,10 +156,10 @@ export interface GetMulticloudNetworkAnchorsResult {
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree,
+ *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */

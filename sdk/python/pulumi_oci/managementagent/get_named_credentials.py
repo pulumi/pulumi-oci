@@ -138,7 +138,7 @@ def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsF
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.ManagementAgent.get_named_credentials(management_agent_id=test_management_agent["id"],
+    test_named_credentials = oci.managementagent.get_named_credentials(management_agent_id=test_management_agent["id"],
         ids=[named_credential_id],
         names=[named_credential_name],
         states=[named_credential_state],
@@ -188,7 +188,7 @@ def get_named_credentials_output(filters: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.ManagementAgent.get_named_credentials(management_agent_id=test_management_agent["id"],
+    test_named_credentials = oci.managementagent.get_named_credentials(management_agent_id=test_management_agent["id"],
         ids=[named_credential_id],
         names=[named_credential_name],
         states=[named_credential_state],

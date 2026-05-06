@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSenderInvitations = oci.Tenantmanagercontrolplane.getSenderInvitations({
+ * const testSenderInvitations = oci.tenantmanagercontrolplane.getSenderInvitations({
  *     compartmentId: compartmentId,
  *     displayName: senderInvitationDisplayName,
  *     recipientTenancyId: testTenancy.id,
@@ -110,7 +110,7 @@ export interface GetSenderInvitationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSenderInvitations = oci.Tenantmanagercontrolplane.getSenderInvitations({
+ * const testSenderInvitations = oci.tenantmanagercontrolplane.getSenderInvitations({
  *     compartmentId: compartmentId,
  *     displayName: senderInvitationDisplayName,
  *     recipientTenancyId: testTenancy.id,

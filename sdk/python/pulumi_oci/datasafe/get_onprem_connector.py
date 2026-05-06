@@ -203,7 +203,7 @@ def get_onprem_connector(on_prem_connector_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connector = oci.DataSafe.get_onprem_connector(on_prem_connector_id=test_on_prem_connector_oci_data_safe_on_prem_connector["id"])
+    test_on_prem_connector = oci.datasafe.get_onprem_connector(on_prem_connector_id=test_on_prem_connector_oci_data_safe_on_prem_connector["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connector = oci.DataSafe.get_onprem_connector(on_prem_connector_id=test_on_prem_connector_oci_data_safe_on_prem_connector["id"])
+    test_on_prem_connector = oci.datasafe.get_onprem_connector(on_prem_connector_id=test_on_prem_connector_oci_data_safe_on_prem_connector["id"])
     ```
 
 

@@ -179,7 +179,7 @@ def get_windows_update(windows_update_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_update = oci.OsManagementHub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
+    test_windows_update = oci.osmanagementhub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_windows_update_output(windows_update_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_update = oci.OsManagementHub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
+    test_windows_update = oci.osmanagementhub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
     ```
 
 

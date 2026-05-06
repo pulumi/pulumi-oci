@@ -150,7 +150,7 @@ def get_analytics_instances(capacity_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=compartment_id,
+    test_analytics_instances = oci.analytics.get_analytics_instances(compartment_id=compartment_id,
         capacity_type=analytics_instance_capacity_type,
         feature_set=analytics_instance_feature_set,
         name=analytics_instance_name,
@@ -201,7 +201,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=compartment_id,
+    test_analytics_instances = oci.analytics.get_analytics_instances(compartment_id=compartment_id,
         capacity_type=analytics_instance_capacity_type,
         feature_set=analytics_instance_feature_set,
         name=analytics_instance_name,

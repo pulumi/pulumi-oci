@@ -34,10 +34,10 @@ import (
 //				AssignableDeploymentId:   pulumi.StringRef(testDeployment.Id),
 //				AssignableDeploymentType: pulumi.StringRef(connectionAssignableDeploymentType),
 //				AssignedDeploymentId:     pulumi.StringRef(testDeployment.Id),
-//				ConnectionTypes:          connectionConnectionType,
+//				ConnectionTypes:          pulumi.ToArray(connectionConnectionType),
 //				DisplayName:              pulumi.StringRef(connectionDisplayName),
 //				State:                    pulumi.StringRef(connectionState),
-//				TechnologyTypes:          connectionTechnologyType,
+//				TechnologyTypes:          pulumi.ToArray(connectionTechnologyType),
 //			}, nil)
 //			if err != nil {
 //				return err

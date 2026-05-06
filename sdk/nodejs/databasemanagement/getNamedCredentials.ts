@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
+ * const testNamedCredentials = oci.databasemanagement.getNamedCredentials({
  *     compartmentId: compartmentId,
  *     associatedResource: namedCredentialAssociatedResource,
  *     name: namedCredentialName,
@@ -110,7 +110,7 @@ export interface GetNamedCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
+ * const testNamedCredentials = oci.databasemanagement.getNamedCredentials({
  *     compartmentId: compartmentId,
  *     associatedResource: namedCredentialAssociatedResource,
  *     name: namedCredentialName,

@@ -468,7 +468,7 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request = oci.DelegateAccessControl.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request = oci.delegateaccesscontrol.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
     ```
 
 
@@ -528,7 +528,7 @@ def get_delegated_resource_access_request_output(delegated_resource_access_reque
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_request = oci.DelegateAccessControl.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
+    test_delegated_resource_access_request = oci.delegateaccesscontrol.get_delegated_resource_access_request(delegated_resource_access_request_id=test_delegated_resource_access_request_oci_delegate_access_control_delegated_resource_access_request["id"])
     ```
 
 

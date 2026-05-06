@@ -111,7 +111,7 @@ def get_tags(filters: Optional[Sequence[Union['GetTagsFilterArgs', 'GetTagsFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_tags = oci.Identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
+    test_tags = oci.identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
         state=tag_state)
     ```
 
@@ -147,7 +147,7 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetT
     import pulumi
     import pulumi_oci as oci
 
-    test_tags = oci.Identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
+    test_tags = oci.identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
         state=tag_state)
     ```
 

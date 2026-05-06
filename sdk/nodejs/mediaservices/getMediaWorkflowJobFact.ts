@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobFact = oci.MediaServices.getMediaWorkflowJobFact({
+ * const testMediaWorkflowJobFact = oci.mediaservices.getMediaWorkflowJobFact({
  *     key: mediaWorkflowJobFactKey,
  *     mediaWorkflowJobId: testMediaWorkflowJob.id,
  * });
@@ -85,7 +85,7 @@ export interface GetMediaWorkflowJobFactResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobFact = oci.MediaServices.getMediaWorkflowJobFact({
+ * const testMediaWorkflowJobFact = oci.mediaservices.getMediaWorkflowJobFact({
  *     key: mediaWorkflowJobFactKey,
  *     mediaWorkflowJobId: testMediaWorkflowJob.id,
  * });

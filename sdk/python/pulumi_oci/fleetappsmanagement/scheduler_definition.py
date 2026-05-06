@@ -517,7 +517,7 @@ class SchedulerDefinition(pulumi.CustomResource):
                 "runbook_id": test_runbook["id"],
                 "runbook_version_name": test_runbook_version["name"],
                 "display_name": scheduler_definition_action_groups_display_name,
-                "sequence": scheduler_definition_action_groups_sequence,
+                "sequence": int(scheduler_definition_action_groups_sequence),
             }],
             compartment_id=compartment_id,
             schedule={
@@ -603,7 +603,7 @@ class SchedulerDefinition(pulumi.CustomResource):
                 "runbook_id": test_runbook["id"],
                 "runbook_version_name": test_runbook_version["name"],
                 "display_name": scheduler_definition_action_groups_display_name,
-                "sequence": scheduler_definition_action_groups_sequence,
+                "sequence": int(scheduler_definition_action_groups_sequence),
             }],
             compartment_id=compartment_id,
             schedule={

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestion = oci.Identity.getDomainsSecurityQuestion({
+ * const testSecurityQuestion = oci.identity.getDomainsSecurityQuestion({
  *     idcsEndpoint: testDomain.url,
  *     securityQuestionId: testSecurityQuestionOciIdentityDomainsSecurityQuestion.id,
  *     attributeSets: ["all"],
@@ -159,7 +159,7 @@ export interface GetDomainsSecurityQuestionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityQuestion = oci.Identity.getDomainsSecurityQuestion({
+ * const testSecurityQuestion = oci.identity.getDomainsSecurityQuestion({
  *     idcsEndpoint: testDomain.url,
  *     securityQuestionId: testSecurityQuestionOciIdentityDomainsSecurityQuestion.id,
  *     attributeSets: ["all"],

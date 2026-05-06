@@ -125,7 +125,7 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
+    test_managed_my_sql_database_sql_data = oci.databasemanagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
         managed_my_sql_database_id=test_managed_my_sql_database["id"],
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)
@@ -185,7 +185,7 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
+    test_managed_my_sql_database_sql_data = oci.databasemanagement.get_managed_my_sql_database_sql_data(end_time=managed_my_sql_database_sql_data_end_time,
         managed_my_sql_database_id=test_managed_my_sql_database["id"],
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)

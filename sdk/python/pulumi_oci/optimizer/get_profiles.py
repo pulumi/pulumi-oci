@@ -124,7 +124,7 @@ def get_profiles(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+    test_profiles = oci.optimizer.get_profiles(compartment_id=compartment_id,
         name=profile_name,
         state=profile_state)
     ```
@@ -165,7 +165,7 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+    test_profiles = oci.optimizer.get_profiles(compartment_id=compartment_id,
         name=profile_name,
         state=profile_state)
     ```

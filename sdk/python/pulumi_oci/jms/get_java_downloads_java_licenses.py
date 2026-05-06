@@ -111,7 +111,7 @@ def get_java_downloads_java_licenses(display_name: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
+    test_java_licenses = oci.jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
         license_type=java_license_license_type)
     ```
 
@@ -147,7 +147,7 @@ def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
+    test_java_licenses = oci.jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
         license_type=java_license_license_type)
     ```
 

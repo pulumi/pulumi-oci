@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     actions: {
  *         actions: [{
  *             actionType: ruleActionsActionsActionType,
- *             isEnabled: ruleActionsActionsIsEnabled,
+ *             isEnabled: ruleActionsActionsIsEnabled === "true",
  *             description: ruleActionsActionsDescription,
  *             functionId: testFunction.id,
  *             streamId: testStream.id,
@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     condition: ruleCondition,
  *     displayName: ruleDisplayName,
- *     isEnabled: ruleIsEnabled,
+ *     isEnabled: ruleIsEnabled === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

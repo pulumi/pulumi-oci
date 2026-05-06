@@ -407,8 +407,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 "user_name": database_cloud_database_management_details_user_name,
                 "password_secret_id": database_cloud_database_management_details_password_secret_id,
             },
-            enable_management=database_cloud_database_management_details_enable_management,
-            port=cloud_database_management_port,
+            enable_management=database_cloud_database_management_details_enable_management == "true",
+            port=int(cloud_database_management_port),
             protocol=cloud_database_management_protocol,
             role=cloud_database_management_role,
             ssl_secret_id=test_secret["id"])
@@ -467,8 +467,8 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 "user_name": database_cloud_database_management_details_user_name,
                 "password_secret_id": database_cloud_database_management_details_password_secret_id,
             },
-            enable_management=database_cloud_database_management_details_enable_management,
-            port=cloud_database_management_port,
+            enable_management=database_cloud_database_management_details_enable_management == "true",
+            port=int(cloud_database_management_port),
             protocol=cloud_database_management_protocol,
             role=cloud_database_management_role,
             ssl_secret_id=test_secret["id"])

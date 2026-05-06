@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicGroups = oci.Identity.getDynamicGroups({
+ * const testDynamicGroups = oci.identity.getDynamicGroups({
  *     compartmentId: tenancyOcid,
  *     name: dynamicGroupName,
  *     state: dynamicGroupState,
@@ -94,7 +94,7 @@ export interface GetDynamicGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicGroups = oci.Identity.getDynamicGroups({
+ * const testDynamicGroups = oci.identity.getDynamicGroups({
  *     compartmentId: tenancyOcid,
  *     name: dynamicGroupName,
  *     state: dynamicGroupState,

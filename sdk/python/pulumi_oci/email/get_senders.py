@@ -147,7 +147,7 @@ def get_senders(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+    test_senders = oci.email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
         email_ip_pool_id=test_email_ip_pool["id"],
@@ -198,7 +198,7 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+    test_senders = oci.email.get_senders(compartment_id=compartment_id,
         domain=sender_domain,
         email_address=sender_email_address,
         email_ip_pool_id=test_email_ip_pool["id"],

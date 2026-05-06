@@ -35,7 +35,7 @@ import (
 //			_, err := mysql.GetShapes(ctx, &mysql.GetShapesArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(shapeAvailabilityDomain),
-//				IsSupportedFors:    shapeIsSupportedFor,
+//				IsSupportedFors:    pulumi.ToArray(shapeIsSupportedFor),
 //				Name:               pulumi.StringRef(shapeName),
 //			}, nil)
 //			if err != nil {

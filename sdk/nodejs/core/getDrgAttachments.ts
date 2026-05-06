@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgAttachments = oci.Core.getDrgAttachments({
+ * const testDrgAttachments = oci.core.getDrgAttachments({
  *     compartmentId: compartmentId,
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,
@@ -144,7 +144,7 @@ export interface GetDrgAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgAttachments = oci.Core.getDrgAttachments({
+ * const testDrgAttachments = oci.core.getDrgAttachments({
  *     compartmentId: compartmentId,
  *     attachmentType: drgAttachmentAttachmentType,
  *     displayName: drgAttachmentDisplayName,

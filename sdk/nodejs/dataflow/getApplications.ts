@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.DataFlow.getApplications({
+ * const testApplications = oci.dataflow.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     displayNameStartsWith: applicationDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.DataFlow.getApplications({
+ * const testApplications = oci.dataflow.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     displayNameStartsWith: applicationDisplayNameStartsWith,

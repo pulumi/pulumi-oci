@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicies = oci.Waas.getWaasPolicies({
+ * const testWaasPolicies = oci.waas.getWaasPolicies({
  *     compartmentId: compartmentId,
  *     displayNames: waasPolicyDisplayNames,
  *     ids: waasPolicyIds,
@@ -105,7 +105,7 @@ export interface GetWaasPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicies = oci.Waas.getWaasPolicies({
+ * const testWaasPolicies = oci.waas.getWaasPolicies({
  *     compartmentId: compartmentId,
  *     displayNames: waasPolicyDisplayNames,
  *     ids: waasPolicyIds,

@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  *     executionWindowId: testExecutionWindow.id,
  *     actionMembers: [{
  *         memberId: testMember.id,
- *         memberOrder: executionActionActionMembersMemberOrder,
- *         estimatedTimeInMins: executionActionActionMembersEstimatedTimeInMins,
+ *         memberOrder: Number(executionActionActionMembersMemberOrder),
+ *         estimatedTimeInMins: Number(executionActionActionMembersEstimatedTimeInMins),
  *         status: executionActionActionMembersStatus,
- *         totalTimeTakenInMins: executionActionActionMembersTotalTimeTakenInMins,
+ *         totalTimeTakenInMins: Number(executionActionActionMembersTotalTimeTakenInMins),
  *     }],
  *     actionParams: executionActionActionParams,
  *     compartmentId: compartmentId,

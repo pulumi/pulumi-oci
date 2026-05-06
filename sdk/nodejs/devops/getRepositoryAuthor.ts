@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryAuthor = oci.DevOps.getRepositoryAuthor({
+ * const testRepositoryAuthor = oci.devops.getRepositoryAuthor({
  *     repositoryId: testRepository.id,
  *     refName: repositoryAuthorRefName,
  * });
@@ -71,7 +71,7 @@ export interface GetRepositoryAuthorResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryAuthor = oci.DevOps.getRepositoryAuthor({
+ * const testRepositoryAuthor = oci.devops.getRepositoryAuthor({
  *     repositoryId: testRepository.id,
  *     refName: repositoryAuthorRefName,
  * });

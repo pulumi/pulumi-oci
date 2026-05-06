@@ -141,7 +141,7 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_available_audit_volumes = oci.datasafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
         work_request_id=test_work_request["id"],
         month_in_consideration_greater_than=audit_profile_available_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_available_audit_volume_month_in_consideration_less_than,
@@ -196,7 +196,7 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_available_audit_volumes = oci.datasafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
         work_request_id=test_work_request["id"],
         month_in_consideration_greater_than=audit_profile_available_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_available_audit_volume_month_in_consideration_less_than,

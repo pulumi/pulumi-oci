@@ -211,7 +211,7 @@ def get_target_database_peer_target_database(peer_target_database_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
+    test_target_database_peer_target_database = oci.datasafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
         target_database_id=test_target_database["id"])
     ```
 
@@ -254,7 +254,7 @@ def get_target_database_peer_target_database_output(peer_target_database_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_peer_target_database = oci.DataSafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
+    test_target_database_peer_target_database = oci.datasafe.get_target_database_peer_target_database(peer_target_database_id=test_target_database["id"],
         target_database_id=test_target_database["id"])
     ```
 

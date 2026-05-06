@@ -124,7 +124,7 @@ def get_notification_topics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+    test_notification_topics = oci.ons.get_notification_topics(compartment_id=compartment_id,
         id=notification_topic_id,
         name=notification_topic_name,
         state=notification_topic_state)
@@ -171,7 +171,7 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+    test_notification_topics = oci.ons.get_notification_topics(compartment_id=compartment_id,
         id=notification_topic_id,
         name=notification_topic_name,
         state=notification_topic_state)

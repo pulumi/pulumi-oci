@@ -1150,7 +1150,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
 
         test_approval_workflow_step = oci.identity.DomainsApprovalWorkflowStep("test_approval_workflow_step",
             idcs_endpoint=test_domain["url"],
-            order=approval_workflow_step_order,
+            order=int(approval_workflow_step_order),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"],
             type=approval_workflow_step_type,
             approvers=[{
@@ -1163,7 +1163,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
             attributes="",
             authorization=approval_workflow_step_authorization,
             id=approval_workflow_step_id,
-            minimum_approvals=approval_workflow_step_minimum_approvals,
+            minimum_approvals=int(approval_workflow_step_minimum_approvals),
             ocid=approval_workflow_step_ocid,
             resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
             tags=[{
@@ -1307,7 +1307,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
 
         test_approval_workflow_step = oci.identity.DomainsApprovalWorkflowStep("test_approval_workflow_step",
             idcs_endpoint=test_domain["url"],
-            order=approval_workflow_step_order,
+            order=int(approval_workflow_step_order),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"],
             type=approval_workflow_step_type,
             approvers=[{
@@ -1320,7 +1320,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
             attributes="",
             authorization=approval_workflow_step_authorization,
             id=approval_workflow_step_id,
-            minimum_approvals=approval_workflow_step_minimum_approvals,
+            minimum_approvals=int(approval_workflow_step_minimum_approvals),
             ocid=approval_workflow_step_ocid,
             resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
             tags=[{

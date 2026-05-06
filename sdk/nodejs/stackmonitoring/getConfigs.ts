@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigs = oci.StackMonitoring.getConfigs({
+ * const testConfigs = oci.stackmonitoring.getConfigs({
  *     compartmentId: compartmentId,
  *     displayName: configDisplayName,
  *     state: configState,
@@ -97,7 +97,7 @@ export interface GetConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigs = oci.StackMonitoring.getConfigs({
+ * const testConfigs = oci.stackmonitoring.getConfigs({
  *     compartmentId: compartmentId,
  *     displayName: configDisplayName,
  *     state: configState,

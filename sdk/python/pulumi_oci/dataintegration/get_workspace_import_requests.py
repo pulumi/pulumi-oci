@@ -154,7 +154,7 @@ def get_workspace_import_requests(filters: Optional[Sequence[Union['GetWorkspace
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+    test_workspace_import_requests = oci.dataintegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
         import_status=workspace_import_request_import_status,
         name=workspace_import_request_name,
         projection=workspace_import_request_projection,
@@ -210,7 +210,7 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+    test_workspace_import_requests = oci.dataintegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
         import_status=workspace_import_request_import_status,
         name=workspace_import_request_name,
         projection=workspace_import_request_projection,

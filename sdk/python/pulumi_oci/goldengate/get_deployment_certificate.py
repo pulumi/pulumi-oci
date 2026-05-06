@@ -318,7 +318,7 @@ def get_deployment_certificate(certificate_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+    test_deployment_certificate = oci.goldengate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
         deployment_id=test_deployment["id"])
     ```
 
@@ -370,7 +370,7 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+    test_deployment_certificate = oci.goldengate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
         deployment_id=test_deployment["id"])
     ```
 

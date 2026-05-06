@@ -107,7 +107,7 @@ def get_managed_database_user_data_access_container(managed_database_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_data_access_container = oci.databasemanagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_data_access_container_name)
     ```
@@ -145,7 +145,7 @@ def get_managed_database_user_data_access_container_output(managed_database_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_data_access_container = oci.databasemanagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_data_access_container_name)
     ```

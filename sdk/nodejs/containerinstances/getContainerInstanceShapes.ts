@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstanceShapes = oci.ContainerInstances.getContainerInstanceShapes({
+ * const testContainerInstanceShapes = oci.containerinstances.getContainerInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceShapeAvailabilityDomain,
  * });
@@ -74,7 +74,7 @@ export interface GetContainerInstanceShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstanceShapes = oci.ContainerInstances.getContainerInstanceShapes({
+ * const testContainerInstanceShapes = oci.containerinstances.getContainerInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceShapeAvailabilityDomain,
  * });

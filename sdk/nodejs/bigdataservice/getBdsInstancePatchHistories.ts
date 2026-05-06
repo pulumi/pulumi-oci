@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
+ * const testBdsInstancePatchHistories = oci.bigdataservice.getBdsInstancePatchHistories({
  *     bdsInstanceId: testBdsInstance.id,
  *     patchType: bdsInstancePatchHistoryPatchType,
  *     patchVersion: bdsInstancePatchHistoryPatchVersion,
@@ -94,7 +94,7 @@ export interface GetBdsInstancePatchHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
+ * const testBdsInstancePatchHistories = oci.bigdataservice.getBdsInstancePatchHistories({
  *     bdsInstanceId: testBdsInstance.id,
  *     patchType: bdsInstancePatchHistoryPatchType,
  *     patchVersion: bdsInstancePatchHistoryPatchVersion,

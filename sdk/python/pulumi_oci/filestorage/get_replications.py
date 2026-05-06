@@ -148,7 +148,7 @@ def get_replications(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+    test_replications = oci.filestorage.get_replications(availability_domain=replication_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_display_name,
         file_system_id=test_file_system["id"],
@@ -203,7 +203,7 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+    test_replications = oci.filestorage.get_replications(availability_domain=replication_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_display_name,
         file_system_id=test_file_system["id"],

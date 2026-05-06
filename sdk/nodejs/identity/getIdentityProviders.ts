@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getIdentityProviders({
+ * const testIdentityProviders = oci.identity.getIdentityProviders({
  *     compartmentId: tenancyOcid,
  *     protocol: identityProviderProtocol,
  *     name: identityProviderName,
@@ -110,7 +110,7 @@ export interface GetIdentityProvidersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getIdentityProviders({
+ * const testIdentityProviders = oci.identity.getIdentityProviders({
  *     compartmentId: tenancyOcid,
  *     protocol: identityProviderProtocol,
  *     name: identityProviderName,

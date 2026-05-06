@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyPendingApprovals = oci.Identity.getDomainsMyPendingApprovals({
+ * const testMyPendingApprovals = oci.identity.getDomainsMyPendingApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
+ *     myPendingApprovalCount: Number(myPendingApprovalMyPendingApprovalCount),
  *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
  *     authorization: myPendingApprovalAuthorization,
  *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
- *     startIndex: myPendingApprovalStartIndex,
+ *     startIndex: Number(myPendingApprovalStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyPendingApprovalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyPendingApprovals = oci.Identity.getDomainsMyPendingApprovals({
+ * const testMyPendingApprovals = oci.identity.getDomainsMyPendingApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
+ *     myPendingApprovalCount: Number(myPendingApprovalMyPendingApprovalCount),
  *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
  *     authorization: myPendingApprovalAuthorization,
  *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
- *     startIndex: myPendingApprovalStartIndex,
+ *     startIndex: Number(myPendingApprovalStartIndex),
  * });
  * ```
  */

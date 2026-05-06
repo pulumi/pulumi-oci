@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSets = oci.OsManagementHub.getDynamicSets({
+ * const testDynamicSets = oci.osmanagementhub.getDynamicSets({
  *     compartmentId: compartmentId,
  *     displayName: dynamicSetDisplayName,
  *     displayNameContains: dynamicSetDisplayNameContains,
@@ -95,7 +95,7 @@ export interface GetDynamicSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSets = oci.OsManagementHub.getDynamicSets({
+ * const testDynamicSets = oci.osmanagementhub.getDynamicSets({
  *     compartmentId: compartmentId,
  *     displayName: dynamicSetDisplayName,
  *     displayNameContains: dynamicSetDisplayNameContains,

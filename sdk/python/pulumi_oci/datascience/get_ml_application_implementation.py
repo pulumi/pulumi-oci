@@ -306,7 +306,7 @@ def get_ml_application_implementation(ml_application_implementation_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation = oci.DataScience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
+    test_ml_application_implementation = oci.datascience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
     ```
 
 
@@ -353,7 +353,7 @@ def get_ml_application_implementation_output(ml_application_implementation_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation = oci.DataScience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
+    test_ml_application_implementation = oci.datascience.get_ml_application_implementation(ml_application_implementation_id=test_ml_application_implementation_oci_datascience_ml_application_implementation["id"])
     ```
 
 

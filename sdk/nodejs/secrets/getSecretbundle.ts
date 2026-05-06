@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundle = oci.Secrets.getSecretbundle({
+ * const testSecretbundle = oci.secrets.getSecretbundle({
  *     secretId: testSecret.id,
  *     secretVersionName: testSecretVersion.name,
  *     stage: secretbundleStage,
@@ -117,7 +117,7 @@ export interface GetSecretbundleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecretbundle = oci.Secrets.getSecretbundle({
+ * const testSecretbundle = oci.secrets.getSecretbundle({
  *     secretId: testSecret.id,
  *     secretVersionName: testSecretVersion.name,
  *     stage: secretbundleStage,

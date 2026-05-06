@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *         namespace: usageGroupByTagNamespace,
  *         value: usageGroupByTagValue,
  *     }],
- *     isAggregateByTime: usageIsAggregateByTime,
+ *     isAggregateByTime: usageIsAggregateByTime === "true",
  *     queryType: usageQueryType,
  * });
  * ```

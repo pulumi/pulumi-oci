@@ -35,7 +35,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(enterpriseManagerBridgeCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(enterpriseManagerBridgeDisplayName),
 //				Id:                     pulumi.StringRef(enterpriseManagerBridgeId),
-//				States:                 enterpriseManagerBridgeState,
+//				States:                 pulumi.ToArray(enterpriseManagerBridgeState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -131,7 +131,7 @@ def get_pipeline_schema_tables(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schema_tables = oci.GoldenGate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
+    test_pipeline_schema_tables = oci.goldengate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
         source_schema_name=pipeline_schema_table_source_schema_name,
         target_schema_name=pipeline_schema_table_target_schema_name,
         display_name=pipeline_schema_table_display_name)
@@ -177,7 +177,7 @@ def get_pipeline_schema_tables_output(display_name: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schema_tables = oci.GoldenGate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
+    test_pipeline_schema_tables = oci.goldengate.get_pipeline_schema_tables(pipeline_id=test_pipeline["id"],
         source_schema_name=pipeline_schema_table_source_schema_name,
         target_schema_name=pipeline_schema_table_target_schema_name,
         display_name=pipeline_schema_table_display_name)

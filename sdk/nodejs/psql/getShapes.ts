@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Psql.getShapes({
+ * const testShapes = oci.psql.getShapes({
  *     compartmentId: compartmentId,
  *     id: shapeId,
  * });
@@ -74,7 +74,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Psql.getShapes({
+ * const testShapes = oci.psql.getShapes({
  *     compartmentId: compartmentId,
  *     id: shapeId,
  * });

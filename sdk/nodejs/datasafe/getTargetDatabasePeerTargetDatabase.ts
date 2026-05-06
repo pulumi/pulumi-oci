@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasePeerTargetDatabase = oci.DataSafe.getTargetDatabasePeerTargetDatabase({
+ * const testTargetDatabasePeerTargetDatabase = oci.datasafe.getTargetDatabasePeerTargetDatabase({
  *     peerTargetDatabaseId: testTargetDatabase.id,
  *     targetDatabaseId: testTargetDatabase.id,
  * });
@@ -108,7 +108,7 @@ export interface GetTargetDatabasePeerTargetDatabaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasePeerTargetDatabase = oci.DataSafe.getTargetDatabasePeerTargetDatabase({
+ * const testTargetDatabasePeerTargetDatabase = oci.datasafe.getTargetDatabasePeerTargetDatabase({
  *     peerTargetDatabaseId: testTargetDatabase.id,
  *     targetDatabaseId: testTargetDatabase.id,
  * });

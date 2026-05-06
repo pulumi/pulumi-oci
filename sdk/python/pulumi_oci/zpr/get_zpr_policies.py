@@ -124,7 +124,7 @@ def get_zpr_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policies = oci.Zpr.get_zpr_policies(compartment_id=tenancy_ocid,
+    test_zpr_policies = oci.zpr.get_zpr_policies(compartment_id=tenancy_ocid,
         name=zpr_policy_name,
         state=zpr_policy_state)
     ```
@@ -165,7 +165,7 @@ def get_zpr_policies_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_zpr_policies = oci.Zpr.get_zpr_policies(compartment_id=tenancy_ocid,
+    test_zpr_policies = oci.zpr.get_zpr_policies(compartment_id=tenancy_ocid,
         name=zpr_policy_name,
         state=zpr_policy_state)
     ```

@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceActions = oci.Optimizer.getResourceActions({
+ * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeOrganization: resourceActionIncludeOrganization === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -167,12 +167,12 @@ export interface GetResourceActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceActions = oci.Optimizer.getResourceActions({
+ * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeOrganization: resourceActionIncludeOrganization === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,

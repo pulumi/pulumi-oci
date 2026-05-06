@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getSmtpCredentials({
  *     userId: testUser.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetSmtpCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getSmtpCredentials({
  *     userId: testUser.id,
  * });
  * ```

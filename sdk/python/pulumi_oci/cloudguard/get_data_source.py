@@ -228,7 +228,7 @@ def get_data_source(data_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source = oci.CloudGuard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
+    test_data_source = oci.cloudguard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source = oci.CloudGuard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
+    test_data_source = oci.cloudguard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
     ```
 
 

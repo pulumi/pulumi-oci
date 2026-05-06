@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListUserGrants = oci.DataSafe.getListUserGrants({
+ * const testListUserGrants = oci.datasafe.getListUserGrants({
  *     userAssessmentId: testUserAssessment.id,
  *     userKey: listUserGrantUserKey,
- *     depthLevel: listUserGrantDepthLevel,
- *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
- *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     depthLevel: Number(listUserGrantDepthLevel),
+ *     depthLevelGreaterThanOrEqualTo: Number(listUserGrantDepthLevelGreaterThanOrEqualTo),
+ *     depthLevelLessThan: Number(listUserGrantDepthLevelLessThan),
  *     grantKey: listUserGrantGrantKey,
  *     grantName: listUserGrantGrantName,
  *     privilegeCategory: listUserGrantPrivilegeCategory,
@@ -141,12 +141,12 @@ export interface GetListUserGrantsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListUserGrants = oci.DataSafe.getListUserGrants({
+ * const testListUserGrants = oci.datasafe.getListUserGrants({
  *     userAssessmentId: testUserAssessment.id,
  *     userKey: listUserGrantUserKey,
- *     depthLevel: listUserGrantDepthLevel,
- *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
- *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     depthLevel: Number(listUserGrantDepthLevel),
+ *     depthLevelGreaterThanOrEqualTo: Number(listUserGrantDepthLevelGreaterThanOrEqualTo),
+ *     depthLevelLessThan: Number(listUserGrantDepthLevelLessThan),
  *     grantKey: listUserGrantGrantKey,
  *     grantName: listUserGrantGrantName,
  *     privilegeCategory: listUserGrantPrivilegeCategory,

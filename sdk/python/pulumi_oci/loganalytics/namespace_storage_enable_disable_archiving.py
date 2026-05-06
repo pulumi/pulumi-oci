@@ -152,7 +152,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
 
         test_namespace_storage_enable_disable_archiving = oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving",
             namespace=namespace_storage_enable_disable_archiving_namespace,
-            enable_archiving_tenant=enable_archiving_tenant)
+            enable_archiving_tenant=enable_archiving_tenant == "true")
         ```
 
 
@@ -186,7 +186,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
 
         test_namespace_storage_enable_disable_archiving = oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving",
             namespace=namespace_storage_enable_disable_archiving_namespace,
-            enable_archiving_tenant=enable_archiving_tenant)
+            enable_archiving_tenant=enable_archiving_tenant == "true")
         ```
 
 

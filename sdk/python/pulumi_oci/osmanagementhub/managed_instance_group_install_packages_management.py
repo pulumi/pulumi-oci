@@ -190,7 +190,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_install_packages_management = oci.osmanagementhub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             package_names=managed_instance_group_install_packages_management_package_names,
-            is_latest=managed_instance_group_install_packages_management_is_latest,
+            is_latest=managed_instance_group_install_packages_management_is_latest == "true",
             work_request_details={
                 "description": managed_instance_group_install_packages_management_work_request_details_description,
                 "display_name": managed_instance_group_install_packages_management_work_request_details_display_name,
@@ -236,7 +236,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_install_packages_management = oci.osmanagementhub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             package_names=managed_instance_group_install_packages_management_package_names,
-            is_latest=managed_instance_group_install_packages_management_is_latest,
+            is_latest=managed_instance_group_install_packages_management_is_latest == "true",
             work_request_details={
                 "description": managed_instance_group_install_packages_management_work_request_details_description,
                 "display_name": managed_instance_group_install_packages_management_work_request_details_display_name,

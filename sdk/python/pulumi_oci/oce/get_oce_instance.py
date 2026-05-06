@@ -380,7 +380,7 @@ def get_oce_instance(oce_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
+    test_oce_instance = oci.oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
     ```
 
 
@@ -433,7 +433,7 @@ def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
+    test_oce_instance = oci.oce.get_oce_instance(oce_instance_id=test_oce_instance_oci_oce_oce_instance["id"])
     ```
 
 

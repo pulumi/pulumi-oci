@@ -173,11 +173,11 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+    test_default_configurations = oci.psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
-        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
-        instance_ocpu_count=default_configuration_instance_ocpu_count,
+        instance_memory_size_in_gbs=int(default_configuration_instance_memory_size_in_gbs),
+        instance_ocpu_count=int(default_configuration_instance_ocpu_count),
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```
@@ -234,11 +234,11 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+    test_default_configurations = oci.psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
-        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
-        instance_ocpu_count=default_configuration_instance_ocpu_count,
+        instance_memory_size_in_gbs=int(default_configuration_instance_memory_size_in_gbs),
+        instance_ocpu_count=int(default_configuration_instance_ocpu_count),
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```

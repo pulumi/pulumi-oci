@@ -113,7 +113,7 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[Union['GetO
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxies = oci.oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_scan_proxy_state)
     ```
 
@@ -154,7 +154,7 @@ def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxies = oci.oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         state=oda_private_endpoint_scan_proxy_state)
     ```
 

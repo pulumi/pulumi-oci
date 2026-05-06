@@ -147,7 +147,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_clusters = oci.Core.get_compute_gpu_memory_clusters(compartment_id=compartment_id,
+    test_compute_gpu_memory_clusters = oci.core.get_compute_gpu_memory_clusters(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_cluster_availability_domain,
         compute_cluster_id=test_compute_cluster["id"],
         compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"],
@@ -198,7 +198,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_clusters = oci.Core.get_compute_gpu_memory_clusters(compartment_id=compartment_id,
+    test_compute_gpu_memory_clusters = oci.core.get_compute_gpu_memory_clusters(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_cluster_availability_domain,
         compute_cluster_id=test_compute_cluster["id"],
         compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"],

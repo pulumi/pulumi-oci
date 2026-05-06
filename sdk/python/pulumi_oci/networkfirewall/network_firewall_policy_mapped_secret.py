@@ -327,7 +327,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             source=network_firewall_policy_mapped_secret_source,
             type=network_firewall_policy_mapped_secret_type,
             vault_secret_id=test_secret["id"],
-            version_number=network_firewall_policy_mapped_secret_version_number,
+            version_number=int(network_firewall_policy_mapped_secret_version_number),
             description=network_firewall_policy_mapped_secret_description)
         ```
 
@@ -382,7 +382,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             source=network_firewall_policy_mapped_secret_source,
             type=network_firewall_policy_mapped_secret_type,
             vault_secret_id=test_secret["id"],
-            version_number=network_firewall_policy_mapped_secret_version_number,
+            version_number=int(network_firewall_policy_mapped_secret_version_number),
             description=network_firewall_policy_mapped_secret_description)
         ```
 

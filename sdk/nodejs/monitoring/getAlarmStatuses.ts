@@ -29,9 +29,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
+ * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,
@@ -139,9 +139,9 @@ export interface GetAlarmStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
+ * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,

@@ -124,7 +124,7 @@ def get_connector_plugins(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugins = oci.Sch.get_connector_plugins(display_name=connector_plugin_display_name,
+    test_connector_plugins = oci.sch.get_connector_plugins(display_name=connector_plugin_display_name,
         name=connector_plugin_name,
         state=connector_plugin_state)
     ```
@@ -165,7 +165,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugins = oci.Sch.get_connector_plugins(display_name=connector_plugin_display_name,
+    test_connector_plugins = oci.sch.get_connector_plugins(display_name=connector_plugin_display_name,
         name=connector_plugin_name,
         state=connector_plugin_state)
     ```

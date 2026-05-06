@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalog = oci.DataCatalog.getCatalog({
+ * const testCatalog = oci.datacatalog.getCatalog({
  *     catalogId: testCatalogOciDatacatalogCatalog.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetCatalogResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalog = oci.DataCatalog.getCatalog({
+ * const testCatalog = oci.datacatalog.getCatalog({
  *     catalogId: testCatalogOciDatacatalogCatalog.id,
  * });
  * ```

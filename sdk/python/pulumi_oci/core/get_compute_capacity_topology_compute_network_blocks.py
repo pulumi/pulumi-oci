@@ -131,7 +131,7 @@ def get_compute_capacity_topology_compute_network_blocks(availability_domain: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_network_blocks = oci.Core.get_compute_capacity_topology_compute_network_blocks(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_network_blocks = oci.core.get_compute_capacity_topology_compute_network_blocks(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_network_block_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"])
@@ -177,7 +177,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_network_blocks = oci.Core.get_compute_capacity_topology_compute_network_blocks(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_network_blocks = oci.core.get_compute_capacity_topology_compute_network_blocks(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_network_block_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"])

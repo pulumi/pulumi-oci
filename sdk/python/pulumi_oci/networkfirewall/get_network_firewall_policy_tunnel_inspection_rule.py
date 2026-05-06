@@ -190,7 +190,7 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rule = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rule = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
         tunnel_inspection_rule_name=test_rule["name"])
     ```
 
@@ -231,7 +231,7 @@ def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_p
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rule = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rule = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
         tunnel_inspection_rule_name=test_rule["name"])
     ```
 

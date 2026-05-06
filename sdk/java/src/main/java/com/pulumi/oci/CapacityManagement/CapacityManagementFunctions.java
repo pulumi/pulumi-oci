@@ -115,8 +115,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -162,8 +162,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -209,8 +209,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -303,8 +303,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -350,8 +350,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -397,8 +397,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -444,8 +444,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -491,8 +491,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -538,8 +538,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -585,8 +585,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -628,8 +628,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -671,8 +671,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -714,8 +714,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -800,8 +800,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -848,8 +848,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -896,8 +896,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -944,8 +944,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -992,8 +992,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1040,8 +1040,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1082,8 +1082,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1124,8 +1124,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1166,8 +1166,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1208,8 +1208,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1250,8 +1250,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1292,8 +1292,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1334,8 +1334,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1376,8 +1376,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1418,8 +1418,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1460,8 +1460,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1506,8 +1506,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1552,8 +1552,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1598,8 +1598,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1644,8 +1644,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1690,8 +1690,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1734,8 +1734,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1778,8 +1778,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1822,8 +1822,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1866,8 +1866,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1910,8 +1910,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1955,8 +1955,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2000,8 +2000,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2045,8 +2045,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2090,8 +2090,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2135,8 +2135,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2177,8 +2177,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2219,8 +2219,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2261,8 +2261,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2303,8 +2303,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2345,8 +2345,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2391,8 +2391,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2437,8 +2437,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2483,8 +2483,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2529,8 +2529,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2575,8 +2575,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2621,8 +2621,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2667,8 +2667,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2713,8 +2713,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2759,8 +2759,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2805,8 +2805,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2851,8 +2851,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2897,8 +2897,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2943,8 +2943,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2989,8 +2989,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3035,8 +3035,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3077,8 +3077,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3119,8 +3119,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3161,8 +3161,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3203,8 +3203,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3245,8 +3245,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3287,8 +3287,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3329,8 +3329,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3371,8 +3371,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3413,8 +3413,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3455,8 +3455,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3501,8 +3501,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3547,8 +3547,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3593,8 +3593,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3639,8 +3639,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogOccAvailabilitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3685,8 +3685,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3731,8 +3731,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3777,8 +3777,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3823,8 +3823,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3869,8 +3869,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3915,8 +3915,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3957,8 +3957,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3999,8 +3999,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4041,8 +4041,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4083,8 +4083,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4125,8 +4125,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4172,8 +4172,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4219,8 +4219,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4266,8 +4266,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4313,8 +4313,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCapacityRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4360,8 +4360,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4402,8 +4402,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4444,8 +4444,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4486,8 +4486,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4528,8 +4528,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4570,8 +4570,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4615,8 +4615,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4660,8 +4660,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4705,8 +4705,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4750,8 +4750,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccCustomerGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4795,8 +4795,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4838,8 +4838,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4881,8 +4881,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4924,8 +4924,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4967,8 +4967,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5010,8 +5010,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5057,8 +5057,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5104,8 +5104,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5151,8 +5151,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5198,8 +5198,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5245,8 +5245,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5292,8 +5292,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5339,8 +5339,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5381,8 +5381,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5423,8 +5423,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5465,8 +5465,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5507,8 +5507,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5549,8 +5549,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5593,8 +5593,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5637,8 +5637,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5681,8 +5681,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5725,8 +5725,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5769,8 +5769,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5813,8 +5813,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5857,8 +5857,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5901,8 +5901,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5945,8 +5945,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5989,8 +5989,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6031,8 +6031,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6073,8 +6073,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6115,8 +6115,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6157,8 +6157,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6199,8 +6199,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6244,8 +6244,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6289,8 +6289,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6334,8 +6334,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6379,8 +6379,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6424,8 +6424,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6469,8 +6469,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6514,8 +6514,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6559,8 +6559,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6604,8 +6604,8 @@ public final class CapacityManagementFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
      * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

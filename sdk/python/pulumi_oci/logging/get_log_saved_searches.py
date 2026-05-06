@@ -121,7 +121,7 @@ def get_log_saved_searches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=compartment_id,
+    test_log_saved_searches = oci.logging.get_log_saved_searches(compartment_id=compartment_id,
         log_saved_search_id=test_log_saved_search["id"],
         name=log_saved_search_name)
     ```
@@ -162,7 +162,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=compartment_id,
+    test_log_saved_searches = oci.logging.get_log_saved_searches(compartment_id=compartment_id,
         log_saved_search_id=test_log_saved_search["id"],
         name=log_saved_search_name)
     ```

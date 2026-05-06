@@ -171,7 +171,7 @@ def get_repository_commits(author_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=test_repository["id"],
+    test_repository_commits = oci.devops.get_repository_commits(repository_id=test_repository["id"],
         author_name=repository_commit_author_name,
         commit_message=repository_commit_commit_message,
         exclude_ref_name=repository_commit_exclude_ref_name,
@@ -237,7 +237,7 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=test_repository["id"],
+    test_repository_commits = oci.devops.get_repository_commits(repository_id=test_repository["id"],
         author_name=repository_commit_author_name,
         commit_message=repository_commit_commit_message,
         exclude_ref_name=repository_commit_exclude_ref_name,

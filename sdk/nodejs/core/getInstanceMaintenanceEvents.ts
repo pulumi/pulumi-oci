@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvents = oci.Core.getInstanceMaintenanceEvents({
+ * const testInstanceMaintenanceEvents = oci.core.getInstanceMaintenanceEvents({
  *     compartmentId: compartmentId,
  *     correlationToken: instanceMaintenanceEventCorrelationToken,
  *     instanceAction: instanceMaintenanceEventInstanceAction,
@@ -124,7 +124,7 @@ export interface GetInstanceMaintenanceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvents = oci.Core.getInstanceMaintenanceEvents({
+ * const testInstanceMaintenanceEvents = oci.core.getInstanceMaintenanceEvents({
  *     compartmentId: compartmentId,
  *     correlationToken: instanceMaintenanceEventCorrelationToken,
  *     instanceAction: instanceMaintenanceEventInstanceAction,

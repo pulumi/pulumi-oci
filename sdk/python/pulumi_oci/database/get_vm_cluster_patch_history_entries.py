@@ -95,7 +95,7 @@ def get_vm_cluster_patch_history_entries(filters: Optional[Sequence[Union['GetVm
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=test_vm_cluster["id"])
+    test_vm_cluster_patch_history_entries = oci.database.get_vm_cluster_patch_history_entries(vm_cluster_id=test_vm_cluster["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_vm_cluster_patch_history_entries_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entries = oci.Database.get_vm_cluster_patch_history_entries(vm_cluster_id=test_vm_cluster["id"])
+    test_vm_cluster_patch_history_entries = oci.database.get_vm_cluster_patch_history_entries(vm_cluster_id=test_vm_cluster["id"])
     ```
 
 

@@ -606,7 +606,7 @@ def get_invoke_run(run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_run = oci.DataFlow.get_invoke_run(run_id=test_run["id"])
+    test_invoke_run = oci.dataflow.get_invoke_run(run_id=test_run["id"])
     ```
 
 
@@ -678,7 +678,7 @@ def get_invoke_run_output(run_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_run = oci.DataFlow.get_invoke_run(run_id=test_run["id"])
+    test_invoke_run = oci.dataflow.get_invoke_run(run_id=test_run["id"])
     ```
 
 

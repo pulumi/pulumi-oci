@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsms = oci.DatabaseManagement.getCloudAsms({
+ * const testCloudAsms = oci.databasemanagement.getCloudAsms({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudAsmDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudAsmsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsms = oci.DatabaseManagement.getCloudAsms({
+ * const testCloudAsms = oci.databasemanagement.getCloudAsms({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudAsmDisplayName,

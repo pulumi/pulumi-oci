@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     detachedModeTimeoutInSeconds: functionDetachedModeTimeoutInSeconds,
+ *     detachedModeTimeoutInSeconds: Number(functionDetachedModeTimeoutInSeconds),
  *     failureDestination: {
  *         kind: functionFailureDestinationKind,
  *         channelId: testChannel.id,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     imageDigest: functionImageDigest,
  *     provisionedConcurrencyConfig: {
  *         strategy: functionProvisionedConcurrencyConfigStrategy,
- *         count: functionProvisionedConcurrencyConfigCount,
+ *         count: Number(functionProvisionedConcurrencyConfigCount),
  *     },
  *     sourceDetails: {
  *         pbfListingId: testPbfListing.id,
@@ -56,9 +56,9 @@ import * as utilities from "../utilities";
  *         streamId: testStream.id,
  *         topicId: testNotificationTopic.id,
  *     },
- *     timeoutInSeconds: functionTimeoutInSeconds,
+ *     timeoutInSeconds: Number(functionTimeoutInSeconds),
  *     traceConfig: {
- *         isEnabled: functionTraceConfigIsEnabled,
+ *         isEnabled: functionTraceConfigIsEnabled === "true",
  *     },
  * });
  * ```

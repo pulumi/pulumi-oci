@@ -263,7 +263,7 @@ def get_replication_target(replication_target_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=test_replication_target_oci_file_storage_replication_target["id"])
+    test_replication_target = oci.filestorage.get_replication_target(replication_target_id=test_replication_target_oci_file_storage_replication_target["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_replication_target_output(replication_target_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=test_replication_target_oci_file_storage_replication_target["id"])
+    test_replication_target = oci.filestorage.get_replication_target(replication_target_id=test_replication_target_oci_file_storage_replication_target["id"])
     ```
 
 

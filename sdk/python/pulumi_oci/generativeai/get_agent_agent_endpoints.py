@@ -137,7 +137,7 @@ def get_agent_agent_endpoints(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_endpoints = oci.GenerativeAi.get_agent_agent_endpoints(agent_id=test_agent["id"],
+    test_agent_endpoints = oci.generativeai.get_agent_agent_endpoints(agent_id=test_agent["id"],
         compartment_id=compartment_id,
         display_name=agent_endpoint_display_name,
         state=agent_endpoint_state)
@@ -183,7 +183,7 @@ def get_agent_agent_endpoints_output(agent_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_endpoints = oci.GenerativeAi.get_agent_agent_endpoints(agent_id=test_agent["id"],
+    test_agent_endpoints = oci.generativeai.get_agent_agent_endpoints(agent_id=test_agent["id"],
         compartment_id=compartment_id,
         display_name=agent_endpoint_display_name,
         state=agent_endpoint_state)

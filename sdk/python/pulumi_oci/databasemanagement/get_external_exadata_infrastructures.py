@@ -111,7 +111,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=compartment_id,
+    test_external_exadata_infrastructures = oci.databasemanagement.get_external_exadata_infrastructures(compartment_id=compartment_id,
         display_name=external_exadata_infrastructure_display_name)
     ```
 
@@ -147,7 +147,7 @@ def get_external_exadata_infrastructures_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_infrastructures = oci.DatabaseManagement.get_external_exadata_infrastructures(compartment_id=compartment_id,
+    test_external_exadata_infrastructures = oci.databasemanagement.get_external_exadata_infrastructures(compartment_id=compartment_id,
         display_name=external_exadata_infrastructure_display_name)
     ```
 

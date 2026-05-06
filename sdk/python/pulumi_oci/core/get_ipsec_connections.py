@@ -125,7 +125,7 @@ def get_ipsec_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=compartment_id,
+    test_ip_sec_connections = oci.core.get_ipsec_connections(compartment_id=compartment_id,
         cpe_id=test_cpe["id"],
         drg_id=test_drg["id"])
     ```
@@ -167,7 +167,7 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=compartment_id,
+    test_ip_sec_connections = oci.core.get_ipsec_connections(compartment_id=compartment_id,
         cpe_id=test_cpe["id"],
         drg_id=test_drg["id"])
     ```

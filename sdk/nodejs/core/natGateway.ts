@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * const testNatGateway = new oci.core.NatGateway("test_nat_gateway", {
  *     compartmentId: compartmentId,
  *     vcnId: testVcn.id,
- *     blockTraffic: natGatewayBlockTraffic,
+ *     blockTraffic: natGatewayBlockTraffic === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

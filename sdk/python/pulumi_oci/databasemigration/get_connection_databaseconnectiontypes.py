@@ -131,7 +131,7 @@ def get_connection_databaseconnectiontypes(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_databaseconnectiontypes = oci.DatabaseMigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
+    test_connection_databaseconnectiontypes = oci.databasemigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
         connection_types=connection_databaseconnectiontype_connection_type,
         source_connection_id=test_connection["id"],
         technology_types=connection_databaseconnectiontype_technology_type)
@@ -177,7 +177,7 @@ def get_connection_databaseconnectiontypes_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_databaseconnectiontypes = oci.DatabaseMigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
+    test_connection_databaseconnectiontypes = oci.databasemigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
         connection_types=connection_databaseconnectiontype_connection_type,
         source_connection_id=test_connection["id"],
         technology_types=connection_databaseconnectiontype_technology_type)

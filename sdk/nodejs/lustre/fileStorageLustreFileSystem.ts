@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testLustreFileSystem = new oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system", {
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
- *     capacityInGbs: lustreFileSystemCapacityInGbs,
+ *     capacityInGbs: Number(lustreFileSystemCapacityInGbs),
  *     compartmentId: compartmentId,
  *     fileSystemName: testFileSystem.name,
  *     performanceTier: lustreFileSystemPerformanceTier,

@@ -101,7 +101,7 @@ def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetAp
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_api_keys(user_id=test_user["id"])
+    test_api_keys = oci.identity.get_api_keys(user_id=test_user["id"])
     ```
 
 
@@ -135,7 +135,7 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_api_keys(user_id=test_user["id"])
+    test_api_keys = oci.identity.get_api_keys(user_id=test_user["id"])
     ```
 
 

@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyTrustedUserAgents = oci.Identity.getDomainsMyTrustedUserAgents({
+ * const testMyTrustedUserAgents = oci.identity.getDomainsMyTrustedUserAgents({
  *     idcsEndpoint: testDomain.url,
- *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
+ *     myTrustedUserAgentCount: Number(myTrustedUserAgentMyTrustedUserAgentCount),
  *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myTrustedUserAgentAuthorization,
  *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
- *     startIndex: myTrustedUserAgentStartIndex,
+ *     startIndex: Number(myTrustedUserAgentStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsMyTrustedUserAgentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyTrustedUserAgents = oci.Identity.getDomainsMyTrustedUserAgents({
+ * const testMyTrustedUserAgents = oci.identity.getDomainsMyTrustedUserAgents({
  *     idcsEndpoint: testDomain.url,
- *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
+ *     myTrustedUserAgentCount: Number(myTrustedUserAgentMyTrustedUserAgentCount),
  *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myTrustedUserAgentAuthorization,
  *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
- *     startIndex: myTrustedUserAgentStartIndex,
+ *     startIndex: Number(myTrustedUserAgentStartIndex),
  * });
  * ```
  */

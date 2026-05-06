@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testTargetAlertPolicyAssociation = new oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", {
  *     compartmentId: compartmentId,
- *     isEnabled: targetAlertPolicyAssociationIsEnabled,
+ *     isEnabled: targetAlertPolicyAssociationIsEnabled === "true",
  *     policyId: testPolicy.id,
  *     targetId: testTarget.id,
  *     definedTags: {

@@ -152,7 +152,7 @@ def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+    test_pbf_listings = oci.functions.get_pbf_listings(name=pbf_listing_name,
         name_contains=pbf_listing_name_contains,
         name_starts_with=pbf_listing_name_starts_with,
         pbf_listing_id=test_pbf_listing["id"],
@@ -209,7 +209,7 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+    test_pbf_listings = oci.functions.get_pbf_listings(name=pbf_listing_name,
         name_contains=pbf_listing_name_contains,
         name_starts_with=pbf_listing_name_starts_with,
         pbf_listing_id=test_pbf_listing["id"],

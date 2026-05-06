@@ -49,8 +49,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -91,8 +91,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -133,8 +133,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -175,8 +175,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -217,8 +217,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -301,8 +301,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -343,8 +343,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -427,8 +427,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -469,8 +469,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -513,8 +513,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -557,8 +557,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -645,8 +645,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -689,8 +689,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -732,8 +732,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -818,8 +818,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -861,8 +861,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -904,8 +904,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -947,8 +947,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -990,8 +990,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1033,8 +1033,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1076,8 +1076,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1119,8 +1119,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1162,8 +1162,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1205,8 +1205,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1248,8 +1248,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1291,8 +1291,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1334,8 +1334,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1377,8 +1377,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1420,8 +1420,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1463,8 +1463,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1506,8 +1506,8 @@ public final class BlockchainFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Blockchain.BlockchainFunctions;
      * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

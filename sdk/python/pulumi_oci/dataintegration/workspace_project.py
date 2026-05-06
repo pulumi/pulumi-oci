@@ -447,13 +447,13 @@ class WorkspaceProject(pulumi.CustomResource):
             description=workspace_project_description,
             key=workspace_project_key,
             model_version=workspace_project_model_version,
-            object_status=workspace_project_object_status,
+            object_status=int(workspace_project_object_status),
             registry_metadata={
                 "aggregator_key": workspace_project_registry_metadata_aggregator_key,
-                "is_favorite": workspace_project_registry_metadata_is_favorite,
+                "is_favorite": workspace_project_registry_metadata_is_favorite == "true",
                 "key": workspace_project_registry_metadata_key,
                 "labels": workspace_project_registry_metadata_labels,
-                "registry_version": workspace_project_registry_metadata_registry_version,
+                "registry_version": int(workspace_project_registry_metadata_registry_version),
             })
         ```
 
@@ -508,13 +508,13 @@ class WorkspaceProject(pulumi.CustomResource):
             description=workspace_project_description,
             key=workspace_project_key,
             model_version=workspace_project_model_version,
-            object_status=workspace_project_object_status,
+            object_status=int(workspace_project_object_status),
             registry_metadata={
                 "aggregator_key": workspace_project_registry_metadata_aggregator_key,
-                "is_favorite": workspace_project_registry_metadata_is_favorite,
+                "is_favorite": workspace_project_registry_metadata_is_favorite == "true",
                 "key": workspace_project_registry_metadata_key,
                 "labels": workspace_project_registry_metadata_labels,
-                "registry_version": workspace_project_registry_metadata_registry_version,
+                "registry_version": int(workspace_project_registry_metadata_registry_version),
             })
         ```
 

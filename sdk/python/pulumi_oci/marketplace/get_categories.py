@@ -96,7 +96,7 @@ def get_categories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Marketplace.get_categories(compartment_id=compartment_id)
+    test_categories = oci.marketplace.get_categories(compartment_id=compartment_id)
     ```
 
 
@@ -128,7 +128,7 @@ def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Marketplace.get_categories(compartment_id=compartment_id)
+    test_categories = oci.marketplace.get_categories(compartment_id=compartment_id)
     ```
 
 

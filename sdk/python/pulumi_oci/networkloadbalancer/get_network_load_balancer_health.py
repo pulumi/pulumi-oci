@@ -139,7 +139,7 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
+    test_network_load_balancer_health = oci.networkloadbalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 
@@ -171,7 +171,7 @@ def get_network_load_balancer_health_output(network_load_balancer_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
+    test_network_load_balancer_health = oci.networkloadbalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
 
 

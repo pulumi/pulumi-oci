@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktop = oci.Desktops.getDesktop({
+ * const testDesktop = oci.desktops.getDesktop({
  *     desktopId: testDesktopOciDesktopsDesktop.id,
  * });
  * ```
@@ -100,7 +100,7 @@ export interface GetDesktopResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktop = oci.Desktops.getDesktop({
+ * const testDesktop = oci.desktops.getDesktop({
  *     desktopId: testDesktopOciDesktopsDesktop.id,
  * });
  * ```

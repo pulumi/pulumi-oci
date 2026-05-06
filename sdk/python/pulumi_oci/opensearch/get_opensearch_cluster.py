@@ -864,7 +864,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
+    test_opensearch_cluster = oci.opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
     ```
 
 
@@ -966,7 +966,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
+    test_opensearch_cluster = oci.opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
     ```
 
 

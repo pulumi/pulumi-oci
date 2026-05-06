@@ -119,7 +119,7 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+    test_usage_statement_email_recipients_group = oci.meteringcomputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
         email_recipients_group_id=test_group["id"],
         subscription_id=test_subscription["id"])
     ```
@@ -158,7 +158,7 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+    test_usage_statement_email_recipients_group = oci.meteringcomputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
         email_recipients_group_id=test_group["id"],
         subscription_id=test_subscription["id"])
     ```

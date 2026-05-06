@@ -634,7 +634,7 @@ def get_instance(instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance = oci.Core.get_instance(instance_id=test_instance_oci_core_instance["id"])
+    test_instance = oci.core.get_instance(instance_id=test_instance_oci_core_instance["id"])
     ```
 
 
@@ -712,7 +712,7 @@ def get_instance_output(instance_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_instance = oci.Core.get_instance(instance_id=test_instance_oci_core_instance["id"])
+    test_instance = oci.core.get_instance(instance_id=test_instance_oci_core_instance["id"])
     ```
 
 

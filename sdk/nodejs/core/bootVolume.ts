@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoTuneEnabled: bootVolumeIsAutoTuneEnabled,
+ *     isAutoTuneEnabled: bootVolumeIsAutoTuneEnabled === "true",
  *     kmsKeyId: testKey.id,
  *     sizeInGbs: bootVolumeSizeInGbs,
  *     vpusPerGb: bootVolumeVpusPerGb,

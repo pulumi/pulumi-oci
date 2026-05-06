@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypeGroups = oci.DataSafe.getSensitiveTypeGroups({
+ * const testSensitiveTypeGroups = oci.datasafe.getSensitiveTypeGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeGroupAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree === "true",
  *     displayName: sensitiveTypeGroupDisplayName,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     state: sensitiveTypeGroupState,
@@ -129,10 +129,10 @@ export interface GetSensitiveTypeGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypeGroups = oci.DataSafe.getSensitiveTypeGroups({
+ * const testSensitiveTypeGroups = oci.datasafe.getSensitiveTypeGroups({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeGroupAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeGroupCompartmentIdInSubtree === "true",
  *     displayName: sensitiveTypeGroupDisplayName,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     state: sensitiveTypeGroupState,

@@ -253,7 +253,7 @@ def get_erratum(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_erratum = oci.OsManagementHub.get_erratum(compartment_id=compartment_id,
+    test_erratum = oci.osmanagementhub.get_erratum(compartment_id=compartment_id,
         name=erratum_name)
     ```
 
@@ -299,7 +299,7 @@ def get_erratum_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_erratum = oci.OsManagementHub.get_erratum(compartment_id=compartment_id,
+    test_erratum = oci.osmanagementhub.get_erratum(compartment_id=compartment_id,
         name=erratum_name)
     ```
 

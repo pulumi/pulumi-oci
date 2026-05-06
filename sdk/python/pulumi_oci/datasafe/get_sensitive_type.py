@@ -299,7 +299,7 @@ def get_sensitive_type(sensitive_type_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
+    test_sensitive_type = oci.datasafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
 
 
@@ -345,7 +345,7 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
+    test_sensitive_type = oci.datasafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
 
 

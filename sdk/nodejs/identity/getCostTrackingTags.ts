@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostTrackingTags = oci.Identity.getCostTrackingTags({
+ * const testCostTrackingTags = oci.identity.getCostTrackingTags({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetCostTrackingTagsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostTrackingTags = oci.Identity.getCostTrackingTags({
+ * const testCostTrackingTags = oci.identity.getCostTrackingTags({
  *     compartmentId: compartmentId,
  * });
  * ```

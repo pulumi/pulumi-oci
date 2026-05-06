@@ -302,7 +302,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             autonomous_database_id=test_autonomous_database["id"],
             password=autonomous_database_saas_admin_user_password,
             access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
+            duration=int(autonomous_database_saas_admin_user_duration))
         ```
 
         ## Import
@@ -345,7 +345,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             autonomous_database_id=test_autonomous_database["id"],
             password=autonomous_database_saas_admin_user_password,
             access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
+            duration=int(autonomous_database_saas_admin_user_duration))
         ```
 
         ## Import

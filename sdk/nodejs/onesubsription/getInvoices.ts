@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OneSubsription.getInvoices({
+ * const testInvoices = oci.onesubsription.getInvoices({
  *     arCustomerTransactionId: testArCustomerTransaction.id,
  *     compartmentId: compartmentId,
  *     fields: invoiceFields,
@@ -95,7 +95,7 @@ export interface GetInvoicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OneSubsription.getInvoices({
+ * const testInvoices = oci.onesubsription.getInvoices({
  *     arCustomerTransactionId: testArCustomerTransaction.id,
  *     compartmentId: compartmentId,
  *     fields: invoiceFields,

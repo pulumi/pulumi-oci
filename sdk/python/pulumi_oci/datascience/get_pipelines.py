@@ -151,7 +151,7 @@ def get_pipelines(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.datascience.get_pipelines(compartment_id=compartment_id,
         created_by=pipeline_created_by,
         display_name=pipeline_display_name,
         id=pipeline_id,
@@ -206,7 +206,7 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.datascience.get_pipelines(compartment_id=compartment_id,
         created_by=pipeline_created_by,
         display_name=pipeline_display_name,
         id=pipeline_id,

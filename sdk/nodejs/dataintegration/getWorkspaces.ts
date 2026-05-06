@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaces = oci.DataIntegration.getWorkspaces({
+ * const testWorkspaces = oci.dataintegration.getWorkspaces({
  *     compartmentId: compartmentId,
  *     name: workspaceName,
  *     state: workspaceState,
@@ -87,7 +87,7 @@ export interface GetWorkspacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaces = oci.DataIntegration.getWorkspaces({
+ * const testWorkspaces = oci.dataintegration.getWorkspaces({
  *     compartmentId: compartmentId,
  *     name: workspaceName,
  *     state: workspaceState,

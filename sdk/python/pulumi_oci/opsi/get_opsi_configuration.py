@@ -258,7 +258,7 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
+    test_opsi_configuration = oci.opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
         config_item_custom_statuses=opsi_configuration_config_item_custom_status,
         config_item_fields=opsi_configuration_config_item_field,
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
@@ -319,7 +319,7 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
+    test_opsi_configuration = oci.opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
         config_item_custom_statuses=opsi_configuration_config_item_custom_status,
         config_item_fields=opsi_configuration_config_item_field,
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,

@@ -204,7 +204,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"])
+    test_auto_scaling_configuration = oci.autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"])
+    test_auto_scaling_configuration = oci.autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=test_auto_scaling_configuration_oci_autoscaling_auto_scaling_configuration["id"])
     ```
 
 

@@ -118,7 +118,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
+    test_compute_capacity_reservation_instance_shapes = oci.core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_instance_shape_availability_domain,
         display_name=compute_capacity_reservation_instance_shape_display_name)
     ```
@@ -159,7 +159,7 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
+    test_compute_capacity_reservation_instance_shapes = oci.core.get_compute_capacity_reservation_instance_shapes(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_instance_shape_availability_domain,
         display_name=compute_capacity_reservation_instance_shape_display_name)
     ```

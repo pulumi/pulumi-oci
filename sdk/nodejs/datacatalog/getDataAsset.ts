@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataAsset = oci.DataCatalog.getDataAsset({
+ * const testDataAsset = oci.datacatalog.getDataAsset({
  *     catalogId: testCatalog.id,
  *     dataAssetKey: dataAssetDataAssetKey,
  *     fields: dataAssetFields,
@@ -128,7 +128,7 @@ export interface GetDataAssetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataAsset = oci.DataCatalog.getDataAsset({
+ * const testDataAsset = oci.datacatalog.getDataAsset({
  *     catalogId: testCatalog.id,
  *     dataAssetKey: dataAssetDataAssetKey,
  *     fields: dataAssetFields,

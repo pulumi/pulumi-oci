@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssetSources = oci.CloudBridge.getAssetSources({
+ * const testAssetSources = oci.cloudbridge.getAssetSources({
  *     compartmentId: compartmentId,
  *     assetSourceId: testAssetSource.id,
  *     displayName: assetSourceDisplayName,
@@ -97,7 +97,7 @@ export interface GetAssetSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssetSources = oci.CloudBridge.getAssetSources({
+ * const testAssetSources = oci.cloudbridge.getAssetSources({
  *     compartmentId: compartmentId,
  *     assetSourceId: testAssetSource.id,
  *     displayName: assetSourceDisplayName,

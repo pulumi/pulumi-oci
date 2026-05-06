@@ -136,7 +136,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         test_awr_hub_source_awrhubsources_management = oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management",
             awr_hub_source_id=test_awr_hub_source["id"],
-            enable_awrhubsource=enable_awrhubsource)
+            enable_awrhubsource=enable_awrhubsource == "true")
         ```
 
 
@@ -170,7 +170,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         test_awr_hub_source_awrhubsources_management = oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management",
             awr_hub_source_id=test_awr_hub_source["id"],
-            enable_awrhubsource=enable_awrhubsource)
+            enable_awrhubsource=enable_awrhubsource == "true")
         ```
 
 

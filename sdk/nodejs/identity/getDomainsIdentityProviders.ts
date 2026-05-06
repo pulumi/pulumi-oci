@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getDomainsIdentityProviders({
+ * const testIdentityProviders = oci.identity.getDomainsIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProviderCount: identityProviderIdentityProviderCount,
+ *     identityProviderCount: Number(identityProviderIdentityProviderCount),
  *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: identityProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
- *     startIndex: identityProviderStartIndex,
+ *     startIndex: Number(identityProviderStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsIdentityProvidersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getDomainsIdentityProviders({
+ * const testIdentityProviders = oci.identity.getDomainsIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     identityProviderCount: identityProviderIdentityProviderCount,
+ *     identityProviderCount: Number(identityProviderIdentityProviderCount),
  *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: identityProviderAuthorization,
  *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
- *     startIndex: identityProviderStartIndex,
+ *     startIndex: Number(identityProviderStartIndex),
  * });
  * ```
  */

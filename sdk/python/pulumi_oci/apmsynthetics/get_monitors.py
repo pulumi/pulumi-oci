@@ -177,10 +177,10 @@ def get_monitors(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+    test_monitors = oci.apmsynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
         display_name=monitor_display_name,
-        is_maintenance_window_active=monitor_is_maintenance_window_active,
-        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        is_maintenance_window_active=monitor_is_maintenance_window_active == "true",
+        is_maintenance_window_set=monitor_is_maintenance_window_set == "true",
         monitor_type=monitor_monitor_type,
         script_id=test_script["id"],
         status=monitor_status,
@@ -243,10 +243,10 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+    test_monitors = oci.apmsynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
         display_name=monitor_display_name,
-        is_maintenance_window_active=monitor_is_maintenance_window_active,
-        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        is_maintenance_window_active=monitor_is_maintenance_window_active == "true",
+        is_maintenance_window_set=monitor_is_maintenance_window_set == "true",
         monitor_type=monitor_monitor_type,
         script_id=test_script["id"],
         status=monitor_status,

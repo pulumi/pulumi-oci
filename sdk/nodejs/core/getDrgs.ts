@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgs = oci.Core.getDrgs({
+ * const testDrgs = oci.core.getDrgs({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetDrgsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgs = oci.Core.getDrgs({
+ * const testDrgs = oci.core.getDrgs({
  *     compartmentId: compartmentId,
  * });
  * ```

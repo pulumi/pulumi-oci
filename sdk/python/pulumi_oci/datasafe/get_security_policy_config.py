@@ -228,7 +228,7 @@ def get_security_policy_config(security_policy_config_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_config = oci.DataSafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
+    test_security_policy_config = oci.datasafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_security_policy_config_output(security_policy_config_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_config = oci.DataSafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
+    test_security_policy_config = oci.datasafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthenticationFactorSettings = oci.Identity.getDomainsAuthenticationFactorSettings({
+ * const testAuthenticationFactorSettings = oci.identity.getDomainsAuthenticationFactorSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
@@ -102,7 +102,7 @@ export interface GetDomainsAuthenticationFactorSettingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthenticationFactorSettings = oci.Identity.getDomainsAuthenticationFactorSettings({
+ * const testAuthenticationFactorSettings = oci.identity.getDomainsAuthenticationFactorSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",

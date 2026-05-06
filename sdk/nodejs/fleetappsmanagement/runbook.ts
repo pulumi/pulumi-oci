@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             properties: {
  *                 actionOnFailure: runbookRunbookVersionGroupsPropertiesActionOnFailure,
  *                 notificationPreferences: {
- *                     shouldNotifyOnPause: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                     shouldNotifyOnTaskFailure: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
+ *                     shouldNotifyOnPause: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause === "true",
+ *                     shouldNotifyOnTaskFailure: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure === "true",
+ *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess === "true",
  *                 },
  *                 pauseDetails: {
  *                     kind: runbookRunbookVersionGroupsPropertiesPauseDetailsKind,
- *                     durationInMinutes: runbookRunbookVersionGroupsPropertiesPauseDetailsDurationInMinutes,
+ *                     durationInMinutes: Number(runbookRunbookVersionGroupsPropertiesPauseDetailsDurationInMinutes),
  *                 },
  *                 preCondition: runbookRunbookVersionGroupsPropertiesPreCondition,
  *                 runOn: {
@@ -90,9 +90,9 @@ import * as utilities from "../utilities";
  *                         id: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId,
  *                     }],
  *                     endpoint: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint,
- *                     isExecutableContent: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent,
- *                     isLocked: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked,
- *                     isReadOutputVariableEnabled: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+ *                     isExecutableContent: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent === "true",
+ *                     isLocked: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked === "true",
+ *                     isReadOutputVariableEnabled: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled === "true",
  *                     systemVariables: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsSystemVariables,
  *                     targetCompartmentId: testCompartment.id,
  *                     variables: {
@@ -104,15 +104,15 @@ import * as utilities from "../utilities";
  *                         outputVariables: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables,
  *                     },
  *                 },
- *                 isApplySubjectTask: runbookRunbookVersionTasksTaskRecordDetailsIsApplySubjectTask,
- *                 isCopyToLibraryEnabled: runbookRunbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled,
- *                 isDiscoveryOutputTask: runbookRunbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask,
+ *                 isApplySubjectTask: runbookRunbookVersionTasksTaskRecordDetailsIsApplySubjectTask === "true",
+ *                 isCopyToLibraryEnabled: runbookRunbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled === "true",
+ *                 isDiscoveryOutputTask: runbookRunbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask === "true",
  *                 name: runbookRunbookVersionTasksTaskRecordDetailsName,
  *                 osType: runbookRunbookVersionTasksTaskRecordDetailsOsType,
  *                 platform: runbookRunbookVersionTasksTaskRecordDetailsPlatform,
  *                 properties: {
- *                     numRetries: runbookRunbookVersionTasksTaskRecordDetailsPropertiesNumRetries,
- *                     timeoutInSeconds: runbookRunbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds,
+ *                     numRetries: Number(runbookRunbookVersionTasksTaskRecordDetailsPropertiesNumRetries),
+ *                     timeoutInSeconds: Number(runbookRunbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds),
  *                 },
  *                 taskRecordId: testTaskRecord.id,
  *             },
@@ -126,13 +126,13 @@ import * as utilities from "../utilities";
  *             stepProperties: {
  *                 actionOnFailure: runbookRunbookVersionTasksStepPropertiesActionOnFailure,
  *                 notificationPreferences: {
- *                     shouldNotifyOnPause: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                     shouldNotifyOnTaskFailure: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
+ *                     shouldNotifyOnPause: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause === "true",
+ *                     shouldNotifyOnTaskFailure: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure === "true",
+ *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess === "true",
  *                 },
  *                 pauseDetails: {
  *                     kind: runbookRunbookVersionTasksStepPropertiesPauseDetailsKind,
- *                     durationInMinutes: runbookRunbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes,
+ *                     durationInMinutes: Number(runbookRunbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes),
  *                 },
  *                 preCondition: runbookRunbookVersionTasksStepPropertiesPreCondition,
  *                 runOn: {
@@ -150,7 +150,7 @@ import * as utilities from "../utilities";
  *                 },
  *             },
  *         }],
- *         isLatest: runbookRunbookVersionIsLatest,
+ *         isLatest: runbookRunbookVersionIsLatest === "true",
  *         rollbackWorkflowDetails: {
  *             scope: runbookRunbookVersionRollbackWorkflowDetailsScope,
  *             workflows: [{
@@ -174,8 +174,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDefault: runbookIsDefault,
- *     isSudoAccessNeeded: runbookIsSudoAccessNeeded,
+ *     isDefault: runbookIsDefault === "true",
+ *     isSudoAccessNeeded: runbookIsSudoAccessNeeded === "true",
  *     osType: runbookOsType,
  *     platform: runbookPlatform,
  * });

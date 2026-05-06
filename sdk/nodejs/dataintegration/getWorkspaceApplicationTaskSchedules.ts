@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
+ * const testWorkspaceApplicationTaskSchedules = oci.dataintegration.getWorkspaceApplicationTaskSchedules({
  *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationTaskScheduleIdentifier,
- *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled === "true",
  *     keys: workspaceApplicationTaskScheduleKey,
  *     name: workspaceApplicationTaskScheduleName,
  *     types: workspaceApplicationTaskScheduleType,
@@ -124,11 +124,11 @@ export interface GetWorkspaceApplicationTaskSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
+ * const testWorkspaceApplicationTaskSchedules = oci.dataintegration.getWorkspaceApplicationTaskSchedules({
  *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     identifiers: workspaceApplicationTaskScheduleIdentifier,
- *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled === "true",
  *     keys: workspaceApplicationTaskScheduleKey,
  *     name: workspaceApplicationTaskScheduleName,
  *     types: workspaceApplicationTaskScheduleType,

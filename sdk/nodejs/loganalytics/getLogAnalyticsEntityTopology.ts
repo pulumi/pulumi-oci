@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
+ * const testLogAnalyticsEntityTopology = oci.loganalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
  *     context: logAnalyticsEntityTopologyContext,
@@ -98,7 +98,7 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
+ * const testLogAnalyticsEntityTopology = oci.loganalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
  *     context: logAnalyticsEntityTopologyContext,

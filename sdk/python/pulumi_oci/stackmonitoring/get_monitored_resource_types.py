@@ -195,10 +195,10 @@ def get_monitored_resource_types(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+    test_monitored_resource_types = oci.stackmonitoring.get_monitored_resource_types(compartment_id=compartment_id,
         exclude_fields=monitored_resource_type_exclude_fields,
         fields=monitored_resource_type_fields,
-        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types == "true",
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
         resource_category=monitored_resource_type_resource_category,
@@ -273,10 +273,10 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+    test_monitored_resource_types = oci.stackmonitoring.get_monitored_resource_types(compartment_id=compartment_id,
         exclude_fields=monitored_resource_type_exclude_fields,
         fields=monitored_resource_type_fields,
-        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types == "true",
         metric_namespace=monitored_resource_type_metric_namespace,
         name=monitored_resource_type_name,
         resource_category=monitored_resource_type_resource_category,

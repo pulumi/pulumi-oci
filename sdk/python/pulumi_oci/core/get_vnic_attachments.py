@@ -139,7 +139,7 @@ def get_vnic_attachments(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=compartment_id,
+    test_vnic_attachments = oci.core.get_vnic_attachments(compartment_id=compartment_id,
         availability_domain=vnic_attachment_availability_domain,
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])
@@ -187,7 +187,7 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=compartment_id,
+    test_vnic_attachments = oci.core.get_vnic_attachments(compartment_id=compartment_id,
         availability_domain=vnic_attachment_availability_domain,
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])

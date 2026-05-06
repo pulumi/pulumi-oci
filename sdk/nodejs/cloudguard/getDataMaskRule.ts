@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataMaskRule = oci.CloudGuard.getDataMaskRule({
+ * const testDataMaskRule = oci.cloudguard.getDataMaskRule({
  *     dataMaskRuleId: testDataMaskRuleOciCloudGuardDataMaskRule.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetDataMaskRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataMaskRule = oci.CloudGuard.getDataMaskRule({
+ * const testDataMaskRule = oci.cloudguard.getDataMaskRule({
  *     dataMaskRuleId: testDataMaskRuleOciCloudGuardDataMaskRule.id,
  * });
  * ```

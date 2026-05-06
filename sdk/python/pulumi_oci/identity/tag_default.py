@@ -291,7 +291,7 @@ class TagDefault(pulumi.CustomResource):
             compartment_id=compartment_id,
             tag_definition_id=test_tag_definition["id"],
             value=tag_default_value,
-            is_required=tag_default_is_required)
+            is_required=tag_default_is_required == "true")
         ```
 
         ## Import
@@ -349,7 +349,7 @@ class TagDefault(pulumi.CustomResource):
             compartment_id=compartment_id,
             tag_definition_id=test_tag_definition["id"],
             value=tag_default_value,
-            is_required=tag_default_is_required)
+            is_required=tag_default_is_required == "true")
         ```
 
         ## Import

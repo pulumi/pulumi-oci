@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.AiVision.getModels({
+ * const testModels = oci.aivision.getModels({
  *     compartmentId: compartmentId,
  *     displayName: modelDisplayName,
  *     id: modelId,
@@ -107,7 +107,7 @@ export interface GetModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.AiVision.getModels({
+ * const testModels = oci.aivision.getModels({
  *     compartmentId: compartmentId,
  *     displayName: modelDisplayName,
  *     id: modelId,

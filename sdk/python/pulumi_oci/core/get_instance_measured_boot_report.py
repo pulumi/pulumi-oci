@@ -96,7 +96,7 @@ def get_instance_measured_boot_report(instance_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=test_instance["id"])
+    test_instance_measured_boot_report = oci.core.get_instance_measured_boot_report(instance_id=test_instance["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=test_instance["id"])
+    test_instance_measured_boot_report = oci.core.get_instance_measured_boot_report(instance_id=test_instance["id"])
     ```
 
 

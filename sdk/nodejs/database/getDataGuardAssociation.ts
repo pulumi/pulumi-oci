@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataGuardAssociation = oci.Database.getDataGuardAssociation({
+ * const testDataGuardAssociation = oci.database.getDataGuardAssociation({
  *     dataGuardAssociationId: testDataGuardAssociationOciDatabaseDataGuardAssociation.id,
  *     databaseId: testDatabase.id,
  * });
@@ -161,7 +161,7 @@ export interface GetDataGuardAssociationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataGuardAssociation = oci.Database.getDataGuardAssociation({
+ * const testDataGuardAssociation = oci.database.getDataGuardAssociation({
  *     dataGuardAssociationId: testDataGuardAssociationOciDatabaseDataGuardAssociation.id,
  *     databaseId: testDatabase.id,
  * });

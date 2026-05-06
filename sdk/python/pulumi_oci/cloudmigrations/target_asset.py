@@ -528,17 +528,17 @@ class TargetAsset(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_target_asset = oci.cloudmigrations.TargetAsset("test_target_asset",
-            is_excluded_from_execution=target_asset_is_excluded_from_execution,
+            is_excluded_from_execution=target_asset_is_excluded_from_execution == "true",
             migration_plan_id=test_migration_plan["id"],
             type=target_asset_type,
-            block_volumes_performance=target_asset_block_volumes_performance,
+            block_volumes_performance=int(target_asset_block_volumes_performance),
             ms_license=target_asset_ms_license,
             preferred_shape_type=target_asset_preferred_shape_type,
             user_spec={
                 "agent_config": {
-                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
-                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled == "true",
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled == "true",
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled == "true",
                     "plugins_configs": [{
                         "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
                         "name": target_asset_user_spec_agent_config_plugins_config_name,
@@ -548,8 +548,8 @@ class TargetAsset(pulumi.CustomResource):
                 "capacity_reservation_id": test_capacity_reservation["id"],
                 "compartment_id": compartment_id,
                 "create_vnic_details": {
-                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record == "true",
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "foo-namespace.bar-key": "value",
                     },
@@ -560,7 +560,7 @@ class TargetAsset(pulumi.CustomResource):
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
                     "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
-                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check == "true",
                     "subnet_id": test_subnet["id"],
                     "vlan_id": test_vlan["id"],
                 },
@@ -575,14 +575,14 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {
-                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled == "true",
                 },
                 "ipxe_script": target_asset_user_spec_ipxe_script,
-                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled == "true",
                 "preemptible_instance_config": {
                     "preemption_action": {
                         "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                     },
                 },
                 "shape": target_asset_user_spec_shape,
@@ -644,17 +644,17 @@ class TargetAsset(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_target_asset = oci.cloudmigrations.TargetAsset("test_target_asset",
-            is_excluded_from_execution=target_asset_is_excluded_from_execution,
+            is_excluded_from_execution=target_asset_is_excluded_from_execution == "true",
             migration_plan_id=test_migration_plan["id"],
             type=target_asset_type,
-            block_volumes_performance=target_asset_block_volumes_performance,
+            block_volumes_performance=int(target_asset_block_volumes_performance),
             ms_license=target_asset_ms_license,
             preferred_shape_type=target_asset_preferred_shape_type,
             user_spec={
                 "agent_config": {
-                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
-                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled == "true",
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled == "true",
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled == "true",
                     "plugins_configs": [{
                         "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
                         "name": target_asset_user_spec_agent_config_plugins_config_name,
@@ -664,8 +664,8 @@ class TargetAsset(pulumi.CustomResource):
                 "capacity_reservation_id": test_capacity_reservation["id"],
                 "compartment_id": compartment_id,
                 "create_vnic_details": {
-                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record == "true",
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip == "true",
                     "defined_tags": {
                         "foo-namespace.bar-key": "value",
                     },
@@ -676,7 +676,7 @@ class TargetAsset(pulumi.CustomResource):
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
                     "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
-                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check == "true",
                     "subnet_id": test_subnet["id"],
                     "vlan_id": test_vlan["id"],
                 },
@@ -691,14 +691,14 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {
-                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled == "true",
                 },
                 "ipxe_script": target_asset_user_spec_ipxe_script,
-                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled == "true",
                 "preemptible_instance_config": {
                     "preemption_action": {
                         "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
                     },
                 },
                 "shape": target_asset_user_spec_shape,

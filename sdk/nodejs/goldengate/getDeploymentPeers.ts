@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentPeers = oci.GoldenGate.getDeploymentPeers({
+ * const testDeploymentPeers = oci.goldengate.getDeploymentPeers({
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentPeerDisplayName,
  *     state: deploymentPeerState,
@@ -90,7 +90,7 @@ export interface GetDeploymentPeersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentPeers = oci.GoldenGate.getDeploymentPeers({
+ * const testDeploymentPeers = oci.goldengate.getDeploymentPeers({
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentPeerDisplayName,
  *     state: deploymentPeerState,

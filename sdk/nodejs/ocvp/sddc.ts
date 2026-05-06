@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     initialConfigurations: [{
  *         initialClusterConfigurations: [{
  *             computeAvailabilityDomain: sddcInitialConfigurationInitialClusterConfigurationsComputeAvailabilityDomain,
- *             esxiHostsCount: sddcInitialConfigurationInitialClusterConfigurationsEsxiHostsCount,
+ *             esxiHostsCount: Number(sddcInitialConfigurationInitialClusterConfigurationsEsxiHostsCount),
  *             networkConfiguration: {
  *                 nsxEdgeVtepVlanId: testVlan.id,
  *                 nsxVtepVlanId: testVlan.id,
@@ -61,7 +61,7 @@ import * as utilities from "../utilities";
  *             initialHostShapeName: testShape.name,
  *             initialVcfByolAllocationId: testByolAllocation.id,
  *             instanceDisplayNamePrefix: sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix,
- *             isShieldedInstanceEnabled: sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled,
+ *             isShieldedInstanceEnabled: sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled === "true",
  *             workloadNetworkCidr: sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr,
  *         }],
  *     }],
@@ -74,13 +74,13 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isSingleHostSddc: sddcIsSingleHostSddc,
+ *     isSingleHostSddc: sddcIsSingleHostSddc === "true",
  *     sddcByolAllocationDetails: {
  *         loadBalancerByolAllocationId: testByolAllocation.id,
- *         loadBalancerInstanceCount: sddcSddcByolAllocationDetailsLoadBalancerInstanceCount,
+ *         loadBalancerInstanceCount: Number(sddcSddcByolAllocationDetailsLoadBalancerInstanceCount),
  *     },
  *     hcxAction: hcxAction,
- *     isHcxEnabled: sddcIsHcxEnabled,
+ *     isHcxEnabled: sddcIsHcxEnabled === "true",
  * });
  * ```
  *

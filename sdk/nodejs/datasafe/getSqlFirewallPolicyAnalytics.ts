@@ -28,10 +28,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicyAnalytics = oci.DataSafe.getSqlFirewallPolicyAnalytics({
+ * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,
@@ -144,10 +144,10 @@ export interface GetSqlFirewallPolicyAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicyAnalytics = oci.DataSafe.getSqlFirewallPolicyAnalytics({
+ * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,

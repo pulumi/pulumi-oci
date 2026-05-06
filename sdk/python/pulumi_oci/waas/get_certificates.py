@@ -148,7 +148,7 @@ def get_certificates(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.Waas.get_certificates(compartment_id=compartment_id,
+    test_certificates = oci.waas.get_certificates(compartment_id=compartment_id,
         display_names=certificate_display_names,
         ids=certificate_ids,
         states=certificate_states,
@@ -204,7 +204,7 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.Waas.get_certificates(compartment_id=compartment_id,
+    test_certificates = oci.waas.get_certificates(compartment_id=compartment_id,
         display_names=certificate_display_names,
         ids=certificate_ids,
         states=certificate_states,

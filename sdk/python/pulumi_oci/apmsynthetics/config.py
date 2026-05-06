@@ -861,16 +861,16 @@ class Config(pulumi.CustomResource):
             apm_domain_id=test_apm_domain["id"],
             display_name=monitor_display_name,
             monitor_type=monitor_monitor_type,
-            repeat_interval_in_seconds=monitor_repeat_interval_in_seconds,
+            repeat_interval_in_seconds=int(monitor_repeat_interval_in_seconds),
             vantage_points=[{
                 "name": monitor_vantage_points_name,
                 "display_name": monitor_vantage_points_param_display_name,
             }],
             availability_configuration={
-                "max_allowed_failures_per_interval": monitor_availability_configuration_max_allowed_failures_per_interval,
-                "min_allowed_runs_per_interval": monitor_availability_configuration_min_allowed_runs_per_interval,
+                "max_allowed_failures_per_interval": int(monitor_availability_configuration_max_allowed_failures_per_interval),
+                "min_allowed_runs_per_interval": int(monitor_availability_configuration_min_allowed_runs_per_interval),
             },
-            batch_interval_in_seconds=monitor_batch_interval_in_seconds,
+            batch_interval_in_seconds=int(monitor_batch_interval_in_seconds),
             configuration={
                 "client_certificate_details": {
                     "client_certificate": {
@@ -900,10 +900,10 @@ class Config(pulumi.CustomResource):
                     "service_name": test_service["name"],
                 },
                 "dns_configuration": {
-                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns,
+                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns == "true",
                     "override_dns_ip": monitor_configuration_dns_configuration_override_dns_ip,
                 },
-                "download_size_limit_in_bytes": monitor_configuration_download_size_limit_in_bytes,
+                "download_size_limit_in_bytes": int(monitor_configuration_download_size_limit_in_bytes),
                 "ftp_basic_authentication_details": {
                     "password": {
                         "password": monitor_configuration_ftp_basic_authentication_details_password_password,
@@ -914,19 +914,19 @@ class Config(pulumi.CustomResource):
                 },
                 "ftp_protocol": monitor_configuration_ftp_protocol,
                 "ftp_request_type": monitor_configuration_ftp_request_type,
-                "is_active_mode": monitor_configuration_is_active_mode,
-                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled,
-                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled,
-                "is_failure_retried": monitor_configuration_is_failure_retried,
-                "is_query_recursive": monitor_configuration_is_query_recursive,
-                "is_redirection_enabled": monitor_configuration_is_redirection_enabled,
+                "is_active_mode": monitor_configuration_is_active_mode == "true",
+                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled == "true",
+                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled == "true",
+                "is_failure_retried": monitor_configuration_is_failure_retried == "true",
+                "is_query_recursive": monitor_configuration_is_query_recursive == "true",
+                "is_redirection_enabled": monitor_configuration_is_redirection_enabled == "true",
                 "name_server": monitor_configuration_name_server,
                 "network_configuration": {
-                    "number_of_hops": monitor_configuration_network_configuration_number_of_hops,
+                    "number_of_hops": int(monitor_configuration_network_configuration_number_of_hops),
                     "probe_mode": monitor_configuration_network_configuration_probe_mode,
-                    "probe_per_hop": monitor_configuration_network_configuration_probe_per_hop,
+                    "probe_per_hop": int(monitor_configuration_network_configuration_probe_per_hop),
                     "protocol": monitor_configuration_network_configuration_protocol,
-                    "transmission_rate": monitor_configuration_network_configuration_transmission_rate,
+                    "transmission_rate": int(monitor_configuration_network_configuration_transmission_rate),
                 },
                 "protocol": monitor_configuration_protocol,
                 "query": monitor_configuration_query,
@@ -955,7 +955,7 @@ class Config(pulumi.CustomResource):
                     "param_name": monitor_configuration_request_query_params_param_name,
                     "param_value": monitor_configuration_request_query_params_param_value,
                 }],
-                "upload_file_size_in_bytes": monitor_configuration_upload_file_size_in_bytes,
+                "upload_file_size_in_bytes": int(monitor_configuration_upload_file_size_in_bytes),
                 "verify_response_codes": monitor_configuration_verify_response_codes,
                 "verify_response_content": monitor_configuration_verify_response_content,
                 "verify_texts": [{
@@ -968,9 +968,9 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6=monitor_is_ipv6,
-            is_run_now=monitor_is_run_now,
-            is_run_once=monitor_is_run_once,
+            is_ipv6=monitor_is_ipv6 == "true",
+            is_run_now=monitor_is_run_now == "true",
+            is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
@@ -983,7 +983,7 @@ class Config(pulumi.CustomResource):
             }],
             status=monitor_status,
             target=monitor_target,
-            timeout_in_seconds=monitor_timeout_in_seconds)
+            timeout_in_seconds=int(monitor_timeout_in_seconds))
         ```
 
         ## Import
@@ -1047,16 +1047,16 @@ class Config(pulumi.CustomResource):
             apm_domain_id=test_apm_domain["id"],
             display_name=monitor_display_name,
             monitor_type=monitor_monitor_type,
-            repeat_interval_in_seconds=monitor_repeat_interval_in_seconds,
+            repeat_interval_in_seconds=int(monitor_repeat_interval_in_seconds),
             vantage_points=[{
                 "name": monitor_vantage_points_name,
                 "display_name": monitor_vantage_points_param_display_name,
             }],
             availability_configuration={
-                "max_allowed_failures_per_interval": monitor_availability_configuration_max_allowed_failures_per_interval,
-                "min_allowed_runs_per_interval": monitor_availability_configuration_min_allowed_runs_per_interval,
+                "max_allowed_failures_per_interval": int(monitor_availability_configuration_max_allowed_failures_per_interval),
+                "min_allowed_runs_per_interval": int(monitor_availability_configuration_min_allowed_runs_per_interval),
             },
-            batch_interval_in_seconds=monitor_batch_interval_in_seconds,
+            batch_interval_in_seconds=int(monitor_batch_interval_in_seconds),
             configuration={
                 "client_certificate_details": {
                     "client_certificate": {
@@ -1086,10 +1086,10 @@ class Config(pulumi.CustomResource):
                     "service_name": test_service["name"],
                 },
                 "dns_configuration": {
-                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns,
+                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns == "true",
                     "override_dns_ip": monitor_configuration_dns_configuration_override_dns_ip,
                 },
-                "download_size_limit_in_bytes": monitor_configuration_download_size_limit_in_bytes,
+                "download_size_limit_in_bytes": int(monitor_configuration_download_size_limit_in_bytes),
                 "ftp_basic_authentication_details": {
                     "password": {
                         "password": monitor_configuration_ftp_basic_authentication_details_password_password,
@@ -1100,19 +1100,19 @@ class Config(pulumi.CustomResource):
                 },
                 "ftp_protocol": monitor_configuration_ftp_protocol,
                 "ftp_request_type": monitor_configuration_ftp_request_type,
-                "is_active_mode": monitor_configuration_is_active_mode,
-                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled,
-                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled,
-                "is_failure_retried": monitor_configuration_is_failure_retried,
-                "is_query_recursive": monitor_configuration_is_query_recursive,
-                "is_redirection_enabled": monitor_configuration_is_redirection_enabled,
+                "is_active_mode": monitor_configuration_is_active_mode == "true",
+                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled == "true",
+                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled == "true",
+                "is_failure_retried": monitor_configuration_is_failure_retried == "true",
+                "is_query_recursive": monitor_configuration_is_query_recursive == "true",
+                "is_redirection_enabled": monitor_configuration_is_redirection_enabled == "true",
                 "name_server": monitor_configuration_name_server,
                 "network_configuration": {
-                    "number_of_hops": monitor_configuration_network_configuration_number_of_hops,
+                    "number_of_hops": int(monitor_configuration_network_configuration_number_of_hops),
                     "probe_mode": monitor_configuration_network_configuration_probe_mode,
-                    "probe_per_hop": monitor_configuration_network_configuration_probe_per_hop,
+                    "probe_per_hop": int(monitor_configuration_network_configuration_probe_per_hop),
                     "protocol": monitor_configuration_network_configuration_protocol,
-                    "transmission_rate": monitor_configuration_network_configuration_transmission_rate,
+                    "transmission_rate": int(monitor_configuration_network_configuration_transmission_rate),
                 },
                 "protocol": monitor_configuration_protocol,
                 "query": monitor_configuration_query,
@@ -1141,7 +1141,7 @@ class Config(pulumi.CustomResource):
                     "param_name": monitor_configuration_request_query_params_param_name,
                     "param_value": monitor_configuration_request_query_params_param_value,
                 }],
-                "upload_file_size_in_bytes": monitor_configuration_upload_file_size_in_bytes,
+                "upload_file_size_in_bytes": int(monitor_configuration_upload_file_size_in_bytes),
                 "verify_response_codes": monitor_configuration_verify_response_codes,
                 "verify_response_content": monitor_configuration_verify_response_content,
                 "verify_texts": [{
@@ -1154,9 +1154,9 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6=monitor_is_ipv6,
-            is_run_now=monitor_is_run_now,
-            is_run_once=monitor_is_run_once,
+            is_ipv6=monitor_is_ipv6 == "true",
+            is_run_now=monitor_is_run_now == "true",
+            is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
@@ -1169,7 +1169,7 @@ class Config(pulumi.CustomResource):
             }],
             status=monitor_status,
             target=monitor_target,
-            timeout_in_seconds=monitor_timeout_in_seconds)
+            timeout_in_seconds=int(monitor_timeout_in_seconds))
         ```
 
         ## Import

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
+ * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecId: testBeginExec.id,
@@ -126,7 +126,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
+ * const testManagedDatabaseSqlTuningAdvisorTasksFindings = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasksFindings({
  *     managedDatabaseId: testManagedDatabase.id,
  *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  *     beginExecId: testBeginExec.id,

@@ -134,7 +134,7 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+    test_log_analytics_object_collection_rules = oci.loganalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
         namespace=log_analytics_object_collection_rule_namespace,
         name=log_analytics_object_collection_rule_name,
         state=log_analytics_object_collection_rule_state)
@@ -180,7 +180,7 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+    test_log_analytics_object_collection_rules = oci.loganalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
         namespace=log_analytics_object_collection_rule_namespace,
         name=log_analytics_object_collection_rule_name,
         state=log_analytics_object_collection_rule_state)

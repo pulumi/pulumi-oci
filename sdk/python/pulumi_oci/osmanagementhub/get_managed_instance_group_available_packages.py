@@ -142,11 +142,11 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_packages = oci.osmanagementhub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest)
+        is_latest=managed_instance_group_available_package_is_latest == "true")
     ```
 
 
@@ -194,11 +194,11 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_packages = oci.osmanagementhub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest)
+        is_latest=managed_instance_group_available_package_is_latest == "true")
     ```
 
 

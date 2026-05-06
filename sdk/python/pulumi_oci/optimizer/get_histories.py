@@ -197,9 +197,9 @@ def get_histories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
-        compartment_id_in_subtree=history_compartment_id_in_subtree,
-        include_resource_metadata=history_include_resource_metadata,
+    test_histories = oci.optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree == "true",
+        include_resource_metadata=history_include_resource_metadata == "true",
         name=history_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],
@@ -271,9 +271,9 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
-        compartment_id_in_subtree=history_compartment_id_in_subtree,
-        include_resource_metadata=history_include_resource_metadata,
+    test_histories = oci.optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree == "true",
+        include_resource_metadata=history_include_resource_metadata == "true",
         name=history_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],

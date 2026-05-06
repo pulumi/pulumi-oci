@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatchManagementDatabases = oci.Dblm.getPatchManagementDatabases({
+ * const testPatchManagementDatabases = oci.dblm.getPatchManagementDatabases({
  *     compartmentId: compartmentId,
  *     databaseRelease: patchManagementDatabaseDatabaseRelease,
  *     databaseType: patchManagementDatabaseDatabaseType,
  *     displayName: patchManagementDatabaseDisplayName,
- *     drifterPatchId: testPatch.id,
+ *     drifterPatchId: Number(testPatch.id),
  *     imageCompliance: patchManagementDatabaseImageCompliance,
  *     imageId: testImage.id,
  *     severityTypes: patchManagementDatabaseSeverityType,
@@ -133,12 +133,12 @@ export interface GetPatchManagementDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatchManagementDatabases = oci.Dblm.getPatchManagementDatabases({
+ * const testPatchManagementDatabases = oci.dblm.getPatchManagementDatabases({
  *     compartmentId: compartmentId,
  *     databaseRelease: patchManagementDatabaseDatabaseRelease,
  *     databaseType: patchManagementDatabaseDatabaseType,
  *     displayName: patchManagementDatabaseDisplayName,
- *     drifterPatchId: testPatch.id,
+ *     drifterPatchId: Number(testPatch.id),
  *     imageCompliance: patchManagementDatabaseImageCompliance,
  *     imageId: testImage.id,
  *     severityTypes: patchManagementDatabaseSeverityType,

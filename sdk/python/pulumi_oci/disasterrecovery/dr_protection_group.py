@@ -500,21 +500,21 @@ class DrProtectionGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            disassociate_trigger=disassociate_trigger,
+            disassociate_trigger=int(disassociate_trigger),
             members=[{
                 "member_id": dr_protection_group_members_member_id,
                 "member_type": dr_protection_group_members_member_type,
                 "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
                 "backend_set_mappings": [{
                     "destination_backend_set_name": test_backend_set["name"],
-                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable == "true",
                     "source_backend_set_name": test_backend_set["name"],
                 }],
                 "backup_config": {
                     "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
                     "exclude_namespaces": dr_protection_group_members_backup_config_exclude_namespaces,
                     "image_replication_vault_secret_id": test_secret["id"],
-                    "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
+                    "max_number_of_backups_retained": int(dr_protection_group_members_backup_config_max_number_of_backups_retained),
                     "namespaces": dr_protection_group_members_backup_config_namespaces,
                     "replicate_images": dr_protection_group_members_backup_config_replicate_images,
                 },
@@ -581,11 +581,11 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_target_id": test_mount_target["id"],
                     },
                 }],
-                "gtid_reconciliation_timeout": dr_protection_group_members_gtid_reconciliation_timeout,
-                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout,
-                "is_movable": dr_protection_group_members_is_movable,
-                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
-                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "gtid_reconciliation_timeout": int(dr_protection_group_members_gtid_reconciliation_timeout),
+                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout == "true",
+                "is_movable": dr_protection_group_members_is_movable == "true",
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain == "true",
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled == "true",
                 "jump_host_id": test_jump_host["id"],
                 "load_balancer_mappings": [{
                     "destination_load_balancer_id": test_load_balancer["id"],
@@ -593,8 +593,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "managed_node_pool_configs": [{
                     "id": dr_protection_group_members_managed_node_pool_configs_id,
-                    "maximum": dr_protection_group_members_managed_node_pool_configs_maximum,
-                    "minimum": dr_protection_group_members_managed_node_pool_configs_minimum,
+                    "maximum": int(dr_protection_group_members_managed_node_pool_configs_maximum),
+                    "minimum": int(dr_protection_group_members_managed_node_pool_configs_minimum),
                 }],
                 "namespace": dr_protection_group_members_namespace,
                 "password_vault_secret_id": password_vault_secret_id,
@@ -621,8 +621,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "virtual_node_pool_configs": [{
                     "id": dr_protection_group_members_virtual_node_pool_configs_id,
-                    "maximum": dr_protection_group_members_virtual_node_pool_configs_maximum,
-                    "minimum": dr_protection_group_members_virtual_node_pool_configs_minimum,
+                    "maximum": int(dr_protection_group_members_virtual_node_pool_configs_maximum),
+                    "minimum": int(dr_protection_group_members_virtual_node_pool_configs_minimum),
                 }],
                 "vnic_mappings": [
                     {
@@ -718,21 +718,21 @@ class DrProtectionGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            disassociate_trigger=disassociate_trigger,
+            disassociate_trigger=int(disassociate_trigger),
             members=[{
                 "member_id": dr_protection_group_members_member_id,
                 "member_type": dr_protection_group_members_member_type,
                 "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
                 "backend_set_mappings": [{
                     "destination_backend_set_name": test_backend_set["name"],
-                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable == "true",
                     "source_backend_set_name": test_backend_set["name"],
                 }],
                 "backup_config": {
                     "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
                     "exclude_namespaces": dr_protection_group_members_backup_config_exclude_namespaces,
                     "image_replication_vault_secret_id": test_secret["id"],
-                    "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
+                    "max_number_of_backups_retained": int(dr_protection_group_members_backup_config_max_number_of_backups_retained),
                     "namespaces": dr_protection_group_members_backup_config_namespaces,
                     "replicate_images": dr_protection_group_members_backup_config_replicate_images,
                 },
@@ -799,11 +799,11 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_target_id": test_mount_target["id"],
                     },
                 }],
-                "gtid_reconciliation_timeout": dr_protection_group_members_gtid_reconciliation_timeout,
-                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout,
-                "is_movable": dr_protection_group_members_is_movable,
-                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
-                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "gtid_reconciliation_timeout": int(dr_protection_group_members_gtid_reconciliation_timeout),
+                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout == "true",
+                "is_movable": dr_protection_group_members_is_movable == "true",
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain == "true",
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled == "true",
                 "jump_host_id": test_jump_host["id"],
                 "load_balancer_mappings": [{
                     "destination_load_balancer_id": test_load_balancer["id"],
@@ -811,8 +811,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "managed_node_pool_configs": [{
                     "id": dr_protection_group_members_managed_node_pool_configs_id,
-                    "maximum": dr_protection_group_members_managed_node_pool_configs_maximum,
-                    "minimum": dr_protection_group_members_managed_node_pool_configs_minimum,
+                    "maximum": int(dr_protection_group_members_managed_node_pool_configs_maximum),
+                    "minimum": int(dr_protection_group_members_managed_node_pool_configs_minimum),
                 }],
                 "namespace": dr_protection_group_members_namespace,
                 "password_vault_secret_id": password_vault_secret_id,
@@ -839,8 +839,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "virtual_node_pool_configs": [{
                     "id": dr_protection_group_members_virtual_node_pool_configs_id,
-                    "maximum": dr_protection_group_members_virtual_node_pool_configs_maximum,
-                    "minimum": dr_protection_group_members_virtual_node_pool_configs_minimum,
+                    "maximum": int(dr_protection_group_members_virtual_node_pool_configs_maximum),
+                    "minimum": int(dr_protection_group_members_virtual_node_pool_configs_minimum),
                 }],
                 "vnic_mappings": [
                     {

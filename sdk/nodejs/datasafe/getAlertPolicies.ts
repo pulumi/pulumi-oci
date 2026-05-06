@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
+ * const testAlertPolicies = oci.datasafe.getAlertPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: alertPolicyAccessLevel,
  *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree === "true",
  *     displayName: alertPolicyDisplayName,
- *     isUserDefined: alertPolicyIsUserDefined,
+ *     isUserDefined: alertPolicyIsUserDefined === "true",
  *     state: alertPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,
@@ -146,13 +146,13 @@ export interface GetAlertPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
+ * const testAlertPolicies = oci.datasafe.getAlertPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: alertPolicyAccessLevel,
  *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree === "true",
  *     displayName: alertPolicyDisplayName,
- *     isUserDefined: alertPolicyIsUserDefined,
+ *     isUserDefined: alertPolicyIsUserDefined === "true",
  *     state: alertPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,

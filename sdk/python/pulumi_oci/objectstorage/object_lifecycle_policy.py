@@ -175,7 +175,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             namespace=object_lifecycle_policy_namespace,
             rules=[{
                 "action": object_lifecycle_policy_rules_action,
-                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled == "true",
                 "name": object_lifecycle_policy_rules_name,
                 "time_amount": object_lifecycle_policy_rules_time_amount,
                 "time_unit": object_lifecycle_policy_rules_time_unit,
@@ -228,7 +228,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             namespace=object_lifecycle_policy_namespace,
             rules=[{
                 "action": object_lifecycle_policy_rules_action,
-                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled == "true",
                 "name": object_lifecycle_policy_rules_name,
                 "time_amount": object_lifecycle_policy_rules_time_amount,
                 "time_unit": object_lifecycle_policy_rules_time_unit,

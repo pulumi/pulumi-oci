@@ -135,7 +135,7 @@ def get_task_schedules(filters: Optional[Sequence[Union['GetTaskSchedulesFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedules = oci.Jms.get_task_schedules(fleet_id="example-fleet-ocid",
+    test_task_schedules = oci.jms.get_task_schedules(fleet_id="example-fleet-ocid",
         id="example-task-schedule-ocid",
         managed_instance_id="example-managed-instance-ocid",
         name="JFR",
@@ -185,7 +185,7 @@ def get_task_schedules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedules = oci.Jms.get_task_schedules(fleet_id="example-fleet-ocid",
+    test_task_schedules = oci.jms.get_task_schedules(fleet_id="example-fleet-ocid",
         id="example-task-schedule-ocid",
         managed_instance_id="example-managed-instance-ocid",
         name="JFR",

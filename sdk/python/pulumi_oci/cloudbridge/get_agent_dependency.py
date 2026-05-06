@@ -263,7 +263,7 @@ def get_agent_dependency(agent_dependency_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=test_agent_dependency_oci_cloud_bridge_agent_dependency["id"])
+    test_agent_dependency = oci.cloudbridge.get_agent_dependency(agent_dependency_id=test_agent_dependency_oci_cloud_bridge_agent_dependency["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=test_agent_dependency_oci_cloud_bridge_agent_dependency["id"])
+    test_agent_dependency = oci.cloudbridge.get_agent_dependency(agent_dependency_id=test_agent_dependency_oci_cloud_bridge_agent_dependency["id"])
     ```
 
 

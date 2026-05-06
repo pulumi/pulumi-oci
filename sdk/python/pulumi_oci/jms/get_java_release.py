@@ -231,7 +231,7 @@ def get_java_release(release_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
+    test_java_release = oci.jms.get_java_release(release_version=java_release_release_version)
     ```
 
 
@@ -271,7 +271,7 @@ def get_java_release_output(release_version: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
+    test_java_release = oci.jms.get_java_release(release_version=java_release_release_version)
     ```
 
 

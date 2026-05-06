@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSemanticStores = oci.GenerativeAi.getSemanticStores({
+ * const testSemanticStores = oci.generativeai.getSemanticStores({
  *     compartmentId: compartmentId,
  *     dataSourceQueryingConnectionId: testConnection.id,
  *     displayName: semanticStoreDisplayName,
@@ -104,7 +104,7 @@ export interface GetSemanticStoresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSemanticStores = oci.GenerativeAi.getSemanticStores({
+ * const testSemanticStores = oci.generativeai.getSemanticStores({
  *     compartmentId: compartmentId,
  *     dataSourceQueryingConnectionId: testConnection.id,
  *     displayName: semanticStoreDisplayName,

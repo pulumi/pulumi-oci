@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousExadataInfrastructures = oci.Database.getAutonomousExadataInfrastructures({
+ * const testAutonomousExadataInfrastructures = oci.database.getAutonomousExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     availabilityDomain: autonomousExadataInfrastructureAvailabilityDomain,
  *     displayName: autonomousExadataInfrastructureDisplayName,
@@ -100,7 +100,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousExadataInfrastructures = oci.Database.getAutonomousExadataInfrastructures({
+ * const testAutonomousExadataInfrastructures = oci.database.getAutonomousExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     availabilityDomain: autonomousExadataInfrastructureAvailabilityDomain,
  *     displayName: autonomousExadataInfrastructureDisplayName,

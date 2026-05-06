@@ -667,7 +667,7 @@ class StorageObject(pulumi.CustomResource):
             content_encoding=object_content_encoding,
             content_language=object_content_language,
             content_type=object_content_type,
-            delete_all_object_versions=object_delete_all_object_versions,
+            delete_all_object_versions=object_delete_all_object_versions == "true",
             metadata=object_metadata,
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)
@@ -742,7 +742,7 @@ class StorageObject(pulumi.CustomResource):
             content_encoding=object_content_encoding,
             content_language=object_content_language,
             content_type=object_content_type,
-            delete_all_object_versions=object_delete_all_object_versions,
+            delete_all_object_versions=object_delete_all_object_versions == "true",
             metadata=object_metadata,
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystem = oci.Lustre.getFileStorageLustreFileSystem({
+ * const testLustreFileSystem = oci.lustre.getFileStorageLustreFileSystem({
  *     lustreFileSystemId: testLustreFileSystemOciLustreFileStorageLustreFileSystem.id,
  * });
  * ```
@@ -162,7 +162,7 @@ export interface GetFileStorageLustreFileSystemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLustreFileSystem = oci.Lustre.getFileStorageLustreFileSystem({
+ * const testLustreFileSystem = oci.lustre.getFileStorageLustreFileSystem({
  *     lustreFileSystemId: testLustreFileSystemOciLustreFileStorageLustreFileSystem.id,
  * });
  * ```

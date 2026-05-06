@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointScanProxies = oci.Oda.getOdaPrivateEndpointScanProxies({
+ * const testOdaPrivateEndpointScanProxies = oci.oda.getOdaPrivateEndpointScanProxies({
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointScanProxyState,
  * });
@@ -87,7 +87,7 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointScanProxies = oci.Oda.getOdaPrivateEndpointScanProxies({
+ * const testOdaPrivateEndpointScanProxies = oci.oda.getOdaPrivateEndpointScanProxies({
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointScanProxyState,
  * });

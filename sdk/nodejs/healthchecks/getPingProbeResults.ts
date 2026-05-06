@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingProbeResults = oci.HealthChecks.getPingProbeResults({
+ * const testPingProbeResults = oci.healthchecks.getPingProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: pingProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: pingProbeResultStartTimeLessThanOrEqualTo,
@@ -106,7 +106,7 @@ export interface GetPingProbeResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingProbeResults = oci.HealthChecks.getPingProbeResults({
+ * const testPingProbeResults = oci.healthchecks.getPingProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: pingProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: pingProbeResultStartTimeLessThanOrEqualTo,

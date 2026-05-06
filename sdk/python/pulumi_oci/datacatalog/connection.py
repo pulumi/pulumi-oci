@@ -482,7 +482,7 @@ class Connection(pulumi.CustomResource):
             type_key=connection_type_key,
             description=connection_description,
             enc_properties=connection_enc_properties,
-            is_default=connection_is_default)
+            is_default=connection_is_default == "true")
         ```
 
         ## Import
@@ -537,7 +537,7 @@ class Connection(pulumi.CustomResource):
             type_key=connection_type_key,
             description=connection_description,
             enc_properties=connection_enc_properties,
-            is_default=connection_is_default)
+            is_default=connection_is_default == "true")
         ```
 
         ## Import

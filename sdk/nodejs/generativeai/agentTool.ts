@@ -113,8 +113,8 @@ import * as utilities from "../utilities";
  *             },
  *         },
  *         runtimeVersion: toolToolConfigRuntimeVersion,
- *         shouldEnableSelfCorrection: toolToolConfigShouldEnableSelfCorrection,
- *         shouldEnableSqlExecution: toolToolConfigShouldEnableSqlExecution,
+ *         shouldEnableSelfCorrection: toolToolConfigShouldEnableSelfCorrection === "true",
+ *         shouldEnableSqlExecution: toolToolConfigShouldEnableSqlExecution === "true",
  *         subnetId: testSubnet.id,
  *         tableAndColumnDescription: {
  *             inputLocationType: toolToolConfigTableAndColumnDescriptionInputLocationType,

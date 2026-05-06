@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *         daysOfWeeks: [{
  *             name: schedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekName,
  *         }],
- *         duration: schedulingPolicySchedulingWindowWindowPreferenceDuration,
- *         isEnforcedDuration: schedulingPolicySchedulingWindowWindowPreferenceIsEnforcedDuration,
+ *         duration: Number(schedulingPolicySchedulingWindowWindowPreferenceDuration),
+ *         isEnforcedDuration: schedulingPolicySchedulingWindowWindowPreferenceIsEnforcedDuration === "true",
  *         startTime: schedulingPolicySchedulingWindowWindowPreferenceStartTime,
  *         weeksOfMonths: schedulingPolicySchedulingWindowWindowPreferenceWeeksOfMonth,
  *         months: [{

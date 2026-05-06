@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
+ * const testMonitoredResourceTypes = oci.stackmonitoring.getMonitoredResourceTypes({
  *     compartmentId: compartmentId,
  *     excludeFields: monitoredResourceTypeExcludeFields,
  *     fields: monitoredResourceTypeFields,
- *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes === "true",
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
  *     resourceCategory: monitoredResourceTypeResourceCategory,
@@ -150,11 +150,11 @@ export interface GetMonitoredResourceTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
+ * const testMonitoredResourceTypes = oci.stackmonitoring.getMonitoredResourceTypes({
  *     compartmentId: compartmentId,
  *     excludeFields: monitoredResourceTypeExcludeFields,
  *     fields: monitoredResourceTypeFields,
- *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes === "true",
  *     metricNamespace: monitoredResourceTypeMetricNamespace,
  *     name: monitoredResourceTypeName,
  *     resourceCategory: monitoredResourceTypeResourceCategory,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
+ * const testFusionEnvironmentServiceAttachments = oci.functions.getFusionEnvironmentServiceAttachments({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
  *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
@@ -97,7 +97,7 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
+ * const testFusionEnvironmentServiceAttachments = oci.functions.getFusionEnvironmentServiceAttachments({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
  *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,

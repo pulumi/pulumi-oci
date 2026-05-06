@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPluginCount = oci.ManagementAgent.getManagementAgentPluginCount({
+ * const testManagementAgentPluginCount = oci.managementagent.getManagementAgentPluginCount({
  *     compartmentId: compartmentId,
  *     groupBy: managementAgentPluginCountGroupBy,
  * });
@@ -73,7 +73,7 @@ export interface GetManagementAgentPluginCountResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPluginCount = oci.ManagementAgent.getManagementAgentPluginCount({
+ * const testManagementAgentPluginCount = oci.managementagent.getManagementAgentPluginCount({
  *     compartmentId: compartmentId,
  *     groupBy: managementAgentPluginCountGroupBy,
  * });

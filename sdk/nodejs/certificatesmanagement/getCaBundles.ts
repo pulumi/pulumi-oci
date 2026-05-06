@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundles = oci.CertificatesManagement.getCaBundles({
+ * const testCaBundles = oci.certificatesmanagement.getCaBundles({
  *     caBundleId: testCaBundle.id,
  *     compartmentId: compartmentId,
  *     name: caBundleName,
@@ -100,7 +100,7 @@ export interface GetCaBundlesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundles = oci.CertificatesManagement.getCaBundles({
+ * const testCaBundles = oci.certificatesmanagement.getCaBundles({
  *     caBundleId: testCaBundle.id,
  *     compartmentId: compartmentId,
  *     name: caBundleName,

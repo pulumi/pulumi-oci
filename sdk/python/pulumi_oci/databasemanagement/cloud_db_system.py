@@ -450,7 +450,7 @@ class CloudDbSystem(pulumi.CustomResource):
             compartment_id=compartment_id,
             db_system_discovery_id=test_db_system_discovery["id"],
             database_management_config={
-                "is_enabled": cloud_db_system_database_management_config_is_enabled,
+                "is_enabled": cloud_db_system_database_management_config_is_enabled == "true",
                 "metadata": cloud_db_system_database_management_config_metadata,
             },
             defined_tags={
@@ -461,7 +461,7 @@ class CloudDbSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             stack_monitoring_config={
-                "is_enabled": cloud_db_system_stack_monitoring_config_is_enabled,
+                "is_enabled": cloud_db_system_stack_monitoring_config_is_enabled == "true",
                 "metadata": cloud_db_system_stack_monitoring_config_metadata,
             })
         ```
@@ -509,7 +509,7 @@ class CloudDbSystem(pulumi.CustomResource):
             compartment_id=compartment_id,
             db_system_discovery_id=test_db_system_discovery["id"],
             database_management_config={
-                "is_enabled": cloud_db_system_database_management_config_is_enabled,
+                "is_enabled": cloud_db_system_database_management_config_is_enabled == "true",
                 "metadata": cloud_db_system_database_management_config_metadata,
             },
             defined_tags={
@@ -520,7 +520,7 @@ class CloudDbSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             stack_monitoring_config={
-                "is_enabled": cloud_db_system_stack_monitoring_config_is_enabled,
+                "is_enabled": cloud_db_system_stack_monitoring_config_is_enabled == "true",
                 "metadata": cloud_db_system_stack_monitoring_config_metadata,
             })
         ```

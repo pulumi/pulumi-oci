@@ -593,7 +593,7 @@ class SelfSubscription(pulumi.CustomResource):
                     "metric_type": subscription_subscription_details_billing_details_metric_type,
                     "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku,
+                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
                 },
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
@@ -609,7 +609,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew,
+                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
             },
             tenant_id=test_tenant["id"],
             additional_details=[{
@@ -693,7 +693,7 @@ class SelfSubscription(pulumi.CustomResource):
                     "metric_type": subscription_subscription_details_billing_details_metric_type,
                     "rate_allocation": subscription_subscription_details_billing_details_rate_allocation,
                     "sku": subscription_subscription_details_billing_details_sku,
-                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku,
+                    "has_gov_sku": subscription_subscription_details_billing_details_has_gov_sku == "true",
                 },
                 "partner_registration_url": subscription_subscription_details_partner_registration_url,
                 "pricing_plan": {
@@ -709,7 +709,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew,
+                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
             },
             tenant_id=test_tenant["id"],
             additional_details=[{

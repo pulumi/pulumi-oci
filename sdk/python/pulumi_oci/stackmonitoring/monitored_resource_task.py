@@ -337,16 +337,16 @@ class MonitoredResourceTask(pulumi.CustomResource):
             task_details={
                 "type": monitored_resource_task_task_details_type,
                 "agent_id": test_agent["id"],
-                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metric_collection_interval": int(monitored_resource_task_task_details_availability_proxy_metric_collection_interval),
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
                 "handler_type": monitored_resource_task_task_details_handler_type,
-                "is_enable": monitored_resource_task_task_details_is_enable,
+                "is_enable": monitored_resource_task_task_details_is_enable == "true",
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
                 "namespace": monitored_resource_task_task_details_namespace,
                 "receiver_properties": {
-                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                    "listener_port": int(monitored_resource_task_task_details_receiver_properties_listener_port),
                 },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
@@ -355,7 +355,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
                 "resource_types_configurations": [{
                     "availability_metrics_config": {
-                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "collection_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds),
                         "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
                     },
                     "handler_config": {
@@ -371,26 +371,26 @@ class MonitoredResourceTask(pulumi.CustomResource):
                         }],
                         "metric_mappings": [{
                             "collector_metric_name": test_metric["name"],
-                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
-                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload == "true",
+                            "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds),
                             "telemetry_metric_name": test_metric["name"],
                         }],
                         "metric_name_config": {
                             "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
-                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type == "true",
                         },
-                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds),
                         "telegraf_resource_name_config": {
                             "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
                             "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
-                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only == "true",
                         },
                         "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
                     },
                     "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
                 }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
-                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status == "true",
                 "source": monitored_resource_task_task_details_source,
             },
             defined_tags={
@@ -444,16 +444,16 @@ class MonitoredResourceTask(pulumi.CustomResource):
             task_details={
                 "type": monitored_resource_task_task_details_type,
                 "agent_id": test_agent["id"],
-                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metric_collection_interval": int(monitored_resource_task_task_details_availability_proxy_metric_collection_interval),
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
                 "handler_type": monitored_resource_task_task_details_handler_type,
-                "is_enable": monitored_resource_task_task_details_is_enable,
+                "is_enable": monitored_resource_task_task_details_is_enable == "true",
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
                 "namespace": monitored_resource_task_task_details_namespace,
                 "receiver_properties": {
-                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                    "listener_port": int(monitored_resource_task_task_details_receiver_properties_listener_port),
                 },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
@@ -462,7 +462,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
                 "resource_types_configurations": [{
                     "availability_metrics_config": {
-                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "collection_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds),
                         "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
                     },
                     "handler_config": {
@@ -478,26 +478,26 @@ class MonitoredResourceTask(pulumi.CustomResource):
                         }],
                         "metric_mappings": [{
                             "collector_metric_name": test_metric["name"],
-                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
-                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload == "true",
+                            "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds),
                             "telemetry_metric_name": test_metric["name"],
                         }],
                         "metric_name_config": {
                             "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
-                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type == "true",
                         },
-                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds),
                         "telegraf_resource_name_config": {
                             "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
                             "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
-                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only == "true",
                         },
                         "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
                     },
                     "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
                 }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
-                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status == "true",
                 "source": monitored_resource_task_task_details_source,
             },
             defined_tags={

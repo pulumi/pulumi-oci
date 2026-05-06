@@ -157,7 +157,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
 
         test_managed_instance_group_reboot_management = oci.osmanagementhub.ManagedInstanceGroupRebootManagement("test_managed_instance_group_reboot_management",
             managed_instance_group_id=test_managed_instance_group["id"],
-            reboot_timeout_in_mins=managed_instance_group_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(managed_instance_group_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": managed_instance_group_reboot_management_work_request_details_description,
                 "display_name": managed_instance_group_reboot_management_work_request_details_display_name,
@@ -201,7 +201,7 @@ class ManagedInstanceGroupRebootManagement(pulumi.CustomResource):
 
         test_managed_instance_group_reboot_management = oci.osmanagementhub.ManagedInstanceGroupRebootManagement("test_managed_instance_group_reboot_management",
             managed_instance_group_id=test_managed_instance_group["id"],
-            reboot_timeout_in_mins=managed_instance_group_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(managed_instance_group_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": managed_instance_group_reboot_management_work_request_details_description,
                 "display_name": managed_instance_group_reboot_management_work_request_details_display_name,

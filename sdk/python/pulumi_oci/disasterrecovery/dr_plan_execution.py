@@ -527,8 +527,8 @@ class DrPlanExecution(pulumi.CustomResource):
         test_dr_plan_execution = oci.disasterrecovery.DrPlanExecution("test_dr_plan_execution",
             execution_options={
                 "plan_execution_type": dr_plan_execution_execution_options_plan_execution_type,
-                "are_prechecks_enabled": dr_plan_execution_execution_options_are_prechecks_enabled,
-                "are_warnings_ignored": dr_plan_execution_execution_options_are_warnings_ignored,
+                "are_prechecks_enabled": dr_plan_execution_execution_options_are_prechecks_enabled == "true",
+                "are_warnings_ignored": dr_plan_execution_execution_options_are_warnings_ignored == "true",
             },
             plan_id=test_plan["id"],
             defined_tags={
@@ -584,8 +584,8 @@ class DrPlanExecution(pulumi.CustomResource):
         test_dr_plan_execution = oci.disasterrecovery.DrPlanExecution("test_dr_plan_execution",
             execution_options={
                 "plan_execution_type": dr_plan_execution_execution_options_plan_execution_type,
-                "are_prechecks_enabled": dr_plan_execution_execution_options_are_prechecks_enabled,
-                "are_warnings_ignored": dr_plan_execution_execution_options_are_warnings_ignored,
+                "are_prechecks_enabled": dr_plan_execution_execution_options_are_prechecks_enabled == "true",
+                "are_warnings_ignored": dr_plan_execution_execution_options_are_warnings_ignored == "true",
             },
             plan_id=test_plan["id"],
             defined_tags={

@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseBackups = oci.Database.getAutonomousContainerDatabaseBackups({
+ * const testAutonomousContainerDatabaseBackups = oci.database.getAutonomousContainerDatabaseBackups({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote,
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```
@@ -118,12 +118,12 @@ export interface GetAutonomousContainerDatabaseBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseBackups = oci.Database.getAutonomousContainerDatabaseBackups({
+ * const testAutonomousContainerDatabaseBackups = oci.database.getAutonomousContainerDatabaseBackups({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     displayName: autonomousContainerDatabaseBackupDisplayName,
  *     infrastructureType: autonomousContainerDatabaseBackupInfrastructureType,
- *     isRemote: autonomousContainerDatabaseBackupIsRemote,
+ *     isRemote: autonomousContainerDatabaseBackupIsRemote === "true",
  *     state: autonomousContainerDatabaseBackupState,
  * });
  * ```

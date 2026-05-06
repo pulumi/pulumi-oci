@@ -256,8 +256,8 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
             type=network_firewall_policy_service_type,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[{
-                "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
-                "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
+                "minimum_port": int(network_firewall_policy_service_port_ranges_minimum_port),
+                "maximum_port": int(network_firewall_policy_service_port_ranges_maximum_port),
             }],
             description=network_firewall_policy_service_description)
         ```
@@ -308,8 +308,8 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
             type=network_firewall_policy_service_type,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[{
-                "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
-                "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
+                "minimum_port": int(network_firewall_policy_service_port_ranges_minimum_port),
+                "maximum_port": int(network_firewall_policy_service_port_ranges_maximum_port),
             }],
             description=network_firewall_policy_service_description)
         ```

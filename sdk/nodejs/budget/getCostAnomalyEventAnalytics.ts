@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyEventAnalytics = oci.Budget.getCostAnomalyEventAnalytics({
+ * const testCostAnomalyEventAnalytics = oci.budget.getCostAnomalyEventAnalytics({
  *     compartmentId: compartmentId,
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
  *     costImpact: costAnomalyEventAnalyticCostImpact,
@@ -123,7 +123,7 @@ export interface GetCostAnomalyEventAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAnomalyEventAnalytics = oci.Budget.getCostAnomalyEventAnalytics({
+ * const testCostAnomalyEventAnalytics = oci.budget.getCostAnomalyEventAnalytics({
  *     compartmentId: compartmentId,
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
  *     costImpact: costAnomalyEventAnalyticCostImpact,

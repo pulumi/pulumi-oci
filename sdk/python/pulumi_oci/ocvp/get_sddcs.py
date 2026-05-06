@@ -138,7 +138,7 @@ def get_sddcs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=compartment_id,
+    test_sddcs = oci.ocvp.get_sddcs(compartment_id=compartment_id,
         compute_availability_domain=sddc_compute_availability_domain,
         display_name=sddc_display_name,
         state=sddc_state)
@@ -185,7 +185,7 @@ def get_sddcs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_sddcs = oci.Ocvp.get_sddcs(compartment_id=compartment_id,
+    test_sddcs = oci.ocvp.get_sddcs(compartment_id=compartment_id,
         compute_availability_domain=sddc_compute_availability_domain,
         display_name=sddc_display_name,
         state=sddc_state)

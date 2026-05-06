@@ -318,7 +318,7 @@ def get_domains_my_customer_secret_key(authorization: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
+    test_my_customer_secret_key = oci.identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
         my_customer_secret_key_id=test_customer_secret_key["id"],
         authorization=my_customer_secret_key_authorization,
         resource_type_schema_version=my_customer_secret_key_resource_type_schema_version)
@@ -378,7 +378,7 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
+    test_my_customer_secret_key = oci.identity.get_domains_my_customer_secret_key(idcs_endpoint=test_domain["url"],
         my_customer_secret_key_id=test_customer_secret_key["id"],
         authorization=my_customer_secret_key_authorization,
         resource_type_schema_version=my_customer_secret_key_resource_type_schema_version)

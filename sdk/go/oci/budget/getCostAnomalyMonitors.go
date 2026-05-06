@@ -32,9 +32,9 @@ import (
 //			_, err := budget.GetCostAnomalyMonitors(ctx, &budget.GetCostAnomalyMonitorsArgs{
 //				CompartmentId:   compartmentId,
 //				Name:            pulumi.StringRef(costAnomalyMonitorName),
-//				Regions:         costAnomalyMonitorRegion,
+//				Regions:         pulumi.ToArray(costAnomalyMonitorRegion),
 //				State:           pulumi.StringRef(costAnomalyMonitorState),
-//				TargetTenantIds: testTargetTenant.Id,
+//				TargetTenantIds: pulumi.ToArray(testTargetTenant.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

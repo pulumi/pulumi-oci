@@ -95,7 +95,7 @@ def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=compartment_id)
+    test_organization_subscriptions = oci.onesubsription.get_organization_subscriptions(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=compartment_id)
+    test_organization_subscriptions = oci.onesubsription.get_organization_subscriptions(compartment_id=compartment_id)
     ```
 
 

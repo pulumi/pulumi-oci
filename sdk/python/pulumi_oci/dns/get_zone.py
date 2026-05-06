@@ -320,7 +320,7 @@ def get_zone(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    target = oci.Dns.get_zone(zone_name_or_id=zone_ocid,
+    target = oci.dns.get_zone(zone_name_or_id=zone_ocid,
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -330,7 +330,7 @@ def get_zone(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    target_by_name = oci.Dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
+    target_by_name = oci.dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -393,7 +393,7 @@ def get_zone_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    target = oci.Dns.get_zone(zone_name_or_id=zone_ocid,
+    target = oci.dns.get_zone(zone_name_or_id=zone_ocid,
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -403,7 +403,7 @@ def get_zone_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    target_by_name = oci.Dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
+    target_by_name = oci.dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
         scope="PRIVATE",
         view_id=test_view["id"])
     ```

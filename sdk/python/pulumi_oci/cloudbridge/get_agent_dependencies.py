@@ -144,7 +144,7 @@ def get_agent_dependencies(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=compartment_id,
+    test_agent_dependencies = oci.cloudbridge.get_agent_dependencies(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_dependency_display_name,
         environment_id=test_environment["id"],
@@ -195,7 +195,7 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=compartment_id,
+    test_agent_dependencies = oci.cloudbridge.get_agent_dependencies(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_dependency_display_name,
         environment_id=test_environment["id"],

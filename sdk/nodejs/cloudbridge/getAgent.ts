@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgent = oci.CloudBridge.getAgent({
+ * const testAgent = oci.cloudbridge.getAgent({
  *     agentId: testAgentOciCloudBridgeAgent.id,
  * });
  * ```
@@ -135,7 +135,7 @@ export interface GetAgentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgent = oci.CloudBridge.getAgent({
+ * const testAgent = oci.cloudbridge.getAgent({
  *     agentId: testAgentOciCloudBridgeAgent.id,
  * });
  * ```

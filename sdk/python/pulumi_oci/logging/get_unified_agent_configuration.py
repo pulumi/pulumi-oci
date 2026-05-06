@@ -216,7 +216,7 @@ def get_unified_agent_configuration(unified_agent_configuration_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=test_unified_agent_configuration_oci_logging_unified_agent_configuration["id"])
+    test_unified_agent_configuration = oci.logging.get_unified_agent_configuration(unified_agent_configuration_id=test_unified_agent_configuration_oci_logging_unified_agent_configuration["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_unified_agent_configuration_output(unified_agent_configuration_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=test_unified_agent_configuration_oci_logging_unified_agent_configuration["id"])
+    test_unified_agent_configuration = oci.logging.get_unified_agent_configuration(unified_agent_configuration_id=test_unified_agent_configuration_oci_logging_unified_agent_configuration["id"])
     ```
 
 

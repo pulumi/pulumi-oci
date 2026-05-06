@@ -263,7 +263,7 @@ def get_jms_plugin(jms_plugin_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugin = oci.Jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
+    test_jms_plugin = oci.jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_jms_plugin_output(jms_plugin_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugin = oci.Jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
+    test_jms_plugin = oci.jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
     ```
 
 

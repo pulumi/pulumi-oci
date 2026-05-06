@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testViews = oci.Dns.getViews({
+ * const testViews = oci.dns.getViews({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: viewDisplayName,
@@ -113,7 +113,7 @@ export interface GetViewsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testViews = oci.Dns.getViews({
+ * const testViews = oci.dns.getViews({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: viewDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabaseConnectors = oci.DatabaseManagement.getExternalMySqlDatabaseConnectors({
+ * const testExternalMySqlDatabaseConnectors = oci.databasemanagement.getExternalMySqlDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseConnectorName,
  * });
@@ -80,7 +80,7 @@ export interface GetExternalMySqlDatabaseConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabaseConnectors = oci.DatabaseManagement.getExternalMySqlDatabaseConnectors({
+ * const testExternalMySqlDatabaseConnectors = oci.databasemanagement.getExternalMySqlDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseConnectorName,
  * });

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = oci.Identity.getDomainsRule({
+ * const testRule = oci.identity.getDomainsRule({
  *     idcsEndpoint: testDomain.url,
  *     ruleId: testRuleOciEventsRule.id,
  *     attributeSets: ["all"],
@@ -183,7 +183,7 @@ export interface GetDomainsRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = oci.Identity.getDomainsRule({
+ * const testRule = oci.identity.getDomainsRule({
  *     idcsEndpoint: testDomain.url,
  *     ruleId: testRuleOciEventsRule.id,
  *     attributeSets: ["all"],

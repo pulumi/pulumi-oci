@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
+ * const testDatabaseSoftwareImages = oci.database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
  *     state: databaseSoftwareImageState,
  * });
  * ```
@@ -127,13 +127,13 @@ export interface GetDatabaseSoftwareImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
+ * const testDatabaseSoftwareImages = oci.database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
  *     state: databaseSoftwareImageState,
  * });
  * ```

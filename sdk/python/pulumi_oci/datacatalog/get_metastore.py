@@ -216,7 +216,7 @@ def get_metastore(metastore_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
+    test_metastore = oci.datacatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_metastore_output(metastore_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
+    test_metastore = oci.datacatalog.get_metastore(metastore_id=test_metastore_oci_datacatalog_metastore["id"])
     ```
 
 

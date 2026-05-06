@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolations = oci.DataSafe.getSqlFirewallViolations({
+ * const testSqlFirewallViolations = oci.datasafe.getSqlFirewallViolations({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree === "true",
  *     scimQuery: sqlFirewallViolationScimQuery,
  * });
  * ```
@@ -93,10 +93,10 @@ export interface GetSqlFirewallViolationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolations = oci.DataSafe.getSqlFirewallViolations({
+ * const testSqlFirewallViolations = oci.datasafe.getSqlFirewallViolations({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree === "true",
  *     scimQuery: sqlFirewallViolationScimQuery,
  * });
  * ```

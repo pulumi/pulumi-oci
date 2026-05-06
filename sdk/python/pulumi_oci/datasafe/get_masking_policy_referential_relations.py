@@ -147,7 +147,7 @@ def get_masking_policy_referential_relations(column_names: Optional[Sequence[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_referential_relations = oci.DataSafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_referential_relations = oci.datasafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policy_referential_relation_column_name,
         objects=masking_policy_referential_relation_object,
         relation_types=masking_policy_referential_relation_relation_type,
@@ -198,7 +198,7 @@ def get_masking_policy_referential_relations_output(column_names: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_referential_relations = oci.DataSafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_referential_relations = oci.datasafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policy_referential_relation_column_name,
         objects=masking_policy_referential_relation_object,
         relation_types=masking_policy_referential_relation_relation_type,

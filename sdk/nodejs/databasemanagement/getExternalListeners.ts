@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListeners = oci.DatabaseManagement.getExternalListeners({
+ * const testExternalListeners = oci.databasemanagement.getExternalListeners({
  *     compartmentId: compartmentId,
  *     displayName: externalListenerDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,
@@ -91,7 +91,7 @@ export interface GetExternalListenersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalListeners = oci.DatabaseManagement.getExternalListeners({
+ * const testExternalListeners = oci.databasemanagement.getExternalListeners({
  *     compartmentId: compartmentId,
  *     displayName: externalListenerDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,

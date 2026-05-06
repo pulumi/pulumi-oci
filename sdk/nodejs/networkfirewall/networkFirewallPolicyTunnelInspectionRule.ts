@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         beforeRule: networkFirewallPolicyTunnelInspectionRulePositionBeforeRule,
  *     },
  *     profile: {
- *         mustReturnTrafficToSource: networkFirewallPolicyTunnelInspectionRuleProfileMustReturnTrafficToSource,
+ *         mustReturnTrafficToSource: networkFirewallPolicyTunnelInspectionRuleProfileMustReturnTrafficToSource === "true",
  *     },
  * });
  * ```

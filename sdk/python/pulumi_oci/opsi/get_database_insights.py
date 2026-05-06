@@ -211,8 +211,8 @@ def get_database_insights(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=database_insight_compartment_id_in_subtree,
+    test_database_insights = oci.opsi.get_database_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=database_insight_compartment_id_in_subtree == "true",
         database_ids=test_database["id"],
         database_types=database_insight_database_type,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
@@ -292,8 +292,8 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_insights = oci.Opsi.get_database_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=database_insight_compartment_id_in_subtree,
+    test_database_insights = oci.opsi.get_database_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=database_insight_compartment_id_in_subtree == "true",
         database_ids=test_database["id"],
         database_types=database_insight_database_type,
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],

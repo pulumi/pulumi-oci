@@ -26,11 +26,11 @@ import * as utilities from "../utilities";
  *     version: bdsInstancePatchActionVersion,
  *     patchingConfig: {
  *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
- *         batchSize: bdsInstancePatchActionPatchingConfigBatchSize,
- *         toleranceThresholdPerBatch: bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch,
- *         toleranceThresholdPerDomain: bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain,
- *         waitTimeBetweenBatchInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
- *         waitTimeBetweenDomainInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
+ *         batchSize: Number(bdsInstancePatchActionPatchingConfigBatchSize),
+ *         toleranceThresholdPerBatch: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerBatch),
+ *         toleranceThresholdPerDomain: Number(bdsInstancePatchActionPatchingConfigToleranceThresholdPerDomain),
+ *         waitTimeBetweenBatchInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
+ *         waitTimeBetweenDomainInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
  *     },
  * });
  * ```

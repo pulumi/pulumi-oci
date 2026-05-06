@@ -71,7 +71,7 @@ def get_generic_artifacts_content(artifact_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
+    test_generic_artifacts_content = oci.genericartifactscontent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
     ```
 
 
@@ -98,7 +98,7 @@ def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
+    test_generic_artifacts_content = oci.genericartifactscontent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
     ```
 
 

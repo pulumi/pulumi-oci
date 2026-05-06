@@ -113,7 +113,7 @@ def get_fault_domains(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
+    test_fault_domains = oci.identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
         compartment_id=compartment_id)
     ```
 
@@ -151,7 +151,7 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
+    test_fault_domains = oci.identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
         compartment_id=compartment_id)
     ```
 

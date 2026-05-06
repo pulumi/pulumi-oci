@@ -179,7 +179,7 @@ def get_service_catalog(service_catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
+    test_service_catalog = oci.servicecatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
+    test_service_catalog = oci.servicecatalog.get_service_catalog(service_catalog_id=test_service_catalog_oci_service_catalog_service_catalog["id"])
     ```
 
 

@@ -111,7 +111,7 @@ def get_cloud_db_system_discoveries(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discoveries = oci.DatabaseManagement.get_cloud_db_system_discoveries(compartment_id=compartment_id,
+    test_cloud_db_system_discoveries = oci.databasemanagement.get_cloud_db_system_discoveries(compartment_id=compartment_id,
         display_name=cloud_db_system_discovery_display_name)
     ```
 
@@ -147,7 +147,7 @@ def get_cloud_db_system_discoveries_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discoveries = oci.DatabaseManagement.get_cloud_db_system_discoveries(compartment_id=compartment_id,
+    test_cloud_db_system_discoveries = oci.databasemanagement.get_cloud_db_system_discoveries(compartment_id=compartment_id,
         display_name=cloud_db_system_discovery_display_name)
     ```
 

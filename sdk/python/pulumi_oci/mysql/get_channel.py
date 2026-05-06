@@ -227,7 +227,7 @@ def get_channel(channel_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
+    test_channel = oci.mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
     ```
 
 
@@ -269,7 +269,7 @@ def get_channel_output(channel_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_channel = oci.Mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
+    test_channel = oci.mysql.get_channel(channel_id=test_channel_oci_mysql_channel["id"])
     ```
 
 

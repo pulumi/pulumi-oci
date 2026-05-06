@@ -151,7 +151,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DevOps.get_connections(compartment_id=compartment_id,
+    test_connections = oci.devops.get_connections(compartment_id=compartment_id,
         connection_type=connection_connection_type,
         display_name=connection_display_name,
         id=connection_id,
@@ -206,7 +206,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DevOps.get_connections(compartment_id=compartment_id,
+    test_connections = oci.devops.get_connections(compartment_id=compartment_id,
         connection_type=connection_connection_type,
         display_name=connection_display_name,
         id=connection_id,

@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     timeScheduled: maintenanceRunTimeScheduled,
  *     compartmentId: compartmentId,
  *     databaseSoftwareImageId: testDatabaseSoftwareImage.id,
- *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled,
+ *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled === "true",
  *     patchingMode: maintenanceRunPatchingMode,
  * });
  * ```

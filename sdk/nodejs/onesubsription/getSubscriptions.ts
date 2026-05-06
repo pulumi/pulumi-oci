@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OneSubsription.getSubscriptions({
+ * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });
@@ -101,10 +101,10 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OneSubsription.getSubscriptions({
+ * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });

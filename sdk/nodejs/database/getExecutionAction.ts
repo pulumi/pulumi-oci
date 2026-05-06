@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionAction = oci.Database.getExecutionAction({
+ * const testExecutionAction = oci.database.getExecutionAction({
  *     executionActionId: testExecutionActionOciDatabaseExecutionAction.id,
  * });
  * ```
@@ -128,7 +128,7 @@ export interface GetExecutionActionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionAction = oci.Database.getExecutionAction({
+ * const testExecutionAction = oci.database.getExecutionAction({
  *     executionActionId: testExecutionActionOciDatabaseExecutionAction.id,
  * });
  * ```

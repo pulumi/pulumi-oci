@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicResourceGroups = oci.Identity.getDomainsDynamicResourceGroups({
+ * const testDynamicResourceGroups = oci.identity.getDomainsDynamicResourceGroups({
  *     idcsEndpoint: testDomain.url,
- *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
+ *     dynamicResourceGroupCount: Number(dynamicResourceGroupDynamicResourceGroupCount),
  *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: dynamicResourceGroupAuthorization,
  *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
- *     startIndex: dynamicResourceGroupStartIndex,
+ *     startIndex: Number(dynamicResourceGroupStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsDynamicResourceGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicResourceGroups = oci.Identity.getDomainsDynamicResourceGroups({
+ * const testDynamicResourceGroups = oci.identity.getDomainsDynamicResourceGroups({
  *     idcsEndpoint: testDomain.url,
- *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
+ *     dynamicResourceGroupCount: Number(dynamicResourceGroupDynamicResourceGroupCount),
  *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: dynamicResourceGroupAuthorization,
  *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
- *     startIndex: dynamicResourceGroupStartIndex,
+ *     startIndex: Number(dynamicResourceGroupStartIndex),
  * });
  * ```
  */

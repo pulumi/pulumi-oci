@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryFabrics = oci.Core.getComputeGpuMemoryFabrics({
+ * const testComputeGpuMemoryFabrics = oci.core.getComputeGpuMemoryFabrics({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryFabricAvailabilityDomain,
  *     computeGpuMemoryFabricHealth: computeGpuMemoryFabricComputeGpuMemoryFabricHealth,
@@ -128,7 +128,7 @@ export interface GetComputeGpuMemoryFabricsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryFabrics = oci.Core.getComputeGpuMemoryFabrics({
+ * const testComputeGpuMemoryFabrics = oci.core.getComputeGpuMemoryFabrics({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryFabricAvailabilityDomain,
  *     computeGpuMemoryFabricHealth: computeGpuMemoryFabricComputeGpuMemoryFabricHealth,

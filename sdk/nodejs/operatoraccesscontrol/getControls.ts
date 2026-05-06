@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControls = oci.OperatorAccessControl.getControls({
+ * const testOperatorControls = oci.operatoraccesscontrol.getControls({
  *     compartmentId: compartmentId,
  *     displayName: operatorControlDisplayName,
  *     resourceType: operatorControlResourceType,
@@ -97,7 +97,7 @@ export interface GetControlsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControls = oci.OperatorAccessControl.getControls({
+ * const testOperatorControls = oci.operatoraccesscontrol.getControls({
  *     compartmentId: compartmentId,
  *     displayName: operatorControlDisplayName,
  *     resourceType: operatorControlResourceType,

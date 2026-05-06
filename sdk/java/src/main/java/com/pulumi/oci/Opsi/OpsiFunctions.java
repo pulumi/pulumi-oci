@@ -127,8 +127,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -169,8 +169,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -211,8 +211,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -253,8 +253,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -295,8 +295,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -384,8 +384,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -476,8 +476,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -522,8 +522,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -568,8 +568,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -614,8 +614,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -706,8 +706,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -752,8 +752,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -797,8 +797,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -841,8 +841,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -885,8 +885,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -929,8 +929,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -973,8 +973,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1017,8 +1017,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1059,8 +1059,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1101,8 +1101,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1143,8 +1143,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1185,8 +1185,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1227,8 +1227,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1275,8 +1275,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1323,8 +1323,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1371,8 +1371,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1419,8 +1419,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1467,8 +1467,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1513,8 +1513,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1559,8 +1559,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1605,8 +1605,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1651,8 +1651,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1697,8 +1697,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1739,8 +1739,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1781,8 +1781,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1823,8 +1823,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1865,8 +1865,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1907,8 +1907,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1995,8 +1995,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2039,8 +2039,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2083,8 +2083,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2127,8 +2127,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2171,8 +2171,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2215,8 +2215,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2257,8 +2257,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2299,8 +2299,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2341,8 +2341,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2383,8 +2383,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2426,8 +2426,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2479,8 +2479,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2532,8 +2532,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2585,8 +2585,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2638,8 +2638,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2691,8 +2691,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2744,8 +2744,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2796,8 +2796,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2838,8 +2838,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2880,8 +2880,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2922,8 +2922,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2964,8 +2964,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3007,8 +3007,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3054,8 +3054,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3101,8 +3101,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3148,8 +3148,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3195,8 +3195,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3242,8 +3242,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3289,8 +3289,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3335,8 +3335,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3377,8 +3377,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3419,8 +3419,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3461,8 +3461,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3503,8 +3503,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3546,8 +3546,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3595,8 +3595,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3644,8 +3644,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3693,8 +3693,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3742,8 +3742,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3791,8 +3791,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3840,8 +3840,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3888,8 +3888,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3930,8 +3930,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3972,8 +3972,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4014,8 +4014,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4056,8 +4056,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4099,8 +4099,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4149,8 +4149,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4199,8 +4199,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4249,8 +4249,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4299,8 +4299,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4349,8 +4349,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4399,8 +4399,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4452,8 +4452,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4498,8 +4498,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4544,8 +4544,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4590,8 +4590,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4636,8 +4636,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4682,8 +4682,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4728,8 +4728,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4774,8 +4774,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4820,8 +4820,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4866,8 +4866,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4914,8 +4914,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4962,8 +4962,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5010,8 +5010,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5058,8 +5058,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5106,8 +5106,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5154,8 +5154,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5202,8 +5202,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5250,8 +5250,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5298,8 +5298,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5346,8 +5346,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5388,8 +5388,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5430,8 +5430,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5472,8 +5472,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5514,8 +5514,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5556,8 +5556,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5598,8 +5598,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5644,8 +5644,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5690,8 +5690,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5736,8 +5736,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5782,8 +5782,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5828,8 +5828,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5874,8 +5874,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetNewsReportsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5920,8 +5920,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5962,8 +5962,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6004,8 +6004,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6046,8 +6046,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6088,8 +6088,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6130,8 +6130,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6178,8 +6178,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6226,8 +6226,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6274,8 +6274,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6322,8 +6322,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6370,8 +6370,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6418,8 +6418,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6467,8 +6467,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6510,8 +6510,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6553,8 +6553,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6596,8 +6596,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6639,8 +6639,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6682,8 +6682,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6725,8 +6725,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6768,8 +6768,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6811,8 +6811,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6854,8 +6854,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6896,8 +6896,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6938,8 +6938,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6980,8 +6980,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7022,8 +7022,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7064,8 +7064,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7106,8 +7106,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7152,8 +7152,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7198,8 +7198,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7244,8 +7244,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7290,8 +7290,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7337,8 +7337,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7383,8 +7383,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7429,8 +7429,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7475,8 +7475,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7521,8 +7521,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7567,8 +7567,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7613,8 +7613,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7660,8 +7660,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7708,8 +7708,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7756,8 +7756,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7804,8 +7804,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7852,8 +7852,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7899,8 +7899,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7946,8 +7946,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7993,8 +7993,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8040,8 +8040,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8087,8 +8087,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationConfigurationItemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8133,8 +8133,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8178,8 +8178,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8223,8 +8223,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8268,8 +8268,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8313,8 +8313,8 @@ public final class OpsiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Opsi.OpsiFunctions;
      * import com.pulumi.oci.Opsi.inputs.GetOpsiConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

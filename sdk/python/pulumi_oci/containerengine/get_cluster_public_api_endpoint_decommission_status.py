@@ -95,7 +95,7 @@ def get_cluster_public_api_endpoint_decommission_status(cluster_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_public_api_endpoint_decommission_status = oci.ContainerEngine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
+    test_cluster_public_api_endpoint_decommission_status = oci.containerengine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
     ```
 
 
@@ -124,7 +124,7 @@ def get_cluster_public_api_endpoint_decommission_status_output(cluster_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_public_api_endpoint_decommission_status = oci.ContainerEngine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
+    test_cluster_public_api_endpoint_decommission_status = oci.containerengine.get_cluster_public_api_endpoint_decommission_status(cluster_id=test_cluster["id"])
     ```
 
 

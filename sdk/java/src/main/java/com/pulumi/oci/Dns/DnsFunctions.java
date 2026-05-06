@@ -86,8 +86,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -139,8 +139,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -192,8 +192,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -245,8 +245,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -298,8 +298,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -347,8 +347,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -393,8 +393,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -439,8 +439,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -485,8 +485,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -531,8 +531,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -577,8 +577,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -624,8 +624,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -671,8 +671,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -718,8 +718,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -765,8 +765,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -812,8 +812,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -860,8 +860,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -908,8 +908,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -956,8 +956,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1004,8 +1004,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1105,8 +1105,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1156,8 +1156,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1207,8 +1207,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1258,8 +1258,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1306,8 +1306,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1353,8 +1353,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1400,8 +1400,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1447,8 +1447,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1494,8 +1494,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1541,8 +1541,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1589,8 +1589,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1637,8 +1637,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1685,8 +1685,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1733,8 +1733,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1779,8 +1779,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1829,8 +1829,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1879,8 +1879,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1929,8 +1929,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1979,8 +1979,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2029,8 +2029,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2071,8 +2071,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2113,8 +2113,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2155,8 +2155,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2197,8 +2197,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2239,8 +2239,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2281,8 +2281,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2323,8 +2323,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2365,8 +2365,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2407,8 +2407,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2449,8 +2449,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2500,8 +2500,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2551,8 +2551,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2602,8 +2602,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2653,8 +2653,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2704,8 +2704,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2746,8 +2746,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2788,8 +2788,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2830,8 +2830,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2872,8 +2872,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2914,8 +2914,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2959,8 +2959,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3004,8 +3004,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3049,8 +3049,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3094,8 +3094,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3143,8 +3143,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3190,8 +3190,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3237,8 +3237,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3284,8 +3284,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3331,8 +3331,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3378,8 +3378,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3425,8 +3425,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3473,8 +3473,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3524,8 +3524,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3575,8 +3575,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3626,8 +3626,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3677,8 +3677,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3728,8 +3728,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3762,8 +3762,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3811,8 +3811,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3845,8 +3845,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3894,8 +3894,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3928,8 +3928,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3977,8 +3977,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4011,8 +4011,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4060,8 +4060,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4094,8 +4094,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4141,8 +4141,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4196,8 +4196,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4251,8 +4251,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4306,8 +4306,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4361,8 +4361,8 @@ public final class DnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Dns.DnsFunctions;
      * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

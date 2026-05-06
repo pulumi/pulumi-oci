@@ -150,7 +150,7 @@ def get_volume_backups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+    test_volume_backups = oci.core.get_volume_backups(compartment_id=compartment_id,
         display_name=volume_backup_display_name,
         source_volume_backup_id=test_volume_backup["id"],
         state=volume_backup_state,
@@ -201,7 +201,7 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+    test_volume_backups = oci.core.get_volume_backups(compartment_id=compartment_id,
         display_name=volume_backup_display_name,
         source_volume_backup_id=test_volume_backup["id"],
         state=volume_backup_state,

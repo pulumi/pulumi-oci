@@ -690,9 +690,9 @@ class Domain(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_hidden_on_login=domain_is_hidden_on_login,
-            is_notification_bypassed=domain_is_notification_bypassed,
-            is_primary_email_required=domain_is_primary_email_required)
+            is_hidden_on_login=domain_is_hidden_on_login == "true",
+            is_notification_bypassed=domain_is_notification_bypassed == "true",
+            is_primary_email_required=domain_is_primary_email_required == "true")
         ```
 
         ## Import
@@ -777,9 +777,9 @@ class Domain(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_hidden_on_login=domain_is_hidden_on_login,
-            is_notification_bypassed=domain_is_notification_bypassed,
-            is_primary_email_required=domain_is_primary_email_required)
+            is_hidden_on_login=domain_is_hidden_on_login == "true",
+            is_notification_bypassed=domain_is_notification_bypassed == "true",
+            is_primary_email_required=domain_is_primary_email_required == "true")
         ```
 
         ## Import

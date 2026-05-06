@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupVersionHistories = oci.DataScience.getModelGroupVersionHistories({
+ * const testModelGroupVersionHistories = oci.datascience.getModelGroupVersionHistories({
  *     compartmentId: compartmentId,
  *     createdBy: modelGroupVersionHistoryCreatedBy,
  *     displayName: modelGroupVersionHistoryDisplayName,
@@ -116,7 +116,7 @@ export interface GetModelGroupVersionHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupVersionHistories = oci.DataScience.getModelGroupVersionHistories({
+ * const testModelGroupVersionHistories = oci.datascience.getModelGroupVersionHistories({
  *     compartmentId: compartmentId,
  *     createdBy: modelGroupVersionHistoryCreatedBy,
  *     displayName: modelGroupVersionHistoryDisplayName,

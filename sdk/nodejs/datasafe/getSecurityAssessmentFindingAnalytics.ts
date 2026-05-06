@@ -26,13 +26,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
+ * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
@@ -148,13 +148,13 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
+ * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });

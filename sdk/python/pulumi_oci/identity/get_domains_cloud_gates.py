@@ -214,14 +214,14 @@ def get_domains_cloud_gates(attribute_sets: Optional[Sequence[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
-        cloud_gate_count=cloud_gate_cloud_gate_count,
+    test_cloud_gates = oci.identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
+        cloud_gate_count=int(cloud_gate_cloud_gate_count),
         cloud_gate_filter=cloud_gate_cloud_gate_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_authorization,
         resource_type_schema_version=cloud_gate_resource_type_schema_version,
-        start_index=cloud_gate_start_index)
+        start_index=int(cloud_gate_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_cloud_gates_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
-        cloud_gate_count=cloud_gate_cloud_gate_count,
+    test_cloud_gates = oci.identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
+        cloud_gate_count=int(cloud_gate_cloud_gate_count),
         cloud_gate_filter=cloud_gate_cloud_gate_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_authorization,
         resource_type_schema_version=cloud_gate_resource_type_schema_version,
-        start_index=cloud_gate_start_index)
+        start_index=int(cloud_gate_start_index))
     ```
 
 

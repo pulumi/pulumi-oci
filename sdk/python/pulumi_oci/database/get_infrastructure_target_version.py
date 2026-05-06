@@ -122,7 +122,7 @@ def get_infrastructure_target_version(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=compartment_id,
+    test_infrastructure_target_version = oci.database.get_infrastructure_target_version(compartment_id=compartment_id,
         target_resource_id=test_target_resource["id"],
         target_resource_type=infrastructure_target_version_target_resource_type)
     ```
@@ -162,7 +162,7 @@ def get_infrastructure_target_version_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_infrastructure_target_version = oci.Database.get_infrastructure_target_version(compartment_id=compartment_id,
+    test_infrastructure_target_version = oci.database.get_infrastructure_target_version(compartment_id=compartment_id,
         target_resource_id=test_target_resource["id"],
         target_resource_type=infrastructure_target_version_target_resource_type)
     ```

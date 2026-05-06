@@ -115,7 +115,7 @@ def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterAr
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+    test_announcements = oci.jms.get_announcements(summary_contains=announcement_summary_contains,
         time_end=announcement_time_end,
         time_start=announcement_time_start)
     ```
@@ -156,7 +156,7 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+    test_announcements = oci.jms.get_announcements(summary_contains=announcement_summary_contains,
         time_end=announcement_time_end,
         time_start=announcement_time_start)
     ```

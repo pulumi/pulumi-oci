@@ -191,7 +191,7 @@ def get_discovery_schedule(discovery_schedule_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedule = oci.CloudBridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
+    test_discovery_schedule = oci.cloudbridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_discovery_schedule_output(discovery_schedule_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedule = oci.CloudBridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
+    test_discovery_schedule = oci.cloudbridge.get_discovery_schedule(discovery_schedule_id=test_discovery_schedule_oci_cloud_bridge_discovery_schedule["id"])
     ```
 
 

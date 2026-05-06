@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbNode = oci.DatabaseManagement.getCloudDbNode({
+ * const testCloudDbNode = oci.databasemanagement.getCloudDbNode({
  *     cloudDbNodeId: testCloudDbNodeOciDatabaseManagementCloudDbNode.id,
  * });
  * ```
@@ -130,7 +130,7 @@ export interface GetCloudDbNodeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbNode = oci.DatabaseManagement.getCloudDbNode({
+ * const testCloudDbNode = oci.databasemanagement.getCloudDbNode({
  *     cloudDbNodeId: testCloudDbNodeOciDatabaseManagementCloudDbNode.id,
  * });
  * ```

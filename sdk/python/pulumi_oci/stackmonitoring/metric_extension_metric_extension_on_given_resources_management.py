@@ -169,7 +169,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         test_metric_extension_metric_extension_on_given_resources_management = oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
             metric_extension_id=test_metric_extension["id"],
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
-            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources == "true")
         ```
 
 
@@ -205,7 +205,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         test_metric_extension_metric_extension_on_given_resources_management = oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
             metric_extension_id=test_metric_extension["id"],
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
-            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources == "true")
         ```
 
 

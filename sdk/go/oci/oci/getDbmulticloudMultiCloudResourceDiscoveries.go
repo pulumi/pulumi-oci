@@ -35,7 +35,7 @@ import (
 //				MultiCloudResourceDiscoveryId: pulumi.StringRef(testMultiCloudResourceDiscovery.Id),
 //				OracleDbAzureConnectorId:      pulumi.StringRef(testOracleDbAzureConnector.Id),
 //				ResourceType:                  pulumi.StringRef(multiCloudResourceDiscoveryResourceType),
-//				ResourcesFilters:              multiCloudResourceDiscoveryResourcesFilter,
+//				ResourcesFilters:              pulumi.ToArray(multiCloudResourceDiscoveryResourcesFilter),
 //				State:                         pulumi.StringRef(multiCloudResourceDiscoveryState),
 //			}, nil)
 //			if err != nil {

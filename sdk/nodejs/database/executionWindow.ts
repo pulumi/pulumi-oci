@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     executionResourceId: testResource.id,
  *     timeScheduled: executionWindowTimeScheduled,
- *     windowDurationInMins: executionWindowWindowDurationInMins,
+ *     windowDurationInMins: Number(executionWindowWindowDurationInMins),
  *     definedTags: executionWindowDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnforcedDuration: executionWindowIsEnforcedDuration,
+ *     isEnforcedDuration: executionWindowIsEnforcedDuration === "true",
  * });
  * ```
  *

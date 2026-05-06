@@ -179,7 +179,7 @@ def get_log_saved_search(log_saved_search_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=test_log_saved_search_oci_logging_log_saved_search["id"])
+    test_log_saved_search = oci.logging.get_log_saved_search(log_saved_search_id=test_log_saved_search_oci_logging_log_saved_search["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=test_log_saved_search_oci_logging_log_saved_search["id"])
+    test_log_saved_search = oci.logging.get_log_saved_search(log_saved_search_id=test_log_saved_search_oci_logging_log_saved_search["id"])
     ```
 
 

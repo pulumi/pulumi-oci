@@ -30,13 +30,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAnalytics({
+ * const testSecurityAssessmentTemplateAnalytics = oci.datasafe.getSecurityAssessmentTemplateAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAnalyticCompartmentIdInSubtree,
- *     isCompared: securityAssessmentTemplateAnalyticIsCompared,
- *     isCompliant: securityAssessmentTemplateAnalyticIsCompliant,
- *     isGroup: securityAssessmentTemplateAnalyticIsGroup,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAnalyticCompartmentIdInSubtree === "true",
+ *     isCompared: securityAssessmentTemplateAnalyticIsCompared === "true",
+ *     isCompliant: securityAssessmentTemplateAnalyticIsCompliant === "true",
+ *     isGroup: securityAssessmentTemplateAnalyticIsGroup === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,
@@ -177,13 +177,13 @@ export interface GetSecurityAssessmentTemplateAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateAnalytics = oci.DataSafe.getSecurityAssessmentTemplateAnalytics({
+ * const testSecurityAssessmentTemplateAnalytics = oci.datasafe.getSecurityAssessmentTemplateAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAnalyticCompartmentIdInSubtree,
- *     isCompared: securityAssessmentTemplateAnalyticIsCompared,
- *     isCompliant: securityAssessmentTemplateAnalyticIsCompliant,
- *     isGroup: securityAssessmentTemplateAnalyticIsGroup,
+ *     compartmentIdInSubtree: securityAssessmentTemplateAnalyticCompartmentIdInSubtree === "true",
+ *     isCompared: securityAssessmentTemplateAnalyticIsCompared === "true",
+ *     isCompliant: securityAssessmentTemplateAnalyticIsCompliant === "true",
+ *     isGroup: securityAssessmentTemplateAnalyticIsGroup === "true",
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,

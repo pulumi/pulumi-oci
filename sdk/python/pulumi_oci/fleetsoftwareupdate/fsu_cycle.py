@@ -799,9 +799,9 @@ class FsuCycle(pulumi.CustomResource):
                 "type": fsu_cycle_apply_action_schedule_type,
             },
             batching_strategy={
-                "is_force_rolling": fsu_cycle_batching_strategy_is_force_rolling,
-                "is_wait_for_batch_resume": fsu_cycle_batching_strategy_is_wait_for_batch_resume,
-                "percentage": fsu_cycle_batching_strategy_percentage,
+                "is_force_rolling": fsu_cycle_batching_strategy_is_force_rolling == "true",
+                "is_wait_for_batch_resume": fsu_cycle_batching_strategy_is_wait_for_batch_resume == "true",
+                "percentage": int(fsu_cycle_batching_strategy_percentage),
                 "type": fsu_cycle_batching_strategy_type,
             },
             defined_tags={
@@ -815,20 +815,20 @@ class FsuCycle(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_ignore_missing_patches=fsu_cycle_is_ignore_missing_patches,
-            is_ignore_patches=fsu_cycle_is_ignore_patches,
-            is_keep_placement=fsu_cycle_is_keep_placement,
-            max_drain_timeout_in_seconds=fsu_cycle_max_drain_timeout_in_seconds,
+            is_ignore_patches=fsu_cycle_is_ignore_patches == "true",
+            is_keep_placement=fsu_cycle_is_keep_placement == "true",
+            max_drain_timeout_in_seconds=int(fsu_cycle_max_drain_timeout_in_seconds),
             stage_action_schedule={
                 "time_to_start": fsu_cycle_stage_action_schedule_time_to_start,
                 "type": fsu_cycle_stage_action_schedule_type,
             },
             upgrade_details={
                 "collection_type": fsu_cycle_upgrade_details_collection_type,
-                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors,
-                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites,
-                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
-                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
-                "max_drain_timeout_in_seconds": fsu_cycle_upgrade_details_max_drain_timeout_in_seconds,
+                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors == "true",
+                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites == "true",
+                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects == "true",
+                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade == "true",
+                "max_drain_timeout_in_seconds": int(fsu_cycle_upgrade_details_max_drain_timeout_in_seconds),
             })
         ```
 
@@ -906,9 +906,9 @@ class FsuCycle(pulumi.CustomResource):
                 "type": fsu_cycle_apply_action_schedule_type,
             },
             batching_strategy={
-                "is_force_rolling": fsu_cycle_batching_strategy_is_force_rolling,
-                "is_wait_for_batch_resume": fsu_cycle_batching_strategy_is_wait_for_batch_resume,
-                "percentage": fsu_cycle_batching_strategy_percentage,
+                "is_force_rolling": fsu_cycle_batching_strategy_is_force_rolling == "true",
+                "is_wait_for_batch_resume": fsu_cycle_batching_strategy_is_wait_for_batch_resume == "true",
+                "percentage": int(fsu_cycle_batching_strategy_percentage),
                 "type": fsu_cycle_batching_strategy_type,
             },
             defined_tags={
@@ -922,20 +922,20 @@ class FsuCycle(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_ignore_missing_patches=fsu_cycle_is_ignore_missing_patches,
-            is_ignore_patches=fsu_cycle_is_ignore_patches,
-            is_keep_placement=fsu_cycle_is_keep_placement,
-            max_drain_timeout_in_seconds=fsu_cycle_max_drain_timeout_in_seconds,
+            is_ignore_patches=fsu_cycle_is_ignore_patches == "true",
+            is_keep_placement=fsu_cycle_is_keep_placement == "true",
+            max_drain_timeout_in_seconds=int(fsu_cycle_max_drain_timeout_in_seconds),
             stage_action_schedule={
                 "time_to_start": fsu_cycle_stage_action_schedule_time_to_start,
                 "type": fsu_cycle_stage_action_schedule_type,
             },
             upgrade_details={
                 "collection_type": fsu_cycle_upgrade_details_collection_type,
-                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors,
-                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites,
-                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
-                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
-                "max_drain_timeout_in_seconds": fsu_cycle_upgrade_details_max_drain_timeout_in_seconds,
+                "is_ignore_post_upgrade_errors": fsu_cycle_upgrade_details_is_ignore_post_upgrade_errors == "true",
+                "is_ignore_prerequisites": fsu_cycle_upgrade_details_is_ignore_prerequisites == "true",
+                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects == "true",
+                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade == "true",
+                "max_drain_timeout_in_seconds": int(fsu_cycle_upgrade_details_max_drain_timeout_in_seconds),
             })
         ```
 

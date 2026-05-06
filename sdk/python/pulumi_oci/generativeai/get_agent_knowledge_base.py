@@ -216,7 +216,7 @@ def get_agent_knowledge_base(knowledge_base_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.GenerativeAi.get_agent_knowledge_base(knowledge_base_id=test_knowledge_base_oci_generative_ai_agent_knowledge_base["id"])
+    test_knowledge_base = oci.generativeai.get_agent_knowledge_base(knowledge_base_id=test_knowledge_base_oci_generative_ai_agent_knowledge_base["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_agent_knowledge_base_output(knowledge_base_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_base = oci.GenerativeAi.get_agent_knowledge_base(knowledge_base_id=test_knowledge_base_oci_generative_ai_agent_knowledge_base["id"])
+    test_knowledge_base = oci.generativeai.get_agent_knowledge_base(knowledge_base_id=test_knowledge_base_oci_generative_ai_agent_knowledge_base["id"])
     ```
 
 

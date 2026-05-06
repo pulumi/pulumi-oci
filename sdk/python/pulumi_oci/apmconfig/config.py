@@ -1040,11 +1040,11 @@ class Config(pulumi.CustomResource):
             rules=[{
                 "display_name": config_rules_display_name,
                 "filter_text": config_rules_filter_text,
-                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans,
-                "is_enabled": config_rules_is_enabled,
-                "priority": config_rules_priority,
-                "satisfied_response_time": config_rules_satisfied_response_time,
-                "tolerating_response_time": config_rules_tolerating_response_time,
+                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans == "true",
+                "is_enabled": config_rules_is_enabled == "true",
+                "priority": int(config_rules_priority),
+                "satisfied_response_time": int(config_rules_satisfied_response_time),
+                "tolerating_response_time": int(config_rules_tolerating_response_time),
             }],
             run_as_user=config_run_as_user,
             service_name=test_service["name"])
@@ -1159,11 +1159,11 @@ class Config(pulumi.CustomResource):
             rules=[{
                 "display_name": config_rules_display_name,
                 "filter_text": config_rules_filter_text,
-                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans,
-                "is_enabled": config_rules_is_enabled,
-                "priority": config_rules_priority,
-                "satisfied_response_time": config_rules_satisfied_response_time,
-                "tolerating_response_time": config_rules_tolerating_response_time,
+                "is_apply_to_error_spans": config_rules_is_apply_to_error_spans == "true",
+                "is_enabled": config_rules_is_enabled == "true",
+                "priority": int(config_rules_priority),
+                "satisfied_response_time": int(config_rules_satisfied_response_time),
+                "tolerating_response_time": int(config_rules_tolerating_response_time),
             }],
             run_as_user=config_run_as_user,
             service_name=test_service["name"])

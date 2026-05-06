@@ -168,11 +168,11 @@ def get_responder_recipes(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+    test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only,
+        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
         state=responder_recipe_state)
     ```
 
@@ -238,11 +238,11 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+    test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only,
+        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
         state=responder_recipe_state)
     ```
 

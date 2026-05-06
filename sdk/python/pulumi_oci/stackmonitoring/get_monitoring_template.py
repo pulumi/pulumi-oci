@@ -300,7 +300,7 @@ def get_monitoring_template(monitoring_template_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template = oci.StackMonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
+    test_monitoring_template = oci.stackmonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_monitoring_template_output(monitoring_template_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template = oci.StackMonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
+    test_monitoring_template = oci.stackmonitoring.get_monitoring_template(monitoring_template_id=test_monitoring_template_oci_stack_monitoring_monitoring_template["id"])
     ```
 
 

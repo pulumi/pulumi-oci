@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isFreeTier: apmDomainIsFreeTier,
+ *     isFreeTier: apmDomainIsFreeTier === "true",
  * });
  * ```
  *

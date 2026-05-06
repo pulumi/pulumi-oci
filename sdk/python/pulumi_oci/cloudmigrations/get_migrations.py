@@ -134,7 +134,7 @@ def get_migrations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=compartment_id,
+    test_migrations = oci.cloudmigrations.get_migrations(compartment_id=compartment_id,
         display_name=migration_display_name,
         migration_id=test_migration["id"],
         state=migration_state)
@@ -180,7 +180,7 @@ def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=compartment_id,
+    test_migrations = oci.cloudmigrations.get_migrations(compartment_id=compartment_id,
         display_name=migration_display_name,
         migration_id=test_migration["id"],
         state=migration_state)

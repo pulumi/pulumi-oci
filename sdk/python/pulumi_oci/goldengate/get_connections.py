@@ -177,7 +177,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+    test_connections = oci.goldengate.get_connections(compartment_id=compartment_id,
         assignable_deployment_id=test_deployment["id"],
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],
@@ -243,7 +243,7 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+    test_connections = oci.goldengate.get_connections(compartment_id=compartment_id,
         assignable_deployment_id=test_deployment["id"],
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],

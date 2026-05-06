@@ -67,8 +67,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -109,8 +109,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -151,8 +151,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -193,8 +193,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -235,8 +235,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -277,8 +277,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -320,8 +320,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -363,8 +363,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -406,8 +406,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -449,8 +449,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestAuditLogReportArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -492,8 +492,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -534,8 +534,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -576,8 +576,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -618,8 +618,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -702,8 +702,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -750,8 +750,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -798,8 +798,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -846,8 +846,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -894,8 +894,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegatedResourceAccessRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -942,8 +942,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -984,8 +984,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1026,8 +1026,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1068,8 +1068,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1110,8 +1110,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1152,8 +1152,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1194,8 +1194,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1236,8 +1236,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1278,8 +1278,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1320,8 +1320,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1362,8 +1362,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1408,8 +1408,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1454,8 +1454,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1500,8 +1500,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1546,8 +1546,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationControlsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1592,8 +1592,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1634,8 +1634,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1676,8 +1676,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1718,8 +1718,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1760,8 +1760,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1802,8 +1802,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1846,8 +1846,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1890,8 +1890,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1934,8 +1934,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1978,8 +1978,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetDelegationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2022,8 +2022,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2064,8 +2064,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2106,8 +2106,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2148,8 +2148,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2190,8 +2190,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2232,8 +2232,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2274,8 +2274,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2316,8 +2316,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2358,8 +2358,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2400,8 +2400,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2442,8 +2442,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2488,8 +2488,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2534,8 +2534,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2580,8 +2580,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2626,8 +2626,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProviderActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2672,8 +2672,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2718,8 +2718,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2764,8 +2764,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2810,8 +2810,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2856,8 +2856,8 @@ public final class DelegateAccessControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DelegateAccessControl.DelegateAccessControlFunctions;
      * import com.pulumi.oci.DelegateAccessControl.inputs.GetServiceProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -362,7 +362,7 @@ def get_domains_kmsi_setting(attribute_sets: Optional[Sequence[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=test_domain["url"],
+    test_kmsi_setting = oci.identity.get_domains_kmsi_setting(idcs_endpoint=test_domain["url"],
         kmsi_setting_id=test_kmsi_setting_oci_identity_domains_kmsi_setting["id"],
         attribute_sets=[],
         attributes="",
@@ -434,7 +434,7 @@ def get_domains_kmsi_setting_output(attribute_sets: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=test_domain["url"],
+    test_kmsi_setting = oci.identity.get_domains_kmsi_setting(idcs_endpoint=test_domain["url"],
         kmsi_setting_id=test_kmsi_setting_oci_identity_domains_kmsi_setting["id"],
         attribute_sets=[],
         attributes="",

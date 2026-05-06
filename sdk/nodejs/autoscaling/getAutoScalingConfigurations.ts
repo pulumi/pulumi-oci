@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
+ * const testAutoScalingConfigurations = oci.autoscaling.getAutoScalingConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: autoScalingConfigurationDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetAutoScalingConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
+ * const testAutoScalingConfigurations = oci.autoscaling.getAutoScalingConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: autoScalingConfigurationDisplayName,
  * });

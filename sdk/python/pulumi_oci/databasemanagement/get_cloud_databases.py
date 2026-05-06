@@ -121,7 +121,7 @@ def get_cloud_databases(cloud_db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_databases = oci.DatabaseManagement.get_cloud_databases(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_databases = oci.databasemanagement.get_cloud_databases(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_database_display_name)
     ```
@@ -162,7 +162,7 @@ def get_cloud_databases_output(cloud_db_system_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_databases = oci.DatabaseManagement.get_cloud_databases(cloud_db_system_id=test_cloud_db_system["id"],
+    test_cloud_databases = oci.databasemanagement.get_cloud_databases(cloud_db_system_id=test_cloud_db_system["id"],
         compartment_id=compartment_id,
         display_name=cloud_database_display_name)
     ```

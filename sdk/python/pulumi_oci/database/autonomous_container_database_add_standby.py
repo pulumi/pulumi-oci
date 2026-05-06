@@ -1318,8 +1318,8 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
 
         test_autonomous_container_database_add_standby = oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby",
             autonomous_container_database_id=test_autonomous_container_database["id"],
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds,
-            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled,
+            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds),
+            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled == "true",
             peer_autonomous_container_database_backup_config={
                 "backup_destination_details": [{
                     "type": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_type,
@@ -1328,12 +1328,12 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                     "id": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
                     "is_remote": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_retention_lock_enabled": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days),
             },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_container_database_display_name=autonomous_container_database_add_standby_peer_autonomous_container_database_display_name,
@@ -1341,7 +1341,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
             peer_db_unique_name=autonomous_container_database_add_standby_peer_db_unique_name,
             protection_mode=autonomous_container_database_add_standby_protection_mode,
-            standby_maintenance_buffer_in_days=autonomous_container_database_add_standby_standby_maintenance_buffer_in_days)
+            standby_maintenance_buffer_in_days=int(autonomous_container_database_add_standby_standby_maintenance_buffer_in_days))
         ```
 
         ## Import
@@ -1394,8 +1394,8 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
 
         test_autonomous_container_database_add_standby = oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby",
             autonomous_container_database_id=test_autonomous_container_database["id"],
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds,
-            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled,
+            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds),
+            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled == "true",
             peer_autonomous_container_database_backup_config={
                 "backup_destination_details": [{
                     "type": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_type,
@@ -1404,12 +1404,12 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                     "id": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
                     "is_remote": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_retention_lock_enabled": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days),
             },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_container_database_display_name=autonomous_container_database_add_standby_peer_autonomous_container_database_display_name,
@@ -1417,7 +1417,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
             peer_db_unique_name=autonomous_container_database_add_standby_peer_db_unique_name,
             protection_mode=autonomous_container_database_add_standby_protection_mode,
-            standby_maintenance_buffer_in_days=autonomous_container_database_add_standby_standby_maintenance_buffer_in_days)
+            standby_maintenance_buffer_in_days=int(autonomous_container_database_add_standby_standby_maintenance_buffer_in_days))
         ```
 
         ## Import

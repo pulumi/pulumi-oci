@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProblemEntity = oci.CloudGuard.getProblemEntity({
+ * const testProblemEntity = oci.cloudguard.getProblemEntity({
  *     problemId: testProblem.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetProblemEntityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProblemEntity = oci.CloudGuard.getProblemEntity({
+ * const testProblemEntity = oci.cloudguard.getProblemEntity({
  *     problemId: testProblem.id,
  * });
  * ```

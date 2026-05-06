@@ -314,7 +314,7 @@ def get_domains_approval_workflow(approval_workflow_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
+    test_approval_workflow = oci.identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -382,7 +382,7 @@ def get_domains_approval_workflow_output(approval_workflow_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
+    test_approval_workflow = oci.identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

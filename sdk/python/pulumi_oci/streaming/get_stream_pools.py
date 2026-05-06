@@ -125,7 +125,7 @@ def get_stream_pools(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pools = oci.Streaming.get_stream_pools(compartment_id=compartment_id,
+    test_stream_pools = oci.streaming.get_stream_pools(compartment_id=compartment_id,
         id=stream_pool_id,
         name=stream_pool_name,
         state=stream_pool_state)
@@ -170,7 +170,7 @@ def get_stream_pools_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_pools = oci.Streaming.get_stream_pools(compartment_id=compartment_id,
+    test_stream_pools = oci.streaming.get_stream_pools(compartment_id=compartment_id,
         id=stream_pool_id,
         name=stream_pool_name,
         state=stream_pool_state)

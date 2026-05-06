@@ -115,9 +115,9 @@ def get_addon_options(addon_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
+    test_addon_options = oci.containerengine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
         addon_name=test_addon["name"],
-        should_show_all_versions=addon_option_should_show_all_versions)
+        should_show_all_versions=addon_option_should_show_all_versions == "true")
     ```
 
 
@@ -156,9 +156,9 @@ def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_addon_options = oci.ContainerEngine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
+    test_addon_options = oci.containerengine.get_addon_options(kubernetes_version=addon_option_kubernetes_version,
         addon_name=test_addon["name"],
-        should_show_all_versions=addon_option_should_show_all_versions)
+        should_show_all_versions=addon_option_should_show_all_versions == "true")
     ```
 
 

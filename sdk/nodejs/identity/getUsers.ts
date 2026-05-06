@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getUsers({
+ * const testUsers = oci.identity.getUsers({
  *     compartmentId: tenancyOcid,
  *     externalIdentifier: userExternalIdentifier,
  *     identityProviderId: testIdentityProvider.id,
@@ -114,7 +114,7 @@ export interface GetUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getUsers({
+ * const testUsers = oci.identity.getUsers({
  *     compartmentId: tenancyOcid,
  *     externalIdentifier: userExternalIdentifier,
  *     identityProviderId: testIdentityProvider.id,

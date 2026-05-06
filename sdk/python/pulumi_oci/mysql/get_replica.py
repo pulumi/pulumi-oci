@@ -372,7 +372,7 @@ def get_replica(replica_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replica = oci.Mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
+    test_replica = oci.mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
     ```
 
 
@@ -424,7 +424,7 @@ def get_replica_output(replica_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replica = oci.Mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
+    test_replica = oci.mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
     ```
 
 

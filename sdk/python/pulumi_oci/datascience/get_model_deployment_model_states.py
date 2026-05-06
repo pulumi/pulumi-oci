@@ -157,7 +157,7 @@ def get_model_deployment_model_states(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_model_states = oci.DataScience.get_model_deployment_model_states(compartment_id=compartment_id,
+    test_model_deployment_model_states = oci.datascience.get_model_deployment_model_states(compartment_id=compartment_id,
         model_deployment_id=test_model_deployment["id"],
         display_name=model_deployment_model_state_display_name,
         inference_key=model_deployment_model_state_inference_key,
@@ -213,7 +213,7 @@ def get_model_deployment_model_states_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_model_states = oci.DataScience.get_model_deployment_model_states(compartment_id=compartment_id,
+    test_model_deployment_model_states = oci.datascience.get_model_deployment_model_states(compartment_id=compartment_id,
         model_deployment_id=test_model_deployment["id"],
         display_name=model_deployment_model_state_display_name,
         inference_key=model_deployment_model_state_inference_key,

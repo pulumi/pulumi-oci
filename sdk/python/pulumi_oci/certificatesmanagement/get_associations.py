@@ -161,7 +161,7 @@ def get_associations(associated_resource_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+    test_associations = oci.certificatesmanagement.get_associations(associated_resource_id=test_associated_resource["id"],
         association_id=test_association["id"],
         association_type=association_association_type,
         certificates_resource_id=test_certificates_resource["id"],
@@ -218,7 +218,7 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+    test_associations = oci.certificatesmanagement.get_associations(associated_resource_id=test_associated_resource["id"],
         association_id=test_association["id"],
         association_type=association_association_type,
         certificates_resource_id=test_certificates_resource["id"],

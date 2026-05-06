@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     namespace: namespaceScheduledTaskNamespace,
  *     action: {
  *         type: namespaceScheduledTaskActionType,
- *         compartmentIdInSubtree: namespaceScheduledTaskActionCompartmentIdInSubtree,
+ *         compartmentIdInSubtree: namespaceScheduledTaskActionCompartmentIdInSubtree === "true",
  *         dataType: namespaceScheduledTaskActionDataType,
  *         metricExtraction: {
  *             compartmentId: compartmentId,

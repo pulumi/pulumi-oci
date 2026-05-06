@@ -27,13 +27,13 @@ import * as utilities from "../utilities";
  *     description: workspaceProjectDescription,
  *     key: workspaceProjectKey,
  *     modelVersion: workspaceProjectModelVersion,
- *     objectStatus: workspaceProjectObjectStatus,
+ *     objectStatus: Number(workspaceProjectObjectStatus),
  *     registryMetadata: {
  *         aggregatorKey: workspaceProjectRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceProjectRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceProjectRegistryMetadataIsFavorite === "true",
  *         key: workspaceProjectRegistryMetadataKey,
  *         labels: workspaceProjectRegistryMetadataLabels,
- *         registryVersion: workspaceProjectRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceProjectRegistryMetadataRegistryVersion),
  *     },
  * });
  * ```

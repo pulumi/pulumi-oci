@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
+ * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -167,10 +167,10 @@ export interface GetSecurityPolicyDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
+ * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,

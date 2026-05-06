@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVisionPrivateEndpoints = oci.AiVision.getVisionPrivateEndpoints({
+ * const testVisionPrivateEndpoints = oci.aivision.getVisionPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: visionPrivateEndpointDisplayName,
  *     id: visionPrivateEndpointId,
@@ -97,7 +97,7 @@ export interface GetVisionPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVisionPrivateEndpoints = oci.AiVision.getVisionPrivateEndpoints({
+ * const testVisionPrivateEndpoints = oci.aivision.getVisionPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: visionPrivateEndpointDisplayName,
  *     id: visionPrivateEndpointId,

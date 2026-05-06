@@ -379,7 +379,7 @@ def get_managed_database_user(managed_database_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user = oci.databasemanagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```
@@ -440,7 +440,7 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user = oci.databasemanagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```

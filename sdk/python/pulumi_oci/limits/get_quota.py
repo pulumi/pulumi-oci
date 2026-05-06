@@ -189,7 +189,7 @@ def get_quota(quota_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
+    test_quota = oci.limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
     ```
 
 
@@ -226,7 +226,7 @@ def get_quota_output(quota_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
+    test_quota = oci.limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
     ```
 
 

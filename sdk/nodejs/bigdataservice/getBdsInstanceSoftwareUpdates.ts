@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceSoftwareUpdates = oci.BigDataService.getBdsInstanceSoftwareUpdates({
+ * const testBdsInstanceSoftwareUpdates = oci.bigdataservice.getBdsInstanceSoftwareUpdates({
  *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetBdsInstanceSoftwareUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceSoftwareUpdates = oci.BigDataService.getBdsInstanceSoftwareUpdates({
+ * const testBdsInstanceSoftwareUpdates = oci.bigdataservice.getBdsInstanceSoftwareUpdates({
  *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```

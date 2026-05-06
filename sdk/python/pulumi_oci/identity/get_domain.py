@@ -309,7 +309,7 @@ def get_domain(domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
+    test_domain = oci.identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
     ```
 
 
@@ -360,7 +360,7 @@ def get_domain_output(domain_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain = oci.Identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
+    test_domain = oci.identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
     ```
 
 

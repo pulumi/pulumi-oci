@@ -144,7 +144,7 @@ def get_publications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+    test_publications = oci.marketplace.get_publications(compartment_id=compartment_id,
         listing_type=publication_listing_type,
         names=publication_name,
         operating_systems=publication_operating_systems,
@@ -195,7 +195,7 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+    test_publications = oci.marketplace.get_publications(compartment_id=compartment_id,
         listing_type=publication_listing_type,
         names=publication_name,
         operating_systems=publication_operating_systems,

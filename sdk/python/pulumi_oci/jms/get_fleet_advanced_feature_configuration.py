@@ -177,7 +177,7 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
+    test_fleet_advanced_feature_configuration = oci.jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
 
 
@@ -213,7 +213,7 @@ def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
+    test_fleet_advanced_feature_configuration = oci.jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
 
 

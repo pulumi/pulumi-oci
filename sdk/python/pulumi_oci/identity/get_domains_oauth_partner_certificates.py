@@ -194,12 +194,12 @@ def get_domains_oauth_partner_certificates(authorization: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
-        oauth_partner_certificate_count=oauth_partner_certificate_oauth_partner_certificate_count,
+    test_oauth_partner_certificates = oci.identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
+        oauth_partner_certificate_count=int(oauth_partner_certificate_oauth_partner_certificate_count),
         oauth_partner_certificate_filter=oauth_partner_certificate_oauth_partner_certificate_filter,
         authorization=oauth_partner_certificate_authorization,
         resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
-        start_index=oauth_partner_certificate_start_index)
+        start_index=int(oauth_partner_certificate_start_index))
     ```
 
 
@@ -259,12 +259,12 @@ def get_domains_oauth_partner_certificates_output(authorization: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
-        oauth_partner_certificate_count=oauth_partner_certificate_oauth_partner_certificate_count,
+    test_oauth_partner_certificates = oci.identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
+        oauth_partner_certificate_count=int(oauth_partner_certificate_oauth_partner_certificate_count),
         oauth_partner_certificate_filter=oauth_partner_certificate_oauth_partner_certificate_filter,
         authorization=oauth_partner_certificate_authorization,
         resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
-        start_index=oauth_partner_certificate_start_index)
+        start_index=int(oauth_partner_certificate_start_index))
     ```
 
 

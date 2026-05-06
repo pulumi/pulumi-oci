@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentAdminUser = oci.Functions.getFusionEnvironmentAdminUser({
+ * const testFusionEnvironmentAdminUser = oci.functions.getFusionEnvironmentAdminUser({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -77,7 +77,7 @@ export interface GetFusionEnvironmentAdminUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentAdminUser = oci.Functions.getFusionEnvironmentAdminUser({
+ * const testFusionEnvironmentAdminUser = oci.functions.getFusionEnvironmentAdminUser({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```

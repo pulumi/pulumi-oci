@@ -105,7 +105,7 @@ def get_cloud_asm_users(cloud_asm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_users = oci.DatabaseManagement.get_cloud_asm_users(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_users = oci.databasemanagement.get_cloud_asm_users(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_user_opc_named_credential_id)
     ```
 
@@ -141,7 +141,7 @@ def get_cloud_asm_users_output(cloud_asm_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_users = oci.DatabaseManagement.get_cloud_asm_users(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_users = oci.databasemanagement.get_cloud_asm_users(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_user_opc_named_credential_id)
     ```
 

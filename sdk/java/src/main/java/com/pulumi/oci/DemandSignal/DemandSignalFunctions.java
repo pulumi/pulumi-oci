@@ -40,8 +40,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -295,8 +295,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -340,8 +340,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -475,8 +475,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -520,8 +520,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -733,8 +733,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -819,8 +819,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -863,8 +863,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -907,8 +907,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -951,8 +951,8 @@ public final class DemandSignalFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
      * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

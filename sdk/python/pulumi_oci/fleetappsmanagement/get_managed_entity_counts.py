@@ -105,8 +105,8 @@ def get_managed_entity_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
+    test_managed_entity_counts = oci.fleetappsmanagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree == "true")
     ```
 
 
@@ -141,8 +141,8 @@ def get_managed_entity_counts_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
+    test_managed_entity_counts = oci.fleetappsmanagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree == "true")
     ```
 
 

@@ -153,7 +153,7 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+    test_vm_cluster_patch_history_entry = oci.database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 
@@ -191,7 +191,7 @@ def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+    test_vm_cluster_patch_history_entry = oci.database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 

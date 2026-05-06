@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaMigrationAnalysis = oci.Jms.getUtilsJavaMigrationAnalysis({
+ * const testJavaMigrationAnalysis = oci.jms.getUtilsJavaMigrationAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: javaMigrationAnalysiId,
@@ -87,7 +87,7 @@ export interface GetUtilsJavaMigrationAnalysisResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaMigrationAnalysis = oci.Jms.getUtilsJavaMigrationAnalysis({
+ * const testJavaMigrationAnalysis = oci.jms.getUtilsJavaMigrationAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: javaMigrationAnalysiId,

@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReports = oci.Opsi.getNewsReports({
+ * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,
@@ -105,9 +105,9 @@ export interface GetNewsReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReports = oci.Opsi.getNewsReports({
+ * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,

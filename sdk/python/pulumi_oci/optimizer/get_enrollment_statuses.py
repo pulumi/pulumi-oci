@@ -124,7 +124,7 @@ def get_enrollment_statuses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_enrollment_statuses = oci.Optimizer.get_enrollment_statuses(compartment_id=compartment_id,
+    test_enrollment_statuses = oci.optimizer.get_enrollment_statuses(compartment_id=compartment_id,
         state=enrollment_status_state,
         status=enrollment_status_status)
     ```
@@ -165,7 +165,7 @@ def get_enrollment_statuses_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_enrollment_statuses = oci.Optimizer.get_enrollment_statuses(compartment_id=compartment_id,
+    test_enrollment_statuses = oci.optimizer.get_enrollment_statuses(compartment_id=compartment_id,
         state=enrollment_status_state,
         status=enrollment_status_status)
     ```

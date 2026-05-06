@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitAssociatedTunnels = oci.Core.getVirtualCircuitAssociatedTunnels({
+ * const testVirtualCircuitAssociatedTunnels = oci.core.getVirtualCircuitAssociatedTunnels({
  *     virtualCircuitId: testVirtualCircuit.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetVirtualCircuitAssociatedTunnelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitAssociatedTunnels = oci.Core.getVirtualCircuitAssociatedTunnels({
+ * const testVirtualCircuitAssociatedTunnels = oci.core.getVirtualCircuitAssociatedTunnels({
  *     virtualCircuitId: testVirtualCircuit.id,
  * });
  * ```

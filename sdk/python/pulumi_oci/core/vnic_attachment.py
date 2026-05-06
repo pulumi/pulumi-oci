@@ -335,8 +335,8 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
             create_vnic_details={
-                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
-                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip == "true",
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record == "true",
                 "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
                 "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
                 "display_name": vnic_attachment_create_vnic_details_display_name,
@@ -351,14 +351,14 @@ class VnicAttachment(pulumi.CustomResource):
                 "private_ip": vnic_attachment_create_vnic_details_private_ip,
                 "private_ip_id": test_private_ip["id"],
                 "security_attributes": vnic_attachment_create_vnic_details_security_attributes,
-                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check == "true",
                 "subnet_cidr": vnic_attachment_create_vnic_details_subnet_cidr,
                 "subnet_id": test_subnet["id"],
                 "vlan_id": test_vlan["id"],
             },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
-            nic_index=vnic_attachment_nic_index)
+            nic_index=int(vnic_attachment_nic_index))
         ```
 
         ## Import
@@ -405,8 +405,8 @@ class VnicAttachment(pulumi.CustomResource):
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
             create_vnic_details={
-                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
-                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip == "true",
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record == "true",
                 "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
                 "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
                 "display_name": vnic_attachment_create_vnic_details_display_name,
@@ -421,14 +421,14 @@ class VnicAttachment(pulumi.CustomResource):
                 "private_ip": vnic_attachment_create_vnic_details_private_ip,
                 "private_ip_id": test_private_ip["id"],
                 "security_attributes": vnic_attachment_create_vnic_details_security_attributes,
-                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check == "true",
                 "subnet_cidr": vnic_attachment_create_vnic_details_subnet_cidr,
                 "subnet_id": test_subnet["id"],
                 "vlan_id": test_vlan["id"],
             },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
-            nic_index=vnic_attachment_nic_index)
+            nic_index=int(vnic_attachment_nic_index))
         ```
 
         ## Import

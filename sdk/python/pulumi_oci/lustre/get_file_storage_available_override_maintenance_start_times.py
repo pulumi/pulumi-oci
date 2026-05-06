@@ -93,7 +93,7 @@ def get_file_storage_available_override_maintenance_start_times(date: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_available_override_maintenance_start_times = oci.Lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
+    test_available_override_maintenance_start_times = oci.lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
         date=available_override_maintenance_start_time_date)
     ```
 
@@ -128,7 +128,7 @@ def get_file_storage_available_override_maintenance_start_times_output(date: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_available_override_maintenance_start_times = oci.Lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
+    test_available_override_maintenance_start_times = oci.lustre.get_file_storage_available_override_maintenance_start_times(id=available_override_maintenance_start_time_id,
         date=available_override_maintenance_start_time_date)
     ```
 

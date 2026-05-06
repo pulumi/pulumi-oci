@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionProducts = oci.UsageProxy.getSubscriptionProducts({
+ * const testSubscriptionProducts = oci.usageproxy.getSubscriptionProducts({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     usagePeriodKey: subscriptionProductUsagePeriodKey,
@@ -88,7 +88,7 @@ export interface GetSubscriptionProductsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionProducts = oci.UsageProxy.getSubscriptionProducts({
+ * const testSubscriptionProducts = oci.usageproxy.getSubscriptionProducts({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     usagePeriodKey: subscriptionProductUsagePeriodKey,

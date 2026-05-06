@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
+ * const testRemotePeeringConnections = oci.core.getRemotePeeringConnections({
  *     compartmentId: compartmentId,
  *     drgId: testDrg.id,
  * });
@@ -82,7 +82,7 @@ export interface GetRemotePeeringConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
+ * const testRemotePeeringConnections = oci.core.getRemotePeeringConnections({
  *     compartmentId: compartmentId,
  *     drgId: testDrg.id,
  * });

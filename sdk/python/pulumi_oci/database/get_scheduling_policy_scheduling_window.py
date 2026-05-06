@@ -205,7 +205,7 @@ def get_scheduling_policy_scheduling_window(scheduling_policy_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_window = oci.Database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_window = oci.database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_window_id=test_scheduling_window["id"])
     ```
 
@@ -247,7 +247,7 @@ def get_scheduling_policy_scheduling_window_output(scheduling_policy_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_window = oci.Database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_window = oci.database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_window_id=test_scheduling_window["id"])
     ```
 

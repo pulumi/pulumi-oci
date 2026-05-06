@@ -264,7 +264,7 @@ def get_cloud_db_system_connector(cloud_db_system_connector_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connector = oci.DatabaseManagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
+    test_cloud_db_system_connector = oci.databasemanagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_cloud_db_system_connector_output(cloud_db_system_connector_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connector = oci.DatabaseManagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
+    test_cloud_db_system_connector = oci.databasemanagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
     ```
 
 

@@ -85,8 +85,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -127,8 +127,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -169,8 +169,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -211,8 +211,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -253,8 +253,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -350,8 +350,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -403,8 +403,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -456,8 +456,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -509,8 +509,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -562,8 +562,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -615,8 +615,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -668,8 +668,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -721,8 +721,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -763,8 +763,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -805,8 +805,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -847,8 +847,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -889,8 +889,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -931,8 +931,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -973,8 +973,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1015,8 +1015,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1057,8 +1057,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1099,8 +1099,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1141,8 +1141,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1186,8 +1186,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1231,8 +1231,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1276,8 +1276,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1321,8 +1321,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1366,8 +1366,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1411,8 +1411,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1456,8 +1456,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1498,8 +1498,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1540,8 +1540,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1582,8 +1582,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1624,8 +1624,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1667,8 +1667,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1711,8 +1711,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1755,8 +1755,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1799,8 +1799,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1843,8 +1843,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1887,8 +1887,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1932,8 +1932,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1977,8 +1977,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2022,8 +2022,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2067,8 +2067,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2111,8 +2111,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2157,8 +2157,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2203,8 +2203,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2249,8 +2249,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2295,8 +2295,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2341,8 +2341,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2387,8 +2387,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2433,8 +2433,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2478,8 +2478,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2523,8 +2523,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2568,8 +2568,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2613,8 +2613,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2658,8 +2658,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2703,8 +2703,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowTaskDeclarationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2748,8 +2748,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2793,8 +2793,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2838,8 +2838,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2883,8 +2883,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2928,8 +2928,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2973,8 +2973,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3018,8 +3018,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3063,8 +3063,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3105,8 +3105,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3147,8 +3147,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3189,8 +3189,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3231,8 +3231,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3273,8 +3273,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3318,8 +3318,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3363,8 +3363,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3408,8 +3408,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3453,8 +3453,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3498,8 +3498,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3540,8 +3540,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3582,8 +3582,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3624,8 +3624,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3666,8 +3666,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3708,8 +3708,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3753,8 +3753,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3798,8 +3798,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3843,8 +3843,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3888,8 +3888,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3933,8 +3933,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3978,8 +3978,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamDistributionChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4023,8 +4023,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4065,8 +4065,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4107,8 +4107,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4149,8 +4149,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4191,8 +4191,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4233,8 +4233,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4278,8 +4278,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4323,8 +4323,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4368,8 +4368,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4413,8 +4413,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetStreamPackagingConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4458,8 +4458,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4501,8 +4501,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4544,8 +4544,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4587,8 +4587,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4630,8 +4630,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4673,8 +4673,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4716,8 +4716,8 @@ public final class MediaServicesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
      * import com.pulumi.oci.MediaServices.inputs.GetSystemMediaWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

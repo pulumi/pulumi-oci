@@ -124,7 +124,7 @@ def get_application_vips(cloud_vm_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+    test_application_vips = oci.database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
         compartment_id=compartment_id,
         state=application_vip_state)
     ```
@@ -165,7 +165,7 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_application_vips = oci.Database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+    test_application_vips = oci.database.get_application_vips(cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
         compartment_id=compartment_id,
         state=application_vip_state)
     ```

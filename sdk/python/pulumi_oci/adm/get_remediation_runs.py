@@ -139,7 +139,7 @@ def get_remediation_runs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+    test_remediation_runs = oci.adm.get_remediation_runs(compartment_id=compartment_id,
         display_name=remediation_run_display_name,
         id=remediation_run_id,
         remediation_recipe_id=test_remediation_recipe["id"],
@@ -190,7 +190,7 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+    test_remediation_runs = oci.adm.get_remediation_runs(compartment_id=compartment_id,
         display_name=remediation_run_display_name,
         id=remediation_run_id,
         remediation_recipe_id=test_remediation_recipe["id"],

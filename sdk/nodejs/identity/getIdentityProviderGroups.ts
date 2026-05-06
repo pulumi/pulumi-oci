@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
+ * const testIdentityProviderGroups = oci.identity.getIdentityProviderGroups({
  *     identityProviderId: testIdentityProvider.id,
  *     name: identityProviderGroupName,
  *     state: identityProviderGroupState,
@@ -91,7 +91,7 @@ export interface GetIdentityProviderGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
+ * const testIdentityProviderGroups = oci.identity.getIdentityProviderGroups({
  *     identityProviderId: testIdentityProvider.id,
  *     name: identityProviderGroupName,
  *     state: identityProviderGroupState,

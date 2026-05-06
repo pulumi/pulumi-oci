@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHostGroups = oci.Core.getComputeHostGroups({
+ * const testComputeHostGroups = oci.core.getComputeHostGroups({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetComputeHostGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHostGroups = oci.Core.getComputeHostGroups({
+ * const testComputeHostGroups = oci.core.getComputeHostGroups({
  *     compartmentId: compartmentId,
  * });
  * ```

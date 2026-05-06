@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListJreUsage = oci.Jms.getListJreUsage({
+ * const testListJreUsage = oci.jms.getListJreUsage({
  *     applicationId: testApplication.id,
  *     applicationName: testApplication.name,
  *     compartmentId: compartmentId,
@@ -106,7 +106,7 @@ export interface GetListJreUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListJreUsage = oci.Jms.getListJreUsage({
+ * const testListJreUsage = oci.jms.getListJreUsage({
  *     applicationId: testApplication.id,
  *     applicationName: testApplication.name,
  *     compartmentId: compartmentId,

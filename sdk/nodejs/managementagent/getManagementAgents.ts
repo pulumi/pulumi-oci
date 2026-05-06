@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
+ * const testManagementAgents = oci.managementagent.getManagementAgents({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentAccessLevel,
  *     availabilityStatus: managementAgentAvailabilityStatus,
- *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree === "true",
  *     dataSourceNames: testManagementAgentDataSource.name,
  *     dataSourceType: managementAgentDataSourceType,
  *     displayName: managementAgentDisplayName,
@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     hostId: testHost.id,
  *     waitForHostId: 10,
  *     installType: managementAgentInstallType,
- *     isCustomerDeployed: managementAgentIsCustomerDeployed,
+ *     isCustomerDeployed: managementAgentIsCustomerDeployed === "true",
  *     platformTypes: managementAgentPlatformType,
  *     pluginNames: managementAgentPluginName,
  *     state: managementAgentState,
@@ -206,11 +206,11 @@ export interface GetManagementAgentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
+ * const testManagementAgents = oci.managementagent.getManagementAgents({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentAccessLevel,
  *     availabilityStatus: managementAgentAvailabilityStatus,
- *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree === "true",
  *     dataSourceNames: testManagementAgentDataSource.name,
  *     dataSourceType: managementAgentDataSourceType,
  *     displayName: managementAgentDisplayName,
@@ -218,7 +218,7 @@ export interface GetManagementAgentsResult {
  *     hostId: testHost.id,
  *     waitForHostId: 10,
  *     installType: managementAgentInstallType,
- *     isCustomerDeployed: managementAgentIsCustomerDeployed,
+ *     isCustomerDeployed: managementAgentIsCustomerDeployed === "true",
  *     platformTypes: managementAgentPlatformType,
  *     pluginNames: managementAgentPluginName,
  *     state: managementAgentState,

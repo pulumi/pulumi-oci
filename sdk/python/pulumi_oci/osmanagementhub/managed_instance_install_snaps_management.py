@@ -160,7 +160,7 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
             snap_details=[{
                 "name": managed_instance_install_snaps_management_snap_details_name,
                 "channel": managed_instance_install_snaps_management_snap_details_channel,
-                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed,
+                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed == "true",
                 "mode": managed_instance_install_snaps_management_snap_details_mode,
                 "revision": managed_instance_install_snaps_management_snap_details_revision,
             }],
@@ -210,7 +210,7 @@ class ManagedInstanceInstallSnapsManagement(pulumi.CustomResource):
             snap_details=[{
                 "name": managed_instance_install_snaps_management_snap_details_name,
                 "channel": managed_instance_install_snaps_management_snap_details_channel,
-                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed,
+                "is_signed": managed_instance_install_snaps_management_snap_details_is_signed == "true",
                 "mode": managed_instance_install_snaps_management_snap_details_mode,
                 "revision": managed_instance_install_snaps_management_snap_details_revision,
             }],

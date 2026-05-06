@@ -181,21 +181,21 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
     import pulumi_oci as oci
 
     # Filter on Subnet OCID
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
+    test_private_ips_by_subnet = oci.core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on VNIC OCID
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
+    test_private_ips_by_vnic = oci.core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on private IP address and Subnet OCID
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+    test_private_ips_by_ip_address = oci.core.get_private_ips(ip_address=private_ip_ip_address,
         ip_state=private_ip_ip_state,
         lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],
@@ -269,21 +269,21 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     import pulumi_oci as oci
 
     # Filter on Subnet OCID
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
+    test_private_ips_by_subnet = oci.core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on VNIC OCID
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
+    test_private_ips_by_vnic = oci.core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     ```python
     import pulumi
     import pulumi_oci as oci
 
     # Filter on private IP address and Subnet OCID
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+    test_private_ips_by_ip_address = oci.core.get_private_ips(ip_address=private_ip_ip_address,
         ip_state=private_ip_ip_state,
         lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],

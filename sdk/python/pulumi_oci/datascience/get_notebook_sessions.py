@@ -151,7 +151,7 @@ def get_notebook_sessions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=compartment_id,
+    test_notebook_sessions = oci.datascience.get_notebook_sessions(compartment_id=compartment_id,
         created_by=notebook_session_created_by,
         display_name=notebook_session_display_name,
         id=notebook_session_id,
@@ -206,7 +206,7 @@ def get_notebook_sessions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=compartment_id,
+    test_notebook_sessions = oci.datascience.get_notebook_sessions(compartment_id=compartment_id,
         created_by=notebook_session_created_by,
         display_name=notebook_session_display_name,
         id=notebook_session_id,

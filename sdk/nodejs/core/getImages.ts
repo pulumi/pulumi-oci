@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImages = oci.Core.getImages({
+ * const testImages = oci.core.getImages({
  *     compartmentId: compartmentId,
  *     displayName: imageDisplayName,
  *     operatingSystem: imageOperatingSystem,
@@ -151,7 +151,7 @@ export interface GetImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImages = oci.Core.getImages({
+ * const testImages = oci.core.getImages({
  *     compartmentId: compartmentId,
  *     displayName: imageDisplayName,
  *     operatingSystem: imageOperatingSystem,

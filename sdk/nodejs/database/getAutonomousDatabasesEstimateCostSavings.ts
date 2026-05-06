@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesEstimateCostSavings = oci.Database.getAutonomousDatabasesEstimateCostSavings({
+ * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
  * });
  * ```
  */
@@ -77,9 +77,9 @@ export interface GetAutonomousDatabasesEstimateCostSavingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesEstimateCostSavings = oci.Database.getAutonomousDatabasesEstimateCostSavings({
+ * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
  * });
  * ```
  */

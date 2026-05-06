@@ -177,7 +177,7 @@ def get_software_source_package_group(package_group_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=test_group["id"],
+    test_software_source_package_group = oci.osmanagementhub.get_software_source_package_group(package_group_id=test_group["id"],
         software_source_id=test_software_source["id"])
     ```
 
@@ -217,7 +217,7 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=test_group["id"],
+    test_software_source_package_group = oci.osmanagementhub.get_software_source_package_group(package_group_id=test_group["id"],
         software_source_id=test_software_source["id"])
     ```
 

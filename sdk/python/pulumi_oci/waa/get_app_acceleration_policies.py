@@ -125,7 +125,7 @@ def get_app_acceleration_policies(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=compartment_id,
+    test_web_app_acceleration_policies = oci.waa.get_app_acceleration_policies(compartment_id=compartment_id,
         display_name=web_app_acceleration_policy_display_name,
         id=web_app_acceleration_policy_id,
         states=web_app_acceleration_policy_state)
@@ -170,7 +170,7 @@ def get_app_acceleration_policies_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_acceleration_policies = oci.Waa.get_app_acceleration_policies(compartment_id=compartment_id,
+    test_web_app_acceleration_policies = oci.waa.get_app_acceleration_policies(compartment_id=compartment_id,
         display_name=web_app_acceleration_policy_display_name,
         id=web_app_acceleration_policy_id,
         states=web_app_acceleration_policy_state)

@@ -285,12 +285,12 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=compartment_id,
+    test_user_assessments = oci.datasafe.get_user_assessments(compartment_id=compartment_id,
         access_level=user_assessment_access_level,
-        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree == "true",
         display_name=user_assessment_display_name,
-        is_baseline=user_assessment_is_baseline,
-        is_schedule_assessment=user_assessment_is_schedule_assessment,
+        is_baseline=user_assessment_is_baseline == "true",
+        is_schedule_assessment=user_assessment_is_schedule_assessment == "true",
         schedule_user_assessment_id=test_user_assessment["id"],
         state=user_assessment_state,
         target_database_group_id=test_target_database_group["id"],
@@ -405,12 +405,12 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=compartment_id,
+    test_user_assessments = oci.datasafe.get_user_assessments(compartment_id=compartment_id,
         access_level=user_assessment_access_level,
-        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree == "true",
         display_name=user_assessment_display_name,
-        is_baseline=user_assessment_is_baseline,
-        is_schedule_assessment=user_assessment_is_schedule_assessment,
+        is_baseline=user_assessment_is_baseline == "true",
+        is_schedule_assessment=user_assessment_is_schedule_assessment == "true",
         schedule_user_assessment_id=test_user_assessment["id"],
         state=user_assessment_state,
         target_database_group_id=test_target_database_group["id"],

@@ -428,7 +428,7 @@ class ExternalDbSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             stack_monitoring_config={
-                "is_enabled": external_db_system_stack_monitoring_config_is_enabled,
+                "is_enabled": external_db_system_stack_monitoring_config_is_enabled == "true",
                 "metadata": external_db_system_stack_monitoring_config_metadata,
             })
         ```
@@ -486,7 +486,7 @@ class ExternalDbSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             stack_monitoring_config={
-                "is_enabled": external_db_system_stack_monitoring_config_is_enabled,
+                "is_enabled": external_db_system_stack_monitoring_config_is_enabled == "true",
                 "metadata": external_db_system_stack_monitoring_config_metadata,
             })
         ```

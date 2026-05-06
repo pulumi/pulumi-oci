@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
+ * const testFleetCryptoAnalysisResult = oci.jms.getFleetCryptoAnalysisResult({
  *     cryptoAnalysisResultId: fleetCryptoAnalysisResultId,
  *     fleetId: testFleet.id,
  * });
@@ -136,7 +136,7 @@ export interface GetFleetCryptoAnalysisResultResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
+ * const testFleetCryptoAnalysisResult = oci.jms.getFleetCryptoAnalysisResult({
  *     cryptoAnalysisResultId: fleetCryptoAnalysisResultId,
  *     fleetId: testFleet.id,
  * });

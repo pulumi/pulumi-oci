@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
+ * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg,
+ *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -134,10 +134,10 @@ export interface GetMaintenanceRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
+ * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg,
+ *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,

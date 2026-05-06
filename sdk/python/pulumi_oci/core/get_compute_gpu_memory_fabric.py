@@ -336,7 +336,7 @@ def get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabric = oci.Core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
+    test_compute_gpu_memory_fabric = oci.core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
     ```
 
 
@@ -385,7 +385,7 @@ def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabric = oci.Core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
+    test_compute_gpu_memory_fabric = oci.core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
     ```
 
 

@@ -394,7 +394,7 @@ class OccDemandSignal(pulumi.CustomResource):
 
         test_occ_demand_signal = oci.demandsignal.OccDemandSignal("test_occ_demand_signal",
             compartment_id=compartment_id,
-            is_active=occ_demand_signal_is_active,
+            is_active=occ_demand_signal_is_active == "true",
             occ_demand_signal_id=occ_demand_signal_occ_demand_signal_id,
             occ_demand_signals=[{
                 "resource_type": occ_demand_signal_occ_demand_signals_resource_type,
@@ -466,7 +466,7 @@ class OccDemandSignal(pulumi.CustomResource):
 
         test_occ_demand_signal = oci.demandsignal.OccDemandSignal("test_occ_demand_signal",
             compartment_id=compartment_id,
-            is_active=occ_demand_signal_is_active,
+            is_active=occ_demand_signal_is_active == "true",
             occ_demand_signal_id=occ_demand_signal_occ_demand_signal_id,
             occ_demand_signals=[{
                 "resource_type": occ_demand_signal_occ_demand_signals_resource_type,

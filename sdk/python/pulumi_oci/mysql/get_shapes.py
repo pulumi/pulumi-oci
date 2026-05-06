@@ -134,7 +134,7 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Mysql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.mysql.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         is_supported_fors=shape_is_supported_for,
         name=shape_name)
@@ -183,7 +183,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Mysql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.mysql.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         is_supported_fors=shape_is_supported_for,
         name=shape_name)

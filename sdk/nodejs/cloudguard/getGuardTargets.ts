@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargets = oci.CloudGuard.getGuardTargets({
+ * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
  *     state: targetState,
  * });
  * ```
@@ -139,12 +139,12 @@ export interface GetGuardTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargets = oci.CloudGuard.getGuardTargets({
+ * const testTargets = oci.cloudguard.getGuardTargets({
  *     compartmentId: compartmentId,
  *     accessLevel: targetAccessLevel,
- *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree === "true",
  *     displayName: targetDisplayName,
- *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery === "true",
  *     state: targetState,
  * });
  * ```

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Mysql.getShapes({
+ * const testShapes = oci.mysql.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     isSupportedFors: shapeIsSupportedFor,
@@ -100,7 +100,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Mysql.getShapes({
+ * const testShapes = oci.mysql.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     isSupportedFors: shapeIsSupportedFor,

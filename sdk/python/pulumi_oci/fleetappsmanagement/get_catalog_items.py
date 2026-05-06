@@ -183,13 +183,13 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_items = oci.FleetAppsManagement.get_catalog_items(compartment_id=compartment_id,
+    test_catalog_items = oci.fleetappsmanagement.get_catalog_items(compartment_id=compartment_id,
         catalog_listing_id=test_listing["id"],
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items,
+        should_list_public_items=catalog_item_should_list_public_items == "true",
         state=catalog_item_state)
     ```
 
@@ -249,13 +249,13 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_items = oci.FleetAppsManagement.get_catalog_items(compartment_id=compartment_id,
+    test_catalog_items = oci.fleetappsmanagement.get_catalog_items(compartment_id=compartment_id,
         catalog_listing_id=test_listing["id"],
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items,
+        should_list_public_items=catalog_item_should_list_public_items == "true",
         state=catalog_item_state)
     ```
 

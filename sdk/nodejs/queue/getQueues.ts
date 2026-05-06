@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueues = oci.Queue.getQueues({
+ * const testQueues = oci.queue.getQueues({
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
  *     id: queueId,
@@ -97,7 +97,7 @@ export interface GetQueuesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueues = oci.Queue.getQueues({
+ * const testQueues = oci.queue.getQueues({
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
  *     id: queueId,

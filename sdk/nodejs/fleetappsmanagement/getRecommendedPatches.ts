@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendedPatches = oci.FleetAppsManagement.getRecommendedPatches({
+ * const testRecommendedPatches = oci.fleetappsmanagement.getRecommendedPatches({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,
@@ -121,7 +121,7 @@ export interface GetRecommendedPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendedPatches = oci.FleetAppsManagement.getRecommendedPatches({
+ * const testRecommendedPatches = oci.fleetappsmanagement.getRecommendedPatches({
  *     compartmentId: compartmentId,
  *     targetId: fleetTargetId,
  *     targetName: fleetTargetName,

@@ -257,7 +257,7 @@ def get_security_policy_deployment(security_policy_deployment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment = oci.DataSafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
+    test_security_policy_deployment = oci.datasafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
     ```
 
 
@@ -300,7 +300,7 @@ def get_security_policy_deployment_output(security_policy_deployment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment = oci.DataSafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
+    test_security_policy_deployment = oci.datasafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
     ```
 
 

@@ -126,12 +126,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": usage_carbon_emissions_query_query_definition_display_name,
                 "report_query": {
                     "tenant_id": test_tenant["id"],
-                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "compartment_depth": int(usage_carbon_emissions_query_query_definition_report_query_compartment_depth),
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
                     "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
                     "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
@@ -142,12 +142,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                         "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
                         "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time == "true",
                     "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
                     "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 },
-                "version": usage_carbon_emissions_query_query_definition_version,
+                "version": int(usage_carbon_emissions_query_query_definition_version),
             })
         ```
 
@@ -190,12 +190,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": usage_carbon_emissions_query_query_definition_display_name,
                 "report_query": {
                     "tenant_id": test_tenant["id"],
-                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "compartment_depth": int(usage_carbon_emissions_query_query_definition_report_query_compartment_depth),
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
                     "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
                     "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
@@ -206,12 +206,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                         "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
                         "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time == "true",
                     "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
                     "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 },
-                "version": usage_carbon_emissions_query_query_definition_version,
+                "version": int(usage_carbon_emissions_query_query_definition_version),
             })
         ```
 

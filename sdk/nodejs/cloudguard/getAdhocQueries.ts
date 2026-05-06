@@ -33,11 +33,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQueries = oci.CloudGuard.getAdhocQueries({
+ * const testAdhocQueries = oci.cloudguard.getAdhocQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });
@@ -137,11 +137,11 @@ export interface GetAdhocQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQueries = oci.CloudGuard.getAdhocQueries({
+ * const testAdhocQueries = oci.cloudguard.getAdhocQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });

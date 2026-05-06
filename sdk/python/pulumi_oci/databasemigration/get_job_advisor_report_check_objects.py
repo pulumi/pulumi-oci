@@ -105,7 +105,7 @@ def get_job_advisor_report_check_objects(advisor_report_check_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_check_objects = oci.DatabaseMigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
+    test_job_advisor_report_check_objects = oci.databasemigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
         job_id=test_job["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_job_advisor_report_check_objects_output(advisor_report_check_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_check_objects = oci.DatabaseMigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
+    test_job_advisor_report_check_objects = oci.databasemigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
         job_id=test_job["id"])
     ```
 

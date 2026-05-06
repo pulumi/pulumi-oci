@@ -237,7 +237,7 @@ def get_alert_policy(alert_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy = oci.DataSafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
+    test_alert_policy = oci.datasafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
     ```
 
 
@@ -278,7 +278,7 @@ def get_alert_policy_output(alert_policy_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy = oci.DataSafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
+    test_alert_policy = oci.datasafe.get_alert_policy(alert_policy_id=test_alert_policy_oci_data_safe_alert_policy["id"])
     ```
 
 

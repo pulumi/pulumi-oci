@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnrollmentStatuses = oci.Optimizer.getEnrollmentStatuses({
+ * const testEnrollmentStatuses = oci.optimizer.getEnrollmentStatuses({
  *     compartmentId: compartmentId,
  *     state: enrollmentStatusState,
  *     status: enrollmentStatusStatus,
@@ -90,7 +90,7 @@ export interface GetEnrollmentStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnrollmentStatuses = oci.Optimizer.getEnrollmentStatuses({
+ * const testEnrollmentStatuses = oci.optimizer.getEnrollmentStatuses({
  *     compartmentId: compartmentId,
  *     state: enrollmentStatusState,
  *     status: enrollmentStatusStatus,

@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvents = oci.OsManagementHub.getEvents({
+ * const testEvents = oci.osmanagementhub.getEvents({
  *     compartmentId: compartmentId,
  *     eventFingerprint: eventEventFingerprint,
  *     eventSummary: eventEventSummary,
  *     eventSummaryContains: eventEventSummaryContains,
  *     id: eventId,
- *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux === "true",
  *     resourceId: testResource.id,
  *     state: eventState,
  *     timeCreatedGreaterThanOrEqualTo: eventTimeCreatedGreaterThanOrEqualTo,
@@ -168,13 +168,13 @@ export interface GetEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvents = oci.OsManagementHub.getEvents({
+ * const testEvents = oci.osmanagementhub.getEvents({
  *     compartmentId: compartmentId,
  *     eventFingerprint: eventEventFingerprint,
  *     eventSummary: eventEventSummary,
  *     eventSummaryContains: eventEventSummaryContains,
  *     id: eventId,
- *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux === "true",
  *     resourceId: testResource.id,
  *     state: eventState,
  *     timeCreatedGreaterThanOrEqualTo: eventTimeCreatedGreaterThanOrEqualTo,

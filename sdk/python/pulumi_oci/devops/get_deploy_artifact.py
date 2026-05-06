@@ -240,7 +240,7 @@ def get_deploy_artifact(deploy_artifact_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=test_deploy_artifact_oci_devops_deploy_artifact["id"])
+    test_deploy_artifact = oci.devops.get_deploy_artifact(deploy_artifact_id=test_deploy_artifact_oci_devops_deploy_artifact["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=test_deploy_artifact_oci_devops_deploy_artifact["id"])
+    test_deploy_artifact = oci.devops.get_deploy_artifact(deploy_artifact_id=test_deploy_artifact_oci_devops_deploy_artifact["id"])
     ```
 
 

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedule = oci.ComputeCloud.getAtCustomerCccUpgradeSchedule({
+ * const testCccUpgradeSchedule = oci.computecloud.getAtCustomerCccUpgradeSchedule({
  *     cccUpgradeScheduleId: testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedule = oci.ComputeCloud.getAtCustomerCccUpgradeSchedule({
+ * const testCccUpgradeSchedule = oci.computecloud.getAtCustomerCccUpgradeSchedule({
  *     cccUpgradeScheduleId: testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id,
  * });
  * ```

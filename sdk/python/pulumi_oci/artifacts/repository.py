@@ -333,7 +333,7 @@ class Repository(pulumi.CustomResource):
 
         test_repository = oci.artifacts.Repository("test_repository",
             compartment_id=compartment_id,
-            is_immutable=repository_is_immutable,
+            is_immutable=repository_is_immutable == "true",
             repository_type=repository_repository_type,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -390,7 +390,7 @@ class Repository(pulumi.CustomResource):
 
         test_repository = oci.artifacts.Repository("test_repository",
             compartment_id=compartment_id,
-            is_immutable=repository_is_immutable,
+            is_immutable=repository_is_immutable == "true",
             repository_type=repository_repository_type,
             defined_tags={
                 "Operations.CostCenter": "42",

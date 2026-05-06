@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResponderRecipes = oci.CloudGuard.getResponderRecipes({
+ * const testResponderRecipes = oci.cloudguard.getResponderRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: responderRecipeAccessLevel,
- *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree === "true",
  *     displayName: responderRecipeDisplayName,
- *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly === "true",
  *     state: responderRecipeState,
  * });
  * ```
@@ -139,12 +139,12 @@ export interface GetResponderRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResponderRecipes = oci.CloudGuard.getResponderRecipes({
+ * const testResponderRecipes = oci.cloudguard.getResponderRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: responderRecipeAccessLevel,
- *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree === "true",
  *     displayName: responderRecipeDisplayName,
- *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly === "true",
  *     state: responderRecipeState,
  * });
  * ```

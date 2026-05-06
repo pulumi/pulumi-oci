@@ -163,8 +163,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytics = oci.datasafe.get_masking_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         sensitive_type_id=test_sensitive_type["id"],
@@ -226,8 +226,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytics = oci.datasafe.get_masking_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         sensitive_type_id=test_sensitive_type["id"],

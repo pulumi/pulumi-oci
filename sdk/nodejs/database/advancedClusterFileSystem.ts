@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testAdvancedClusterFileSystem = new oci.database.AdvancedClusterFileSystem("test_advanced_cluster_file_system", {
  *     name: advancedClusterFileSystemName,
- *     storageInGbs: advancedClusterFileSystemStorageInGbs,
+ *     storageInGbs: Number(advancedClusterFileSystemStorageInGbs),
  *     vmClusterId: testVmCluster.id,
  *     compartmentId: compartmentId,
  *     definedTags: advancedClusterFileSystemDefinedTags,

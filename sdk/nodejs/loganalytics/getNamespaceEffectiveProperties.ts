@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
+ * const testNamespaceEffectiveProperties = oci.loganalytics.getNamespaceEffectiveProperties({
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
  *     name: namespaceEffectivePropertyName,
- *     patternId: testPattern.id,
+ *     patternId: Number(testPattern.id),
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
@@ -119,13 +119,13 @@ export interface GetNamespaceEffectivePropertiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
+ * const testNamespaceEffectiveProperties = oci.loganalytics.getNamespaceEffectiveProperties({
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
  *     name: namespaceEffectivePropertyName,
- *     patternId: testPattern.id,
+ *     patternId: Number(testPattern.id),
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });

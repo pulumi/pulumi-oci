@@ -31,12 +31,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetTargetDatabasesColumns(ctx, &datasafe.GetTargetDatabasesColumnsArgs{
 //				TargetDatabaseId:   testTargetDatabase.Id,
-//				ColumnNames:        targetDatabasesColumnColumnName,
+//				ColumnNames:        pulumi.ToArray(targetDatabasesColumnColumnName),
 //				ColumnNameContains: pulumi.StringRef(targetDatabasesColumnColumnNameContains),
-//				Datatypes:          targetDatabasesColumnDatatype,
-//				SchemaNames:        targetDatabasesColumnSchemaName,
+//				Datatypes:          pulumi.ToArray(targetDatabasesColumnDatatype),
+//				SchemaNames:        pulumi.ToArray(targetDatabasesColumnSchemaName),
 //				SchemaNameContains: pulumi.StringRef(targetDatabasesColumnSchemaNameContains),
-//				TableNames:         testTable.Name,
+//				TableNames:         pulumi.ToArray(testTable.Name),
 //				TableNameContains:  pulumi.StringRef(targetDatabasesColumnTableNameContains),
 //			}, nil)
 //			if err != nil {

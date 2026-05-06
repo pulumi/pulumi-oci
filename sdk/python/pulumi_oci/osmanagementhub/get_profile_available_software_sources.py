@@ -131,7 +131,7 @@ def get_profile_available_software_sources(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_available_software_sources = oci.OsManagementHub.get_profile_available_software_sources(profile_id=test_profile["id"],
+    test_profile_available_software_sources = oci.osmanagementhub.get_profile_available_software_sources(profile_id=test_profile["id"],
         compartment_id=compartment_id,
         display_names=profile_available_software_source_display_name,
         display_name_contains=profile_available_software_source_display_name_contains)
@@ -177,7 +177,7 @@ def get_profile_available_software_sources_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_available_software_sources = oci.OsManagementHub.get_profile_available_software_sources(profile_id=test_profile["id"],
+    test_profile_available_software_sources = oci.osmanagementhub.get_profile_available_software_sources(profile_id=test_profile["id"],
         compartment_id=compartment_id,
         display_names=profile_available_software_source_display_name,
         display_name_contains=profile_available_software_source_display_name_contains)

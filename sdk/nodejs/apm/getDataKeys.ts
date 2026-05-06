@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataKeys = oci.Apm.getDataKeys({
+ * const testDataKeys = oci.apm.getDataKeys({
  *     apmDomainId: testApmDomain.id,
  *     dataKeyType: dataKeyDataKeyType,
  * });
@@ -76,7 +76,7 @@ export interface GetDataKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataKeys = oci.Apm.getDataKeys({
+ * const testDataKeys = oci.apm.getDataKeys({
  *     apmDomainId: testApmDomain.id,
  *     dataKeyType: dataKeyDataKeyType,
  * });

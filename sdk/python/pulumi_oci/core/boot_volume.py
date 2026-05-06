@@ -757,7 +757,7 @@ class BootVolume(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=boot_volume_is_auto_tune_enabled,
+            is_auto_tune_enabled=boot_volume_is_auto_tune_enabled == "true",
             kms_key_id=test_key["id"],
             size_in_gbs=boot_volume_size_in_gbs,
             vpus_per_gb=boot_volume_vpus_per_gb,
@@ -848,7 +848,7 @@ class BootVolume(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=boot_volume_is_auto_tune_enabled,
+            is_auto_tune_enabled=boot_volume_is_auto_tune_enabled == "true",
             kms_key_id=test_key["id"],
             size_in_gbs=boot_volume_size_in_gbs,
             vpus_per_gb=boot_volume_vpus_per_gb,

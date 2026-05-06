@@ -240,7 +240,7 @@ def get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster = oci.Core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster = oci.core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_compute_gpu_memory_cluster_output(compute_gpu_memory_cluster_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster = oci.Core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster = oci.core.get_compute_gpu_memory_cluster(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster_oci_core_compute_gpu_memory_cluster["id"])
     ```
 
 

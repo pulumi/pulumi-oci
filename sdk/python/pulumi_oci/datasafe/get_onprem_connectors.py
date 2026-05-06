@@ -154,9 +154,9 @@ def get_onprem_connectors(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=compartment_id,
+    test_on_prem_connectors = oci.datasafe.get_onprem_connectors(compartment_id=compartment_id,
         access_level=on_prem_connector_access_level,
-        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree,
+        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree == "true",
         display_name=on_prem_connector_display_name,
         on_prem_connector_id=test_on_prem_connector["id"],
         state=on_prem_connector_state)
@@ -210,9 +210,9 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=compartment_id,
+    test_on_prem_connectors = oci.datasafe.get_onprem_connectors(compartment_id=compartment_id,
         access_level=on_prem_connector_access_level,
-        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree,
+        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree == "true",
         display_name=on_prem_connector_display_name,
         on_prem_connector_id=test_on_prem_connector["id"],
         state=on_prem_connector_state)

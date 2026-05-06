@@ -312,7 +312,7 @@ def get_external_cluster(external_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
+    test_external_cluster = oci.databasemanagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_external_cluster_output(external_cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster = oci.DatabaseManagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
+    test_external_cluster = oci.databasemanagement.get_external_cluster(external_cluster_id=test_external_cluster_oci_database_management_external_cluster["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
+ * const testExternalExadataInfrastructures = oci.databasemanagement.getExternalExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     displayName: externalExadataInfrastructureDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetExternalExadataInfrastructuresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
+ * const testExternalExadataInfrastructures = oci.databasemanagement.getExternalExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     displayName: externalExadataInfrastructureDisplayName,
  * });

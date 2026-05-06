@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAverageCarbonEmission = oci.MeteringComputation.getAverageCarbonEmission({
+ * const testAverageCarbonEmission = oci.meteringcomputation.getAverageCarbonEmission({
  *     skuPartNumber: averageCarbonEmissionSkuPartNumber,
  * });
  * ```
@@ -65,7 +65,7 @@ export interface GetAverageCarbonEmissionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAverageCarbonEmission = oci.MeteringComputation.getAverageCarbonEmission({
+ * const testAverageCarbonEmission = oci.meteringcomputation.getAverageCarbonEmission({
  *     skuPartNumber: averageCarbonEmissionSkuPartNumber,
  * });
  * ```

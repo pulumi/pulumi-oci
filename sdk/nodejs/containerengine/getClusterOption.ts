@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterOption = oci.ContainerEngine.getClusterOption({
+ * const testClusterOption = oci.containerengine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
- *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */
@@ -82,10 +82,10 @@ export interface GetClusterOptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterOption = oci.ContainerEngine.getClusterOption({
+ * const testClusterOption = oci.containerengine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
- *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */

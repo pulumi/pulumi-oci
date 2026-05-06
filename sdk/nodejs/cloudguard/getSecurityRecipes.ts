@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
+ * const testSecurityRecipes = oci.cloudguard.getSecurityRecipes({
  *     compartmentId: compartmentId,
  *     displayName: securityRecipeDisplayName,
  *     id: securityRecipeId,
@@ -98,7 +98,7 @@ export interface GetSecurityRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
+ * const testSecurityRecipes = oci.cloudguard.getSecurityRecipes({
  *     compartmentId: compartmentId,
  *     displayName: securityRecipeDisplayName,
  *     id: securityRecipeId,

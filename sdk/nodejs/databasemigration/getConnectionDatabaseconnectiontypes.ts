@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionDatabaseconnectiontypes = oci.DatabaseMigration.getConnectionDatabaseconnectiontypes({
+ * const testConnectionDatabaseconnectiontypes = oci.databasemigration.getConnectionDatabaseconnectiontypes({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionDatabaseconnectiontypeConnectionType,
  *     sourceConnectionId: testConnection.id,
@@ -94,7 +94,7 @@ export interface GetConnectionDatabaseconnectiontypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionDatabaseconnectiontypes = oci.DatabaseMigration.getConnectionDatabaseconnectiontypes({
+ * const testConnectionDatabaseconnectiontypes = oci.databasemigration.getConnectionDatabaseconnectiontypes({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionDatabaseconnectiontypeConnectionType,
  *     sourceConnectionId: testConnection.id,

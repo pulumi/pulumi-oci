@@ -565,15 +565,15 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                 "dbrs_policy_id": test_policy["id"],
                 "id": autonomous_database_backup_backup_destination_details_id,
                 "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
-                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
-                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote == "true",
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled == "true",
                 "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
                 "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
                 "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
             },
             display_name=autonomous_database_backup_display_name,
-            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
-            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup == "true",
+            retention_period_in_days=int(autonomous_database_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -625,15 +625,15 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                 "dbrs_policy_id": test_policy["id"],
                 "id": autonomous_database_backup_backup_destination_details_id,
                 "internet_proxy": autonomous_database_backup_backup_destination_details_internet_proxy,
-                "is_remote": autonomous_database_backup_backup_destination_details_is_remote,
-                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled,
+                "is_remote": autonomous_database_backup_backup_destination_details_is_remote == "true",
+                "is_retention_lock_enabled": autonomous_database_backup_backup_destination_details_is_retention_lock_enabled == "true",
                 "remote_region": autonomous_database_backup_backup_destination_details_remote_region,
                 "vpc_password": autonomous_database_backup_backup_destination_details_vpc_password,
                 "vpc_user": autonomous_database_backup_backup_destination_details_vpc_user,
             },
             display_name=autonomous_database_backup_display_name,
-            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
-            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup == "true",
+            retention_period_in_days=int(autonomous_database_backup_retention_period_in_days))
         ```
 
         ## Import

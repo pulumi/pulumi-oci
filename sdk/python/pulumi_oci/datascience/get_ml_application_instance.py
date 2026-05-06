@@ -288,7 +288,7 @@ def get_ml_application_instance(ml_application_instance_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_instance = oci.DataScience.get_ml_application_instance(ml_application_instance_id=test_ml_application_instance_oci_datascience_ml_application_instance["id"])
+    test_ml_application_instance = oci.datascience.get_ml_application_instance(ml_application_instance_id=test_ml_application_instance_oci_datascience_ml_application_instance["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_ml_application_instance_output(ml_application_instance_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_instance = oci.DataScience.get_ml_application_instance(ml_application_instance_id=test_ml_application_instance_oci_datascience_ml_application_instance["id"])
+    test_ml_application_instance = oci.datascience.get_ml_application_instance(ml_application_instance_id=test_ml_application_instance_oci_datascience_ml_application_instance["id"])
     ```
 
 

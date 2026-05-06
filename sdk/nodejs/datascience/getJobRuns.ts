@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobRuns = oci.DataScience.getJobRuns({
+ * const testJobRuns = oci.datascience.getJobRuns({
  *     compartmentId: compartmentId,
  *     createdBy: jobRunCreatedBy,
  *     displayName: jobRunDisplayName,
@@ -116,7 +116,7 @@ export interface GetJobRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobRuns = oci.DataScience.getJobRuns({
+ * const testJobRuns = oci.datascience.getJobRuns({
  *     compartmentId: compartmentId,
  *     createdBy: jobRunCreatedBy,
  *     displayName: jobRunDisplayName,

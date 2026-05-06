@@ -126,7 +126,7 @@ def get_security_recipes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+    test_security_recipes = oci.cloudguard.get_security_recipes(compartment_id=compartment_id,
         display_name=security_recipe_display_name,
         id=security_recipe_id,
         state=security_recipe_state)
@@ -172,7 +172,7 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+    test_security_recipes = oci.cloudguard.get_security_recipes(compartment_id=compartment_id,
         display_name=security_recipe_display_name,
         id=security_recipe_id,
         state=security_recipe_state)

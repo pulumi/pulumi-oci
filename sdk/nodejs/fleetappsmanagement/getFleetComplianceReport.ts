@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetComplianceReport = oci.FleetAppsManagement.getFleetComplianceReport({
+ * const testFleetComplianceReport = oci.fleetappsmanagement.getFleetComplianceReport({
  *     complianceReportId: testReport.id,
  *     fleetId: testFleet.id,
  * });
@@ -82,7 +82,7 @@ export interface GetFleetComplianceReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetComplianceReport = oci.FleetAppsManagement.getFleetComplianceReport({
+ * const testFleetComplianceReport = oci.fleetappsmanagement.getFleetComplianceReport({
  *     complianceReportId: testReport.id,
  *     fleetId: testFleet.id,
  * });

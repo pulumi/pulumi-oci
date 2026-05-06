@@ -158,7 +158,7 @@ def get_managed_instance_group_modules(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_modules = oci.OsManagementHub.get_managed_instance_group_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_modules = oci.osmanagementhub.get_managed_instance_group_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_module_name,
         name_contains=managed_instance_group_module_name_contains,
@@ -229,7 +229,7 @@ def get_managed_instance_group_modules_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_modules = oci.OsManagementHub.get_managed_instance_group_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_modules = oci.osmanagementhub.get_managed_instance_group_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_module_name,
         name_contains=managed_instance_group_module_name_contains,

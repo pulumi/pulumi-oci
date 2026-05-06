@@ -141,9 +141,9 @@ def get_dynamic_set_managed_instances(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set_managed_instances = oci.OsManagementHub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
+    test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```
@@ -192,9 +192,9 @@ def get_dynamic_set_managed_instances_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set_managed_instances = oci.OsManagementHub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
+    test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
+ * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });
@@ -104,10 +104,10 @@ export interface GetManagementAgentInstallKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
+ * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });

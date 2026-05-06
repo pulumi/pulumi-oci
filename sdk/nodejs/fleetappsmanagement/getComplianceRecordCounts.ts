@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecordCounts = oci.FleetAppsManagement.getComplianceRecordCounts({
+ * const testComplianceRecordCounts = oci.fleetappsmanagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetComplianceRecordCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComplianceRecordCounts = oci.FleetAppsManagement.getComplianceRecordCounts({
+ * const testComplianceRecordCounts = oci.fleetappsmanagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */

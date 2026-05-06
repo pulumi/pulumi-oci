@@ -114,7 +114,7 @@ def get_schedules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=compartment_id,
+    test_schedules = oci.meteringcomputation.get_schedules(compartment_id=compartment_id,
         name=schedule_name)
     ```
 
@@ -151,7 +151,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=compartment_id,
+    test_schedules = oci.meteringcomputation.get_schedules(compartment_id=compartment_id,
         name=schedule_name)
     ```
 

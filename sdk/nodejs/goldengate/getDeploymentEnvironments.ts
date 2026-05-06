@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentEnvironments = oci.GoldenGate.getDeploymentEnvironments({
+ * const testDeploymentEnvironments = oci.goldengate.getDeploymentEnvironments({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDeploymentEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentEnvironments = oci.GoldenGate.getDeploymentEnvironments({
+ * const testDeploymentEnvironments = oci.goldengate.getDeploymentEnvironments({
  *     compartmentId: compartmentId,
  * });
  * ```

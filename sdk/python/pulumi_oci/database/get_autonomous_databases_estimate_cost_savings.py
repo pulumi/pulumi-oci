@@ -108,8 +108,8 @@ def get_autonomous_databases_estimate_cost_savings(autonomous_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_estimate_cost_savings = oci.Database.get_autonomous_databases_estimate_cost_savings(autonomous_database_id=test_autonomous_database["id"],
-        is_cpu_autoscale=autonomous_databases_estimate_cost_saving_is_cpu_autoscale)
+    test_autonomous_databases_estimate_cost_savings = oci.database.get_autonomous_databases_estimate_cost_savings(autonomous_database_id=test_autonomous_database["id"],
+        is_cpu_autoscale=autonomous_databases_estimate_cost_saving_is_cpu_autoscale == "true")
     ```
 
 
@@ -144,8 +144,8 @@ def get_autonomous_databases_estimate_cost_savings_output(autonomous_database_id
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_estimate_cost_savings = oci.Database.get_autonomous_databases_estimate_cost_savings(autonomous_database_id=test_autonomous_database["id"],
-        is_cpu_autoscale=autonomous_databases_estimate_cost_saving_is_cpu_autoscale)
+    test_autonomous_databases_estimate_cost_savings = oci.database.get_autonomous_databases_estimate_cost_savings(autonomous_database_id=test_autonomous_database["id"],
+        is_cpu_autoscale=autonomous_databases_estimate_cost_saving_is_cpu_autoscale == "true")
     ```
 
 

@@ -782,7 +782,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            duration_in_hrs=privileged_api_request_duration_in_hrs,
+            duration_in_hrs=int(privileged_api_request_duration_in_hrs),
             freeform_tags={
                 "Department": "Finance",
             },
@@ -854,7 +854,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            duration_in_hrs=privileged_api_request_duration_in_hrs,
+            duration_in_hrs=int(privileged_api_request_duration_in_hrs),
             freeform_tags={
                 "Department": "Finance",
             },

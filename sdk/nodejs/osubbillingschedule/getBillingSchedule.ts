@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
+ * const testBillingSchedules = oci.osubbillingschedule.getBillingSchedule({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testService.id,
@@ -90,7 +90,7 @@ export interface GetBillingScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
+ * const testBillingSchedules = oci.osubbillingschedule.getBillingSchedule({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testService.id,

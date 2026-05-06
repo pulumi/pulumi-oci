@@ -129,7 +129,7 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_admin_user = oci.functions.get_fusion_environment_admin_user(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -161,7 +161,7 @@ def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_admin_user = oci.functions.get_fusion_environment_admin_user(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

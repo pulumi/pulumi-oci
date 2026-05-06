@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplicationVips = oci.Database.getApplicationVips({
+ * const testApplicationVips = oci.database.getApplicationVips({
  *     cloudVmClusterId: testCloudVmCluster.id,
  *     compartmentId: compartmentId,
  *     state: applicationVipState,
@@ -90,7 +90,7 @@ export interface GetApplicationVipsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplicationVips = oci.Database.getApplicationVips({
+ * const testApplicationVips = oci.database.getApplicationVips({
  *     cloudVmClusterId: testCloudVmCluster.id,
  *     compartmentId: compartmentId,
  *     state: applicationVipState,

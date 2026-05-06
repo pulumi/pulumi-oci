@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
+ * const testDiscoveryJobsResults = oci.datasafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
  *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
- *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     isResultApplied: discoveryJobsResultIsResultApplied === "true",
  *     objects: discoveryJobsResultObject,
  *     plannedAction: discoveryJobsResultPlannedAction,
  *     schemaNames: discoveryJobsResultSchemaName,
@@ -140,12 +140,12 @@ export interface GetDiscoveryJobsResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
+ * const testDiscoveryJobsResults = oci.datasafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
  *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
- *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     isResultApplied: discoveryJobsResultIsResultApplied === "true",
  *     objects: discoveryJobsResultObject,
  *     plannedAction: discoveryJobsResultPlannedAction,
  *     schemaNames: discoveryJobsResultSchemaName,

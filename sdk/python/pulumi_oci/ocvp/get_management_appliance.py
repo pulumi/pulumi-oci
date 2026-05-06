@@ -297,7 +297,7 @@ def get_management_appliance(management_appliance_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliance = oci.Ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
+    test_management_appliance = oci.ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
     ```
 
 
@@ -343,7 +343,7 @@ def get_management_appliance_output(management_appliance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliance = oci.Ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
+    test_management_appliance = oci.ocvp.get_management_appliance(management_appliance_id=test_management_appliance_oci_ocvp_management_appliance["id"])
     ```
 
 

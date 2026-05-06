@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHomePatchHistoryEntries = oci.Database.getDbHomePatchHistoryEntries({
+ * const testDbHomePatchHistoryEntries = oci.database.getDbHomePatchHistoryEntries({
  *     dbHomeId: testDbHome.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDbHomePatchHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHomePatchHistoryEntries = oci.Database.getDbHomePatchHistoryEntries({
+ * const testDbHomePatchHistoryEntries = oci.database.getDbHomePatchHistoryEntries({
  *     dbHomeId: testDbHome.id,
  * });
  * ```

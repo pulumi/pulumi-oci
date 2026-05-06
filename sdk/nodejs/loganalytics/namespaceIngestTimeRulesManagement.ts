@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testNamespaceIngestTimeRulesManagement = new oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management", {
  *     ingestTimeRuleId: testRule.id,
  *     namespace: namespaceIngestTimeRulesManagementNamespace,
- *     enableIngestTimeRule: enableIngestTimeRule,
+ *     enableIngestTimeRule: enableIngestTimeRule === "true",
  * });
  * ```
  */

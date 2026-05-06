@@ -148,7 +148,7 @@ def get_network_security_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+    test_network_security_groups = oci.core.get_network_security_groups(compartment_id=compartment_id,
         display_name=network_security_group_display_name,
         state=network_security_group_state,
         vcn_id=test_vcn["id"],
@@ -200,7 +200,7 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+    test_network_security_groups = oci.core.get_network_security_groups(compartment_id=compartment_id,
         display_name=network_security_group_display_name,
         state=network_security_group_state,
         vcn_id=test_vcn["id"],

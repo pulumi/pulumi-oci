@@ -360,7 +360,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.GoldenGate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
+    test_pipeline = oci.goldengate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
     ```
 
 
@@ -411,7 +411,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.GoldenGate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
+    test_pipeline = oci.goldengate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
     ```
 
 

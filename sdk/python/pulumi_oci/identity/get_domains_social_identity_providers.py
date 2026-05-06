@@ -194,12 +194,12 @@ def get_domains_social_identity_providers(authorization: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_providers = oci.Identity.get_domains_social_identity_providers(idcs_endpoint=test_domain["url"],
-        social_identity_provider_count=social_identity_provider_social_identity_provider_count,
+    test_social_identity_providers = oci.identity.get_domains_social_identity_providers(idcs_endpoint=test_domain["url"],
+        social_identity_provider_count=int(social_identity_provider_social_identity_provider_count),
         social_identity_provider_filter=social_identity_provider_social_identity_provider_filter,
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version,
-        start_index=social_identity_provider_start_index)
+        start_index=int(social_identity_provider_start_index))
     ```
 
 
@@ -259,12 +259,12 @@ def get_domains_social_identity_providers_output(authorization: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_social_identity_providers = oci.Identity.get_domains_social_identity_providers(idcs_endpoint=test_domain["url"],
-        social_identity_provider_count=social_identity_provider_social_identity_provider_count,
+    test_social_identity_providers = oci.identity.get_domains_social_identity_providers(idcs_endpoint=test_domain["url"],
+        social_identity_provider_count=int(social_identity_provider_social_identity_provider_count),
         social_identity_provider_filter=social_identity_provider_social_identity_provider_filter,
         authorization=social_identity_provider_authorization,
         resource_type_schema_version=social_identity_provider_resource_type_schema_version,
-        start_index=social_identity_provider_start_index)
+        start_index=int(social_identity_provider_start_index))
     ```
 
 

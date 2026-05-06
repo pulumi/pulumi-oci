@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyDevice = oci.Identity.getDomainsMyDevice({
+ * const testMyDevice = oci.identity.getDomainsMyDevice({
  *     idcsEndpoint: testDomain.url,
  *     myDeviceId: testMyDeviceOciIdentityDomainsMyDevice.id,
  *     attributeSets: [],
@@ -247,7 +247,7 @@ export interface GetDomainsMyDeviceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyDevice = oci.Identity.getDomainsMyDevice({
+ * const testMyDevice = oci.identity.getDomainsMyDevice({
  *     idcsEndpoint: testDomain.url,
  *     myDeviceId: testMyDeviceOciIdentityDomainsMyDevice.id,
  *     attributeSets: [],

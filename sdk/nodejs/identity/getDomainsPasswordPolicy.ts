@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPasswordPolicy = oci.Identity.getDomainsPasswordPolicy({
+ * const testPasswordPolicy = oci.identity.getDomainsPasswordPolicy({
  *     idcsEndpoint: testDomain.url,
  *     passwordPolicyId: testPolicy.id,
  *     attributeSets: [],
@@ -295,7 +295,7 @@ export interface GetDomainsPasswordPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPasswordPolicy = oci.Identity.getDomainsPasswordPolicy({
+ * const testPasswordPolicy = oci.identity.getDomainsPasswordPolicy({
  *     idcsEndpoint: testDomain.url,
  *     passwordPolicyId: testPolicy.id,
  *     attributeSets: [],

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbNode = oci.DatabaseManagement.getExternalDbNode({
+ * const testExternalDbNode = oci.databasemanagement.getExternalDbNode({
  *     externalDbNodeId: testExternalDbNodeOciDatabaseManagementExternalDbNode.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetExternalDbNodeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbNode = oci.DatabaseManagement.getExternalDbNode({
+ * const testExternalDbNode = oci.databasemanagement.getExternalDbNode({
  *     externalDbNodeId: testExternalDbNodeOciDatabaseManagementExternalDbNode.id,
  * });
  * ```

@@ -239,7 +239,7 @@ def get_container_image_signature(image_signature_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
+    test_container_image_signature = oci.artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_container_image_signature_output(image_signature_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signature = oci.Artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
+    test_container_image_signature = oci.artifacts.get_container_image_signature(image_signature_id=test_image_signature["id"])
     ```
 
 

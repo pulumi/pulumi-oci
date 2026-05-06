@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionPolicies = oci.RecoveryMod.getProtectionPolicies({
+ * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
  *     owner: protectionPolicyOwner,
@@ -104,7 +104,7 @@ export interface GetProtectionPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionPolicies = oci.RecoveryMod.getProtectionPolicies({
+ * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
  *     owner: protectionPolicyOwner,

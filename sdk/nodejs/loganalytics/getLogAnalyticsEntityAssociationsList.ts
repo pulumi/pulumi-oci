@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityAssociationsList = oci.LogAnalytics.getLogAnalyticsEntityAssociationsList({
+ * const testLogAnalyticsEntityAssociationsList = oci.loganalytics.getLogAnalyticsEntityAssociationsList({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityAssociationsListNamespace,
  *     directOrAllAssociations: logAnalyticsEntityAssociationsListDirectOrAllAssociations,
@@ -81,7 +81,7 @@ export interface GetLogAnalyticsEntityAssociationsListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityAssociationsList = oci.LogAnalytics.getLogAnalyticsEntityAssociationsList({
+ * const testLogAnalyticsEntityAssociationsList = oci.loganalytics.getLogAnalyticsEntityAssociationsList({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityAssociationsListNamespace,
  *     directOrAllAssociations: logAnalyticsEntityAssociationsListDirectOrAllAssociations,

@@ -203,7 +203,7 @@ def get_vision_private_endpoint(vision_private_endpoint_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoint = oci.AiVision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
+    test_vision_private_endpoint = oci.aivision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_vision_private_endpoint_output(vision_private_endpoint_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoint = oci.AiVision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
+    test_vision_private_endpoint = oci.aivision.get_vision_private_endpoint(vision_private_endpoint_id=test_vision_private_endpoint_oci_ai_vision_vision_private_endpoint["id"])
     ```
 
 

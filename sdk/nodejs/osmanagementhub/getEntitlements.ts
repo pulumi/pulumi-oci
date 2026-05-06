@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEntitlements = oci.OsManagementHub.getEntitlements({
+ * const testEntitlements = oci.osmanagementhub.getEntitlements({
  *     compartmentId: compartmentId,
  *     csi: entitlementCsi,
  *     vendorName: entitlementVendorName,
@@ -92,7 +92,7 @@ export interface GetEntitlementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEntitlements = oci.OsManagementHub.getEntitlements({
+ * const testEntitlements = oci.osmanagementhub.getEntitlements({
  *     compartmentId: compartmentId,
  *     csi: entitlementCsi,
  *     vendorName: entitlementVendorName,

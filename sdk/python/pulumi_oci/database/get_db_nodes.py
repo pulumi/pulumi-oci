@@ -144,7 +144,7 @@ def get_db_nodes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=compartment_id,
+    test_db_nodes = oci.database.get_db_nodes(compartment_id=compartment_id,
         db_server_id=test_db_server["id"],
         db_system_id=test_db_system["id"],
         state=db_node_state,
@@ -195,7 +195,7 @@ def get_db_nodes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=compartment_id,
+    test_db_nodes = oci.database.get_db_nodes(compartment_id=compartment_id,
         db_server_id=test_db_server["id"],
         db_system_id=test_db_system["id"],
         state=db_node_state,

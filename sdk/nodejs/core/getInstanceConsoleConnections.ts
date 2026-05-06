@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
+ * const testInstanceConsoleConnections = oci.core.getInstanceConsoleConnections({
  *     compartmentId: compartmentId,
  *     instanceId: testInstance.id,
  * });
@@ -84,7 +84,7 @@ export interface GetInstanceConsoleConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
+ * const testInstanceConsoleConnections = oci.core.getInstanceConsoleConnections({
  *     compartmentId: compartmentId,
  *     instanceId: testInstance.id,
  * });

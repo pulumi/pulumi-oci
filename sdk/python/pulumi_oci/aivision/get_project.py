@@ -191,7 +191,7 @@ def get_project(project_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiVision.get_project(project_id=test_project_oci_ai_vision_project["id"])
+    test_project = oci.aivision.get_project(project_id=test_project_oci_ai_vision_project["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_project_output(project_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project = oci.AiVision.get_project(project_id=test_project_oci_ai_vision_project["id"])
+    test_project = oci.aivision.get_project(project_id=test_project_oci_ai_vision_project["id"])
     ```
 
 

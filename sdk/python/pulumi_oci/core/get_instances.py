@@ -165,7 +165,7 @@ def get_instances(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=compartment_id,
+    test_instances = oci.core.get_instances(compartment_id=compartment_id,
         availability_domain=instance_availability_domain,
         capacity_reservation_id=test_capacity_reservation["id"],
         compute_cluster_id=test_compute_cluster["id"],
@@ -226,7 +226,7 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_instances = oci.Core.get_instances(compartment_id=compartment_id,
+    test_instances = oci.core.get_instances(compartment_id=compartment_id,
         availability_domain=instance_availability_domain,
         capacity_reservation_id=test_capacity_reservation["id"],
         compute_cluster_id=test_compute_cluster["id"],

@@ -693,7 +693,7 @@ class Bucket(pulumi.CustomResource):
             },
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled,
+            object_events_enabled=bucket_object_events_enabled == "true",
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,
@@ -772,7 +772,7 @@ class Bucket(pulumi.CustomResource):
             },
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled,
+            object_events_enabled=bucket_object_events_enabled == "true",
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,

@@ -106,7 +106,7 @@ def get_supported_skus(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=compartment_id,
+    test_supported_skus = oci.ocvp.get_supported_skus(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 
@@ -143,7 +143,7 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=compartment_id,
+    test_supported_skus = oci.ocvp.get_supported_skus(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 

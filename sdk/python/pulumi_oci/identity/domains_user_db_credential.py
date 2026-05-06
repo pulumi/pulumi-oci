@@ -1338,7 +1338,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                 "value": user_db_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": user_db_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": user_db_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "value": test_user["id"],
@@ -1490,7 +1490,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                 "value": user_db_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": user_db_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": user_db_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "value": test_user["id"],

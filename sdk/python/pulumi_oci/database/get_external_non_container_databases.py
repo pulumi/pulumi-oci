@@ -124,7 +124,7 @@ def get_external_non_container_databases(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_databases = oci.Database.get_external_non_container_databases(compartment_id=compartment_id,
+    test_external_non_container_databases = oci.database.get_external_non_container_databases(compartment_id=compartment_id,
         display_name=external_non_container_database_display_name,
         state=external_non_container_database_state)
     ```
@@ -165,7 +165,7 @@ def get_external_non_container_databases_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_non_container_databases = oci.Database.get_external_non_container_databases(compartment_id=compartment_id,
+    test_external_non_container_databases = oci.database.get_external_non_container_databases(compartment_id=compartment_id,
         display_name=external_non_container_database_display_name,
         state=external_non_container_database_state)
     ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
+ * const testLogAnalyticsEntity = oci.loganalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
  *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
@@ -162,7 +162,7 @@ export interface GetLogAnalyticsEntityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
+ * const testLogAnalyticsEntity = oci.loganalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
  *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,

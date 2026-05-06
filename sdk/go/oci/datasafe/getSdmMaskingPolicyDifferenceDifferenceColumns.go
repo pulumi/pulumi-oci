@@ -31,11 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSdmMaskingPolicyDifferenceDifferenceColumns(ctx, &datasafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs{
 //				SdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.Id,
-//				ColumnNames:                  sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
+//				ColumnNames:                  pulumi.ToArray(sdmMaskingPolicyDifferenceDifferenceColumnColumnName),
 //				DifferenceType:               pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType),
-//				Objects:                      sdmMaskingPolicyDifferenceDifferenceColumnObject,
+//				Objects:                      pulumi.ToArray(sdmMaskingPolicyDifferenceDifferenceColumnObject),
 //				PlannedAction:                pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction),
-//				SchemaNames:                  sdmMaskingPolicyDifferenceDifferenceColumnSchemaName,
+//				SchemaNames:                  pulumi.ToArray(sdmMaskingPolicyDifferenceDifferenceColumnSchemaName),
 //				SyncStatus:                   pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus),
 //			}, nil)
 //			if err != nil {

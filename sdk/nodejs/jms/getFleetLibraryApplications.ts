@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryApplications = oci.Jms.getFleetLibraryApplications({
+ * const testFleetLibraryApplications = oci.jms.getFleetLibraryApplications({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryApplicationLibraryKey,
  *     applicationId: testApplication.id,
@@ -119,7 +119,7 @@ export interface GetFleetLibraryApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryApplications = oci.Jms.getFleetLibraryApplications({
+ * const testFleetLibraryApplications = oci.jms.getFleetLibraryApplications({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryApplicationLibraryKey,
  *     applicationId: testApplication.id,

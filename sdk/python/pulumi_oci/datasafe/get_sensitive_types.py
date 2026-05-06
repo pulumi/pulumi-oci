@@ -236,13 +236,13 @@ def get_sensitive_types(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=compartment_id,
+    test_sensitive_types = oci.datasafe.get_sensitive_types(compartment_id=compartment_id,
         access_level=sensitive_type_access_level,
-        compartment_id_in_subtree=sensitive_type_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_type_compartment_id_in_subtree == "true",
         default_masking_format_id=test_default_masking_format["id"],
         display_name=sensitive_type_display_name,
         entity_type=sensitive_type_entity_type,
-        is_common=sensitive_type_is_common,
+        is_common=sensitive_type_is_common == "true",
         parent_category_id=test_category["id"],
         sensitive_type_id=test_sensitive_type["id"],
         sensitive_type_source=sensitive_type_sensitive_type_source,
@@ -331,13 +331,13 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=compartment_id,
+    test_sensitive_types = oci.datasafe.get_sensitive_types(compartment_id=compartment_id,
         access_level=sensitive_type_access_level,
-        compartment_id_in_subtree=sensitive_type_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_type_compartment_id_in_subtree == "true",
         default_masking_format_id=test_default_masking_format["id"],
         display_name=sensitive_type_display_name,
         entity_type=sensitive_type_entity_type,
-        is_common=sensitive_type_is_common,
+        is_common=sensitive_type_is_common == "true",
         parent_category_id=test_category["id"],
         sensitive_type_id=test_sensitive_type["id"],
         sensitive_type_source=sensitive_type_sensitive_type_source,

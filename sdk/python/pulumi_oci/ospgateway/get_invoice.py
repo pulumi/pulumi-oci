@@ -383,7 +383,7 @@ def get_invoice(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice = oci.OspGateway.get_invoice(compartment_id=compartment_id,
+    test_invoice = oci.ospgateway.get_invoice(compartment_id=compartment_id,
         internal_invoice_id=test_invoice_oci_osp_gateway_invoice["id"],
         osp_home_region=invoice_osp_home_region)
     ```
@@ -444,7 +444,7 @@ def get_invoice_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_invoice = oci.OspGateway.get_invoice(compartment_id=compartment_id,
+    test_invoice = oci.ospgateway.get_invoice(compartment_id=compartment_id,
         internal_invoice_id=test_invoice_oci_osp_gateway_invoice["id"],
         osp_home_region=invoice_osp_home_region)
     ```

@@ -137,7 +137,7 @@ def get_execution_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_actions = oci.Database.get_execution_actions(compartment_id=compartment_id,
+    test_execution_actions = oci.database.get_execution_actions(compartment_id=compartment_id,
         display_name=execution_action_display_name,
         execution_window_id=test_execution_window["id"],
         state=execution_action_state)
@@ -183,7 +183,7 @@ def get_execution_actions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_actions = oci.Database.get_execution_actions(compartment_id=compartment_id,
+    test_execution_actions = oci.database.get_execution_actions(compartment_id=compartment_id,
         display_name=execution_action_display_name,
         execution_window_id=test_execution_window["id"],
         state=execution_action_state)

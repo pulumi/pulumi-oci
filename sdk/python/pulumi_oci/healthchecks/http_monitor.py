@@ -589,7 +589,7 @@ class HttpMonitor(pulumi.CustomResource):
         test_http_monitor = oci.healthchecks.HttpMonitor("test_http_monitor",
             compartment_id=compartment_id,
             display_name=http_monitor_display_name,
-            interval_in_seconds=http_monitor_interval_in_seconds,
+            interval_in_seconds=int(http_monitor_interval_in_seconds),
             protocol=http_monitor_protocol,
             targets=http_monitor_targets,
             defined_tags={
@@ -599,11 +599,11 @@ class HttpMonitor(pulumi.CustomResource):
                 "Department": "Finance",
             },
             headers=http_monitor_headers,
-            is_enabled=http_monitor_is_enabled,
+            is_enabled=http_monitor_is_enabled == "true",
             method=http_monitor_method,
             path=http_monitor_path,
-            port=http_monitor_port,
-            timeout_in_seconds=http_monitor_timeout_in_seconds,
+            port=int(http_monitor_port),
+            timeout_in_seconds=int(http_monitor_timeout_in_seconds),
             vantage_point_names=http_monitor_vantage_point_names)
         ```
 
@@ -664,7 +664,7 @@ class HttpMonitor(pulumi.CustomResource):
         test_http_monitor = oci.healthchecks.HttpMonitor("test_http_monitor",
             compartment_id=compartment_id,
             display_name=http_monitor_display_name,
-            interval_in_seconds=http_monitor_interval_in_seconds,
+            interval_in_seconds=int(http_monitor_interval_in_seconds),
             protocol=http_monitor_protocol,
             targets=http_monitor_targets,
             defined_tags={
@@ -674,11 +674,11 @@ class HttpMonitor(pulumi.CustomResource):
                 "Department": "Finance",
             },
             headers=http_monitor_headers,
-            is_enabled=http_monitor_is_enabled,
+            is_enabled=http_monitor_is_enabled == "true",
             method=http_monitor_method,
             path=http_monitor_path,
-            port=http_monitor_port,
-            timeout_in_seconds=http_monitor_timeout_in_seconds,
+            port=int(http_monitor_port),
+            timeout_in_seconds=int(http_monitor_timeout_in_seconds),
             vantage_point_names=http_monitor_vantage_point_names)
         ```
 

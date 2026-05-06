@@ -134,7 +134,7 @@ def get_fusion_environment_service_attachments(display_name: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachments = oci.functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_service_attachment_display_name,
         service_instance_type=fusion_environment_service_attachment_service_instance_type,
         state=fusion_environment_service_attachment_state)
@@ -180,7 +180,7 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachments = oci.Functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachments = oci.functions.get_fusion_environment_service_attachments(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_service_attachment_display_name,
         service_instance_type=fusion_environment_service_attachment_service_instance_type,
         state=fusion_environment_service_attachment_state)

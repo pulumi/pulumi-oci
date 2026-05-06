@@ -116,7 +116,7 @@ def get_file_storage_available_maintenance_schedule_start_times(availability_dom
     import pulumi
     import pulumi_oci as oci
 
-    test_available_maintenance_schedule_start_times = oci.Lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
+    test_available_maintenance_schedule_start_times = oci.lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
         compartment_id=compartment_id,
         day_of_week=available_maintenance_schedule_start_time_day_of_week,
         id=available_maintenance_schedule_start_time_id)
@@ -161,7 +161,7 @@ def get_file_storage_available_maintenance_schedule_start_times_output(availabil
     import pulumi
     import pulumi_oci as oci
 
-    test_available_maintenance_schedule_start_times = oci.Lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
+    test_available_maintenance_schedule_start_times = oci.lustre.get_file_storage_available_maintenance_schedule_start_times(availability_domain=available_maintenance_schedule_start_time_availability_domain,
         compartment_id=compartment_id,
         day_of_week=available_maintenance_schedule_start_time_day_of_week,
         id=available_maintenance_schedule_start_time_id)

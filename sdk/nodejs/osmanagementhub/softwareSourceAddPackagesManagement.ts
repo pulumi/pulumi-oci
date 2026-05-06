@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * const testSoftwareSourceAddPackagesManagement = new oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management", {
  *     packages: softwareSourceAddPackagesManagementPackages,
  *     softwareSourceId: testSoftwareSource.id,
- *     isContinueOnMissingPackages: softwareSourceAddPackagesManagementIsContinueOnMissingPackages,
+ *     isContinueOnMissingPackages: softwareSourceAddPackagesManagementIsContinueOnMissingPackages === "true",
  * });
  * ```
  *

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
+ * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
  *     name: supportedHostShapeName,
  * });
  * ```
@@ -105,10 +105,10 @@ export interface GetSupportedHostShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
+ * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
  *     name: supportedHostShapeName,
  * });
  * ```

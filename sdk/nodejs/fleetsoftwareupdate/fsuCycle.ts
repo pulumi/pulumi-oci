@@ -46,9 +46,9 @@ import * as utilities from "../utilities";
  *         type: fsuCycleApplyActionScheduleType,
  *     },
  *     batchingStrategy: {
- *         isForceRolling: fsuCycleBatchingStrategyIsForceRolling,
- *         isWaitForBatchResume: fsuCycleBatchingStrategyIsWaitForBatchResume,
- *         percentage: fsuCycleBatchingStrategyPercentage,
+ *         isForceRolling: fsuCycleBatchingStrategyIsForceRolling === "true",
+ *         isWaitForBatchResume: fsuCycleBatchingStrategyIsWaitForBatchResume === "true",
+ *         percentage: Number(fsuCycleBatchingStrategyPercentage),
  *         type: fsuCycleBatchingStrategyType,
  *     },
  *     definedTags: {
@@ -62,20 +62,20 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isIgnoreMissingPatches: fsuCycleIsIgnoreMissingPatches,
- *     isIgnorePatches: fsuCycleIsIgnorePatches,
- *     isKeepPlacement: fsuCycleIsKeepPlacement,
- *     maxDrainTimeoutInSeconds: fsuCycleMaxDrainTimeoutInSeconds,
+ *     isIgnorePatches: fsuCycleIsIgnorePatches === "true",
+ *     isKeepPlacement: fsuCycleIsKeepPlacement === "true",
+ *     maxDrainTimeoutInSeconds: Number(fsuCycleMaxDrainTimeoutInSeconds),
  *     stageActionSchedule: {
  *         timeToStart: fsuCycleStageActionScheduleTimeToStart,
  *         type: fsuCycleStageActionScheduleType,
  *     },
  *     upgradeDetails: {
  *         collectionType: fsuCycleUpgradeDetailsCollectionType,
- *         isIgnorePostUpgradeErrors: fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors,
- *         isIgnorePrerequisites: fsuCycleUpgradeDetailsIsIgnorePrerequisites,
- *         isRecompileInvalidObjects: fsuCycleUpgradeDetailsIsRecompileInvalidObjects,
- *         isTimeZoneUpgrade: fsuCycleUpgradeDetailsIsTimeZoneUpgrade,
- *         maxDrainTimeoutInSeconds: fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds,
+ *         isIgnorePostUpgradeErrors: fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors === "true",
+ *         isIgnorePrerequisites: fsuCycleUpgradeDetailsIsIgnorePrerequisites === "true",
+ *         isRecompileInvalidObjects: fsuCycleUpgradeDetailsIsRecompileInvalidObjects === "true",
+ *         isTimeZoneUpgrade: fsuCycleUpgradeDetailsIsTimeZoneUpgrade === "true",
+ *         maxDrainTimeoutInSeconds: Number(fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds),
  *     },
  * });
  * ```

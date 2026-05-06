@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHosts = oci.Core.getComputeHosts({
+ * const testComputeHosts = oci.core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
- *     computeHostInSubtree: computeHostComputeHostInSubtree,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree === "true",
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,
@@ -139,12 +139,12 @@ export interface GetComputeHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeHosts = oci.Core.getComputeHosts({
+ * const testComputeHosts = oci.core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
  *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
- *     computeHostInSubtree: computeHostComputeHostInSubtree,
+ *     computeHostInSubtree: computeHostComputeHostInSubtree === "true",
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
  *     networkResourceId: testResource.id,

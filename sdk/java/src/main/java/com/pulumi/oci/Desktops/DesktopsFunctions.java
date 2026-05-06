@@ -46,8 +46,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -88,8 +88,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -130,8 +130,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -172,8 +172,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -298,8 +298,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -340,8 +340,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -382,8 +382,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -424,8 +424,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -466,8 +466,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -513,8 +513,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -560,8 +560,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -654,8 +654,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -701,8 +701,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -748,8 +748,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -795,8 +795,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -842,8 +842,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -889,8 +889,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolVolumesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -936,8 +936,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -982,8 +982,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1028,8 +1028,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1074,8 +1074,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1120,8 +1120,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1166,8 +1166,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1213,8 +1213,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1260,8 +1260,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1307,8 +1307,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1354,8 +1354,8 @@ public final class DesktopsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Desktops.DesktopsFunctions;
      * import com.pulumi.oci.Desktops.inputs.GetDesktopsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

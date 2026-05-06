@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApis = oci.ApiGateway.getApis({
+ * const testApis = oci.apigateway.getApis({
  *     compartmentId: compartmentId,
  *     displayName: apiDisplayName,
  *     state: apiState,
@@ -90,7 +90,7 @@ export interface GetApisResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApis = oci.ApiGateway.getApis({
+ * const testApis = oci.apigateway.getApis({
  *     compartmentId: compartmentId,
  *     displayName: apiDisplayName,
  *     state: apiState,

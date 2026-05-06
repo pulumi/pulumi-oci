@@ -241,7 +241,7 @@ def get_api(api_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api = oci.ApiGateway.get_api(api_id=test_api_oci_apigateway_api["id"])
+    test_api = oci.apigateway.get_api(api_id=test_api_oci_apigateway_api["id"])
     ```
 
 
@@ -282,7 +282,7 @@ def get_api_output(api_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api = oci.ApiGateway.get_api(api_id=test_api_oci_apigateway_api["id"])
+    test_api = oci.apigateway.get_api(api_id=test_api_oci_apigateway_api["id"])
     ```
 
 

@@ -251,7 +251,7 @@ def get_report(report_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
+    test_report = oci.datasafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
+    test_report = oci.datasafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
 
 

@@ -134,7 +134,7 @@ def get_service_catalog_associations(entity_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+    test_service_catalog_associations = oci.servicecatalog.get_service_catalog_associations(entity_id=test_entity["id"],
         entity_type=service_catalog_association_entity_type,
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])
@@ -180,7 +180,7 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+    test_service_catalog_associations = oci.servicecatalog.get_service_catalog_associations(entity_id=test_entity["id"],
         entity_type=service_catalog_association_entity_type,
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])

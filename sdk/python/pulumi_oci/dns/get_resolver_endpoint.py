@@ -247,7 +247,7 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
+    test_resolver_endpoint = oci.dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
         resolver_id=test_resolver["id"],
         scope="PRIVATE")
     ```
@@ -300,7 +300,7 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
+    test_resolver_endpoint = oci.dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
         resolver_id=test_resolver["id"],
         scope="PRIVATE")
     ```

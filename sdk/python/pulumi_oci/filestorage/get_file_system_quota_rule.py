@@ -178,7 +178,7 @@ def get_file_system_quota_rule(are_violators_only: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rule = oci.FileStorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
+    test_file_system_quota_rule = oci.filestorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
         quota_rule_id=test_rule["id"])
     ```
 
@@ -220,7 +220,7 @@ def get_file_system_quota_rule_output(are_violators_only: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_file_system_quota_rule = oci.FileStorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
+    test_file_system_quota_rule = oci.filestorage.get_file_system_quota_rule(file_system_id=test_file_system["id"],
         quota_rule_id=test_rule["id"])
     ```
 

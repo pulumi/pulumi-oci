@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := databasemigration.GetConnectionDatabaseconnectiontypes(ctx, &databasemigration.GetConnectionDatabaseconnectiontypesArgs{
 //				CompartmentId:      compartmentId,
-//				ConnectionTypes:    connectionDatabaseconnectiontypeConnectionType,
+//				ConnectionTypes:    pulumi.ToArray(connectionDatabaseconnectiontypeConnectionType),
 //				SourceConnectionId: pulumi.StringRef(testConnection.Id),
-//				TechnologyTypes:    connectionDatabaseconnectiontypeTechnologyType,
+//				TechnologyTypes:    pulumi.ToArray(connectionDatabaseconnectiontypeTechnologyType),
 //			}, nil)
 //			if err != nil {
 //				return err

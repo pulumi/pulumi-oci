@@ -742,7 +742,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
+    test_deployment = oci.goldengate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
     ```
 
 
@@ -825,7 +825,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
+    test_deployment = oci.goldengate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
     ```
 
 

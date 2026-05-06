@@ -95,7 +95,7 @@ def get_marketplace_metadata_public_keys(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_marketplace_metadata_public_keys = oci.Marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
+    test_marketplace_metadata_public_keys = oci.marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_marketplace_metadata_public_keys_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_marketplace_metadata_public_keys = oci.Marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
+    test_marketplace_metadata_public_keys = oci.marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
     ```
 
 

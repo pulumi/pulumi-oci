@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     identityDomain: odaInstanceIdentityDomain,
- *     isRoleBasedAccess: odaInstanceIsRoleBasedAccess,
+ *     isRoleBasedAccess: odaInstanceIsRoleBasedAccess === "true",
  * });
  * ```
  *

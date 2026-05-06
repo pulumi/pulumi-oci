@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListener = oci.NetworkLoadBalancer.getListener({
+ * const testListener = oci.networkloadbalancer.getListener({
  *     listenerName: testListenerOciNetworkLoadBalancerListener.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
@@ -98,7 +98,7 @@ export interface GetListenerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListener = oci.NetworkLoadBalancer.getListener({
+ * const testListener = oci.networkloadbalancer.getListener({
  *     listenerName: testListenerOciNetworkLoadBalancerListener.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });

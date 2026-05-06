@@ -111,8 +111,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -155,8 +155,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -199,8 +199,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -243,8 +243,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -287,8 +287,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -329,8 +329,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -371,8 +371,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -413,8 +413,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -455,8 +455,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -497,8 +497,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -539,8 +539,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -584,8 +584,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -629,8 +629,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -674,8 +674,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -719,8 +719,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -764,8 +764,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -809,8 +809,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -856,8 +856,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -902,8 +902,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -948,8 +948,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -994,8 +994,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1040,8 +1040,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1086,8 +1086,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1132,8 +1132,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1178,8 +1178,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1222,8 +1222,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1266,8 +1266,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1310,8 +1310,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1354,8 +1354,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1398,8 +1398,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1442,8 +1442,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1486,8 +1486,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1530,8 +1530,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1574,8 +1574,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobLogContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1618,8 +1618,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1665,8 +1665,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1712,8 +1712,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1759,8 +1759,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1806,8 +1806,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1853,8 +1853,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1900,8 +1900,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataIngestionJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1945,8 +1945,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1987,8 +1987,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2029,8 +2029,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2071,8 +2071,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2113,8 +2113,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2155,8 +2155,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2200,8 +2200,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2245,8 +2245,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2290,8 +2290,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2335,8 +2335,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2380,8 +2380,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2425,8 +2425,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2470,8 +2470,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2512,8 +2512,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2554,8 +2554,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2596,8 +2596,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2638,8 +2638,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2680,8 +2680,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2724,8 +2724,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2768,8 +2768,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2812,8 +2812,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2856,8 +2856,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2900,8 +2900,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2944,8 +2944,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2988,8 +2988,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3033,8 +3033,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3078,8 +3078,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3123,8 +3123,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3168,8 +3168,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3213,8 +3213,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3258,8 +3258,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3303,8 +3303,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3345,8 +3345,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3387,8 +3387,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3429,8 +3429,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3471,8 +3471,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentProvisionedCapacityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3513,8 +3513,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3555,8 +3555,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3597,8 +3597,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3639,8 +3639,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3681,8 +3681,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3723,8 +3723,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3768,8 +3768,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3813,8 +3813,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3858,8 +3858,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3903,8 +3903,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3948,8 +3948,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3993,8 +3993,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4038,8 +4038,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4080,8 +4080,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4122,8 +4122,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4164,8 +4164,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4206,8 +4206,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4248,8 +4248,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4293,8 +4293,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4338,8 +4338,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4383,8 +4383,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4428,8 +4428,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4473,8 +4473,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4515,8 +4515,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4557,8 +4557,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4599,8 +4599,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4641,8 +4641,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4683,8 +4683,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4729,8 +4729,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4775,8 +4775,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4821,8 +4821,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4867,8 +4867,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4913,8 +4913,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4955,8 +4955,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4997,8 +4997,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5039,8 +5039,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5081,8 +5081,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5123,8 +5123,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5168,8 +5168,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5213,8 +5213,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5258,8 +5258,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5303,8 +5303,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5348,8 +5348,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5390,8 +5390,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5432,8 +5432,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5474,8 +5474,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5516,8 +5516,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5558,8 +5558,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5605,8 +5605,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5652,8 +5652,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5699,8 +5699,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5746,8 +5746,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5793,8 +5793,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5835,8 +5835,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5877,8 +5877,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5919,8 +5919,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5961,8 +5961,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6003,8 +6003,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6050,8 +6050,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6097,8 +6097,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6144,8 +6144,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6191,8 +6191,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6238,8 +6238,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6280,8 +6280,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6322,8 +6322,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6364,8 +6364,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6406,8 +6406,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6448,8 +6448,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6494,8 +6494,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6540,8 +6540,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6586,8 +6586,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6632,8 +6632,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6678,8 +6678,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6724,8 +6724,8 @@ public final class GenerativeAiFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
      * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

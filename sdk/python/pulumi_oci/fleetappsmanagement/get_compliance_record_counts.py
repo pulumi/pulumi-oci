@@ -105,8 +105,8 @@ def get_compliance_record_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_record_counts = oci.FleetAppsManagement.get_compliance_record_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree)
+    test_compliance_record_counts = oci.fleetappsmanagement.get_compliance_record_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree == "true")
     ```
 
 
@@ -141,8 +141,8 @@ def get_compliance_record_counts_output(compartment_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_record_counts = oci.FleetAppsManagement.get_compliance_record_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree)
+    test_compliance_record_counts = oci.fleetappsmanagement.get_compliance_record_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=compliance_record_count_compartment_id_in_subtree == "true")
     ```
 
 

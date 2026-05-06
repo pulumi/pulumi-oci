@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTsigKey = oci.Dns.getTsigKey({
+ * const testTsigKey = oci.dns.getTsigKey({
  *     tsigKeyId: testTsigKeyOciDnsTsigKey.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetTsigKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTsigKey = oci.Dns.getTsigKey({
+ * const testTsigKey = oci.dns.getTsigKey({
  *     tsigKeyId: testTsigKeyOciDnsTsigKey.id,
  * });
  * ```

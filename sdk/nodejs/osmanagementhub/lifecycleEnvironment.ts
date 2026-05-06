@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     osFamily: lifecycleEnvironmentOsFamily,
  *     stages: [{
  *         displayName: lifecycleEnvironmentStagesDisplayName,
- *         rank: lifecycleEnvironmentStagesRank,
+ *         rank: Number(lifecycleEnvironmentStagesRank),
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },

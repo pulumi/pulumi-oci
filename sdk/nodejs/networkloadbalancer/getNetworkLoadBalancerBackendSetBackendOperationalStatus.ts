@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancerBackendSetBackendOperationalStatus = oci.NetworkLoadBalancer.getNetworkLoadBalancerBackendSetBackendOperationalStatus({
+ * const testNetworkLoadBalancerBackendSetBackendOperationalStatus = oci.networkloadbalancer.getNetworkLoadBalancerBackendSetBackendOperationalStatus({
  *     backendName: testBackend.name,
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
@@ -76,7 +76,7 @@ export interface GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult 
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancerBackendSetBackendOperationalStatus = oci.NetworkLoadBalancer.getNetworkLoadBalancerBackendSetBackendOperationalStatus({
+ * const testNetworkLoadBalancerBackendSetBackendOperationalStatus = oci.networkloadbalancer.getNetworkLoadBalancerBackendSetBackendOperationalStatus({
  *     backendName: testBackend.name,
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,

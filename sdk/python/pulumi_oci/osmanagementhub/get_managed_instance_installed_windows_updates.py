@@ -138,7 +138,7 @@ def get_managed_instance_installed_windows_updates(compartment_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_windows_updates = oci.OsManagementHub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_windows_updates = oci.osmanagementhub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_name=managed_instance_installed_windows_update_display_name,
         display_name_contains=managed_instance_installed_windows_update_display_name_contains,
@@ -189,7 +189,7 @@ def get_managed_instance_installed_windows_updates_output(compartment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_windows_updates = oci.OsManagementHub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_windows_updates = oci.osmanagementhub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_name=managed_instance_installed_windows_update_display_name,
         display_name_contains=managed_instance_installed_windows_update_display_name_contains,

@@ -237,7 +237,7 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
+    test_stream_packaging_config = oci.mediaservices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
     ```
 
 
@@ -278,7 +278,7 @@ def get_stream_packaging_config_output(stream_packaging_config_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
+    test_stream_packaging_config = oci.mediaservices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
     ```
 
 

@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
+ * const testReportDefinitions = oci.datasafe.getReportDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded,
+ *     isSeeded: reportDefinitionIsSeeded === "true",
  *     state: reportDefinitionState,
  * });
  * ```
@@ -138,14 +138,14 @@ export interface GetReportDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
+ * const testReportDefinitions = oci.datasafe.getReportDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: reportDefinitionAccessLevel,
  *     category: reportDefinitionCategory,
- *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree === "true",
  *     dataSource: reportDefinitionDataSource,
  *     displayName: reportDefinitionDisplayName,
- *     isSeeded: reportDefinitionIsSeeded,
+ *     isSeeded: reportDefinitionIsSeeded === "true",
  *     state: reportDefinitionState,
  * });
  * ```

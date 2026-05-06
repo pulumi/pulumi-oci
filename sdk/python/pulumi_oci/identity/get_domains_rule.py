@@ -386,7 +386,7 @@ def get_domains_rule(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=test_domain["url"],
+    test_rule = oci.identity.get_domains_rule(idcs_endpoint=test_domain["url"],
         rule_id=test_rule_oci_events_rule["id"],
         attribute_sets=["all"],
         attributes="",
@@ -460,7 +460,7 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=test_domain["url"],
+    test_rule = oci.identity.get_domains_rule(idcs_endpoint=test_domain["url"],
         rule_id=test_rule_oci_events_rule["id"],
         attribute_sets=["all"],
         attributes="",

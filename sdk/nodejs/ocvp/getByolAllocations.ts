@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByolAllocations = oci.Ocvp.getByolAllocations({
+ * const testByolAllocations = oci.ocvp.getByolAllocations({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAllocationAvailableUnitsGreaterThanOrEqualTo,
  *     byolAllocationId: testByolAllocation.id,
@@ -130,7 +130,7 @@ export interface GetByolAllocationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByolAllocations = oci.Ocvp.getByolAllocations({
+ * const testByolAllocations = oci.ocvp.getByolAllocations({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAllocationAvailableUnitsGreaterThanOrEqualTo,
  *     byolAllocationId: testByolAllocation.id,

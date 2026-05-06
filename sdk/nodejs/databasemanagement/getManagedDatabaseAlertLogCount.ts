@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAlertLogCount = oci.DatabaseManagement.getManagedDatabaseAlertLogCount({
+ * const testManagedDatabaseAlertLogCount = oci.databasemanagement.getManagedDatabaseAlertLogCount({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
@@ -116,10 +116,10 @@ export interface GetManagedDatabaseAlertLogCountResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAlertLogCount = oci.DatabaseManagement.getManagedDatabaseAlertLogCount({
+ * const testManagedDatabaseAlertLogCount = oci.databasemanagement.getManagedDatabaseAlertLogCount({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,

@@ -226,7 +226,7 @@ def get_catalog_type(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=test_catalog["id"],
+    test_catalog_type = oci.datacatalog.get_catalog_type(catalog_id=test_catalog["id"],
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```
@@ -274,7 +274,7 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=test_catalog["id"],
+    test_catalog_type = oci.datacatalog.get_catalog_type(catalog_id=test_catalog["id"],
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```

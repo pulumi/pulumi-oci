@@ -97,7 +97,7 @@ def get_migration_object_types(connection_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
+    test_migration_object_types = oci.databasemigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
     ```
 
 
@@ -130,7 +130,7 @@ def get_migration_object_types_output(connection_type: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
+    test_migration_object_types = oci.databasemigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
     ```
 
 

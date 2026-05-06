@@ -126,7 +126,7 @@ def get_agent_agents(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.GenerativeAi.get_agent_agents(compartment_id=compartment_id,
+    test_agents = oci.generativeai.get_agent_agents(compartment_id=compartment_id,
         display_name=agent_display_name,
         state=agent_state)
     ```
@@ -169,7 +169,7 @@ def get_agent_agents_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.GenerativeAi.get_agent_agents(compartment_id=compartment_id,
+    test_agents = oci.generativeai.get_agent_agents(compartment_id=compartment_id,
         display_name=agent_display_name,
         state=agent_state)
     ```

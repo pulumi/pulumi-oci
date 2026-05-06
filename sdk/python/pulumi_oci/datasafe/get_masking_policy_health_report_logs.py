@@ -108,7 +108,7 @@ def get_masking_policy_health_report_logs(filters: Optional[Sequence[Union['GetM
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report_logs = oci.DataSafe.get_masking_policy_health_report_logs(masking_policy_health_report_id=test_masking_policy_health_report["id"],
+    test_masking_policy_health_report_logs = oci.datasafe.get_masking_policy_health_report_logs(masking_policy_health_report_id=test_masking_policy_health_report["id"],
         message_type=masking_policy_health_report_log_message_type)
     ```
 
@@ -144,7 +144,7 @@ def get_masking_policy_health_report_logs_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report_logs = oci.DataSafe.get_masking_policy_health_report_logs(masking_policy_health_report_id=test_masking_policy_health_report["id"],
+    test_masking_policy_health_report_logs = oci.datasafe.get_masking_policy_health_report_logs(masking_policy_health_report_id=test_masking_policy_health_report["id"],
         message_type=masking_policy_health_report_log_message_type)
     ```
 

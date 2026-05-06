@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.FleetAppsManagement.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.fleetappsmanagement.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,
@@ -106,7 +106,7 @@ export interface GetMaintenanceWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.FleetAppsManagement.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.fleetappsmanagement.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,

@@ -160,7 +160,7 @@ def get_database_maintenance_run_histories(availability_domain: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+    test_maintenance_run_histories = oci.database.get_database_maintenance_run_histories(compartment_id=compartment_id,
         availability_domain=maintenance_run_history_availability_domain,
         maintenance_type=maintenance_run_history_maintenance_type,
         state=maintenance_run_history_state,
@@ -216,7 +216,7 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+    test_maintenance_run_histories = oci.database.get_database_maintenance_run_histories(compartment_id=compartment_id,
         availability_domain=maintenance_run_history_availability_domain,
         maintenance_type=maintenance_run_history_maintenance_type,
         state=maintenance_run_history_state,

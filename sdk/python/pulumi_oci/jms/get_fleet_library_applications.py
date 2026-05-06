@@ -168,7 +168,7 @@ def get_fleet_library_applications(application_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_applications = oci.Jms.get_fleet_library_applications(fleet_id=test_fleet["id"],
+    test_fleet_library_applications = oci.jms.get_fleet_library_applications(fleet_id=test_fleet["id"],
         library_key=fleet_library_application_library_key,
         application_id=test_application["id"],
         application_name=test_application["name"],
@@ -234,7 +234,7 @@ def get_fleet_library_applications_output(application_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_library_applications = oci.Jms.get_fleet_library_applications(fleet_id=test_fleet["id"],
+    test_fleet_library_applications = oci.jms.get_fleet_library_applications(fleet_id=test_fleet["id"],
         library_key=fleet_library_application_library_key,
         application_id=test_application["id"],
         application_name=test_application["name"],

@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetrics = oci.Monitoring.getMetrics({
+ * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,
@@ -139,9 +139,9 @@ export interface GetMetricsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetrics = oci.Monitoring.getMetrics({
+ * const testMetrics = oci.monitoring.getMetrics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree === "true",
  *     dimensionFilters: metricDimensionFilters,
  *     groupBies: metricGroupBy,
  *     name: metricName,

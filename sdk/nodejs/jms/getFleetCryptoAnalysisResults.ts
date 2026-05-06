@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
+ * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: fleetCryptoAnalysisResultFindingCount,
- *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
+ *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
- *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
+ *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
+ *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -148,15 +148,15 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
+ * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: fleetCryptoAnalysisResultFindingCount,
- *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
+ *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
- *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
+ *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
+ *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });

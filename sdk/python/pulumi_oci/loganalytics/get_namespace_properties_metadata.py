@@ -141,7 +141,7 @@ def get_namespace_properties_metadata(constraints: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
+    test_namespace_properties_metadata = oci.loganalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
         constraints=namespace_properties_metadata_constraints,
         display_text=namespace_properties_metadata_display_text,
         level=namespace_properties_metadata_level,
@@ -192,7 +192,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
+    test_namespace_properties_metadata = oci.loganalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
         constraints=namespace_properties_metadata_constraints,
         display_text=namespace_properties_metadata_display_text,
         level=namespace_properties_metadata_level,

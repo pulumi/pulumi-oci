@@ -113,7 +113,7 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=compartment_id,
+    test_autonomous_db_versions = oci.database.get_autonomous_db_versions(compartment_id=compartment_id,
         db_workload=autonomous_db_version_db_workload)
     ```
 
@@ -149,7 +149,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=compartment_id,
+    test_autonomous_db_versions = oci.database.get_autonomous_db_versions(compartment_id=compartment_id,
         db_workload=autonomous_db_version_db_workload)
     ```
 

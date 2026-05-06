@@ -139,7 +139,7 @@ def get_repository_object(file_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=test_repository["id"],
+    test_repository_object = oci.devops.get_repository_object(repository_id=test_repository["id"],
         file_path=repository_object_file_path,
         ref_name=repository_object_ref_name)
     ```
@@ -180,7 +180,7 @@ def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=test_repository["id"],
+    test_repository_object = oci.devops.get_repository_object(repository_id=test_repository["id"],
         file_path=repository_object_file_path,
         ref_name=repository_object_ref_name)
     ```

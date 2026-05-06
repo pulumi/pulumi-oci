@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateMappings = oci.Identity.getDomainsCloudGateMappings({
+ * const testCloudGateMappings = oci.identity.getDomainsCloudGateMappings({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateMappingCount: cloudGateMappingCloudGateMappingCount,
+ *     cloudGateMappingCount: Number(cloudGateMappingCloudGateMappingCount),
  *     cloudGateMappingFilter: cloudGateMappingCloudGateMappingFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateMappingAuthorization,
  *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
- *     startIndex: cloudGateMappingStartIndex,
+ *     startIndex: Number(cloudGateMappingStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsCloudGateMappingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateMappings = oci.Identity.getDomainsCloudGateMappings({
+ * const testCloudGateMappings = oci.identity.getDomainsCloudGateMappings({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateMappingCount: cloudGateMappingCloudGateMappingCount,
+ *     cloudGateMappingCount: Number(cloudGateMappingCloudGateMappingCount),
  *     cloudGateMappingFilter: cloudGateMappingCloudGateMappingFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateMappingAuthorization,
  *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
- *     startIndex: cloudGateMappingStartIndex,
+ *     startIndex: Number(cloudGateMappingStartIndex),
  * });
  * ```
  */

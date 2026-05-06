@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkPerimeters = oci.Identity.getDomainsNetworkPerimeters({
+ * const testNetworkPerimeters = oci.identity.getDomainsNetworkPerimeters({
  *     idcsEndpoint: testDomain.url,
- *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
+ *     networkPerimeterCount: Number(networkPerimeterNetworkPerimeterCount),
  *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: networkPerimeterAuthorization,
  *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
- *     startIndex: networkPerimeterStartIndex,
+ *     startIndex: Number(networkPerimeterStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsNetworkPerimetersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkPerimeters = oci.Identity.getDomainsNetworkPerimeters({
+ * const testNetworkPerimeters = oci.identity.getDomainsNetworkPerimeters({
  *     idcsEndpoint: testDomain.url,
- *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
+ *     networkPerimeterCount: Number(networkPerimeterNetworkPerimeterCount),
  *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: networkPerimeterAuthorization,
  *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
- *     startIndex: networkPerimeterStartIndex,
+ *     startIndex: Number(networkPerimeterStartIndex),
  * });
  * ```
  */

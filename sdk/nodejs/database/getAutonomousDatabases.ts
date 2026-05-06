@@ -30,17 +30,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ * const testAutonomousDatabases = oci.database.getAutonomousDatabases({
  *     compartmentId: compartmentId,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     dbVersion: autonomousDatabaseDbVersion,
  *     dbWorkload: autonomousDatabaseDbWorkload,
  *     displayName: autonomousDatabaseDisplayName,
  *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled === "true",
+ *     isFreeTier: autonomousDatabaseIsFreeTier === "true",
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone === "true",
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader === "true",
  *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
  *     resourcePoolLeaderId: testResourcePoolLeader.id,
  *     state: autonomousDatabaseState,
@@ -212,17 +212,17 @@ export interface GetAutonomousDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ * const testAutonomousDatabases = oci.database.getAutonomousDatabases({
  *     compartmentId: compartmentId,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     dbVersion: autonomousDatabaseDbVersion,
  *     dbWorkload: autonomousDatabaseDbWorkload,
  *     displayName: autonomousDatabaseDisplayName,
  *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled === "true",
+ *     isFreeTier: autonomousDatabaseIsFreeTier === "true",
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone === "true",
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader === "true",
  *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
  *     resourcePoolLeaderId: testResourcePoolLeader.id,
  *     state: autonomousDatabaseState,

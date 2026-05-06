@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachment = oci.Oda.getOdaPrivateEndpointAttachment({
+ * const testOdaPrivateEndpointAttachment = oci.oda.getOdaPrivateEndpointAttachment({
  *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```
@@ -82,7 +82,7 @@ export interface GetOdaPrivateEndpointAttachmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachment = oci.Oda.getOdaPrivateEndpointAttachment({
+ * const testOdaPrivateEndpointAttachment = oci.oda.getOdaPrivateEndpointAttachment({
  *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```

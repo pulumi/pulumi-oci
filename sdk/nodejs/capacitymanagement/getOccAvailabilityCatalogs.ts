@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
+ * const testOccAvailabilityCatalogs = oci.capacitymanagement.getOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     catalogState: occAvailabilityCatalogCatalogState,
  *     displayName: occAvailabilityCatalogDisplayName,
@@ -106,7 +106,7 @@ export interface GetOccAvailabilityCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
+ * const testOccAvailabilityCatalogs = oci.capacitymanagement.getOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     catalogState: occAvailabilityCatalogCatalogState,
  *     displayName: occAvailabilityCatalogDisplayName,

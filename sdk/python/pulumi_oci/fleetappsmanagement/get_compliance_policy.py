@@ -203,7 +203,7 @@ def get_compliance_policy(compliance_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy = oci.FleetAppsManagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
+    test_compliance_policy = oci.fleetappsmanagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_compliance_policy_output(compliance_policy_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_compliance_policy = oci.FleetAppsManagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
+    test_compliance_policy = oci.fleetappsmanagement.get_compliance_policy(compliance_policy_id=test_compliance_policy_oci_fleet_apps_management_compliance_policy["id"])
     ```
 
 

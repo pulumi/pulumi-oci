@@ -150,7 +150,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+    test_cloud_vm_clusters = oci.database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
         state=cloud_vm_cluster_state,
@@ -201,7 +201,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+    test_cloud_vm_clusters = oci.database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
         state=cloud_vm_cluster_state,

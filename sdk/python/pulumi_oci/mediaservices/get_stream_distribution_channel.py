@@ -201,7 +201,7 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
+    test_stream_distribution_channel = oci.mediaservices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_stream_distribution_channel_output(stream_distribution_channel_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
+    test_stream_distribution_channel = oci.mediaservices.get_stream_distribution_channel(stream_distribution_channel_id=test_stream_distribution_channel_oci_media_services_stream_distribution_channel["id"])
     ```
 
 

@@ -115,9 +115,9 @@ def get_autonomous_character_sets(character_set_type: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=autonomous_database_character_set_character_set_type,
-        is_dedicated=autonomous_database_character_set_is_dedicated,
-        is_shared=autonomous_database_character_set_is_shared)
+    test_autonomous_database_character_sets = oci.database.get_autonomous_character_sets(character_set_type=autonomous_database_character_set_character_set_type,
+        is_dedicated=autonomous_database_character_set_is_dedicated == "true",
+        is_shared=autonomous_database_character_set_is_shared == "true")
     ```
 
 
@@ -159,9 +159,9 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=autonomous_database_character_set_character_set_type,
-        is_dedicated=autonomous_database_character_set_is_dedicated,
-        is_shared=autonomous_database_character_set_is_shared)
+    test_autonomous_database_character_sets = oci.database.get_autonomous_character_sets(character_set_type=autonomous_database_character_set_character_set_type,
+        is_dedicated=autonomous_database_character_set_is_dedicated == "true",
+        is_shared=autonomous_database_character_set_is_shared == "true")
     ```
 
 

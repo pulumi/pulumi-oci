@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessment = oci.DatabaseMigration.getAssessment({
+ * const testAssessment = oci.databasemigration.getAssessment({
  *     assessmentId: testAssessmentOciDatabaseMigrationAssessment.id,
  * });
  * ```
@@ -143,7 +143,7 @@ export interface GetAssessmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessment = oci.DatabaseMigration.getAssessment({
+ * const testAssessment = oci.databasemigration.getAssessment({
  *     assessmentId: testAssessmentOciDatabaseMigrationAssessment.id,
  * });
  * ```

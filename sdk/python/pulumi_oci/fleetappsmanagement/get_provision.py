@@ -396,7 +396,7 @@ def get_provision(provision_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_provision = oci.FleetAppsManagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
+    test_provision = oci.fleetappsmanagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_provision_output(provision_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_provision = oci.FleetAppsManagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
+    test_provision = oci.fleetappsmanagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
     ```
 
 

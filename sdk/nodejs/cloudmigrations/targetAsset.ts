@@ -21,17 +21,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAsset = new oci.cloudmigrations.TargetAsset("test_target_asset", {
- *     isExcludedFromExecution: targetAssetIsExcludedFromExecution,
+ *     isExcludedFromExecution: targetAssetIsExcludedFromExecution === "true",
  *     migrationPlanId: testMigrationPlan.id,
  *     type: targetAssetType,
- *     blockVolumesPerformance: targetAssetBlockVolumesPerformance,
+ *     blockVolumesPerformance: Number(targetAssetBlockVolumesPerformance),
  *     msLicense: targetAssetMsLicense,
  *     preferredShapeType: targetAssetPreferredShapeType,
  *     userSpec: {
  *         agentConfig: {
- *             areAllPluginsDisabled: targetAssetUserSpecAgentConfigAreAllPluginsDisabled,
- *             isManagementDisabled: targetAssetUserSpecAgentConfigIsManagementDisabled,
- *             isMonitoringDisabled: targetAssetUserSpecAgentConfigIsMonitoringDisabled,
+ *             areAllPluginsDisabled: targetAssetUserSpecAgentConfigAreAllPluginsDisabled === "true",
+ *             isManagementDisabled: targetAssetUserSpecAgentConfigIsManagementDisabled === "true",
+ *             isMonitoringDisabled: targetAssetUserSpecAgentConfigIsMonitoringDisabled === "true",
  *             pluginsConfigs: [{
  *                 desiredState: targetAssetUserSpecAgentConfigPluginsConfigDesiredState,
  *                 name: targetAssetUserSpecAgentConfigPluginsConfigName,
@@ -41,8 +41,8 @@ import * as utilities from "../utilities";
  *         capacityReservationId: testCapacityReservation.id,
  *         compartmentId: compartmentId,
  *         createVnicDetails: {
- *             assignPrivateDnsRecord: targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord,
- *             assignPublicIp: targetAssetUserSpecCreateVnicDetailsAssignPublicIp,
+ *             assignPrivateDnsRecord: targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *             assignPublicIp: targetAssetUserSpecCreateVnicDetailsAssignPublicIp === "true",
  *             definedTags: {
  *                 "foo-namespace.bar-key": "value",
  *             },
@@ -53,7 +53,7 @@ import * as utilities from "../utilities";
  *             hostnameLabel: targetAssetUserSpecCreateVnicDetailsHostnameLabel,
  *             nsgIds: targetAssetUserSpecCreateVnicDetailsNsgIds,
  *             privateIp: targetAssetUserSpecCreateVnicDetailsPrivateIp,
- *             skipSourceDestCheck: targetAssetUserSpecCreateVnicDetailsSkipSourceDestCheck,
+ *             skipSourceDestCheck: targetAssetUserSpecCreateVnicDetailsSkipSourceDestCheck === "true",
  *             subnetId: testSubnet.id,
  *             vlanId: testVlan.id,
  *         },
@@ -68,14 +68,14 @@ import * as utilities from "../utilities";
  *         },
  *         hostnameLabel: targetAssetUserSpecHostnameLabel,
  *         instanceOptions: {
- *             areLegacyImdsEndpointsDisabled: targetAssetUserSpecInstanceOptionsAreLegacyImdsEndpointsDisabled,
+ *             areLegacyImdsEndpointsDisabled: targetAssetUserSpecInstanceOptionsAreLegacyImdsEndpointsDisabled === "true",
  *         },
  *         ipxeScript: targetAssetUserSpecIpxeScript,
- *         isPvEncryptionInTransitEnabled: targetAssetUserSpecIsPvEncryptionInTransitEnabled,
+ *         isPvEncryptionInTransitEnabled: targetAssetUserSpecIsPvEncryptionInTransitEnabled === "true",
  *         preemptibleInstanceConfig: {
  *             preemptionAction: {
  *                 type: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionType,
- *                 preserveBootVolume: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
+ *                 preserveBootVolume: targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPreserveBootVolume === "true",
  *             },
  *         },
  *         shape: targetAssetUserSpecShape,

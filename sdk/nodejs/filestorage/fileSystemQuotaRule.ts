@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  *
  * const testFileSystemQuotaRule = new oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule", {
  *     fileSystemId: testFileSystem.id,
- *     isHardQuota: fileSystemQuotaRuleIsHardQuota,
+ *     isHardQuota: fileSystemQuotaRuleIsHardQuota === "true",
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     quotaLimitInGigabytes: fileSystemQuotaRuleQuotaLimitInGigabytes,
+ *     quotaLimitInGigabytes: Number(fileSystemQuotaRuleQuotaLimitInGigabytes),
  *     displayName: fileSystemQuotaRuleDisplayName,
- *     principalId: testPrincipal.id,
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  *

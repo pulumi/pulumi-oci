@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbServer = oci.Database.getDbServer({
+ * const testDbServer = oci.database.getDbServer({
  *     dbServerId: testDbServerOciDatabaseDbServer.id,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  * });
@@ -154,7 +154,7 @@ export interface GetDbServerResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbServer = oci.Database.getDbServer({
+ * const testDbServer = oci.database.getDbServer({
  *     dbServerId: testDbServerOciDatabaseDbServer.id,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  * });

@@ -151,7 +151,7 @@ def get_model_group_version_histories(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_histories = oci.DataScience.get_model_group_version_histories(compartment_id=compartment_id,
+    test_model_group_version_histories = oci.datascience.get_model_group_version_histories(compartment_id=compartment_id,
         created_by=model_group_version_history_created_by,
         display_name=model_group_version_history_display_name,
         id=model_group_version_history_id,
@@ -206,7 +206,7 @@ def get_model_group_version_histories_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_histories = oci.DataScience.get_model_group_version_histories(compartment_id=compartment_id,
+    test_model_group_version_histories = oci.datascience.get_model_group_version_histories(compartment_id=compartment_id,
         created_by=model_group_version_history_created_by,
         display_name=model_group_version_history_display_name,
         id=model_group_version_history_id,

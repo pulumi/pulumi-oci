@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
+ * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
@@ -163,9 +163,9 @@ export interface GetDatabaseInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
+ * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,

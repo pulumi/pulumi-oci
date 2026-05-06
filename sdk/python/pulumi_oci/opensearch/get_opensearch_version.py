@@ -93,7 +93,7 @@ def get_opensearch_version(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_version = oci.Opensearch.get_opensearch_version(compartment_id=compartment_id)
+    test_opensearch_version = oci.opensearch.get_opensearch_version(compartment_id=compartment_id)
     ```
 
 
@@ -130,7 +130,7 @@ def get_opensearch_version_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_version = oci.Opensearch.get_opensearch_version(compartment_id=compartment_id)
+    test_opensearch_version = oci.opensearch.get_opensearch_version(compartment_id=compartment_id)
     ```
 
 

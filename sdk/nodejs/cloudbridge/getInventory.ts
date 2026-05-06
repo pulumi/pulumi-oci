@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventory = oci.CloudBridge.getInventory({
+ * const testInventory = oci.cloudbridge.getInventory({
  *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```
@@ -94,7 +94,7 @@ export interface GetInventoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventory = oci.CloudBridge.getInventory({
+ * const testInventory = oci.cloudbridge.getInventory({
  *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```

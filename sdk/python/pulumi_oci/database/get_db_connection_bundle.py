@@ -216,7 +216,7 @@ def get_db_connection_bundle(db_connection_bundle_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_connection_bundle = oci.Database.get_db_connection_bundle(db_connection_bundle_id=test_db_connection_bundle_oci_database_db_connection_bundle["id"])
+    test_db_connection_bundle = oci.database.get_db_connection_bundle(db_connection_bundle_id=test_db_connection_bundle_oci_database_db_connection_bundle["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_db_connection_bundle_output(db_connection_bundle_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_db_connection_bundle = oci.Database.get_db_connection_bundle(db_connection_bundle_id=test_db_connection_bundle_oci_database_db_connection_bundle["id"])
+    test_db_connection_bundle = oci.database.get_db_connection_bundle(db_connection_bundle_id=test_db_connection_bundle_oci_database_db_connection_bundle["id"])
     ```
 
 

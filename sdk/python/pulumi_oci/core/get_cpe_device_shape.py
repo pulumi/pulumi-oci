@@ -122,7 +122,7 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
+    test_cpe_device_shape = oci.core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
     ```
 
 
@@ -160,7 +160,7 @@ def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
+    test_cpe_device_shape = oci.core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
     ```
 
 

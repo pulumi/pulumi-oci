@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.Ocvp.getClusters({
+ * const testClusters = oci.ocvp.getClusters({
  *     compartmentId: compartmentId,
  *     displayName: clusterDisplayName,
  *     sddcId: testSddc.id,
@@ -101,7 +101,7 @@ export interface GetClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.Ocvp.getClusters({
+ * const testClusters = oci.ocvp.getClusters({
  *     compartmentId: compartmentId,
  *     displayName: clusterDisplayName,
  *     sddcId: testSddc.id,

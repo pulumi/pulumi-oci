@@ -155,7 +155,7 @@ def get_connect_harness(connect_harness_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=test_connect_harnes["id"])
+    test_connect_harness = oci.streaming.get_connect_harness(connect_harness_id=test_connect_harnes["id"])
     ```
 
 
@@ -189,7 +189,7 @@ def get_connect_harness_output(connect_harness_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=test_connect_harnes["id"])
+    test_connect_harness = oci.streaming.get_connect_harness(connect_harness_id=test_connect_harnes["id"])
     ```
 
 

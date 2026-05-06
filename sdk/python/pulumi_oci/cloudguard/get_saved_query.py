@@ -191,7 +191,7 @@ def get_saved_query(saved_query_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_query = oci.CloudGuard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
+    test_saved_query = oci.cloudguard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_saved_query_output(saved_query_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_query = oci.CloudGuard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
+    test_saved_query = oci.cloudguard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
     ```
 
 

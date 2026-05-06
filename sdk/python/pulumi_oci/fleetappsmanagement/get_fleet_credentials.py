@@ -174,7 +174,7 @@ def get_fleet_credentials(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credentials = oci.FleetAppsManagement.get_fleet_credentials(fleet_id=test_fleet["id"],
+    test_fleet_credentials = oci.fleetappsmanagement.get_fleet_credentials(fleet_id=test_fleet["id"],
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,
@@ -238,7 +238,7 @@ def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credentials = oci.FleetAppsManagement.get_fleet_credentials(fleet_id=test_fleet["id"],
+    test_fleet_credentials = oci.fleetappsmanagement.get_fleet_credentials(fleet_id=test_fleet["id"],
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,

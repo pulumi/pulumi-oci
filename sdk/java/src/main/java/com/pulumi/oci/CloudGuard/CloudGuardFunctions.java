@@ -131,8 +131,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -194,8 +194,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -257,8 +257,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -320,8 +320,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -383,8 +383,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -472,8 +472,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -514,8 +514,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -556,8 +556,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -598,8 +598,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -641,8 +641,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -684,8 +684,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -727,8 +727,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -770,8 +770,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -813,8 +813,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -855,8 +855,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -897,8 +897,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -939,8 +939,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -981,8 +981,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1023,8 +1023,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1065,8 +1065,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1114,8 +1114,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1163,8 +1163,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1212,8 +1212,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1261,8 +1261,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1310,8 +1310,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1352,8 +1352,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1394,8 +1394,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1436,8 +1436,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1478,8 +1478,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1520,8 +1520,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1563,8 +1563,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1606,8 +1606,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1649,8 +1649,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1692,8 +1692,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1737,8 +1737,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1782,8 +1782,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1827,8 +1827,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1872,8 +1872,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1917,8 +1917,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1976,8 +1976,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2040,8 +2040,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2104,8 +2104,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2168,8 +2168,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2232,8 +2232,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2280,8 +2280,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2322,8 +2322,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2364,8 +2364,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2406,8 +2406,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2448,8 +2448,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2504,8 +2504,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2565,8 +2565,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2626,8 +2626,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2687,8 +2687,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2748,8 +2748,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2795,8 +2795,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2837,8 +2837,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2879,8 +2879,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2963,8 +2963,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3019,8 +3019,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3080,8 +3080,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3141,8 +3141,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3202,8 +3202,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3263,8 +3263,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3310,8 +3310,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3352,8 +3352,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3394,8 +3394,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3436,8 +3436,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3478,8 +3478,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3533,8 +3533,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3594,8 +3594,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3655,8 +3655,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3716,8 +3716,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3777,8 +3777,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3826,8 +3826,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3869,8 +3869,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3912,8 +3912,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3955,8 +3955,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3998,8 +3998,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4040,8 +4040,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4082,8 +4082,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4124,8 +4124,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4166,8 +4166,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4208,8 +4208,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4250,8 +4250,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4292,8 +4292,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4334,8 +4334,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4376,8 +4376,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4418,8 +4418,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4474,8 +4474,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4535,8 +4535,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4596,8 +4596,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4657,8 +4657,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4718,8 +4718,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4765,8 +4765,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4810,8 +4810,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4855,8 +4855,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4900,8 +4900,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4945,8 +4945,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4990,8 +4990,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5032,8 +5032,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5074,8 +5074,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5116,8 +5116,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5158,8 +5158,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5201,8 +5201,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5247,8 +5247,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5293,8 +5293,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5339,8 +5339,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5385,8 +5385,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5432,8 +5432,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5476,8 +5476,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5520,8 +5520,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5564,8 +5564,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5608,8 +5608,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5650,8 +5650,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5692,8 +5692,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5734,8 +5734,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5776,8 +5776,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5818,8 +5818,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5861,8 +5861,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5907,8 +5907,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5953,8 +5953,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5999,8 +5999,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6045,8 +6045,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6090,8 +6090,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6132,8 +6132,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6174,8 +6174,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6216,8 +6216,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6258,8 +6258,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6301,8 +6301,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6349,8 +6349,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6397,8 +6397,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6445,8 +6445,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6493,8 +6493,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6540,8 +6540,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6582,8 +6582,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6624,8 +6624,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6666,8 +6666,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6708,8 +6708,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6750,8 +6750,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6792,8 +6792,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6834,8 +6834,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6876,8 +6876,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6918,8 +6918,8 @@ public final class CloudGuardFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
      * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

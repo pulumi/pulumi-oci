@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecret = oci.Vault.getSecret({
+ * const testSecret = oci.vault.getSecret({
  *     secretId: testSecretOciVaultSecret.id,
  * });
  * ```
@@ -158,7 +158,7 @@ export interface GetSecretResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecret = oci.Vault.getSecret({
+ * const testSecret = oci.vault.getSecret({
  *     secretId: testSecretOciVaultSecret.id,
  * });
  * ```

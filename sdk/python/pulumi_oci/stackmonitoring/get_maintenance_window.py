@@ -228,7 +228,7 @@ def get_maintenance_window(maintenance_window_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_window = oci.StackMonitoring.get_maintenance_window(maintenance_window_id=test_maintenance_window_oci_stack_monitoring_maintenance_window["id"])
+    test_maintenance_window = oci.stackmonitoring.get_maintenance_window(maintenance_window_id=test_maintenance_window_oci_stack_monitoring_maintenance_window["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_maintenance_window_output(maintenance_window_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_window = oci.StackMonitoring.get_maintenance_window(maintenance_window_id=test_maintenance_window_oci_stack_monitoring_maintenance_window["id"])
+    test_maintenance_window = oci.stackmonitoring.get_maintenance_window(maintenance_window_id=test_maintenance_window_oci_stack_monitoring_maintenance_window["id"])
     ```
 
 

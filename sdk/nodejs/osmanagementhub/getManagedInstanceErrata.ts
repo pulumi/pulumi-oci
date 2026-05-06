@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceErrata = oci.OsManagementHub.getManagedInstanceErrata({
+ * const testManagedInstanceErrata = oci.osmanagementhub.getManagedInstanceErrata({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceErrataClassificationType,
  *     compartmentId: compartmentId,
@@ -98,7 +98,7 @@ export interface GetManagedInstanceErrataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceErrata = oci.OsManagementHub.getManagedInstanceErrata({
+ * const testManagedInstanceErrata = oci.osmanagementhub.getManagedInstanceErrata({
  *     managedInstanceId: testManagedInstance.id,
  *     classificationTypes: managedInstanceErrataClassificationType,
  *     compartmentId: compartmentId,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMessages = oci.GoldenGate.getMessages({
+ * const testMessages = oci.goldengate.getMessages({
  *     deploymentId: testDeployment.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetMessagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMessages = oci.GoldenGate.getMessages({
+ * const testMessages = oci.goldengate.getMessages({
  *     deploymentId: testDeployment.id,
  * });
  * ```

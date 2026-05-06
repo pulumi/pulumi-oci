@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
+ * const testAutonomousContainerPatches = oci.database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,
@@ -84,7 +84,7 @@ export interface GetAutonomousContainerPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
+ * const testAutonomousContainerPatches = oci.database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     compartmentId: compartmentId,
  *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,

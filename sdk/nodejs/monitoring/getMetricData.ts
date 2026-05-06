@@ -25,11 +25,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricData = oci.Monitoring.getMetricData({
+ * const testMetricData = oci.monitoring.getMetricData({
  *     compartmentId: compartmentId,
  *     namespace: metricDataNamespace,
  *     query: metricDataQuery,
- *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree === "true",
  *     endTime: metricDataEndTime,
  *     resolution: metricDataResolution,
  *     resourceGroup: metricDataResourceGroup,
@@ -152,11 +152,11 @@ export interface GetMetricDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricData = oci.Monitoring.getMetricData({
+ * const testMetricData = oci.monitoring.getMetricData({
  *     compartmentId: compartmentId,
  *     namespace: metricDataNamespace,
  *     query: metricDataQuery,
- *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree === "true",
  *     endTime: metricDataEndTime,
  *     resolution: metricDataResolution,
  *     resourceGroup: metricDataResourceGroup,

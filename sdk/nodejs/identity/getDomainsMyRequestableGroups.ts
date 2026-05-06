@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
+ * const testMyRequestableGroups = oci.identity.getDomainsMyRequestableGroups({
  *     idcsEndpoint: testDomain.url,
- *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupCount: Number(myRequestableGroupMyRequestableGroupCount),
  *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
  *     authorization: myRequestableGroupAuthorization,
  *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
- *     startIndex: myRequestableGroupStartIndex,
+ *     startIndex: Number(myRequestableGroupStartIndex),
  * });
  * ```
  */
@@ -123,13 +123,13 @@ export interface GetDomainsMyRequestableGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
+ * const testMyRequestableGroups = oci.identity.getDomainsMyRequestableGroups({
  *     idcsEndpoint: testDomain.url,
- *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupCount: Number(myRequestableGroupMyRequestableGroupCount),
  *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
  *     authorization: myRequestableGroupAuthorization,
  *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
- *     startIndex: myRequestableGroupStartIndex,
+ *     startIndex: Number(myRequestableGroupStartIndex),
  * });
  * ```
  */

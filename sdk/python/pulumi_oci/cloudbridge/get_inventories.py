@@ -111,7 +111,7 @@ def get_inventories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=compartment_id,
+    test_inventories = oci.cloudbridge.get_inventories(compartment_id=compartment_id,
         state=inventory_state)
     ```
 
@@ -147,7 +147,7 @@ def get_inventories_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=compartment_id,
+    test_inventories = oci.cloudbridge.get_inventories(compartment_id=compartment_id,
         state=inventory_state)
     ```
 

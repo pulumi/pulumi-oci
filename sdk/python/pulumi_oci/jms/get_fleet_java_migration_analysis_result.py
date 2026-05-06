@@ -264,7 +264,7 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_result = oci.jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
         java_migration_analysis_result_id=fleet_java_migration_analysis_result_id)
     ```
 
@@ -311,7 +311,7 @@ def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_result = oci.jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
         java_migration_analysis_result_id=fleet_java_migration_analysis_result_id)
     ```
 

@@ -138,7 +138,7 @@ def get_nat_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=compartment_id,
+    test_nat_gateways = oci.core.get_nat_gateways(compartment_id=compartment_id,
         display_name=nat_gateway_display_name,
         state=nat_gateway_state,
         vcn_id=test_vcn["id"])
@@ -185,7 +185,7 @@ def get_nat_gateways_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=compartment_id,
+    test_nat_gateways = oci.core.get_nat_gateways(compartment_id=compartment_id,
         display_name=nat_gateway_display_name,
         state=nat_gateway_state,
         vcn_id=test_vcn["id"])

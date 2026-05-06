@@ -264,7 +264,7 @@ def get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_grid = oci.DatabaseManagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
+    test_cloud_exadata_storage_grid = oci.databasemanagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_cloud_exadata_storage_grid_output(cloud_exadata_storage_grid_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_grid = oci.DatabaseManagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
+    test_cloud_exadata_storage_grid = oci.databasemanagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
     ```
 
 

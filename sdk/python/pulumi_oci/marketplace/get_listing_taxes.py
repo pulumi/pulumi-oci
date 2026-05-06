@@ -105,7 +105,7 @@ def get_listing_taxes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=test_listing["id"],
+    test_listing_taxes = oci.marketplace.get_listing_taxes(listing_id=test_listing["id"],
         compartment_id=compartment_id)
     ```
 
@@ -141,7 +141,7 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=test_listing["id"],
+    test_listing_taxes = oci.marketplace.get_listing_taxes(listing_id=test_listing["id"],
         compartment_id=compartment_id)
     ```
 

@@ -416,7 +416,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.AiDocument.get_model(model_id=test_model_oci_ai_document_model["id"])
+    test_model = oci.aidocument.get_model(model_id=test_model_oci_ai_document_model["id"])
     ```
 
 
@@ -471,7 +471,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.AiDocument.get_model(model_id=test_model_oci_ai_document_model["id"])
+    test_model = oci.aidocument.get_model(model_id=test_model_oci_ai_document_model["id"])
     ```
 
 

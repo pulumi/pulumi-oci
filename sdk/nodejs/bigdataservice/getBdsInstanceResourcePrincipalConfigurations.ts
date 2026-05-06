@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceResourcePrincipalConfigurations = oci.BigDataService.getBdsInstanceResourcePrincipalConfigurations({
+ * const testBdsInstanceResourcePrincipalConfigurations = oci.bigdataservice.getBdsInstanceResourcePrincipalConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
  *     state: bdsInstanceResourcePrincipalConfigurationState,
@@ -90,7 +90,7 @@ export interface GetBdsInstanceResourcePrincipalConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceResourcePrincipalConfigurations = oci.BigDataService.getBdsInstanceResourcePrincipalConfigurations({
+ * const testBdsInstanceResourcePrincipalConfigurations = oci.bigdataservice.getBdsInstanceResourcePrincipalConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
  *     state: bdsInstanceResourcePrincipalConfigurationState,

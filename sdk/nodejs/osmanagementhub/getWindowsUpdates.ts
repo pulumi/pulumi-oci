@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWindowsUpdates = oci.OsManagementHub.getWindowsUpdates({
+ * const testWindowsUpdates = oci.osmanagementhub.getWindowsUpdates({
  *     compartmentId: compartmentId,
  *     classificationTypes: windowsUpdateClassificationType,
  *     displayNameContains: windowsUpdateDisplayNameContains,
@@ -91,7 +91,7 @@ export interface GetWindowsUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWindowsUpdates = oci.OsManagementHub.getWindowsUpdates({
+ * const testWindowsUpdates = oci.osmanagementhub.getWindowsUpdates({
  *     compartmentId: compartmentId,
  *     classificationTypes: windowsUpdateClassificationType,
  *     displayNameContains: windowsUpdateDisplayNameContains,

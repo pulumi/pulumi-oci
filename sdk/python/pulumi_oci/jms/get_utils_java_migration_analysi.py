@@ -241,7 +241,7 @@ def get_utils_java_migration_analysi(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysi = oci.Jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
+    test_java_migration_analysi = oci.jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
     ```
 
 
@@ -285,7 +285,7 @@ def get_utils_java_migration_analysi_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysi = oci.Jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
+    test_java_migration_analysi = oci.jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
     ```
 
 

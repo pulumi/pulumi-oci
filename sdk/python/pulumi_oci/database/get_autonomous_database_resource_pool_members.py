@@ -95,7 +95,7 @@ def get_autonomous_database_resource_pool_members(autonomous_database_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_resource_pool_members = oci.Database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_resource_pool_members = oci.database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_autonomous_database_resource_pool_members_output(autonomous_database_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_resource_pool_members = oci.Database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_resource_pool_members = oci.database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

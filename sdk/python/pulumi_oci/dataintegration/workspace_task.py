@@ -915,10 +915,10 @@ class WorkspaceTask(pulumi.CustomResource):
             name=workspace_task_name,
             registry_metadata={
                 "aggregator_key": workspace_task_registry_metadata_aggregator_key,
-                "is_favorite": workspace_task_registry_metadata_is_favorite,
+                "is_favorite": workspace_task_registry_metadata_is_favorite == "true",
                 "key": workspace_task_registry_metadata_key,
                 "labels": workspace_task_registry_metadata_labels,
-                "registry_version": workspace_task_registry_metadata_registry_version,
+                "registry_version": int(workspace_task_registry_metadata_registry_version),
             },
             workspace_id=test_workspace["id"],
             api_call_mode=workspace_task_api_call_mode,
@@ -1263,7 +1263,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_input_ports_model_type,
                 "config_values": {
                     "config_param_values": {
-                        "int_value": workspace_task_input_ports_config_values_config_param_values_int_value,
+                        "int_value": int(workspace_task_input_ports_config_values_config_param_values_int_value),
                         "object_value": workspace_task_input_ports_config_values_config_param_values_object_value,
                         "parameter_value": workspace_task_input_ports_config_values_config_param_values_parameter_value,
                         "ref_value": workspace_task_input_ports_config_values_config_param_values_ref_value,
@@ -1280,19 +1280,19 @@ class WorkspaceTask(pulumi.CustomResource):
                 "key": workspace_task_input_ports_key,
                 "model_version": workspace_task_input_ports_model_version,
                 "name": workspace_task_input_ports_name,
-                "object_status": workspace_task_input_ports_object_status,
+                "object_status": int(workspace_task_input_ports_object_status),
                 "parent_ref": {
                     "parent": workspace_task_input_ports_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
                 },
                 "port_type": workspace_task_input_ports_port_type,
             }],
-            is_single_load=workspace_task_is_single_load,
+            is_single_load=workspace_task_is_single_load == "true",
             json_data=workspace_task_json_data,
             key=workspace_task_key,
             method_type=workspace_task_method_type,
             model_version=workspace_task_model_version,
-            object_status=workspace_task_object_status,
+            object_status=int(workspace_task_object_status),
             op_config_values={
                 "config_param_values": {
                     "int_value": workspace_task_op_config_values_config_param_values_int_value,
@@ -1312,7 +1312,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_output_ports_model_type,
                 "config_values": {
                     "config_param_values": {
-                        "int_value": workspace_task_output_ports_config_values_config_param_values_int_value,
+                        "int_value": int(workspace_task_output_ports_config_values_config_param_values_int_value),
                         "object_value": workspace_task_output_ports_config_values_config_param_values_object_value,
                         "parameter_value": workspace_task_output_ports_config_values_config_param_values_parameter_value,
                         "ref_value": workspace_task_output_ports_config_values_config_param_values_ref_value,
@@ -1329,14 +1329,14 @@ class WorkspaceTask(pulumi.CustomResource):
                 "key": workspace_task_output_ports_key,
                 "model_version": workspace_task_output_ports_model_version,
                 "name": workspace_task_output_ports_name,
-                "object_status": workspace_task_output_ports_object_status,
+                "object_status": int(workspace_task_output_ports_object_status),
                 "parent_ref": {
                     "parent": workspace_task_output_ports_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
                 },
                 "port_type": workspace_task_output_ports_port_type,
             }],
-            parallel_load_limit=workspace_task_parallel_load_limit,
+            parallel_load_limit=int(workspace_task_parallel_load_limit),
             parameters=[{
                 "model_type": workspace_task_parameters_model_type,
                 "config_values": {
@@ -1355,12 +1355,12 @@ class WorkspaceTask(pulumi.CustomResource):
                 },
                 "default_value": workspace_task_parameters_default_value,
                 "description": workspace_task_parameters_description,
-                "is_input": workspace_task_parameters_is_input,
-                "is_output": workspace_task_parameters_is_output,
+                "is_input": workspace_task_parameters_is_input == "true",
+                "is_output": workspace_task_parameters_is_output == "true",
                 "key": workspace_task_parameters_key,
                 "model_version": workspace_task_parameters_model_version,
                 "name": workspace_task_parameters_name,
-                "object_status": workspace_task_parameters_object_status,
+                "object_status": int(workspace_task_parameters_object_status),
                 "output_aggregation_type": workspace_task_parameters_output_aggregation_type,
                 "parent_ref": {
                     "parent": workspace_task_parameters_parent_ref_parent,
@@ -1599,7 +1599,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_typed_expressions_model_type,
                 "model_version": workspace_task_typed_expressions_model_version,
                 "name": workspace_task_typed_expressions_name,
-                "object_status": workspace_task_typed_expressions_object_status,
+                "object_status": int(workspace_task_typed_expressions_object_status),
                 "parent_ref": {
                     "parent": workspace_task_typed_expressions_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
@@ -1674,10 +1674,10 @@ class WorkspaceTask(pulumi.CustomResource):
             name=workspace_task_name,
             registry_metadata={
                 "aggregator_key": workspace_task_registry_metadata_aggregator_key,
-                "is_favorite": workspace_task_registry_metadata_is_favorite,
+                "is_favorite": workspace_task_registry_metadata_is_favorite == "true",
                 "key": workspace_task_registry_metadata_key,
                 "labels": workspace_task_registry_metadata_labels,
-                "registry_version": workspace_task_registry_metadata_registry_version,
+                "registry_version": int(workspace_task_registry_metadata_registry_version),
             },
             workspace_id=test_workspace["id"],
             api_call_mode=workspace_task_api_call_mode,
@@ -2022,7 +2022,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_input_ports_model_type,
                 "config_values": {
                     "config_param_values": {
-                        "int_value": workspace_task_input_ports_config_values_config_param_values_int_value,
+                        "int_value": int(workspace_task_input_ports_config_values_config_param_values_int_value),
                         "object_value": workspace_task_input_ports_config_values_config_param_values_object_value,
                         "parameter_value": workspace_task_input_ports_config_values_config_param_values_parameter_value,
                         "ref_value": workspace_task_input_ports_config_values_config_param_values_ref_value,
@@ -2039,19 +2039,19 @@ class WorkspaceTask(pulumi.CustomResource):
                 "key": workspace_task_input_ports_key,
                 "model_version": workspace_task_input_ports_model_version,
                 "name": workspace_task_input_ports_name,
-                "object_status": workspace_task_input_ports_object_status,
+                "object_status": int(workspace_task_input_ports_object_status),
                 "parent_ref": {
                     "parent": workspace_task_input_ports_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
                 },
                 "port_type": workspace_task_input_ports_port_type,
             }],
-            is_single_load=workspace_task_is_single_load,
+            is_single_load=workspace_task_is_single_load == "true",
             json_data=workspace_task_json_data,
             key=workspace_task_key,
             method_type=workspace_task_method_type,
             model_version=workspace_task_model_version,
-            object_status=workspace_task_object_status,
+            object_status=int(workspace_task_object_status),
             op_config_values={
                 "config_param_values": {
                     "int_value": workspace_task_op_config_values_config_param_values_int_value,
@@ -2071,7 +2071,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_output_ports_model_type,
                 "config_values": {
                     "config_param_values": {
-                        "int_value": workspace_task_output_ports_config_values_config_param_values_int_value,
+                        "int_value": int(workspace_task_output_ports_config_values_config_param_values_int_value),
                         "object_value": workspace_task_output_ports_config_values_config_param_values_object_value,
                         "parameter_value": workspace_task_output_ports_config_values_config_param_values_parameter_value,
                         "ref_value": workspace_task_output_ports_config_values_config_param_values_ref_value,
@@ -2088,14 +2088,14 @@ class WorkspaceTask(pulumi.CustomResource):
                 "key": workspace_task_output_ports_key,
                 "model_version": workspace_task_output_ports_model_version,
                 "name": workspace_task_output_ports_name,
-                "object_status": workspace_task_output_ports_object_status,
+                "object_status": int(workspace_task_output_ports_object_status),
                 "parent_ref": {
                     "parent": workspace_task_output_ports_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
                 },
                 "port_type": workspace_task_output_ports_port_type,
             }],
-            parallel_load_limit=workspace_task_parallel_load_limit,
+            parallel_load_limit=int(workspace_task_parallel_load_limit),
             parameters=[{
                 "model_type": workspace_task_parameters_model_type,
                 "config_values": {
@@ -2114,12 +2114,12 @@ class WorkspaceTask(pulumi.CustomResource):
                 },
                 "default_value": workspace_task_parameters_default_value,
                 "description": workspace_task_parameters_description,
-                "is_input": workspace_task_parameters_is_input,
-                "is_output": workspace_task_parameters_is_output,
+                "is_input": workspace_task_parameters_is_input == "true",
+                "is_output": workspace_task_parameters_is_output == "true",
                 "key": workspace_task_parameters_key,
                 "model_version": workspace_task_parameters_model_version,
                 "name": workspace_task_parameters_name,
-                "object_status": workspace_task_parameters_object_status,
+                "object_status": int(workspace_task_parameters_object_status),
                 "output_aggregation_type": workspace_task_parameters_output_aggregation_type,
                 "parent_ref": {
                     "parent": workspace_task_parameters_parent_ref_parent,
@@ -2358,7 +2358,7 @@ class WorkspaceTask(pulumi.CustomResource):
                 "model_type": workspace_task_typed_expressions_model_type,
                 "model_version": workspace_task_typed_expressions_model_version,
                 "name": workspace_task_typed_expressions_name,
-                "object_status": workspace_task_typed_expressions_object_status,
+                "object_status": int(workspace_task_typed_expressions_object_status),
                 "parent_ref": {
                     "parent": workspace_task_typed_expressions_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],

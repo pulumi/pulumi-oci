@@ -190,12 +190,12 @@ def get_security_assessment_finding_analytics(access_level: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_finding_analytics = oci.DataSafe.get_security_assessment_finding_analytics(compartment_id=compartment_id,
+    test_security_assessment_finding_analytics = oci.datasafe.get_security_assessment_finding_analytics(compartment_id=compartment_id,
         access_level=security_assessment_finding_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_finding_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_finding_analytic_compartment_id_in_subtree == "true",
         finding_key=security_assessment_finding_analytic_finding_key,
         group_by=security_assessment_finding_analytic_group_by,
-        is_top_finding=security_assessment_finding_analytic_is_top_finding,
+        is_top_finding=security_assessment_finding_analytic_is_top_finding == "true",
         severity=security_assessment_finding_analytic_severity,
         top_finding_status=security_assessment_finding_analytic_top_finding_status)
     ```
@@ -271,12 +271,12 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_finding_analytics = oci.DataSafe.get_security_assessment_finding_analytics(compartment_id=compartment_id,
+    test_security_assessment_finding_analytics = oci.datasafe.get_security_assessment_finding_analytics(compartment_id=compartment_id,
         access_level=security_assessment_finding_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_finding_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_finding_analytic_compartment_id_in_subtree == "true",
         finding_key=security_assessment_finding_analytic_finding_key,
         group_by=security_assessment_finding_analytic_group_by,
-        is_top_finding=security_assessment_finding_analytic_is_top_finding,
+        is_top_finding=security_assessment_finding_analytic_is_top_finding == "true",
         severity=security_assessment_finding_analytic_severity,
         top_finding_status=security_assessment_finding_analytic_top_finding_status)
     ```

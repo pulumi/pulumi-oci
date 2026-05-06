@@ -150,7 +150,7 @@ def get_database_tools_identities(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identities = oci.DatabaseTools.get_database_tools_identities(compartment_id=compartment_id,
+    test_database_tools_identities = oci.databasetools.get_database_tools_identities(compartment_id=compartment_id,
         database_tools_connection_id=test_database_tools_connection["id"],
         display_name=database_tools_identity_display_name,
         state=database_tools_identity_state,
@@ -201,7 +201,7 @@ def get_database_tools_identities_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identities = oci.DatabaseTools.get_database_tools_identities(compartment_id=compartment_id,
+    test_database_tools_identities = oci.databasetools.get_database_tools_identities(compartment_id=compartment_id,
         database_tools_connection_id=test_database_tools_connection["id"],
         display_name=database_tools_identity_display_name,
         state=database_tools_identity_state,

@@ -150,7 +150,7 @@ def get_exadb_vm_clusters(cluster_placement_group_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+    test_exadb_vm_clusters = oci.database.get_exadb_vm_clusters(compartment_id=compartment_id,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
@@ -201,7 +201,7 @@ def get_exadb_vm_clusters_output(cluster_placement_group_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+    test_exadb_vm_clusters = oci.database.get_exadb_vm_clusters(compartment_id=compartment_id,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],

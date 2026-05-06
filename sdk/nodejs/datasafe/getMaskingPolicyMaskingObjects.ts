@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
+ * const testMaskingPolicyMaskingObjects = oci.datasafe.getMaskingPolicyMaskingObjects({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     objects: maskingPolicyMaskingObjectObject,
  *     objectTypes: maskingPolicyMaskingObjectObjectType,
@@ -97,7 +97,7 @@ export interface GetMaskingPolicyMaskingObjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
+ * const testMaskingPolicyMaskingObjects = oci.datasafe.getMaskingPolicyMaskingObjects({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     objects: maskingPolicyMaskingObjectObject,
  *     objectTypes: maskingPolicyMaskingObjectObjectType,

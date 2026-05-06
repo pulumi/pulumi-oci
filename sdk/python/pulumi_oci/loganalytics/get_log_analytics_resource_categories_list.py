@@ -139,7 +139,7 @@ def get_log_analytics_resource_categories_list(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+    test_log_analytics_resource_categories_list = oci.loganalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
         compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,
@@ -188,7 +188,7 @@ def get_log_analytics_resource_categories_list_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+    test_log_analytics_resource_categories_list = oci.loganalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
         compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,

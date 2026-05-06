@@ -206,14 +206,14 @@ def get_attribute_sets(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_sets = oci.DataSafe.get_attribute_sets(compartment_id=compartment_id,
+    test_attribute_sets = oci.datasafe.get_attribute_sets(compartment_id=compartment_id,
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined,
+        is_user_defined=attribute_set_is_user_defined == "true",
         state=attribute_set_state)
     ```
 
@@ -290,14 +290,14 @@ def get_attribute_sets_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_sets = oci.DataSafe.get_attribute_sets(compartment_id=compartment_id,
+    test_attribute_sets = oci.datasafe.get_attribute_sets(compartment_id=compartment_id,
         access_level=attribute_set_access_level,
         attribute_set_id=test_attribute_set["id"],
         attribute_set_type=attribute_set_attribute_set_type,
-        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree,
+        compartment_id_in_subtree=attribute_set_compartment_id_in_subtree == "true",
         display_name=attribute_set_display_name,
         in_use=attribute_set_in_use,
-        is_user_defined=attribute_set_is_user_defined,
+        is_user_defined=attribute_set_is_user_defined == "true",
         state=attribute_set_state)
     ```
 

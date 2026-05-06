@@ -216,7 +216,7 @@ def get_oci_cache_config_set(oci_cache_config_set_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_set = oci.Redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
+    test_oci_cache_config_set = oci.redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_oci_cache_config_set_output(oci_cache_config_set_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_set = oci.Redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
+    test_oci_cache_config_set = oci.redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
     ```
 
 

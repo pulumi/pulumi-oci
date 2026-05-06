@@ -95,7 +95,7 @@ def get_oci_cache_engine_options(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_engine_options = oci.Redis.get_oci_cache_engine_options(compartment_id=compartment_id)
+    test_oci_cache_engine_options = oci.redis.get_oci_cache_engine_options(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_oci_cache_engine_options_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_engine_options = oci.Redis.get_oci_cache_engine_options(compartment_id=compartment_id)
+    test_oci_cache_engine_options = oci.redis.get_oci_cache_engine_options(compartment_id=compartment_id)
     ```
 
 

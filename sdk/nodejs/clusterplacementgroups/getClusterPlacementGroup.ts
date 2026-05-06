@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroup = oci.ClusterPlacementGroups.getClusterPlacementGroup({
+ * const testClusterPlacementGroup = oci.clusterplacementgroups.getClusterPlacementGroup({
  *     clusterPlacementGroupId: testClusterPlacementGroupOciClusterPlacementGroupsClusterPlacementGroup.id,
  * });
  * ```
@@ -117,7 +117,7 @@ export interface GetClusterPlacementGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterPlacementGroup = oci.ClusterPlacementGroups.getClusterPlacementGroup({
+ * const testClusterPlacementGroup = oci.clusterplacementgroups.getClusterPlacementGroup({
  *     clusterPlacementGroupId: testClusterPlacementGroupOciClusterPlacementGroupsClusterPlacementGroup.id,
  * });
  * ```

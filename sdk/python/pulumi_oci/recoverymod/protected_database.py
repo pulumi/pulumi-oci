@@ -698,7 +698,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped == "true",
             subscription_id=test_subscription["id"])
         ```
 
@@ -771,7 +771,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped == "true",
             subscription_id=test_subscription["id"])
         ```
 

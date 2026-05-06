@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.OsManagementHub.getProfiles({
+ * const testProfiles = oci.osmanagementhub.getProfiles({
  *     archType: profileArchType,
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
- *     isDefaultProfile: profileIsDefaultProfile,
- *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile === "true",
  *     managementStations: profileManagementStation,
  *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,
@@ -201,13 +201,13 @@ export interface GetProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.OsManagementHub.getProfiles({
+ * const testProfiles = oci.osmanagementhub.getProfiles({
  *     archType: profileArchType,
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
- *     isDefaultProfile: profileIsDefaultProfile,
- *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile === "true",
  *     managementStations: profileManagementStation,
  *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,

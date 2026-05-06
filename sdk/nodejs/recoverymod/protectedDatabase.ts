@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped,
+ *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped === "true",
  *     subscriptionId: testSubscription.id,
  * });
  * ```

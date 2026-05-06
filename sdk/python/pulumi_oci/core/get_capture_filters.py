@@ -137,7 +137,7 @@ def get_capture_filters(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+    test_capture_filters = oci.core.get_capture_filters(compartment_id=compartment_id,
         display_name=capture_filter_display_name,
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)
@@ -183,7 +183,7 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+    test_capture_filters = oci.core.get_capture_filters(compartment_id=compartment_id,
         display_name=capture_filter_display_name,
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)

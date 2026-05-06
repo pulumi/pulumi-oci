@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     },
  *     parameters: [{
  *         paramName: scriptParametersParamName,
- *         isSecret: scriptParametersIsSecret,
+ *         isSecret: scriptParametersIsSecret === "true",
  *         paramValue: scriptParametersParamValue,
  *     }],
  * });

@@ -373,7 +373,7 @@ def get_workspace_application(application_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=workspace_application_application_key,
+    test_workspace_application = oci.dataintegration.get_workspace_application(application_key=workspace_application_application_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -429,7 +429,7 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=workspace_application_application_key,
+    test_workspace_application = oci.dataintegration.get_workspace_application(application_key=workspace_application_application_key,
         workspace_id=test_workspace["id"])
     ```
 

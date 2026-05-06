@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatch = oci.Database.getOneoffPatch({
+ * const testOneoffPatch = oci.database.getOneoffPatch({
  *     oneoffPatchId: testOneoffPatchOciDatabaseOneoffPatch.id,
  * });
  * ```
@@ -119,7 +119,7 @@ export interface GetOneoffPatchResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatch = oci.Database.getOneoffPatch({
+ * const testOneoffPatch = oci.database.getOneoffPatch({
  *     oneoffPatchId: testOneoffPatchOciDatabaseOneoffPatch.id,
  * });
  * ```

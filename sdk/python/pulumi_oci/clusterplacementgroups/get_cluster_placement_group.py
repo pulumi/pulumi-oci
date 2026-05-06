@@ -249,7 +249,7 @@ def get_cluster_placement_group(cluster_placement_group_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_placement_group = oci.ClusterPlacementGroups.get_cluster_placement_group(cluster_placement_group_id=test_cluster_placement_group_oci_cluster_placement_groups_cluster_placement_group["id"])
+    test_cluster_placement_group = oci.clusterplacementgroups.get_cluster_placement_group(cluster_placement_group_id=test_cluster_placement_group_oci_cluster_placement_groups_cluster_placement_group["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_cluster_placement_group_output(cluster_placement_group_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_placement_group = oci.ClusterPlacementGroups.get_cluster_placement_group(cluster_placement_group_id=test_cluster_placement_group_oci_cluster_placement_groups_cluster_placement_group["id"])
+    test_cluster_placement_group = oci.clusterplacementgroups.get_cluster_placement_group(cluster_placement_group_id=test_cluster_placement_group_oci_cluster_placement_groups_cluster_placement_group["id"])
     ```
 
 

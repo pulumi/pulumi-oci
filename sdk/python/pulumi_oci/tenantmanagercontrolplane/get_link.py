@@ -143,7 +143,7 @@ def get_link(link_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_link = oci.Tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
+    test_link = oci.tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_link_output(link_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_link = oci.Tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
+    test_link = oci.tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
     ```
 
 

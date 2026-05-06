@@ -197,12 +197,12 @@ def get_alert_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=compartment_id,
+    test_alert_policies = oci.datasafe.get_alert_policies(compartment_id=compartment_id,
         access_level=alert_policy_access_level,
         alert_policy_id=test_alert_policy["id"],
-        compartment_id_in_subtree=alert_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=alert_policy_compartment_id_in_subtree == "true",
         display_name=alert_policy_display_name,
-        is_user_defined=alert_policy_is_user_defined,
+        is_user_defined=alert_policy_is_user_defined == "true",
         state=alert_policy_state,
         time_created_greater_than_or_equal_to=alert_policy_time_created_greater_than_or_equal_to,
         time_created_less_than=alert_policy_time_created_less_than,
@@ -277,12 +277,12 @@ def get_alert_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=compartment_id,
+    test_alert_policies = oci.datasafe.get_alert_policies(compartment_id=compartment_id,
         access_level=alert_policy_access_level,
         alert_policy_id=test_alert_policy["id"],
-        compartment_id_in_subtree=alert_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=alert_policy_compartment_id_in_subtree == "true",
         display_name=alert_policy_display_name,
-        is_user_defined=alert_policy_is_user_defined,
+        is_user_defined=alert_policy_is_user_defined == "true",
         state=alert_policy_state,
         time_created_greater_than_or_equal_to=alert_policy_time_created_greater_than_or_equal_to,
         time_created_less_than=alert_policy_time_created_less_than,

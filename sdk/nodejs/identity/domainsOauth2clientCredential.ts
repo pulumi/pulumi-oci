@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     description: oauth2clientCredentialDescription,
  *     expiresOn: oauth2clientCredentialExpiresOn,
  *     id: oauth2clientCredentialId,
- *     isResetSecret: oauth2clientCredentialIsResetSecret,
+ *     isResetSecret: oauth2clientCredentialIsResetSecret === "true",
  *     ocid: oauth2clientCredentialOcid,
  *     resourceTypeSchemaVersion: oauth2clientCredentialResourceTypeSchemaVersion,
  *     status: oauth2clientCredentialStatus,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *         value: oauth2clientCredentialTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *         allowSelfChange: oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
  *     },
  *     user: {
  *         ocid: testUser.ocid,

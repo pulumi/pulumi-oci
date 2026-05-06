@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     },
  *     connectionString: {
  *         hostname: externalDatabaseConnectorConnectionStringHostname,
- *         port: externalDatabaseConnectorConnectionStringPort,
+ *         port: Number(externalDatabaseConnectorConnectionStringPort),
  *         protocol: externalDatabaseConnectorConnectionStringProtocol,
  *         service: externalDatabaseConnectorConnectionStringService,
  *     },

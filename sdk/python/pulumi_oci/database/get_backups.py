@@ -193,7 +193,7 @@ def get_backups(backup_destination_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+    test_backups = oci.database.get_backups(backup_destination_type=backup_backup_destination_type,
         compartment_id=compartment_id,
         database_id=test_database["id"],
         shape_family=backup_shape_family,
@@ -264,7 +264,7 @@ def get_backups_output(backup_destination_type: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(backup_destination_type=backup_backup_destination_type,
+    test_backups = oci.database.get_backups(backup_destination_type=backup_backup_destination_type,
         compartment_id=compartment_id,
         database_id=test_database["id"],
         shape_family=backup_shape_family,

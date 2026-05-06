@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * const testRedisCluster = new oci.redis.RedisCluster("test_redis_cluster", {
  *     compartmentId: compartmentId,
  *     displayName: redisClusterDisplayName,
- *     nodeCount: redisClusterNodeCount,
+ *     nodeCount: Number(redisClusterNodeCount),
  *     nodeMemoryInGbs: redisClusterNodeMemoryInGbs,
  *     softwareVersion: redisClusterSoftwareVersion,
  *     subnetId: testSubnet.id,
@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     nsgIds: redisClusterNsgIds,
  *     ociCacheConfigSetId: testOciCacheConfigSet.id,
  *     securityAttributes: redisClusterSecurityAttributes,
- *     shardCount: redisClusterShardCount,
+ *     shardCount: Number(redisClusterShardCount),
  * });
  * ```
  *

@@ -124,7 +124,7 @@ def get_catalogs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalogs = oci.DataCatalog.get_catalogs(compartment_id=compartment_id,
+    test_catalogs = oci.datacatalog.get_catalogs(compartment_id=compartment_id,
         display_name=catalog_display_name,
         state=catalog_state)
     ```
@@ -165,7 +165,7 @@ def get_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_catalogs = oci.DataCatalog.get_catalogs(compartment_id=compartment_id,
+    test_catalogs = oci.datacatalog.get_catalogs(compartment_id=compartment_id,
         display_name=catalog_display_name,
         state=catalog_state)
     ```

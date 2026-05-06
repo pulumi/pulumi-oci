@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroup = oci.Logging.getLogGroup({
+ * const testLogGroup = oci.logging.getLogGroup({
  *     logGroupId: testLogGroupOciLoggingLogGroup.id,
  * });
  * ```
@@ -90,7 +90,7 @@ export interface GetLogGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroup = oci.Logging.getLogGroup({
+ * const testLogGroup = oci.logging.getLogGroup({
  *     logGroupId: testLogGroupOciLoggingLogGroup.id,
  * });
  * ```

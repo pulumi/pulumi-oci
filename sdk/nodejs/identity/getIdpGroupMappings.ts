@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdpGroupMappings = oci.Identity.getIdpGroupMappings({
+ * const testIdpGroupMappings = oci.identity.getIdpGroupMappings({
  *     identityProviderId: testIdentityProvider.id,
  * });
  * ```
@@ -74,7 +74,7 @@ export interface GetIdpGroupMappingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdpGroupMappings = oci.Identity.getIdpGroupMappings({
+ * const testIdpGroupMappings = oci.identity.getIdpGroupMappings({
  *     identityProviderId: testIdentityProvider.id,
  * });
  * ```

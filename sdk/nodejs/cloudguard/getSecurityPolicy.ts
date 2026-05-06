@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicy = oci.CloudGuard.getSecurityPolicy({
+ * const testSecurityPolicy = oci.cloudguard.getSecurityPolicy({
  *     securityPolicyId: testSecurityPolicyOciCloudGuardSecurityPolicy.id,
  * });
  * ```
@@ -114,7 +114,7 @@ export interface GetSecurityPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicy = oci.CloudGuard.getSecurityPolicy({
+ * const testSecurityPolicy = oci.cloudguard.getSecurityPolicy({
  *     securityPolicyId: testSecurityPolicyOciCloudGuardSecurityPolicy.id,
  * });
  * ```

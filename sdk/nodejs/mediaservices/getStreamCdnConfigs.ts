@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
+ * const testStreamCdnConfigs = oci.mediaservices.getStreamCdnConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamCdnConfigDisplayName,
  *     id: streamCdnConfigId,
@@ -96,7 +96,7 @@ export interface GetStreamCdnConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
+ * const testStreamCdnConfigs = oci.mediaservices.getStreamCdnConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamCdnConfigDisplayName,
  *     id: streamCdnConfigId,

@@ -286,12 +286,12 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessments = oci.DataSafe.get_security_assessments(compartment_id=compartment_id,
+    test_security_assessments = oci.datasafe.get_security_assessments(compartment_id=compartment_id,
         access_level=security_assessment_access_level,
-        compartment_id_in_subtree=security_assessment_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_compartment_id_in_subtree == "true",
         display_name=security_assessment_display_name,
-        is_baseline=security_assessment_is_baseline,
-        is_schedule_assessment=security_assessment_is_schedule_assessment,
+        is_baseline=security_assessment_is_baseline == "true",
+        is_schedule_assessment=security_assessment_is_schedule_assessment == "true",
         schedule_assessment_id=test_schedule_assessment["id"],
         state=security_assessment_state,
         target_database_group_id=test_target_database_group["id"],
@@ -410,12 +410,12 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessments = oci.DataSafe.get_security_assessments(compartment_id=compartment_id,
+    test_security_assessments = oci.datasafe.get_security_assessments(compartment_id=compartment_id,
         access_level=security_assessment_access_level,
-        compartment_id_in_subtree=security_assessment_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_compartment_id_in_subtree == "true",
         display_name=security_assessment_display_name,
-        is_baseline=security_assessment_is_baseline,
-        is_schedule_assessment=security_assessment_is_schedule_assessment,
+        is_baseline=security_assessment_is_baseline == "true",
+        is_schedule_assessment=security_assessment_is_schedule_assessment == "true",
         schedule_assessment_id=test_schedule_assessment["id"],
         state=security_assessment_state,
         target_database_group_id=test_target_database_group["id"],

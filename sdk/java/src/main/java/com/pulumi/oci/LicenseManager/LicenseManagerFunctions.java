@@ -55,8 +55,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -97,8 +97,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -139,8 +139,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -181,8 +181,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -223,8 +223,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -265,8 +265,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -308,8 +308,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -351,8 +351,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -394,8 +394,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -437,8 +437,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -480,8 +480,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -522,8 +522,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -564,8 +564,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -606,8 +606,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -648,8 +648,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -690,8 +690,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -732,8 +732,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -774,8 +774,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -816,8 +816,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -858,8 +858,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -900,8 +900,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -942,8 +942,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -984,8 +984,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1026,8 +1026,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1068,8 +1068,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1110,8 +1110,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1154,8 +1154,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1198,8 +1198,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1242,8 +1242,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1286,8 +1286,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1330,8 +1330,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1373,8 +1373,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1416,8 +1416,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1459,8 +1459,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1502,8 +1502,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1545,8 +1545,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1588,8 +1588,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1631,8 +1631,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1674,8 +1674,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1717,8 +1717,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1760,8 +1760,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1804,8 +1804,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1848,8 +1848,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1892,8 +1892,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1936,8 +1936,8 @@ public final class LicenseManagerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
      * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

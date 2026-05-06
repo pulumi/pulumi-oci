@@ -125,7 +125,7 @@ def get_service_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=compartment_id,
+    test_service_gateways = oci.core.get_service_gateways(compartment_id=compartment_id,
         state=service_gateway_state,
         vcn_id=test_vcn["id"])
     ```
@@ -167,7 +167,7 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=compartment_id,
+    test_service_gateways = oci.core.get_service_gateways(compartment_id=compartment_id,
         state=service_gateway_state,
         vcn_id=test_vcn["id"])
     ```

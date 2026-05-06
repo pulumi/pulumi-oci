@@ -853,7 +853,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
+    test_cloud_autonomous_vm_cluster = oci.database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
     ```
 
 
@@ -946,7 +946,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
+    test_cloud_autonomous_vm_cluster = oci.database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster_oci_database_cloud_autonomous_vm_cluster["id"])
     ```
 
 

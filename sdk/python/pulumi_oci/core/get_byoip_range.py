@@ -255,7 +255,7 @@ def get_byoip_range(byoip_range_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
+    test_byoip_range = oci.core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
     ```
 
 
@@ -297,7 +297,7 @@ def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
+    test_byoip_range = oci.core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
     ```
 
 

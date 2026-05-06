@@ -227,7 +227,7 @@ def get_security_zone(security_zone_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=test_security_zone_oci_cloud_guard_security_zone["id"])
+    test_security_zone = oci.cloudguard.get_security_zone(security_zone_id=test_security_zone_oci_cloud_guard_security_zone["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=test_security_zone_oci_cloud_guard_security_zone["id"])
+    test_security_zone = oci.cloudguard.get_security_zone(security_zone_id=test_security_zone_oci_cloud_guard_security_zone["id"])
     ```
 
 

@@ -138,7 +138,7 @@ def get_occ_availability_catalogs(catalog_state: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalogs = oci.CapacityManagement.get_occ_availability_catalogs(compartment_id=compartment_id,
+    test_occ_availability_catalogs = oci.capacitymanagement.get_occ_availability_catalogs(compartment_id=compartment_id,
         catalog_state=occ_availability_catalog_catalog_state,
         display_name=occ_availability_catalog_display_name,
         id=occ_availability_catalog_id,
@@ -188,7 +188,7 @@ def get_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalogs = oci.CapacityManagement.get_occ_availability_catalogs(compartment_id=compartment_id,
+    test_occ_availability_catalogs = oci.capacitymanagement.get_occ_availability_catalogs(compartment_id=compartment_id,
         catalog_state=occ_availability_catalog_catalog_state,
         display_name=occ_availability_catalog_display_name,
         id=occ_availability_catalog_id,

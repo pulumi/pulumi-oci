@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserProxiedForUser = oci.DatabaseManagement.getManagedDatabaseUserProxiedForUser({
+ * const testManagedDatabaseUserProxiedForUser = oci.databasemanagement.getManagedDatabaseUserProxiedForUser({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserProxiedForUserName,
@@ -81,7 +81,7 @@ export interface GetManagedDatabaseUserProxiedForUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseUserProxiedForUser = oci.DatabaseManagement.getManagedDatabaseUserProxiedForUser({
+ * const testManagedDatabaseUserProxiedForUser = oci.databasemanagement.getManagedDatabaseUserProxiedForUser({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabaseUserProxiedForUserName,

@@ -26,12 +26,12 @@ import * as utilities from "../utilities";
  *         networkSourceIds: authenticationPolicyNetworkPolicyNetworkSourceIds,
  *     },
  *     passwordPolicy: {
- *         isLowercaseCharactersRequired: authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired,
- *         isNumericCharactersRequired: authenticationPolicyPasswordPolicyIsNumericCharactersRequired,
- *         isSpecialCharactersRequired: authenticationPolicyPasswordPolicyIsSpecialCharactersRequired,
- *         isUppercaseCharactersRequired: authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired,
- *         isUsernameContainmentAllowed: authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed,
- *         minimumPasswordLength: authenticationPolicyPasswordPolicyMinimumPasswordLength,
+ *         isLowercaseCharactersRequired: authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired === "true",
+ *         isNumericCharactersRequired: authenticationPolicyPasswordPolicyIsNumericCharactersRequired === "true",
+ *         isSpecialCharactersRequired: authenticationPolicyPasswordPolicyIsSpecialCharactersRequired === "true",
+ *         isUppercaseCharactersRequired: authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired === "true",
+ *         isUsernameContainmentAllowed: authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed === "true",
+ *         minimumPasswordLength: Number(authenticationPolicyPasswordPolicyMinimumPasswordLength),
  *     },
  * });
  * ```

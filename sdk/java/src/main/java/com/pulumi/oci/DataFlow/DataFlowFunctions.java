@@ -70,8 +70,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -112,8 +112,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -154,8 +154,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -196,8 +196,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -238,8 +238,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -280,8 +280,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -326,8 +326,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -372,8 +372,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -418,8 +418,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -464,8 +464,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -510,8 +510,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -552,8 +552,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -594,8 +594,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -636,8 +636,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -678,8 +678,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -720,8 +720,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -769,8 +769,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -818,8 +818,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -867,8 +867,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -916,8 +916,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -965,8 +965,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1007,8 +1007,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1049,8 +1049,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1091,8 +1091,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1133,8 +1133,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1175,8 +1175,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1221,8 +1221,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1267,8 +1267,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1313,8 +1313,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1359,8 +1359,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1405,8 +1405,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1447,8 +1447,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1489,8 +1489,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1531,8 +1531,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1573,8 +1573,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1615,8 +1615,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1661,8 +1661,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1707,8 +1707,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1753,8 +1753,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1799,8 +1799,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1845,8 +1845,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1888,8 +1888,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1931,8 +1931,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1974,8 +1974,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2017,8 +2017,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2060,8 +2060,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2102,8 +2102,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2144,8 +2144,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2186,8 +2186,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2228,8 +2228,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2270,8 +2270,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2313,8 +2313,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2356,8 +2356,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2399,8 +2399,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2442,8 +2442,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2485,8 +2485,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2528,8 +2528,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2571,8 +2571,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2614,8 +2614,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2657,8 +2657,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2700,8 +2700,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2742,8 +2742,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2784,8 +2784,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2826,8 +2826,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2868,8 +2868,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2912,8 +2912,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2959,8 +2959,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3006,8 +3006,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3053,8 +3053,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3100,8 +3100,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3147,8 +3147,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3194,8 +3194,8 @@ public final class DataFlowFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataFlow.DataFlowFunctions;
      * import com.pulumi.oci.DataFlow.inputs.GetSqlEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -135,10 +135,10 @@ def get_repository_diffs(base_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
+    test_repository_diffs = oci.devops.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base == "true",
         target_repository_id=test_repository["id"])
     ```
 
@@ -186,10 +186,10 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
+    test_repository_diffs = oci.devops.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base == "true",
         target_repository_id=test_repository["id"])
     ```
 

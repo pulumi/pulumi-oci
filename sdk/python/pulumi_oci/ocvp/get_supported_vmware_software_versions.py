@@ -129,7 +129,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
+    test_supported_vmware_software_versions = oci.ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
         version=supported_vmware_software_version_version,
         version_to_upgrade=supported_vmware_software_version_version_to_upgrade)
@@ -176,7 +176,7 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
+    test_supported_vmware_software_versions = oci.ocvp.get_supported_vmware_software_versions(compartment_id=compartment_id,
         host_shape_name=test_shape["name"],
         version=supported_vmware_software_version_version,
         version_to_upgrade=supported_vmware_software_version_version_to_upgrade)

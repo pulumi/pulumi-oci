@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlBackups = oci.Mysql.getMysqlBackups({
+ * const testMysqlBackups = oci.mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
  *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,
@@ -127,7 +127,7 @@ export interface GetMysqlBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlBackups = oci.Mysql.getMysqlBackups({
+ * const testMysqlBackups = oci.mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
  *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,

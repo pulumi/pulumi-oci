@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
+ * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -114,10 +114,10 @@ export interface GetDataSafePrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
+ * const testDataSafePrivateEndpoints = oci.datasafe.getDataSafePrivateEndpoints({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSafePrivateEndpointAccessLevel,
- *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree === "true",
  *     displayName: dataSafePrivateEndpointDisplayName,
  *     state: dataSafePrivateEndpointState,
  *     vcnId: testVcn.id,

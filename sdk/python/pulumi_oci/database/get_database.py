@@ -546,7 +546,7 @@ def get_database(database_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=database_id)
+    test_database = oci.database.get_database(database_id=database_id)
     ```
 
 
@@ -614,7 +614,7 @@ def get_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=database_id)
+    test_database = oci.database.get_database(database_id=database_id)
     ```
 
 

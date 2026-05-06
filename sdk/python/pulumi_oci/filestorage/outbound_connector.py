@@ -612,9 +612,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version,
+            password_secret_version=int(outbound_connector_password_secret_version),
             trusted_certificate_secret_id=test_secret["id"],
-            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
+            trusted_certificate_secret_version=int(outbound_connector_trusted_certificate_secret_version))
         ```
 
         ## Import
@@ -708,9 +708,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version,
+            password_secret_version=int(outbound_connector_password_secret_version),
             trusted_certificate_secret_id=test_secret["id"],
-            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
+            trusted_certificate_secret_version=int(outbound_connector_trusted_certificate_secret_version))
         ```
 
         ## Import

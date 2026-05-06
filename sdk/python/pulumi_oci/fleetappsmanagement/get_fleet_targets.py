@@ -160,7 +160,7 @@ def get_fleet_targets(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_targets = oci.FleetAppsManagement.get_fleet_targets(fleet_id=test_fleet["id"],
+    test_fleet_targets = oci.fleetappsmanagement.get_fleet_targets(fleet_id=test_fleet["id"],
         display_name=fleet_target_display_name,
         product=fleet_target_product,
         resource_display_name=fleet_target_resource_display_name,
@@ -216,7 +216,7 @@ def get_fleet_targets_output(display_name: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_targets = oci.FleetAppsManagement.get_fleet_targets(fleet_id=test_fleet["id"],
+    test_fleet_targets = oci.fleetappsmanagement.get_fleet_targets(fleet_id=test_fleet["id"],
         display_name=fleet_target_display_name,
         product=fleet_target_product,
         resource_display_name=fleet_target_resource_display_name,

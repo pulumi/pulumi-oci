@@ -187,9 +187,9 @@ def get_sensitive_data_models(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=compartment_id,
+    test_sensitive_data_models = oci.datasafe.get_sensitive_data_models(compartment_id=compartment_id,
         access_level=sensitive_data_model_access_level,
-        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree == "true",
         display_name=sensitive_data_model_display_name,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         state=sensitive_data_model_state,
@@ -262,9 +262,9 @@ def get_sensitive_data_models_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=compartment_id,
+    test_sensitive_data_models = oci.datasafe.get_sensitive_data_models(compartment_id=compartment_id,
         access_level=sensitive_data_model_access_level,
-        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree == "true",
         display_name=sensitive_data_model_display_name,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         state=sensitive_data_model_state,

@@ -118,7 +118,7 @@ def get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connectors = oci.DatabaseManagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_connectors = oci.databasemanagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_connector_display_name)
     ```
@@ -159,7 +159,7 @@ def get_cloud_exadata_storage_connectors_output(cloud_exadata_infrastructure_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connectors = oci.DatabaseManagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_connectors = oci.databasemanagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_connector_display_name)
     ```

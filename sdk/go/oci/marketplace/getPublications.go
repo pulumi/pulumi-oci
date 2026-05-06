@@ -32,8 +32,8 @@ import (
 //			_, err := marketplace.GetPublications(ctx, &marketplace.GetPublicationsArgs{
 //				CompartmentId:    compartmentId,
 //				ListingType:      publicationListingType,
-//				Names:            publicationName,
-//				OperatingSystems: publicationOperatingSystems,
+//				Names:            pulumi.ToArray(publicationName),
+//				OperatingSystems: pulumi.ToArray(publicationOperatingSystems),
 //				PublicationId:    pulumi.StringRef(testPublication.Id),
 //			}, nil)
 //			if err != nil {

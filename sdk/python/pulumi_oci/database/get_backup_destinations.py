@@ -111,7 +111,7 @@ def get_backup_destinations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=compartment_id,
+    test_backup_destinations = oci.database.get_backup_destinations(compartment_id=compartment_id,
         type=backup_destination_type)
     ```
 
@@ -147,7 +147,7 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=compartment_id,
+    test_backup_destinations = oci.database.get_backup_destinations(compartment_id=compartment_id,
         type=backup_destination_type)
     ```
 

@@ -131,7 +131,7 @@ def get_bds_instance_identity_configurations(bds_instance_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configurations = oci.BigDataService.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configurations = oci.bigdataservice.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
         compartment_id=compartment_id,
         display_name=bds_instance_identity_configuration_display_name,
         state=bds_instance_identity_configuration_state)
@@ -177,7 +177,7 @@ def get_bds_instance_identity_configurations_output(bds_instance_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configurations = oci.BigDataService.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configurations = oci.bigdataservice.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
         compartment_id=compartment_id,
         display_name=bds_instance_identity_configuration_display_name,
         state=bds_instance_identity_configuration_state)

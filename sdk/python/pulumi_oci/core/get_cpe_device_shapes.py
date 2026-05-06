@@ -97,7 +97,7 @@ def get_cpe_device_shapes(filters: Optional[Sequence[Union['GetCpeDeviceShapesFi
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
+    test_cpe_device_shapes = oci.core.get_cpe_device_shapes()
     ```
     """
     __args__ = dict()
@@ -134,7 +134,7 @@ def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
+    test_cpe_device_shapes = oci.core.get_cpe_device_shapes()
     ```
     """
     __args__ = dict()

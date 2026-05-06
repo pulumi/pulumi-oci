@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleet = oci.FleetAppsManagement.getFleet({
+ * const testFleet = oci.fleetappsmanagement.getFleet({
  *     fleetId: testFleetOciFleetAppsManagementFleet.id,
  * });
  * ```
@@ -144,7 +144,7 @@ export interface GetFleetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleet = oci.FleetAppsManagement.getFleet({
+ * const testFleet = oci.fleetappsmanagement.getFleet({
  *     fleetId: testFleetOciFleetAppsManagementFleet.id,
  * });
  * ```

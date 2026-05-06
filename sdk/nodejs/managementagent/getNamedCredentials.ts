@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.ManagementAgent.getNamedCredentials({
+ * const testNamedCredentials = oci.managementagent.getNamedCredentials({
  *     managementAgentId: testManagementAgent.id,
  *     ids: [namedCredentialId],
  *     names: [namedCredentialName],
@@ -106,7 +106,7 @@ export interface GetNamedCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.ManagementAgent.getNamedCredentials({
+ * const testNamedCredentials = oci.managementagent.getNamedCredentials({
  *     managementAgentId: testManagementAgent.id,
  *     ids: [namedCredentialId],
  *     names: [namedCredentialName],

@@ -252,7 +252,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
+    test_schedule = oci.meteringcomputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
+    test_schedule = oci.meteringcomputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
     ```
 
 

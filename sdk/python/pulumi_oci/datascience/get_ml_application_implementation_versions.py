@@ -111,7 +111,7 @@ def get_ml_application_implementation_versions(filters: Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_versions = oci.DataScience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
+    test_ml_application_implementation_versions = oci.datascience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
         state=ml_application_implementation_version_state)
     ```
 
@@ -147,7 +147,7 @@ def get_ml_application_implementation_versions_output(filters: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_versions = oci.DataScience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
+    test_ml_application_implementation_versions = oci.datascience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
         state=ml_application_implementation_version_state)
     ```
 

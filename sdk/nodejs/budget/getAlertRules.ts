@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertRules = oci.Budget.getAlertRules({
+ * const testAlertRules = oci.budget.getAlertRules({
  *     budgetId: testBudget.id,
  *     displayName: alertRuleDisplayName,
  *     state: alertRuleState,
@@ -90,7 +90,7 @@ export interface GetAlertRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertRules = oci.Budget.getAlertRules({
+ * const testAlertRules = oci.budget.getAlertRules({
  *     budgetId: testBudget.id,
  *     displayName: alertRuleDisplayName,
  *     state: alertRuleState,

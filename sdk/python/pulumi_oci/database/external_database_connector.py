@@ -455,7 +455,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             },
             connection_string={
                 "hostname": external_database_connector_connection_string_hostname,
-                "port": external_database_connector_connection_string_port,
+                "port": int(external_database_connector_connection_string_port),
                 "protocol": external_database_connector_connection_string_protocol,
                 "service": external_database_connector_connection_string_service,
             },
@@ -524,7 +524,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             },
             connection_string={
                 "hostname": external_database_connector_connection_string_hostname,
-                "port": external_database_connector_connection_string_port,
+                "port": int(external_database_connector_connection_string_port),
                 "protocol": external_database_connector_connection_string_protocol,
                 "service": external_database_connector_connection_string_service,
             },

@@ -159,10 +159,10 @@ def get_user_assessment_profile_analytics(access_level: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
+    test_user_assessment_profile_analytics = oci.datasafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree == "true",
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```
@@ -229,10 +229,10 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
+    test_user_assessment_profile_analytics = oci.datasafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree == "true",
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```

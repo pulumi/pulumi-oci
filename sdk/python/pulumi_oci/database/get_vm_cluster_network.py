@@ -272,7 +272,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network = oci.database.get_vm_cluster_network(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network_oci_database_vm_cluster_network["id"])
     ```
 
@@ -321,7 +321,7 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network = oci.database.get_vm_cluster_network(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network_oci_database_vm_cluster_network["id"])
     ```
 

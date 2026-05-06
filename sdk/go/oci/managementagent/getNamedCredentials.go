@@ -26,29 +26,31 @@ import (
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
-// func main() {
-// pulumi.Run(func(ctx *pulumi.Context) error {
-// _, err := managementagent.GetNamedCredentials(ctx, &managementagent.GetNamedCredentialsArgs{
-// ManagementAgentId: testManagementAgent.Id,
-// Ids: interface{}{
-// namedCredentialId,
-// },
-// Names: interface{}{
-// namedCredentialName,
-// },
-// States: interface{}{
-// namedCredentialState,
-// },
-// Types: interface{}{
-// namedCredentialType,
-// },
-// }, nil);
-// if err != nil {
-// return err
-// }
-// return nil
-// })
-// }
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := managementagent.GetNamedCredentials(ctx, &managementagent.GetNamedCredentialsArgs{
+//				ManagementAgentId: testManagementAgent.Id,
+//				Ids: pulumi.StringArray{
+//					namedCredentialId,
+//				},
+//				Names: pulumi.StringArray{
+//					namedCredentialName,
+//				},
+//				States: pulumi.StringArray{
+//					namedCredentialState,
+//				},
+//				Types: pulumi.StringArray{
+//					namedCredentialType,
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNamedCredentials(ctx *pulumi.Context, args *GetNamedCredentialsArgs, opts ...pulumi.InvokeOption) (*GetNamedCredentialsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)

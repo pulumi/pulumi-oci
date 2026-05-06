@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredInstances = oci.AppMgmtControl.getMonitoredInstances({
+ * const testMonitoredInstances = oci.appmgmtcontrol.getMonitoredInstances({
  *     compartmentId: compartmentId,
  *     displayName: monitoredInstanceDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetMonitoredInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredInstances = oci.AppMgmtControl.getMonitoredInstances({
+ * const testMonitoredInstances = oci.appmgmtcontrol.getMonitoredInstances({
  *     compartmentId: compartmentId,
  *     displayName: monitoredInstanceDisplayName,
  * });

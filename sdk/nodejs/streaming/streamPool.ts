@@ -33,10 +33,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     kafkaSettings: {
- *         autoCreateTopicsEnable: streamPoolKafkaSettingsAutoCreateTopicsEnable,
+ *         autoCreateTopicsEnable: streamPoolKafkaSettingsAutoCreateTopicsEnable === "true",
  *         bootstrapServers: streamPoolKafkaSettingsBootstrapServers,
- *         logRetentionHours: streamPoolKafkaSettingsLogRetentionHours,
- *         numPartitions: streamPoolKafkaSettingsNumPartitions,
+ *         logRetentionHours: Number(streamPoolKafkaSettingsLogRetentionHours),
+ *         numPartitions: Number(streamPoolKafkaSettingsNumPartitions),
  *     },
  *     privateEndpointSettings: {
  *         nsgIds: streamPoolPrivateEndpointSettingsNsgIds,

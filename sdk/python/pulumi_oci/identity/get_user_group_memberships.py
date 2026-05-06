@@ -133,7 +133,7 @@ def get_user_group_memberships(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=tenancy_ocid,
+    test_user_group_memberships = oci.identity.get_user_group_memberships(compartment_id=tenancy_ocid,
         group_id=test_group["id"],
         user_id=test_user["id"])
     ```
@@ -183,7 +183,7 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_user_group_memberships = oci.Identity.get_user_group_memberships(compartment_id=tenancy_ocid,
+    test_user_group_memberships = oci.identity.get_user_group_memberships(compartment_id=tenancy_ocid,
         group_id=test_group["id"],
         user_id=test_user["id"])
     ```

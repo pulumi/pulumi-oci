@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyPendingApproval = oci.Identity.getDomainsMyPendingApproval({
+ * const testMyPendingApproval = oci.identity.getDomainsMyPendingApproval({
  *     idcsEndpoint: testDomain.url,
  *     myPendingApprovalId: testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id,
  *     authorization: myPendingApprovalAuthorization,
@@ -169,7 +169,7 @@ export interface GetDomainsMyPendingApprovalResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyPendingApproval = oci.Identity.getDomainsMyPendingApproval({
+ * const testMyPendingApproval = oci.identity.getDomainsMyPendingApproval({
  *     idcsEndpoint: testDomain.url,
  *     myPendingApprovalId: testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id,
  *     authorization: myPendingApprovalAuthorization,

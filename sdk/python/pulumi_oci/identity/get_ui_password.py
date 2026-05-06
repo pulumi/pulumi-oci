@@ -114,7 +114,7 @@ def get_ui_password(user_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ui_password = oci.Identity.get_ui_password(user_id=test_user["id"])
+    test_ui_password = oci.identity.get_ui_password(user_id=test_user["id"])
     ```
 
 
@@ -146,7 +146,7 @@ def get_ui_password_output(user_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_ui_password = oci.Identity.get_ui_password(user_id=test_user["id"])
+    test_ui_password = oci.identity.get_ui_password(user_id=test_user["id"])
     ```
 
 

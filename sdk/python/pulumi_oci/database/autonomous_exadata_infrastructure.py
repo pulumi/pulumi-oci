@@ -648,14 +648,14 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=autonomous_exadata_infrastructure_license_model,
             maintenance_window_details={
-                "custom_action_timeout_in_mins": autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": autonomous_exadata_infrastructure_maintenance_window_details_months_name,
                 }],
@@ -734,14 +734,14 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             },
             license_model=autonomous_exadata_infrastructure_license_model,
             maintenance_window_details={
-                "custom_action_timeout_in_mins": autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": autonomous_exadata_infrastructure_maintenance_window_details_months_name,
                 }],

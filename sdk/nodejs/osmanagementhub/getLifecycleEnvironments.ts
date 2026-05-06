@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
+ * const testLifecycleEnvironments = oci.osmanagementhub.getLifecycleEnvironments({
  *     archType: lifecycleEnvironmentArchType,
  *     compartmentId: compartmentId,
  *     displayNames: lifecycleEnvironmentDisplayName,
@@ -147,7 +147,7 @@ export interface GetLifecycleEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
+ * const testLifecycleEnvironments = oci.osmanagementhub.getLifecycleEnvironments({
  *     archType: lifecycleEnvironmentArchType,
  *     compartmentId: compartmentId,
  *     displayNames: lifecycleEnvironmentDisplayName,

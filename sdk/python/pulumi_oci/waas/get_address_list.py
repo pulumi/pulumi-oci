@@ -167,7 +167,7 @@ def get_address_list(address_list_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_list = oci.Waas.get_address_list(address_list_id=test_address_list_oci_waas_address_list["id"])
+    test_address_list = oci.waas.get_address_list(address_list_id=test_address_list_oci_waas_address_list["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_address_list_output(address_list_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_address_list = oci.Waas.get_address_list(address_list_id=test_address_list_oci_waas_address_list["id"])
+    test_address_list = oci.waas.get_address_list(address_list_id=test_address_list_oci_waas_address_list["id"])
     ```
 
 

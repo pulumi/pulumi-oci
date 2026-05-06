@@ -300,7 +300,7 @@ def get_cloud_asm(cloud_asm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm = oci.DatabaseManagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
+    test_cloud_asm = oci.databasemanagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_cloud_asm_output(cloud_asm_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm = oci.DatabaseManagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
+    test_cloud_asm = oci.databasemanagement.get_cloud_asm(cloud_asm_id=test_cloud_asm_oci_database_management_cloud_asm["id"])
     ```
 
 

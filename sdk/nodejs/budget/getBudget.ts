@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudget = oci.Budget.getBudget({
+ * const testBudget = oci.budget.getBudget({
  *     budgetId: testBudgetOciBudgetBudget.id,
  * });
  * ```
@@ -152,7 +152,7 @@ export interface GetBudgetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudget = oci.Budget.getBudget({
+ * const testBudget = oci.budget.getBudget({
  *     budgetId: testBudgetOciBudgetBudget.id,
  * });
  * ```

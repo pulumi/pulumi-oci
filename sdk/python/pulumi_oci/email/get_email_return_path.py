@@ -240,7 +240,7 @@ def get_email_return_path(email_return_path_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_path = oci.Email.get_email_return_path(email_return_path_id=test_email_return_path_oci_email_email_return_path["id"])
+    test_email_return_path = oci.email.get_email_return_path(email_return_path_id=test_email_return_path_oci_email_email_return_path["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_email_return_path_output(email_return_path_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_path = oci.Email.get_email_return_path(email_return_path_id=test_email_return_path_oci_email_email_return_path["id"])
+    test_email_return_path = oci.email.get_email_return_path(email_return_path_id=test_email_return_path_oci_email_email_return_path["id"])
     ```
 
 

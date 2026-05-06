@@ -149,7 +149,7 @@ def get_result(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+    test_result = oci.apmsynthetics.get_result(apm_domain_id=test_apm_domain["id"],
         execution_time=result_execution_time,
         monitor_id=test_monitor["id"],
         result_content_type=result_result_content_type,
@@ -202,7 +202,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+    test_result = oci.apmsynthetics.get_result(apm_domain_id=test_apm_domain["id"],
         execution_time=result_execution_time,
         monitor_id=test_monitor["id"],
         result_content_type=result_result_content_type,

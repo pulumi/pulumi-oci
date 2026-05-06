@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
+ * const testLogAnalyticsObjectCollectionRules = oci.loganalytics.getLogAnalyticsObjectCollectionRules({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  *     name: logAnalyticsObjectCollectionRuleName,
@@ -97,7 +97,7 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
+ * const testLogAnalyticsObjectCollectionRules = oci.loganalytics.getLogAnalyticsObjectCollectionRules({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  *     name: logAnalyticsObjectCollectionRuleName,

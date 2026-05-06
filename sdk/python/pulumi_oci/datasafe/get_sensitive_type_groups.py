@@ -174,9 +174,9 @@ def get_sensitive_type_groups(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_groups = oci.DataSafe.get_sensitive_type_groups(compartment_id=compartment_id,
+    test_sensitive_type_groups = oci.datasafe.get_sensitive_type_groups(compartment_id=compartment_id,
         access_level=sensitive_type_group_access_level,
-        compartment_id_in_subtree=sensitive_type_group_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_type_group_compartment_id_in_subtree == "true",
         display_name=sensitive_type_group_display_name,
         sensitive_type_group_id=test_sensitive_type_group["id"],
         state=sensitive_type_group_state,
@@ -244,9 +244,9 @@ def get_sensitive_type_groups_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_groups = oci.DataSafe.get_sensitive_type_groups(compartment_id=compartment_id,
+    test_sensitive_type_groups = oci.datasafe.get_sensitive_type_groups(compartment_id=compartment_id,
         access_level=sensitive_type_group_access_level,
-        compartment_id_in_subtree=sensitive_type_group_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_type_group_compartment_id_in_subtree == "true",
         display_name=sensitive_type_group_display_name,
         sensitive_type_group_id=test_sensitive_type_group["id"],
         state=sensitive_type_group_state,

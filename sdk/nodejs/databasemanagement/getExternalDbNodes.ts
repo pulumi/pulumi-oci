@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbNodes = oci.DatabaseManagement.getExternalDbNodes({
+ * const testExternalDbNodes = oci.databasemanagement.getExternalDbNodes({
  *     compartmentId: compartmentId,
  *     displayName: externalDbNodeDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,
@@ -91,7 +91,7 @@ export interface GetExternalDbNodesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbNodes = oci.DatabaseManagement.getExternalDbNodes({
+ * const testExternalDbNodes = oci.databasemanagement.getExternalDbNodes({
  *     compartmentId: compartmentId,
  *     displayName: externalDbNodeDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,

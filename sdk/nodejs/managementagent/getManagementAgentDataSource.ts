@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentDataSource = oci.ManagementAgent.getManagementAgentDataSource({
+ * const testManagementAgentDataSource = oci.managementagent.getManagementAgentDataSource({
  *     dataSourceKey: managementAgentDataSourceDataSourceKey,
  *     managementAgentId: testManagementAgent.id,
  * });
@@ -133,7 +133,7 @@ export interface GetManagementAgentDataSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentDataSource = oci.ManagementAgent.getManagementAgentDataSource({
+ * const testManagementAgentDataSource = oci.managementagent.getManagementAgentDataSource({
  *     dataSourceKey: managementAgentDataSourceDataSourceKey,
  *     managementAgentId: testManagementAgent.id,
  * });

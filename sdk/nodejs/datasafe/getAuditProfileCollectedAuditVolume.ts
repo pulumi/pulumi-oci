@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
+ * const testAuditProfileCollectedAuditVolume = oci.datasafe.getAuditProfileCollectedAuditVolume({
  *     auditProfileId: testAuditProfile.id,
  *     workRequestId: testWorkRequest.id,
  *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
@@ -92,7 +92,7 @@ export interface GetAuditProfileCollectedAuditVolumeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
+ * const testAuditProfileCollectedAuditVolume = oci.datasafe.getAuditProfileCollectedAuditVolume({
  *     auditProfileId: testAuditProfile.id,
  *     workRequestId: testWorkRequest.id,
  *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,

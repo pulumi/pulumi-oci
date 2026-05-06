@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmDiskGroups = oci.DatabaseManagement.getCloudAsmDiskGroups({
+ * const testCloudAsmDiskGroups = oci.databasemanagement.getCloudAsmDiskGroups({
  *     cloudAsmId: testCloudAsm.id,
  *     opcNamedCredentialId: cloudAsmDiskGroupOpcNamedCredentialId,
  * });
@@ -74,7 +74,7 @@ export interface GetCloudAsmDiskGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmDiskGroups = oci.DatabaseManagement.getCloudAsmDiskGroups({
+ * const testCloudAsmDiskGroups = oci.databasemanagement.getCloudAsmDiskGroups({
  *     cloudAsmId: testCloudAsm.id,
  *     opcNamedCredentialId: cloudAsmDiskGroupOpcNamedCredentialId,
  * });

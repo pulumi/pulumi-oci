@@ -262,11 +262,11 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+    test_masking_policies_masking_columns = oci.datasafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policies_masking_column_column_name,
         data_types=masking_policies_masking_column_data_type,
-        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
-        is_seed_required=masking_policies_masking_column_is_seed_required,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
+        is_seed_required=masking_policies_masking_column_is_seed_required == "true",
         masking_column_groups=masking_policies_masking_column_masking_column_group,
         masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
         objects=masking_policies_masking_column_object,
@@ -367,11 +367,11 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+    test_masking_policies_masking_columns = oci.datasafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policies_masking_column_column_name,
         data_types=masking_policies_masking_column_data_type,
-        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
-        is_seed_required=masking_policies_masking_column_is_seed_required,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
+        is_seed_required=masking_policies_masking_column_is_seed_required == "true",
         masking_column_groups=masking_policies_masking_column_masking_column_group,
         masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
         objects=masking_policies_masking_column_object,

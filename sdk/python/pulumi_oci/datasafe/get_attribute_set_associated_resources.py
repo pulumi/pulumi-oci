@@ -121,7 +121,7 @@ def get_attribute_set_associated_resources(associated_resource_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set_associated_resources = oci.DataSafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
+    test_attribute_set_associated_resources = oci.datasafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
         associated_resource_id=test_resource["id"],
         associated_resource_type=attribute_set_associated_resource_associated_resource_type)
     ```
@@ -162,7 +162,7 @@ def get_attribute_set_associated_resources_output(associated_resource_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set_associated_resources = oci.DataSafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
+    test_attribute_set_associated_resources = oci.datasafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
         associated_resource_id=test_resource["id"],
         associated_resource_type=attribute_set_associated_resource_associated_resource_type)
     ```

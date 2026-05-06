@@ -31,13 +31,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
+ * const testSecurityAssessments = oci.datasafe.getSecurityAssessments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree === "true",
  *     displayName: securityAssessmentDisplayName,
- *     isBaseline: securityAssessmentIsBaseline,
- *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     isBaseline: securityAssessmentIsBaseline === "true",
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment === "true",
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -231,13 +231,13 @@ export interface GetSecurityAssessmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
+ * const testSecurityAssessments = oci.datasafe.getSecurityAssessments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree === "true",
  *     displayName: securityAssessmentDisplayName,
- *     isBaseline: securityAssessmentIsBaseline,
- *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     isBaseline: securityAssessmentIsBaseline === "true",
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment === "true",
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

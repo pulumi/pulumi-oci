@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpaInstances = oci.Opa.getOpaInstances({
+ * const testOpaInstances = oci.opa.getOpaInstances({
  *     compartmentId: compartmentId,
  *     displayName: opaInstanceDisplayName,
  *     id: opaInstanceId,
@@ -97,7 +97,7 @@ export interface GetOpaInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpaInstances = oci.Opa.getOpaInstances({
+ * const testOpaInstances = oci.opa.getOpaInstances({
  *     compartmentId: compartmentId,
  *     displayName: opaInstanceDisplayName,
  *     id: opaInstanceId,

@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testPingMonitor = new oci.healthchecks.PingMonitor("test_ping_monitor", {
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
- *     intervalInSeconds: pingMonitorIntervalInSeconds,
+ *     intervalInSeconds: Number(pingMonitorIntervalInSeconds),
  *     protocol: pingMonitorProtocol,
  *     targets: pingMonitorTargets,
  *     definedTags: {
@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: pingMonitorIsEnabled,
- *     port: pingMonitorPort,
- *     timeoutInSeconds: pingMonitorTimeoutInSeconds,
+ *     isEnabled: pingMonitorIsEnabled === "true",
+ *     port: Number(pingMonitorPort),
+ *     timeoutInSeconds: Number(pingMonitorTimeoutInSeconds),
  *     vantagePointNames: pingMonitorVantagePointNames,
  * });
  * ```

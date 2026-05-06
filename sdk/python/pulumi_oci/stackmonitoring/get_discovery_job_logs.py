@@ -108,7 +108,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
+    test_discovery_job_logs = oci.stackmonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
 
@@ -144,7 +144,7 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
+    test_discovery_job_logs = oci.stackmonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
 

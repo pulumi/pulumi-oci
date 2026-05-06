@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on Subnet OCID
- * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
+ * const testPrivateIpsBySubnet = oci.core.getPrivateIps({
  *     subnetId: privateIpSubnetId,
  * });
  * ```
@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on VNIC OCID
- * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
+ * const testPrivateIpsByVnic = oci.core.getPrivateIps({
  *     vnicId: testVnic.id,
  * });
  * ```
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on private IP address and Subnet OCID
- * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
+ * const testPrivateIpsByIpAddress = oci.core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
  *     ipState: privateIpIpState,
  *     lifetime: privateIpLifetime,
@@ -175,7 +175,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on Subnet OCID
- * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
+ * const testPrivateIpsBySubnet = oci.core.getPrivateIps({
  *     subnetId: privateIpSubnetId,
  * });
  * ```
@@ -184,7 +184,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on VNIC OCID
- * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
+ * const testPrivateIpsByVnic = oci.core.getPrivateIps({
  *     vnicId: testVnic.id,
  * });
  * ```
@@ -193,7 +193,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on private IP address and Subnet OCID
- * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
+ * const testPrivateIpsByIpAddress = oci.core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
  *     ipState: privateIpIpState,
  *     lifetime: privateIpLifetime,

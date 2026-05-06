@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathAnalyzerTests = oci.VnMonitoring.GetPathAnalyzerTests({
+ * const testPathAnalyzerTests = oci.vnmonitoring.GetPathAnalyzerTests({
  *     compartmentId: compartmentId,
  *     displayName: pathAnalyzerTestDisplayName,
  *     state: pathAnalyzerTestState,
@@ -90,7 +90,7 @@ export interface GetPathAnalyzerTestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathAnalyzerTests = oci.VnMonitoring.GetPathAnalyzerTests({
+ * const testPathAnalyzerTests = oci.vnmonitoring.GetPathAnalyzerTests({
  *     compartmentId: compartmentId,
  *     displayName: pathAnalyzerTestDisplayName,
  *     state: pathAnalyzerTestState,

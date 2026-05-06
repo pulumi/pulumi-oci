@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testFusionEnvironmentDataMaskingActivity = new oci.fusionapps.FusionEnvironmentDataMaskingActivity("test_fusion_environment_data_masking_activity", {
  *     fusionEnvironmentId: testFusionEnvironment.id,
- *     isResumeDataMasking: fusionEnvironmentDataMaskingActivityIsResumeDataMasking,
+ *     isResumeDataMasking: fusionEnvironmentDataMaskingActivityIsResumeDataMasking === "true",
  * });
  * ```
  *

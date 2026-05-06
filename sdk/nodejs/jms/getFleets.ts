@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.Jms.getFleets({
+ * const testFleets = oci.jms.getFleets({
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
  *     displayNameContains: fleetDisplayNameContains,
@@ -106,7 +106,7 @@ export interface GetFleetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.Jms.getFleets({
+ * const testFleets = oci.jms.getFleets({
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
  *     displayNameContains: fleetDisplayNameContains,

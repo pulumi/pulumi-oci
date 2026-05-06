@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     reportingRegion: cloudGuardConfigurationReportingRegion,
  *     status: cloudGuardConfigurationStatus,
- *     selfManageResources: cloudGuardConfigurationSelfManageResources,
+ *     selfManageResources: cloudGuardConfigurationSelfManageResources === "true",
  * });
  * ```
  *

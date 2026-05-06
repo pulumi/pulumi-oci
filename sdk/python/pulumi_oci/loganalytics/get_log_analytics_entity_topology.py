@@ -138,7 +138,7 @@ def get_log_analytics_entity_topology(context: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_topology = oci.loganalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
         context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,
@@ -189,7 +189,7 @@ def get_log_analytics_entity_topology_output(context: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_topology = oci.loganalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
         context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,

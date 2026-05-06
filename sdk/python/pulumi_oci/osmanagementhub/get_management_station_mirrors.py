@@ -128,7 +128,7 @@ def get_management_station_mirrors(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+    test_management_station_mirrors = oci.osmanagementhub.get_management_station_mirrors(management_station_id=test_management_station["id"],
         display_name=management_station_mirror_display_name,
         display_name_contains=management_station_mirror_display_name_contains,
         mirror_states=management_station_mirror_mirror_states)
@@ -174,7 +174,7 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+    test_management_station_mirrors = oci.osmanagementhub.get_management_station_mirrors(management_station_id=test_management_station["id"],
         display_name=management_station_mirror_display_name,
         display_name_contains=management_station_mirror_display_name_contains,
         mirror_states=management_station_mirror_mirror_states)

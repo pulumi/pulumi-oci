@@ -429,7 +429,7 @@ def get_management_station(management_station_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station = oci.OsManagementHub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
+    test_management_station = oci.osmanagementhub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
     ```
 
 
@@ -486,7 +486,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station = oci.OsManagementHub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
+    test_management_station = oci.osmanagementhub.get_management_station(management_station_id=test_management_station_oci_os_management_hub_management_station["id"])
     ```
 
 

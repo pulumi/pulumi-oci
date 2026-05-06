@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccMetricAlarms = oci.DemandSignal.getOccMetricAlarms({
+ * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  * });
  * ```
  */
@@ -90,10 +90,10 @@ export interface GetOccMetricAlarmsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccMetricAlarms = oci.DemandSignal.getOccMetricAlarms({
+ * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive,
+ *     isActive: occMetricAlarmIsActive === "true",
  * });
  * ```
  */

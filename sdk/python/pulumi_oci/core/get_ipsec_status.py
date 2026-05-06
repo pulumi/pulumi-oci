@@ -120,7 +120,7 @@ def get_ipsec_status(filters: Optional[Sequence[Union['GetIpsecStatusFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_status = oci.Core.get_ipsec_status(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_device_status = oci.core.get_ipsec_status(ipsec_id=test_ipsec["id"])
     ```
 
 
@@ -154,7 +154,7 @@ def get_ipsec_status_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_status = oci.Core.get_ipsec_status(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_device_status = oci.core.get_ipsec_status(ipsec_id=test_ipsec["id"])
     ```
 
 

@@ -95,7 +95,7 @@ def get_managed_my_sql_database_outbound_replications(filters: Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_outbound_replications = oci.DatabaseManagement.get_managed_my_sql_database_outbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_outbound_replications = oci.databasemanagement.get_managed_my_sql_database_outbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_managed_my_sql_database_outbound_replications_output(filters: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_outbound_replications = oci.DatabaseManagement.get_managed_my_sql_database_outbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_outbound_replications = oci.databasemanagement.get_managed_my_sql_database_outbound_replications(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

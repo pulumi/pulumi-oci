@@ -165,7 +165,7 @@ def get_db_system_maintenance_events(db_system_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_maintenance_events = oci.Mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
+    test_db_system_maintenance_events = oci.mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
         maintenance_action=db_system_maintenance_event_maintenance_action,
         maintenance_status=db_system_maintenance_event_maintenance_status,
         maintenance_type=db_system_maintenance_event_maintenance_type,
@@ -221,7 +221,7 @@ def get_db_system_maintenance_events_output(db_system_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_maintenance_events = oci.Mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
+    test_db_system_maintenance_events = oci.mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
         maintenance_action=db_system_maintenance_event_maintenance_action,
         maintenance_status=db_system_maintenance_event_maintenance_status,
         maintenance_type=db_system_maintenance_event_maintenance_type,

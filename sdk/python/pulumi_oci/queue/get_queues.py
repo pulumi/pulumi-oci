@@ -125,7 +125,7 @@ def get_queues(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+    test_queues = oci.queue.get_queues(compartment_id=compartment_id,
         display_name=queue_display_name,
         id=queue_id,
         state=queue_state)
@@ -170,7 +170,7 @@ def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+    test_queues = oci.queue.get_queues(compartment_id=compartment_id,
         display_name=queue_display_name,
         id=queue_id,
         state=queue_state)

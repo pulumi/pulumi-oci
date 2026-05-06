@@ -449,8 +449,8 @@ class ScheduledAction(pulumi.CustomResource):
             scheduling_window_id=test_scheduling_window["id"],
             action_members=[{
                 "member_id": test_member["id"],
-                "member_order": scheduled_action_action_members_member_order,
-                "estimated_time_in_mins": scheduled_action_action_members_estimated_time_in_mins,
+                "member_order": int(scheduled_action_action_members_member_order),
+                "estimated_time_in_mins": int(scheduled_action_action_members_estimated_time_in_mins),
             }],
             action_params=scheduled_action_action_params,
             defined_tags=scheduled_action_defined_tags,
@@ -507,8 +507,8 @@ class ScheduledAction(pulumi.CustomResource):
             scheduling_window_id=test_scheduling_window["id"],
             action_members=[{
                 "member_id": test_member["id"],
-                "member_order": scheduled_action_action_members_member_order,
-                "estimated_time_in_mins": scheduled_action_action_members_estimated_time_in_mins,
+                "member_order": int(scheduled_action_action_members_member_order),
+                "estimated_time_in_mins": int(scheduled_action_action_members_estimated_time_in_mins),
             }],
             action_params=scheduled_action_action_params,
             defined_tags=scheduled_action_defined_tags,

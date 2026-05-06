@@ -259,7 +259,7 @@ def get_data_asset(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=test_catalog["id"],
+    test_data_asset = oci.datacatalog.get_data_asset(catalog_id=test_catalog["id"],
         data_asset_key=data_asset_data_asset_key,
         fields=data_asset_fields)
     ```
@@ -310,7 +310,7 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=test_catalog["id"],
+    test_data_asset = oci.datacatalog.get_data_asset(catalog_id=test_catalog["id"],
         data_asset_key=data_asset_data_asset_key,
         fields=data_asset_fields)
     ```

@@ -552,7 +552,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
 
 
@@ -619,7 +619,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
+    test_cloud_exadata_infrastructure = oci.database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
 
 

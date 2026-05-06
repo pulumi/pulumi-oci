@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobAdvisorReportChecks = oci.DatabaseMigration.getJobAdvisorReportChecks({
+ * const testJobAdvisorReportChecks = oci.databasemigration.getJobAdvisorReportChecks({
  *     jobId: testJob.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetJobAdvisorReportChecksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobAdvisorReportChecks = oci.DatabaseMigration.getJobAdvisorReportChecks({
+ * const testJobAdvisorReportChecks = oci.databasemigration.getJobAdvisorReportChecks({
  *     jobId: testJob.id,
  * });
  * ```

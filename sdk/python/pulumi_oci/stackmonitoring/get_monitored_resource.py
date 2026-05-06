@@ -363,7 +363,7 @@ def get_monitored_resource(monitored_resource_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
+    test_monitored_resource = oci.stackmonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
     ```
 
 
@@ -415,7 +415,7 @@ def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
+    test_monitored_resource = oci.stackmonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
     ```
 
 

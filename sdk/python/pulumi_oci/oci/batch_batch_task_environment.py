@@ -452,9 +452,9 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             security_context={
-                "fs_group": batch_task_environment_security_context_fs_group,
-                "run_as_group": batch_task_environment_security_context_run_as_group,
-                "run_as_user": batch_task_environment_security_context_run_as_user,
+                "fs_group": int(batch_task_environment_security_context_fs_group),
+                "run_as_group": int(batch_task_environment_security_context_run_as_group),
+                "run_as_user": int(batch_task_environment_security_context_run_as_user),
             },
             volumes=[{
                 "local_mount_directory_path": batch_task_environment_volumes_local_mount_directory_path,
@@ -525,9 +525,9 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             security_context={
-                "fs_group": batch_task_environment_security_context_fs_group,
-                "run_as_group": batch_task_environment_security_context_run_as_group,
-                "run_as_user": batch_task_environment_security_context_run_as_user,
+                "fs_group": int(batch_task_environment_security_context_fs_group),
+                "run_as_group": int(batch_task_environment_security_context_run_as_group),
+                "run_as_user": int(batch_task_environment_security_context_run_as_user),
             },
             volumes=[{
                 "local_mount_directory_path": batch_task_environment_volumes_local_mount_directory_path,

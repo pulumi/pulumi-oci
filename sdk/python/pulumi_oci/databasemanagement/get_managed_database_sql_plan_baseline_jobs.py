@@ -118,7 +118,7 @@ def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[Union
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_jobs = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_plan_baseline_jobs = oci.databasemanagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_plan_baseline_job_name,
         opc_named_credential_id=managed_database_sql_plan_baseline_job_opc_named_credential_id)
     ```
@@ -159,7 +159,7 @@ def get_managed_database_sql_plan_baseline_jobs_output(filters: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_jobs = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_plan_baseline_jobs = oci.databasemanagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_plan_baseline_job_name,
         opc_named_credential_id=managed_database_sql_plan_baseline_job_opc_named_credential_id)
     ```

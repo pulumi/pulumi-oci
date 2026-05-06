@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
+ * const testCompatibleFormatsForDataType = oci.datasafe.getCompatibleFormatsForDataType({});
  * ```
  */
 export function getCompatibleFormatsForDataType(opts?: pulumi.InvokeOptions): Promise<GetCompatibleFormatsForDataTypeResult> {
@@ -62,7 +62,7 @@ export interface GetCompatibleFormatsForDataTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
+ * const testCompatibleFormatsForDataType = oci.datasafe.getCompatibleFormatsForDataType({});
  * ```
  */
 export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {

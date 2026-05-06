@@ -138,7 +138,7 @@ def get_deploy_stages(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=compartment_id,
+    test_deploy_stages = oci.devops.get_deploy_stages(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deploy_stage_display_name,
         id=deploy_stage_id,
@@ -188,7 +188,7 @@ def get_deploy_stages_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stages = oci.DevOps.get_deploy_stages(compartment_id=compartment_id,
+    test_deploy_stages = oci.devops.get_deploy_stages(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deploy_stage_display_name,
         id=deploy_stage_id,

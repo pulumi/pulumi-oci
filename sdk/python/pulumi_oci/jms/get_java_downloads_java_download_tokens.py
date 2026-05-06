@@ -158,7 +158,7 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+    test_java_download_tokens = oci.jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
         display_name=java_download_token_display_name,
         family_version=java_download_token_family_version,
         id=java_download_token_id,
@@ -218,7 +218,7 @@ def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+    test_java_download_tokens = oci.jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
         display_name=java_download_token_display_name,
         family_version=java_download_token_family_version,
         id=java_download_token_id,

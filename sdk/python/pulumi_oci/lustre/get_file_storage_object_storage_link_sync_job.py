@@ -273,7 +273,7 @@ def get_file_storage_object_storage_link_sync_job(object_storage_link_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_job = oci.Lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_job = oci.lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
         sync_job_id=test_job["id"])
     ```
 
@@ -321,7 +321,7 @@ def get_file_storage_object_storage_link_sync_job_output(object_storage_link_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_job = oci.Lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_job = oci.lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
         sync_job_id=test_job["id"])
     ```
 

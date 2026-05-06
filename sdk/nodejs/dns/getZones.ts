@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZones = oci.Dns.getZones({
+ * const testZones = oci.dns.getZones({
  *     compartmentId: compartmentId,
  *     dnssecState: zoneDnssecState,
  *     name: zoneName,
@@ -176,7 +176,7 @@ export interface GetZonesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZones = oci.Dns.getZones({
+ * const testZones = oci.dns.getZones({
  *     compartmentId: compartmentId,
  *     dnssecState: zoneDnssecState,
  *     name: zoneName,

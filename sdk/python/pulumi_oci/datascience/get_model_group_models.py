@@ -148,7 +148,7 @@ def get_model_group_models(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_models = oci.DataScience.get_model_group_models(compartment_id=compartment_id,
+    test_model_group_models = oci.datascience.get_model_group_models(compartment_id=compartment_id,
         model_group_id=test_model_group["id"],
         created_by=model_group_model_created_by,
         display_name=model_group_model_display_name,
@@ -203,7 +203,7 @@ def get_model_group_models_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_models = oci.DataScience.get_model_group_models(compartment_id=compartment_id,
+    test_model_group_models = oci.datascience.get_model_group_models(compartment_id=compartment_id,
         model_group_id=test_model_group["id"],
         created_by=model_group_model_created_by,
         display_name=model_group_model_display_name,

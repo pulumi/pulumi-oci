@@ -119,7 +119,7 @@ def get_vault_usage(vault_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_usage = oci.Kms.get_vault_usage(vault_id=test_vault["id"])
+    test_vault_usage = oci.kms.get_vault_usage(vault_id=test_vault["id"])
     ```
 
 
@@ -150,7 +150,7 @@ def get_vault_usage_output(vault_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_vault_usage = oci.Kms.get_vault_usage(vault_id=test_vault["id"])
+    test_vault_usage = oci.kms.get_vault_usage(vault_id=test_vault["id"])
     ```
 
 

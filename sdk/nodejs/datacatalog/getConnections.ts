@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DataCatalog.getConnections({
+ * const testConnections = oci.datacatalog.getConnections({
  *     catalogId: testCatalog.id,
  *     dataAssetKey: connectionDataAssetKey,
  *     createdById: testCreatedBy.id,
@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     displayNameContains: connectionDisplayNameContains,
  *     externalKey: connectionExternalKey,
  *     fields: connectionFields,
- *     isDefault: connectionIsDefault,
+ *     isDefault: connectionIsDefault === "true",
  *     state: connectionState,
  *     timeCreated: connectionTimeCreated,
  *     timeStatusUpdated: connectionTimeStatusUpdated,
@@ -181,7 +181,7 @@ export interface GetConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DataCatalog.getConnections({
+ * const testConnections = oci.datacatalog.getConnections({
  *     catalogId: testCatalog.id,
  *     dataAssetKey: connectionDataAssetKey,
  *     createdById: testCreatedBy.id,
@@ -189,7 +189,7 @@ export interface GetConnectionsResult {
  *     displayNameContains: connectionDisplayNameContains,
  *     externalKey: connectionExternalKey,
  *     fields: connectionFields,
- *     isDefault: connectionIsDefault,
+ *     isDefault: connectionIsDefault === "true",
  *     state: connectionState,
  *     timeCreated: connectionTimeCreated,
  *     timeStatusUpdated: connectionTimeStatusUpdated,

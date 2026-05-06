@@ -616,13 +616,13 @@ class Runbook(pulumi.CustomResource):
                     "properties": {
                         "action_on_failure": runbook_runbook_version_groups_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_groups_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_groups_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_groups_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_groups_properties_pre_condition,
                         "run_on": {
@@ -663,9 +663,9 @@ class Runbook(pulumi.CustomResource):
                                 "id": runbook_runbook_version_tasks_task_record_details_execution_details_credentials_id,
                             }],
                             "endpoint": runbook_runbook_version_tasks_task_record_details_execution_details_endpoint,
-                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
-                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content == "true",
+                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked == "true",
+                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled == "true",
                             "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
@@ -677,15 +677,15 @@ class Runbook(pulumi.CustomResource):
                                 "output_variables": runbook_runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
                             },
                         },
-                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task,
-                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task,
+                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task == "true",
+                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled == "true",
+                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task == "true",
                         "name": runbook_runbook_version_tasks_task_record_details_name,
                         "os_type": runbook_runbook_version_tasks_task_record_details_os_type,
                         "platform": runbook_runbook_version_tasks_task_record_details_platform,
                         "properties": {
-                            "num_retries": runbook_runbook_version_tasks_task_record_details_properties_num_retries,
-                            "timeout_in_seconds": runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
+                            "num_retries": int(runbook_runbook_version_tasks_task_record_details_properties_num_retries),
+                            "timeout_in_seconds": int(runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds),
                         },
                         "task_record_id": test_task_record["id"],
                     },
@@ -699,13 +699,13 @@ class Runbook(pulumi.CustomResource):
                     "step_properties": {
                         "action_on_failure": runbook_runbook_version_tasks_step_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_tasks_step_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_tasks_step_properties_pre_condition,
                         "run_on": {
@@ -723,7 +723,7 @@ class Runbook(pulumi.CustomResource):
                         },
                     },
                 }],
-                "is_latest": runbook_runbook_version_is_latest,
+                "is_latest": runbook_runbook_version_is_latest == "true",
                 "rollback_workflow_details": {
                     "scope": runbook_runbook_version_rollback_workflow_details_scope,
                     "workflows": [{
@@ -747,8 +747,8 @@ class Runbook(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=runbook_is_default,
-            is_sudo_access_needed=runbook_is_sudo_access_needed,
+            is_default=runbook_is_default == "true",
+            is_sudo_access_needed=runbook_is_sudo_access_needed == "true",
             os_type=runbook_os_type,
             platform=runbook_platform)
         ```
@@ -820,13 +820,13 @@ class Runbook(pulumi.CustomResource):
                     "properties": {
                         "action_on_failure": runbook_runbook_version_groups_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_groups_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_groups_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_groups_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_groups_properties_pre_condition,
                         "run_on": {
@@ -867,9 +867,9 @@ class Runbook(pulumi.CustomResource):
                                 "id": runbook_runbook_version_tasks_task_record_details_execution_details_credentials_id,
                             }],
                             "endpoint": runbook_runbook_version_tasks_task_record_details_execution_details_endpoint,
-                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
-                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content == "true",
+                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked == "true",
+                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled == "true",
                             "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
@@ -881,15 +881,15 @@ class Runbook(pulumi.CustomResource):
                                 "output_variables": runbook_runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
                             },
                         },
-                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task,
-                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task,
+                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task == "true",
+                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled == "true",
+                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task == "true",
                         "name": runbook_runbook_version_tasks_task_record_details_name,
                         "os_type": runbook_runbook_version_tasks_task_record_details_os_type,
                         "platform": runbook_runbook_version_tasks_task_record_details_platform,
                         "properties": {
-                            "num_retries": runbook_runbook_version_tasks_task_record_details_properties_num_retries,
-                            "timeout_in_seconds": runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
+                            "num_retries": int(runbook_runbook_version_tasks_task_record_details_properties_num_retries),
+                            "timeout_in_seconds": int(runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds),
                         },
                         "task_record_id": test_task_record["id"],
                     },
@@ -903,13 +903,13 @@ class Runbook(pulumi.CustomResource):
                     "step_properties": {
                         "action_on_failure": runbook_runbook_version_tasks_step_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_tasks_step_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_tasks_step_properties_pre_condition,
                         "run_on": {
@@ -927,7 +927,7 @@ class Runbook(pulumi.CustomResource):
                         },
                     },
                 }],
-                "is_latest": runbook_runbook_version_is_latest,
+                "is_latest": runbook_runbook_version_is_latest == "true",
                 "rollback_workflow_details": {
                     "scope": runbook_runbook_version_rollback_workflow_details_scope,
                     "workflows": [{
@@ -951,8 +951,8 @@ class Runbook(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=runbook_is_default,
-            is_sudo_access_needed=runbook_is_sudo_access_needed,
+            is_default=runbook_is_default == "true",
+            is_sudo_access_needed=runbook_is_sudo_access_needed == "true",
             os_type=runbook_os_type,
             platform=runbook_platform)
         ```

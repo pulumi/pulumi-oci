@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplica = oci.Mysql.getReplica({
+ * const testReplica = oci.mysql.getReplica({
  *     replicaId: testReplicaOciMysqlReplica.id,
  * });
  * ```
@@ -160,7 +160,7 @@ export interface GetReplicaResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplica = oci.Mysql.getReplica({
+ * const testReplica = oci.mysql.getReplica({
  *     replicaId: testReplicaOciMysqlReplica.id,
  * });
  * ```

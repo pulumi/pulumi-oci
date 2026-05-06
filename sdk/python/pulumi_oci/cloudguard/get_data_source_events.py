@@ -113,7 +113,7 @@ def get_data_source_events(data_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=test_data_source["id"],
+    test_data_source_events = oci.cloudguard.get_data_source_events(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 
@@ -151,7 +151,7 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=test_data_source["id"],
+    test_data_source_events = oci.cloudguard.get_data_source_events(data_source_id=test_data_source["id"],
         region=data_source_event_region)
     ```
 

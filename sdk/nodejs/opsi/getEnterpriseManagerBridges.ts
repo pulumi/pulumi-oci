@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnterpriseManagerBridges = oci.Opsi.getEnterpriseManagerBridges({
+ * const testEnterpriseManagerBridges = oci.opsi.getEnterpriseManagerBridges({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree === "true",
  *     displayName: enterpriseManagerBridgeDisplayName,
  *     id: enterpriseManagerBridgeId,
  *     states: enterpriseManagerBridgeState,
@@ -106,9 +106,9 @@ export interface GetEnterpriseManagerBridgesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnterpriseManagerBridges = oci.Opsi.getEnterpriseManagerBridges({
+ * const testEnterpriseManagerBridges = oci.opsi.getEnterpriseManagerBridges({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree === "true",
  *     displayName: enterpriseManagerBridgeDisplayName,
  *     id: enterpriseManagerBridgeId,
  *     states: enterpriseManagerBridgeState,

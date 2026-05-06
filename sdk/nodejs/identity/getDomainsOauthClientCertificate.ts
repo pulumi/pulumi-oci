@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthClientCertificate = oci.Identity.getDomainsOauthClientCertificate({
+ * const testOauthClientCertificate = oci.identity.getDomainsOauthClientCertificate({
  *     idcsEndpoint: testDomain.url,
  *     oAuthClientCertificateId: testCertificate.id,
  *     authorization: oauthClientCertificateAuthorization,
@@ -173,7 +173,7 @@ export interface GetDomainsOauthClientCertificateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthClientCertificate = oci.Identity.getDomainsOauthClientCertificate({
+ * const testOauthClientCertificate = oci.identity.getDomainsOauthClientCertificate({
  *     idcsEndpoint: testDomain.url,
  *     oAuthClientCertificateId: testCertificate.id,
  *     authorization: oauthClientCertificateAuthorization,

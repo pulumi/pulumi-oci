@@ -287,14 +287,14 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_jobs = oci.OsManagementHub.get_scheduled_jobs(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree,
+    test_scheduled_jobs = oci.osmanagementhub.get_scheduled_jobs(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree == "true",
         display_name=scheduled_job_display_name,
         display_name_contains=scheduled_job_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"],
         id=scheduled_job_id,
-        is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
-        is_restricted=scheduled_job_is_restricted,
+        is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
+        is_restricted=scheduled_job_is_restricted == "true",
         lifecycle_stage_id=test_lifecycle_stage["id"],
         locations=scheduled_job_location,
         location_not_equal_tos=scheduled_job_location_not_equal_to,
@@ -407,14 +407,14 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_jobs = oci.OsManagementHub.get_scheduled_jobs(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree,
+    test_scheduled_jobs = oci.osmanagementhub.get_scheduled_jobs(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree == "true",
         display_name=scheduled_job_display_name,
         display_name_contains=scheduled_job_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"],
         id=scheduled_job_id,
-        is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
-        is_restricted=scheduled_job_is_restricted,
+        is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux == "true",
+        is_restricted=scheduled_job_is_restricted == "true",
         lifecycle_stage_id=test_lifecycle_stage["id"],
         locations=scheduled_job_location,
         location_not_equal_tos=scheduled_job_location_not_equal_to,

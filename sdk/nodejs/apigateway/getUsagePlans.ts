@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagePlans = oci.ApiGateway.getUsagePlans({
+ * const testUsagePlans = oci.apigateway.getUsagePlans({
  *     compartmentId: compartmentId,
  *     displayName: usagePlanDisplayName,
  *     state: usagePlanState,
@@ -90,7 +90,7 @@ export interface GetUsagePlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagePlans = oci.ApiGateway.getUsagePlans({
+ * const testUsagePlans = oci.apigateway.getUsagePlans({
  *     compartmentId: compartmentId,
  *     displayName: usagePlanDisplayName,
  *     state: usagePlanState,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
+ * const testTraceAggregatedSnapshotData = oci.apmtraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceAggregatedSnapshotDataTraceKey,
  *     serverName: traceAggregatedSnapshotDataServerName,
@@ -99,7 +99,7 @@ export interface GetTraceAggregatedSnapshotDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
+ * const testTraceAggregatedSnapshotData = oci.apmtraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceAggregatedSnapshotDataTraceKey,
  *     serverName: traceAggregatedSnapshotDataServerName,

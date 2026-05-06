@@ -36,18 +36,18 @@ import (
 //				AccessLevel:            pulumi.StringRef(managementAgentAccessLevel),
 //				AvailabilityStatus:     pulumi.StringRef(managementAgentAvailabilityStatus),
 //				CompartmentIdInSubtree: pulumi.BoolRef(managementAgentCompartmentIdInSubtree),
-//				DataSourceNames:        testManagementAgentDataSource.Name,
+//				DataSourceNames:        pulumi.ToArray(testManagementAgentDataSource.Name),
 //				DataSourceType:         pulumi.StringRef(managementAgentDataSourceType),
 //				DisplayName:            pulumi.StringRef(managementAgentDisplayName),
-//				GatewayIds:             testGateway.Id,
+//				GatewayIds:             pulumi.ToArray(testGateway.Id),
 //				HostId:                 pulumi.StringRef(testHost.Id),
 //				WaitForHostId:          pulumi.IntRef(10),
 //				InstallType:            pulumi.StringRef(managementAgentInstallType),
 //				IsCustomerDeployed:     pulumi.BoolRef(managementAgentIsCustomerDeployed),
-//				PlatformTypes:          managementAgentPlatformType,
-//				PluginNames:            managementAgentPluginName,
+//				PlatformTypes:          pulumi.ToArray(managementAgentPlatformType),
+//				PluginNames:            pulumi.ToArray(managementAgentPluginName),
 //				State:                  pulumi.StringRef(managementAgentState),
-//				Versions:               managementAgentVersion,
+//				Versions:               pulumi.ToArray(managementAgentVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

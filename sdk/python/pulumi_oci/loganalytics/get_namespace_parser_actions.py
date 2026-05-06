@@ -118,7 +118,7 @@ def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_parser_actions = oci.LogAnalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
+    test_namespace_parser_actions = oci.loganalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
         action_display_text=namespace_parser_action_action_display_text,
         name=namespace_parser_action_name)
     ```
@@ -159,7 +159,7 @@ def get_namespace_parser_actions_output(action_display_text: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_parser_actions = oci.LogAnalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
+    test_namespace_parser_actions = oci.loganalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
         action_display_text=namespace_parser_action_action_display_text,
         name=namespace_parser_action_name)
     ```

@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     softwareType: byolSoftwareType,
  *     timeTermEnd: byolTimeTermEnd,
  *     timeTermStart: byolTimeTermStart,
- *     totalUnits: byolTotalUnits,
+ *     totalUnits: Number(byolTotalUnits),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

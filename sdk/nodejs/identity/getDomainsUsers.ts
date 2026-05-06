@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getDomainsUsers({
+ * const testUsers = oci.identity.getDomainsUsers({
  *     idcsEndpoint: testDomain.url,
- *     userCount: userUserCount,
+ *     userCount: Number(userUserCount),
  *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userAuthorization,
  *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
- *     startIndex: userStartIndex,
+ *     startIndex: Number(userStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsers = oci.Identity.getDomainsUsers({
+ * const testUsers = oci.identity.getDomainsUsers({
  *     idcsEndpoint: testDomain.url,
- *     userCount: userUserCount,
+ *     userCount: Number(userUserCount),
  *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userAuthorization,
  *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
- *     startIndex: userStartIndex,
+ *     startIndex: Number(userStartIndex),
  * });
  * ```
  */

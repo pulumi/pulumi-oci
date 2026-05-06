@@ -71,7 +71,7 @@ def get_occ_availability_catalog_content(occ_availability_catalog_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_content = oci.CapacityManagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
+    test_occ_availability_catalog_content = oci.capacitymanagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
 
 
@@ -98,7 +98,7 @@ def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_availability_catalog_content = oci.CapacityManagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
+    test_occ_availability_catalog_content = oci.capacitymanagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
 
 

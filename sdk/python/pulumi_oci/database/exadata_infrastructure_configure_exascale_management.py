@@ -929,7 +929,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
 
         test_exadata_infrastructure_configure_exascale_management = oci.database.ExadataInfrastructureConfigureExascaleManagement("test_exadata_infrastructure_configure_exascale_management",
             exadata_infrastructure_id=test_exadata_infrastructure["id"],
-            total_storage_in_gbs=exadata_infrastructure_configure_exascale_management_total_storage_in_gbs)
+            total_storage_in_gbs=int(exadata_infrastructure_configure_exascale_management_total_storage_in_gbs))
         ```
 
         ## Import
@@ -969,7 +969,7 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
 
         test_exadata_infrastructure_configure_exascale_management = oci.database.ExadataInfrastructureConfigureExascaleManagement("test_exadata_infrastructure_configure_exascale_management",
             exadata_infrastructure_id=test_exadata_infrastructure["id"],
-            total_storage_in_gbs=exadata_infrastructure_configure_exascale_management_total_storage_in_gbs)
+            total_storage_in_gbs=int(exadata_infrastructure_configure_exascale_management_total_storage_in_gbs))
         ```
 
         ## Import

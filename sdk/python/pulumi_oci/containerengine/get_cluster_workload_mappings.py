@@ -98,7 +98,7 @@ def get_cluster_workload_mappings(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_workload_mappings = oci.ContainerEngine.get_cluster_workload_mappings(cluster_id=test_cluster["id"])
+    test_cluster_workload_mappings = oci.containerengine.get_cluster_workload_mappings(cluster_id=test_cluster["id"])
     ```
 
 
@@ -129,7 +129,7 @@ def get_cluster_workload_mappings_output(cluster_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_workload_mappings = oci.ContainerEngine.get_cluster_workload_mappings(cluster_id=test_cluster["id"])
+    test_cluster_workload_mappings = oci.containerengine.get_cluster_workload_mappings(cluster_id=test_cluster["id"])
     ```
 
 

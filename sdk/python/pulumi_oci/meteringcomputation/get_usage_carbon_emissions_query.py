@@ -96,7 +96,7 @@ def get_usage_carbon_emissions_query(usage_carbon_emissions_query_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_query = oci.MeteringComputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
+    test_usage_carbon_emissions_query = oci.meteringcomputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_usage_carbon_emissions_query_output(usage_carbon_emissions_query_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_query = oci.MeteringComputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
+    test_usage_carbon_emissions_query = oci.meteringcomputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
     ```
 
 

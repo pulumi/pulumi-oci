@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     osFamily: managedInstanceGroupOsFamily,
  *     vendorName: managedInstanceGroupVendorName,
  *     autonomousSettings: {
- *         isDataCollectionAuthorized: managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized,
+ *         isDataCollectionAuthorized: managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized === "true",
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPools = oci.Streaming.getStreamPools({
+ * const testStreamPools = oci.streaming.getStreamPools({
  *     compartmentId: compartmentId,
  *     id: streamPoolId,
  *     name: streamPoolName,
@@ -96,7 +96,7 @@ export interface GetStreamPoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPools = oci.Streaming.getStreamPools({
+ * const testStreamPools = oci.streaming.getStreamPools({
  *     compartmentId: compartmentId,
  *     id: streamPoolId,
  *     name: streamPoolName,

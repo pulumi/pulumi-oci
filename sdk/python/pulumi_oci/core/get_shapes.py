@@ -126,7 +126,7 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Core.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.core.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         image_id=test_image["id"],
         shape=shape_shape)
@@ -173,7 +173,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Core.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.core.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         image_id=test_image["id"],
         shape=shape_shape)

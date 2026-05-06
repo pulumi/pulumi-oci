@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApps = oci.Identity.getDomainsApps({
+ * const testApps = oci.identity.getDomainsApps({
  *     idcsEndpoint: testDomain.url,
- *     appCount: appAppCount,
+ *     appCount: Number(appAppCount),
  *     appFilter: appAppFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appAuthorization,
  *     resourceTypeSchemaVersion: appResourceTypeSchemaVersion,
- *     startIndex: appStartIndex,
+ *     startIndex: Number(appStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsAppsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApps = oci.Identity.getDomainsApps({
+ * const testApps = oci.identity.getDomainsApps({
  *     idcsEndpoint: testDomain.url,
- *     appCount: appAppCount,
+ *     appCount: Number(appAppCount),
  *     appFilter: appAppFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appAuthorization,
  *     resourceTypeSchemaVersion: appResourceTypeSchemaVersion,
- *     startIndex: appStartIndex,
+ *     startIndex: Number(appStartIndex),
  * });
  * ```
  */

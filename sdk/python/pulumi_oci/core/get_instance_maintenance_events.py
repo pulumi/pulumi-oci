@@ -170,7 +170,7 @@ def get_instance_maintenance_events(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_events = oci.Core.get_instance_maintenance_events(compartment_id=compartment_id,
+    test_instance_maintenance_events = oci.core.get_instance_maintenance_events(compartment_id=compartment_id,
         correlation_token=instance_maintenance_event_correlation_token,
         instance_action=instance_maintenance_event_instance_action,
         instance_id=test_instance["id"],
@@ -231,7 +231,7 @@ def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_events = oci.Core.get_instance_maintenance_events(compartment_id=compartment_id,
+    test_instance_maintenance_events = oci.core.get_instance_maintenance_events(compartment_id=compartment_id,
         correlation_token=instance_maintenance_event_correlation_token,
         instance_action=instance_maintenance_event_instance_action,
         instance_id=test_instance["id"],

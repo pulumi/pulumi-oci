@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getDomainsSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getDomainsSmtpCredentials({
  *     idcsEndpoint: testDomain.url,
- *     smtpCredentialCount: smtpCredentialSmtpCredentialCount,
+ *     smtpCredentialCount: Number(smtpCredentialSmtpCredentialCount),
  *     smtpCredentialFilter: smtpCredentialSmtpCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: smtpCredentialAuthorization,
  *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
- *     startIndex: smtpCredentialStartIndex,
+ *     startIndex: Number(smtpCredentialStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsSmtpCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredentials = oci.Identity.getDomainsSmtpCredentials({
+ * const testSmtpCredentials = oci.identity.getDomainsSmtpCredentials({
  *     idcsEndpoint: testDomain.url,
- *     smtpCredentialCount: smtpCredentialSmtpCredentialCount,
+ *     smtpCredentialCount: Number(smtpCredentialSmtpCredentialCount),
  *     smtpCredentialFilter: smtpCredentialSmtpCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: smtpCredentialAuthorization,
  *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
- *     startIndex: smtpCredentialStartIndex,
+ *     startIndex: Number(smtpCredentialStartIndex),
  * });
  * ```
  */

@@ -138,7 +138,7 @@ def get_app_accelerations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+    test_web_app_accelerations = oci.waa.get_app_accelerations(compartment_id=compartment_id,
         display_name=web_app_acceleration_display_name,
         id=web_app_acceleration_id,
         states=web_app_acceleration_state,
@@ -188,7 +188,7 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+    test_web_app_accelerations = oci.waa.get_app_accelerations(compartment_id=compartment_id,
         display_name=web_app_acceleration_display_name,
         id=web_app_acceleration_id,
         states=web_app_acceleration_state,

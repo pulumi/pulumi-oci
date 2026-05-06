@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributes = oci.SecurityAttribute.getSecurityAttributes({
+ * const testSecurityAttributes = oci.securityattribute.getSecurityAttributes({
  *     securityAttributeNamespaceId: testSecurityAttributeNamespace.id,
  *     state: securityAttributeState,
  * });
@@ -80,7 +80,7 @@ export interface GetSecurityAttributesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributes = oci.SecurityAttribute.getSecurityAttributes({
+ * const testSecurityAttributes = oci.securityattribute.getSecurityAttributes({
  *     securityAttributeNamespaceId: testSecurityAttributeNamespace.id,
  *     state: securityAttributeState,
  * });

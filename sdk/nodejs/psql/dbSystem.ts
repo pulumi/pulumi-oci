@@ -35,13 +35,13 @@ import * as utilities from "../utilities";
  *     displayName: dbSystemDisplayName,
  *     networkDetails: {
  *         subnetId: testSubnet.id,
- *         isReaderEndpointEnabled: dbSystemNetworkDetailsIsReaderEndpointEnabled,
+ *         isReaderEndpointEnabled: dbSystemNetworkDetailsIsReaderEndpointEnabled === "true",
  *         nsgIds: dbSystemNetworkDetailsNsgIds,
  *         primaryDbEndpointPrivateIp: dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
  *     },
  *     shape: dbSystemShape,
  *     storageDetails: {
- *         isRegionallyDurable: dbSystemStorageDetailsIsRegionallyDurable,
+ *         isRegionallyDurable: dbSystemStorageDetailsIsRegionallyDurable === "true",
  *         systemType: dbSystemStorageDetailsSystemType,
  *         availabilityDomain: dbSystemStorageDetailsAvailabilityDomain,
  *         iops: dbSystemStorageDetailsIops,
@@ -54,9 +54,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     instanceCount: dbSystemInstanceCount,
- *     instanceMemorySizeInGbs: dbSystemInstanceMemorySizeInGbs,
- *     instanceOcpuCount: dbSystemInstanceOcpuCount,
+ *     instanceCount: Number(dbSystemInstanceCount),
+ *     instanceMemorySizeInGbs: Number(dbSystemInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(dbSystemInstanceOcpuCount),
  *     instancesDetails: [{
  *         description: dbSystemInstancesDetailsDescription,
  *         displayName: dbSystemInstancesDetailsDisplayName,
@@ -68,19 +68,19 @@ import * as utilities from "../utilities";
  *             copyPolicy: {
  *                 compartmentId: compartmentId,
  *                 regions: dbSystemManagementPolicyBackupPolicyCopyPolicyRegions,
- *                 retentionPeriod: dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod,
+ *                 retentionPeriod: Number(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod),
  *             },
  *             daysOfTheMonths: dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
  *             daysOfTheWeeks: dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
  *             kind: dbSystemManagementPolicyBackupPolicyKind,
- *             retentionDays: dbSystemManagementPolicyBackupPolicyRetentionDays,
+ *             retentionDays: Number(dbSystemManagementPolicyBackupPolicyRetentionDays),
  *         },
  *         maintenanceWindowStart: dbSystemManagementPolicyMaintenanceWindowStart,
  *     },
  *     source: {
  *         sourceType: dbSystemSourceSourceType,
  *         backupId: testBackup.id,
- *         isHavingRestoreConfigOverrides: dbSystemSourceIsHavingRestoreConfigOverrides,
+ *         isHavingRestoreConfigOverrides: dbSystemSourceIsHavingRestoreConfigOverrides === "true",
  *     },
  *     systemType: dbSystemSystemType,
  *     patchOperations: [{

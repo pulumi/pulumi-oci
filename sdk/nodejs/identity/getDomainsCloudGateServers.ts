@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateServers = oci.Identity.getDomainsCloudGateServers({
+ * const testCloudGateServers = oci.identity.getDomainsCloudGateServers({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateServerCount: cloudGateServerCloudGateServerCount,
+ *     cloudGateServerCount: Number(cloudGateServerCloudGateServerCount),
  *     cloudGateServerFilter: cloudGateServerCloudGateServerFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateServerAuthorization,
  *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
- *     startIndex: cloudGateServerStartIndex,
+ *     startIndex: Number(cloudGateServerStartIndex),
  * });
  * ```
  */
@@ -125,15 +125,15 @@ export interface GetDomainsCloudGateServersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGateServers = oci.Identity.getDomainsCloudGateServers({
+ * const testCloudGateServers = oci.identity.getDomainsCloudGateServers({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateServerCount: cloudGateServerCloudGateServerCount,
+ *     cloudGateServerCount: Number(cloudGateServerCloudGateServerCount),
  *     cloudGateServerFilter: cloudGateServerCloudGateServerFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateServerAuthorization,
  *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
- *     startIndex: cloudGateServerStartIndex,
+ *     startIndex: Number(cloudGateServerStartIndex),
  * });
  * ```
  */

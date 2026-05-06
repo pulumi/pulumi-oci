@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditPolicy = oci.DataSafe.getAuditPolicy({
+ * const testAuditPolicy = oci.datasafe.getAuditPolicy({
  *     auditPolicyId: testAuditPolicyOciDataSafeAuditPolicy.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetAuditPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditPolicy = oci.DataSafe.getAuditPolicy({
+ * const testAuditPolicy = oci.datasafe.getAuditPolicy({
  *     auditPolicyId: testAuditPolicyOciDataSafeAuditPolicy.id,
  * });
  * ```

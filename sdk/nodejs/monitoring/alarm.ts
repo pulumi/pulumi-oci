@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     destinations: [testNotificationTopic.id],
  *     displayName: alarmDisplayName,
- *     isEnabled: alarmIsEnabled,
+ *     isEnabled: alarmIsEnabled === "true",
  *     metricCompartmentId: alarmMetricCompartmentId,
  *     namespace: alarmNamespace,
  *     query: alarmQuery,
@@ -46,9 +46,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isNotificationsPerMetricDimensionEnabled: alarmIsNotificationsPerMetricDimensionEnabled,
+ *     isNotificationsPerMetricDimensionEnabled: alarmIsNotificationsPerMetricDimensionEnabled === "true",
  *     messageFormat: alarmMessageFormat,
- *     metricCompartmentIdInSubtree: alarmMetricCompartmentIdInSubtree,
+ *     metricCompartmentIdInSubtree: alarmMetricCompartmentIdInSubtree === "true",
  *     notificationTitle: alarmNotificationTitle,
  *     notificationVersion: alarmNotificationVersion,
  *     overrides: [{

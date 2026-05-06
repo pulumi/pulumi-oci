@@ -117,7 +117,7 @@ def get_log_analytics_categories_list(category_display_text: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+    test_log_analytics_categories_list = oci.loganalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
         category_display_text=log_analytics_categories_list_category_display_text,
         category_type=log_analytics_categories_list_category_type,
         name=log_analytics_categories_list_name)
@@ -160,7 +160,7 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+    test_log_analytics_categories_list = oci.loganalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
         category_display_text=log_analytics_categories_list_category_display_text,
         category_type=log_analytics_categories_list_category_type,
         name=log_analytics_categories_list_name)

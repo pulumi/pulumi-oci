@@ -33,10 +33,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSources = oci.CloudGuard.getDataSources({
+ * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,
@@ -156,10 +156,10 @@ export interface GetDataSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSources = oci.CloudGuard.getDataSources({
+ * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,

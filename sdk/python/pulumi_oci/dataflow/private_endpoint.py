@@ -508,7 +508,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            max_host_count=private_endpoint_max_host_count,
+            max_host_count=int(private_endpoint_max_host_count),
             nsg_ids=private_endpoint_nsg_ids,
             scan_details=[{
                 "fqdn": private_endpoint_scan_details_fqdn,
@@ -578,7 +578,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            max_host_count=private_endpoint_max_host_count,
+            max_host_count=int(private_endpoint_max_host_count),
             nsg_ids=private_endpoint_nsg_ids,
             scan_details=[{
                 "fqdn": private_endpoint_scan_details_fqdn,

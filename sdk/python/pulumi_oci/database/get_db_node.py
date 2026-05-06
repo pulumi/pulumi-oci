@@ -431,7 +431,7 @@ def get_db_node(db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
+    test_db_node = oci.database.get_db_node(db_node_id=db_node_id)
     ```
 
 
@@ -488,7 +488,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
+    test_db_node = oci.database.get_db_node(db_node_id=db_node_id)
     ```
 
 

@@ -300,7 +300,7 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=test_certificate_oci_certificates_management_certificate["id"])
+    test_certificate = oci.certificatesmanagement.get_certificate(certificate_id=test_certificate_oci_certificates_management_certificate["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=test_certificate_oci_certificates_management_certificate["id"])
+    test_certificate = oci.certificatesmanagement.get_certificate(certificate_id=test_certificate_oci_certificates_management_certificate["id"])
     ```
 
 

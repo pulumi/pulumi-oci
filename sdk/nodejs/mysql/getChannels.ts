@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannels = oci.Mysql.getChannels({
+ * const testChannels = oci.mysql.getChannels({
  *     compartmentId: compartmentId,
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled,
+ *     isEnabled: channelIsEnabled === "true",
  *     state: channelState,
  * });
  * ```
@@ -117,12 +117,12 @@ export interface GetChannelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannels = oci.Mysql.getChannels({
+ * const testChannels = oci.mysql.getChannels({
  *     compartmentId: compartmentId,
  *     channelId: testChannel.id,
  *     dbSystemId: testDbSystem.id,
  *     displayName: channelDisplayName,
- *     isEnabled: channelIsEnabled,
+ *     isEnabled: channelIsEnabled === "true",
  *     state: channelState,
  * });
  * ```

@@ -147,7 +147,7 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+    test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
         state=database_state,
@@ -198,7 +198,7 @@ def get_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+    test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
         state=database_state,

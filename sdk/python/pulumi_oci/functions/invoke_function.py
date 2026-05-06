@@ -363,7 +363,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
-            is_dry_run=invoke_function_is_dry_run,
+            is_dry_run=invoke_function_is_dry_run == "true",
             base64_encode_content=False)
         ```
 
@@ -411,7 +411,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
-            is_dry_run=invoke_function_is_dry_run,
+            is_dry_run=invoke_function_is_dry_run == "true",
             base64_encode_content=False)
         ```
 

@@ -111,7 +111,7 @@ def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttribu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attributes = oci.SecurityAttribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
+    test_security_attributes = oci.securityattribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
         state=security_attribute_state)
     ```
 
@@ -147,7 +147,7 @@ def get_security_attributes_output(filters: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attributes = oci.SecurityAttribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
+    test_security_attributes = oci.securityattribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
         state=security_attribute_state)
     ```
 

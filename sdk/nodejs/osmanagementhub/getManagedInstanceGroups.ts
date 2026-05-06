@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroups = oci.OsManagementHub.getManagedInstanceGroups({
+ * const testManagedInstanceGroups = oci.osmanagementhub.getManagedInstanceGroups({
  *     archType: managedInstanceGroupArchType,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupDisplayName,
  *     displayNameContains: managedInstanceGroupDisplayNameContains,
- *     isManagedByAutonomousLinux: managedInstanceGroupIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: managedInstanceGroupIsManagedByAutonomousLinux === "true",
  *     locations: managedInstanceGroupLocation,
  *     locationNotEqualTos: managedInstanceGroupLocationNotEqualTo,
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
@@ -159,12 +159,12 @@ export interface GetManagedInstanceGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroups = oci.OsManagementHub.getManagedInstanceGroups({
+ * const testManagedInstanceGroups = oci.osmanagementhub.getManagedInstanceGroups({
  *     archType: managedInstanceGroupArchType,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupDisplayName,
  *     displayNameContains: managedInstanceGroupDisplayNameContains,
- *     isManagedByAutonomousLinux: managedInstanceGroupIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: managedInstanceGroupIsManagedByAutonomousLinux === "true",
  *     locations: managedInstanceGroupLocation,
  *     locationNotEqualTos: managedInstanceGroupLocationNotEqualTo,
  *     managedInstanceGroupId: testManagedInstanceGroup.id,

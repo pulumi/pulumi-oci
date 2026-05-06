@@ -168,7 +168,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_iot_domain_change_data_retention_period = oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period",
-            data_retention_period_in_days=iot_domain_change_data_retention_period_data_retention_period_in_days,
+            data_retention_period_in_days=int(iot_domain_change_data_retention_period_data_retention_period_in_days),
             iot_domain_id=test_iot_domain["id"],
             type=iot_domain_change_data_retention_period_type)
         ```
@@ -209,7 +209,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_iot_domain_change_data_retention_period = oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period",
-            data_retention_period_in_days=iot_domain_change_data_retention_period_data_retention_period_in_days,
+            data_retention_period_in_days=int(iot_domain_change_data_retention_period_data_retention_period_in_days),
             iot_domain_id=test_iot_domain["id"],
             type=iot_domain_change_data_retention_period_type)
         ```

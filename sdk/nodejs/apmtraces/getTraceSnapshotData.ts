@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
+ * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized,
+ *     isSummarized: traceSnapshotDataIsSummarized === "true",
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });
@@ -104,10 +104,10 @@ export interface GetTraceSnapshotDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
+ * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized,
+ *     isSummarized: traceSnapshotDataIsSummarized === "true",
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });

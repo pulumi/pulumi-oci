@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategory = oci.Optimizer.getCategory({
+ * const testCategory = oci.optimizer.getCategory({
  *     categoryId: testCategoryOciOptimizerCategory.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetCategoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategory = oci.Optimizer.getCategory({
+ * const testCategory = oci.optimizer.getCategory({
  *     categoryId: testCategoryOciOptimizerCategory.id,
  * });
  * ```

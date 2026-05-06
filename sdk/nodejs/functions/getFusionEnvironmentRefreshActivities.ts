@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentRefreshActivities = oci.Functions.getFusionEnvironmentRefreshActivities({
+ * const testFusionEnvironmentRefreshActivities = oci.functions.getFusionEnvironmentRefreshActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentRefreshActivityDisplayName,
  *     state: fusionEnvironmentRefreshActivityState,
@@ -101,7 +101,7 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentRefreshActivities = oci.Functions.getFusionEnvironmentRefreshActivities({
+ * const testFusionEnvironmentRefreshActivities = oci.functions.getFusionEnvironmentRefreshActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentRefreshActivityDisplayName,
  *     state: fusionEnvironmentRefreshActivityState,

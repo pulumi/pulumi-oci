@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedInstanceGroupRebootManagement = new oci.osmanagementhub.ManagedInstanceGroupRebootManagement("test_managed_instance_group_reboot_management", {
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
- *     rebootTimeoutInMins: managedInstanceGroupRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(managedInstanceGroupRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: managedInstanceGroupRebootManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceGroupRebootManagementWorkRequestDetailsDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupDestinations = oci.Database.getBackupDestinations({
+ * const testBackupDestinations = oci.database.getBackupDestinations({
  *     compartmentId: compartmentId,
  *     type: backupDestinationType,
  * });
@@ -80,7 +80,7 @@ export interface GetBackupDestinationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupDestinations = oci.Database.getBackupDestinations({
+ * const testBackupDestinations = oci.database.getBackupDestinations({
  *     compartmentId: compartmentId,
  *     type: backupDestinationType,
  * });

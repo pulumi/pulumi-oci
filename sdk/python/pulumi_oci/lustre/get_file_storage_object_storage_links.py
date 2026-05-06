@@ -151,7 +151,7 @@ def get_file_storage_object_storage_links(availability_domain: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_links = oci.Lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
+    test_object_storage_links = oci.lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
         compartment_id=compartment_id,
         display_name=object_storage_link_display_name,
         id=object_storage_link_id,
@@ -206,7 +206,7 @@ def get_file_storage_object_storage_links_output(availability_domain: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_links = oci.Lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
+    test_object_storage_links = oci.lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
         compartment_id=compartment_id,
         display_name=object_storage_link_display_name,
         id=object_storage_link_id,

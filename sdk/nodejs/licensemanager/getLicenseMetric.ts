@@ -15,9 +15,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseMetric = oci.LicenseManager.getLicenseMetric({
+ * const testLicenseMetric = oci.licensemanager.getLicenseMetric({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -81,9 +81,9 @@ export interface GetLicenseMetricResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseMetric = oci.LicenseManager.getLicenseMetric({
+ * const testLicenseMetric = oci.licensemanager.getLicenseMetric({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */

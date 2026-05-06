@@ -311,7 +311,7 @@ def get_sql_firewall_policy(sql_firewall_policy_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy = oci.DataSafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
+    test_sql_firewall_policy = oci.datasafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
     ```
 
 
@@ -358,7 +358,7 @@ def get_sql_firewall_policy_output(sql_firewall_policy_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy = oci.DataSafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
+    test_sql_firewall_policy = oci.datasafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
     ```
 
 

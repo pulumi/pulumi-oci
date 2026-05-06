@@ -138,7 +138,7 @@ def get_load_balancers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=compartment_id,
+    test_load_balancers = oci.loadbalancer.get_load_balancers(compartment_id=compartment_id,
         detail=load_balancer_detail,
         display_name=load_balancer_display_name,
         state=load_balancer_state)
@@ -188,7 +188,7 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancers = oci.LoadBalancer.get_load_balancers(compartment_id=compartment_id,
+    test_load_balancers = oci.loadbalancer.get_load_balancers(compartment_id=compartment_id,
         detail=load_balancer_detail,
         display_name=load_balancer_display_name,
         state=load_balancer_state)

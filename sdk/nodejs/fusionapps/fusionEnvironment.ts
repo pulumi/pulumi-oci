@@ -34,8 +34,8 @@ import * as utilities from "../utilities";
  *     additionalEgressRules: [{
  *         description: fusionEnvironmentAdditionalEgressRulesDescription,
  *         destinationCidr: fusionEnvironmentAdditionalEgressRulesDestinationCidr,
- *         maxDestinationPort: fusionEnvironmentAdditionalEgressRulesMaxDestinationPort,
- *         minDestinationPort: fusionEnvironmentAdditionalEgressRulesMinDestinationPort,
+ *         maxDestinationPort: Number(fusionEnvironmentAdditionalEgressRulesMaxDestinationPort),
+ *         minDestinationPort: Number(fusionEnvironmentAdditionalEgressRulesMinDestinationPort),
  *     }],
  *     additionalLanguagePacks: fusionEnvironmentAdditionalLanguagePacks,
  *     definedTags: {
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isIpv6dualStackEnabled: fusionEnvironmentIsIpv6dualStackEnabled,
+ *     isIpv6dualStackEnabled: fusionEnvironmentIsIpv6dualStackEnabled === "true",
  *     kmsKeyId: testKey.id,
  *     maintenancePolicy: {
  *         environmentMaintenanceOverride: fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride,

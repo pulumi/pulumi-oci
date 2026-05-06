@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
  *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
@@ -85,7 +85,7 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecutions = oci.databasemanagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutions({
  *     managedDatabaseId: testManagedDatabase.id,
  *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
  *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,

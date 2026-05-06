@@ -470,11 +470,11 @@ class Table(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=table_is_auto_reclaimable,
+            is_auto_reclaimable=table_is_auto_reclaimable == "true",
             table_limits={
-                "max_read_units": table_table_limits_max_read_units,
-                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
-                "max_write_units": table_table_limits_max_write_units,
+                "max_read_units": int(table_table_limits_max_read_units),
+                "max_storage_in_gbs": int(table_table_limits_max_storage_in_gbs),
+                "max_write_units": int(table_table_limits_max_write_units),
                 "capacity_mode": table_table_limits_capacity_mode,
             })
         ```
@@ -526,11 +526,11 @@ class Table(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=table_is_auto_reclaimable,
+            is_auto_reclaimable=table_is_auto_reclaimable == "true",
             table_limits={
-                "max_read_units": table_table_limits_max_read_units,
-                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
-                "max_write_units": table_table_limits_max_write_units,
+                "max_read_units": int(table_table_limits_max_read_units),
+                "max_storage_in_gbs": int(table_table_limits_max_storage_in_gbs),
+                "max_write_units": int(table_table_limits_max_write_units),
                 "capacity_mode": table_table_limits_capacity_mode,
             })
         ```

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCycles = oci.FleetSoftwareUpdate.getFsuCycles({
+ * const testFsuCycles = oci.fleetsoftwareupdate.getFsuCycles({
  *     compartmentId: compartmentId,
  *     collectionType: fsuCycleCollectionType,
  *     displayName: fsuCycleDisplayName,
@@ -117,7 +117,7 @@ export interface GetFsuCyclesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCycles = oci.FleetSoftwareUpdate.getFsuCycles({
+ * const testFsuCycles = oci.fleetsoftwareupdate.getFsuCycles({
  *     compartmentId: compartmentId,
  *     collectionType: fsuCycleCollectionType,
  *     displayName: fsuCycleDisplayName,

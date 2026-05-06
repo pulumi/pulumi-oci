@@ -228,7 +228,7 @@ def get_database_tools_identity(database_tools_identity_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identity = oci.DatabaseTools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
+    test_database_tools_identity = oci.databasetools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_database_tools_identity_output(database_tools_identity_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identity = oci.DatabaseTools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
+    test_database_tools_identity = oci.databasetools.get_database_tools_identity(database_tools_identity_id=test_database_tools_identity_oci_database_tools_database_tools_identity["id"])
     ```
 
 

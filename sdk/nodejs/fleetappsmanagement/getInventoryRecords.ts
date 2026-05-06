@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryRecords = oci.FleetAppsManagement.getInventoryRecords({
+ * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
  *     resourceId: testResource.id,
  * });
  * ```
@@ -98,11 +98,11 @@ export interface GetInventoryRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryRecords = oci.FleetAppsManagement.getInventoryRecords({
+ * const testInventoryRecords = oci.fleetappsmanagement.getInventoryRecords({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: inventoryRecordCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
- *     isDetailsRequired: inventoryRecordIsDetailsRequired,
+ *     isDetailsRequired: inventoryRecordIsDetailsRequired === "true",
  *     resourceId: testResource.id,
  * });
  * ```

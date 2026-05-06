@@ -432,7 +432,7 @@ class Rule(pulumi.CustomResource):
             actions={
                 "actions": [{
                     "action_type": rule_actions_actions_action_type,
-                    "is_enabled": rule_actions_actions_is_enabled,
+                    "is_enabled": rule_actions_actions_is_enabled == "true",
                     "description": rule_actions_actions_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
@@ -442,7 +442,7 @@ class Rule(pulumi.CustomResource):
             compartment_id=compartment_id,
             condition=rule_condition,
             display_name=rule_display_name,
-            is_enabled=rule_is_enabled,
+            is_enabled=rule_is_enabled == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -512,7 +512,7 @@ class Rule(pulumi.CustomResource):
             actions={
                 "actions": [{
                     "action_type": rule_actions_actions_action_type,
-                    "is_enabled": rule_actions_actions_is_enabled,
+                    "is_enabled": rule_actions_actions_is_enabled == "true",
                     "description": rule_actions_actions_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
@@ -522,7 +522,7 @@ class Rule(pulumi.CustomResource):
             compartment_id=compartment_id,
             condition=rule_condition,
             display_name=rule_display_name,
-            is_enabled=rule_is_enabled,
+            is_enabled=rule_is_enabled == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },

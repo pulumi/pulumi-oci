@@ -105,7 +105,7 @@ def get_scheduled_queries(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_queries = oci.ApmTraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_queries = oci.apmtraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
         display_name=scheduled_query_display_name)
     ```
 
@@ -141,7 +141,7 @@ def get_scheduled_queries_output(apm_domain_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_queries = oci.ApmTraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
+    test_scheduled_queries = oci.apmtraces.get_scheduled_queries(apm_domain_id=test_apm_domain["id"],
         display_name=scheduled_query_display_name)
     ```
 

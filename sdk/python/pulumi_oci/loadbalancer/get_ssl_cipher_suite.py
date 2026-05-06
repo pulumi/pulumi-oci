@@ -102,7 +102,7 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suite = oci.LoadBalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
+    test_ssl_cipher_suite = oci.loadbalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
         name=ssl_cipher_suite_name)
     ```
 
@@ -138,7 +138,7 @@ def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suite = oci.LoadBalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
+    test_ssl_cipher_suite = oci.loadbalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
         name=ssl_cipher_suite_name)
     ```
 

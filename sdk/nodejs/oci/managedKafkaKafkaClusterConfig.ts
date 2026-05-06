@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *         properties: kafkaClusterConfigLatestConfigProperties,
  *         configId: testConfig.id,
  *         timeCreated: kafkaClusterConfigLatestConfigTimeCreated,
- *         versionNumber: kafkaClusterConfigLatestConfigVersionNumber,
+ *         versionNumber: Number(kafkaClusterConfigLatestConfigVersionNumber),
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",

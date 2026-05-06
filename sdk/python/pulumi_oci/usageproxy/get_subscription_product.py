@@ -114,7 +114,7 @@ def get_subscription_product(producttype: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=test_subscription["id"],
+    test_subscription_product = oci.usageproxy.get_subscription_product(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)
@@ -157,7 +157,7 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_product = oci.UsageProxy.get_subscription_product(subscription_id=test_subscription["id"],
+    test_subscription_product = oci.usageproxy.get_subscription_product(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)

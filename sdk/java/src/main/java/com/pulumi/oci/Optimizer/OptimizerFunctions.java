@@ -73,8 +73,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -120,8 +120,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -167,8 +167,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -261,8 +261,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -308,8 +308,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -350,8 +350,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -392,8 +392,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -434,8 +434,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -476,8 +476,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -518,8 +518,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -560,8 +560,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -602,8 +602,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -644,8 +644,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -686,8 +686,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -728,8 +728,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -772,8 +772,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -816,8 +816,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -860,8 +860,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -904,8 +904,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -949,8 +949,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1000,8 +1000,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1051,8 +1051,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1102,8 +1102,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1153,8 +1153,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1203,8 +1203,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1245,8 +1245,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1287,8 +1287,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1329,8 +1329,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1371,8 +1371,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1413,8 +1413,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1458,8 +1458,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1503,8 +1503,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1548,8 +1548,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1593,8 +1593,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1638,8 +1638,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1683,8 +1683,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1728,8 +1728,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1773,8 +1773,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1818,8 +1818,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1863,8 +1863,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1907,8 +1907,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1995,8 +1995,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2039,8 +2039,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2083,8 +2083,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2125,8 +2125,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2167,8 +2167,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2209,8 +2209,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2251,8 +2251,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2293,8 +2293,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2338,8 +2338,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2383,8 +2383,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2428,8 +2428,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2473,8 +2473,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2518,8 +2518,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2563,8 +2563,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2608,8 +2608,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2653,8 +2653,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2698,8 +2698,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2743,8 +2743,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2793,8 +2793,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2843,8 +2843,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2893,8 +2893,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2943,8 +2943,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2993,8 +2993,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3036,8 +3036,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3079,8 +3079,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3122,8 +3122,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3165,8 +3165,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3208,8 +3208,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3260,8 +3260,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3312,8 +3312,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3364,8 +3364,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3416,8 +3416,8 @@ public final class OptimizerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
      * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -147,7 +147,7 @@ def get_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.dataflow.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         display_name_starts_with=private_endpoint_display_name_starts_with,
         owner_principal_id=owner_principal_id,
@@ -198,7 +198,7 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+    test_private_endpoints = oci.dataflow.get_private_endpoints(compartment_id=compartment_id,
         display_name=private_endpoint_display_name,
         display_name_starts_with=private_endpoint_display_name_starts_with,
         owner_principal_id=owner_principal_id,

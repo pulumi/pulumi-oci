@@ -381,14 +381,14 @@ class ConsumerGroup(pulumi.CustomResource):
             display_name=consumer_group_display_name,
             queue_id=test_queue["id"],
             consumer_group_filter=consumer_group_consumer_group_filter,
-            dead_letter_queue_delivery_count=consumer_group_dead_letter_queue_delivery_count,
+            dead_letter_queue_delivery_count=int(consumer_group_dead_letter_queue_delivery_count),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=consumer_group_is_enabled)
+            is_enabled=consumer_group_is_enabled == "true")
         ```
 
         ## Import
@@ -435,14 +435,14 @@ class ConsumerGroup(pulumi.CustomResource):
             display_name=consumer_group_display_name,
             queue_id=test_queue["id"],
             consumer_group_filter=consumer_group_consumer_group_filter,
-            dead_letter_queue_delivery_count=consumer_group_dead_letter_queue_delivery_count,
+            dead_letter_queue_delivery_count=int(consumer_group_dead_letter_queue_delivery_count),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=consumer_group_is_enabled)
+            is_enabled=consumer_group_is_enabled == "true")
         ```
 
         ## Import

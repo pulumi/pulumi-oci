@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6 = new oci.core.Ipv6("test_ipv6", {
- *     cidrPrefixLength: ipv6CidrPrefixLength,
+ *     cidrPrefixLength: Number(ipv6CidrPrefixLength),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

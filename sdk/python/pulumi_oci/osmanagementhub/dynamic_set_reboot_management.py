@@ -191,7 +191,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
         test_dynamic_set_reboot_management = oci.osmanagementhub.DynamicSetRebootManagement("test_dynamic_set_reboot_management",
             dynamic_set_id=test_dynamic_set["id"],
             managed_instances=dynamic_set_reboot_management_managed_instances,
-            reboot_timeout_in_mins=dynamic_set_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(dynamic_set_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": dynamic_set_reboot_management_work_request_details_description,
                 "display_name": dynamic_set_reboot_management_work_request_details_display_name,
@@ -237,7 +237,7 @@ class DynamicSetRebootManagement(pulumi.CustomResource):
         test_dynamic_set_reboot_management = oci.osmanagementhub.DynamicSetRebootManagement("test_dynamic_set_reboot_management",
             dynamic_set_id=test_dynamic_set["id"],
             managed_instances=dynamic_set_reboot_management_managed_instances,
-            reboot_timeout_in_mins=dynamic_set_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(dynamic_set_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": dynamic_set_reboot_management_work_request_details_description,
                 "display_name": dynamic_set_reboot_management_work_request_details_display_name,

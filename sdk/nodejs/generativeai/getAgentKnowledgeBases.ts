@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBases = oci.GenerativeAi.getAgentKnowledgeBases({
+ * const testKnowledgeBases = oci.generativeai.getAgentKnowledgeBases({
  *     compartmentId: compartmentId,
  *     displayName: knowledgeBaseDisplayName,
  *     state: knowledgeBaseState,
@@ -91,7 +91,7 @@ export interface GetAgentKnowledgeBasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBases = oci.GenerativeAi.getAgentKnowledgeBases({
+ * const testKnowledgeBases = oci.generativeai.getAgentKnowledgeBases({
  *     compartmentId: compartmentId,
  *     displayName: knowledgeBaseDisplayName,
  *     state: knowledgeBaseState,

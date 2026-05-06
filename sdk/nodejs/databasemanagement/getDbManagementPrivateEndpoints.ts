@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
+ * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster,
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
+ *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -120,10 +120,10 @@ export interface GetDbManagementPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
+ * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster,
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
+ *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,

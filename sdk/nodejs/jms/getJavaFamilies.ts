@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamilies = oci.Jms.getJavaFamilies({
+ * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion,
+ *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
  * });
  * ```
  */
@@ -93,10 +93,10 @@ export interface GetJavaFamiliesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamilies = oci.Jms.getJavaFamilies({
+ * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion,
+ *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
  * });
  * ```
  */

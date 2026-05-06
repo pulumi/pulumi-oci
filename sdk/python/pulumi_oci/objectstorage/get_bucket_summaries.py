@@ -119,7 +119,7 @@ def get_bucket_summaries(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+    test_buckets = oci.objectstorage.get_bucket_summaries(compartment_id=compartment_id,
         namespace=bucket_namespace)
     ```
 
@@ -163,7 +163,7 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+    test_buckets = oci.objectstorage.get_bucket_summaries(compartment_id=compartment_id,
         namespace=bucket_namespace)
     ```
 

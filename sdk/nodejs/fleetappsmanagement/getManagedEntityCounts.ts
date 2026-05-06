@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedEntityCounts = oci.FleetAppsManagement.getManagedEntityCounts({
+ * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetManagedEntityCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedEntityCounts = oci.FleetAppsManagement.getManagedEntityCounts({
+ * const testManagedEntityCounts = oci.fleetappsmanagement.getManagedEntityCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedEntityCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */

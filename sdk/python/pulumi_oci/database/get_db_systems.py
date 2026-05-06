@@ -151,7 +151,7 @@ def get_db_systems(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Database.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.database.get_db_systems(compartment_id=compartment_id,
         availability_domain=db_system_availability_domain,
         backup_id=test_backup["id"],
         display_name=db_system_display_name,
@@ -206,7 +206,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Database.get_db_systems(compartment_id=compartment_id,
+    test_db_systems = oci.database.get_db_systems(compartment_id=compartment_id,
         availability_domain=db_system_availability_domain,
         backup_id=test_backup["id"],
         display_name=db_system_display_name,

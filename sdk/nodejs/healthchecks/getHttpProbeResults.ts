@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
+ * const testHttpProbeResults = oci.healthchecks.getHttpProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,
@@ -98,7 +98,7 @@ export interface GetHttpProbeResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
+ * const testHttpProbeResults = oci.healthchecks.getHttpProbeResults({
  *     probeConfigurationId: testProbeConfiguration.id,
  *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
  *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,

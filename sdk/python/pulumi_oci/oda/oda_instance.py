@@ -591,7 +591,7 @@ class OdaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             identity_domain=oda_instance_identity_domain,
-            is_role_based_access=oda_instance_is_role_based_access)
+            is_role_based_access=oda_instance_is_role_based_access == "true")
         ```
 
         ## Import
@@ -654,7 +654,7 @@ class OdaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             identity_domain=oda_instance_identity_domain,
-            is_role_based_access=oda_instance_is_role_based_access)
+            is_role_based_access=oda_instance_is_role_based_access == "true")
         ```
 
         ## Import

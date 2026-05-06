@@ -73,7 +73,7 @@ def get_agent_data_ingestion_job_log_content(data_ingestion_job_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_job_log_content = oci.GenerativeAi.get_agent_data_ingestion_job_log_content(data_ingestion_job_id=test_data_ingestion_job["id"])
+    test_data_ingestion_job_log_content = oci.generativeai.get_agent_data_ingestion_job_log_content(data_ingestion_job_id=test_data_ingestion_job["id"])
     ```
 
 
@@ -102,7 +102,7 @@ def get_agent_data_ingestion_job_log_content_output(data_ingestion_job_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_job_log_content = oci.GenerativeAi.get_agent_data_ingestion_job_log_content(data_ingestion_job_id=test_data_ingestion_job["id"])
+    test_data_ingestion_job_log_content = oci.generativeai.get_agent_data_ingestion_job_log_content(data_ingestion_job_id=test_data_ingestion_job["id"])
     ```
 
 

@@ -236,7 +236,7 @@ def get_service_connector(service_connector_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=test_service_connector_oci_sch_service_connector["id"])
+    test_service_connector = oci.sch.get_service_connector(service_connector_id=test_service_connector_oci_sch_service_connector["id"])
     ```
 
 
@@ -279,7 +279,7 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=test_service_connector_oci_sch_service_connector["id"])
+    test_service_connector = oci.sch.get_service_connector(service_connector_id=test_service_connector_oci_sch_service_connector["id"])
     ```
 
 

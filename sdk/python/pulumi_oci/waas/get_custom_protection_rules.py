@@ -148,7 +148,7 @@ def get_custom_protection_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+    test_custom_protection_rules = oci.waas.get_custom_protection_rules(compartment_id=compartment_id,
         display_names=custom_protection_rule_display_names,
         ids=custom_protection_rule_ids,
         states=custom_protection_rule_states,
@@ -204,7 +204,7 @@ def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+    test_custom_protection_rules = oci.waas.get_custom_protection_rules(compartment_id=compartment_id,
         display_names=custom_protection_rule_display_names,
         ids=custom_protection_rule_ids,
         states=custom_protection_rule_states,

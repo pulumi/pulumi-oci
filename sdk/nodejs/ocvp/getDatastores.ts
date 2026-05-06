@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastores = oci.Ocvp.getDatastores({
+ * const testDatastores = oci.ocvp.getDatastores({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     datastoreId: testDatastore.id,
@@ -109,7 +109,7 @@ export interface GetDatastoresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastores = oci.Ocvp.getDatastores({
+ * const testDatastores = oci.ocvp.getDatastores({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     datastoreId: testDatastore.id,

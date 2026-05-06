@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testCloudExadataInfrastructureConfigureExascaleManagement = new oci.database.CloudExadataInfrastructureConfigureExascaleManagement("test_cloud_exadata_infrastructure_configure_exascale_management", {
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
- *     totalStorageInGbs: cloudExadataInfrastructureConfigureExascaleManagementTotalStorageInGbs,
+ *     totalStorageInGbs: Number(cloudExadataInfrastructureConfigureExascaleManagementTotalStorageInGbs),
  * });
  * ```
  *

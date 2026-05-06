@@ -474,8 +474,8 @@ class AgentTool(pulumi.CustomResource):
                     },
                 },
                 "runtime_version": tool_tool_config_runtime_version,
-                "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
-                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
+                "should_enable_self_correction": tool_tool_config_should_enable_self_correction == "true",
+                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution == "true",
                 "subnet_id": test_subnet["id"],
                 "table_and_column_description": {
                     "input_location_type": tool_tool_config_table_and_column_description_input_location_type,
@@ -628,8 +628,8 @@ class AgentTool(pulumi.CustomResource):
                     },
                 },
                 "runtime_version": tool_tool_config_runtime_version,
-                "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
-                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
+                "should_enable_self_correction": tool_tool_config_should_enable_self_correction == "true",
+                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution == "true",
                 "subnet_id": test_subnet["id"],
                 "table_and_column_description": {
                     "input_location_type": tool_tool_config_table_and_column_description_input_location_type,

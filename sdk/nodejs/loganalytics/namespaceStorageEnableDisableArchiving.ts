@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testNamespaceStorageEnableDisableArchiving = new oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving", {
  *     namespace: namespaceStorageEnableDisableArchivingNamespace,
- *     enableArchivingTenant: enableArchivingTenant,
+ *     enableArchivingTenant: enableArchivingTenant === "true",
  * });
  * ```
  */

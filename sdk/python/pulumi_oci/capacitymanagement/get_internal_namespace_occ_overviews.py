@@ -148,7 +148,7 @@ def get_internal_namespace_occ_overviews(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_namespace_occ_overviews = oci.CapacityManagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
+    test_internal_namespace_occ_overviews = oci.capacitymanagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=internal_namespace_occ_overview_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         from_=internal_namespace_occ_overview_from,
@@ -204,7 +204,7 @@ def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_namespace_occ_overviews = oci.CapacityManagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
+    test_internal_namespace_occ_overviews = oci.capacitymanagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=internal_namespace_occ_overview_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         from_=internal_namespace_occ_overview_from,

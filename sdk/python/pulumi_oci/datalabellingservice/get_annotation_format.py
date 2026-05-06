@@ -84,7 +84,7 @@ def get_annotation_format(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=compartment_id)
+    test_annotation_format = oci.datalabellingservice.get_annotation_format(compartment_id=compartment_id)
     ```
 
 
@@ -112,7 +112,7 @@ def get_annotation_format_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=compartment_id)
+    test_annotation_format = oci.datalabellingservice.get_annotation_format(compartment_id=compartment_id)
     ```
 
 

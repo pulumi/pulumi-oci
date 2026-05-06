@@ -138,7 +138,7 @@ def get_triggers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+    test_triggers = oci.devops.get_triggers(compartment_id=compartment_id,
         display_name=trigger_display_name,
         id=trigger_id,
         project_id=test_project["id"],
@@ -188,7 +188,7 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+    test_triggers = oci.devops.get_triggers(compartment_id=compartment_id,
         display_name=trigger_display_name,
         id=trigger_id,
         project_id=test_project["id"],

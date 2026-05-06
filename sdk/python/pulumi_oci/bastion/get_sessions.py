@@ -131,7 +131,7 @@ def get_sessions(bastion_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=test_bastion["id"],
+    test_sessions = oci.bastion.get_sessions(bastion_id=test_bastion["id"],
         display_name=session_display_name,
         session_id=test_session["id"],
         session_lifecycle_state=session_session_lifecycle_state)
@@ -177,7 +177,7 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_sessions = oci.Bastion.get_sessions(bastion_id=test_bastion["id"],
+    test_sessions = oci.bastion.get_sessions(bastion_id=test_bastion["id"],
         display_name=session_display_name,
         session_id=test_session["id"],
         session_lifecycle_state=session_session_lifecycle_state)

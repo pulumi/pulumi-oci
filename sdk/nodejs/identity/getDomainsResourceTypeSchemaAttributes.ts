@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceTypeSchemaAttributes = oci.Identity.getDomainsResourceTypeSchemaAttributes({
+ * const testResourceTypeSchemaAttributes = oci.identity.getDomainsResourceTypeSchemaAttributes({
  *     idcsEndpoint: testDomain.url,
- *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+ *     resourceTypeSchemaAttributeCount: Number(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount),
  *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: resourceTypeSchemaAttributeAuthorization,
  *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
- *     startIndex: resourceTypeSchemaAttributeStartIndex,
+ *     startIndex: Number(resourceTypeSchemaAttributeStartIndex),
  * });
  * ```
  */
@@ -137,15 +137,15 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceTypeSchemaAttributes = oci.Identity.getDomainsResourceTypeSchemaAttributes({
+ * const testResourceTypeSchemaAttributes = oci.identity.getDomainsResourceTypeSchemaAttributes({
  *     idcsEndpoint: testDomain.url,
- *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+ *     resourceTypeSchemaAttributeCount: Number(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount),
  *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: resourceTypeSchemaAttributeAuthorization,
  *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
- *     startIndex: resourceTypeSchemaAttributeStartIndex,
+ *     startIndex: Number(resourceTypeSchemaAttributeStartIndex),
  * });
  * ```
  */

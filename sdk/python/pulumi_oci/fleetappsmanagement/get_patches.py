@@ -199,12 +199,12 @@ def get_patches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_patches = oci.FleetAppsManagement.get_patches(compartment_id=compartment_id,
+    test_patches = oci.fleetappsmanagement.get_patches(compartment_id=compartment_id,
         id=patch_id,
         name=patch_name,
         patch_type_id=test_patch_type["id"],
         product_id=test_product["id"],
-        should_compliance_policy_rules_be_applied=patch_should_compliance_policy_rules_be_applied,
+        should_compliance_policy_rules_be_applied=patch_should_compliance_policy_rules_be_applied == "true",
         state=patch_state,
         time_released_greater_than_or_equal_to=patch_time_released_greater_than_or_equal_to,
         time_released_less_than=patch_time_released_less_than,
@@ -280,12 +280,12 @@ def get_patches_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_patches = oci.FleetAppsManagement.get_patches(compartment_id=compartment_id,
+    test_patches = oci.fleetappsmanagement.get_patches(compartment_id=compartment_id,
         id=patch_id,
         name=patch_name,
         patch_type_id=test_patch_type["id"],
         product_id=test_product["id"],
-        should_compliance_policy_rules_be_applied=patch_should_compliance_policy_rules_be_applied,
+        should_compliance_policy_rules_be_applied=patch_should_compliance_policy_rules_be_applied == "true",
         state=patch_state,
         time_released_greater_than_or_equal_to=patch_time_released_greater_than_or_equal_to,
         time_released_less_than=patch_time_released_less_than,

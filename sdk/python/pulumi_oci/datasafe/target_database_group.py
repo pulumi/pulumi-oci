@@ -371,7 +371,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                 "include": {
                     "compartments": [{
                         "id": target_database_group_matching_criteria_include_compartments_id,
-                        "is_include_subtree": target_database_group_matching_criteria_include_compartments_is_include_subtree,
+                        "is_include_subtree": target_database_group_matching_criteria_include_compartments_is_include_subtree == "true",
                     }],
                     "defined_tags": {
                         "Operations.CostCenter": "42",
@@ -439,7 +439,7 @@ class TargetDatabaseGroup(pulumi.CustomResource):
                 "include": {
                     "compartments": [{
                         "id": target_database_group_matching_criteria_include_compartments_id,
-                        "is_include_subtree": target_database_group_matching_criteria_include_compartments_is_include_subtree,
+                        "is_include_subtree": target_database_group_matching_criteria_include_compartments_is_include_subtree == "true",
                     }],
                     "defined_tags": {
                         "Operations.CostCenter": "42",

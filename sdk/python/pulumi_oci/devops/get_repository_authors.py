@@ -105,7 +105,7 @@ def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthor
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=test_repository["id"],
+    test_repository_authors = oci.devops.get_repository_authors(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 
@@ -141,7 +141,7 @@ def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_authors = oci.DevOps.get_repository_authors(repository_id=test_repository["id"],
+    test_repository_authors = oci.devops.get_repository_authors(repository_id=test_repository["id"],
         ref_name=repository_author_ref_name)
     ```
 

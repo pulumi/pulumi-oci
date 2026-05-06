@@ -480,7 +480,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint",
             compartment_id=compartment_id,
             display_name=operations_insights_private_endpoint_display_name,
-            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
             subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"],
             defined_tags={
@@ -543,7 +543,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint",
             compartment_id=compartment_id,
             display_name=operations_insights_private_endpoint_display_name,
-            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
             subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"],
             defined_tags={

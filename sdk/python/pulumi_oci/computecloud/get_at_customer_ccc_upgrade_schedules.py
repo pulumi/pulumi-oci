@@ -164,10 +164,10 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedules = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
+    test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)
@@ -225,10 +225,10 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedules = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
+    test_ccc_upgrade_schedules = oci.computecloud.get_at_customer_ccc_upgrade_schedules(access_level=ccc_upgrade_schedule_access_level,
         ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_upgrade_schedule_compartment_id_in_subtree == "true",
         display_name=ccc_upgrade_schedule_display_name,
         display_name_contains=ccc_upgrade_schedule_display_name_contains,
         state=ccc_upgrade_schedule_state)

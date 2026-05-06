@@ -134,7 +134,7 @@ def get_deployment_types(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=compartment_id,
+    test_deployment_types = oci.goldengate.get_deployment_types(compartment_id=compartment_id,
         deployment_type=deployment_type_deployment_type,
         display_name=deployment_type_display_name,
         ogg_version=deployment_type_ogg_version)
@@ -180,7 +180,7 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=compartment_id,
+    test_deployment_types = oci.goldengate.get_deployment_types(compartment_id=compartment_id,
         deployment_type=deployment_type_deployment_type,
         display_name=deployment_type_display_name,
         ogg_version=deployment_type_ogg_version)

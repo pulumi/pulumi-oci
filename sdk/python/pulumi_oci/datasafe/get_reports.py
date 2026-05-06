@@ -216,9 +216,9 @@ def get_reports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+    test_reports = oci.datasafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
-        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        compartment_id_in_subtree=report_compartment_id_in_subtree == "true",
         data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,
@@ -301,9 +301,9 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+    test_reports = oci.datasafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
-        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        compartment_id_in_subtree=report_compartment_id_in_subtree == "true",
         data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,

@@ -141,7 +141,7 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_error = oci.core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 
@@ -178,7 +178,7 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_error = oci.core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 

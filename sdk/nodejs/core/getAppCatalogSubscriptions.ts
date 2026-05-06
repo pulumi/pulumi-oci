@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
+ * const testAppCatalogSubscriptions = oci.core.getAppCatalogSubscriptions({
  *     compartmentId: compartmentId,
  *     listingId: testListing.id,
  * });
@@ -80,7 +80,7 @@ export interface GetAppCatalogSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
+ * const testAppCatalogSubscriptions = oci.core.getAppCatalogSubscriptions({
  *     compartmentId: compartmentId,
  *     listingId: testListing.id,
  * });

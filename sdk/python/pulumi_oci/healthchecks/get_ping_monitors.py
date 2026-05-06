@@ -127,7 +127,7 @@ def get_ping_monitors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=compartment_id,
+    test_ping_monitors = oci.healthchecks.get_ping_monitors(compartment_id=compartment_id,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```
@@ -171,7 +171,7 @@ def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=compartment_id,
+    test_ping_monitors = oci.healthchecks.get_ping_monitors(compartment_id=compartment_id,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```

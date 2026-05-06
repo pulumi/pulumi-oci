@@ -151,7 +151,7 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=compartment_id,
+    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
         display_name=protected_database_display_name,
         id=protected_database_id,
         protection_policy_id=test_protection_policy["id"],
@@ -206,7 +206,7 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=compartment_id,
+    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
         display_name=protected_database_display_name,
         id=protected_database_id,
         protection_policy_id=test_protection_policy["id"],

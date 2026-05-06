@@ -124,7 +124,7 @@ def get_cross_connect_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=compartment_id,
+    test_cross_connect_groups = oci.core.get_cross_connect_groups(compartment_id=compartment_id,
         display_name=cross_connect_group_display_name,
         state=cross_connect_group_state)
     ```
@@ -165,7 +165,7 @@ def get_cross_connect_groups_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=compartment_id,
+    test_cross_connect_groups = oci.core.get_cross_connect_groups(compartment_id=compartment_id,
         display_name=cross_connect_group_display_name,
         state=cross_connect_group_state)
     ```

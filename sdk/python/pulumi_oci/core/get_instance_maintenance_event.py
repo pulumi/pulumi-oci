@@ -356,7 +356,7 @@ def get_instance_maintenance_event(instance_maintenance_event_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_event = oci.Core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
+    test_instance_maintenance_event = oci.core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
     ```
 
 
@@ -407,7 +407,7 @@ def get_instance_maintenance_event_output(instance_maintenance_event_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_event = oci.Core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
+    test_instance_maintenance_event = oci.core.get_instance_maintenance_event(instance_maintenance_event_id=test_instance_maintenance_event_oci_core_instance_maintenance_event["id"])
     ```
 
 

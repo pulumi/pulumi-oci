@@ -325,7 +325,7 @@ class HttpRedirect(pulumi.CustomResource):
                 "path": http_redirect_target_path,
                 "protocol": http_redirect_target_protocol,
                 "query": http_redirect_target_query,
-                "port": http_redirect_target_port,
+                "port": int(http_redirect_target_port),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -334,7 +334,7 @@ class HttpRedirect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=http_redirect_response_code)
+            response_code=int(http_redirect_response_code))
         ```
 
         ## Import
@@ -384,7 +384,7 @@ class HttpRedirect(pulumi.CustomResource):
                 "path": http_redirect_target_path,
                 "protocol": http_redirect_target_protocol,
                 "query": http_redirect_target_query,
-                "port": http_redirect_target_port,
+                "port": int(http_redirect_target_port),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -393,7 +393,7 @@ class HttpRedirect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=http_redirect_response_code)
+            response_code=int(http_redirect_response_code))
         ```
 
         ## Import

@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyDecryptionRules = oci.NetworkFirewall.getNetworkFirewallPolicyDecryptionRules({
+ * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
+ *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```
@@ -81,9 +81,9 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyDecryptionRules = oci.NetworkFirewall.getNetworkFirewallPolicyDecryptionRules({
+ * const testNetworkFirewallPolicyDecryptionRules = oci.networkfirewall.getNetworkFirewallPolicyDecryptionRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
- *     decryptionRulePriorityOrder: networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder,
+ *     decryptionRulePriorityOrder: Number(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder),
  *     displayName: networkFirewallPolicyDecryptionRuleDisplayName,
  * });
  * ```

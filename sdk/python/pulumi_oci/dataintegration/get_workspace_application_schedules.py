@@ -157,7 +157,7 @@ def get_workspace_application_schedules(application_key: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedules = oci.dataintegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_schedule_identifier,
         keys=workspace_application_schedule_key,
@@ -213,7 +213,7 @@ def get_workspace_application_schedules_output(application_key: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+    test_workspace_application_schedules = oci.dataintegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_schedule_identifier,
         keys=workspace_application_schedule_key,

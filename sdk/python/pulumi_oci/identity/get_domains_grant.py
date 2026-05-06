@@ -377,7 +377,7 @@ def get_domains_grant(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+    test_grant = oci.identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -450,7 +450,7 @@ def get_domains_grant_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+    test_grant = oci.identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

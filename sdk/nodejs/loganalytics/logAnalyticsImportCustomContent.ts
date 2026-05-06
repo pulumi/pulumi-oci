@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     importCustomContentFile: logAnalyticsImportCustomContentImportCustomContentFile,
  *     namespace: logAnalyticsImportCustomContentNamespace,
  *     expect: logAnalyticsImportCustomContentExpect,
- *     isOverwrite: logAnalyticsImportCustomContentIsOverwrite,
+ *     isOverwrite: logAnalyticsImportCustomContentIsOverwrite === "true",
  * });
  * ```
  *

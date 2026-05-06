@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRules = oci.Events.getRules({
+ * const testRules = oci.events.getRules({
  *     compartmentId: compartmentId,
  *     displayName: ruleDisplayName,
  *     state: ruleState,
@@ -90,7 +90,7 @@ export interface GetRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRules = oci.Events.getRules({
+ * const testRules = oci.events.getRules({
  *     compartmentId: compartmentId,
  *     displayName: ruleDisplayName,
  *     state: ruleState,

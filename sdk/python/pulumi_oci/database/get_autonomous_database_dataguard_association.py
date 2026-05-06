@@ -216,7 +216,7 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
+    test_autonomous_database_dataguard_association = oci.database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
         autonomous_database_id=test_autonomous_database["id"])
     ```
 
@@ -259,7 +259,7 @@ def get_autonomous_database_dataguard_association_output(autonomous_database_dat
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
+    test_autonomous_database_dataguard_association = oci.database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
         autonomous_database_id=test_autonomous_database["id"])
     ```
 

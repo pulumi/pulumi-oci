@@ -127,7 +127,7 @@ def get_migration_plan_available_shape(availability_domain: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
+    test_migration_plan_available_shape = oci.cloudmigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
         availability_domain=migration_plan_available_shape_availability_domain,
         compartment_id=compartment_id,
         dvh_host_id=test_dvh_host["id"],
@@ -175,7 +175,7 @@ def get_migration_plan_available_shape_output(availability_domain: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
+    test_migration_plan_available_shape = oci.cloudmigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
         availability_domain=migration_plan_available_shape_availability_domain,
         compartment_id=compartment_id,
         dvh_host_id=test_dvh_host["id"],

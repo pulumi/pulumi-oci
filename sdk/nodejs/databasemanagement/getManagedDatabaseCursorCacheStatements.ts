@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
+ * const testManagedDatabaseCursorCacheStatements = oci.databasemanagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
  *     sqlText: managedDatabaseCursorCacheStatementSqlText,
@@ -87,7 +87,7 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
+ * const testManagedDatabaseCursorCacheStatements = oci.databasemanagement.getManagedDatabaseCursorCacheStatements({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
  *     sqlText: managedDatabaseCursorCacheStatementSqlText,

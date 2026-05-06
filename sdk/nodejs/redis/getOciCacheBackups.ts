@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheBackups = oci.Redis.getOciCacheBackups({
+ * const testOciCacheBackups = oci.redis.getOciCacheBackups({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheBackupDisplayName,
  *     ociCacheBackupId: testOciCacheBackup.id,
@@ -108,7 +108,7 @@ export interface GetOciCacheBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheBackups = oci.Redis.getOciCacheBackups({
+ * const testOciCacheBackups = oci.redis.getOciCacheBackups({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheBackupDisplayName,
  *     ociCacheBackupId: testOciCacheBackup.id,

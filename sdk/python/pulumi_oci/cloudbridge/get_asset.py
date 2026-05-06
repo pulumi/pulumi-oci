@@ -360,7 +360,7 @@ def get_asset(asset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
+    test_asset = oci.cloudbridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
 
 
@@ -412,7 +412,7 @@ def get_asset_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
+    test_asset = oci.cloudbridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
 
 

@@ -112,7 +112,7 @@ def get_stream_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_groups = oci.AiVision.get_stream_groups(compartment_id=compartment_id,
+    test_stream_groups = oci.aivision.get_stream_groups(compartment_id=compartment_id,
         display_name=stream_group_display_name,
         id=stream_group_id)
     ```
@@ -152,7 +152,7 @@ def get_stream_groups_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_groups = oci.AiVision.get_stream_groups(compartment_id=compartment_id,
+    test_stream_groups = oci.aivision.get_stream_groups(compartment_id=compartment_id,
         display_name=stream_group_display_name,
         id=stream_group_id)
     ```

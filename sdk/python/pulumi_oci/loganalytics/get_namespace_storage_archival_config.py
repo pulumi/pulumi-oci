@@ -93,7 +93,7 @@ def get_namespace_storage_archival_config(namespace: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_archival_config = oci.LogAnalytics.get_namespace_storage_archival_config(namespace=namespace_storage_archival_config_namespace)
+    test_namespace_storage_archival_config = oci.loganalytics.get_namespace_storage_archival_config(namespace=namespace_storage_archival_config_namespace)
     ```
 
 
@@ -122,7 +122,7 @@ def get_namespace_storage_archival_config_output(namespace: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_archival_config = oci.LogAnalytics.get_namespace_storage_archival_config(namespace=namespace_storage_archival_config_namespace)
+    test_namespace_storage_archival_config = oci.loganalytics.get_namespace_storage_archival_config(namespace=namespace_storage_archival_config_namespace)
     ```
 
 

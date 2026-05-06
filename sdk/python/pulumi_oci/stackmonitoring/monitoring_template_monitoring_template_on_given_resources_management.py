@@ -136,7 +136,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
 
         test_monitoring_template_monitoring_template_on_given_resources_management = oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management",
             monitoring_template_id=test_monitoring_template["id"],
-            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
+            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources == "true")
         ```
 
 
@@ -170,7 +170,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
 
         test_monitoring_template_monitoring_template_on_given_resources_management = oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management",
             monitoring_template_id=test_monitoring_template["id"],
-            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
+            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources == "true")
         ```
 
 

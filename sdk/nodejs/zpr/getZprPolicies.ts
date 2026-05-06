@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZprPolicies = oci.Zpr.getZprPolicies({
+ * const testZprPolicies = oci.zpr.getZprPolicies({
  *     compartmentId: tenancyOcid,
  *     name: zprPolicyName,
  *     state: zprPolicyState,
@@ -91,7 +91,7 @@ export interface GetZprPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZprPolicies = oci.Zpr.getZprPolicies({
+ * const testZprPolicies = oci.zpr.getZprPolicies({
  *     compartmentId: tenancyOcid,
  *     name: zprPolicyName,
  *     state: zprPolicyState,

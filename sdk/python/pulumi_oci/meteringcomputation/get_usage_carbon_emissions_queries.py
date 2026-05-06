@@ -98,7 +98,7 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_queries = oci.MeteringComputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
+    test_usage_carbon_emissions_queries = oci.meteringcomputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_queries = oci.MeteringComputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
+    test_usage_carbon_emissions_queries = oci.meteringcomputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
     ```
 
 

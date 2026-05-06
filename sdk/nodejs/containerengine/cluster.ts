@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     endpointConfig: {
- *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled,
+ *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled === "true",
  *         nsgIds: clusterEndpointConfigNsgIds,
  *         subnetId: testSubnet.id,
  *     },
@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     imagePolicyConfig: {
- *         isPolicyEnabled: clusterImagePolicyConfigIsPolicyEnabled,
+ *         isPolicyEnabled: clusterImagePolicyConfigIsPolicyEnabled === "true",
  *         keyDetails: [{
  *             kmsKeyId: testKey.id,
  *         }],
@@ -48,11 +48,11 @@ import * as utilities from "../utilities";
  *     kmsKeyId: testKey.id,
  *     options: {
  *         addOns: {
- *             isKubernetesDashboardEnabled: clusterOptionsAddOnsIsKubernetesDashboardEnabled,
- *             isTillerEnabled: clusterOptionsAddOnsIsTillerEnabled,
+ *             isKubernetesDashboardEnabled: clusterOptionsAddOnsIsKubernetesDashboardEnabled === "true",
+ *             isTillerEnabled: clusterOptionsAddOnsIsTillerEnabled === "true",
  *         },
  *         admissionControllerOptions: {
- *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
+ *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled === "true",
  *         },
  *         ipFamilies: clusterOptionsIpFamilies,
  *         kubernetesNetworkConfig: {
@@ -60,7 +60,7 @@ import * as utilities from "../utilities";
  *             servicesCidr: clusterOptionsKubernetesNetworkConfigServicesCidr,
  *         },
  *         openIdConnectTokenAuthenticationConfig: {
- *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
+ *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled === "true",
  *             caCertificate: clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
  *             clientId: testClient.id,
  *             configurationFile: clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile,
@@ -76,7 +76,7 @@ import * as utilities from "../utilities";
  *             usernamePrefix: clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix,
  *         },
  *         openIdConnectDiscovery: {
- *             isOpenIdConnectDiscoveryEnabled: clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled,
+ *             isOpenIdConnectDiscoveryEnabled: clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled === "true",
  *         },
  *         persistentVolumeConfig: {
  *             definedTags: {

@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGrants = oci.Identity.getDomainsGrants({
+ * const testGrants = oci.identity.getDomainsGrants({
  *     idcsEndpoint: testDomain.url,
- *     grantCount: grantGrantCount,
+ *     grantCount: Number(grantGrantCount),
  *     grantFilter: grantGrantFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: grantAuthorization,
  *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
- *     startIndex: grantStartIndex,
+ *     startIndex: Number(grantStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsGrantsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGrants = oci.Identity.getDomainsGrants({
+ * const testGrants = oci.identity.getDomainsGrants({
  *     idcsEndpoint: testDomain.url,
- *     grantCount: grantGrantCount,
+ *     grantCount: Number(grantGrantCount),
  *     grantFilter: grantGrantFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: grantAuthorization,
  *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
- *     startIndex: grantStartIndex,
+ *     startIndex: Number(grantStartIndex),
  * });
  * ```
  */

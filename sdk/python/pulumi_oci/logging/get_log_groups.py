@@ -121,9 +121,9 @@ def get_log_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=compartment_id,
+    test_log_groups = oci.logging.get_log_groups(compartment_id=compartment_id,
         display_name=log_group_display_name,
-        is_compartment_id_in_subtree=log_group_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=log_group_is_compartment_id_in_subtree == "true")
     ```
 
 
@@ -162,9 +162,9 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=compartment_id,
+    test_log_groups = oci.logging.get_log_groups(compartment_id=compartment_id,
         display_name=log_group_display_name,
-        is_compartment_id_in_subtree=log_group_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=log_group_is_compartment_id_in_subtree == "true")
     ```
 
 

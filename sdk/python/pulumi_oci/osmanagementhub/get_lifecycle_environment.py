@@ -255,7 +255,7 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
+    test_lifecycle_environment = oci.osmanagementhub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
     ```
 
 
@@ -297,7 +297,7 @@ def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
+    test_lifecycle_environment = oci.osmanagementhub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
     ```
 
 

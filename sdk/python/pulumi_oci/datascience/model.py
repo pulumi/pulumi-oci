@@ -845,13 +845,13 @@ class Model(pulumi.CustomResource):
             project_id=test_project["id"],
             backup_setting={
                 "backup_region": model_backup_setting_backup_region,
-                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled == "true",
                 "customer_notification_type": model_backup_setting_customer_notification_type,
             },
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
-                "has_artifact": model_custom_metadata_list_has_artifact,
+                "has_artifact": model_custom_metadata_list_has_artifact == "true",
                 "key": model_custom_metadata_list_key,
                 "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
@@ -859,7 +859,7 @@ class Model(pulumi.CustomResource):
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
-                "has_artifact": model_defined_metadata_list_has_artifact,
+                "has_artifact": model_defined_metadata_list_has_artifact == "true",
                 "key": model_defined_metadata_list_key,
                 "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
@@ -875,9 +875,9 @@ class Model(pulumi.CustomResource):
             input_schema=model_input_schema,
             output_schema=model_output_schema,
             retention_setting={
-                "archive_after_days": model_retention_setting_archive_after_days,
+                "archive_after_days": int(model_retention_setting_archive_after_days),
                 "customer_notification_type": model_retention_setting_customer_notification_type,
-                "delete_after_days": model_retention_setting_delete_after_days,
+                "delete_after_days": int(model_retention_setting_delete_after_days),
             },
             version_label=model_version_label)
         ```
@@ -941,13 +941,13 @@ class Model(pulumi.CustomResource):
             project_id=test_project["id"],
             backup_setting={
                 "backup_region": model_backup_setting_backup_region,
-                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled == "true",
                 "customer_notification_type": model_backup_setting_customer_notification_type,
             },
             custom_metadata_lists=[{
                 "category": model_custom_metadata_list_category,
                 "description": model_custom_metadata_list_description,
-                "has_artifact": model_custom_metadata_list_has_artifact,
+                "has_artifact": model_custom_metadata_list_has_artifact == "true",
                 "key": model_custom_metadata_list_key,
                 "keywords": model_custom_metadata_list_keywords,
                 "value": model_custom_metadata_list_value,
@@ -955,7 +955,7 @@ class Model(pulumi.CustomResource):
             defined_metadata_lists=[{
                 "category": model_defined_metadata_list_category,
                 "description": model_defined_metadata_list_description,
-                "has_artifact": model_defined_metadata_list_has_artifact,
+                "has_artifact": model_defined_metadata_list_has_artifact == "true",
                 "key": model_defined_metadata_list_key,
                 "keywords": model_defined_metadata_list_keywords,
                 "value": model_defined_metadata_list_value,
@@ -971,9 +971,9 @@ class Model(pulumi.CustomResource):
             input_schema=model_input_schema,
             output_schema=model_output_schema,
             retention_setting={
-                "archive_after_days": model_retention_setting_archive_after_days,
+                "archive_after_days": int(model_retention_setting_archive_after_days),
                 "customer_notification_type": model_retention_setting_customer_notification_type,
-                "delete_after_days": model_retention_setting_delete_after_days,
+                "delete_after_days": int(model_retention_setting_delete_after_days),
             },
             version_label=model_version_label)
         ```

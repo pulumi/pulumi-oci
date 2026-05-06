@@ -138,10 +138,10 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
+    test_inventory_records = oci.fleetappsmanagement.get_inventory_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
-        is_details_required=inventory_record_is_details_required,
+        is_details_required=inventory_record_is_details_required == "true",
         resource_id=test_resource["id"])
     ```
 
@@ -189,10 +189,10 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
+    test_inventory_records = oci.fleetappsmanagement.get_inventory_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
-        is_details_required=inventory_record_is_details_required,
+        is_details_required=inventory_record_is_details_required == "true",
         resource_id=test_resource["id"])
     ```
 

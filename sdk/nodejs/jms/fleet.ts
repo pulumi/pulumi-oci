@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAdvancedFeaturesEnabled: fleetIsAdvancedFeaturesEnabled,
+ *     isAdvancedFeaturesEnabled: fleetIsAdvancedFeaturesEnabled === "true",
  *     operationLog: {
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,

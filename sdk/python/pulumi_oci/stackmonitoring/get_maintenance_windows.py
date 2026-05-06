@@ -134,7 +134,7 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.StackMonitoring.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.stackmonitoring.get_maintenance_windows(compartment_id=compartment_id,
         lifecycle_details=maintenance_window_lifecycle_details,
         name=maintenance_window_name,
         status=maintenance_window_status)
@@ -180,7 +180,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.StackMonitoring.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.stackmonitoring.get_maintenance_windows(compartment_id=compartment_id,
         lifecycle_details=maintenance_window_lifecycle_details,
         name=maintenance_window_name,
         status=maintenance_window_status)

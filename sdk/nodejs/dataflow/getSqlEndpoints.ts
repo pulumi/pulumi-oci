@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
+ * const testSqlEndpoints = oci.dataflow.getSqlEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: sqlEndpointDisplayName,
  *     sqlEndpointId: testSqlEndpoint.id,
@@ -102,7 +102,7 @@ export interface GetSqlEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
+ * const testSqlEndpoints = oci.dataflow.getSqlEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: sqlEndpointDisplayName,
  *     sqlEndpointId: testSqlEndpoint.id,

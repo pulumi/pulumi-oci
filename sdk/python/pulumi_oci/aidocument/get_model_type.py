@@ -115,7 +115,7 @@ def get_model_type(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiDocument.get_model_type(model_type=model_type_model_type,
+    test_model_type = oci.aidocument.get_model_type(model_type=model_type_model_type,
         compartment_id=compartment_id,
         model_sub_type=model_type_model_sub_type)
     ```
@@ -154,7 +154,7 @@ def get_model_type_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiDocument.get_model_type(model_type=model_type_model_type,
+    test_model_type = oci.aidocument.get_model_type(model_type=model_type_model_type,
         compartment_id=compartment_id,
         model_sub_type=model_type_model_sub_type)
     ```

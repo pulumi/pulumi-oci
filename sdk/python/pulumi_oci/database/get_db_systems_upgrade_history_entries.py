@@ -118,7 +118,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entries = oci.database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
         state=db_systems_upgrade_history_entry_state,
         upgrade_action=db_systems_upgrade_history_entry_upgrade_action)
     ```
@@ -159,7 +159,7 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
+    test_db_systems_upgrade_history_entries = oci.database.get_db_systems_upgrade_history_entries(db_system_id=test_db_system["id"],
         state=db_systems_upgrade_history_entry_state,
         upgrade_action=db_systems_upgrade_history_entry_upgrade_action)
     ```

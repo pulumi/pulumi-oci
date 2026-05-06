@@ -187,7 +187,7 @@ def get_artifact_by_path(artifact_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
+    test_artifact_by_path = oci.genericartifactscontent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
         repository_id=test_repository["id"],
         version=artifact_by_path_version)
     ```
@@ -235,7 +235,7 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
+    test_artifact_by_path = oci.genericartifactscontent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
         repository_id=test_repository["id"],
         version=artifact_by_path_version)
     ```

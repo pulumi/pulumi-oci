@@ -153,7 +153,7 @@ def get_managed_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=compartment_id,
+    test_managed_databases = oci.databasemanagement.get_managed_databases(compartment_id=compartment_id,
         deployment_type=managed_database_deployment_type,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         id=managed_database_id,
@@ -213,7 +213,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=compartment_id,
+    test_managed_databases = oci.databasemanagement.get_managed_databases(compartment_id=compartment_id,
         deployment_type=managed_database_deployment_type,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         id=managed_database_id,

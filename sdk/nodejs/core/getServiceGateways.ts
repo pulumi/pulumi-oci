@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceGateways = oci.Core.getServiceGateways({
+ * const testServiceGateways = oci.core.getServiceGateways({
  *     compartmentId: compartmentId,
  *     state: serviceGatewayState,
  *     vcnId: testVcn.id,
@@ -92,7 +92,7 @@ export interface GetServiceGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceGateways = oci.Core.getServiceGateways({
+ * const testServiceGateways = oci.core.getServiceGateways({
  *     compartmentId: compartmentId,
  *     state: serviceGatewayState,
  *     vcnId: testVcn.id,

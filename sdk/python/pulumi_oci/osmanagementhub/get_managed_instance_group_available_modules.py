@@ -128,7 +128,7 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_modules = oci.osmanagementhub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_available_module_name,
         name_contains=managed_instance_group_available_module_name_contains)
@@ -174,7 +174,7 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_modules = oci.osmanagementhub.get_managed_instance_group_available_modules(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         name=managed_instance_group_available_module_name,
         name_contains=managed_instance_group_available_module_name_contains)

@@ -172,7 +172,7 @@ def get_fleets(application_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.FleetAppsManagement.get_fleets(application_type=fleet_application_type,
+    test_fleets = oci.fleetappsmanagement.get_fleets(application_type=fleet_application_type,
         compartment_id=compartment_id,
         display_name=fleet_display_name,
         environment_type=fleet_environment_type,
@@ -238,7 +238,7 @@ def get_fleets_output(application_type: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.FleetAppsManagement.get_fleets(application_type=fleet_application_type,
+    test_fleets = oci.fleetappsmanagement.get_fleets(application_type=fleet_application_type,
         compartment_id=compartment_id,
         display_name=fleet_display_name,
         environment_type=fleet_environment_type,

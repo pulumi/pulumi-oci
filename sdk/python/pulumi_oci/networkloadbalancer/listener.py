@@ -401,13 +401,13 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             name=listener_name,
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled,
-            l3ip_idle_timeout=listener_l3ip_idle_timeout,
-            tcp_idle_timeout=listener_tcp_idle_timeout,
-            udp_idle_timeout=listener_udp_idle_timeout)
+            is_ppv2enabled=listener_is_ppv2enabled == "true",
+            l3ip_idle_timeout=int(listener_l3ip_idle_timeout),
+            tcp_idle_timeout=int(listener_tcp_idle_timeout),
+            udp_idle_timeout=int(listener_udp_idle_timeout))
         ```
 
         ## Import
@@ -460,13 +460,13 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             name=listener_name,
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled,
-            l3ip_idle_timeout=listener_l3ip_idle_timeout,
-            tcp_idle_timeout=listener_tcp_idle_timeout,
-            udp_idle_timeout=listener_udp_idle_timeout)
+            is_ppv2enabled=listener_is_ppv2enabled == "true",
+            l3ip_idle_timeout=int(listener_l3ip_idle_timeout),
+            tcp_idle_timeout=int(listener_tcp_idle_timeout),
+            udp_idle_timeout=int(listener_udp_idle_timeout))
         ```
 
         ## Import

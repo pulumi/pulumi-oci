@@ -44,16 +44,16 @@ import * as utilities from "../utilities";
  *         vnicId: testVnicAttachment.id,
  *     },
  *     pathAnalyzerTestId: testPathAnalyzerTest.id,
- *     protocol: pathAnalysiProtocol,
+ *     protocol: Number(pathAnalysiProtocol),
  *     protocolParameters: {
  *         type: pathAnalysiProtocolParametersType,
- *         destinationPort: pathAnalysiProtocolParametersDestinationPort,
- *         icmpCode: pathAnalysiProtocolParametersIcmpCode,
- *         icmpType: pathAnalysiProtocolParametersIcmpType,
- *         sourcePort: pathAnalysiProtocolParametersSourcePort,
+ *         destinationPort: Number(pathAnalysiProtocolParametersDestinationPort),
+ *         icmpCode: Number(pathAnalysiProtocolParametersIcmpCode),
+ *         icmpType: Number(pathAnalysiProtocolParametersIcmpType),
+ *         sourcePort: Number(pathAnalysiProtocolParametersSourcePort),
  *     },
  *     queryOptions: {
- *         isBiDirectionalAnalysis: pathAnalysiQueryOptionsIsBiDirectionalAnalysis,
+ *         isBiDirectionalAnalysis: pathAnalysiQueryOptionsIsBiDirectionalAnalysis === "true",
  *     },
  *     sourceEndpoint: {
  *         type: pathAnalysiSourceEndpointType,

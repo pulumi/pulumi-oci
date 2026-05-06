@@ -148,10 +148,10 @@ def get_gi_version_minor_versions(availability_domain: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_version_minor_versions = oci.Database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
+    test_gi_version_minor_versions = oci.database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
         availability_domain=gi_version_minor_version_availability_domain,
         compartment_id=compartment_id,
-        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning,
+        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning == "true",
         shape=gi_version_minor_version_shape,
         shape_family=gi_version_minor_version_shape_family)
     ```
@@ -204,10 +204,10 @@ def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_gi_version_minor_versions = oci.Database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
+    test_gi_version_minor_versions = oci.database.get_gi_version_minor_versions(version=gi_version_minor_version_version,
         availability_domain=gi_version_minor_version_availability_domain,
         compartment_id=compartment_id,
-        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning,
+        is_gi_version_for_provisioning=gi_version_minor_version_is_gi_version_for_provisioning == "true",
         shape=gi_version_minor_version_shape,
         shape_family=gi_version_minor_version_shape_family)
     ```

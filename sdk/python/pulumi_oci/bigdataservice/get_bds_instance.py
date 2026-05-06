@@ -483,7 +483,7 @@ def get_bds_instance(bds_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=test_bds_instance_oci_bds_bds_instance["id"])
+    test_bds_instance = oci.bigdataservice.get_bds_instance(bds_instance_id=test_bds_instance_oci_bds_bds_instance["id"])
     ```
 
 
@@ -548,7 +548,7 @@ def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=test_bds_instance_oci_bds_bds_instance["id"])
+    test_bds_instance = oci.bigdataservice.get_bds_instance(bds_instance_id=test_bds_instance_oci_bds_bds_instance["id"])
     ```
 
 

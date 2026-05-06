@@ -214,14 +214,14 @@ def get_domains_apps(app_count: Optional[_builtins.int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_apps = oci.Identity.get_domains_apps(idcs_endpoint=test_domain["url"],
-        app_count=app_app_count,
+    test_apps = oci.identity.get_domains_apps(idcs_endpoint=test_domain["url"],
+        app_count=int(app_app_count),
         app_filter=app_app_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=app_authorization,
         resource_type_schema_version=app_resource_type_schema_version,
-        start_index=app_start_index)
+        start_index=int(app_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_apps_output(app_count: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_apps = oci.Identity.get_domains_apps(idcs_endpoint=test_domain["url"],
-        app_count=app_app_count,
+    test_apps = oci.identity.get_domains_apps(idcs_endpoint=test_domain["url"],
+        app_count=int(app_app_count),
         app_filter=app_app_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=app_authorization,
         resource_type_schema_version=app_resource_type_schema_version,
-        start_index=app_start_index)
+        start_index=int(app_start_index))
     ```
 
 

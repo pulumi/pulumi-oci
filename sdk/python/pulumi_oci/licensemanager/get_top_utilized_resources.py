@@ -104,8 +104,8 @@ def get_top_utilized_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree,
+    test_top_utilized_resources = oci.licensemanager.get_top_utilized_resources(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree == "true",
         resource_unit_type=top_utilized_resource_resource_unit_type)
     ```
 
@@ -142,8 +142,8 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree,
+    test_top_utilized_resources = oci.licensemanager.get_top_utilized_resources(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree == "true",
         resource_unit_type=top_utilized_resource_resource_unit_type)
     ```
 

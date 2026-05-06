@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRouteTables = oci.Core.getRouteTables({
+ * const testRouteTables = oci.core.getRouteTables({
  *     compartmentId: compartmentId,
  *     displayName: routeTableDisplayName,
  *     state: routeTableState,
@@ -106,7 +106,7 @@ export interface GetRouteTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRouteTables = oci.Core.getRouteTables({
+ * const testRouteTables = oci.core.getRouteTables({
  *     compartmentId: compartmentId,
  *     displayName: routeTableDisplayName,
  *     state: routeTableState,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabase = oci.Database.getAutonomousDatabase({
+ * const testAutonomousDatabase = oci.database.getAutonomousDatabase({
  *     autonomousDatabaseId: testAutonomousDatabaseOciDatabaseAutonomousDatabase.id,
  * });
  * ```
@@ -647,7 +647,7 @@ export interface GetAutonomousDatabaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabase = oci.Database.getAutonomousDatabase({
+ * const testAutonomousDatabase = oci.database.getAutonomousDatabase({
  *     autonomousDatabaseId: testAutonomousDatabaseOciDatabaseAutonomousDatabase.id,
  * });
  * ```

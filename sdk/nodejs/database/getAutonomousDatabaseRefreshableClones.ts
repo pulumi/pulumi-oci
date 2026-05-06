@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRefreshableClones = oci.Database.getAutonomousDatabaseRefreshableClones({
+ * const testAutonomousDatabaseRefreshableClones = oci.database.getAutonomousDatabaseRefreshableClones({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRefreshableClones = oci.Database.getAutonomousDatabaseRefreshableClones({
+ * const testAutonomousDatabaseRefreshableClones = oci.database.getAutonomousDatabaseRefreshableClones({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```

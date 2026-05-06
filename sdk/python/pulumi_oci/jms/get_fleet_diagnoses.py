@@ -95,7 +95,7 @@ def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
+    test_fleet_diagnoses = oci.jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
+    test_fleet_diagnoses = oci.jms.get_fleet_diagnoses(fleet_id=test_fleet["id"])
     ```
 
 

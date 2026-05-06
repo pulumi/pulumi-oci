@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDhcpOptions = oci.Core.getDhcpOptions({
+ * const testDhcpOptions = oci.core.getDhcpOptions({
  *     compartmentId: compartmentId,
  *     displayName: dhcpOptionsDisplayName,
  *     state: dhcpOptionsState,
@@ -106,7 +106,7 @@ export interface GetDhcpOptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDhcpOptions = oci.Core.getDhcpOptions({
+ * const testDhcpOptions = oci.core.getDhcpOptions({
  *     compartmentId: compartmentId,
  *     displayName: dhcpOptionsDisplayName,
  *     state: dhcpOptionsState,

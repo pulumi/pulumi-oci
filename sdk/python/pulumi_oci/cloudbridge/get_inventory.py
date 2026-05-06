@@ -179,7 +179,7 @@ def get_inventory(inventory_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
+    test_inventory = oci.cloudbridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_inventory_output(inventory_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
+    test_inventory = oci.cloudbridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
 
 

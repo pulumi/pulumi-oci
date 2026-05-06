@@ -150,7 +150,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_cloud_autonomous_vm_clusters = oci.database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
         availability_domain=cloud_autonomous_vm_cluster_availability_domain,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_autonomous_vm_cluster_display_name,
@@ -201,7 +201,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_autonomous_vm_clusters = oci.Database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
+    test_cloud_autonomous_vm_clusters = oci.database.get_cloud_autonomous_vm_clusters(compartment_id=compartment_id,
         availability_domain=cloud_autonomous_vm_cluster_availability_domain,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_autonomous_vm_cluster_display_name,

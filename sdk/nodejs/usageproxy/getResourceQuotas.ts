@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
+ * const testResourceQuotas = oci.usageproxy.getResourceQuotas({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     serviceEntitlement: resourceQuotaServiceEntitlement,
@@ -83,7 +83,7 @@ export interface GetResourceQuotasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
+ * const testResourceQuotas = oci.usageproxy.getResourceQuotas({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     serviceEntitlement: resourceQuotaServiceEntitlement,

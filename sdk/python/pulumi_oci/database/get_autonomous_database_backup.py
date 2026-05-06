@@ -369,7 +369,7 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
+    test_autonomous_database_backup = oci.database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
     ```
 
 
@@ -421,7 +421,7 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
+    test_autonomous_database_backup = oci.database.get_autonomous_database_backup(autonomous_database_backup_id=test_autonomous_database_backup_oci_database_autonomous_database_backup["id"])
     ```
 
 

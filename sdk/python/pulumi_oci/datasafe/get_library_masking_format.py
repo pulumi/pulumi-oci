@@ -207,7 +207,7 @@ def get_library_masking_format(library_masking_format_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
+    test_library_masking_format = oci.datasafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
     ```
 
 
@@ -245,7 +245,7 @@ def get_library_masking_format_output(library_masking_format_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
+    test_library_masking_format = oci.datasafe.get_library_masking_format(library_masking_format_id=test_library_masking_format_oci_data_safe_library_masking_format["id"])
     ```
 
 

@@ -71,7 +71,7 @@ def get_script(script_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.DatabaseMigration.get_script(script_id=test_script_oci_database_migration_script["id"])
+    test_script = oci.databasemigration.get_script(script_id=test_script_oci_database_migration_script["id"])
     ```
 
 
@@ -98,7 +98,7 @@ def get_script_output(script_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.DatabaseMigration.get_script(script_id=test_script_oci_database_migration_script["id"])
+    test_script = oci.databasemigration.get_script(script_id=test_script_oci_database_migration_script["id"])
     ```
 
 

@@ -204,7 +204,7 @@ def get_byoasn(byoasn_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoasn = oci.Core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
+    test_byoasn = oci.core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_byoasn_output(byoasn_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoasn = oci.Core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
+    test_byoasn = oci.core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
     ```
 
 

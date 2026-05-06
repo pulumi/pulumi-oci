@@ -126,7 +126,7 @@ class Query(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": query_query_definition_display_name,
                 "report_query": {
@@ -146,7 +146,7 @@ class Query(pulumi.CustomResource):
                         "namespace": query_query_definition_report_query_group_by_tag_namespace,
                         "value": query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time == "true",
                     "query_type": query_query_definition_report_query_query_type,
                     "time_usage_ended": query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": query_query_definition_report_query_time_usage_started,
@@ -194,7 +194,7 @@ class Query(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": query_query_definition_display_name,
                 "report_query": {
@@ -214,7 +214,7 @@ class Query(pulumi.CustomResource):
                         "namespace": query_query_definition_report_query_group_by_tag_namespace,
                         "value": query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time == "true",
                     "query_type": query_query_definition_report_query_query_type,
                     "time_usage_ended": query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": query_query_definition_report_query_time_usage_started,

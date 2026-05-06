@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServerIormPlan = oci.DatabaseManagement.getExternalExadataStorageServerIormPlan({
+ * const testExternalExadataStorageServerIormPlan = oci.databasemanagement.getExternalExadataStorageServerIormPlan({
  *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetExternalExadataStorageServerIormPlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServerIormPlan = oci.DatabaseManagement.getExternalExadataStorageServerIormPlan({
+ * const testExternalExadataStorageServerIormPlan = oci.databasemanagement.getExternalExadataStorageServerIormPlan({
  *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```

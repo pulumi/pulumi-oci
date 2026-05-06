@@ -1169,7 +1169,7 @@ class DomainsSmtpCredential(pulumi.CustomResource):
                 "value": smtp_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": smtp_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": smtp_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],
@@ -1310,7 +1310,7 @@ class DomainsSmtpCredential(pulumi.CustomResource):
                 "value": smtp_credential_tags_value,
             }],
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": smtp_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": smtp_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             user={
                 "ocid": test_user["ocid"],

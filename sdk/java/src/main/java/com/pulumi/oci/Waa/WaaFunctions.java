@@ -40,8 +40,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -295,8 +295,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -340,8 +340,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -475,8 +475,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -517,8 +517,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -559,8 +559,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -643,8 +643,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -685,8 +685,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -731,8 +731,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -777,8 +777,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -823,8 +823,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -869,8 +869,8 @@ public final class WaaFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waa.WaaFunctions;
      * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

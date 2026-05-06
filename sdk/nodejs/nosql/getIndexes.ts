@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIndexes = oci.Nosql.getIndexes({
+ * const testIndexes = oci.nosql.getIndexes({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  *     name: indexName,
@@ -97,7 +97,7 @@ export interface GetIndexesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIndexes = oci.Nosql.getIndexes({
+ * const testIndexes = oci.nosql.getIndexes({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  *     name: indexName,

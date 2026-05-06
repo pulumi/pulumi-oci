@@ -200,7 +200,7 @@ def get_models(category: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+    test_models = oci.datascience.get_models(compartment_id=compartment_id,
         category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,
@@ -272,7 +272,7 @@ def get_models_output(category: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+    test_models = oci.datascience.get_models(compartment_id=compartment_id,
         category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,

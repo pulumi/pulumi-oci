@@ -134,7 +134,7 @@ def get_configs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+    test_configs = oci.stackmonitoring.get_configs(compartment_id=compartment_id,
         display_name=config_display_name,
         state=config_state,
         type=config_type)
@@ -180,7 +180,7 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+    test_configs = oci.stackmonitoring.get_configs(compartment_id=compartment_id,
         display_name=config_display_name,
         state=config_state,
         type=config_type)

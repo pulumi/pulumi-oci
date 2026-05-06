@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testConfiguration = new oci.audit.Configuration("test_configuration", {
  *     compartmentId: tenancyOcid,
- *     retentionPeriodDays: configurationRetentionPeriodDays,
+ *     retentionPeriodDays: Number(configurationRetentionPeriodDays),
  * });
  * ```
  *

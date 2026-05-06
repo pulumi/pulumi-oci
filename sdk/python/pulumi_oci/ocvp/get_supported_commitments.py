@@ -105,7 +105,7 @@ def get_supported_commitments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_commitments = oci.Ocvp.get_supported_commitments(compartment_id=compartment_id,
+    test_supported_commitments = oci.ocvp.get_supported_commitments(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 
@@ -141,7 +141,7 @@ def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_commitments = oci.Ocvp.get_supported_commitments(compartment_id=compartment_id,
+    test_supported_commitments = oci.ocvp.get_supported_commitments(compartment_id=compartment_id,
         host_shape_name=test_shape["name"])
     ```
 

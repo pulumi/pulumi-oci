@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoSyncEnabled: exadataInsightIsAutoSyncEnabled,
+ *     isAutoSyncEnabled: exadataInsightIsAutoSyncEnabled === "true",
  *     memberVmClusterDetails: [{
  *         compartmentId: compartmentId,
  *         dbmPrivateEndpointId: testPrivateEndpoint.id,
@@ -50,7 +50,7 @@ import * as utilities from "../utilities";
  *             },
  *             connectionDetails: {
  *                 hostName: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsHostName,
- *                 port: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort,
+ *                 port: Number(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort),
  *                 protocol: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsProtocol,
  *                 serviceName: testService.name,
  *             },
@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *             deploymentType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDeploymentType,
  *             entitySource: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsEntitySource,
  *             freeformTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsFreeformTags,
- *             isAdvancedFeaturesEnabled: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled,
+ *             isAdvancedFeaturesEnabled: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled === "true",
  *             managementAgentId: testManagementAgent.id,
  *             opsiPrivateEndpointId: testPrivateEndpoint.id,
  *             systemTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsSystemTags,
@@ -89,9 +89,9 @@ import * as utilities from "../utilities";
  *                 hostName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName,
  *                 hosts: [{
  *                     hostIp: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp,
- *                     port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort,
+ *                     port: Number(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort),
  *                 }],
- *                 port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort,
+ *                 port: Number(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort),
  *                 protocol: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol,
  *                 serviceName: testService.name,
  *             },

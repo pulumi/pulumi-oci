@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationControls = oci.DelegateAccessControl.getDelegationControls({
+ * const testDelegationControls = oci.delegateaccesscontrol.getDelegationControls({
  *     compartmentId: compartmentId,
  *     displayName: delegationControlDisplayName,
  *     resourceId: testResource.id,
@@ -107,7 +107,7 @@ export interface GetDelegationControlsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationControls = oci.DelegateAccessControl.getDelegationControls({
+ * const testDelegationControls = oci.delegateaccesscontrol.getDelegationControls({
  *     compartmentId: compartmentId,
  *     displayName: delegationControlDisplayName,
  *     resourceId: testResource.id,

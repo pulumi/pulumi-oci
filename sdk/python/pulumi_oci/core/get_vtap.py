@@ -325,7 +325,7 @@ def get_vtap(vtap_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtap = oci.Core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
+    test_vtap = oci.core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
     ```
 
 
@@ -373,7 +373,7 @@ def get_vtap_output(vtap_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtap = oci.Core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
+    test_vtap = oci.core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
     ```
 
 

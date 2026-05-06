@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubAwrSnapshot = oci.Opsi.getAwrHubAwrSnapshot({
+ * const testAwrHubAwrSnapshot = oci.opsi.getAwrHubAwrSnapshot({
  *     awrHubId: testAwrHub.id,
  *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
  *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
@@ -87,7 +87,7 @@ export interface GetAwrHubAwrSnapshotResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubAwrSnapshot = oci.Opsi.getAwrHubAwrSnapshot({
+ * const testAwrHubAwrSnapshot = oci.opsi.getAwrHubAwrSnapshot({
  *     awrHubId: testAwrHub.id,
  *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
  *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,

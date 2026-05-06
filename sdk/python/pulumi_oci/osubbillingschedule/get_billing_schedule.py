@@ -126,7 +126,7 @@ def get_billing_schedule(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=compartment_id,
+    test_billing_schedules = oci.osubbillingschedule.get_billing_schedule(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         subscribed_service_id=test_service["id"],
         x_one_origin_region=billing_schedule_x_one_origin_region)
@@ -173,7 +173,7 @@ def get_billing_schedule_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=compartment_id,
+    test_billing_schedules = oci.osubbillingschedule.get_billing_schedule(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         subscribed_service_id=test_service["id"],
         x_one_origin_region=billing_schedule_x_one_origin_region)

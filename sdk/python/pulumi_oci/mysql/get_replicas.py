@@ -170,11 +170,11 @@ def get_replicas(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replicas = oci.Mysql.get_replicas(compartment_id=compartment_id,
+    test_replicas = oci.mysql.get_replicas(compartment_id=compartment_id,
         configuration_id=test_mysql_configuration["id"],
         db_system_id=test_mysql_db_system["id"],
         display_name=replica_display_name,
-        is_up_to_date=replica_is_up_to_date,
+        is_up_to_date=replica_is_up_to_date == "true",
         replica_id=test_replica["id"],
         state=replica_state)
     ```
@@ -231,11 +231,11 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_replicas = oci.Mysql.get_replicas(compartment_id=compartment_id,
+    test_replicas = oci.mysql.get_replicas(compartment_id=compartment_id,
         configuration_id=test_mysql_configuration["id"],
         db_system_id=test_mysql_db_system["id"],
         display_name=replica_display_name,
-        is_up_to_date=replica_is_up_to_date,
+        is_up_to_date=replica_is_up_to_date == "true",
         replica_id=test_replica["id"],
         state=replica_state)
     ```

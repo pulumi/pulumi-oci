@@ -118,7 +118,7 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_routes = oci.core.get_ipsec_connection_tunnel_routes(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"],
         advertiser=ipsec_connection_tunnel_route_advertiser)
     ```
@@ -159,7 +159,7 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_routes = oci.core.get_ipsec_connection_tunnel_routes(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"],
         advertiser=ipsec_connection_tunnel_route_advertiser)
     ```

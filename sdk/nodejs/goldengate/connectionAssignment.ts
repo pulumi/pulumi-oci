@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * const testConnectionAssignment = new oci.goldengate.ConnectionAssignment("test_connection_assignment", {
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
- *     isLockOverride: connectionAssignmentIsLockOverride,
+ *     isLockOverride: connectionAssignmentIsLockOverride === "true",
  * });
  * ```
  *

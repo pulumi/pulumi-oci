@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListenerRules = oci.LoadBalancer.getListenerRules({
+ * const testListenerRules = oci.loadbalancer.getListenerRules({
  *     listenerName: testListener.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });
@@ -86,7 +86,7 @@ export interface GetListenerRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListenerRules = oci.LoadBalancer.getListenerRules({
+ * const testListenerRules = oci.loadbalancer.getListenerRules({
  *     listenerName: testListener.name,
  *     loadBalancerId: testLoadBalancer.id,
  * });

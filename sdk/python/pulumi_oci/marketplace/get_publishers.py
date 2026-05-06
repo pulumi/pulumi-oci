@@ -105,7 +105,7 @@ def get_publishers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+    test_publishers = oci.marketplace.get_publishers(compartment_id=compartment_id,
         publisher_id=test_publisher["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+    test_publishers = oci.marketplace.get_publishers(compartment_id=compartment_id,
         publisher_id=test_publisher["id"])
     ```
 

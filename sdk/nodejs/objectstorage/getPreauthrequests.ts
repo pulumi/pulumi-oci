@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
+ * const testPreauthenticatedRequests = oci.objectstorage.getPreauthrequests({
  *     bucket: preauthenticatedRequestBucket,
  *     namespace: preauthenticatedRequestNamespace,
  *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,
@@ -87,7 +87,7 @@ export interface GetPreauthrequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
+ * const testPreauthenticatedRequests = oci.objectstorage.getPreauthrequests({
  *     bucket: preauthenticatedRequestBucket,
  *     namespace: preauthenticatedRequestNamespace,
  *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,

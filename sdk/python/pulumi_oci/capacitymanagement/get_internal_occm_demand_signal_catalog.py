@@ -191,7 +191,7 @@ def get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog = oci.CapacityManagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
+    test_internal_occm_demand_signal_catalog = oci.capacitymanagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_internal_occm_demand_signal_catalog_output(occm_demand_signal_catalog_id
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occm_demand_signal_catalog = oci.CapacityManagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
+    test_internal_occm_demand_signal_catalog = oci.capacitymanagement.get_internal_occm_demand_signal_catalog(occm_demand_signal_catalog_id=test_catalog["id"])
     ```
 
 

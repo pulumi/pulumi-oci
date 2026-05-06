@@ -126,7 +126,7 @@ def get_operations_insights_warehouses(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
+    test_operations_insights_warehouses = oci.opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
         display_name=operations_insights_warehouse_display_name,
         id=operations_insights_warehouse_id,
         states=operations_insights_warehouse_state)
@@ -172,7 +172,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
+    test_operations_insights_warehouses = oci.opsi.get_operations_insights_warehouses(compartment_id=compartment_id,
         display_name=operations_insights_warehouse_display_name,
         id=operations_insights_warehouse_id,
         states=operations_insights_warehouse_state)

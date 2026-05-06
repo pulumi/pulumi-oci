@@ -261,7 +261,7 @@ def get_cloud_db_system_discovery(cloud_db_system_discovery_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discovery = oci.DatabaseManagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
+    test_cloud_db_system_discovery = oci.databasemanagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
     ```
 
 
@@ -304,7 +304,7 @@ def get_cloud_db_system_discovery_output(cloud_db_system_discovery_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_discovery = oci.DatabaseManagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
+    test_cloud_db_system_discovery = oci.databasemanagement.get_cloud_db_system_discovery(cloud_db_system_discovery_id=test_cloud_db_system_discovery_oci_database_management_cloud_db_system_discovery["id"])
     ```
 
 

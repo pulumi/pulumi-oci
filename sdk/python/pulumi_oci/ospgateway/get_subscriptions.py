@@ -105,7 +105,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ospgateway.get_subscriptions(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region)
     ```
 
@@ -141,7 +141,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.ospgateway.get_subscriptions(compartment_id=compartment_id,
         osp_home_region=subscription_osp_home_region)
     ```
 

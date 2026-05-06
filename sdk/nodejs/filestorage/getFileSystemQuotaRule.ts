@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRule = oci.FileStorage.getFileSystemQuotaRule({
+ * const testFileSystemQuotaRule = oci.filestorage.getFileSystemQuotaRule({
  *     fileSystemId: testFileSystem.id,
  *     quotaRuleId: testRule.id,
  * });
@@ -99,7 +99,7 @@ export interface GetFileSystemQuotaRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystemQuotaRule = oci.FileStorage.getFileSystemQuotaRule({
+ * const testFileSystemQuotaRule = oci.filestorage.getFileSystemQuotaRule({
  *     fileSystemId: testFileSystem.id,
  *     quotaRuleId: testRule.id,
  * });

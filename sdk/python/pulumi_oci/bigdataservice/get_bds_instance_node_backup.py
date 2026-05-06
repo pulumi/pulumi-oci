@@ -177,7 +177,7 @@ def get_bds_instance_node_backup(bds_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backup = oci.BigDataService.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backup = oci.bigdataservice.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
         node_backup_id=test_backup["id"])
     ```
 
@@ -217,7 +217,7 @@ def get_bds_instance_node_backup_output(bds_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backup = oci.BigDataService.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backup = oci.bigdataservice.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
         node_backup_id=test_backup["id"])
     ```
 

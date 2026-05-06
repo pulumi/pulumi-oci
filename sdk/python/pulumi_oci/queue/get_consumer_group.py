@@ -212,7 +212,7 @@ def get_consumer_group(consumer_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_consumer_group = oci.Queue.get_consumer_group(consumer_group_id=test_consumer_group_oci_queue_consumer_group["id"])
+    test_consumer_group = oci.queue.get_consumer_group(consumer_group_id=test_consumer_group_oci_queue_consumer_group["id"])
     ```
 
 
@@ -251,7 +251,7 @@ def get_consumer_group_output(consumer_group_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_consumer_group = oci.Queue.get_consumer_group(consumer_group_id=test_consumer_group_oci_queue_consumer_group["id"])
+    test_consumer_group = oci.queue.get_consumer_group(consumer_group_id=test_consumer_group_oci_queue_consumer_group["id"])
     ```
 
 

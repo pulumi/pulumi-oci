@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * const testOperationsInsightsPrivateEndpoint = new oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint", {
  *     compartmentId: compartmentId,
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
  *     subnetId: testSubnet.id,
  *     vcnId: testVcn.id,
  *     definedTags: {

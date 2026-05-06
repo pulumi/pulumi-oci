@@ -240,7 +240,7 @@ def get_remediation_recipe(remediation_recipe_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
+    test_remediation_recipe = oci.adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_remediation_recipe_output(remediation_recipe_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
+    test_remediation_recipe = oci.adm.get_remediation_recipe(remediation_recipe_id=test_remediation_recipe_oci_adm_remediation_recipe["id"])
     ```
 
 

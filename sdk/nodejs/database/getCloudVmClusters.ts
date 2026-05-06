@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusters = oci.Database.getCloudVmClusters({
+ * const testCloudVmClusters = oci.database.getCloudVmClusters({
  *     compartmentId: compartmentId,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,
@@ -110,7 +110,7 @@ export interface GetCloudVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusters = oci.Database.getCloudVmClusters({
+ * const testCloudVmClusters = oci.database.getCloudVmClusters({
  *     compartmentId: compartmentId,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,

@@ -140,7 +140,7 @@ def get_views(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=compartment_id,
+    test_views = oci.dns.get_views(compartment_id=compartment_id,
         scope="PRIVATE",
         display_name=view_display_name,
         id=view_id,
@@ -195,7 +195,7 @@ def get_views_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=compartment_id,
+    test_views = oci.dns.get_views(compartment_id=compartment_id,
         scope="PRIVATE",
         display_name=view_display_name,
         id=view_id,

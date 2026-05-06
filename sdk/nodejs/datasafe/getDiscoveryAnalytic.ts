@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
+ * const testDiscoveryAnalytic = oci.datasafe.getDiscoveryAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     targetId: testTarget.id,
@@ -102,9 +102,9 @@ export interface GetDiscoveryAnalyticResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
+ * const testDiscoveryAnalytic = oci.datasafe.getDiscoveryAnalytic({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     targetId: testTarget.id,

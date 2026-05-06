@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.Optimizer.getProfiles({
+ * const testProfiles = oci.optimizer.getProfiles({
  *     compartmentId: compartmentId,
  *     name: profileName,
  *     state: profileState,
@@ -90,7 +90,7 @@ export interface GetProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.Optimizer.getProfiles({
+ * const testProfiles = oci.optimizer.getProfiles({
  *     compartmentId: compartmentId,
  *     name: profileName,
  *     state: profileState,

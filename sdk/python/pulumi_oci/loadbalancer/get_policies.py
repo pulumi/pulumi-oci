@@ -95,7 +95,7 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=compartment_id)
+    test_load_balancer_policies = oci.loadbalancer.get_policies(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=compartment_id)
+    test_load_balancer_policies = oci.loadbalancer.get_policies(compartment_id=compartment_id)
     ```
 
 

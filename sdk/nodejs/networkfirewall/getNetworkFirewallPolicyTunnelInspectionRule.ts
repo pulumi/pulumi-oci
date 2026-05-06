@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRule = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRule({
+ * const testNetworkFirewallPolicyTunnelInspectionRule = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRule({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     tunnelInspectionRuleName: testRule.name,
  * });
@@ -103,7 +103,7 @@ export interface GetNetworkFirewallPolicyTunnelInspectionRuleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyTunnelInspectionRule = oci.NetworkFirewall.getNetworkFirewallPolicyTunnelInspectionRule({
+ * const testNetworkFirewallPolicyTunnelInspectionRule = oci.networkfirewall.getNetworkFirewallPolicyTunnelInspectionRule({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     tunnelInspectionRuleName: testRule.name,
  * });

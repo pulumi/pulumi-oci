@@ -193,15 +193,15 @@ def get_exascale_db_storage_vaults(attached_shape_attributes: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+    test_exascale_db_storage_vaults = oci.database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
         attached_shape_attributes=exascale_db_storage_vault_attached_shape_attributes,
         attached_shape_attributes_not_equal_to=exascale_db_storage_vault_attached_shape_attributes_not_equal_to,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
-        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
+        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
+        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
     ```
 
 
@@ -264,15 +264,15 @@ def get_exascale_db_storage_vaults_output(attached_shape_attributes: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+    test_exascale_db_storage_vaults = oci.database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
         attached_shape_attributes=exascale_db_storage_vault_attached_shape_attributes,
         attached_shape_attributes_not_equal_to=exascale_db_storage_vault_attached_shape_attributes_not_equal_to,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
-        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
+        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
+        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
     ```
 
 

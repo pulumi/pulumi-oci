@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testArtifactByPath = oci.GenericArtifactsContent.getArtifactByPath({
+ * const testArtifactByPath = oci.genericartifactscontent.getArtifactByPath({
  *     artifactPath: artifactByPathArtifactPath,
  *     repositoryId: testRepository.id,
  *     version: artifactByPathVersion,
@@ -80,7 +80,7 @@ export interface GetArtifactByPathResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testArtifactByPath = oci.GenericArtifactsContent.getArtifactByPath({
+ * const testArtifactByPath = oci.genericartifactscontent.getArtifactByPath({
  *     artifactPath: artifactByPathArtifactPath,
  *     repositoryId: testRepository.id,
  *     version: artifactByPathVersion,

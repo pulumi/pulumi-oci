@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFlexComponents = oci.Database.getFlexComponents({
+ * const testFlexComponents = oci.database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
  *     shape: flexComponentShape,
@@ -87,7 +87,7 @@ export interface GetFlexComponentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFlexComponents = oci.Database.getFlexComponents({
+ * const testFlexComponents = oci.database.getFlexComponents({
  *     compartmentId: compartmentId,
  *     name: flexComponentName,
  *     shape: flexComponentShape,

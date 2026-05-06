@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
+ * const testClusterNetworkInstances = oci.core.getClusterNetworkInstances({
  *     clusterNetworkId: testClusterNetwork.id,
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkInstanceDisplayName,
@@ -87,7 +87,7 @@ export interface GetClusterNetworkInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
+ * const testClusterNetworkInstances = oci.core.getClusterNetworkInstances({
  *     clusterNetworkId: testClusterNetwork.id,
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkInstanceDisplayName,

@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigurations = oci.Psql.getConfigurations({
+ * const testConfigurations = oci.psql.getConfigurations({
  *     compartmentId: compartmentId,
  *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -148,14 +148,14 @@ export interface GetConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfigurations = oci.Psql.getConfigurations({
+ * const testConfigurations = oci.psql.getConfigurations({
  *     compartmentId: compartmentId,
  *     configType: configurationConfigType,
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     instanceMemorySizeInGbs: Number(configurationInstanceMemorySizeInGbs),
+ *     instanceOcpuCount: Number(configurationInstanceOcpuCount),
  *     shape: configurationShape,
  *     state: configurationState,
  * });

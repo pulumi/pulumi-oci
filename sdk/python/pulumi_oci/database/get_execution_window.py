@@ -299,7 +299,7 @@ def get_execution_window(execution_window_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_window = oci.Database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
+    test_execution_window = oci.database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
     ```
 
 
@@ -345,7 +345,7 @@ def get_execution_window_output(execution_window_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_window = oci.Database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
+    test_execution_window = oci.database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
     ```
 
 

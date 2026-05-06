@@ -378,7 +378,7 @@ def get_domains_my_user_db_credential(authorization: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_my_user_db_credential = oci.identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
         my_user_db_credential_id=test_db_credential["id"],
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version)
@@ -443,7 +443,7 @@ def get_domains_my_user_db_credential_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_my_user_db_credential = oci.identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
         my_user_db_credential_id=test_db_credential["id"],
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version)

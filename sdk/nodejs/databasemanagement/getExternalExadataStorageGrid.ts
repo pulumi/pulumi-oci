@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageGrid = oci.DatabaseManagement.getExternalExadataStorageGrid({
+ * const testExternalExadataStorageGrid = oci.databasemanagement.getExternalExadataStorageGrid({
  *     externalExadataStorageGridId: testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id,
  * });
  * ```
@@ -124,7 +124,7 @@ export interface GetExternalExadataStorageGridResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageGrid = oci.DatabaseManagement.getExternalExadataStorageGrid({
+ * const testExternalExadataStorageGrid = oci.databasemanagement.getExternalExadataStorageGrid({
  *     externalExadataStorageGridId: testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id,
  * });
  * ```

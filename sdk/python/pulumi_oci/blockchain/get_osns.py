@@ -105,7 +105,7 @@ def get_osns(blockchain_platform_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
+    test_osns = oci.blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
         display_name=osn_display_name)
     ```
 
@@ -141,7 +141,7 @@ def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
+    test_osns = oci.blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
         display_name=osn_display_name)
     ```
 

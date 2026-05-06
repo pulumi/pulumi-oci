@@ -203,7 +203,7 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
+    test_network_firewall_policy = oci.networkfirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
+    test_network_firewall_policy = oci.networkfirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
 
 

@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsights = oci.Opsi.getExadataInsights({
+ * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,
@@ -126,9 +126,9 @@ export interface GetExadataInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInsights = oci.Opsi.getExadataInsights({
+ * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,

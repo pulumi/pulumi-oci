@@ -703,7 +703,7 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
+            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled == "true",
             member_vm_cluster_details=[{
                 "compartment_id": compartment_id,
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
@@ -720,7 +720,7 @@ class ExadataInsight(pulumi.CustomResource):
                     },
                     "connection_details": {
                         "host_name": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_host_name,
-                        "port": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -739,7 +739,7 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_autonomous_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_autonomous_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_freeform_tags,
-                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled,
+                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled == "true",
                     "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_system_tags,
@@ -759,9 +759,9 @@ class ExadataInsight(pulumi.CustomResource):
                         "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                            "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port),
                         }],
-                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -851,7 +851,7 @@ class ExadataInsight(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
+            is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled == "true",
             member_vm_cluster_details=[{
                 "compartment_id": compartment_id,
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
@@ -868,7 +868,7 @@ class ExadataInsight(pulumi.CustomResource):
                     },
                     "connection_details": {
                         "host_name": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_host_name,
-                        "port": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_autonomous_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -887,7 +887,7 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_autonomous_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_autonomous_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_freeform_tags,
-                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled,
+                    "is_advanced_features_enabled": exadata_insight_member_vm_cluster_details_member_autonomous_details_is_advanced_features_enabled == "true",
                     "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_autonomous_details_system_tags,
@@ -907,9 +907,9 @@ class ExadataInsight(pulumi.CustomResource):
                         "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                            "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port),
                         }],
-                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
+                        "port": int(exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port),
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },

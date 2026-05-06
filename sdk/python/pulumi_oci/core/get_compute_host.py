@@ -396,7 +396,7 @@ def get_compute_host(compute_host_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host = oci.Core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
+    test_compute_host = oci.core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host = oci.Core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
+    test_compute_host = oci.core.get_compute_host(compute_host_id=test_compute_host_oci_core_compute_host["id"])
     ```
 
 

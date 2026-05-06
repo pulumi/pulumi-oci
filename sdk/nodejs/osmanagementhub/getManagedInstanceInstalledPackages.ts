@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceInstalledPackages = oci.OsManagementHub.getManagedInstanceInstalledPackages({
+ * const testManagedInstanceInstalledPackages = oci.osmanagementhub.getManagedInstanceInstalledPackages({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceInstalledPackageDisplayName,
@@ -105,7 +105,7 @@ export interface GetManagedInstanceInstalledPackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceInstalledPackages = oci.OsManagementHub.getManagedInstanceInstalledPackages({
+ * const testManagedInstanceInstalledPackages = oci.osmanagementhub.getManagedInstanceInstalledPackages({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceInstalledPackageDisplayName,

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQuery = oci.CloudGuard.getSavedQuery({
+ * const testSavedQuery = oci.cloudguard.getSavedQuery({
  *     savedQueryId: testSavedQueryOciCloudGuardSavedQuery.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetSavedQueryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQuery = oci.CloudGuard.getSavedQuery({
+ * const testSavedQuery = oci.cloudguard.getSavedQuery({
  *     savedQueryId: testSavedQueryOciCloudGuardSavedQuery.id,
  * });
  * ```

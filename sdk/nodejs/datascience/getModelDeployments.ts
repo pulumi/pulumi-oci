@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeployments = oci.DataScience.getModelDeployments({
+ * const testModelDeployments = oci.datascience.getModelDeployments({
  *     compartmentId: compartmentId,
  *     createdBy: modelDeploymentCreatedBy,
  *     displayName: modelDeploymentDisplayName,
@@ -116,7 +116,7 @@ export interface GetModelDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeployments = oci.DataScience.getModelDeployments({
+ * const testModelDeployments = oci.datascience.getModelDeployments({
  *     compartmentId: compartmentId,
  *     createdBy: modelDeploymentCreatedBy,
  *     displayName: modelDeploymentDisplayName,

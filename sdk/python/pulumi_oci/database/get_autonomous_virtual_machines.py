@@ -124,7 +124,7 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_virtual_machines = oci.database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```
@@ -165,7 +165,7 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_virtual_machines = oci.database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```

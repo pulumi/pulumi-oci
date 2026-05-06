@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *
  * const testHeatWaveCluster = new oci.mysql.HeatWaveCluster("test_heat_wave_cluster", {
  *     dbSystemId: testDbSystem.id,
- *     clusterSize: heatWaveClusterClusterSize,
- *     isLakehouseEnabled: heatWaveClusterIsLakehouseEnabled,
+ *     clusterSize: Number(heatWaveClusterClusterSize),
+ *     isLakehouseEnabled: heatWaveClusterIsLakehouseEnabled === "true",
  *     shapeName: testShape.name,
  * });
  * ```

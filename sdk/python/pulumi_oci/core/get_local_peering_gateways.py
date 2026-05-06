@@ -112,7 +112,7 @@ def get_local_peering_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=compartment_id,
+    test_local_peering_gateways = oci.core.get_local_peering_gateways(compartment_id=compartment_id,
         vcn_id=test_vcn["id"])
     ```
 
@@ -149,7 +149,7 @@ def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=compartment_id,
+    test_local_peering_gateways = oci.core.get_local_peering_gateways(compartment_id=compartment_id,
         vcn_id=test_vcn["id"])
     ```
 

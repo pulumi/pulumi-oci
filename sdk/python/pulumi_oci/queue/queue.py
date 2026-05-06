@@ -593,16 +593,16 @@ class Queue(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=queue_display_name,
             capabilities=[{
-                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
-                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled == "true",
+                "primary_consumer_group_dead_letter_queue_delivery_count": int(queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count),
                 "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
                 "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
                 "type": queue_capabilities_type,
             }],
-            channel_consumption_limit=queue_channel_consumption_limit,
+            channel_consumption_limit=int(queue_channel_consumption_limit),
             custom_encryption_key_id=test_key["id"],
-            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
-            purge_trigger=purge_trigger,
+            dead_letter_queue_delivery_count=int(queue_dead_letter_queue_delivery_count),
+            purge_trigger=int(purge_trigger),
             purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -610,9 +610,9 @@ class Queue(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=queue_retention_in_seconds,
-            timeout_in_seconds=queue_timeout_in_seconds,
-            visibility_in_seconds=queue_visibility_in_seconds)
+            retention_in_seconds=int(queue_retention_in_seconds),
+            timeout_in_seconds=int(queue_timeout_in_seconds),
+            visibility_in_seconds=int(queue_visibility_in_seconds))
         ```
 
         ## Import
@@ -664,16 +664,16 @@ class Queue(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=queue_display_name,
             capabilities=[{
-                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
-                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled == "true",
+                "primary_consumer_group_dead_letter_queue_delivery_count": int(queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count),
                 "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
                 "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
                 "type": queue_capabilities_type,
             }],
-            channel_consumption_limit=queue_channel_consumption_limit,
+            channel_consumption_limit=int(queue_channel_consumption_limit),
             custom_encryption_key_id=test_key["id"],
-            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
-            purge_trigger=purge_trigger,
+            dead_letter_queue_delivery_count=int(queue_dead_letter_queue_delivery_count),
+            purge_trigger=int(purge_trigger),
             purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -681,9 +681,9 @@ class Queue(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=queue_retention_in_seconds,
-            timeout_in_seconds=queue_timeout_in_seconds,
-            visibility_in_seconds=queue_visibility_in_seconds)
+            retention_in_seconds=int(queue_retention_in_seconds),
+            timeout_in_seconds=int(queue_timeout_in_seconds),
+            visibility_in_seconds=int(queue_visibility_in_seconds))
         ```
 
         ## Import

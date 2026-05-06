@@ -760,10 +760,10 @@ class GdpGdpPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_approval_needed=gdp_pipeline_is_approval_needed,
-            is_chunking_enabled=gdp_pipeline_is_chunking_enabled,
-            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled,
-            is_scanning_enabled=gdp_pipeline_is_scanning_enabled,
+            is_approval_needed=gdp_pipeline_is_approval_needed == "true",
+            is_chunking_enabled=gdp_pipeline_is_chunking_enabled == "true",
+            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled == "true",
+            is_scanning_enabled=gdp_pipeline_is_scanning_enabled == "true",
             service_log_group_id=test_log_group["id"])
         ```
 
@@ -842,10 +842,10 @@ class GdpGdpPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_approval_needed=gdp_pipeline_is_approval_needed,
-            is_chunking_enabled=gdp_pipeline_is_chunking_enabled,
-            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled,
-            is_scanning_enabled=gdp_pipeline_is_scanning_enabled,
+            is_approval_needed=gdp_pipeline_is_approval_needed == "true",
+            is_chunking_enabled=gdp_pipeline_is_chunking_enabled == "true",
+            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled == "true",
+            is_scanning_enabled=gdp_pipeline_is_scanning_enabled == "true",
             service_log_group_id=test_log_group["id"])
         ```
 

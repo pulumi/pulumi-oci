@@ -105,7 +105,7 @@ def get_backends(backendset_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.LoadBalancer.get_backends(backendset_name=test_backend_set["name"],
+    test_backends = oci.loadbalancer.get_backends(backendset_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_backends_output(backendset_name: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.LoadBalancer.get_backends(backendset_name=test_backend_set["name"],
+    test_backends = oci.loadbalancer.get_backends(backendset_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStations = oci.OsManagementHub.getManagementStations({
+ * const testManagementStations = oci.osmanagementhub.getManagementStations({
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
@@ -140,7 +140,7 @@ export interface GetManagementStationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStations = oci.OsManagementHub.getManagementStations({
+ * const testManagementStations = oci.osmanagementhub.getManagementStations({
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,

@@ -228,7 +228,7 @@ def get_waas_policy(waas_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
+    test_waas_policy = oci.waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
+    test_waas_policy = oci.waas.get_waas_policy(waas_policy_id=test_waas_policy_oci_waas_waas_policy["id"])
     ```
 
 

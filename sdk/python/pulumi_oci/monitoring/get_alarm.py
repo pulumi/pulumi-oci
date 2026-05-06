@@ -419,7 +419,7 @@ def get_alarm(alarm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
+    test_alarm = oci.monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
     ```
 
 
@@ -482,7 +482,7 @@ def get_alarm_output(alarm_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
+    test_alarm = oci.monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
     ```
 
 

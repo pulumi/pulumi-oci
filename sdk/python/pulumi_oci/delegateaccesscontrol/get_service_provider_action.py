@@ -168,7 +168,7 @@ def get_service_provider_action(service_provider_action_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_action = oci.DelegateAccessControl.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
+    test_service_provider_action = oci.delegateaccesscontrol.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
     ```
 
 
@@ -203,7 +203,7 @@ def get_service_provider_action_output(service_provider_action_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_action = oci.DelegateAccessControl.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
+    test_service_provider_action = oci.delegateaccesscontrol.get_service_provider_action(service_provider_action_id=test_service_provider_action_oci_delegate_access_control_service_provider_action["id"])
     ```
 
 

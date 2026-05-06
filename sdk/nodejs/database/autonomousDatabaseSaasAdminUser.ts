@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     password: autonomousDatabaseSaasAdminUserPassword,
  *     accessType: autonomousDatabaseSaasAdminUserAccessType,
- *     duration: autonomousDatabaseSaasAdminUserDuration,
+ *     duration: Number(autonomousDatabaseSaasAdminUserDuration),
  * });
  * ```
  *

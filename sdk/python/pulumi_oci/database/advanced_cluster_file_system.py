@@ -405,7 +405,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
 
         test_advanced_cluster_file_system = oci.database.AdvancedClusterFileSystem("test_advanced_cluster_file_system",
             name=advanced_cluster_file_system_name,
-            storage_in_gbs=advanced_cluster_file_system_storage_in_gbs,
+            storage_in_gbs=int(advanced_cluster_file_system_storage_in_gbs),
             vm_cluster_id=test_vm_cluster["id"],
             compartment_id=compartment_id,
             defined_tags=advanced_cluster_file_system_defined_tags,
@@ -454,7 +454,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
 
         test_advanced_cluster_file_system = oci.database.AdvancedClusterFileSystem("test_advanced_cluster_file_system",
             name=advanced_cluster_file_system_name,
-            storage_in_gbs=advanced_cluster_file_system_storage_in_gbs,
+            storage_in_gbs=int(advanced_cluster_file_system_storage_in_gbs),
             vm_cluster_id=test_vm_cluster["id"],
             compartment_id=compartment_id,
             defined_tags=advanced_cluster_file_system_defined_tags,

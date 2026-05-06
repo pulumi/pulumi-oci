@@ -124,7 +124,7 @@ def get_tables(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=compartment_id,
+    test_tables = oci.nosql.get_tables(compartment_id=compartment_id,
         name=table_name,
         state=table_state)
     ```
@@ -165,7 +165,7 @@ def get_tables_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=compartment_id,
+    test_tables = oci.nosql.get_tables(compartment_id=compartment_id,
         name=table_name,
         state=table_state)
     ```

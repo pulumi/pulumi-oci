@@ -223,8 +223,8 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
+    test_scheduler_executions = oci.fleetappsmanagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree == "true",
         display_name=scheduler_execution_display_name,
         lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],
@@ -309,8 +309,8 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
+    test_scheduler_executions = oci.fleetappsmanagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree == "true",
         display_name=scheduler_execution_display_name,
         lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],

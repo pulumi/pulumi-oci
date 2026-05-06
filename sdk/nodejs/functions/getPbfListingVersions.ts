@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
+ * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,
@@ -112,9 +112,9 @@ export interface GetPbfListingVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
+ * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,

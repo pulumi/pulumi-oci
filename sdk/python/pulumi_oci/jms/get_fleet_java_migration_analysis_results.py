@@ -157,7 +157,7 @@ def get_fleet_java_migration_analysis_results(application_name: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_results = oci.jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
         application_name=fleet_java_migration_analysis_result_application_name,
         host_name=fleet_java_migration_analysis_result_host_name,
         managed_instance_id=fleet_java_migration_analysis_result_managed_instance_id,
@@ -213,7 +213,7 @@ def get_fleet_java_migration_analysis_results_output(application_name: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_results = oci.jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
         application_name=fleet_java_migration_analysis_result_application_name,
         host_name=fleet_java_migration_analysis_result_host_name,
         managed_instance_id=fleet_java_migration_analysis_result_managed_instance_id,

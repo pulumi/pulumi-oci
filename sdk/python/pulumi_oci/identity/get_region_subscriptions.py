@@ -95,7 +95,7 @@ def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscrip
     import pulumi
     import pulumi_oci as oci
 
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=test_tenancy["id"])
+    test_region_subscriptions = oci.identity.get_region_subscriptions(tenancy_id=test_tenancy["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=test_tenancy["id"])
+    test_region_subscriptions = oci.identity.get_region_subscriptions(tenancy_id=test_tenancy["id"])
     ```
 
 

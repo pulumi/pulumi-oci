@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
+ * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineConfiguration({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
  * });
@@ -111,7 +111,7 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
+ * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineConfiguration({
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
  * });

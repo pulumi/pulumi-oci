@@ -143,7 +143,7 @@ def get_tenancy(tenancy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=tenancy_ocid)
+    test_tenancy = oci.identity.get_tenancy(tenancy_id=tenancy_ocid)
     ```
 
 
@@ -176,7 +176,7 @@ def get_tenancy_output(tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tenancy = oci.Identity.get_tenancy(tenancy_id=tenancy_ocid)
+    test_tenancy = oci.identity.get_tenancy(tenancy_id=tenancy_ocid)
     ```
 
 

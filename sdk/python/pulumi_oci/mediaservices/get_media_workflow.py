@@ -249,7 +249,7 @@ def get_media_workflow(media_workflow_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow = oci.MediaServices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
+    test_media_workflow = oci.mediaservices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
     ```
 
 
@@ -291,7 +291,7 @@ def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow = oci.MediaServices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
+    test_media_workflow = oci.mediaservices.get_media_workflow(media_workflow_id=test_media_workflow_oci_media_services_media_workflow["id"])
     ```
 
 

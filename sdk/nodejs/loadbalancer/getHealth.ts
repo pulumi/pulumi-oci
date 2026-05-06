@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerHealth = oci.LoadBalancer.getHealth({
+ * const testLoadBalancerHealth = oci.loadbalancer.getHealth({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetHealthResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerHealth = oci.LoadBalancer.getHealth({
+ * const testLoadBalancerHealth = oci.loadbalancer.getHealth({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```

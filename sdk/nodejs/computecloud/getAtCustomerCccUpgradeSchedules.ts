@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
+ * const testCccUpgradeSchedules = oci.computecloud.getAtCustomerCccUpgradeSchedules({
  *     accessLevel: cccUpgradeScheduleAccessLevel,
  *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree === "true",
  *     displayName: cccUpgradeScheduleDisplayName,
  *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
  *     state: cccUpgradeScheduleState,
@@ -119,11 +119,11 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
+ * const testCccUpgradeSchedules = oci.computecloud.getAtCustomerCccUpgradeSchedules({
  *     accessLevel: cccUpgradeScheduleAccessLevel,
  *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree === "true",
  *     displayName: cccUpgradeScheduleDisplayName,
  *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
  *     state: cccUpgradeScheduleState,

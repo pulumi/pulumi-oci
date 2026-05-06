@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isUsedWithConfigurationSourceProvider: privateEndpointIsUsedWithConfigurationSourceProvider,
+ *     isUsedWithConfigurationSourceProvider: privateEndpointIsUsedWithConfigurationSourceProvider === "true",
  *     nsgIdLists: privateEndpointNsgIdList,
  *     securityAttributes: privateEndpointSecurityAttributes,
  * });

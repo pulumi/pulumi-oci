@@ -194,12 +194,12 @@ def get_domains_my_user_db_credentials(authorization: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
-        my_user_db_credential_count=my_user_db_credential_my_user_db_credential_count,
+    test_my_user_db_credentials = oci.identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_count=int(my_user_db_credential_my_user_db_credential_count),
         my_user_db_credential_filter=my_user_db_credential_my_user_db_credential_filter,
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version,
-        start_index=my_user_db_credential_start_index)
+        start_index=int(my_user_db_credential_start_index))
     ```
 
 
@@ -259,12 +259,12 @@ def get_domains_my_user_db_credentials_output(authorization: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
-        my_user_db_credential_count=my_user_db_credential_my_user_db_credential_count,
+    test_my_user_db_credentials = oci.identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_count=int(my_user_db_credential_my_user_db_credential_count),
         my_user_db_credential_filter=my_user_db_credential_my_user_db_credential_filter,
         authorization=my_user_db_credential_authorization,
         resource_type_schema_version=my_user_db_credential_resource_type_schema_version,
-        start_index=my_user_db_credential_start_index)
+        start_index=int(my_user_db_credential_start_index))
     ```
 
 

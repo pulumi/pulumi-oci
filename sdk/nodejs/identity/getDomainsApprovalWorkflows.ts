@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflows = oci.Identity.getDomainsApprovalWorkflows({
+ * const testApprovalWorkflows = oci.identity.getDomainsApprovalWorkflows({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowCount: approvalWorkflowApprovalWorkflowCount,
+ *     approvalWorkflowCount: Number(approvalWorkflowApprovalWorkflowCount),
  *     approvalWorkflowFilter: approvalWorkflowApprovalWorkflowFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowResourceTypeSchemaVersion,
- *     startIndex: approvalWorkflowStartIndex,
+ *     startIndex: Number(approvalWorkflowStartIndex),
  * });
  * ```
  */
@@ -122,15 +122,15 @@ export interface GetDomainsApprovalWorkflowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflows = oci.Identity.getDomainsApprovalWorkflows({
+ * const testApprovalWorkflows = oci.identity.getDomainsApprovalWorkflows({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowCount: approvalWorkflowApprovalWorkflowCount,
+ *     approvalWorkflowCount: Number(approvalWorkflowApprovalWorkflowCount),
  *     approvalWorkflowFilter: approvalWorkflowApprovalWorkflowFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowResourceTypeSchemaVersion,
- *     startIndex: approvalWorkflowStartIndex,
+ *     startIndex: Number(approvalWorkflowStartIndex),
  * });
  * ```
  */

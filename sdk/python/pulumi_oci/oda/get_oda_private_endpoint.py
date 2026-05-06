@@ -191,7 +191,7 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
+    test_oda_private_endpoint = oci.oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_oda_private_endpoint_output(oda_private_endpoint_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
+    test_oda_private_endpoint = oci.oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
 
 

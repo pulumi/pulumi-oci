@@ -34,7 +34,7 @@ import (
 //				DataSourceQueryingConnectionId: pulumi.StringRef(testConnection.Id),
 //				DisplayName:                    pulumi.StringRef(semanticStoreDisplayName),
 //				Id:                             pulumi.StringRef(semanticStoreId),
-//				States:                         semanticStoreState,
+//				States:                         pulumi.ToArray(semanticStoreState),
 //			}, nil)
 //			if err != nil {
 //				return err

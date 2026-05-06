@@ -128,7 +128,7 @@ def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+    test_db_system_storage_performances = oci.database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type,
         database_edition=db_system_storage_performance_database_edition,
         compartment_id=compartment_id)
@@ -181,7 +181,7 @@ def get_db_system_storage_performances_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+    test_db_system_storage_performances = oci.database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type,
         database_edition=db_system_storage_performance_database_edition,
         compartment_id=compartment_id)

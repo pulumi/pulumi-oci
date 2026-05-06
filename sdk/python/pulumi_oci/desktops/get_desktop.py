@@ -192,7 +192,7 @@ def get_desktop(desktop_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop = oci.Desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
+    test_desktop = oci.desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_desktop_output(desktop_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop = oci.Desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
+    test_desktop = oci.desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
     ```
 
 

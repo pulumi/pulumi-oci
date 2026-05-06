@@ -46,8 +46,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -88,8 +88,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -130,8 +130,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -172,8 +172,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -301,8 +301,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -346,8 +346,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -436,8 +436,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCollectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -481,8 +481,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -523,8 +523,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCycleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -738,8 +738,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -785,8 +785,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -832,8 +832,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -879,8 +879,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuCyclesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -926,8 +926,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -968,8 +968,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1010,8 +1010,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1052,8 +1052,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1094,8 +1094,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessCheckArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1136,8 +1136,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1182,8 +1182,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1228,8 +1228,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1274,8 +1274,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1320,8 +1320,8 @@ public final class FleetSoftwareUpdateFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.FleetSoftwareUpdate.FleetSoftwareUpdateFunctions;
      * import com.pulumi.oci.FleetSoftwareUpdate.inputs.GetFsuReadinessChecksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

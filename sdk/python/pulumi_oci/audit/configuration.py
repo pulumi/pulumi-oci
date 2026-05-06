@@ -135,7 +135,7 @@ class Configuration(pulumi.CustomResource):
 
         test_configuration = oci.audit.Configuration("test_configuration",
             compartment_id=tenancy_ocid,
-            retention_period_days=configuration_retention_period_days)
+            retention_period_days=int(configuration_retention_period_days))
         ```
 
         ## Import
@@ -172,7 +172,7 @@ class Configuration(pulumi.CustomResource):
 
         test_configuration = oci.audit.Configuration("test_configuration",
             compartment_id=tenancy_ocid,
-            retention_period_days=configuration_retention_period_days)
+            retention_period_days=int(configuration_retention_period_days))
         ```
 
         ## Import

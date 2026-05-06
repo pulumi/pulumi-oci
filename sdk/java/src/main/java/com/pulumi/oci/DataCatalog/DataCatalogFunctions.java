@@ -64,8 +64,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -148,8 +148,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -274,8 +274,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -316,8 +316,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -358,8 +358,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -400,8 +400,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -442,8 +442,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -484,8 +484,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -528,8 +528,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -572,8 +572,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -616,8 +616,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -660,8 +660,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -704,8 +704,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -748,8 +748,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -792,8 +792,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -836,8 +836,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -880,8 +880,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -924,8 +924,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -974,8 +974,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1024,8 +1024,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1074,8 +1074,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1124,8 +1124,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1174,8 +1174,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1218,8 +1218,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1262,8 +1262,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1306,8 +1306,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1350,8 +1350,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetCatalogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1394,8 +1394,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1439,8 +1439,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1484,8 +1484,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1529,8 +1529,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1574,8 +1574,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1619,8 +1619,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1673,8 +1673,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1727,8 +1727,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1781,8 +1781,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1835,8 +1835,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1889,8 +1889,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1933,8 +1933,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1977,8 +1977,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2021,8 +2021,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2065,8 +2065,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2164,8 +2164,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2206,8 +2206,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2248,8 +2248,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2290,8 +2290,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2332,8 +2332,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2374,8 +2374,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2418,8 +2418,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2462,8 +2462,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2506,8 +2506,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2550,8 +2550,8 @@ public final class DataCatalogFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
      * import com.pulumi.oci.DataCatalog.inputs.GetMetastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

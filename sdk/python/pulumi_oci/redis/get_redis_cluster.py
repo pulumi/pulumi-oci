@@ -396,7 +396,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
+    test_redis_cluster = oci.redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
+    test_redis_cluster = oci.redis.get_redis_cluster(redis_cluster_id=test_redis_cluster_oci_redis_redis_cluster["id"])
     ```
 
 

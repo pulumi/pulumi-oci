@@ -214,14 +214,14 @@ def get_domains_groups(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_domains_groups(idcs_endpoint=test_domain["url"],
-        group_count=group_group_count,
+    test_groups = oci.identity.get_domains_groups(idcs_endpoint=test_domain["url"],
+        group_count=int(group_group_count),
         group_filter=group_group_filter,
         attribute_sets=[],
         attributes="",
         authorization=group_authorization,
         resource_type_schema_version=group_resource_type_schema_version,
-        start_index=group_start_index)
+        start_index=int(group_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_groups_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_domains_groups(idcs_endpoint=test_domain["url"],
-        group_count=group_group_count,
+    test_groups = oci.identity.get_domains_groups(idcs_endpoint=test_domain["url"],
+        group_count=int(group_group_count),
         group_filter=group_group_filter,
         attribute_sets=[],
         attributes="",
         authorization=group_authorization,
         resource_type_schema_version=group_resource_type_schema_version,
-        start_index=group_start_index)
+        start_index=int(group_start_index))
     ```
 
 

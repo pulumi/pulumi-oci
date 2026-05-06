@@ -108,7 +108,7 @@ def get_network_security_group_security_rules(direction: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
+    test_network_security_group_security_rules = oci.core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
         direction=network_security_group_security_rule_direction)
     ```
 
@@ -144,7 +144,7 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
+    test_network_security_group_security_rules = oci.core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
         direction=network_security_group_security_rule_direction)
     ```
 

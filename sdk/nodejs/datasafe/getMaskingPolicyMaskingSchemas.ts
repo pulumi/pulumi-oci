@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingSchemas = oci.DataSafe.getMaskingPolicyMaskingSchemas({
+ * const testMaskingPolicyMaskingSchemas = oci.datasafe.getMaskingPolicyMaskingSchemas({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     schemaNames: maskingPolicyMaskingSchemaSchemaName,
  * });
@@ -77,7 +77,7 @@ export interface GetMaskingPolicyMaskingSchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingSchemas = oci.DataSafe.getMaskingPolicyMaskingSchemas({
+ * const testMaskingPolicyMaskingSchemas = oci.datasafe.getMaskingPolicyMaskingSchemas({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     schemaNames: maskingPolicyMaskingSchemaSchemaName,
  * });

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
+ * const testTargetDatabasesColumns = oci.datasafe.getTargetDatabasesColumns({
  *     targetDatabaseId: testTargetDatabase.id,
  *     columnNames: targetDatabasesColumnColumnName,
  *     columnNameContains: targetDatabasesColumnColumnNameContains,
@@ -125,7 +125,7 @@ export interface GetTargetDatabasesColumnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
+ * const testTargetDatabasesColumns = oci.datasafe.getTargetDatabasesColumns({
  *     targetDatabaseId: testTargetDatabase.id,
  *     columnNames: targetDatabasesColumnColumnName,
  *     columnNameContains: targetDatabasesColumnColumnNameContains,

@@ -221,7 +221,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
 
         test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
             external_container_database_id=test_external_container_database["id"],
-            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature == "true",
             feature_details={
                 "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
                 "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
@@ -231,8 +231,8 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                     "management_agent_id": test_management_agent["id"],
                     "private_end_point_id": test_private_end_point["id"],
                 },
-                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
             })
         ```
@@ -269,7 +269,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
 
         test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
             external_container_database_id=test_external_container_database["id"],
-            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature == "true",
             feature_details={
                 "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
                 "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
@@ -279,8 +279,8 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                     "management_agent_id": test_management_agent["id"],
                     "private_end_point_id": test_private_end_point["id"],
                 },
-                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
             })
         ```

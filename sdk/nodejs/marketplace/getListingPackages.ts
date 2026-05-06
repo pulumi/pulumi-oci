@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackages = oci.Marketplace.getListingPackages({
+ * const testListingPackages = oci.marketplace.getListingPackages({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  *     packageType: listingPackagePackageType,
@@ -120,7 +120,7 @@ export interface GetListingPackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackages = oci.Marketplace.getListingPackages({
+ * const testListingPackages = oci.marketplace.getListingPackages({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  *     packageType: listingPackagePackageType,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.ApiGateway.getDeployments({
+ * const testDeployments = oci.apigateway.getDeployments({
  *     compartmentId: compartmentId,
  *     displayName: deploymentDisplayName,
  *     gatewayId: testGateway.id,
@@ -100,7 +100,7 @@ export interface GetDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.ApiGateway.getDeployments({
+ * const testDeployments = oci.apigateway.getDeployments({
  *     compartmentId: compartmentId,
  *     displayName: deploymentDisplayName,
  *     gatewayId: testGateway.id,

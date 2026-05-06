@@ -285,7 +285,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
             },
             relation_type=sensitive_data_model_referential_relation_relation_type,
             sensitive_data_model_id=test_sensitive_data_model["id"],
-            is_sensitive=sensitive_data_model_referential_relation_is_sensitive)
+            is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true")
         ```
 
         ## Import
@@ -348,7 +348,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
             },
             relation_type=sensitive_data_model_referential_relation_relation_type,
             sensitive_data_model_id=test_sensitive_data_model["id"],
-            is_sensitive=sensitive_data_model_referential_relation_is_sensitive)
+            is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true")
         ```
 
         ## Import

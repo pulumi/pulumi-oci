@@ -132,10 +132,10 @@ def get_software_source_available_software_packages(display_name: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_available_software_packages = oci.OsManagementHub.get_software_source_available_software_packages(software_source_id=test_software_source["id"],
+    test_software_source_available_software_packages = oci.osmanagementhub.get_software_source_available_software_packages(software_source_id=test_software_source["id"],
         display_name=software_source_available_software_package_display_name,
         display_name_contains=software_source_available_software_package_display_name_contains,
-        is_latest=software_source_available_software_package_is_latest)
+        is_latest=software_source_available_software_package_is_latest == "true")
     ```
 
 
@@ -179,10 +179,10 @@ def get_software_source_available_software_packages_output(display_name: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_available_software_packages = oci.OsManagementHub.get_software_source_available_software_packages(software_source_id=test_software_source["id"],
+    test_software_source_available_software_packages = oci.osmanagementhub.get_software_source_available_software_packages(software_source_id=test_software_source["id"],
         display_name=software_source_available_software_package_display_name,
         display_name_contains=software_source_available_software_package_display_name_contains,
-        is_latest=software_source_available_software_package_is_latest)
+        is_latest=software_source_available_software_package_is_latest == "true")
     ```
 
 

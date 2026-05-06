@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironment = oci.Functions.getFusionEnvironment({
+ * const testFusionEnvironment = oci.functions.getFusionEnvironment({
  *     fusionEnvironmentId: testFusionEnvironmentOciFusionAppsFusionEnvironment.id,
  * });
  * ```
@@ -177,7 +177,7 @@ export interface GetFusionEnvironmentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironment = oci.Functions.getFusionEnvironment({
+ * const testFusionEnvironment = oci.functions.getFusionEnvironment({
  *     fusionEnvironmentId: testFusionEnvironmentOciFusionAppsFusionEnvironment.id,
  * });
  * ```

@@ -252,7 +252,7 @@ def get_recommendation(recommendation_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
+    test_recommendation = oci.optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_recommendation_output(recommendation_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
+    test_recommendation = oci.optimizer.get_recommendation(recommendation_id=test_recommendation_oci_optimizer_recommendation["id"])
     ```
 
 

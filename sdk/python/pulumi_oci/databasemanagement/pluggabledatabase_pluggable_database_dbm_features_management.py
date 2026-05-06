@@ -221,7 +221,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
 
         test_pluggabledatabase_pluggable_database_dbm_features_management = oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature,
+            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature == "true",
             feature_details={
                 "feature": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_feature,
                 "enable_pluggable_database_dbm_feature": enable_pluggable_database_dbm_feature,
@@ -243,13 +243,13 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                     },
                     "connection_string": {
                         "connection_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
                 },
-                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "management_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_management_type,
             })
         ```
@@ -286,7 +286,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
 
         test_pluggabledatabase_pluggable_database_dbm_features_management = oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature,
+            enable_pluggable_database_dbm_feature=enable_pluggable_database_dbm_feature == "true",
             feature_details={
                 "feature": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_feature,
                 "enable_pluggable_database_dbm_feature": enable_pluggable_database_dbm_feature,
@@ -308,13 +308,13 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                     },
                     "connection_string": {
                         "connection_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
                 },
-                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "management_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_management_type,
             })
         ```

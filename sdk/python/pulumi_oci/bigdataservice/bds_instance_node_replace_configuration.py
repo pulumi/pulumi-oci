@@ -301,7 +301,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         test_bds_instance_node_replace_configuration = oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
-            duration_in_minutes=bds_instance_node_replace_configuration_duration_in_minutes,
+            duration_in_minutes=int(bds_instance_node_replace_configuration_duration_in_minutes),
             level_type_details={
                 "level_type": bds_instance_node_replace_configuration_level_type_details_level_type,
                 "node_host_name": bds_instance_node_replace_configuration_level_type_details_node_host_name,
@@ -352,7 +352,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         test_bds_instance_node_replace_configuration = oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
-            duration_in_minutes=bds_instance_node_replace_configuration_duration_in_minutes,
+            duration_in_minutes=int(bds_instance_node_replace_configuration_duration_in_minutes),
             level_type_details={
                 "level_type": bds_instance_node_replace_configuration_level_type_details_level_type,
                 "node_host_name": bds_instance_node_replace_configuration_level_type_details_node_host_name,

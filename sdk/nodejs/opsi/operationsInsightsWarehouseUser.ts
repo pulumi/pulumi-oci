@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * const testOperationsInsightsWarehouseUser = new oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user", {
  *     compartmentId: compartmentId,
  *     connectionPassword: operationsInsightsWarehouseUserConnectionPassword,
- *     isAwrDataAccess: operationsInsightsWarehouseUserIsAwrDataAccess,
+ *     isAwrDataAccess: operationsInsightsWarehouseUserIsAwrDataAccess === "true",
  *     name: operationsInsightsWarehouseUserName,
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     definedTags: {
@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEmDataAccess: operationsInsightsWarehouseUserIsEmDataAccess,
- *     isOpsiDataAccess: operationsInsightsWarehouseUserIsOpsiDataAccess,
+ *     isEmDataAccess: operationsInsightsWarehouseUserIsEmDataAccess === "true",
+ *     isOpsiDataAccess: operationsInsightsWarehouseUserIsOpsiDataAccess === "true",
  * });
  * ```
  *

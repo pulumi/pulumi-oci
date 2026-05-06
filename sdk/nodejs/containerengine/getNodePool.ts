@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePool = oci.ContainerEngine.getNodePool({
+ * const testNodePool = oci.containerengine.getNodePool({
  *     nodePoolId: testNodePoolOciContainerengineNodePool.id,
  * });
  * ```
@@ -167,7 +167,7 @@ export interface GetNodePoolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePool = oci.ContainerEngine.getNodePool({
+ * const testNodePool = oci.containerengine.getNodePool({
  *     nodePoolId: testNodePoolOciContainerengineNodePool.id,
  * });
  * ```

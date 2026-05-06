@@ -260,7 +260,7 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
+    test_data_science_private_endpoint = oci.datascience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
     ```
 
 
@@ -303,7 +303,7 @@ def get_private_endpoint_output(data_science_private_endpoint_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
+    test_data_science_private_endpoint = oci.datascience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
     ```
 
 

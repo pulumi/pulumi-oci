@@ -239,7 +239,7 @@ def get_cloud_db_home(cloud_db_home_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_home = oci.DatabaseManagement.get_cloud_db_home(cloud_db_home_id=test_cloud_db_home_oci_database_management_cloud_db_home["id"])
+    test_cloud_db_home = oci.databasemanagement.get_cloud_db_home(cloud_db_home_id=test_cloud_db_home_oci_database_management_cloud_db_home["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_cloud_db_home_output(cloud_db_home_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_home = oci.DatabaseManagement.get_cloud_db_home(cloud_db_home_id=test_cloud_db_home_oci_database_management_cloud_db_home["id"])
+    test_cloud_db_home = oci.databasemanagement.get_cloud_db_home(cloud_db_home_id=test_cloud_db_home_oci_database_management_cloud_db_home["id"])
     ```
 
 

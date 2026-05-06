@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.ContainerEngine.getClusters({
+ * const testClusters = oci.containerengine.getClusters({
  *     compartmentId: compartmentId,
  *     name: clusterName,
  *     states: clusterState,
@@ -90,7 +90,7 @@ export interface GetClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.ContainerEngine.getClusters({
+ * const testClusters = oci.containerengine.getClusters({
  *     compartmentId: compartmentId,
  *     name: clusterName,
  *     states: clusterState,

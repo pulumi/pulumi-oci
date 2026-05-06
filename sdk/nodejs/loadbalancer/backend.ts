@@ -22,12 +22,12 @@ import * as utilities from "../utilities";
  *     backendsetName: testBackendSet.name,
  *     ipAddress: backendIpAddress,
  *     loadBalancerId: testLoadBalancer.id,
- *     port: backendPort,
- *     backup: backendBackup,
- *     drain: backendDrain,
- *     maxConnections: backendMaxConnections,
- *     offline: backendOffline,
- *     weight: backendWeight,
+ *     port: Number(backendPort),
+ *     backup: backendBackup === "true",
+ *     drain: backendDrain === "true",
+ *     maxConnections: Number(backendMaxConnections),
+ *     offline: backendOffline === "true",
+ *     weight: Number(backendWeight),
  * });
  * ```
  *

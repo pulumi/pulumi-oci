@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     stackMonitoringConfig: {
- *         isEnabled: externalDbSystemStackMonitoringConfigIsEnabled,
+ *         isEnabled: externalDbSystemStackMonitoringConfigIsEnabled === "true",
  *         metadata: externalDbSystemStackMonitoringConfigMetadata,
  *     },
  * });

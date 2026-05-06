@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitValues = oci.Limits.getLimitValues({
+ * const testLimitValues = oci.limits.getLimitValues({
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,
@@ -120,7 +120,7 @@ export interface GetLimitValuesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitValues = oci.Limits.getLimitValues({
+ * const testLimitValues = oci.limits.getLimitValues({
  *     compartmentId: tenancyOcid,
  *     serviceName: testService.name,
  *     availabilityDomain: limitValueAvailabilityDomain,

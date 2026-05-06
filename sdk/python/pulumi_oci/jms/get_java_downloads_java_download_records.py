@@ -182,7 +182,7 @@ def get_java_downloads_java_download_records(architecture: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+    test_java_download_records = oci.jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
         architecture=java_download_record_architecture,
         family_version=java_download_record_family_version,
         os_family=java_download_record_os_family,
@@ -250,7 +250,7 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+    test_java_download_records = oci.jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
         architecture=java_download_record_architecture,
         family_version=java_download_record_family_version,
         os_family=java_download_record_os_family,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApmDomains = oci.Apm.getApmDomains({
+ * const testApmDomains = oci.apm.getApmDomains({
  *     compartmentId: compartmentId,
  *     displayName: apmDomainDisplayName,
  *     state: apmDomainState,
@@ -90,7 +90,7 @@ export interface GetApmDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApmDomains = oci.Apm.getApmDomains({
+ * const testApmDomains = oci.apm.getApmDomains({
  *     compartmentId: compartmentId,
  *     displayName: apmDomainDisplayName,
  *     state: apmDomainState,

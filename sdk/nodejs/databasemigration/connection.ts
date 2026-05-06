@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     freeformTags: connectionFreeformTags,
  *     host: connectionHost,
  *     nsgIds: connectionNsgIds,
- *     port: connectionPort,
+ *     port: Number(connectionPort),
  *     replicationPassword: connectionReplicationPassword,
  *     replicationUsername: connectionReplicationUsername,
  *     securityProtocol: connectionSecurityProtocol,

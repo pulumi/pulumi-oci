@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedemptions = oci.UsageProxy.getSubscriptionRedemptions({
+ * const testSubscriptionRedemptions = oci.usageproxy.getSubscriptionRedemptions({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
@@ -88,7 +88,7 @@ export interface GetSubscriptionRedemptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedemptions = oci.UsageProxy.getSubscriptionRedemptions({
+ * const testSubscriptionRedemptions = oci.usageproxy.getSubscriptionRedemptions({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,

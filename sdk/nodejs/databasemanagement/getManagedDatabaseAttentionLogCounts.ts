@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAttentionLogCounts = oci.DatabaseManagement.getManagedDatabaseAttentionLogCounts({
+ * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
@@ -119,10 +119,10 @@ export interface GetManagedDatabaseAttentionLogCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAttentionLogCounts = oci.DatabaseManagement.getManagedDatabaseAttentionLogCounts({
+ * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,

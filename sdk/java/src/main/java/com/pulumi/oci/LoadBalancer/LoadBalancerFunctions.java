@@ -85,8 +85,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -129,8 +129,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -173,8 +173,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -217,8 +217,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -261,8 +261,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -305,8 +305,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -348,8 +348,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -434,8 +434,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -477,8 +477,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -524,8 +524,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -570,8 +570,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -616,8 +616,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -662,8 +662,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -708,8 +708,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -750,8 +750,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -793,8 +793,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -836,8 +836,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -879,8 +879,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -922,8 +922,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -965,8 +965,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1007,8 +1007,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1049,8 +1049,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1091,8 +1091,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1133,8 +1133,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1175,8 +1175,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1217,8 +1217,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1259,8 +1259,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1301,8 +1301,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1343,8 +1343,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1385,8 +1385,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1427,8 +1427,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1469,8 +1469,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1511,8 +1511,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1553,8 +1553,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1601,8 +1601,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1650,8 +1650,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1699,8 +1699,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1748,8 +1748,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1797,8 +1797,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1840,8 +1840,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1882,8 +1882,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1924,8 +1924,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1966,8 +1966,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2008,8 +2008,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2050,8 +2050,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2093,8 +2093,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2136,8 +2136,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2179,8 +2179,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2222,8 +2222,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2269,8 +2269,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2318,8 +2318,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2367,8 +2367,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2416,8 +2416,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2465,8 +2465,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2510,8 +2510,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2552,8 +2552,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2594,8 +2594,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2636,8 +2636,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2678,8 +2678,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2720,8 +2720,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2762,8 +2762,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2804,8 +2804,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2846,8 +2846,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2888,8 +2888,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2930,8 +2930,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2972,8 +2972,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3014,8 +3014,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3056,8 +3056,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3098,8 +3098,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3140,8 +3140,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3183,8 +3183,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3226,8 +3226,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3269,8 +3269,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3312,8 +3312,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3355,8 +3355,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3397,8 +3397,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3439,8 +3439,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3481,8 +3481,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3523,8 +3523,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3565,8 +3565,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3607,8 +3607,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3649,8 +3649,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3691,8 +3691,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3733,8 +3733,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3775,8 +3775,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3818,8 +3818,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3861,8 +3861,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3904,8 +3904,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3947,8 +3947,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3990,8 +3990,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4032,8 +4032,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4074,8 +4074,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4116,8 +4116,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4158,8 +4158,8 @@ public final class LoadBalancerFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
      * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

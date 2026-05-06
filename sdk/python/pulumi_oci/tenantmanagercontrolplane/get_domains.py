@@ -141,7 +141,7 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
+    test_domains = oci.tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
         domain_id=test_domain["id"],
         name=domain_name,
         state=domain_state,
@@ -192,7 +192,7 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
+    test_domains = oci.tenantmanagercontrolplane.get_domains(compartment_id=compartment_id,
         domain_id=test_domain["id"],
         name=domain_name,
         state=domain_state,

@@ -395,8 +395,8 @@ class PlatformConfiguration(pulumi.CustomResource):
                 }],
                 "instance_id": test_instance["id"],
                 "instance_name": test_instance["name"],
-                "is_compliance_policy_required_for_softlink": platform_configuration_config_category_details_is_compliance_policy_required_for_softlink,
-                "is_softlink": platform_configuration_config_category_details_is_softlink,
+                "is_compliance_policy_required_for_softlink": platform_configuration_config_category_details_is_compliance_policy_required_for_softlink == "true",
+                "is_softlink": platform_configuration_config_category_details_is_softlink == "true",
                 "link_product_id": test_link_product["id"],
                 "patch_types": [{
                     "display_name": platform_configuration_config_category_details_patch_types_display_name,
@@ -488,8 +488,8 @@ class PlatformConfiguration(pulumi.CustomResource):
                 }],
                 "instance_id": test_instance["id"],
                 "instance_name": test_instance["name"],
-                "is_compliance_policy_required_for_softlink": platform_configuration_config_category_details_is_compliance_policy_required_for_softlink,
-                "is_softlink": platform_configuration_config_category_details_is_softlink,
+                "is_compliance_policy_required_for_softlink": platform_configuration_config_category_details_is_compliance_policy_required_for_softlink == "true",
+                "is_softlink": platform_configuration_config_category_details_is_softlink == "true",
                 "link_product_id": test_link_product["id"],
                 "patch_types": [{
                     "display_name": platform_configuration_config_category_details_patch_types_display_name,

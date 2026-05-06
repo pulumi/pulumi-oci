@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociation = oci.Database.getAutonomousContainerDatabaseDataguardAssociation({
+ * const testAutonomousContainerDatabaseDataguardAssociation = oci.database.getAutonomousContainerDatabaseDataguardAssociation({
  *     autonomousContainerDatabaseDataguardAssociationId: testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
@@ -142,7 +142,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociation = oci.Database.getAutonomousContainerDatabaseDataguardAssociation({
+ * const testAutonomousContainerDatabaseDataguardAssociation = oci.database.getAutonomousContainerDatabaseDataguardAssociation({
  *     autonomousContainerDatabaseDataguardAssociationId: testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });

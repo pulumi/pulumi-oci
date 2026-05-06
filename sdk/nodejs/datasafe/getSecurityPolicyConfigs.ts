@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyConfigs = oci.DataSafe.getSecurityPolicyConfigs({
+ * const testSecurityPolicyConfigs = oci.datasafe.getSecurityPolicyConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyConfigAccessLevel,
- *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyConfigDisplayName,
  *     securityPolicyConfigId: testSecurityPolicyConfig.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -165,10 +165,10 @@ export interface GetSecurityPolicyConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyConfigs = oci.DataSafe.getSecurityPolicyConfigs({
+ * const testSecurityPolicyConfigs = oci.datasafe.getSecurityPolicyConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyConfigAccessLevel,
- *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyConfigDisplayName,
  *     securityPolicyConfigId: testSecurityPolicyConfig.id,
  *     securityPolicyId: testSecurityPolicy.id,

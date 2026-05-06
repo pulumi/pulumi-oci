@@ -665,7 +665,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
             trail_location=audit_trail_management_trail_location,
-            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
+            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -674,7 +674,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled == "true")
         ```
 
         ## Import
@@ -727,7 +727,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
             trail_location=audit_trail_management_trail_location,
-            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
+            can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -736,7 +736,7 @@ class AuditTrailManagement(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled == "true")
         ```
 
         ## Import

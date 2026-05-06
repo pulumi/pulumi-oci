@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
+ * const testAuditArchiveRetrievals = oci.datasafe.getAuditArchiveRetrievals({
  *     compartmentId: compartmentId,
  *     accessLevel: auditArchiveRetrievalAccessLevel,
  *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
- *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree === "true",
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -138,11 +138,11 @@ export interface GetAuditArchiveRetrievalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
+ * const testAuditArchiveRetrievals = oci.datasafe.getAuditArchiveRetrievals({
  *     compartmentId: compartmentId,
  *     accessLevel: auditArchiveRetrievalAccessLevel,
  *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
- *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree === "true",
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

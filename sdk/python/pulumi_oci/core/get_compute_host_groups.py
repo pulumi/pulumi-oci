@@ -98,7 +98,7 @@ def get_compute_host_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host_groups = oci.Core.get_compute_host_groups(compartment_id=compartment_id)
+    test_compute_host_groups = oci.core.get_compute_host_groups(compartment_id=compartment_id)
     ```
 
 
@@ -129,7 +129,7 @@ def get_compute_host_groups_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host_groups = oci.Core.get_compute_host_groups(compartment_id=compartment_id)
+    test_compute_host_groups = oci.core.get_compute_host_groups(compartment_id=compartment_id)
     ```
 
 

@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDrgAttachmentsList = new oci.core.DrgAttachmentsList("test_drg_attachments_list", {
  *     drgId: testDrg.id,
  *     attachmentType: drgAttachmentsListAttachmentType,
- *     isCrossTenancy: drgAttachmentsListIsCrossTenancy,
+ *     isCrossTenancy: drgAttachmentsListIsCrossTenancy === "true",
  * });
  * ```
  *

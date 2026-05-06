@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionDeviceConfig = oci.Core.getIpsecConfig({
+ * const testIpSecConnectionDeviceConfig = oci.core.getIpsecConfig({
  *     ipsecId: testIpsec.id,
  * });
  * ```
@@ -81,7 +81,7 @@ export interface GetIpsecConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionDeviceConfig = oci.Core.getIpsecConfig({
+ * const testIpSecConnectionDeviceConfig = oci.core.getIpsecConfig({
  *     ipsecId: testIpsec.id,
  * });
  * ```

@@ -760,11 +760,11 @@ class ManagementStation(pulumi.CustomResource):
                 "directory": management_station_mirror_directory,
                 "port": management_station_mirror_port,
                 "sslport": management_station_mirror_sslport,
-                "is_sslverify_enabled": management_station_mirror_is_sslverify_enabled,
+                "is_sslverify_enabled": management_station_mirror_is_sslverify_enabled == "true",
                 "sslcert": management_station_mirror_sslcert,
             },
             proxy={
-                "is_enabled": management_station_proxy_is_enabled,
+                "is_enabled": management_station_proxy_is_enabled == "true",
                 "forward": management_station_proxy_forward,
                 "hosts": management_station_proxy_hosts,
                 "port": management_station_proxy_port,
@@ -777,7 +777,7 @@ class ManagementStation(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_config_enabled=management_station_is_auto_config_enabled,
+            is_auto_config_enabled=management_station_is_auto_config_enabled == "true",
             os_family=management_station_os_family)
         ```
 
@@ -837,11 +837,11 @@ class ManagementStation(pulumi.CustomResource):
                 "directory": management_station_mirror_directory,
                 "port": management_station_mirror_port,
                 "sslport": management_station_mirror_sslport,
-                "is_sslverify_enabled": management_station_mirror_is_sslverify_enabled,
+                "is_sslverify_enabled": management_station_mirror_is_sslverify_enabled == "true",
                 "sslcert": management_station_mirror_sslcert,
             },
             proxy={
-                "is_enabled": management_station_proxy_is_enabled,
+                "is_enabled": management_station_proxy_is_enabled == "true",
                 "forward": management_station_proxy_forward,
                 "hosts": management_station_proxy_hosts,
                 "port": management_station_proxy_port,
@@ -854,7 +854,7 @@ class ManagementStation(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_config_enabled=management_station_is_auto_config_enabled,
+            is_auto_config_enabled=management_station_is_auto_config_enabled == "true",
             os_family=management_station_os_family)
         ```
 

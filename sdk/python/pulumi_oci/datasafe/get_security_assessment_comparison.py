@@ -130,7 +130,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_comparison = oci.datasafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
 
@@ -166,7 +166,7 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_comparison = oci.datasafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
 

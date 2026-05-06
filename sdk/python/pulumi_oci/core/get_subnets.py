@@ -138,7 +138,7 @@ def get_subnets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=compartment_id,
+    test_subnets = oci.core.get_subnets(compartment_id=compartment_id,
         display_name=subnet_display_name,
         state=subnet_state,
         vcn_id=test_vcn["id"])
@@ -185,7 +185,7 @@ def get_subnets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_subnets = oci.Core.get_subnets(compartment_id=compartment_id,
+    test_subnets = oci.core.get_subnets(compartment_id=compartment_id,
         display_name=subnet_display_name,
         state=subnet_state,
         vcn_id=test_vcn["id"])

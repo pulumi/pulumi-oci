@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationSetting = oci.Identity.getDomainsNotificationSetting({
+ * const testNotificationSetting = oci.identity.getDomainsNotificationSetting({
  *     idcsEndpoint: testDomain.url,
  *     notificationSettingId: testNotificationSettingOciIdentityDomainsNotificationSetting.id,
  *     attributeSets: ["all"],
@@ -175,7 +175,7 @@ export interface GetDomainsNotificationSettingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationSetting = oci.Identity.getDomainsNotificationSetting({
+ * const testNotificationSetting = oci.identity.getDomainsNotificationSetting({
  *     idcsEndpoint: testDomain.url,
  *     notificationSettingId: testNotificationSettingOciIdentityDomainsNotificationSetting.id,
  *     attributeSets: ["all"],

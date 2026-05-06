@@ -157,7 +157,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
 
         test_lifecycle_stage_reboot_management = oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
-            reboot_timeout_in_mins=lifecycle_stage_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(lifecycle_stage_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": lifecycle_stage_reboot_management_work_request_details_description,
                 "display_name": lifecycle_stage_reboot_management_work_request_details_display_name,
@@ -201,7 +201,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
 
         test_lifecycle_stage_reboot_management = oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
-            reboot_timeout_in_mins=lifecycle_stage_reboot_management_reboot_timeout_in_mins,
+            reboot_timeout_in_mins=int(lifecycle_stage_reboot_management_reboot_timeout_in_mins),
             work_request_details={
                 "description": lifecycle_stage_reboot_management_work_request_details_description,
                 "display_name": lifecycle_stage_reboot_management_work_request_details_display_name,

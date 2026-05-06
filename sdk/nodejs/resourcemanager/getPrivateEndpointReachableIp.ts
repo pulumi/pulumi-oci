@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpointReachableIp = oci.ResourceManager.getPrivateEndpointReachableIp({
+ * const testPrivateEndpointReachableIp = oci.resourcemanager.getPrivateEndpointReachableIp({
  *     privateEndpointId: testPrivateEndpoint.id,
  *     privateIp: privateEndpointReachableIpPrivateIp,
  * });
@@ -75,7 +75,7 @@ export interface GetPrivateEndpointReachableIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpointReachableIp = oci.ResourceManager.getPrivateEndpointReachableIp({
+ * const testPrivateEndpointReachableIp = oci.resourcemanager.getPrivateEndpointReachableIp({
  *     privateEndpointId: testPrivateEndpoint.id,
  *     privateIp: privateEndpointReachableIpPrivateIp,
  * });

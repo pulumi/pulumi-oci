@@ -479,7 +479,7 @@ class Publication(pulumi.CustomResource):
 
         test_publication = oci.marketplace.Publication("test_publication",
             compartment_id=compartment_id,
-            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged == "true",
             listing_type=publication_listing_type,
             name=publication_name,
             package_details={
@@ -554,7 +554,7 @@ class Publication(pulumi.CustomResource):
 
         test_publication = oci.marketplace.Publication("test_publication",
             compartment_id=compartment_id,
-            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged == "true",
             listing_type=publication_listing_type,
             name=publication_name,
             package_details={

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlockDetails = oci.CapacityManagement.getOccHandoverResourceBlockDetails({
+ * const testOccHandoverResourceBlockDetails = oci.capacitymanagement.getOccHandoverResourceBlockDetails({
  *     occHandoverResourceBlockId: testOccHandoverResourceBlock.id,
  *     hostId: testHost.id,
  * });
@@ -74,7 +74,7 @@ export interface GetOccHandoverResourceBlockDetailsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlockDetails = oci.CapacityManagement.getOccHandoverResourceBlockDetails({
+ * const testOccHandoverResourceBlockDetails = oci.capacitymanagement.getOccHandoverResourceBlockDetails({
  *     occHandoverResourceBlockId: testOccHandoverResourceBlock.id,
  *     hostId: testHost.id,
  * });

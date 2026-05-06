@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVlan = oci.Core.getVlan({
+ * const testVlan = oci.core.getVlan({
  *     vlanId: testVlanOciCoreVlan.id,
  * });
  * ```
@@ -106,7 +106,7 @@ export interface GetVlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVlan = oci.Core.getVlan({
+ * const testVlan = oci.core.getVlan({
  *     vlanId: testVlanOciCoreVlan.id,
  * });
  * ```

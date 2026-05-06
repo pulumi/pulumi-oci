@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: computeHostGroupAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: computeHostGroupDisplayName,
- *     isTargetedPlacementRequired: computeHostGroupIsTargetedPlacementRequired,
+ *     isTargetedPlacementRequired: computeHostGroupIsTargetedPlacementRequired === "true",
  *     configurations: [{
  *         firmwareBundleId: testFirmwareBundle.id,
  *         recycleLevel: computeHostGroupConfigurationsRecycleLevel,

@@ -135,7 +135,7 @@ def get_operations_insights_warehouse_users(compartment_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_users = oci.Opsi.get_operations_insights_warehouse_users(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+    test_operations_insights_warehouse_users = oci.opsi.get_operations_insights_warehouse_users(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
         compartment_id=compartment_id,
         display_name=operations_insights_warehouse_user_display_name,
         id=operations_insights_warehouse_user_id,
@@ -185,7 +185,7 @@ def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_users = oci.Opsi.get_operations_insights_warehouse_users(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+    test_operations_insights_warehouse_users = oci.opsi.get_operations_insights_warehouse_users(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
         compartment_id=compartment_id,
         display_name=operations_insights_warehouse_user_display_name,
         id=operations_insights_warehouse_user_id,

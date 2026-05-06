@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Tenantmanagercontrolplane.getSubscriptions({
+ * const testSubscriptions = oci.tenantmanagercontrolplane.getSubscriptions({
  *     compartmentId: compartmentId,
  *     entityVersion: subscriptionEntityVersion,
  *     subscriptionId: testSubscription.id,
@@ -88,7 +88,7 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Tenantmanagercontrolplane.getSubscriptions({
+ * const testSubscriptions = oci.tenantmanagercontrolplane.getSubscriptions({
  *     compartmentId: compartmentId,
  *     entityVersion: subscriptionEntityVersion,
  *     subscriptionId: testSubscription.id,

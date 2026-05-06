@@ -113,8 +113,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -158,8 +158,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -203,8 +203,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -248,8 +248,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -293,8 +293,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -337,8 +337,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -379,8 +379,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -421,8 +421,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -463,8 +463,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -505,8 +505,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -547,8 +547,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -590,8 +590,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -633,8 +633,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -676,8 +676,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -719,8 +719,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -762,8 +762,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -806,8 +806,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -850,8 +850,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -894,8 +894,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -938,8 +938,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1027,8 +1027,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1071,8 +1071,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1115,8 +1115,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1159,8 +1159,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1203,8 +1203,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1247,8 +1247,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1293,8 +1293,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1339,8 +1339,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1385,8 +1385,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1431,8 +1431,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1477,8 +1477,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1519,8 +1519,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1561,8 +1561,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1603,8 +1603,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1645,8 +1645,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1688,8 +1688,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1735,8 +1735,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1782,8 +1782,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1829,8 +1829,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1876,8 +1876,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1922,8 +1922,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1965,8 +1965,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2008,8 +2008,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2051,8 +2051,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2094,8 +2094,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2137,8 +2137,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2182,8 +2182,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2227,8 +2227,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2272,8 +2272,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2317,8 +2317,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2365,8 +2365,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2414,8 +2414,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2463,8 +2463,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2512,8 +2512,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2561,8 +2561,8 @@ public final class OneSubsriptionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
      * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

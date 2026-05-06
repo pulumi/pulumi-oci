@@ -175,7 +175,7 @@ def get_byol_allocations(available_units_greater_than_or_equal_to: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocations = oci.Ocvp.get_byol_allocations(compartment_id=compartment_id,
+    test_byol_allocations = oci.ocvp.get_byol_allocations(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_allocation_available_units_greater_than_or_equal_to,
         byol_allocation_id=test_byol_allocation["id"],
         byol_id=test_byol["id"],
@@ -237,7 +237,7 @@ def get_byol_allocations_output(available_units_greater_than_or_equal_to: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocations = oci.Ocvp.get_byol_allocations(compartment_id=compartment_id,
+    test_byol_allocations = oci.ocvp.get_byol_allocations(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_allocation_available_units_greater_than_or_equal_to,
         byol_allocation_id=test_byol_allocation["id"],
         byol_id=test_byol["id"],

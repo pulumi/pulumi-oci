@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         name: steeringPolicyAnswersName,
  *         rdata: steeringPolicyAnswersRdata,
  *         rtype: steeringPolicyAnswersRtype,
- *         isDisabled: steeringPolicyAnswersIsDisabled,
+ *         isDisabled: steeringPolicyAnswersIsDisabled === "true",
  *         pool: steeringPolicyAnswersPool,
  *     }],
  *     definedTags: steeringPolicyDefinedTags,
@@ -40,21 +40,21 @@ import * as utilities from "../utilities";
  *         cases: [{
  *             answerDatas: [{
  *                 answerCondition: steeringPolicyRulesCasesAnswerDataAnswerCondition,
- *                 shouldKeep: steeringPolicyRulesCasesAnswerDataShouldKeep,
- *                 value: steeringPolicyRulesCasesAnswerDataValue,
+ *                 shouldKeep: steeringPolicyRulesCasesAnswerDataShouldKeep === "true",
+ *                 value: Number(steeringPolicyRulesCasesAnswerDataValue),
  *             }],
  *             caseCondition: steeringPolicyRulesCasesCaseCondition,
- *             count: steeringPolicyRulesCasesCount,
+ *             count: Number(steeringPolicyRulesCasesCount),
  *         }],
  *         defaultAnswerDatas: [{
  *             answerCondition: steeringPolicyRulesDefaultAnswerDataAnswerCondition,
- *             shouldKeep: steeringPolicyRulesDefaultAnswerDataShouldKeep,
- *             value: steeringPolicyRulesDefaultAnswerDataValue,
+ *             shouldKeep: steeringPolicyRulesDefaultAnswerDataShouldKeep === "true",
+ *             value: Number(steeringPolicyRulesDefaultAnswerDataValue),
  *         }],
- *         defaultCount: steeringPolicyRulesDefaultCount,
+ *         defaultCount: Number(steeringPolicyRulesDefaultCount),
  *         description: steeringPolicyRulesDescription,
  *     }],
- *     ttl: steeringPolicyTtl,
+ *     ttl: Number(steeringPolicyTtl),
  * });
  * ```
  *

@@ -338,7 +338,7 @@ def get_domains_dynamic_resource_group(attribute_sets: Optional[Sequence[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
+    test_dynamic_resource_group = oci.identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -408,7 +408,7 @@ def get_domains_dynamic_resource_group_output(attribute_sets: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
+    test_dynamic_resource_group = oci.identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

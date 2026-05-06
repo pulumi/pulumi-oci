@@ -167,7 +167,7 @@ def get_internal_occ_handover_resource_blocks(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_blocks = oci.CapacityManagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_internal_occ_handover_resource_blocks = oci.capacitymanagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
         namespace=internal_occ_handover_resource_block_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         handover_date_greater_than_or_equal_to=internal_occ_handover_resource_block_handover_date_greater_than_or_equal_to,
@@ -228,7 +228,7 @@ def get_internal_occ_handover_resource_blocks_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_handover_resource_blocks = oci.CapacityManagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
+    test_internal_occ_handover_resource_blocks = oci.capacitymanagement.get_internal_occ_handover_resource_blocks(compartment_id=compartment_id,
         namespace=internal_occ_handover_resource_block_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         handover_date_greater_than_or_equal_to=internal_occ_handover_resource_block_handover_date_greater_than_or_equal_to,

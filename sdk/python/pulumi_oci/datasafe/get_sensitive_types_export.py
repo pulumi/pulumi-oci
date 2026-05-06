@@ -203,7 +203,7 @@ def get_sensitive_types_export(sensitive_types_export_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_export = oci.DataSafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
+    test_sensitive_types_export = oci.datasafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_sensitive_types_export_output(sensitive_types_export_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_export = oci.DataSafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
+    test_sensitive_types_export = oci.datasafe.get_sensitive_types_export(sensitive_types_export_id=test_sensitive_types_export_oci_data_safe_sensitive_types_export["id"])
     ```
 
 

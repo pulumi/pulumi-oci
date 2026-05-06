@@ -134,7 +134,7 @@ def get_private_application_packages(display_name: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=test_private_application["id"],
+    test_private_application_packages = oci.servicecatalog.get_private_application_packages(private_application_id=test_private_application["id"],
         display_name=private_application_package_display_name,
         package_types=private_application_package_package_type,
         private_application_package_id=test_private_application_package["id"])
@@ -180,7 +180,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=test_private_application["id"],
+    test_private_application_packages = oci.servicecatalog.get_private_application_packages(private_application_id=test_private_application["id"],
         display_name=private_application_package_display_name,
         package_types=private_application_package_package_type,
         private_application_package_id=test_private_application_package["id"])

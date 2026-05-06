@@ -182,7 +182,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+    test_management_stations = oci.osmanagementhub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         health_state=management_station_health_state,
@@ -253,7 +253,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+    test_management_stations = oci.osmanagementhub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         health_state=management_station_health_state,

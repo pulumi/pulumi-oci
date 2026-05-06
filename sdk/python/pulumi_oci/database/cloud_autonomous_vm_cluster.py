@@ -1600,24 +1600,24 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             autonomous_data_storage_size_in_tbs=cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
             cluster_time_zone=cloud_autonomous_vm_cluster_cluster_time_zone,
             compute_model=cloud_autonomous_vm_cluster_compute_model,
-            cpu_core_count_per_node=cloud_autonomous_vm_cluster_cpu_core_count_per_node,
+            cpu_core_count_per_node=int(cloud_autonomous_vm_cluster_cpu_core_count_per_node),
             db_servers=cloud_autonomous_vm_cluster_db_servers,
             defined_tags=cloud_autonomous_vm_cluster_defined_tags,
             description=cloud_autonomous_vm_cluster_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mtls_enabled_vm_cluster=cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster,
+            is_mtls_enabled_vm_cluster=cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster == "true",
             license_model=cloud_autonomous_vm_cluster_license_model,
             maintenance_window_details={
-                "custom_action_timeout_in_mins": cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_autonomous_vm_cluster_maintenance_window_details_months_name,
                 }],
@@ -1626,14 +1626,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                 "skip_rus": cloud_autonomous_vm_cluster_maintenance_window_details_skip_ru,
                 "weeks_of_months": cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
             },
-            memory_per_oracle_compute_unit_in_gbs=cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+            memory_per_oracle_compute_unit_in_gbs=int(cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
-            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run,
-            scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
-            scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
+            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run == "true",
+            scan_listener_port_non_tls=int(cloud_autonomous_vm_cluster_scan_listener_port_non_tls),
+            scan_listener_port_tls=int(cloud_autonomous_vm_cluster_scan_listener_port_tls),
             security_attributes=cloud_autonomous_vm_cluster_security_attributes,
             subscription_id=test_subscription["id"],
-            total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
+            total_container_databases=int(cloud_autonomous_vm_cluster_total_container_databases))
         ```
 
         ## Import
@@ -1709,24 +1709,24 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             autonomous_data_storage_size_in_tbs=cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
             cluster_time_zone=cloud_autonomous_vm_cluster_cluster_time_zone,
             compute_model=cloud_autonomous_vm_cluster_compute_model,
-            cpu_core_count_per_node=cloud_autonomous_vm_cluster_cpu_core_count_per_node,
+            cpu_core_count_per_node=int(cloud_autonomous_vm_cluster_cpu_core_count_per_node),
             db_servers=cloud_autonomous_vm_cluster_db_servers,
             defined_tags=cloud_autonomous_vm_cluster_defined_tags,
             description=cloud_autonomous_vm_cluster_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_mtls_enabled_vm_cluster=cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster,
+            is_mtls_enabled_vm_cluster=cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster == "true",
             license_model=cloud_autonomous_vm_cluster_license_model,
             maintenance_window_details={
-                "custom_action_timeout_in_mins": cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": cloud_autonomous_vm_cluster_maintenance_window_details_months_name,
                 }],
@@ -1735,14 +1735,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                 "skip_rus": cloud_autonomous_vm_cluster_maintenance_window_details_skip_ru,
                 "weeks_of_months": cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
             },
-            memory_per_oracle_compute_unit_in_gbs=cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+            memory_per_oracle_compute_unit_in_gbs=int(cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
-            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run,
-            scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
-            scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
+            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run == "true",
+            scan_listener_port_non_tls=int(cloud_autonomous_vm_cluster_scan_listener_port_non_tls),
+            scan_listener_port_tls=int(cloud_autonomous_vm_cluster_scan_listener_port_tls),
             security_attributes=cloud_autonomous_vm_cluster_security_attributes,
             subscription_id=test_subscription["id"],
-            total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
+            total_container_databases=int(cloud_autonomous_vm_cluster_total_container_databases))
         ```
 
         ## Import

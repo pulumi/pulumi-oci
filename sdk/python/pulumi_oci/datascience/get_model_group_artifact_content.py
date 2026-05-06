@@ -81,7 +81,7 @@ def get_model_group_artifact_content(model_group_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_artifact_content = oci.DataScience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
+    test_model_group_artifact_content = oci.datascience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
         range=model_group_artifact_content_range)
     ```
 
@@ -113,7 +113,7 @@ def get_model_group_artifact_content_output(model_group_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_artifact_content = oci.DataScience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
+    test_model_group_artifact_content = oci.datascience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
         range=model_group_artifact_content_range)
     ```
 

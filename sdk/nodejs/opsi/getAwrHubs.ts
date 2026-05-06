@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubs = oci.Opsi.getAwrHubs({
+ * const testAwrHubs = oci.opsi.getAwrHubs({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: awrHubDisplayName,
@@ -106,7 +106,7 @@ export interface GetAwrHubsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubs = oci.Opsi.getAwrHubs({
+ * const testAwrHubs = oci.opsi.getAwrHubs({
  *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     compartmentId: compartmentId,
  *     displayName: awrHubDisplayName,

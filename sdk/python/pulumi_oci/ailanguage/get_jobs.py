@@ -125,7 +125,7 @@ def get_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.AiLanguage.get_jobs(compartment_id=compartment_id,
+    test_jobs = oci.ailanguage.get_jobs(compartment_id=compartment_id,
         display_name=job_display_name,
         id=job_id,
         state=job_state)
@@ -170,7 +170,7 @@ def get_jobs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.AiLanguage.get_jobs(compartment_id=compartment_id,
+    test_jobs = oci.ailanguage.get_jobs(compartment_id=compartment_id,
         display_name=job_display_name,
         id=job_id,
         state=job_state)

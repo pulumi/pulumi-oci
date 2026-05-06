@@ -97,7 +97,7 @@ def get_replication_status(management_endpoint: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_status = oci.Kms.get_replication_status(replication_id=test_replication["id"],
+    test_replication_status = oci.kms.get_replication_status(replication_id=test_replication["id"],
         management_endpoint=replication_status_management_endpoint)
     ```
 
@@ -133,7 +133,7 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_status = oci.Kms.get_replication_status(replication_id=test_replication["id"],
+    test_replication_status = oci.kms.get_replication_status(replication_id=test_replication["id"],
         management_endpoint=replication_status_management_endpoint)
     ```
 

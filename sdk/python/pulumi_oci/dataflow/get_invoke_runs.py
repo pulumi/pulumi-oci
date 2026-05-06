@@ -183,7 +183,7 @@ def get_invoke_runs(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+    test_invoke_runs = oci.dataflow.get_invoke_runs(compartment_id=compartment_id,
         application_id=test_application["id"],
         display_name=invoke_run_display_name,
         display_name_starts_with=invoke_run_display_name_starts_with,
@@ -249,7 +249,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+    test_invoke_runs = oci.dataflow.get_invoke_runs(compartment_id=compartment_id,
         application_id=test_application["id"],
         display_name=invoke_run_display_name,
         display_name_starts_with=invoke_run_display_name_starts_with,

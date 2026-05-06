@@ -137,7 +137,7 @@ def get_node_pools(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=compartment_id,
+    test_node_pools = oci.containerengine.get_node_pools(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         name=node_pool_name,
         states=node_pool_state)
@@ -183,7 +183,7 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=compartment_id,
+    test_node_pools = oci.containerengine.get_node_pools(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         name=node_pool_name,
         states=node_pool_state)

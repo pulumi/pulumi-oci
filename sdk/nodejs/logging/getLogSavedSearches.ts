@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogSavedSearches = oci.Logging.getLogSavedSearches({
+ * const testLogSavedSearches = oci.logging.getLogSavedSearches({
  *     compartmentId: compartmentId,
  *     logSavedSearchId: testLogSavedSearch.id,
  *     name: logSavedSearchName,
@@ -87,7 +87,7 @@ export interface GetLogSavedSearchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogSavedSearches = oci.Logging.getLogSavedSearches({
+ * const testLogSavedSearches = oci.logging.getLogSavedSearches({
  *     compartmentId: compartmentId,
  *     logSavedSearchId: testLogSavedSearch.id,
  *     name: logSavedSearchName,

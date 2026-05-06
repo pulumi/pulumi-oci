@@ -326,7 +326,7 @@ def get_domains_api_key(api_key_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_key = oci.Identity.get_domains_api_key(api_key_id=test_api_key_oci_identity_api_key["id"],
+    test_api_key = oci.identity.get_domains_api_key(api_key_id=test_api_key_oci_identity_api_key["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -395,7 +395,7 @@ def get_domains_api_key_output(api_key_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_api_key = oci.Identity.get_domains_api_key(api_key_id=test_api_key_oci_identity_api_key["id"],
+    test_api_key = oci.identity.get_domains_api_key(api_key_id=test_api_key_oci_identity_api_key["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

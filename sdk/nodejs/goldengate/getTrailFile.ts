@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrailFile = oci.GoldenGate.getTrailFile({
+ * const testTrailFile = oci.goldengate.getTrailFile({
  *     deploymentId: testDeployment.id,
  *     trailFileId: testTrailFileOciGoldenGateTrailFile.id,
  *     displayName: trailFileDisplayName,
@@ -88,7 +88,7 @@ export interface GetTrailFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrailFile = oci.GoldenGate.getTrailFile({
+ * const testTrailFile = oci.goldengate.getTrailFile({
  *     deploymentId: testDeployment.id,
  *     trailFileId: testTrailFileOciGoldenGateTrailFile.id,
  *     displayName: trailFileDisplayName,

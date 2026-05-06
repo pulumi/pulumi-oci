@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     matchingRule: {
  *         architectures: dynamicSetMatchingRuleArchitectures,
  *         displayNames: dynamicSetMatchingRuleDisplayNames,
- *         isRebootRequired: dynamicSetMatchingRuleIsRebootRequired,
+ *         isRebootRequired: dynamicSetMatchingRuleIsRebootRequired === "true",
  *         locations: dynamicSetMatchingRuleLocations,
  *         managedInstanceGroupIds: dynamicSetMatchingRuleManagedInstanceGroupIds,
  *         managedInstanceIds: dynamicSetMatchingRuleManagedInstanceIds,
@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  *     },
  *     targetCompartments: [{
  *         compartmentId: compartmentId,
- *         doesIncludeChildren: dynamicSetTargetCompartmentsDoesIncludeChildren,
+ *         doesIncludeChildren: dynamicSetTargetCompartmentsDoesIncludeChildren === "true",
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",

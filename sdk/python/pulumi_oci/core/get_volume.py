@@ -362,7 +362,7 @@ def get_volume(volume_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume = oci.Core.get_volume(volume_id=test_volume_oci_core_volume["id"])
+    test_volume = oci.core.get_volume(volume_id=test_volume_oci_core_volume["id"])
     ```
 
 
@@ -414,7 +414,7 @@ def get_volume_output(volume_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume = oci.Core.get_volume(volume_id=test_volume_oci_core_volume["id"])
+    test_volume = oci.core.get_volume(volume_id=test_volume_oci_core_volume["id"])
     ```
 
 

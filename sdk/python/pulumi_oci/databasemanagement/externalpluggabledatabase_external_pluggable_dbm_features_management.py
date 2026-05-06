@@ -196,7 +196,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
 
         test_externalpluggabledatabase_external_pluggable_dbm_features_management = oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management",
             external_pluggable_database_id=test_external_pluggable_database["id"],
-            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature,
+            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature == "true",
             feature_details={
                 "feature": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_feature,
                 "enable_external_pluggable_dbm_feature": enable_external_pluggable_dbm_feature,
@@ -241,7 +241,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
 
         test_externalpluggabledatabase_external_pluggable_dbm_features_management = oci.databasemanagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement("test_externalpluggabledatabase_external_pluggable_dbm_features_management",
             external_pluggable_database_id=test_external_pluggable_database["id"],
-            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature,
+            enable_external_pluggable_dbm_feature=enable_external_pluggable_dbm_feature == "true",
             feature_details={
                 "feature": externalpluggabledatabase_external_pluggable_dbm_features_management_feature_details_feature,
                 "enable_external_pluggable_dbm_feature": enable_external_pluggable_dbm_feature,

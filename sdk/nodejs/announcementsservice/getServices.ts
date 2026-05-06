@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.AnnouncementsService.getServices({
+ * const testServices = oci.announcementsservice.getServices({
  *     compartmentId: compartmentId,
  *     commsManagerName: serviceCommsManagerName,
  *     platformType: servicePlatformType,
@@ -87,7 +87,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.AnnouncementsService.getServices({
+ * const testServices = oci.announcementsservice.getServices({
  *     compartmentId: compartmentId,
  *     commsManagerName: serviceCommsManagerName,
  *     platformType: servicePlatformType,

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnections = oci.Core.getIpsecConnections({
+ * const testIpSecConnections = oci.core.getIpsecConnections({
  *     compartmentId: compartmentId,
  *     cpeId: testCpe.id,
  *     drgId: testDrg.id,
@@ -92,7 +92,7 @@ export interface GetIpsecConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnections = oci.Core.getIpsecConnections({
+ * const testIpSecConnections = oci.core.getIpsecConnections({
  *     compartmentId: compartmentId,
  *     cpeId: testCpe.id,
  *     drgId: testDrg.id,

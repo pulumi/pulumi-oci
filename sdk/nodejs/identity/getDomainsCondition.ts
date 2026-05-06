@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCondition = oci.Identity.getDomainsCondition({
+ * const testCondition = oci.identity.getDomainsCondition({
  *     conditionId: testConditionOciIdentityDomainsCondition.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -179,7 +179,7 @@ export interface GetDomainsConditionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCondition = oci.Identity.getDomainsCondition({
+ * const testCondition = oci.identity.getDomainsCondition({
  *     conditionId: testConditionOciIdentityDomainsCondition.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

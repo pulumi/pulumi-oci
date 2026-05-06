@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityZones = oci.CloudGuard.getSecurityZones({
+ * const testSecurityZones = oci.cloudguard.getSecurityZones({
  *     compartmentId: compartmentId,
  *     displayName: securityZoneDisplayName,
  *     id: securityZoneId,
- *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree === "true",
  *     securityRecipeId: testSecurityRecipe.id,
  *     state: securityZoneState,
  * });
@@ -112,11 +112,11 @@ export interface GetSecurityZonesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityZones = oci.CloudGuard.getSecurityZones({
+ * const testSecurityZones = oci.cloudguard.getSecurityZones({
  *     compartmentId: compartmentId,
  *     displayName: securityZoneDisplayName,
  *     id: securityZoneId,
- *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree === "true",
  *     securityRecipeId: testSecurityRecipe.id,
  *     state: securityZoneState,
  * });

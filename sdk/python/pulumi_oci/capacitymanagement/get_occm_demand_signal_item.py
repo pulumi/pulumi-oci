@@ -275,7 +275,7 @@ def get_occm_demand_signal_item(occm_demand_signal_item_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_occm_demand_signal_item = oci.CapacityManagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
+    test_occm_demand_signal_item = oci.capacitymanagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
     ```
 
 
@@ -319,7 +319,7 @@ def get_occm_demand_signal_item_output(occm_demand_signal_item_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_occm_demand_signal_item = oci.CapacityManagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
+    test_occm_demand_signal_item = oci.capacitymanagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
     ```
 
 

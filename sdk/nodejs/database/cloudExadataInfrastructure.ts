@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     displayName: cloudExadataInfrastructureDisplayName,
  *     shape: cloudExadataInfrastructureShape,
  *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
- *     computeCount: cloudExadataInfrastructureComputeCount,
+ *     computeCount: Number(cloudExadataInfrastructureComputeCount),
  *     customerContacts: [{
  *         email: cloudExadataInfrastructureCustomerContactsEmail,
  *     }],
@@ -36,14 +36,14 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
+ *         customActionTimeoutInMins: Number(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
  *         hoursOfDays: cloudExadataInfrastructureMaintenanceWindowHoursOfDay,
- *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
- *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
- *         leadTimeInWeeks: cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
+ *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled === "true",
+ *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled === "true",
+ *         leadTimeInWeeks: Number(cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
  *         months: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *         preference: cloudExadataInfrastructureMaintenanceWindowPreference,
  *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
- *     storageCount: cloudExadataInfrastructureStorageCount,
+ *     storageCount: Number(cloudExadataInfrastructureStorageCount),
  *     storageServerType: cloudExadataInfrastructureStorageServerType,
  *     subscriptionId: tenantSubscriptionId,
  * });

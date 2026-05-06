@@ -482,7 +482,7 @@ def get_domains_branding_setting(attribute_sets: Optional[Sequence[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_branding_setting = oci.Identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
+    test_branding_setting = oci.identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -564,7 +564,7 @@ def get_domains_branding_setting_output(attribute_sets: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_branding_setting = oci.Identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
+    test_branding_setting = oci.identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

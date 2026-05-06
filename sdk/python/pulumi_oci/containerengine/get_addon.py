@@ -172,7 +172,7 @@ def get_addon(addon_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
+    test_addon = oci.containerengine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
 
@@ -212,7 +212,7 @@ def get_addon_output(addon_name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
+    test_addon = oci.containerengine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
 

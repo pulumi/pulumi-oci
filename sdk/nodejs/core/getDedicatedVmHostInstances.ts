@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
+ * const testDedicatedVmHostsInstances = oci.core.getDedicatedVmHostInstances({
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
  * });
  * ```
  */
@@ -97,11 +97,11 @@ export interface GetDedicatedVmHostInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
+ * const testDedicatedVmHostsInstances = oci.core.getDedicatedVmHostInstances({
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
  * });
  * ```
  */

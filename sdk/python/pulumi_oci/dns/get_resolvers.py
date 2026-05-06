@@ -140,7 +140,7 @@ def get_resolvers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=compartment_id,
+    test_resolvers = oci.dns.get_resolvers(compartment_id=compartment_id,
         scope="PRIVATE",
         display_name=resolver_display_name,
         id=resolver_id,
@@ -195,7 +195,7 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=compartment_id,
+    test_resolvers = oci.dns.get_resolvers(compartment_id=compartment_id,
         scope="PRIVATE",
         display_name=resolver_display_name,
         id=resolver_id,

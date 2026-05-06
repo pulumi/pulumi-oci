@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequestLogs = oci.Identity.getIamWorkRequestLogs({
+ * const testIamWorkRequestLogs = oci.identity.getIamWorkRequestLogs({
  *     iamWorkRequestId: testIamWorkRequest.id,
  * });
  * ```
@@ -75,7 +75,7 @@ export interface GetIamWorkRequestLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequestLogs = oci.Identity.getIamWorkRequestLogs({
+ * const testIamWorkRequestLogs = oci.identity.getIamWorkRequestLogs({
  *     iamWorkRequestId: testIamWorkRequest.id,
  * });
  * ```

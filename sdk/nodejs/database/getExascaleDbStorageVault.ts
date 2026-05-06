@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExascaleDbStorageVault = oci.Database.getExascaleDbStorageVault({
+ * const testExascaleDbStorageVault = oci.database.getExascaleDbStorageVault({
  *     exascaleDbStorageVaultId: testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id,
  * });
  * ```
@@ -144,7 +144,7 @@ export interface GetExascaleDbStorageVaultResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExascaleDbStorageVault = oci.Database.getExascaleDbStorageVault({
+ * const testExascaleDbStorageVault = oci.database.getExascaleDbStorageVault({
  *     exascaleDbStorageVaultId: testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id,
  * });
  * ```

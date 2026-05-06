@@ -191,7 +191,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[{
                 "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
-                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+                "share": int(cloud_vm_cluster_iorm_config_db_plans_share),
             }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
@@ -237,7 +237,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[{
                 "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
-                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+                "share": int(cloud_vm_cluster_iorm_config_db_plans_share),
             }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")

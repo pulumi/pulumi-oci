@@ -23,10 +23,10 @@ import * as utilities from "../utilities";
  * const testWorkspaceExportRequest = new oci.dataintegration.WorkspaceExportRequest("test_workspace_export_request", {
  *     bucket: workspaceExportRequestBucket,
  *     workspaceId: testWorkspace.id,
- *     areReferencesIncluded: workspaceExportRequestAreReferencesIncluded,
+ *     areReferencesIncluded: workspaceExportRequestAreReferencesIncluded === "true",
  *     fileName: workspaceExportRequestFileName,
  *     filters: workspaceExportRequestFilters,
- *     isObjectOverwriteEnabled: workspaceExportRequestIsObjectOverwriteEnabled,
+ *     isObjectOverwriteEnabled: workspaceExportRequestIsObjectOverwriteEnabled === "true",
  *     objectKeys: workspaceExportRequestObjectKeys,
  *     objectStorageRegion: workspaceExportRequestObjectStorageRegion,
  *     objectStorageTenancyId: testTenancy.id,

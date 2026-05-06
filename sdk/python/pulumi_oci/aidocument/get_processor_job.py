@@ -204,7 +204,7 @@ def get_processor_job(processor_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
+    test_processor_job = oci.aidocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_processor_job_output(processor_job_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
+    test_processor_job = oci.aidocument.get_processor_job(processor_job_id=test_processor_job_oci_ai_document_processor_job["id"])
     ```
 
 

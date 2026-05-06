@@ -83,7 +83,7 @@ def get_log_sets_count(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
+    test_log_sets_count = oci.loganalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
 
 
@@ -111,7 +111,7 @@ def get_log_sets_count_output(namespace: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
+    test_log_sets_count = oci.loganalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
 
 

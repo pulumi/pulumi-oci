@@ -300,7 +300,7 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
+    test_sensitive_data_model = oci.datasafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
+    test_sensitive_data_model = oci.datasafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
     ```
 
 

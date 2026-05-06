@@ -145,7 +145,7 @@ def get_fleet_uncorrelated_package_applications(application_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_uncorrelated_package_applications = oci.Jms.get_fleet_uncorrelated_package_applications(fleet_id=test_fleet["id"],
+    test_fleet_uncorrelated_package_applications = oci.jms.get_fleet_uncorrelated_package_applications(fleet_id=test_fleet["id"],
         package_name=fleet_uncorrelated_package_application_package_name,
         application_id=test_application["id"],
         managed_instance_id=test_managed_instance["id"],
@@ -201,7 +201,7 @@ def get_fleet_uncorrelated_package_applications_output(application_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_uncorrelated_package_applications = oci.Jms.get_fleet_uncorrelated_package_applications(fleet_id=test_fleet["id"],
+    test_fleet_uncorrelated_package_applications = oci.jms.get_fleet_uncorrelated_package_applications(fleet_id=test_fleet["id"],
         package_name=fleet_uncorrelated_package_application_package_name,
         application_id=test_application["id"],
         managed_instance_id=test_managed_instance["id"],

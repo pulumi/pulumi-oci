@@ -787,7 +787,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=blockchain_platform_is_byol,
+            is_byol=blockchain_platform_is_byol == "true",
             platform_version=blockchain_platform_platform_version)
         ```
 
@@ -858,7 +858,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=blockchain_platform_is_byol,
+            is_byol=blockchain_platform_is_byol == "true",
             platform_version=blockchain_platform_platform_version)
         ```
 

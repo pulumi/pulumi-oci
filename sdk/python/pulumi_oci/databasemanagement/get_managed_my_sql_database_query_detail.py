@@ -118,7 +118,7 @@ def get_managed_my_sql_database_query_detail(digest: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_query_detail = oci.DatabaseManagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
+    test_managed_my_sql_database_query_detail = oci.databasemanagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
@@ -153,7 +153,7 @@ def get_managed_my_sql_database_query_detail_output(digest: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_query_detail = oci.DatabaseManagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
+    test_managed_my_sql_database_query_detail = oci.databasemanagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 

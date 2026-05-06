@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testLifecycleStageRebootManagement = new oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management", {
  *     lifecycleStageId: testLifecycleStage.id,
- *     rebootTimeoutInMins: lifecycleStageRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(lifecycleStageRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: lifecycleStageRebootManagementWorkRequestDetailsDescription,
  *         displayName: lifecycleStageRebootManagementWorkRequestDetailsDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ * const testDrPlanExecutions = oci.disasterrecovery.getDrPlanExecutions({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanExecutionDisplayName,
  *     drPlanExecutionId: testDrPlanExecution.id,
@@ -97,7 +97,7 @@ export interface GetDrPlanExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ * const testDrPlanExecutions = oci.disasterrecovery.getDrPlanExecutions({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanExecutionDisplayName,
  *     drPlanExecutionId: testDrPlanExecution.id,

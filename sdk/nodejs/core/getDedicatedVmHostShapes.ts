@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostShapes = oci.Core.getDedicatedVmHostShapes({
+ * const testDedicatedVmHostShapes = oci.core.getDedicatedVmHostShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostShapeAvailabilityDomain,
  *     instanceShapeName: dedicatedVmHostShapeInstanceShapeName,
@@ -84,7 +84,7 @@ export interface GetDedicatedVmHostShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostShapes = oci.Core.getDedicatedVmHostShapes({
+ * const testDedicatedVmHostShapes = oci.core.getDedicatedVmHostShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostShapeAvailabilityDomain,
  *     instanceShapeName: dedicatedVmHostShapeInstanceShapeName,

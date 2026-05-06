@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuotas = oci.Limits.getQuotas({
+ * const testQuotas = oci.limits.getQuotas({
  *     compartmentId: tenancyOcid,
  *     name: quotaName,
  *     state: quotaState,
@@ -90,7 +90,7 @@ export interface GetQuotasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuotas = oci.Limits.getQuotas({
+ * const testQuotas = oci.limits.getQuotas({
  *     compartmentId: tenancyOcid,
  *     name: quotaName,
  *     state: quotaState,

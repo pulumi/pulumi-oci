@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinition = oci.DataSafe.getUnifiedAuditPolicyDefinition({
+ * const testUnifiedAuditPolicyDefinition = oci.datasafe.getUnifiedAuditPolicyDefinition({
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id,
  * });
  * ```
@@ -114,7 +114,7 @@ export interface GetUnifiedAuditPolicyDefinitionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinition = oci.DataSafe.getUnifiedAuditPolicyDefinition({
+ * const testUnifiedAuditPolicyDefinition = oci.datasafe.getUnifiedAuditPolicyDefinition({
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id,
  * });
  * ```

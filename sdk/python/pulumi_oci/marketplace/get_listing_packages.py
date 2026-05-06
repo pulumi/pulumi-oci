@@ -144,7 +144,7 @@ def get_listing_packages(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_packages = oci.Marketplace.get_listing_packages(listing_id=test_listing["id"],
+    test_listing_packages = oci.marketplace.get_listing_packages(listing_id=test_listing["id"],
         compartment_id=compartment_id,
         package_type=listing_package_package_type,
         package_version=listing_package_package_version)
@@ -203,7 +203,7 @@ def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_packages = oci.Marketplace.get_listing_packages(listing_id=test_listing["id"],
+    test_listing_packages = oci.marketplace.get_listing_packages(listing_id=test_listing["id"],
         compartment_id=compartment_id,
         package_type=listing_package_package_type,
         package_version=listing_package_package_version)

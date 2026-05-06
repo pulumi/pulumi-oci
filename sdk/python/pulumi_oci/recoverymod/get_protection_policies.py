@@ -144,7 +144,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=compartment_id,
+    test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],
@@ -195,7 +195,7 @@ def get_protection_policies_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=compartment_id,
+    test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],

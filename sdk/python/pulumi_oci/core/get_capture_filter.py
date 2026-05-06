@@ -180,7 +180,7 @@ def get_capture_filter(capture_filter_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=test_capture_filter_oci_core_capture_filter["id"])
+    test_capture_filter = oci.core.get_capture_filter(capture_filter_id=test_capture_filter_oci_core_capture_filter["id"])
     ```
 
 
@@ -216,7 +216,7 @@ def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=test_capture_filter_oci_core_capture_filter["id"])
+    test_capture_filter = oci.core.get_capture_filter(capture_filter_id=test_capture_filter_oci_core_capture_filter["id"])
     ```
 
 

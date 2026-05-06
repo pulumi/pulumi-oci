@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardings = oci.FleetAppsManagement.getOnboardings({
+ * const testOnboardings = oci.fleetappsmanagement.getOnboardings({
  *     compartmentId: compartmentId,
  *     id: onboardingId,
  *     state: onboardingState,
@@ -89,7 +89,7 @@ export interface GetOnboardingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardings = oci.FleetAppsManagement.getOnboardings({
+ * const testOnboardings = oci.fleetappsmanagement.getOnboardings({
  *     compartmentId: compartmentId,
  *     id: onboardingId,
  *     state: onboardingState,

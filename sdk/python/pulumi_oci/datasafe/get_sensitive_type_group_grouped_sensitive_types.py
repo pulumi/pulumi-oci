@@ -108,7 +108,7 @@ def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_group_grouped_sensitive_types = oci.DataSafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
+    test_sensitive_type_group_grouped_sensitive_types = oci.datasafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 
@@ -144,7 +144,7 @@ def get_sensitive_type_group_grouped_sensitive_types_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_group_grouped_sensitive_types = oci.DataSafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
+    test_sensitive_type_group_grouped_sensitive_types = oci.datasafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 

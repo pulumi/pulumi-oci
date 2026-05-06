@@ -190,10 +190,10 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+    test_target_databases = oci.datasafe.get_target_databases(compartment_id=compartment_id,
         access_level=target_database_access_level,
         associated_resource_id=test_associated_resource["id"],
-        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
         infrastructure_type=target_database_infrastructure_type,
@@ -261,10 +261,10 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+    test_target_databases = oci.datasafe.get_target_databases(compartment_id=compartment_id,
         access_level=target_database_access_level,
         associated_resource_id=test_associated_resource["id"],
-        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
         infrastructure_type=target_database_infrastructure_type,

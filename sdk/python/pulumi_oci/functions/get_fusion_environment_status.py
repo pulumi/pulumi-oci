@@ -83,7 +83,7 @@ def get_fusion_environment_status(fusion_environment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_status = oci.functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -111,7 +111,7 @@ def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_status = oci.functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

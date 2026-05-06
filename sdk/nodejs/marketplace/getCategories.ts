@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Marketplace.getCategories({
+ * const testCategories = oci.marketplace.getCategories({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetCategoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Marketplace.getCategories({
+ * const testCategories = oci.marketplace.getCategories({
  *     compartmentId: compartmentId,
  * });
  * ```

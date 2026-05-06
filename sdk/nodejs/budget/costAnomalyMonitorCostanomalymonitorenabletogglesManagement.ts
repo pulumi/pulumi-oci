@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = new oci.budget.CostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management", {
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
- *     enableCostanomalymonitorenabletoggle: enableCostanomalymonitorenabletoggle,
+ *     enableCostanomalymonitorenabletoggle: enableCostanomalymonitorenabletoggle === "true",
  * });
  * ```
  */

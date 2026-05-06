@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBaselineableMetricsEvaluate = oci.StackMonitoring.getBaselineableMetricsEvaluate({
+ * const testBaselineableMetricsEvaluate = oci.stackmonitoring.getBaselineableMetricsEvaluate({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     items: [{
  *         evaluationDataPoints: [{
@@ -94,7 +94,7 @@ export interface GetBaselineableMetricsEvaluateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBaselineableMetricsEvaluate = oci.StackMonitoring.getBaselineableMetricsEvaluate({
+ * const testBaselineableMetricsEvaluate = oci.stackmonitoring.getBaselineableMetricsEvaluate({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     items: [{
  *         evaluationDataPoints: [{

@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
+ * const testMysqlDbSystems = oci.mysql.getMysqlDbSystems({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
- *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
+ *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
  *     state: mysqlDbSystemState,
  * });
  * ```
@@ -139,14 +139,14 @@ export interface GetMysqlDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
+ * const testMysqlDbSystems = oci.mysql.getMysqlDbSystems({
  *     compartmentId: compartmentId,
  *     configurationId: mysqlConfigurationId,
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
- *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
+ *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
  *     state: mysqlDbSystemState,
  * });
  * ```

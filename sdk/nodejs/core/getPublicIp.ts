@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpById = oci.Core.getPublicIp({
+ * const testOciCorePublicIpById = oci.core.getPublicIp({
  *     id: testPublicIpId,
  * });
  * ```
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByPrivateIpId = oci.core.getPublicIp({
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
@@ -46,7 +46,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByIp = oci.core.getPublicIp({
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
@@ -170,7 +170,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpById = oci.Core.getPublicIp({
+ * const testOciCorePublicIpById = oci.core.getPublicIp({
  *     id: testPublicIpId,
  * });
  * ```
@@ -180,7 +180,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByPrivateIpId = oci.core.getPublicIp({
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
@@ -190,7 +190,7 @@ export interface GetPublicIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
+ * const testOciCorePublicIpByIp = oci.core.getPublicIp({
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```

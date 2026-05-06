@@ -115,7 +115,7 @@ def get_run_log(base64_encode_content: Optional[_builtins.bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=run_log_name,
+    test_run_log = oci.dataflow.get_run_log(name=run_log_name,
         run_id=test_run["id"])
     ```
 
@@ -154,7 +154,7 @@ def get_run_log_output(base64_encode_content: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_run_log = oci.DataFlow.get_run_log(name=run_log_name,
+    test_run_log = oci.dataflow.get_run_log(name=run_log_name,
         run_id=test_run["id"])
     ```
 

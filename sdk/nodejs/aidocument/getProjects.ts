@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.AiDocument.getProjects({
+ * const testProjects = oci.aidocument.getProjects({
  *     compartmentId: compartmentId,
  *     displayName: projectDisplayName,
  *     id: projectId,
@@ -97,7 +97,7 @@ export interface GetProjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.AiDocument.getProjects({
+ * const testProjects = oci.aidocument.getProjects({
  *     compartmentId: compartmentId,
  *     displayName: projectDisplayName,
  *     id: projectId,

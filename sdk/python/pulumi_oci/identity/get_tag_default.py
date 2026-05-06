@@ -169,7 +169,7 @@ def get_tag_default(tag_default_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
+    test_tag_default = oci.identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
     ```
 
 
@@ -204,7 +204,7 @@ def get_tag_default_output(tag_default_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_default = oci.Identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
+    test_tag_default = oci.identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
     ```
 
 

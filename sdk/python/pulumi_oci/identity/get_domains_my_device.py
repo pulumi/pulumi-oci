@@ -578,7 +578,7 @@ def get_domains_my_device(attribute_sets: Optional[Sequence[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+    test_my_device = oci.identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
         my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",
@@ -668,7 +668,7 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+    test_my_device = oci.identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
         my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePools = oci.ContainerEngine.getNodePools({
+ * const testNodePools = oci.containerengine.getNodePools({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     name: nodePoolName,
@@ -100,7 +100,7 @@ export interface GetNodePoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePools = oci.ContainerEngine.getNodePools({
+ * const testNodePools = oci.containerengine.getNodePools({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     name: nodePoolName,

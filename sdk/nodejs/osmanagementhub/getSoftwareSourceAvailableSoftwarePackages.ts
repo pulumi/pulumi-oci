@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceAvailableSoftwarePackages = oci.OsManagementHub.getSoftwareSourceAvailableSoftwarePackages({
+ * const testSoftwareSourceAvailableSoftwarePackages = oci.osmanagementhub.getSoftwareSourceAvailableSoftwarePackages({
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceAvailableSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceAvailableSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest,
+ *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest === "true",
  * });
  * ```
  */
@@ -96,11 +96,11 @@ export interface GetSoftwareSourceAvailableSoftwarePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceAvailableSoftwarePackages = oci.OsManagementHub.getSoftwareSourceAvailableSoftwarePackages({
+ * const testSoftwareSourceAvailableSoftwarePackages = oci.osmanagementhub.getSoftwareSourceAvailableSoftwarePackages({
  *     softwareSourceId: testSoftwareSource.id,
  *     displayName: softwareSourceAvailableSoftwarePackageDisplayName,
  *     displayNameContains: softwareSourceAvailableSoftwarePackageDisplayNameContains,
- *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest,
+ *     isLatest: softwareSourceAvailableSoftwarePackageIsLatest === "true",
  * });
  * ```
  */

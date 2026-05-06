@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableOverrideMaintenanceStartTimes = oci.Lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
+ * const testAvailableOverrideMaintenanceStartTimes = oci.lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
  *     id: availableOverrideMaintenanceStartTimeId,
  *     date: availableOverrideMaintenanceStartTimeDate,
  * });
@@ -70,7 +70,7 @@ export interface GetFileStorageAvailableOverrideMaintenanceStartTimesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableOverrideMaintenanceStartTimes = oci.Lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
+ * const testAvailableOverrideMaintenanceStartTimes = oci.lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
  *     id: availableOverrideMaintenanceStartTimeId,
  *     date: availableOverrideMaintenanceStartTimeDate,
  * });

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSettings = oci.Identity.getDomainsSettings({
+ * const testSettings = oci.identity.getDomainsSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
@@ -102,7 +102,7 @@ export interface GetDomainsSettingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSettings = oci.Identity.getDomainsSettings({
+ * const testSettings = oci.identity.getDomainsSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",

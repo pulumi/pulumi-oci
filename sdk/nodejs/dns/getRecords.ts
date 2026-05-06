@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecords = oci.Dns.getRecords({
+ * const testRecords = oci.dns.getRecords({
  *     zoneNameOrId: testZoneNameOr.id,
  *     domain: recordDomain,
  *     domainContains: recordDomainContains,
@@ -142,7 +142,7 @@ export interface GetRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecords = oci.Dns.getRecords({
+ * const testRecords = oci.dns.getRecords({
  *     zoneNameOrId: testZoneNameOr.id,
  *     domain: recordDomain,
  *     domainContains: recordDomainContains,

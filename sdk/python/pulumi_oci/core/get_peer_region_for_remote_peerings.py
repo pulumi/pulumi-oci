@@ -86,7 +86,7 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPee
     import pulumi
     import pulumi_oci as oci
 
-    test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
+    test_peer_region_for_remote_peerings = oci.core.get_peer_region_for_remote_peerings()
     ```
     """
     __args__ = dict()
@@ -112,7 +112,7 @@ def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
+    test_peer_region_for_remote_peerings = oci.core.get_peer_region_for_remote_peerings()
     ```
     """
     __args__ = dict()

@@ -181,7 +181,7 @@ def get_steering_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+    test_steering_policies = oci.dns.get_steering_policies(compartment_id=compartment_id,
         display_name=steering_policy_display_name,
         display_name_contains=steering_policy_display_name_contains,
         health_check_monitor_id=test_http_monitor["id"],
@@ -251,7 +251,7 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+    test_steering_policies = oci.dns.get_steering_policies(compartment_id=compartment_id,
         display_name=steering_policy_display_name,
         display_name_contains=steering_policy_display_name_contains,
         health_check_monitor_id=test_http_monitor["id"],

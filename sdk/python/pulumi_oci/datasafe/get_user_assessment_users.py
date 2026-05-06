@@ -332,12 +332,12 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_users = oci.datasafe.get_user_assessment_users(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_user_access_level,
         account_status=user_assessment_user_account_status,
-        are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible,
+        are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible == "true",
         authentication_type=user_assessment_user_authentication_type,
-        compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree == "true",
         schema_lists=user_assessment_user_schema_list,
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_time_last_login_greater_than_or_equal_to,
@@ -482,12 +482,12 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_users = oci.datasafe.get_user_assessment_users(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_user_access_level,
         account_status=user_assessment_user_account_status,
-        are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible,
+        are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible == "true",
         authentication_type=user_assessment_user_authentication_type,
-        compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree == "true",
         schema_lists=user_assessment_user_schema_list,
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_time_last_login_greater_than_or_equal_to,

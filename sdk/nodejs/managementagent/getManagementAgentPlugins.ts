@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
+ * const testManagementAgentPlugins = oci.managementagent.getManagementAgentPlugins({
  *     compartmentId: compartmentId,
  *     agentId: managementAgentId,
  *     displayName: managementAgentPluginDisplayName,
@@ -101,7 +101,7 @@ export interface GetManagementAgentPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
+ * const testManagementAgentPlugins = oci.managementagent.getManagementAgentPlugins({
  *     compartmentId: compartmentId,
  *     agentId: managementAgentId,
  *     displayName: managementAgentPluginDisplayName,

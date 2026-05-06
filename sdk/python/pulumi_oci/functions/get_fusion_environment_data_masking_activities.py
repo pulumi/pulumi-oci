@@ -111,7 +111,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_data_masking_activities = oci.functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
         state=fusion_environment_data_masking_activity_state)
     ```
 
@@ -147,7 +147,7 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_data_masking_activities = oci.functions.get_fusion_environment_data_masking_activities(fusion_environment_id=test_fusion_environment["id"],
         state=fusion_environment_data_masking_activity_state)
     ```
 

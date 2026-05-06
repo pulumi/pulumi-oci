@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
+ * const testManagementAgentImages = oci.managementagent.getManagementAgentImages({
  *     compartmentId: compartmentId,
  *     installType: managementAgentImageInstallType,
  *     name: managementAgentImageName,
@@ -91,7 +91,7 @@ export interface GetManagementAgentImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
+ * const testManagementAgentImages = oci.managementagent.getManagementAgentImages({
  *     compartmentId: compartmentId,
  *     installType: managementAgentImageInstallType,
  *     name: managementAgentImageName,

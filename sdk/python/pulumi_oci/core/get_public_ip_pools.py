@@ -122,7 +122,7 @@ def get_public_ip_pools(byoip_range_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=compartment_id,
+    test_public_ip_pools = oci.core.get_public_ip_pools(compartment_id=compartment_id,
         byoip_range_id=test_byoip_range["id"],
         display_name=public_ip_pool_display_name)
     ```
@@ -164,7 +164,7 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=compartment_id,
+    test_public_ip_pools = oci.core.get_public_ip_pools(compartment_id=compartment_id,
         byoip_range_id=test_byoip_range["id"],
         display_name=public_ip_pool_display_name)
     ```

@@ -182,7 +182,7 @@ def get_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+    test_records = oci.dns.get_records(zone_name_or_id=test_zone_name_or["id"],
         domain=record_domain,
         domain_contains=record_domain_contains,
         rtype=record_rtype,
@@ -254,7 +254,7 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+    test_records = oci.dns.get_records(zone_name_or_id=test_zone_name_or["id"],
         domain=record_domain,
         domain_contains=record_domain_contains,
         rtype=record_rtype,

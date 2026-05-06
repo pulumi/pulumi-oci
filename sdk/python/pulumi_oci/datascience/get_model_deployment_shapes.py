@@ -95,7 +95,7 @@ def get_model_deployment_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=compartment_id)
+    test_model_deployment_shapes = oci.datascience.get_model_deployment_shapes(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_model_deployment_shapes_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=compartment_id)
+    test_model_deployment_shapes = oci.datascience.get_model_deployment_shapes(compartment_id=compartment_id)
     ```
 
 

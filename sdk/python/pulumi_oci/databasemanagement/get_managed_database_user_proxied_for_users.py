@@ -128,7 +128,7 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[Union
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_proxied_for_users = oci.DatabaseManagement.get_managed_database_user_proxied_for_users(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_proxied_for_users = oci.databasemanagement.get_managed_database_user_proxied_for_users(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_proxied_for_user_name,
         opc_named_credential_id=managed_database_user_proxied_for_user_opc_named_credential_id)
@@ -174,7 +174,7 @@ def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_proxied_for_users = oci.DatabaseManagement.get_managed_database_user_proxied_for_users(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_proxied_for_users = oci.databasemanagement.get_managed_database_user_proxied_for_users(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_proxied_for_user_name,
         opc_named_credential_id=managed_database_user_proxied_for_user_opc_named_credential_id)

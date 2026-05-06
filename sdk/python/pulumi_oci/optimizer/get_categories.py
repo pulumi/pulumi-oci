@@ -154,10 +154,10 @@ def get_categories(child_tenancy_ids: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
-        compartment_id_in_subtree=category_compartment_id_in_subtree,
+    test_categories = oci.optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree == "true",
         child_tenancy_ids=category_child_tenancy_ids,
-        include_organization=category_include_organization,
+        include_organization=category_include_organization == "true",
         name=category_name,
         state=category_state)
     ```
@@ -222,10 +222,10 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
-        compartment_id_in_subtree=category_compartment_id_in_subtree,
+    test_categories = oci.optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree == "true",
         child_tenancy_ids=category_child_tenancy_ids,
-        include_organization=category_include_organization,
+        include_organization=category_include_organization == "true",
         name=category_name,
         state=category_state)
     ```

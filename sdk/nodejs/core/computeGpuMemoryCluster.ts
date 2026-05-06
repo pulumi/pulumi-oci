@@ -33,8 +33,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     gpuMemoryClusterScaleConfig: {
- *         isUpsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled,
- *         isDownsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled,
+ *         isUpsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsUpsizeEnabled === "true",
+ *         isDownsizeEnabled: computeGpuMemoryClusterGpuMemoryClusterScaleConfigIsDownsizeEnabled === "true",
  *         targetSize: computeGpuMemoryClusterGpuMemoryClusterScaleConfigTargetSize,
  *     },
  *     gpuMemoryFabricId: testGpuMemoryFabric.id,

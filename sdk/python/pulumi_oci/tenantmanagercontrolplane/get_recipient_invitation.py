@@ -227,7 +227,7 @@ def get_recipient_invitation(recipient_invitation_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_recipient_invitation = oci.Tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
+    test_recipient_invitation = oci.tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_recipient_invitation_output(recipient_invitation_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_recipient_invitation = oci.Tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
+    test_recipient_invitation = oci.tenantmanagercontrolplane.get_recipient_invitation(recipient_invitation_id=test_recipient_invitation_oci_tenantmanagercontrolplane_recipient_invitation["id"])
     ```
 
 

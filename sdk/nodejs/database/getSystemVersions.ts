@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersions = oci.Database.getSystemVersions({
+ * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest,
+ *     isLatest: systemVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
@@ -101,10 +101,10 @@ export interface GetSystemVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersions = oci.Database.getSystemVersions({
+ * const testSystemVersions = oci.database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
- *     isLatest: systemVersionIsLatest,
+ *     isLatest: systemVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });

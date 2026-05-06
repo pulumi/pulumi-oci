@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
+ * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetAddonOptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
+ * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
  * });
  * ```
  */

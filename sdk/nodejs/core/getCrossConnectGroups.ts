@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectGroups = oci.Core.getCrossConnectGroups({
+ * const testCrossConnectGroups = oci.core.getCrossConnectGroups({
  *     compartmentId: compartmentId,
  *     displayName: crossConnectGroupDisplayName,
  *     state: crossConnectGroupState,
@@ -90,7 +90,7 @@ export interface GetCrossConnectGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectGroups = oci.Core.getCrossConnectGroups({
+ * const testCrossConnectGroups = oci.core.getCrossConnectGroups({
  *     compartmentId: compartmentId,
  *     displayName: crossConnectGroupDisplayName,
  *     state: crossConnectGroupState,

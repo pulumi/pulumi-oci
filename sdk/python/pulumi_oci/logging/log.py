@@ -435,8 +435,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=log_is_enabled,
-            retention_duration=log_retention_duration)
+            is_enabled=log_is_enabled == "true",
+            retention_duration=int(log_retention_duration))
         ```
 
         ## Import
@@ -504,8 +504,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=log_is_enabled,
-            retention_duration=log_retention_duration)
+            is_enabled=log_is_enabled == "true",
+            retention_duration=int(log_retention_duration))
         ```
 
         ## Import

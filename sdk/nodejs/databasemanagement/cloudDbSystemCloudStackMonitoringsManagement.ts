@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testCloudDbSystemCloudStackMonitoringsManagement = new oci.databasemanagement.CloudDbSystemCloudStackMonitoringsManagement("test_cloud_db_system_cloud_stack_monitorings_management", {
  *     cloudDbSystemId: testCloudDbSystem.id,
- *     enableCloudStackMonitoring: enableCloudStackMonitoring,
- *     isEnabled: cloudDbSystemCloudStackMonitoringsManagementIsEnabled,
+ *     enableCloudStackMonitoring: enableCloudStackMonitoring === "true",
+ *     isEnabled: cloudDbSystemCloudStackMonitoringsManagementIsEnabled === "true",
  *     metadata: cloudDbSystemCloudStackMonitoringsManagementMetadata,
  * });
  * ```

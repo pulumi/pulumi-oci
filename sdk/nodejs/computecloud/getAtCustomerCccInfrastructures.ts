@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccInfrastructures = oci.ComputeCloud.getAtCustomerCccInfrastructures({
+ * const testCccInfrastructures = oci.computecloud.getAtCustomerCccInfrastructures({
  *     accessLevel: cccInfrastructureAccessLevel,
  *     cccInfrastructureId: testCccInfrastructure.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree === "true",
  *     displayName: cccInfrastructureDisplayName,
  *     displayNameContains: cccInfrastructureDisplayNameContains,
  *     state: cccInfrastructureState,
@@ -119,11 +119,11 @@ export interface GetAtCustomerCccInfrastructuresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccInfrastructures = oci.ComputeCloud.getAtCustomerCccInfrastructures({
+ * const testCccInfrastructures = oci.computecloud.getAtCustomerCccInfrastructures({
  *     accessLevel: cccInfrastructureAccessLevel,
  *     cccInfrastructureId: testCccInfrastructure.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree === "true",
  *     displayName: cccInfrastructureDisplayName,
  *     displayNameContains: cccInfrastructureDisplayNameContains,
  *     state: cccInfrastructureState,

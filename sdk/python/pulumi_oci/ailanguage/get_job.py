@@ -312,7 +312,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.AiLanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
+    test_job = oci.ailanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.AiLanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
+    test_job = oci.ailanguage.get_job(job_id=test_job_oci_ai_language_job["id"])
     ```
 
 

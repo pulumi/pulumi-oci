@@ -209,7 +209,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                 "attachment_type": drg_route_distribution_statement_statements_match_criteria_attachment_type,
                 "drg_attachment_id": test_drg_attachment["id"],
             },
-            priority=drg_route_distribution_statement_statements_priority)
+            priority=int(drg_route_distribution_statement_statements_priority))
         ```
 
         ## Import
@@ -260,7 +260,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                 "attachment_type": drg_route_distribution_statement_statements_match_criteria_attachment_type,
                 "drg_attachment_id": test_drg_attachment["id"],
             },
-            priority=drg_route_distribution_statement_statements_priority)
+            priority=int(drg_route_distribution_statement_statements_priority))
         ```
 
         ## Import

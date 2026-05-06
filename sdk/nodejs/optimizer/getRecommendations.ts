@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendations = oci.Optimizer.getRecommendations({
+ * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization,
+ *     includeOrganization: recommendationIncludeOrganization === "true",
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,
@@ -150,13 +150,13 @@ export interface GetRecommendationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendations = oci.Optimizer.getRecommendations({
+ * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization,
+ *     includeOrganization: recommendationIncludeOrganization === "true",
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,

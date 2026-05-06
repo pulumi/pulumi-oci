@@ -869,7 +869,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         test_operator_control_assignment = oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment",
             compartment_id=compartment_id,
-            is_enforced_always=operator_control_assignment_is_enforced_always,
+            is_enforced_always=operator_control_assignment_is_enforced_always == "true",
             operator_control_id=test_operator_control["id"],
             resource_compartment_id=test_compartment["id"],
             resource_id=test_resource["id"],
@@ -878,12 +878,12 @@ class OperatorControlAssignment(pulumi.CustomResource):
             comment=operator_control_assignment_comment,
             defined_tags=operator_control_assignment_defined_tags,
             freeform_tags=operator_control_assignment_freeform_tags,
-            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
-            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
-            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance == "true",
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded == "true",
+            is_log_forwarded=operator_control_assignment_is_log_forwarded == "true",
             remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
             remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
-            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            remote_syslog_server_port=int(operator_control_assignment_remote_syslog_server_port),
             time_assignment_from=operator_control_assignment_time_assignment_from,
             time_assignment_to=operator_control_assignment_time_assignment_to)
         ```
@@ -945,7 +945,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         test_operator_control_assignment = oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment",
             compartment_id=compartment_id,
-            is_enforced_always=operator_control_assignment_is_enforced_always,
+            is_enforced_always=operator_control_assignment_is_enforced_always == "true",
             operator_control_id=test_operator_control["id"],
             resource_compartment_id=test_compartment["id"],
             resource_id=test_resource["id"],
@@ -954,12 +954,12 @@ class OperatorControlAssignment(pulumi.CustomResource):
             comment=operator_control_assignment_comment,
             defined_tags=operator_control_assignment_defined_tags,
             freeform_tags=operator_control_assignment_freeform_tags,
-            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
-            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
-            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance == "true",
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded == "true",
+            is_log_forwarded=operator_control_assignment_is_log_forwarded == "true",
             remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
             remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
-            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            remote_syslog_server_port=int(operator_control_assignment_remote_syslog_server_port),
             time_assignment_from=operator_control_assignment_time_assignment_from,
             time_assignment_to=operator_control_assignment_time_assignment_to)
         ```

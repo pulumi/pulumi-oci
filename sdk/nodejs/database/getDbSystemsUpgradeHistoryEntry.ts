@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemsUpgradeHistoryEntry = oci.Database.getDbSystemsUpgradeHistoryEntry({
+ * const testDbSystemsUpgradeHistoryEntry = oci.database.getDbSystemsUpgradeHistoryEntry({
  *     dbSystemId: testDbSystem.id,
  *     upgradeHistoryEntryId: testUpgradeHistoryEntry.id,
  * });
@@ -105,7 +105,7 @@ export interface GetDbSystemsUpgradeHistoryEntryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemsUpgradeHistoryEntry = oci.Database.getDbSystemsUpgradeHistoryEntry({
+ * const testDbSystemsUpgradeHistoryEntry = oci.database.getDbSystemsUpgradeHistoryEntry({
  *     dbSystemId: testDbSystem.id,
  *     upgradeHistoryEntryId: testUpgradeHistoryEntry.id,
  * });

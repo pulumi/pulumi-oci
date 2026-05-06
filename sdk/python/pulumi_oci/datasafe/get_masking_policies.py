@@ -200,9 +200,9 @@ def get_masking_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=compartment_id,
+    test_masking_policies = oci.datasafe.get_masking_policies(compartment_id=compartment_id,
         access_level=masking_policy_access_level,
-        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree == "true",
         display_name=masking_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],
@@ -280,9 +280,9 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=compartment_id,
+    test_masking_policies = oci.datasafe.get_masking_policies(compartment_id=compartment_id,
         access_level=masking_policy_access_level,
-        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree == "true",
         display_name=masking_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],

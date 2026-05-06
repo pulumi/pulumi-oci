@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
+ * const testSummarizeResourceInventory = oci.jms.getSummarizeResourceInventory({
  *     compartmentId: compartmentId,
  *     timeEnd: summarizeResourceInventoryTimeEnd,
  *     timeStart: summarizeResourceInventoryTimeStart,
@@ -93,7 +93,7 @@ export interface GetSummarizeResourceInventoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
+ * const testSummarizeResourceInventory = oci.jms.getSummarizeResourceInventory({
  *     compartmentId: compartmentId,
  *     timeEnd: summarizeResourceInventoryTimeEnd,
  *     timeStart: summarizeResourceInventoryTimeStart,

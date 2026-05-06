@@ -630,17 +630,17 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             type=management_agent_data_source_type,
             url=management_agent_data_source_url,
             allow_metrics=management_agent_data_source_allow_metrics,
-            connection_timeout=management_agent_data_source_connection_timeout,
+            connection_timeout=int(management_agent_data_source_connection_timeout),
             metric_dimensions=[{
                 "name": management_agent_data_source_metric_dimensions_name,
                 "value": management_agent_data_source_metric_dimensions_value,
             }],
             namespace=management_agent_data_source_namespace,
             proxy_url=management_agent_data_source_proxy_url,
-            read_data_limit_in_kilobytes=management_agent_data_source_read_data_limit_in_kilobytes,
-            read_timeout=management_agent_data_source_read_timeout,
+            read_data_limit_in_kilobytes=int(management_agent_data_source_read_data_limit_in_kilobytes),
+            read_timeout=int(management_agent_data_source_read_timeout),
             resource_group=management_agent_data_source_resource_group,
-            schedule_mins=management_agent_data_source_schedule_mins)
+            schedule_mins=int(management_agent_data_source_schedule_mins))
         ```
 
         ## Import
@@ -700,17 +700,17 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             type=management_agent_data_source_type,
             url=management_agent_data_source_url,
             allow_metrics=management_agent_data_source_allow_metrics,
-            connection_timeout=management_agent_data_source_connection_timeout,
+            connection_timeout=int(management_agent_data_source_connection_timeout),
             metric_dimensions=[{
                 "name": management_agent_data_source_metric_dimensions_name,
                 "value": management_agent_data_source_metric_dimensions_value,
             }],
             namespace=management_agent_data_source_namespace,
             proxy_url=management_agent_data_source_proxy_url,
-            read_data_limit_in_kilobytes=management_agent_data_source_read_data_limit_in_kilobytes,
-            read_timeout=management_agent_data_source_read_timeout,
+            read_data_limit_in_kilobytes=int(management_agent_data_source_read_data_limit_in_kilobytes),
+            read_timeout=int(management_agent_data_source_read_timeout),
             resource_group=management_agent_data_source_resource_group,
-            schedule_mins=management_agent_data_source_schedule_mins)
+            schedule_mins=int(management_agent_data_source_schedule_mins))
         ```
 
         ## Import

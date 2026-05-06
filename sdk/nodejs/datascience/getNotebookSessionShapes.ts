@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSessionShapes = oci.DataScience.getNotebookSessionShapes({
+ * const testNotebookSessionShapes = oci.datascience.getNotebookSessionShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetNotebookSessionShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSessionShapes = oci.DataScience.getNotebookSessionShapes({
+ * const testNotebookSessionShapes = oci.datascience.getNotebookSessionShapes({
  *     compartmentId: compartmentId,
  * });
  * ```

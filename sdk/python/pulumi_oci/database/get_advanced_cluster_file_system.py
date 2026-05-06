@@ -251,7 +251,7 @@ def get_advanced_cluster_file_system(advanced_cluster_file_system_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_system = oci.Database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
+    test_advanced_cluster_file_system = oci.database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_advanced_cluster_file_system_output(advanced_cluster_file_system_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_system = oci.Database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
+    test_advanced_cluster_file_system = oci.database.get_advanced_cluster_file_system(advanced_cluster_file_system_id=test_advanced_cluster_file_system_oci_database_advanced_cluster_file_system["id"])
     ```
 
 

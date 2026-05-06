@@ -138,7 +138,7 @@ def get_export_sets(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+    test_export_sets = oci.filestorage.get_export_sets(availability_domain=export_set_availability_domain,
         compartment_id=compartment_id,
         display_name=export_set_display_name,
         id=export_set_id,
@@ -188,7 +188,7 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+    test_export_sets = oci.filestorage.get_export_sets(availability_domain=export_set_availability_domain,
         compartment_id=compartment_id,
         display_name=export_set_display_name,
         id=export_set_id,

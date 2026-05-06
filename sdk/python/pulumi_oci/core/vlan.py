@@ -484,7 +484,7 @@ class Vlan(pulumi.CustomResource):
             },
             nsg_ids=vlan_nsg_ids,
             route_table_id=test_route_table["id"],
-            vlan_tag=vlan_vlan_tag)
+            vlan_tag=int(vlan_vlan_tag))
         ```
 
         ## Import
@@ -557,7 +557,7 @@ class Vlan(pulumi.CustomResource):
             },
             nsg_ids=vlan_nsg_ids,
             route_table_id=test_route_table["id"],
-            vlan_tag=vlan_vlan_tag)
+            vlan_tag=int(vlan_vlan_tag))
         ```
 
         ## Import

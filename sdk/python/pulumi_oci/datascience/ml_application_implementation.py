@@ -562,17 +562,17 @@ class MlApplicationImplementation(pulumi.CustomResource):
             },
             logging={
                 "aggregated_instance_view_log": {
-                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "implementation_log": {
-                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "trigger_log": {
-                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
@@ -642,17 +642,17 @@ class MlApplicationImplementation(pulumi.CustomResource):
             },
             logging={
                 "aggregated_instance_view_log": {
-                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "implementation_log": {
-                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "trigger_log": {
-                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },

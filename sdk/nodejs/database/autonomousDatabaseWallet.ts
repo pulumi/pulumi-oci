@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     password: autonomousDatabaseWalletPassword,
  *     base64EncodeContent: false,
  *     generateType: autonomousDatabaseWalletGenerateType,
- *     isRegional: autonomousDatabaseWalletIsRegional,
+ *     isRegional: autonomousDatabaseWalletIsRegional === "true",
  * });
  * ```
  *

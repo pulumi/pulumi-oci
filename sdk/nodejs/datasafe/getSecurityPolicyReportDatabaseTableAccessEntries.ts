@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntries({
+ * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntries({
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     scimQuery: securityPolicyReportDatabaseTableAccessEntryScimQuery,
  * });
@@ -80,7 +80,7 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntries({
+ * const testSecurityPolicyReportDatabaseTableAccessEntries = oci.datasafe.getSecurityPolicyReportDatabaseTableAccessEntries({
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     scimQuery: securityPolicyReportDatabaseTableAccessEntryScimQuery,
  * });

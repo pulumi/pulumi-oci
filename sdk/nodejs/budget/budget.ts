@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBudget = new oci.budget.Budget("test_budget", {
- *     amount: budgetAmount,
+ *     amount: Number(budgetAmount),
  *     compartmentId: tenancyOcid,
  *     resetPeriod: budgetResetPeriod,
- *     budgetProcessingPeriodStartOffset: budgetBudgetProcessingPeriodStartOffset,
+ *     budgetProcessingPeriodStartOffset: Number(budgetBudgetProcessingPeriodStartOffset),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

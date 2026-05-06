@@ -558,14 +558,14 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement == "true",
             credential_details={
                 "password_secret_id": test_secret["id"],
                 "user_name": test_user["name"],
             },
             private_end_point_id=test_private_end_point["id"],
             service_name=test_service["name"],
-            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            port=int(pluggable_database_pluggabledatabasemanagements_management_port),
             protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
             role=pluggable_database_pluggabledatabasemanagements_management_role,
             ssl_secret_id=test_secret["id"])
@@ -609,14 +609,14 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement == "true",
             credential_details={
                 "password_secret_id": test_secret["id"],
                 "user_name": test_user["name"],
             },
             private_end_point_id=test_private_end_point["id"],
             service_name=test_service["name"],
-            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            port=int(pluggable_database_pluggabledatabasemanagements_management_port),
             protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
             role=pluggable_database_pluggabledatabasemanagements_management_role,
             ssl_secret_id=test_secret["id"])

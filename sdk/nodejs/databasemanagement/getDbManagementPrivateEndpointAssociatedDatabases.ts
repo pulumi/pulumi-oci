@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpointAssociatedDatabases = oci.DatabaseManagement.getDbManagementPrivateEndpointAssociatedDatabases({
+ * const testDbManagementPrivateEndpointAssociatedDatabases = oci.databasemanagement.getDbManagementPrivateEndpointAssociatedDatabases({
  *     compartmentId: compartmentId,
  *     dbManagementPrivateEndpointId: testDbManagementPrivateEndpoint.id,
  * });
@@ -77,7 +77,7 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpointAssociatedDatabases = oci.DatabaseManagement.getDbManagementPrivateEndpointAssociatedDatabases({
+ * const testDbManagementPrivateEndpointAssociatedDatabases = oci.databasemanagement.getDbManagementPrivateEndpointAssociatedDatabases({
  *     compartmentId: compartmentId,
  *     dbManagementPrivateEndpointId: testDbManagementPrivateEndpoint.id,
  * });

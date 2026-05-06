@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppRoles = oci.Identity.getDomainsAppRoles({
+ * const testAppRoles = oci.identity.getDomainsAppRoles({
  *     idcsEndpoint: testDomain.url,
- *     appRoleCount: appRoleAppRoleCount,
+ *     appRoleCount: Number(appRoleAppRoleCount),
  *     appRoleFilter: appRoleAppRoleFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appRoleAuthorization,
  *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
- *     startIndex: appRoleStartIndex,
+ *     startIndex: Number(appRoleStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsAppRolesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppRoles = oci.Identity.getDomainsAppRoles({
+ * const testAppRoles = oci.identity.getDomainsAppRoles({
  *     idcsEndpoint: testDomain.url,
- *     appRoleCount: appRoleAppRoleCount,
+ *     appRoleCount: Number(appRoleAppRoleCount),
  *     appRoleFilter: appRoleAppRoleFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appRoleAuthorization,
  *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
- *     startIndex: appRoleStartIndex,
+ *     startIndex: Number(appRoleStartIndex),
  * });
  * ```
  */

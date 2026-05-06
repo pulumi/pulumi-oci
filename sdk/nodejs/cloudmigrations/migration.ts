@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isCompleted: migrationIsCompleted,
+ *     isCompleted: migrationIsCompleted === "true",
  *     migrationConfig: {
  *         subnetId: testSubnet.id,
  *     },

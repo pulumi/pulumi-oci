@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrors = oci.Jms.getPluginErrors({
+ * const testPluginErrors = oci.jms.getPluginErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree === "true",
  *     managedInstanceId: testManagedInstance.id,
  *     timeFirstSeenGreaterThanOrEqualTo: pluginErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: pluginErrorTimeFirstSeenLessThanOrEqualTo,
@@ -116,9 +116,9 @@ export interface GetPluginErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluginErrors = oci.Jms.getPluginErrors({
+ * const testPluginErrors = oci.jms.getPluginErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: pluginErrorCompartmentIdInSubtree === "true",
  *     managedInstanceId: testManagedInstance.id,
  *     timeFirstSeenGreaterThanOrEqualTo: pluginErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: pluginErrorTimeFirstSeenLessThanOrEqualTo,

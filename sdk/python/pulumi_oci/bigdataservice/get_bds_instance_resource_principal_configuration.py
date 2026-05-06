@@ -186,7 +186,7 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configuration = oci.BigDataService.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configuration = oci.bigdataservice.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
         resource_principal_configuration_id=test_configuration["id"])
     ```
 
@@ -227,7 +227,7 @@ def get_bds_instance_resource_principal_configuration_output(bds_instance_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_resource_principal_configuration = oci.BigDataService.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_resource_principal_configuration = oci.bigdataservice.get_bds_instance_resource_principal_configuration(bds_instance_id=test_bds_instance["id"],
         resource_principal_configuration_id=test_configuration["id"])
     ```
 

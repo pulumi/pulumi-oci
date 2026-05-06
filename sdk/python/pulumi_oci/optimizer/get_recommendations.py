@@ -190,12 +190,12 @@ def get_recommendations(category_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+    test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization,
+        include_organization=recommendation_include_organization == "true",
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)
@@ -273,12 +273,12 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+    test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization,
+        include_organization=recommendation_include_organization == "true",
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)

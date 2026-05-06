@@ -150,7 +150,7 @@ def get_sender_invitations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender_invitations = oci.Tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
+    test_sender_invitations = oci.tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
         display_name=sender_invitation_display_name,
         recipient_tenancy_id=test_tenancy["id"],
         state=sender_invitation_state,
@@ -201,7 +201,7 @@ def get_sender_invitations_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_sender_invitations = oci.Tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
+    test_sender_invitations = oci.tenantmanagercontrolplane.get_sender_invitations(compartment_id=compartment_id,
         display_name=sender_invitation_display_name,
         recipient_tenancy_id=test_tenancy["id"],
         state=sender_invitation_state,

@@ -165,7 +165,7 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
+    test_vm_cluster_update_history_entry = oci.database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 
@@ -204,7 +204,7 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
+    test_vm_cluster_update_history_entry = oci.database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
 

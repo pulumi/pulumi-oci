@@ -269,12 +269,12 @@ def get_profiles(arch_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=profile_arch_type,
+    test_profiles = oci.osmanagementhub.get_profiles(arch_type=profile_arch_type,
         compartment_id=compartment_id,
         display_names=profile_display_name,
         display_name_contains=profile_display_name_contains,
-        is_default_profile=profile_is_default_profile,
-        is_service_provided_profile=profile_is_service_provided_profile,
+        is_default_profile=profile_is_default_profile == "true",
+        is_service_provided_profile=profile_is_service_provided_profile == "true",
         management_stations=profile_management_station,
         management_station_not_equal_tos=profile_management_station_not_equal_to,
         os_family=profile_os_family,
@@ -371,12 +371,12 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=profile_arch_type,
+    test_profiles = oci.osmanagementhub.get_profiles(arch_type=profile_arch_type,
         compartment_id=compartment_id,
         display_names=profile_display_name,
         display_name_contains=profile_display_name_contains,
-        is_default_profile=profile_is_default_profile,
-        is_service_provided_profile=profile_is_service_provided_profile,
+        is_default_profile=profile_is_default_profile == "true",
+        is_service_provided_profile=profile_is_service_provided_profile == "true",
         management_stations=profile_management_station,
         management_station_not_equal_tos=profile_management_station_not_equal_to,
         os_family=profile_os_family,

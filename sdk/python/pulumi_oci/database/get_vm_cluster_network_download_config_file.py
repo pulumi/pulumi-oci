@@ -103,7 +103,7 @@ def get_vm_cluster_network_download_config_file(base64_encode_content: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network_download_config_file = oci.database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network["id"],
         base64_encode_content=False)
     ```
@@ -141,7 +141,7 @@ def get_vm_cluster_network_download_config_file_output(base64_encode_content: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_network_download_config_file = oci.Database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+    test_vm_cluster_network_download_config_file = oci.database.get_vm_cluster_network_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         vm_cluster_network_id=test_vm_cluster_network["id"],
         base64_encode_content=False)
     ```

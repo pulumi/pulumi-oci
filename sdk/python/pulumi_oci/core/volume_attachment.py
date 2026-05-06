@@ -689,11 +689,11 @@ class VolumeAttachment(pulumi.CustomResource):
             device=volume_attachment_device,
             display_name=volume_attachment_display_name,
             encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
-            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
-            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
-            is_read_only=volume_attachment_is_read_only,
-            is_shareable=volume_attachment_is_shareable,
-            use_chap=volume_attachment_use_chap)
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled == "true",
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled == "true",
+            is_read_only=volume_attachment_is_read_only == "true",
+            is_shareable=volume_attachment_is_shareable == "true",
+            use_chap=volume_attachment_use_chap == "true")
         ```
 
         ## Import
@@ -751,11 +751,11 @@ class VolumeAttachment(pulumi.CustomResource):
             device=volume_attachment_device,
             display_name=volume_attachment_display_name,
             encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
-            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
-            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
-            is_read_only=volume_attachment_is_read_only,
-            is_shareable=volume_attachment_is_shareable,
-            use_chap=volume_attachment_use_chap)
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled == "true",
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled == "true",
+            is_read_only=volume_attachment_is_read_only == "true",
+            is_shareable=volume_attachment_is_shareable == "true",
+            use_chap=volume_attachment_use_chap == "true")
         ```
 
         ## Import

@@ -432,7 +432,7 @@ class SchedulingPlan(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_using_recommended_scheduled_actions=scheduling_plan_is_using_recommended_scheduled_actions)
+            is_using_recommended_scheduled_actions=scheduling_plan_is_using_recommended_scheduled_actions == "true")
         ```
 
         ## Import
@@ -484,7 +484,7 @@ class SchedulingPlan(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_using_recommended_scheduled_actions=scheduling_plan_is_using_recommended_scheduled_actions)
+            is_using_recommended_scheduled_actions=scheduling_plan_is_using_recommended_scheduled_actions == "true")
         ```
 
         ## Import

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRatecards = oci.OsubSubscription.getRatecards({
+ * const testRatecards = oci.osubsubscription.getRatecards({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     partNumber: ratecardPartNumber,
@@ -107,7 +107,7 @@ export interface GetRatecardsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRatecards = oci.OsubSubscription.getRatecards({
+ * const testRatecards = oci.osubsubscription.getRatecards({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     partNumber: ratecardPartNumber,

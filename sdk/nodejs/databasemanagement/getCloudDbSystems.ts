@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystems = oci.DatabaseManagement.getCloudDbSystems({
+ * const testCloudDbSystems = oci.databasemanagement.getCloudDbSystems({
  *     compartmentId: compartmentId,
  *     dbaasParentInfrastructureId: testDbaasParentInfrastructure.id,
  *     deploymentType: cloudDbSystemDeploymentType,
@@ -110,7 +110,7 @@ export interface GetCloudDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystems = oci.DatabaseManagement.getCloudDbSystems({
+ * const testCloudDbSystems = oci.databasemanagement.getCloudDbSystems({
  *     compartmentId: compartmentId,
  *     dbaasParentInfrastructureId: testDbaasParentInfrastructure.id,
  *     deploymentType: cloudDbSystemDeploymentType,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentTimeAvailableForRefresh = oci.Functions.getFusionEnvironmentTimeAvailableForRefresh({
+ * const testFusionEnvironmentTimeAvailableForRefresh = oci.functions.getFusionEnvironmentTimeAvailableForRefresh({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentTimeAvailableForRefresh = oci.Functions.getFusionEnvironmentTimeAvailableForRefresh({
+ * const testFusionEnvironmentTimeAvailableForRefresh = oci.functions.getFusionEnvironmentTimeAvailableForRefresh({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```

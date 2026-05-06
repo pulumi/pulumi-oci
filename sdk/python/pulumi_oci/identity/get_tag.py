@@ -193,7 +193,7 @@ def get_tag(tag_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag = oci.Identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
+    test_tag = oci.identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
         tag_namespace_id=test_tag_namespace["id"])
     ```
 
@@ -234,7 +234,7 @@ def get_tag_output(tag_name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag = oci.Identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
+    test_tag = oci.identity.get_tag(tag_name=test_tag_oci_identity_tag["name"],
         tag_namespace_id=test_tag_namespace["id"])
     ```
 

@@ -115,7 +115,7 @@ def get_log_analytics_entity_associations_list(direct_or_all_associations: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_associations_list = oci.LogAnalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_associations_list = oci.loganalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_associations_list_namespace,
         direct_or_all_associations=log_analytics_entity_associations_list_direct_or_all_associations)
     ```
@@ -156,7 +156,7 @@ def get_log_analytics_entity_associations_list_output(direct_or_all_associations
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_associations_list = oci.LogAnalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_associations_list = oci.loganalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_associations_list_namespace,
         direct_or_all_associations=log_analytics_entity_associations_list_direct_or_all_associations)
     ```

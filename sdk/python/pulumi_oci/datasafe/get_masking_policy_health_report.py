@@ -215,7 +215,7 @@ def get_masking_policy_health_report(masking_policy_health_report_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report = oci.DataSafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
+    test_masking_policy_health_report = oci.datasafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_masking_policy_health_report_output(masking_policy_health_report_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_report = oci.DataSafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
+    test_masking_policy_health_report = oci.datasafe.get_masking_policy_health_report(masking_policy_health_report_id=test_masking_policy_health_report_oci_data_safe_masking_policy_health_report["id"])
     ```
 
 

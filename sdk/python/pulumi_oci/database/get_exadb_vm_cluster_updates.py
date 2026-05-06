@@ -121,7 +121,7 @@ def get_exadb_vm_cluster_updates(exadb_vm_cluster_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_updates = oci.Database.get_exadb_vm_cluster_updates(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_updates = oci.database.get_exadb_vm_cluster_updates(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_type=exadb_vm_cluster_update_update_type,
         version=exadb_vm_cluster_update_version)
     ```
@@ -162,7 +162,7 @@ def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_updates = oci.Database.get_exadb_vm_cluster_updates(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_updates = oci.database.get_exadb_vm_cluster_updates(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_type=exadb_vm_cluster_update_update_type,
         version=exadb_vm_cluster_update_version)
     ```

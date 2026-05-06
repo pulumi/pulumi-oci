@@ -377,7 +377,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
                     "idcs_url": knowledge_base_index_config_secret_detail_idcs_url,
                     "scope_url": knowledge_base_index_config_secret_detail_scope_url,
                 },
-                "should_enable_hybrid_search": knowledge_base_index_config_should_enable_hybrid_search,
+                "should_enable_hybrid_search": knowledge_base_index_config_should_enable_hybrid_search == "true",
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -455,7 +455,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
                     "idcs_url": knowledge_base_index_config_secret_detail_idcs_url,
                     "scope_url": knowledge_base_index_config_secret_detail_scope_url,
                 },
-                "should_enable_hybrid_search": knowledge_base_index_config_should_enable_hybrid_search,
+                "should_enable_hybrid_search": knowledge_base_index_config_should_enable_hybrid_search == "true",
             },
             defined_tags={
                 "Operations.CostCenter": "42",

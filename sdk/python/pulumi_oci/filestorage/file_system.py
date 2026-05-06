@@ -739,7 +739,7 @@ class FileSystem(pulumi.CustomResource):
         test_file_system = oci.filestorage.FileSystem("test_file_system",
             availability_domain=file_system_availability_domain,
             compartment_id=compartment_id,
-            are_quota_rules_enabled=file_system_are_quota_rules_enabled,
+            are_quota_rules_enabled=file_system_are_quota_rules_enabled == "true",
             clone_attach_status=file_system_clone_attach_status,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -840,7 +840,7 @@ class FileSystem(pulumi.CustomResource):
         test_file_system = oci.filestorage.FileSystem("test_file_system",
             availability_domain=file_system_availability_domain,
             compartment_id=compartment_id,
-            are_quota_rules_enabled=file_system_are_quota_rules_enabled,
+            are_quota_rules_enabled=file_system_are_quota_rules_enabled == "true",
             clone_attach_status=file_system_clone_attach_status,
             defined_tags={
                 "Operations.CostCenter": "42",

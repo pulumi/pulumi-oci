@@ -137,7 +137,7 @@ def get_container_instances(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=compartment_id,
+    test_container_instances = oci.containerinstances.get_container_instances(compartment_id=compartment_id,
         availability_domain=container_instance_availability_domain,
         display_name=container_instance_display_name,
         state=container_instance_state)
@@ -183,7 +183,7 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instances = oci.ContainerInstances.get_container_instances(compartment_id=compartment_id,
+    test_container_instances = oci.containerinstances.get_container_instances(compartment_id=compartment_id,
         availability_domain=container_instance_availability_domain,
         display_name=container_instance_display_name,
         state=container_instance_state)

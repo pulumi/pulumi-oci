@@ -302,7 +302,7 @@ def get_vnic(vnic_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
+    test_vnic = oci.core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
     ```
 
 
@@ -351,7 +351,7 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic = oci.Core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
+    test_vnic = oci.core.get_vnic(vnic_id=test_vnic_oci_core_vnic["id"])
     ```
 
 

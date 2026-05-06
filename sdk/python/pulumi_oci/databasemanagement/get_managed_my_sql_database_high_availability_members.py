@@ -95,7 +95,7 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_high_availability_members = oci.DatabaseManagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_high_availability_members = oci.databasemanagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_managed_my_sql_database_high_availability_members_output(filters: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_high_availability_members = oci.DatabaseManagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
+    test_managed_my_sql_database_high_availability_members = oci.databasemanagement.get_managed_my_sql_database_high_availability_members(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
 

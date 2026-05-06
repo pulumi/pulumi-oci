@@ -297,8 +297,8 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         test_heat_wave_cluster = oci.mysql.HeatWaveCluster("test_heat_wave_cluster",
             db_system_id=test_db_system["id"],
-            cluster_size=heat_wave_cluster_cluster_size,
-            is_lakehouse_enabled=heat_wave_cluster_is_lakehouse_enabled,
+            cluster_size=int(heat_wave_cluster_cluster_size),
+            is_lakehouse_enabled=heat_wave_cluster_is_lakehouse_enabled == "true",
             shape_name=test_shape["name"])
         ```
 
@@ -344,8 +344,8 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         test_heat_wave_cluster = oci.mysql.HeatWaveCluster("test_heat_wave_cluster",
             db_system_id=test_db_system["id"],
-            cluster_size=heat_wave_cluster_cluster_size,
-            is_lakehouse_enabled=heat_wave_cluster_is_lakehouse_enabled,
+            cluster_size=int(heat_wave_cluster_cluster_size),
+            is_lakehouse_enabled=heat_wave_cluster_is_lakehouse_enabled == "true",
             shape_name=test_shape["name"])
         ```
 

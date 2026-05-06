@@ -212,7 +212,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[{
                 "db_name": exadata_iorm_config_db_plans_db_name,
-                "share": exadata_iorm_config_db_plans_share,
+                "share": int(exadata_iorm_config_db_plans_share),
             }],
             db_system_id=test_db_system["id"],
             objective="AUTO")
@@ -263,7 +263,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[{
                 "db_name": exadata_iorm_config_db_plans_db_name,
-                "share": exadata_iorm_config_db_plans_share,
+                "share": int(exadata_iorm_config_db_plans_share),
             }],
             db_system_id=test_db_system["id"],
             objective="AUTO")

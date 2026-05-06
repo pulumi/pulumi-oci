@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudClusterInstances = oci.DatabaseManagement.getCloudClusterInstances({
+ * const testCloudClusterInstances = oci.databasemanagement.getCloudClusterInstances({
  *     cloudClusterId: testCloudCluster.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudClusterInstanceDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudClusterInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudClusterInstances = oci.DatabaseManagement.getCloudClusterInstances({
+ * const testCloudClusterInstances = oci.databasemanagement.getCloudClusterInstances({
  *     cloudClusterId: testCloudCluster.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudClusterInstanceDisplayName,

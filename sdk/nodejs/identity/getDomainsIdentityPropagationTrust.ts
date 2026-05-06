@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityPropagationTrust = oci.Identity.getDomainsIdentityPropagationTrust({
+ * const testIdentityPropagationTrust = oci.identity.getDomainsIdentityPropagationTrust({
  *     idcsEndpoint: testDomain.url,
  *     identityPropagationTrustId: testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id,
  *     attributeSets: ["all"],
@@ -215,7 +215,7 @@ export interface GetDomainsIdentityPropagationTrustResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityPropagationTrust = oci.Identity.getDomainsIdentityPropagationTrust({
+ * const testIdentityPropagationTrust = oci.identity.getDomainsIdentityPropagationTrust({
  *     idcsEndpoint: testDomain.url,
  *     identityPropagationTrustId: testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id,
  *     attributeSets: ["all"],

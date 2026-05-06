@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentInstallers = oci.Jms.getAgentInstallers({
+ * const testAgentInstallers = oci.jms.getAgentInstallers({
  *     compartmentId: compartmentId,
  *     fleetId: testFleet.id,
  *     osFamily: agentInstallerOsFamily,
@@ -95,7 +95,7 @@ export interface GetAgentInstallersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentInstallers = oci.Jms.getAgentInstallers({
+ * const testAgentInstallers = oci.jms.getAgentInstallers({
  *     compartmentId: compartmentId,
  *     fleetId: testFleet.id,
  *     osFamily: agentInstallerOsFamily,

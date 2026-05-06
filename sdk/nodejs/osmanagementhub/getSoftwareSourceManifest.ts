@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceManifest = oci.OsManagementHub.getSoftwareSourceManifest({
+ * const testSoftwareSourceManifest = oci.osmanagementhub.getSoftwareSourceManifest({
  *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```
@@ -56,7 +56,7 @@ export interface GetSoftwareSourceManifestResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceManifest = oci.OsManagementHub.getSoftwareSourceManifest({
+ * const testSoftwareSourceManifest = oci.osmanagementhub.getSoftwareSourceManifest({
  *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```

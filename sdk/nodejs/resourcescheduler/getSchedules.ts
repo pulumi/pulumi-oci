@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.ResourceScheduler.getSchedules({
+ * const testSchedules = oci.resourcescheduler.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     resourceId: testResource.id,
@@ -103,7 +103,7 @@ export interface GetSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedules = oci.ResourceScheduler.getSchedules({
+ * const testSchedules = oci.resourcescheduler.getSchedules({
  *     compartmentId: compartmentId,
  *     displayName: scheduleDisplayName,
  *     resourceId: testResource.id,

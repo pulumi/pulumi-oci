@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPodShapes = oci.ContainerEngine.getPodShapes({
+ * const testPodShapes = oci.containerengine.getPodShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: podShapeAvailabilityDomain,
  *     name: podShapeName,
@@ -84,7 +84,7 @@ export interface GetPodShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPodShapes = oci.ContainerEngine.getPodShapes({
+ * const testPodShapes = oci.containerengine.getPodShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: podShapeAvailabilityDomain,
  *     name: podShapeName,

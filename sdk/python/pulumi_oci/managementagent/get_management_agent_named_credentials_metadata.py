@@ -94,7 +94,7 @@ def get_management_agent_named_credentials_metadata(compartment_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_named_credentials_metadata = oci.ManagementAgent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
+    test_management_agent_named_credentials_metadata = oci.managementagent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
         management_agent_id=test_management_agent["id"])
     ```
 
@@ -127,7 +127,7 @@ def get_management_agent_named_credentials_metadata_output(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_named_credentials_metadata = oci.ManagementAgent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
+    test_management_agent_named_credentials_metadata = oci.managementagent.get_management_agent_named_credentials_metadata(compartment_id=compartment_id,
         management_agent_id=test_management_agent["id"])
     ```
 

@@ -180,9 +180,9 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=compartment_id,
+    test_security_policies = oci.datasafe.get_security_policies(compartment_id=compartment_id,
         access_level=security_policy_access_level,
-        compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_compartment_id_in_subtree == "true",
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
         security_policy_type=security_policy_security_policy_type,
@@ -254,9 +254,9 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=compartment_id,
+    test_security_policies = oci.datasafe.get_security_policies(compartment_id=compartment_id,
         access_level=security_policy_access_level,
-        compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_compartment_id_in_subtree == "true",
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
         security_policy_type=security_policy_security_policy_type,

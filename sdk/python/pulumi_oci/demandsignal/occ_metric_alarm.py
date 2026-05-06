@@ -515,7 +515,7 @@ class OccMetricAlarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=occ_metric_alarm_display_name,
             frequency=occ_metric_alarm_frequency,
-            is_active=occ_metric_alarm_is_active,
+            is_active=occ_metric_alarm_is_active == "true",
             resource_configuration={
                 "resource": occ_metric_alarm_resource_configuration_resource,
                 "usage_type": occ_metric_alarm_resource_configuration_usage_type,
@@ -527,7 +527,7 @@ class OccMetricAlarm(pulumi.CustomResource):
                 "shape": occ_metric_alarm_resource_configuration_shape,
                 "storage_type": occ_metric_alarm_resource_configuration_storage_type,
             },
-            threshold=occ_metric_alarm_threshold,
+            threshold=int(occ_metric_alarm_threshold),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -592,7 +592,7 @@ class OccMetricAlarm(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=occ_metric_alarm_display_name,
             frequency=occ_metric_alarm_frequency,
-            is_active=occ_metric_alarm_is_active,
+            is_active=occ_metric_alarm_is_active == "true",
             resource_configuration={
                 "resource": occ_metric_alarm_resource_configuration_resource,
                 "usage_type": occ_metric_alarm_resource_configuration_usage_type,
@@ -604,7 +604,7 @@ class OccMetricAlarm(pulumi.CustomResource):
                 "shape": occ_metric_alarm_resource_configuration_shape,
                 "storage_type": occ_metric_alarm_resource_configuration_storage_type,
             },
-            threshold=occ_metric_alarm_threshold,
+            threshold=int(occ_metric_alarm_threshold),
             defined_tags={
                 "Operations.CostCenter": "42",
             },

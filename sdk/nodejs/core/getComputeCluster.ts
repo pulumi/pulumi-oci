@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCluster = oci.Core.getComputeCluster({
+ * const testComputeCluster = oci.core.getComputeCluster({
  *     computeClusterId: testComputeClusterOciCoreComputeCluster.id,
  * });
  * ```
@@ -88,7 +88,7 @@ export interface GetComputeClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCluster = oci.Core.getComputeCluster({
+ * const testComputeCluster = oci.core.getComputeCluster({
  *     computeClusterId: testComputeClusterOciCoreComputeCluster.id,
  * });
  * ```

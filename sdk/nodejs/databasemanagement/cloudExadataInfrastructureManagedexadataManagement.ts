@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testCloudExadataInfrastructureManagedexadataManagement = new oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management", {
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
- *     enableManagedexadata: enableManagedexadata,
+ *     enableManagedexadata: enableManagedexadata === "true",
  *     licenseModel: cloudExadataInfrastructureManagedexadataManagementLicenseModel,
  * });
  * ```

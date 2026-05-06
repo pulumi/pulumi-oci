@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *         documentType: processorJobProcessorConfigDocumentType,
  *         features: [{
  *             featureType: processorJobProcessorConfigFeaturesFeatureType,
- *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf,
- *             maxResults: processorJobProcessorConfigFeaturesMaxResults,
+ *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf === "true",
+ *             maxResults: Number(processorJobProcessorConfigFeaturesMaxResults),
  *             modelId: testModel.id,
- *             selectionMarkDetection: processorJobProcessorConfigFeaturesSelectionMarkDetection,
+ *             selectionMarkDetection: processorJobProcessorConfigFeaturesSelectionMarkDetection === "true",
  *             tenancyId: testTenancy.id,
  *         }],
- *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled,
+ *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled === "true",
  *         language: processorJobProcessorConfigLanguage,
  *         modelId: testModel.id,
  *         normalizationFields: [{

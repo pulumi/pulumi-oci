@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testHttpMonitor = new oci.healthchecks.HttpMonitor("test_http_monitor", {
  *     compartmentId: compartmentId,
  *     displayName: httpMonitorDisplayName,
- *     intervalInSeconds: httpMonitorIntervalInSeconds,
+ *     intervalInSeconds: Number(httpMonitorIntervalInSeconds),
  *     protocol: httpMonitorProtocol,
  *     targets: httpMonitorTargets,
  *     definedTags: {
@@ -33,11 +33,11 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     headers: httpMonitorHeaders,
- *     isEnabled: httpMonitorIsEnabled,
+ *     isEnabled: httpMonitorIsEnabled === "true",
  *     method: httpMonitorMethod,
  *     path: httpMonitorPath,
- *     port: httpMonitorPort,
- *     timeoutInSeconds: httpMonitorTimeoutInSeconds,
+ *     port: Number(httpMonitorPort),
+ *     timeoutInSeconds: Number(httpMonitorTimeoutInSeconds),
  *     vantagePointNames: httpMonitorVantagePointNames,
  * });
  * ```

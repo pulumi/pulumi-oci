@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", {
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     sourceFusionEnvironmentId: testFusionEnvironment.id,
- *     isDataMaskingOpted: fusionEnvironmentRefreshActivityIsDataMaskingOpted,
+ *     isDataMaskingOpted: fusionEnvironmentRefreshActivityIsDataMaskingOpted === "true",
  *     timeScheduledStart: fusionEnvironmentRefreshActivityTimeScheduledStart,
  * });
  * ```

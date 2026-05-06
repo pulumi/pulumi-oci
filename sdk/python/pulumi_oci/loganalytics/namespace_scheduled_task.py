@@ -544,7 +544,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
             namespace=namespace_scheduled_task_namespace,
             action={
                 "type": namespace_scheduled_task_action_type,
-                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree == "true",
                 "data_type": namespace_scheduled_task_action_data_type,
                 "metric_extraction": {
                     "compartment_id": compartment_id,
@@ -674,7 +674,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
             namespace=namespace_scheduled_task_namespace,
             action={
                 "type": namespace_scheduled_task_action_type,
-                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree,
+                "compartment_id_in_subtree": namespace_scheduled_task_action_compartment_id_in_subtree == "true",
                 "data_type": namespace_scheduled_task_action_data_type,
                 "metric_extraction": {
                     "compartment_id": compartment_id,

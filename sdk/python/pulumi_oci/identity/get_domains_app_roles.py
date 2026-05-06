@@ -214,14 +214,14 @@ def get_domains_app_roles(app_role_count: Optional[_builtins.int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
-        app_role_count=app_role_app_role_count,
+    test_app_roles = oci.identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
+        app_role_count=int(app_role_app_role_count),
         app_role_filter=app_role_app_role_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=app_role_authorization,
         resource_type_schema_version=app_role_resource_type_schema_version,
-        start_index=app_role_start_index)
+        start_index=int(app_role_start_index))
     ```
 
 
@@ -289,14 +289,14 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
-        app_role_count=app_role_app_role_count,
+    test_app_roles = oci.identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
+        app_role_count=int(app_role_app_role_count),
         app_role_filter=app_role_app_role_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=app_role_authorization,
         resource_type_schema_version=app_role_resource_type_schema_version,
-        start_index=app_role_start_index)
+        start_index=int(app_role_start_index))
     ```
 
 

@@ -758,7 +758,7 @@ class MysqlBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=mysql_backup_retention_in_days,
+            retention_in_days=int(mysql_backup_retention_in_days),
             soft_delete=mysql_backup_soft_delete)
         ```
 
@@ -818,7 +818,7 @@ class MysqlBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=mysql_backup_retention_in_days,
+            retention_in_days=int(mysql_backup_retention_in_days),
             soft_delete=mysql_backup_soft_delete)
         ```
 

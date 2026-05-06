@@ -518,7 +518,7 @@ class Certificate(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled == "true")
         ```
 
         ## Import
@@ -577,7 +577,7 @@ class Certificate(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled == "true")
         ```
 
         ## Import

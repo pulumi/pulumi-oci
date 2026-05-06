@@ -124,7 +124,7 @@ def get_oci_cache_users(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_users = oci.Redis.get_oci_cache_users(compartment_id=compartment_id,
+    test_oci_cache_users = oci.redis.get_oci_cache_users(compartment_id=compartment_id,
         name=oci_cache_user_name,
         state=oci_cache_user_state)
     ```
@@ -165,7 +165,7 @@ def get_oci_cache_users_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_users = oci.Redis.get_oci_cache_users(compartment_id=compartment_id,
+    test_oci_cache_users = oci.redis.get_oci_cache_users(compartment_id=compartment_id,
         name=oci_cache_user_name,
         state=oci_cache_user_state)
     ```

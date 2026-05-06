@@ -134,7 +134,7 @@ def get_secrets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+    test_secrets = oci.vault.get_secrets(compartment_id=compartment_id,
         name=secret_name,
         state=secret_state,
         vault_id=test_vault["id"])
@@ -180,7 +180,7 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+    test_secrets = oci.vault.get_secrets(compartment_id=compartment_id,
         name=secret_name,
         state=secret_state,
         vault_id=test_vault["id"])

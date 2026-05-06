@@ -32,7 +32,7 @@ import (
 //			_, err := datacatalog.GetCatalogTypes(ctx, &datacatalog.GetCatalogTypesArgs{
 //				CatalogId:        testCatalog.Id,
 //				ExternalTypeName: pulumi.StringRef(catalogTypeExternalTypeName),
-//				Fields:           catalogTypeFields,
+//				Fields:           pulumi.ToArray(catalogTypeFields),
 //				IsApproved:       pulumi.StringRef(catalogTypeIsApproved),
 //				IsInternal:       pulumi.StringRef(catalogTypeIsInternal),
 //				IsTag:            pulumi.StringRef(catalogTypeIsTag),

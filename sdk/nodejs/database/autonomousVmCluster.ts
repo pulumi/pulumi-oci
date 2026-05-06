@@ -27,21 +27,21 @@ import * as utilities from "../utilities";
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     autonomousDataStorageSizeInTbs: autonomousVmClusterAutonomousDataStorageSizeInTbs,
  *     computeModel: autonomousVmClusterComputeModel,
- *     cpuCoreCountPerNode: autonomousVmClusterCpuCoreCountPerNode,
+ *     cpuCoreCountPerNode: Number(autonomousVmClusterCpuCoreCountPerNode),
  *     dbServers: autonomousVmClusterDbServers,
  *     definedTags: autonomousVmClusterDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled,
- *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled,
+ *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled === "true",
+ *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled === "true",
  *     licenseModel: autonomousVmClusterLicenseModel,
  *     maintenanceWindowDetails: [{
  *         daysOfWeeks: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: autonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
- *         leadTimeInWeeks: autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
+ *         leadTimeInWeeks: Number(autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
  *         months: [{
  *             name: autonomousVmClusterMaintenanceWindowDetailsMonthsName,
  *         }],
@@ -49,11 +49,11 @@ import * as utilities from "../utilities";
  *         preference: autonomousVmClusterMaintenanceWindowDetailsPreference,
  *         weeksOfMonths: autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     }],
- *     memoryPerOracleComputeUnitInGbs: autonomousVmClusterMemoryPerOracleComputeUnitInGbs,
- *     scanListenerPortNonTls: autonomousVmClusterScanListenerPortNonTls,
- *     scanListenerPortTls: autonomousVmClusterScanListenerPortTls,
+ *     memoryPerOracleComputeUnitInGbs: Number(autonomousVmClusterMemoryPerOracleComputeUnitInGbs),
+ *     scanListenerPortNonTls: Number(autonomousVmClusterScanListenerPortNonTls),
+ *     scanListenerPortTls: Number(autonomousVmClusterScanListenerPortTls),
  *     timeZone: autonomousVmClusterTimeZone,
- *     totalContainerDatabases: autonomousVmClusterTotalContainerDatabases,
+ *     totalContainerDatabases: Number(autonomousVmClusterTotalContainerDatabases),
  * });
  * ```
  *

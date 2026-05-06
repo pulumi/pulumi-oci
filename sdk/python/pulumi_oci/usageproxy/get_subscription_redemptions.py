@@ -125,7 +125,7 @@ def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscripti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
+    test_subscription_redemptions = oci.usageproxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         time_redeemed_greater_than_or_equal_to=subscription_redemption_time_redeemed_greater_than_or_equal_to,
         time_redeemed_less_than=subscription_redemption_time_redeemed_less_than)
@@ -171,7 +171,7 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
+    test_subscription_redemptions = oci.usageproxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         time_redeemed_greater_than_or_equal_to=subscription_redemption_time_redeemed_greater_than_or_equal_to,
         time_redeemed_less_than=subscription_redemption_time_redeemed_less_than)

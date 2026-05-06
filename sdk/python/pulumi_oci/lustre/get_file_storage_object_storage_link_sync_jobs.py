@@ -108,7 +108,7 @@ def get_file_storage_object_storage_link_sync_jobs(filters: Optional[Sequence[Un
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_jobs = oci.Lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_jobs = oci.lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
         state=object_storage_link_sync_job_state)
     ```
 
@@ -144,7 +144,7 @@ def get_file_storage_object_storage_link_sync_jobs_output(filters: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_jobs = oci.Lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_jobs = oci.lustre.get_file_storage_object_storage_link_sync_jobs(object_storage_link_id=test_object_storage_link["id"],
         state=object_storage_link_sync_job_state)
     ```
 

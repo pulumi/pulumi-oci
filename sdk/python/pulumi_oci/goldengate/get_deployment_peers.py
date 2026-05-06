@@ -124,7 +124,7 @@ def get_deployment_peers(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_peers = oci.GoldenGate.get_deployment_peers(deployment_id=test_deployment["id"],
+    test_deployment_peers = oci.goldengate.get_deployment_peers(deployment_id=test_deployment["id"],
         display_name=deployment_peer_display_name,
         state=deployment_peer_state)
     ```
@@ -165,7 +165,7 @@ def get_deployment_peers_output(deployment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_peers = oci.GoldenGate.get_deployment_peers(deployment_id=test_deployment["id"],
+    test_deployment_peers = oci.goldengate.get_deployment_peers(deployment_id=test_deployment["id"],
         display_name=deployment_peer_display_name,
         state=deployment_peer_state)
     ```

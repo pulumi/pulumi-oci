@@ -285,7 +285,7 @@ def get_patch(patch_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_patch = oci.FleetAppsManagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
+    test_patch = oci.fleetappsmanagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_patch_output(patch_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_patch = oci.FleetAppsManagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
+    test_patch = oci.fleetappsmanagement.get_patch(patch_id=test_patch_oci_fleet_apps_management_patch["id"])
     ```
 
 

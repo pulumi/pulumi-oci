@@ -138,7 +138,7 @@ def get_internet_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=compartment_id,
+    test_internet_gateways = oci.core.get_internet_gateways(compartment_id=compartment_id,
         display_name=internet_gateway_display_name,
         state=internet_gateway_state,
         vcn_id=test_vcn["id"])
@@ -185,7 +185,7 @@ def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=compartment_id,
+    test_internet_gateways = oci.core.get_internet_gateways(compartment_id=compartment_id,
         display_name=internet_gateway_display_name,
         state=internet_gateway_state,
         vcn_id=test_vcn["id"])

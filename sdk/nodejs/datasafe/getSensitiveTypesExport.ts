@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypesExport = oci.DataSafe.getSensitiveTypesExport({
+ * const testSensitiveTypesExport = oci.datasafe.getSensitiveTypesExport({
  *     sensitiveTypesExportId: testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetSensitiveTypesExportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypesExport = oci.DataSafe.getSensitiveTypesExport({
+ * const testSensitiveTypesExport = oci.datasafe.getSensitiveTypesExport({
  *     sensitiveTypesExportId: testSensitiveTypesExportOciDataSafeSensitiveTypesExport.id,
  * });
  * ```

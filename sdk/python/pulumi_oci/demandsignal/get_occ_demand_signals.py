@@ -125,7 +125,7 @@ def get_occ_demand_signals(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signals = oci.DemandSignal.get_occ_demand_signals(compartment_id=compartment_id,
+    test_occ_demand_signals = oci.demandsignal.get_occ_demand_signals(compartment_id=compartment_id,
         display_name=occ_demand_signal_display_name,
         id=occ_demand_signal_id,
         state=occ_demand_signal_state)
@@ -170,7 +170,7 @@ def get_occ_demand_signals_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_demand_signals = oci.DemandSignal.get_occ_demand_signals(compartment_id=compartment_id,
+    test_occ_demand_signals = oci.demandsignal.get_occ_demand_signals(compartment_id=compartment_id,
         display_name=occ_demand_signal_display_name,
         id=occ_demand_signal_id,
         state=occ_demand_signal_state)

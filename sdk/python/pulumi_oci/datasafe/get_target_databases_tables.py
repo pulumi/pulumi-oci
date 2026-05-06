@@ -141,7 +141,7 @@ def get_target_databases_tables(filters: Optional[Sequence[Union['GetTargetDatab
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=test_target_database["id"],
+    test_target_databases_tables = oci.datasafe.get_target_databases_tables(target_database_id=test_target_database["id"],
         schema_names=target_databases_table_schema_name,
         schema_name_contains=target_databases_table_schema_name_contains,
         table_names=test_table["name"],
@@ -192,7 +192,7 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_tables = oci.DataSafe.get_target_databases_tables(target_database_id=test_target_database["id"],
+    test_target_databases_tables = oci.datasafe.get_target_databases_tables(target_database_id=test_target_database["id"],
         schema_names=target_databases_table_schema_name,
         schema_name_contains=target_databases_table_schema_name_contains,
         table_names=test_table["name"],

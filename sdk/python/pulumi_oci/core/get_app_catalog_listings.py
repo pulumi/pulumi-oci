@@ -121,7 +121,7 @@ def get_app_catalog_listings(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
+    test_app_catalog_listings = oci.core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```
@@ -162,7 +162,7 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
+    test_app_catalog_listings = oci.core.get_app_catalog_listings(display_name=app_catalog_listing_display_name,
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```

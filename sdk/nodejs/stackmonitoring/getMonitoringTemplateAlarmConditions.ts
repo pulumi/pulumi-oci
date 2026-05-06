@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplateAlarmConditions = oci.StackMonitoring.getMonitoringTemplateAlarmConditions({
+ * const testMonitoringTemplateAlarmConditions = oci.stackmonitoring.getMonitoringTemplateAlarmConditions({
  *     monitoringTemplateId: testMonitoringTemplate.id,
  *     metricNames: testMetric.name,
  *     resourceTypes: monitoringTemplateAlarmConditionResourceTypes,
@@ -113,7 +113,7 @@ export interface GetMonitoringTemplateAlarmConditionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplateAlarmConditions = oci.StackMonitoring.getMonitoringTemplateAlarmConditions({
+ * const testMonitoringTemplateAlarmConditions = oci.stackmonitoring.getMonitoringTemplateAlarmConditions({
  *     monitoringTemplateId: testMonitoringTemplate.id,
  *     metricNames: testMetric.name,
  *     resourceTypes: monitoringTemplateAlarmConditionResourceTypes,

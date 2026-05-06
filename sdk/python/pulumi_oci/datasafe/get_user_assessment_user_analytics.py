@@ -269,11 +269,11 @@ def get_user_assessment_user_analytics(access_level: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_analytics = oci.DataSafe.get_user_assessment_user_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_user_analytics = oci.datasafe.get_user_assessment_user_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_user_analytic_access_level,
         account_status=user_assessment_user_analytic_account_status,
         authentication_type=user_assessment_user_analytic_authentication_type,
-        compartment_id_in_subtree=user_assessment_user_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_user_analytic_compartment_id_in_subtree == "true",
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
         time_last_login_less_than=user_assessment_user_analytic_time_last_login_less_than,
@@ -400,11 +400,11 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_analytics = oci.DataSafe.get_user_assessment_user_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_user_analytics = oci.datasafe.get_user_assessment_user_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_user_analytic_access_level,
         account_status=user_assessment_user_analytic_account_status,
         authentication_type=user_assessment_user_analytic_authentication_type,
-        compartment_id_in_subtree=user_assessment_user_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_user_analytic_compartment_id_in_subtree == "true",
         target_id=test_target["id"],
         time_last_login_greater_than_or_equal_to=user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
         time_last_login_less_than=user_assessment_user_analytic_time_last_login_less_than,

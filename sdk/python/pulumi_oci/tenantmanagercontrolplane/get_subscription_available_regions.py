@@ -95,7 +95,7 @@ def get_subscription_available_regions(filters: Optional[Sequence[Union['GetSubs
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_available_regions = oci.Tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
+    test_subscription_available_regions = oci.tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_subscription_available_regions_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_available_regions = oci.Tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
+    test_subscription_available_regions = oci.tenantmanagercontrolplane.get_subscription_available_regions(subscription_id=test_subscription["id"])
     ```
 
 

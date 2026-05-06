@@ -161,7 +161,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_updatable_packages = oci.OsManagementHub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_updatable_packages = oci.osmanagementhub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
         advisory_names=managed_instance_updatable_package_advisory_name,
         advisory_severities=managed_instance_updatable_package_advisory_severity,
         classification_types=managed_instance_updatable_package_classification_type,
@@ -222,7 +222,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_updatable_packages = oci.OsManagementHub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_updatable_packages = oci.osmanagementhub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
         advisory_names=managed_instance_updatable_package_advisory_name,
         advisory_severities=managed_instance_updatable_package_advisory_severity,
         classification_types=managed_instance_updatable_package_classification_type,

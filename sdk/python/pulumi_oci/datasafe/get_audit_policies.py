@@ -191,10 +191,10 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=compartment_id,
+    test_audit_policies = oci.datasafe.get_audit_policies(compartment_id=compartment_id,
         access_level=audit_policy_access_level,
         audit_policy_id=test_audit_policy["id"],
-        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree == "true",
         display_name=audit_policy_display_name,
         state=audit_policy_state,
         target_database_group_id=test_target_database_group["id"],
@@ -271,10 +271,10 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=compartment_id,
+    test_audit_policies = oci.datasafe.get_audit_policies(compartment_id=compartment_id,
         access_level=audit_policy_access_level,
         audit_policy_id=test_audit_policy["id"],
-        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree == "true",
         display_name=audit_policy_display_name,
         state=audit_policy_state,
         target_database_group_id=test_target_database_group["id"],

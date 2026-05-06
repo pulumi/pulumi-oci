@@ -33,7 +33,7 @@ import (
 //			_, err := mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
 //				CompartmentId:             compartmentId,
 //				ConfigurationId:           pulumi.StringRef(mysqlConfigurationId),
-//				DatabaseManagements:       mysqlDbSystemDatabaseManagement,
+//				DatabaseManagements:       pulumi.ToArray(mysqlDbSystemDatabaseManagement),
 //				DbSystemId:                pulumi.StringRef(testDbSystem.Id),
 //				DisplayName:               pulumi.StringRef(mysqlDbSystemDisplayName),
 //				IsHeatWaveClusterAttached: pulumi.BoolRef(mysqlDbSystemIsHeatWaveClusterAttached),

@@ -132,7 +132,7 @@ def get_log_analytics_category(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
+    test_log_analytics_category = oci.loganalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
 
@@ -168,7 +168,7 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
+    test_log_analytics_category = oci.loganalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
 

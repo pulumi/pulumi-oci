@@ -113,7 +113,7 @@ def get_onboardings(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_onboardings = oci.FleetAppsManagement.get_onboardings(compartment_id=compartment_id,
+    test_onboardings = oci.fleetappsmanagement.get_onboardings(compartment_id=compartment_id,
         id=onboarding_id,
         state=onboarding_state)
     ```
@@ -154,7 +154,7 @@ def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_onboardings = oci.FleetAppsManagement.get_onboardings(compartment_id=compartment_id,
+    test_onboardings = oci.fleetappsmanagement.get_onboardings(compartment_id=compartment_id,
         id=onboarding_id,
         state=onboarding_state)
     ```

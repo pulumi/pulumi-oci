@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
+ * const testSteeringPolicyAttachments = oci.dns.getSteeringPolicyAttachments({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyAttachmentDisplayName,
  *     domain: steeringPolicyAttachmentDomain,
@@ -144,7 +144,7 @@ export interface GetSteeringPolicyAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
+ * const testSteeringPolicyAttachments = oci.dns.getSteeringPolicyAttachments({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyAttachmentDisplayName,
  *     domain: steeringPolicyAttachmentDomain,

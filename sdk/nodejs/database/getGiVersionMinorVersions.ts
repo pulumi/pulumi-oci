@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersionMinorVersions = oci.Database.getGiVersionMinorVersions({
+ * const testGiVersionMinorVersions = oci.database.getGiVersionMinorVersions({
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });
@@ -105,11 +105,11 @@ export interface GetGiVersionMinorVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersionMinorVersions = oci.Database.getGiVersionMinorVersions({
+ * const testGiVersionMinorVersions = oci.database.getGiVersionMinorVersions({
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });

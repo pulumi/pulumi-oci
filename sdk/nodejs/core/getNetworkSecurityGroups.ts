@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
+ * const testNetworkSecurityGroups = oci.core.getNetworkSecurityGroups({
  *     compartmentId: compartmentId,
  *     displayName: networkSecurityGroupDisplayName,
  *     state: networkSecurityGroupState,
@@ -110,7 +110,7 @@ export interface GetNetworkSecurityGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
+ * const testNetworkSecurityGroups = oci.core.getNetworkSecurityGroups({
  *     compartmentId: compartmentId,
  *     displayName: networkSecurityGroupDisplayName,
  *     state: networkSecurityGroupState,

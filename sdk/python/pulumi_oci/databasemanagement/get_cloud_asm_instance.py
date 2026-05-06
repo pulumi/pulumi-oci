@@ -263,7 +263,7 @@ def get_cloud_asm_instance(cloud_asm_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_instance = oci.DatabaseManagement.get_cloud_asm_instance(cloud_asm_instance_id=test_cloud_asm_instance_oci_database_management_cloud_asm_instance["id"])
+    test_cloud_asm_instance = oci.databasemanagement.get_cloud_asm_instance(cloud_asm_instance_id=test_cloud_asm_instance_oci_database_management_cloud_asm_instance["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_cloud_asm_instance_output(cloud_asm_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_instance = oci.DatabaseManagement.get_cloud_asm_instance(cloud_asm_instance_id=test_cloud_asm_instance_oci_database_management_cloud_asm_instance["id"])
+    test_cloud_asm_instance = oci.databasemanagement.get_cloud_asm_instance(cloud_asm_instance_id=test_cloud_asm_instance_oci_database_management_cloud_asm_instance["id"])
     ```
 
 

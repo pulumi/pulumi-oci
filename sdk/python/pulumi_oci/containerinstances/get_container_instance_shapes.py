@@ -105,7 +105,7 @@ def get_container_instance_shapes(availability_domain: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=compartment_id,
+    test_container_instance_shapes = oci.containerinstances.get_container_instance_shapes(compartment_id=compartment_id,
         availability_domain=container_instance_shape_availability_domain)
     ```
 
@@ -141,7 +141,7 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=compartment_id,
+    test_container_instance_shapes = oci.containerinstances.get_container_instance_shapes(compartment_id=compartment_id,
         availability_domain=container_instance_shape_availability_domain)
     ```
 

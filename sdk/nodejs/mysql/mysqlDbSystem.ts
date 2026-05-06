@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     backupPolicy: {
  *         copyPolicies: [{
  *             copyToRegion: mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion,
- *             backupCopyRetentionInDays: mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays,
+ *             backupCopyRetentionInDays: Number(mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays),
  *         }],
  *         definedTags: {
  *             "foo-namespace.bar-key": "value",
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             "bar-key": "value",
  *         },
- *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled,
+ *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled === "true",
  *         pitrPolicy: {
- *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
+ *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled === "true",
  *         },
- *         retentionInDays: mysqlDbSystemBackupPolicyRetentionInDays,
+ *         retentionInDays: Number(mysqlDbSystemBackupPolicyRetentionInDays),
  *         softDelete: mysqlDbSystemBackupPolicySoftDelete,
  *         windowStartTime: mysqlDbSystemBackupPolicyWindowStartTime,
  *     },
@@ -53,13 +53,13 @@ import * as utilities from "../utilities";
  *         email: mysqlDbSystemCustomerContactsEmail,
  *     }],
  *     dataStorage: {
- *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
- *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
+ *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled === "true",
+ *         maxStorageSizeInGbs: Number(mysqlDbSystemDataStorageMaxStorageSizeInGbs),
  *     },
- *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
+ *     dataStorageSizeInGb: Number(mysqlDbSystemDataStorageSizeInGb),
  *     databaseConsole: {
  *         status: mysqlDbSystemDatabaseConsoleStatus,
- *         port: mysqlDbSystemDatabaseConsolePort,
+ *         port: Number(mysqlDbSystemDatabaseConsolePort),
  *     },
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     databaseMode: mysqlDbSystemDatabaseMode,
@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *     deletionPolicies: [{
  *         automaticBackupRetention: mysqlDbSystemDeletionPolicyAutomaticBackupRetention,
  *         finalBackup: mysqlDbSystemDeletionPolicyFinalBackup,
- *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected,
+ *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected === "true",
  *     }],
  *     description: mysqlDbSystemDescription,
  *     displayName: mysqlDbSystemDisplayName,
@@ -83,7 +83,7 @@ import * as utilities from "../utilities";
  *     },
  *     hostnameLabel: mysqlDbSystemHostnameLabel,
  *     ipAddress: mysqlDbSystemIpAddress,
- *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable,
+ *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable === "true",
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *         maintenanceDisabledWindows: [{
@@ -95,17 +95,17 @@ import * as utilities from "../utilities";
  *         versionTrackPreference: mysqlDbSystemMaintenanceVersionTrackPreference,
  *     },
  *     nsgIds: mysqlDbSystemNsgIds,
- *     port: mysqlDbSystemPort,
- *     portX: mysqlDbSystemPortX,
+ *     port: Number(mysqlDbSystemPort),
+ *     portX: Number(mysqlDbSystemPortX),
  *     readEndpoint: {
  *         excludeIps: mysqlDbSystemReadEndpointExcludeIps,
- *         isEnabled: mysqlDbSystemReadEndpointIsEnabled,
+ *         isEnabled: mysqlDbSystemReadEndpointIsEnabled === "true",
  *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
  *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
  *     },
  *     rest: {
  *         configuration: mysqlDbSystemRestConfiguration,
- *         port: mysqlDbSystemRestPort,
+ *         port: Number(mysqlDbSystemRestPort),
  *     },
  *     secureConnections: {
  *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,

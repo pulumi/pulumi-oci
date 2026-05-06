@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplications = oci.DataScience.getMlApplications({
+ * const testMlApplications = oci.datascience.getMlApplications({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree === "true",
  *     mlApplicationId: testMlApplication.id,
  *     name: mlApplicationName,
  *     state: mlApplicationState,
@@ -104,9 +104,9 @@ export interface GetMlApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMlApplications = oci.DataScience.getMlApplications({
+ * const testMlApplications = oci.datascience.getMlApplications({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: mlApplicationCompartmentIdInSubtree === "true",
  *     mlApplicationId: testMlApplication.id,
  *     name: mlApplicationName,
  *     state: mlApplicationState,

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Core.getServices({});
+ * const testServices = oci.core.getServices({});
  * ```
  */
 export function getServices(args?: GetServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetServicesResult> {
@@ -62,7 +62,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.Core.getServices({});
+ * const testServices = oci.core.getServices({});
  * ```
  */
 export function getServicesOutput(args?: GetServicesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServicesResult> {

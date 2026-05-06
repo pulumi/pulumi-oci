@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolationAnalytics = oci.DataSafe.getSqlFirewallViolationAnalytics({
+ * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,
@@ -131,10 +131,10 @@ export interface GetSqlFirewallViolationAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolationAnalytics = oci.DataSafe.getSqlFirewallViolationAnalytics({
+ * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,

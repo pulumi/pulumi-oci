@@ -208,7 +208,7 @@ def get_installation_sites(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_installation_sites = oci.Jms.get_installation_sites(fleet_id=test_fleet["id"],
+    test_fleet_installation_sites = oci.jms.get_installation_sites(fleet_id=test_fleet["id"],
         application_id=fleet_installation_site_application_id,
         installation_path=fleet_installation_site_installation_path,
         jre_distribution=fleet_installation_site_jre_distribution,
@@ -294,7 +294,7 @@ def get_installation_sites_output(application_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_installation_sites = oci.Jms.get_installation_sites(fleet_id=test_fleet["id"],
+    test_fleet_installation_sites = oci.jms.get_installation_sites(fleet_id=test_fleet["id"],
         application_id=fleet_installation_site_application_id,
         installation_path=fleet_installation_site_installation_path,
         jre_distribution=fleet_installation_site_jre_distribution,

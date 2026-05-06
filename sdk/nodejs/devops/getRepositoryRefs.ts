@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
+ * const testRepositoryRefs = oci.devops.getRepositoryRefs({
  *     repositoryId: testRepository.id,
  *     commitId: testCommit.id,
  *     refName: repositoryRefRefName,
@@ -100,7 +100,7 @@ export interface GetRepositoryRefsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
+ * const testRepositoryRefs = oci.devops.getRepositoryRefs({
  *     repositoryId: testRepository.id,
  *     commitId: testCommit.id,
  *     refName: repositoryRefRefName,

@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testByolAllocation = new oci.ocvp.ByolAllocation("test_byol_allocation", {
- *     allocatedUnits: byolAllocationAllocatedUnits,
+ *     allocatedUnits: Number(byolAllocationAllocatedUnits),
  *     byolId: testByol.id,
  *     compartmentId: compartmentId,
  *     displayName: byolAllocationDisplayName,

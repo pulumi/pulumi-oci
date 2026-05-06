@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepoFileLine = oci.DevOps.getRepoFileLine({
+ * const testRepoFileLine = oci.devops.getRepoFileLine({
  *     repositoryId: testRepository.id,
  *     revision: repoFileLineRevision,
  *     filePath: repoFileLineFilePath,
- *     startLineNumber: repoFileLineStartLineNumber,
+ *     startLineNumber: Number(repoFileLineStartLineNumber),
  * });
  * ```
  */
@@ -85,11 +85,11 @@ export interface GetRepoFileLineResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepoFileLine = oci.DevOps.getRepoFileLine({
+ * const testRepoFileLine = oci.devops.getRepoFileLine({
  *     repositoryId: testRepository.id,
  *     revision: repoFileLineRevision,
  *     filePath: repoFileLineFilePath,
- *     startLineNumber: repoFileLineStartLineNumber,
+ *     startLineNumber: Number(repoFileLineStartLineNumber),
  * });
  * ```
  */

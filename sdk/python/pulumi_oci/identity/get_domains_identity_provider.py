@@ -818,7 +818,7 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+    test_identity_provider = oci.identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
         identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",
@@ -928,7 +928,7 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+    test_identity_provider = oci.identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
         identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",

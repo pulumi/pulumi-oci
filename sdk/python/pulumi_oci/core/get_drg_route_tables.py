@@ -139,7 +139,7 @@ def get_drg_route_tables(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=test_drg["id"],
+    test_drg_route_tables = oci.core.get_drg_route_tables(drg_id=test_drg["id"],
         display_name=drg_route_table_display_name,
         import_drg_route_distribution_id=test_drg_route_distribution["id"],
         state=drg_route_table_state)
@@ -187,7 +187,7 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=test_drg["id"],
+    test_drg_route_tables = oci.core.get_drg_route_tables(drg_id=test_drg["id"],
         display_name=drg_route_table_display_name,
         import_drg_route_distribution_id=test_drg_route_distribution["id"],
         state=drg_route_table_state)

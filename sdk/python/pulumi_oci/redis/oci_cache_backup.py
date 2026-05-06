@@ -537,7 +537,7 @@ class OciCacheBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period_in_days=oci_cache_backup_retention_period_in_days)
+            retention_period_in_days=int(oci_cache_backup_retention_period_in_days))
         ```
 
         ## Import
@@ -597,7 +597,7 @@ class OciCacheBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period_in_days=oci_cache_backup_retention_period_in_days)
+            retention_period_in_days=int(oci_cache_backup_retention_period_in_days))
         ```
 
         ## Import

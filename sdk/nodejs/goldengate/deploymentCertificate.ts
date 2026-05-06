@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     certificateContent: deploymentCertificateCertificateContent,
  *     deploymentId: testDeployment.id,
  *     key: deploymentCertificateKey,
- *     isLockOverride: deploymentCertificateIsLockOverride,
+ *     isLockOverride: deploymentCertificateIsLockOverride === "true",
  * });
  * ```
  *

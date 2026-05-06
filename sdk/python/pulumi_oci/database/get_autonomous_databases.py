@@ -266,16 +266,16 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+    test_autonomous_databases = oci.database.get_autonomous_databases(compartment_id=compartment_id,
         autonomous_container_database_id=test_autonomous_container_database["id"],
         db_version=autonomous_database_db_version,
         db_workload=autonomous_database_db_workload,
         display_name=autonomous_database_display_name,
         infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled == "true",
+        is_free_tier=autonomous_database_is_free_tier == "true",
+        is_refreshable_clone=autonomous_database_is_refreshable_clone == "true",
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader == "true",
         lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
         resource_pool_leader_id=test_resource_pool_leader["id"],
         state=autonomous_database_state)
@@ -369,16 +369,16 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+    test_autonomous_databases = oci.database.get_autonomous_databases(compartment_id=compartment_id,
         autonomous_container_database_id=test_autonomous_container_database["id"],
         db_version=autonomous_database_db_version,
         db_workload=autonomous_database_db_workload,
         display_name=autonomous_database_display_name,
         infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled == "true",
+        is_free_tier=autonomous_database_is_free_tier == "true",
+        is_refreshable_clone=autonomous_database_is_refreshable_clone == "true",
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader == "true",
         lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
         resource_pool_leader_id=test_resource_pool_leader["id"],
         state=autonomous_database_state)

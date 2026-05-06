@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciConsoleSignOnPolicyConsents = oci.Identity.getDomainsOciConsoleSignOnPolicyConsents({
+ * const testOciConsoleSignOnPolicyConsents = oci.identity.getDomainsOciConsoleSignOnPolicyConsents({
  *     idcsEndpoint: testDomain.url,
- *     ociConsoleSignOnPolicyConsentCount: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount,
+ *     ociConsoleSignOnPolicyConsentCount: Number(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount),
  *     ociConsoleSignOnPolicyConsentFilter: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,
  *     attributes: ociConsoleSignOnPolicyConsentAttributes,
  *     authorization: ociConsoleSignOnPolicyConsentAuthorization,
  *     resourceTypeSchemaVersion: ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion,
- *     startIndex: ociConsoleSignOnPolicyConsentStartIndex,
+ *     startIndex: Number(ociConsoleSignOnPolicyConsentStartIndex),
  * });
  * ```
  */
@@ -127,15 +127,15 @@ export interface GetDomainsOciConsoleSignOnPolicyConsentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciConsoleSignOnPolicyConsents = oci.Identity.getDomainsOciConsoleSignOnPolicyConsents({
+ * const testOciConsoleSignOnPolicyConsents = oci.identity.getDomainsOciConsoleSignOnPolicyConsents({
  *     idcsEndpoint: testDomain.url,
- *     ociConsoleSignOnPolicyConsentCount: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount,
+ *     ociConsoleSignOnPolicyConsentCount: Number(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount),
  *     ociConsoleSignOnPolicyConsentFilter: ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter,
  *     attributeSets: ociConsoleSignOnPolicyConsentAttributeSets,
  *     attributes: ociConsoleSignOnPolicyConsentAttributes,
  *     authorization: ociConsoleSignOnPolicyConsentAuthorization,
  *     resourceTypeSchemaVersion: ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion,
- *     startIndex: ociConsoleSignOnPolicyConsentStartIndex,
+ *     startIndex: Number(ociConsoleSignOnPolicyConsentStartIndex),
  * });
  * ```
  */

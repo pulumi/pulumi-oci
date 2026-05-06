@@ -401,14 +401,14 @@ class Backend(pulumi.CustomResource):
         test_backend = oci.networkloadbalancer.Backend("test_backend",
             backend_set_name=test_backend_set["name"],
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=backend_port,
+            port=int(backend_port),
             ip_address=backend_ip_address,
-            is_backup=backend_is_backup,
-            is_drain=backend_is_drain,
-            is_offline=backend_is_offline,
+            is_backup=backend_is_backup == "true",
+            is_drain=backend_is_drain == "true",
+            is_offline=backend_is_offline == "true",
             name=backend_name,
             target_id=test_target["id"],
-            weight=backend_weight)
+            weight=int(backend_weight))
         ```
 
         ## Import
@@ -460,14 +460,14 @@ class Backend(pulumi.CustomResource):
         test_backend = oci.networkloadbalancer.Backend("test_backend",
             backend_set_name=test_backend_set["name"],
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=backend_port,
+            port=int(backend_port),
             ip_address=backend_ip_address,
-            is_backup=backend_is_backup,
-            is_drain=backend_is_drain,
-            is_offline=backend_is_offline,
+            is_backup=backend_is_backup == "true",
+            is_drain=backend_is_drain == "true",
+            is_offline=backend_is_offline == "true",
             name=backend_name,
             target_id=test_target["id"],
-            weight=backend_weight)
+            weight=int(backend_weight))
         ```
 
         ## Import

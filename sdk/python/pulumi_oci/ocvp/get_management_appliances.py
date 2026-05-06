@@ -147,7 +147,7 @@ def get_management_appliances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
+    test_management_appliances = oci.ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
         sddc_id=test_sddc["id"],
@@ -198,7 +198,7 @@ def get_management_appliances_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_management_appliances = oci.Ocvp.get_management_appliances(compartment_id=compartment_id,
+    test_management_appliances = oci.ocvp.get_management_appliances(compartment_id=compartment_id,
         display_name=management_appliance_display_name,
         management_appliance_id=test_management_appliance["id"],
         sddc_id=test_sddc["id"],

@@ -296,7 +296,7 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
         external_location=network_anchor_external_location,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
@@ -358,7 +358,7 @@ def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Inpu
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
         external_location=network_anchor_external_location,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 

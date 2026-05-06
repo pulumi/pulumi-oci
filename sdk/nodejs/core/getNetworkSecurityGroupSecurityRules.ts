@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
+ * const testNetworkSecurityGroupSecurityRules = oci.core.getNetworkSecurityGroupSecurityRules({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  *     direction: networkSecurityGroupSecurityRuleDirection,
  * });
@@ -77,7 +77,7 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
+ * const testNetworkSecurityGroupSecurityRules = oci.core.getNetworkSecurityGroupSecurityRules({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  *     direction: networkSecurityGroupSecurityRuleDirection,
  * });

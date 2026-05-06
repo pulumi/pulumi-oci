@@ -112,8 +112,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -154,8 +154,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -196,8 +196,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -238,8 +238,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -280,8 +280,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -322,8 +322,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -367,8 +367,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -412,8 +412,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -457,8 +457,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -502,8 +502,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -547,8 +547,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -589,8 +589,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -631,8 +631,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -673,8 +673,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -715,8 +715,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -802,8 +802,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -847,8 +847,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -892,8 +892,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -937,8 +937,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -982,8 +982,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1024,8 +1024,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1066,8 +1066,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1108,8 +1108,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1150,8 +1150,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1192,8 +1192,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1234,8 +1234,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1276,8 +1276,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1318,8 +1318,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1360,8 +1360,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1402,8 +1402,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1444,8 +1444,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1486,8 +1486,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1528,8 +1528,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1570,8 +1570,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentAdminUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1612,8 +1612,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1655,8 +1655,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1698,8 +1698,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1741,8 +1741,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1784,8 +1784,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1827,8 +1827,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1870,8 +1870,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1913,8 +1913,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1956,8 +1956,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1999,8 +1999,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentDataMaskingActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2042,8 +2042,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2087,8 +2087,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2132,8 +2132,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2177,8 +2177,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2222,8 +2222,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamiliesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2267,8 +2267,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2309,8 +2309,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2351,8 +2351,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2393,8 +2393,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2435,8 +2435,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2477,8 +2477,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2519,8 +2519,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2561,8 +2561,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2603,8 +2603,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2645,8 +2645,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilyLimitsAndUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2687,8 +2687,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2729,8 +2729,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2771,8 +2771,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2813,8 +2813,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2855,8 +2855,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentFamilySubscriptionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2897,8 +2897,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2943,8 +2943,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2989,8 +2989,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3035,8 +3035,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3081,8 +3081,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3127,8 +3127,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3170,8 +3170,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3213,8 +3213,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3256,8 +3256,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3299,8 +3299,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentRefreshActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3342,8 +3342,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3389,8 +3389,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3436,8 +3436,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3483,8 +3483,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3530,8 +3530,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3577,8 +3577,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3620,8 +3620,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3663,8 +3663,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3706,8 +3706,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3749,8 +3749,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentScheduledActivityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3792,8 +3792,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3835,8 +3835,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3878,8 +3878,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3921,8 +3921,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3964,8 +3964,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4007,8 +4007,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4052,8 +4052,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4097,8 +4097,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4142,8 +4142,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4187,8 +4187,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentServiceAttachmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4232,8 +4232,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4274,8 +4274,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4316,8 +4316,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4358,8 +4358,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4400,8 +4400,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4442,8 +4442,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4484,8 +4484,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4526,8 +4526,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4568,8 +4568,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4610,8 +4610,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4652,8 +4652,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4694,8 +4694,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4736,8 +4736,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4778,8 +4778,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4820,8 +4820,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentTimeAvailableForRefreshsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4862,8 +4862,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4907,8 +4907,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4952,8 +4952,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4997,8 +4997,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5042,8 +5042,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetFusionEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5087,8 +5087,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5129,8 +5129,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5171,8 +5171,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5213,8 +5213,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5255,8 +5255,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5297,8 +5297,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5339,8 +5339,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5381,8 +5381,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5423,8 +5423,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5465,8 +5465,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5507,8 +5507,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5549,8 +5549,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5591,8 +5591,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5633,8 +5633,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5675,8 +5675,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5717,8 +5717,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5759,8 +5759,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5805,8 +5805,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5855,8 +5855,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5905,8 +5905,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5955,8 +5955,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6005,8 +6005,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6052,8 +6052,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6100,8 +6100,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6148,8 +6148,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6196,8 +6196,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6244,8 +6244,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6292,8 +6292,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6340,8 +6340,8 @@ public final class FunctionsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Functions.FunctionsFunctions;
      * import com.pulumi.oci.Functions.inputs.GetPbfListingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -133,7 +133,7 @@ def get_suppressions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+    test_suppressions = oci.email.get_suppressions(compartment_id=tenancy_ocid,
         email_address=suppression_email_address,
         time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
         time_created_less_than=suppression_time_created_less_than)
@@ -185,7 +185,7 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+    test_suppressions = oci.email.get_suppressions(compartment_id=tenancy_ocid,
         email_address=suppression_email_address,
         time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
         time_created_less_than=suppression_time_created_less_than)

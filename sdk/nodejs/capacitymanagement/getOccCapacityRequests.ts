@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
+ * const testOccCapacityRequests = oci.capacitymanagement.getOccCapacityRequests({
  *     compartmentId: compartmentId,
  *     displayName: occCapacityRequestDisplayName,
  *     id: occCapacityRequestId,
@@ -116,7 +116,7 @@ export interface GetOccCapacityRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
+ * const testOccCapacityRequests = oci.capacitymanagement.getOccCapacityRequests({
  *     compartmentId: compartmentId,
  *     displayName: occCapacityRequestDisplayName,
  *     id: occCapacityRequestId,

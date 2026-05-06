@@ -411,7 +411,7 @@ class Script(pulumi.CustomResource):
             },
             parameters=[{
                 "param_name": script_parameters_param_name,
-                "is_secret": script_parameters_is_secret,
+                "is_secret": script_parameters_is_secret == "true",
                 "param_value": script_parameters_param_value,
             }])
         ```
@@ -470,7 +470,7 @@ class Script(pulumi.CustomResource):
             },
             parameters=[{
                 "param_name": script_parameters_param_name,
-                "is_secret": script_parameters_is_secret,
+                "is_secret": script_parameters_is_secret == "true",
                 "param_value": script_parameters_param_value,
             }])
         ```

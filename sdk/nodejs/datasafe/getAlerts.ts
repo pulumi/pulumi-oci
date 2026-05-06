@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlerts = oci.DataSafe.getAlerts({
+ * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,
@@ -106,10 +106,10 @@ export interface GetAlertsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlerts = oci.DataSafe.getAlerts({
+ * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,

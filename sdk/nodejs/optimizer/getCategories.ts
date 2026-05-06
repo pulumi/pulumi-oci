@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Optimizer.getCategories({
+ * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization,
+ *     includeOrganization: categoryIncludeOrganization === "true",
  *     name: categoryName,
  *     state: categoryState,
  * });
@@ -123,11 +123,11 @@ export interface GetCategoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCategories = oci.Optimizer.getCategories({
+ * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization,
+ *     includeOrganization: categoryIncludeOrganization === "true",
  *     name: categoryName,
  *     state: categoryState,
  * });

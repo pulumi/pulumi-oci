@@ -278,7 +278,7 @@ def get_connection(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DataCatalog.get_connection(catalog_id=test_catalog["id"],
+    test_connection = oci.datacatalog.get_connection(catalog_id=test_catalog["id"],
         connection_key=connection_connection_key,
         data_asset_key=connection_data_asset_key,
         fields=connection_fields)
@@ -335,7 +335,7 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.DataCatalog.get_connection(catalog_id=test_catalog["id"],
+    test_connection = oci.datacatalog.get_connection(catalog_id=test_catalog["id"],
         connection_key=connection_connection_key,
         data_asset_key=connection_data_asset_key,
         fields=connection_fields)

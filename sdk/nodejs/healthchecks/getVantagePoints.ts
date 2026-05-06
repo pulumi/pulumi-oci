@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVantagePoints = oci.HealthChecks.getVantagePoints({
+ * const testVantagePoints = oci.healthchecks.getVantagePoints({
  *     displayName: vantagePointDisplayName,
  *     name: vantagePointName,
  * });
@@ -81,7 +81,7 @@ export interface GetVantagePointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVantagePoints = oci.HealthChecks.getVantagePoints({
+ * const testVantagePoints = oci.healthchecks.getVantagePoints({
  *     displayName: vantagePointDisplayName,
  *     name: vantagePointName,
  * });

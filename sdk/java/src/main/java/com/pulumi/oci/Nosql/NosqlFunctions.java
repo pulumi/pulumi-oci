@@ -47,8 +47,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -93,8 +93,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -139,8 +139,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -185,8 +185,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -231,8 +231,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -273,8 +273,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -317,8 +317,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -361,8 +361,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -405,8 +405,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -449,8 +449,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -493,8 +493,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -538,8 +538,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -583,8 +583,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -628,8 +628,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -673,8 +673,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -718,8 +718,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -761,8 +761,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -804,8 +804,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -847,8 +847,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -890,8 +890,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -933,8 +933,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -977,8 +977,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1021,8 +1021,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1065,8 +1065,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1109,8 +1109,8 @@ public final class NosqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Nosql.NosqlFunctions;
      * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

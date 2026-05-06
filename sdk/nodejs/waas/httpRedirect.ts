@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *         path: httpRedirectTargetPath,
  *         protocol: httpRedirectTargetProtocol,
  *         query: httpRedirectTargetQuery,
- *         port: httpRedirectTargetPort,
+ *         port: Number(httpRedirectTargetPort),
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     responseCode: httpRedirectResponseCode,
+ *     responseCode: Number(httpRedirectResponseCode),
  * });
  * ```
  *

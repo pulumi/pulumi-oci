@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     },
  *     kmsKeyId: testKey.id,
  *     metadata: bucketMetadata,
- *     objectEventsEnabled: bucketObjectEventsEnabled,
+ *     objectEventsEnabled: bucketObjectEventsEnabled === "true",
  *     storageTier: bucketStorageTier,
  *     retentionRules: [{
  *         displayName: retentionRuleDisplayName,

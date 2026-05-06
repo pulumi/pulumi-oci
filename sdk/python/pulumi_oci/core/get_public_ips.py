@@ -173,7 +173,7 @@ def get_public_ips(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+    test_public_ips = oci.core.get_public_ips(compartment_id=compartment_id,
         scope=public_ip_scope,
         availability_domain=public_ip_availability_domain,
         lifetime=public_ip_lifetime,
@@ -245,7 +245,7 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+    test_public_ips = oci.core.get_public_ips(compartment_id=compartment_id,
         scope=public_ip_scope,
         availability_domain=public_ip_availability_domain,
         lifetime=public_ip_lifetime,

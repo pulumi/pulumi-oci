@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReports = oci.DataSafe.getReports({
+ * const testReports = oci.datasafe.getReports({
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
- *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree === "true",
  *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,
@@ -162,10 +162,10 @@ export interface GetReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReports = oci.DataSafe.getReports({
+ * const testReports = oci.datasafe.getReports({
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
- *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree === "true",
  *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,

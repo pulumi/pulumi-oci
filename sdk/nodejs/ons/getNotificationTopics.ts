@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationTopics = oci.Ons.getNotificationTopics({
+ * const testNotificationTopics = oci.ons.getNotificationTopics({
  *     compartmentId: compartmentId,
  *     id: notificationTopicId,
  *     name: notificationTopicName,
@@ -97,7 +97,7 @@ export interface GetNotificationTopicsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationTopics = oci.Ons.getNotificationTopics({
+ * const testNotificationTopics = oci.ons.getNotificationTopics({
  *     compartmentId: compartmentId,
  *     id: notificationTopicId,
  *     name: notificationTopicName,

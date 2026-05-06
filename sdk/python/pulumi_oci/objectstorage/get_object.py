@@ -304,7 +304,7 @@ def get_object(base64_encode_content: Optional[_builtins.bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+    test_object = oci.objectstorage.get_object(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object,
         http_response_cache_control=object_http_response_cache_control,
@@ -395,7 +395,7 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+    test_object = oci.objectstorage.get_object(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object,
         http_response_cache_control=object_http_response_cache_control,

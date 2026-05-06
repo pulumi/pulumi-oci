@@ -136,7 +136,7 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.fleetappsmanagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
         state=maintenance_window_state,
@@ -187,7 +187,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.fleetappsmanagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
         state=maintenance_window_state,

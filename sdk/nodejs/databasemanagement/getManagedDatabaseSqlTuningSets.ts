@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
+ * const testManagedDatabaseSqlTuningSets = oci.databasemanagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     opcNamedCredentialId: managedDatabaseSqlTuningSetOpcNamedCredentialId,
@@ -94,7 +94,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSets = oci.DatabaseManagement.getManagedDatabaseSqlTuningSets({
+ * const testManagedDatabaseSqlTuningSets = oci.databasemanagement.getManagedDatabaseSqlTuningSets({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     opcNamedCredentialId: managedDatabaseSqlTuningSetOpcNamedCredentialId,

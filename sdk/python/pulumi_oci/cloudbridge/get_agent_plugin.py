@@ -201,7 +201,7 @@ def get_agent_plugin(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=test_agent["id"],
+    test_agent_plugin = oci.cloudbridge.get_agent_plugin(agent_id=test_agent["id"],
         plugin_name=agent_plugin_plugin_name)
     ```
 
@@ -243,7 +243,7 @@ def get_agent_plugin_output(agent_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=test_agent["id"],
+    test_agent_plugin = oci.cloudbridge.get_agent_plugin(agent_id=test_agent["id"],
         plugin_name=agent_plugin_plugin_name)
     ```
 

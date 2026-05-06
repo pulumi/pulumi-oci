@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauth2clientCredentials = oci.Identity.getDomainsOauth2clientCredentials({
+ * const testOauth2clientCredentials = oci.identity.getDomainsOauth2clientCredentials({
  *     idcsEndpoint: testDomain.url,
- *     oauth2clientCredentialCount: oauth2clientCredentialOauth2clientCredentialCount,
+ *     oauth2clientCredentialCount: Number(oauth2clientCredentialOauth2clientCredentialCount),
  *     oauth2clientCredentialFilter: oauth2clientCredentialOauth2clientCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: oauth2clientCredentialAuthorization,
  *     resourceTypeSchemaVersion: oauth2clientCredentialResourceTypeSchemaVersion,
- *     startIndex: oauth2clientCredentialStartIndex,
+ *     startIndex: Number(oauth2clientCredentialStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsOauth2clientCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauth2clientCredentials = oci.Identity.getDomainsOauth2clientCredentials({
+ * const testOauth2clientCredentials = oci.identity.getDomainsOauth2clientCredentials({
  *     idcsEndpoint: testDomain.url,
- *     oauth2clientCredentialCount: oauth2clientCredentialOauth2clientCredentialCount,
+ *     oauth2clientCredentialCount: Number(oauth2clientCredentialOauth2clientCredentialCount),
  *     oauth2clientCredentialFilter: oauth2clientCredentialOauth2clientCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: oauth2clientCredentialAuthorization,
  *     resourceTypeSchemaVersion: oauth2clientCredentialResourceTypeSchemaVersion,
- *     startIndex: oauth2clientCredentialStartIndex,
+ *     startIndex: Number(oauth2clientCredentialStartIndex),
  * });
  * ```
  */

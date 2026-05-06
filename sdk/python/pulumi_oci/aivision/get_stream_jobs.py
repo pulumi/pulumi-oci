@@ -125,7 +125,7 @@ def get_stream_jobs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_jobs = oci.AiVision.get_stream_jobs(compartment_id=compartment_id,
+    test_stream_jobs = oci.aivision.get_stream_jobs(compartment_id=compartment_id,
         display_name=stream_job_display_name,
         id=stream_job_id,
         state=stream_job_state)
@@ -170,7 +170,7 @@ def get_stream_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_jobs = oci.AiVision.get_stream_jobs(compartment_id=compartment_id,
+    test_stream_jobs = oci.aivision.get_stream_jobs(compartment_id=compartment_id,
         display_name=stream_job_display_name,
         id=stream_job_id,
         state=stream_job_state)

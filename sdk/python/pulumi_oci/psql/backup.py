@@ -539,7 +539,7 @@ class Backup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period=backup_retention_period)
+            retention_period=int(backup_retention_period))
         ```
 
         ## Import
@@ -597,7 +597,7 @@ class Backup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period=backup_retention_period)
+            retention_period=int(backup_retention_period))
         ```
 
         ## Import

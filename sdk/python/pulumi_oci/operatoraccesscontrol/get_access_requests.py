@@ -157,7 +157,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=compartment_id,
+    test_access_requests = oci.operatoraccesscontrol.get_access_requests(compartment_id=compartment_id,
         resource_name=access_request_resource_name,
         resource_type=access_request_resource_type,
         state=access_request_state,
@@ -213,7 +213,7 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=compartment_id,
+    test_access_requests = oci.operatoraccesscontrol.get_access_requests(compartment_id=compartment_id,
         resource_name=access_request_resource_name,
         resource_type=access_request_resource_type,
         state=access_request_state,

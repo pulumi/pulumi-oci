@@ -358,7 +358,7 @@ def get_repository(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.DevOps.get_repository(repository_id=test_repository_oci_devops_repository["id"],
+    test_repository = oci.devops.get_repository(repository_id=test_repository_oci_devops_repository["id"],
         fields=repository_fields)
     ```
 
@@ -413,7 +413,7 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.DevOps.get_repository(repository_id=test_repository_oci_devops_repository["id"],
+    test_repository = oci.devops.get_repository(repository_id=test_repository_oci_devops_repository["id"],
         fields=repository_fields)
     ```
 

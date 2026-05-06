@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testOperatorControlAssignment = new oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment", {
  *     compartmentId: compartmentId,
- *     isEnforcedAlways: operatorControlAssignmentIsEnforcedAlways,
+ *     isEnforcedAlways: operatorControlAssignmentIsEnforcedAlways === "true",
  *     operatorControlId: testOperatorControl.id,
  *     resourceCompartmentId: testCompartment.id,
  *     resourceId: testResource.id,
@@ -29,12 +29,12 @@ import * as utilities from "../utilities";
  *     comment: operatorControlAssignmentComment,
  *     definedTags: operatorControlAssignmentDefinedTags,
  *     freeformTags: operatorControlAssignmentFreeformTags,
- *     isAutoApproveDuringMaintenance: operatorControlAssignmentIsAutoApproveDuringMaintenance,
- *     isHypervisorLogForwarded: operatorControlAssignmentIsHypervisorLogForwarded,
- *     isLogForwarded: operatorControlAssignmentIsLogForwarded,
+ *     isAutoApproveDuringMaintenance: operatorControlAssignmentIsAutoApproveDuringMaintenance === "true",
+ *     isHypervisorLogForwarded: operatorControlAssignmentIsHypervisorLogForwarded === "true",
+ *     isLogForwarded: operatorControlAssignmentIsLogForwarded === "true",
  *     remoteSyslogServerAddress: operatorControlAssignmentRemoteSyslogServerAddress,
  *     remoteSyslogServerCaCert: operatorControlAssignmentRemoteSyslogServerCaCert,
- *     remoteSyslogServerPort: operatorControlAssignmentRemoteSyslogServerPort,
+ *     remoteSyslogServerPort: Number(operatorControlAssignmentRemoteSyslogServerPort),
  *     timeAssignmentFrom: operatorControlAssignmentTimeAssignmentFrom,
  *     timeAssignmentTo: operatorControlAssignmentTimeAssignmentTo,
  * });

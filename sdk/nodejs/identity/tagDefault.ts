@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     tagDefinitionId: testTagDefinition.id,
  *     value: tagDefaultValue,
- *     isRequired: tagDefaultIsRequired,
+ *     isRequired: tagDefaultIsRequired === "true",
  * });
  * ```
  *

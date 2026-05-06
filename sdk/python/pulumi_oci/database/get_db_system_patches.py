@@ -95,7 +95,7 @@ def get_db_system_patches(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=test_db_system["id"])
+    test_db_system_patches = oci.database.get_db_system_patches(db_system_id=test_db_system["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_db_system_patches_output(db_system_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=test_db_system["id"])
+    test_db_system_patches = oci.database.get_db_system_patches(db_system_id=test_db_system["id"])
     ```
 
 

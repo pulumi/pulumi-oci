@@ -121,7 +121,7 @@ def get_instance_pool_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=compartment_id,
+    test_instance_pool_instances = oci.core.get_instance_pool_instances(compartment_id=compartment_id,
         instance_pool_id=test_instance_pool["id"],
         display_name=instance_pool_instance_display_name)
     ```
@@ -162,7 +162,7 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=compartment_id,
+    test_instance_pool_instances = oci.core.get_instance_pool_instances(compartment_id=compartment_id,
         instance_pool_id=test_instance_pool["id"],
         display_name=instance_pool_instance_display_name)
     ```

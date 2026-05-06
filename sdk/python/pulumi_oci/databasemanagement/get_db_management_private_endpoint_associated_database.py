@@ -97,7 +97,7 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_database = oci.databasemanagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 
@@ -130,7 +130,7 @@ def get_db_management_private_endpoint_associated_database_output(compartment_id
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_database = oci.databasemanagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 

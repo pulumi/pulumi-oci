@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
+ * const testOdaPrivateEndpointAttachments = oci.oda.getOdaPrivateEndpointAttachments({
  *     compartmentId: compartmentId,
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointAttachmentState,
@@ -98,7 +98,7 @@ export interface GetOdaPrivateEndpointAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
+ * const testOdaPrivateEndpointAttachments = oci.oda.getOdaPrivateEndpointAttachments({
  *     compartmentId: compartmentId,
  *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  *     state: odaPrivateEndpointAttachmentState,

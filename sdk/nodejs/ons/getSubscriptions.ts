@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Ons.getSubscriptions({
+ * const testSubscriptions = oci.ons.getSubscriptions({
  *     compartmentId: compartmentId,
  *     topicId: testNotificationTopic.id,
  * });
@@ -84,7 +84,7 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Ons.getSubscriptions({
+ * const testSubscriptions = oci.ons.getSubscriptions({
  *     compartmentId: compartmentId,
  *     topicId: testNotificationTopic.id,
  * });

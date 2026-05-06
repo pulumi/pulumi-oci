@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceOccOverviews = oci.CapacityManagement.getNamespaceOccOverviews({
+ * const testNamespaceOccOverviews = oci.capacitymanagement.getNamespaceOccOverviews({
  *     compartmentId: compartmentId,
  *     namespace: namespaceOccOverviewNamespace,
  *     from: namespaceOccOverviewFrom,
@@ -98,7 +98,7 @@ export interface GetNamespaceOccOverviewsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceOccOverviews = oci.CapacityManagement.getNamespaceOccOverviews({
+ * const testNamespaceOccOverviews = oci.capacitymanagement.getNamespaceOccOverviews({
  *     compartmentId: compartmentId,
  *     namespace: namespaceOccOverviewNamespace,
  *     from: namespaceOccOverviewFrom,

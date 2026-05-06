@@ -96,7 +96,7 @@ def get_query(query_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
+    test_query = oci.meteringcomputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_query_output(query_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
+    test_query = oci.meteringcomputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
 
 

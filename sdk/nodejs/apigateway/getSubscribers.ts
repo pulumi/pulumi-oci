@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribers = oci.ApiGateway.getSubscribers({
+ * const testSubscribers = oci.apigateway.getSubscribers({
  *     compartmentId: compartmentId,
  *     displayName: subscriberDisplayName,
  *     state: subscriberState,
@@ -90,7 +90,7 @@ export interface GetSubscribersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribers = oci.ApiGateway.getSubscribers({
+ * const testSubscribers = oci.apigateway.getSubscribers({
  *     compartmentId: compartmentId,
  *     displayName: subscriberDisplayName,
  *     state: subscriberState,

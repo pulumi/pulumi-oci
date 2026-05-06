@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
+ * const testSubscribedServices = oci.onesubsription.getSubscribedServices({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     orderLineId: testOrderLine.id,
@@ -97,7 +97,7 @@ export interface GetSubscribedServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
+ * const testSubscribedServices = oci.onesubsription.getSubscribedServices({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     orderLineId: testOrderLine.id,

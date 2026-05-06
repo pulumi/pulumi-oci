@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersions = oci.Database.getGiVersions({
+ * const testGiVersions = oci.database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,
@@ -95,7 +95,7 @@ export interface GetGiVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersions = oci.Database.getGiVersions({
+ * const testGiVersions = oci.database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,

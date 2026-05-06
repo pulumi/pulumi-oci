@@ -121,7 +121,7 @@ def get_image_shape(image_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shape = oci.Core.get_image_shape(image_id=test_image["id"],
+    test_image_shape = oci.core.get_image_shape(image_id=test_image["id"],
         shape_name=test_shape["name"])
     ```
 
@@ -156,7 +156,7 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shape = oci.Core.get_image_shape(image_id=test_image["id"],
+    test_image_shape = oci.core.get_image_shape(image_id=test_image["id"],
         shape_name=test_shape["name"])
     ```
 

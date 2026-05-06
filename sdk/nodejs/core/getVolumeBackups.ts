@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackups = oci.Core.getVolumeBackups({
+ * const testVolumeBackups = oci.core.getVolumeBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeBackupDisplayName,
  *     sourceVolumeBackupId: testVolumeBackup.id,
@@ -110,7 +110,7 @@ export interface GetVolumeBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackups = oci.Core.getVolumeBackups({
+ * const testVolumeBackups = oci.core.getVolumeBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeBackupDisplayName,
  *     sourceVolumeBackupId: testVolumeBackup.id,

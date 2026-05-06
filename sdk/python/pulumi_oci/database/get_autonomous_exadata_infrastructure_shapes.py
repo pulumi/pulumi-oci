@@ -105,7 +105,7 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
+    test_autonomous_exadata_infrastructure_shapes = oci.database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
 
@@ -141,7 +141,7 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
+    test_autonomous_exadata_infrastructure_shapes = oci.database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
 

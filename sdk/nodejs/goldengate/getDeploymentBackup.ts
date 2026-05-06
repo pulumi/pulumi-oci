@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentBackup = oci.GoldenGate.getDeploymentBackup({
+ * const testDeploymentBackup = oci.goldengate.getDeploymentBackup({
  *     deploymentBackupId: testDeploymentBackupOciGoldenGateDeploymentBackup.id,
  * });
  * ```
@@ -153,7 +153,7 @@ export interface GetDeploymentBackupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentBackup = oci.GoldenGate.getDeploymentBackup({
+ * const testDeploymentBackup = oci.goldengate.getDeploymentBackup({
  *     deploymentBackupId: testDeploymentBackupOciGoldenGateDeploymentBackup.id,
  * });
  * ```

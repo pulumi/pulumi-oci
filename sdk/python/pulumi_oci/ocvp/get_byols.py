@@ -162,7 +162,7 @@ def get_byols(available_units_greater_than_or_equal_to: Optional[_builtins.float
     import pulumi
     import pulumi_oci as oci
 
-    test_byols = oci.Ocvp.get_byols(compartment_id=compartment_id,
+    test_byols = oci.ocvp.get_byols(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_available_units_greater_than_or_equal_to,
         byol_id=test_byol["id"],
         display_name=byol_display_name,
@@ -219,7 +219,7 @@ def get_byols_output(available_units_greater_than_or_equal_to: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_byols = oci.Ocvp.get_byols(compartment_id=compartment_id,
+    test_byols = oci.ocvp.get_byols(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_available_units_greater_than_or_equal_to,
         byol_id=test_byol["id"],
         display_name=byol_display_name,

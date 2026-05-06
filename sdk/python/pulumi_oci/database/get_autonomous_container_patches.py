@@ -118,7 +118,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_patches = oci.database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         autonomous_patch_type=autonomous_container_patch_autonomous_patch_type)
     ```
@@ -159,7 +159,7 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
+    test_autonomous_container_patches = oci.database.get_autonomous_container_patches(autonomous_container_database_id=test_autonomous_container_database["id"],
         compartment_id=compartment_id,
         autonomous_patch_type=autonomous_container_patch_autonomous_patch_type)
     ```

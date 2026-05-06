@@ -40,11 +40,11 @@ import * as utilities from "../utilities";
  *             commands: jobJobConfigurationDetailsStartupProbeDetailsCommand,
  *             jobProbeCheckType: jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
  *             cpuBaseline: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
- *             failureThreshold: jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *             initialDelayInSeconds: jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *             failureThreshold: Number(jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *             initialDelayInSeconds: Number(jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
- *             periodInSeconds: jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *             periodInSeconds: Number(jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *         },
  *     },
  *     jobEnvironmentConfigurationDetails: {
@@ -57,7 +57,7 @@ import * as utilities from "../utilities";
  *     },
  *     jobInfrastructureConfigurationDetails: {
  *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *         blockStorageSizeInGbs: jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -66,8 +66,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     jobLogConfigurationDetails: {
- *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation,
- *         enableLogging: jobJobLogConfigurationDetailsEnableLogging,
+ *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: jobJobLogConfigurationDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -87,9 +87,9 @@ import * as utilities from "../utilities";
  *                 startupProbeDetails: {
  *                     commands: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
  *                     jobProbeCheckType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
- *                     failureThreshold: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *                     initialDelayInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
- *                     periodInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                     failureThreshold: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *                     initialDelayInSeconds: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *                     periodInSeconds: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *                 },
  *             },
  *             jobEnvironmentConfigurationDetails: {
@@ -102,7 +102,7 @@ import * as utilities from "../utilities";
  *             },
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *                 blockStorageSizeInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 blockStorageSizeInGbs: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -110,8 +110,8 @@ import * as utilities from "../utilities";
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,
  *             },
- *             minimumSuccessReplicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
- *             replicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *             minimumSuccessReplicas: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+ *             replicas: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas),
  *         }],
  *         maximumRuntimeInMinutes: jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobJobNodeConfigurationDetailsStartupOrder,

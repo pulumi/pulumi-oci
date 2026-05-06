@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
+ * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon,
+ *     isCommon: discoveryAnalyticIsCommon === "true",
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -136,11 +136,11 @@ export interface GetDiscoveryAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
+ * const testDiscoveryAnalytics = oci.datasafe.getDiscoveryAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: discoveryAnalyticGroupBy,
- *     isCommon: discoveryAnalyticIsCommon,
+ *     isCommon: discoveryAnalyticIsCommon === "true",
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,

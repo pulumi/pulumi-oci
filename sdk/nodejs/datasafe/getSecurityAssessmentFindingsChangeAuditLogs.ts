@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
+ * const testSecurityAssessmentFindingsChangeAuditLogs = oci.datasafe.getSecurityAssessmentFindingsChangeAuditLogs({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
  *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
- *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred === "true",
  *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
  *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
  *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
@@ -149,11 +149,11 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
+ * const testSecurityAssessmentFindingsChangeAuditLogs = oci.datasafe.getSecurityAssessmentFindingsChangeAuditLogs({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
  *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
- *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred === "true",
  *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
  *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
  *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,

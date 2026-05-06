@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivileges = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivileges({
+ * const testManagedDatabasesUserSystemPrivileges = oci.databasemanagement.getManagedDatabasesUserSystemPrivileges({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,
@@ -91,7 +91,7 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivileges = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivileges({
+ * const testManagedDatabasesUserSystemPrivileges = oci.databasemanagement.getManagedDatabasesUserSystemPrivileges({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,

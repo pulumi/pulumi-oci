@@ -514,7 +514,7 @@ class Fleet(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled == "true",
             operation_log={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
@@ -581,7 +581,7 @@ class Fleet(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled == "true",
             operation_log={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],

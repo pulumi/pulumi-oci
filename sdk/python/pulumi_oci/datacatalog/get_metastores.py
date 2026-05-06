@@ -124,7 +124,7 @@ def get_metastores(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=compartment_id,
+    test_metastores = oci.datacatalog.get_metastores(compartment_id=compartment_id,
         display_name=metastore_display_name,
         state=metastore_state)
     ```
@@ -165,7 +165,7 @@ def get_metastores_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=compartment_id,
+    test_metastores = oci.datacatalog.get_metastores(compartment_id=compartment_id,
         display_name=metastore_display_name,
         state=metastore_state)
     ```

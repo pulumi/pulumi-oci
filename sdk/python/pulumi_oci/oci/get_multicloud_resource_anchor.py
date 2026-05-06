@@ -309,7 +309,7 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        should_fetch_compartment_name=should_fetch_compartment_name)
+        should_fetch_compartment_name=should_fetch_compartment_name == "true")
     ```
 
 
@@ -368,7 +368,7 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.In
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        should_fetch_compartment_name=should_fetch_compartment_name)
+        should_fetch_compartment_name=should_fetch_compartment_name == "true")
     ```
 
 

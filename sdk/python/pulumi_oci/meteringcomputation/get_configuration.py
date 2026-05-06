@@ -84,7 +84,7 @@ def get_configuration(tenant_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=test_tenant["id"])
+    test_configuration = oci.meteringcomputation.get_configuration(tenant_id=test_tenant["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_configuration_output(tenant_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=test_tenant["id"])
+    test_configuration = oci.meteringcomputation.get_configuration(tenant_id=test_tenant["id"])
     ```
 
 

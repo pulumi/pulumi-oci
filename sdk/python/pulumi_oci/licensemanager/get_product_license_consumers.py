@@ -104,9 +104,9 @@ def get_product_license_consumers(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=compartment_id,
+    test_product_license_consumers = oci.licensemanager.get_product_license_consumers(compartment_id=compartment_id,
         product_license_id=test_product_license["id"],
-        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree == "true")
     ```
 
 
@@ -142,9 +142,9 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=compartment_id,
+    test_product_license_consumers = oci.licensemanager.get_product_license_consumers(compartment_id=compartment_id,
         product_license_id=test_product_license["id"],
-        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree == "true")
     ```
 
 

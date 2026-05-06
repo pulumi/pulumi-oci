@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbsInstances = oci.Vbs.getInstVbsInstances({
+ * const testVbsInstances = oci.vbs.getInstVbsInstances({
  *     compartmentId: compartmentId,
  *     id: vbsInstanceId,
  *     name: vbsInstanceName,
@@ -96,7 +96,7 @@ export interface GetInstVbsInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbsInstances = oci.Vbs.getInstVbsInstances({
+ * const testVbsInstances = oci.vbs.getInstVbsInstances({
  *     compartmentId: compartmentId,
  *     id: vbsInstanceId,
  *     name: vbsInstanceName,

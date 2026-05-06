@@ -30,12 +30,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicies = oci.DataSafe.getUnifiedAuditPolicies({
+ * const testUnifiedAuditPolicies = oci.datasafe.getUnifiedAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDisplayName,
- *     isSeeded: unifiedAuditPolicyIsSeeded,
+ *     isSeeded: unifiedAuditPolicyIsSeeded === "true",
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: unifiedAuditPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo,
@@ -185,12 +185,12 @@ export interface GetUnifiedAuditPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicies = oci.DataSafe.getUnifiedAuditPolicies({
+ * const testUnifiedAuditPolicies = oci.datasafe.getUnifiedAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDisplayName,
- *     isSeeded: unifiedAuditPolicyIsSeeded,
+ *     isSeeded: unifiedAuditPolicyIsSeeded === "true",
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: unifiedAuditPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo,

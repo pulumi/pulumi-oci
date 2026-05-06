@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.Artifacts.getRepositories({
+ * const testRepositories = oci.artifacts.getRepositories({
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable,
+ *     isImmutable: repositoryIsImmutable === "true",
  *     state: repositoryState,
  * });
  * ```
@@ -106,11 +106,11 @@ export interface GetRepositoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.Artifacts.getRepositories({
+ * const testRepositories = oci.artifacts.getRepositories({
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable,
+ *     isImmutable: repositoryIsImmutable === "true",
  *     state: repositoryState,
  * });
  * ```

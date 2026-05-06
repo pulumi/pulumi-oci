@@ -374,7 +374,7 @@ def get_domains_oauth2client_credential(attribute_sets: Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
+    test_oauth2client_credential = oci.identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
         o_auth2client_credential_id=test_o_auth2client_credential["id"],
         attribute_sets=[],
         attributes="",
@@ -447,7 +447,7 @@ def get_domains_oauth2client_credential_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
+    test_oauth2client_credential = oci.identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
         o_auth2client_credential_id=test_o_auth2client_credential["id"],
         attribute_sets=[],
         attributes="",

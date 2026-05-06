@@ -352,7 +352,7 @@ def get_namespace_lookup(lookup_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_lookup = oci.LogAnalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
+    test_namespace_lookup = oci.loganalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
         namespace=namespace_lookup_namespace)
     ```
 
@@ -407,7 +407,7 @@ def get_namespace_lookup_output(lookup_name: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_lookup = oci.LogAnalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
+    test_namespace_lookup = oci.loganalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
         namespace=namespace_lookup_namespace)
     ```
 

@@ -30,11 +30,11 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     responseCachingPolicy: {
- *         isResponseHeaderBasedCachingEnabled: webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled,
+ *         isResponseHeaderBasedCachingEnabled: webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled === "true",
  *     },
  *     responseCompressionPolicy: {
  *         gzipCompression: {
- *             isEnabled: webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled,
+ *             isEnabled: webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled === "true",
  *         },
  *     },
  *     systemTags: webAppAccelerationPolicySystemTags,

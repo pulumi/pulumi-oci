@@ -121,7 +121,7 @@ def get_recipes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recipes = oci.GoldenGate.get_recipes(compartment_id=compartment_id,
+    test_recipes = oci.goldengate.get_recipes(compartment_id=compartment_id,
         display_name=recipe_display_name,
         recipe_type=recipe_recipe_type)
     ```
@@ -162,7 +162,7 @@ def get_recipes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_recipes = oci.GoldenGate.get_recipes(compartment_id=compartment_id,
+    test_recipes = oci.goldengate.get_recipes(compartment_id=compartment_id,
         display_name=recipe_display_name,
         recipe_type=recipe_recipe_type)
     ```

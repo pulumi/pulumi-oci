@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsights = oci.Opsi.getHostInsights({
+ * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,
@@ -136,9 +136,9 @@ export interface GetHostInsightsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsights = oci.Opsi.getHostInsights({
+ * const testHostInsights = oci.opsi.getHostInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree === "true",
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataInsightId: testExadataInsight.id,
  *     hostTypes: hostInsightHostType,

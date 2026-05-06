@@ -110,7 +110,7 @@ def get_fleet_export_status(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_export_status = oci.Jms.get_fleet_export_status(fleet_id=test_fleet["id"])
+    test_fleet_export_status = oci.jms.get_fleet_export_status(fleet_id=test_fleet["id"])
     ```
 
 
@@ -140,7 +140,7 @@ def get_fleet_export_status_output(fleet_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_export_status = oci.Jms.get_fleet_export_status(fleet_id=test_fleet["id"])
+    test_fleet_export_status = oci.jms.get_fleet_export_status(fleet_id=test_fleet["id"])
     ```
 
 

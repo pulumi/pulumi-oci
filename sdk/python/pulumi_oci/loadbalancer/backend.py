@@ -428,12 +428,12 @@ class Backend(pulumi.CustomResource):
             backendset_name=test_backend_set["name"],
             ip_address=backend_ip_address,
             load_balancer_id=test_load_balancer["id"],
-            port=backend_port,
-            backup=backend_backup,
-            drain=backend_drain,
-            max_connections=backend_max_connections,
-            offline=backend_offline,
-            weight=backend_weight)
+            port=int(backend_port),
+            backup=backend_backup == "true",
+            drain=backend_drain == "true",
+            max_connections=int(backend_max_connections),
+            offline=backend_offline == "true",
+            weight=int(backend_weight))
         ```
 
         ## Import
@@ -493,12 +493,12 @@ class Backend(pulumi.CustomResource):
             backendset_name=test_backend_set["name"],
             ip_address=backend_ip_address,
             load_balancer_id=test_load_balancer["id"],
-            port=backend_port,
-            backup=backend_backup,
-            drain=backend_drain,
-            max_connections=backend_max_connections,
-            offline=backend_offline,
-            weight=backend_weight)
+            port=int(backend_port),
+            backup=backend_backup == "true",
+            drain=backend_drain == "true",
+            max_connections=int(backend_max_connections),
+            offline=backend_offline == "true",
+            weight=int(backend_weight))
         ```
 
         ## Import

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeBackup = oci.Core.getBootVolumeBackup({
+ * const testBootVolumeBackup = oci.core.getBootVolumeBackup({
  *     bootVolumeBackupId: testBootVolumeBackupOciCoreBootVolumeBackup.id,
  * });
  * ```
@@ -129,7 +129,7 @@ export interface GetBootVolumeBackupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeBackup = oci.Core.getBootVolumeBackup({
+ * const testBootVolumeBackup = oci.core.getBootVolumeBackup({
  *     bootVolumeBackupId: testBootVolumeBackupOciCoreBootVolumeBackup.id,
  * });
  * ```

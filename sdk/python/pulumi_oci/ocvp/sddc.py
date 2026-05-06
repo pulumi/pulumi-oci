@@ -1931,7 +1931,7 @@ class Sddc(pulumi.CustomResource):
             initial_configurations=[{
                 "initial_cluster_configurations": [{
                     "compute_availability_domain": sddc_initial_configuration_initial_cluster_configurations_compute_availability_domain,
-                    "esxi_hosts_count": sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count,
+                    "esxi_hosts_count": int(sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count),
                     "network_configuration": {
                         "nsx_edge_vtep_vlan_id": test_vlan["id"],
                         "nsx_vtep_vlan_id": test_vlan["id"],
@@ -1962,7 +1962,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_host_shape_name": test_shape["name"],
                     "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
-                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
+                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled == "true",
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
                 }],
             }],
@@ -1975,13 +1975,13 @@ class Sddc(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_single_host_sddc=sddc_is_single_host_sddc,
+            is_single_host_sddc=sddc_is_single_host_sddc == "true",
             sddc_byol_allocation_details={
                 "load_balancer_byol_allocation_id": test_byol_allocation["id"],
-                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+                "load_balancer_instance_count": int(sddc_sddc_byol_allocation_details_load_balancer_instance_count),
             },
             hcx_action=hcx_action,
-            is_hcx_enabled=sddc_is_hcx_enabled)
+            is_hcx_enabled=sddc_is_hcx_enabled == "true")
         ```
 
         ## How to migrate from deprecated fields to new fields
@@ -2080,7 +2080,7 @@ class Sddc(pulumi.CustomResource):
             initial_configurations=[{
                 "initial_cluster_configurations": [{
                     "compute_availability_domain": sddc_initial_configuration_initial_cluster_configurations_compute_availability_domain,
-                    "esxi_hosts_count": sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count,
+                    "esxi_hosts_count": int(sddc_initial_configuration_initial_cluster_configurations_esxi_hosts_count),
                     "network_configuration": {
                         "nsx_edge_vtep_vlan_id": test_vlan["id"],
                         "nsx_vtep_vlan_id": test_vlan["id"],
@@ -2111,7 +2111,7 @@ class Sddc(pulumi.CustomResource):
                     "initial_host_shape_name": test_shape["name"],
                     "initial_vcf_byol_allocation_id": test_byol_allocation["id"],
                     "instance_display_name_prefix": sddc_initial_configuration_initial_cluster_configurations_instance_display_name_prefix,
-                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled,
+                    "is_shielded_instance_enabled": sddc_initial_configuration_initial_cluster_configurations_is_shielded_instance_enabled == "true",
                     "workload_network_cidr": sddc_initial_configuration_initial_cluster_configurations_workload_network_cidr,
                 }],
             }],
@@ -2124,13 +2124,13 @@ class Sddc(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_single_host_sddc=sddc_is_single_host_sddc,
+            is_single_host_sddc=sddc_is_single_host_sddc == "true",
             sddc_byol_allocation_details={
                 "load_balancer_byol_allocation_id": test_byol_allocation["id"],
-                "load_balancer_instance_count": sddc_sddc_byol_allocation_details_load_balancer_instance_count,
+                "load_balancer_instance_count": int(sddc_sddc_byol_allocation_details_load_balancer_instance_count),
             },
             hcx_action=hcx_action,
-            is_hcx_enabled=sddc_is_hcx_enabled)
+            is_hcx_enabled=sddc_is_hcx_enabled == "true")
         ```
 
         ## How to migrate from deprecated fields to new fields

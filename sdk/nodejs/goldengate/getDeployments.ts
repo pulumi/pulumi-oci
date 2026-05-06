@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.GoldenGate.getDeployments({
+ * const testDeployments = oci.goldengate.getDeployments({
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,
@@ -141,7 +141,7 @@ export interface GetDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.GoldenGate.getDeployments({
+ * const testDeployments = oci.goldengate.getDeployments({
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagDefaults = oci.Identity.getTagDefaults({
+ * const testTagDefaults = oci.identity.getTagDefaults({
  *     compartmentId: compartmentId,
  *     id: tagDefaultId,
  *     state: tagDefaultState,
@@ -97,7 +97,7 @@ export interface GetTagDefaultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagDefaults = oci.Identity.getTagDefaults({
+ * const testTagDefaults = oci.identity.getTagDefaults({
  *     compartmentId: compartmentId,
  *     id: tagDefaultId,
  *     state: tagDefaultState,

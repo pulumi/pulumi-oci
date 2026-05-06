@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Database.getDbSystems({
+ * const testDbSystems = oci.database.getDbSystems({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemAvailabilityDomain,
  *     backupId: testBackup.id,
@@ -115,7 +115,7 @@ export interface GetDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystems = oci.Database.getDbSystems({
+ * const testDbSystems = oci.database.getDbSystems({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemAvailabilityDomain,
  *     backupId: testBackup.id,

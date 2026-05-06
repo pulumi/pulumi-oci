@@ -295,7 +295,7 @@ def get_workspace_export_request(export_request_key: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
+    test_workspace_export_request = oci.dataintegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -345,7 +345,7 @@ def get_workspace_export_request_output(export_request_key: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
+    test_workspace_export_request = oci.dataintegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
         workspace_id=test_workspace["id"])
     ```
 

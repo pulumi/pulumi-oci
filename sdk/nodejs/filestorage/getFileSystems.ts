@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystems = oci.FileStorage.getFileSystems({
+ * const testFileSystems = oci.filestorage.getFileSystems({
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: fileSystemDisplayName,
@@ -138,7 +138,7 @@ export interface GetFileSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystems = oci.FileStorage.getFileSystems({
+ * const testFileSystems = oci.filestorage.getFileSystems({
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: fileSystemDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemConnectors = oci.DatabaseManagement.getExternalDbSystemConnectors({
+ * const testExternalDbSystemConnectors = oci.databasemanagement.getExternalDbSystemConnectors({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemConnectorDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,
@@ -91,7 +91,7 @@ export interface GetExternalDbSystemConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemConnectors = oci.DatabaseManagement.getExternalDbSystemConnectors({
+ * const testExternalDbSystemConnectors = oci.databasemanagement.getExternalDbSystemConnectors({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemConnectorDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,

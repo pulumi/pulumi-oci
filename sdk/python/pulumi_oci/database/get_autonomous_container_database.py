@@ -987,7 +987,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database = oci.Database.get_autonomous_container_database(autonomous_container_database_id=test_autonomous_container_database_oci_database_autonomous_container_database["id"])
+    test_autonomous_container_database = oci.database.get_autonomous_container_database(autonomous_container_database_id=test_autonomous_container_database_oci_database_autonomous_container_database["id"])
     ```
 
 
@@ -1094,7 +1094,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database = oci.Database.get_autonomous_container_database(autonomous_container_database_id=test_autonomous_container_database_oci_database_autonomous_container_database["id"])
+    test_autonomous_container_database = oci.database.get_autonomous_container_database(autonomous_container_database_id=test_autonomous_container_database_oci_database_autonomous_container_database["id"])
     ```
 
 

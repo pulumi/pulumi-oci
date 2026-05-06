@@ -102,7 +102,7 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=test_vcn["id"])
+    test_vcn_dns_resolver_association = oci.core.get_cnv_dns_resolver_association(vcn_id=test_vcn["id"])
     ```
 
 
@@ -131,7 +131,7 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=test_vcn["id"])
+    test_vcn_dns_resolver_association = oci.core.get_cnv_dns_resolver_association(vcn_id=test_vcn["id"])
     ```
 
 

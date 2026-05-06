@@ -372,7 +372,7 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=test_build_pipeline_stage_oci_devops_build_pipeline_stage["id"])
+    test_build_pipeline_stage = oci.devops.get_build_pipeline_stage(build_pipeline_stage_id=test_build_pipeline_stage_oci_devops_build_pipeline_stage["id"])
     ```
 
 
@@ -424,7 +424,7 @@ def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=test_build_pipeline_stage_oci_devops_build_pipeline_stage["id"])
+    test_build_pipeline_stage = oci.devops.get_build_pipeline_stage(build_pipeline_stage_id=test_build_pipeline_stage_oci_devops_build_pipeline_stage["id"])
     ```
 
 

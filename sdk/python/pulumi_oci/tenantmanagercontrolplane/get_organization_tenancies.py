@@ -95,7 +95,7 @@ def get_organization_tenancies(filters: Optional[Sequence[Union['GetOrganization
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancies = oci.Tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
+    test_organization_tenancies = oci.tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_organization_tenancies_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_tenancies = oci.Tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
+    test_organization_tenancies = oci.tenantmanagercontrolplane.get_organization_tenancies(organization_id=test_organization["id"])
     ```
 
 

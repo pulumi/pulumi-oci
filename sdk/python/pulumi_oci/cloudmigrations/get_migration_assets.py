@@ -134,7 +134,7 @@ def get_migration_assets(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=migration_asset_display_name,
+    test_migration_assets = oci.cloudmigrations.get_migration_assets(display_name=migration_asset_display_name,
         migration_asset_id=test_migration_asset["id"],
         migration_id=test_migration["id"],
         state=migration_asset_state)
@@ -180,7 +180,7 @@ def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_assets = oci.CloudMigrations.get_migration_assets(display_name=migration_asset_display_name,
+    test_migration_assets = oci.cloudmigrations.get_migration_assets(display_name=migration_asset_display_name,
         migration_asset_id=test_migration_asset["id"],
         migration_id=test_migration["id"],
         state=migration_asset_state)

@@ -432,8 +432,8 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
             members=[{
                 "member_id": test_member["id"],
                 "member_type": automatic_dr_configuration_members_member_type,
-                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled,
-                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled,
+                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled == "true",
+                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled == "true",
             }],
             default_failover_dr_plan_id=test_dr_plan["id"],
             default_switchover_dr_plan_id=test_dr_plan["id"],
@@ -487,8 +487,8 @@ class AutomaticDrConfiguration(pulumi.CustomResource):
             members=[{
                 "member_id": test_member["id"],
                 "member_type": automatic_dr_configuration_members_member_type,
-                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled,
-                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled,
+                "is_auto_failover_enabled": automatic_dr_configuration_members_is_auto_failover_enabled == "true",
+                "is_auto_switchover_enabled": automatic_dr_configuration_members_is_auto_switchover_enabled == "true",
             }],
             default_failover_dr_plan_id=test_dr_plan["id"],
             default_switchover_dr_plan_id=test_dr_plan["id"],

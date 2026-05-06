@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     description: modelDescription,
  *     displayName: modelDisplayName,
  *     freeformTags: modelFreeformTags,
- *     isQuickMode: modelIsQuickMode,
+ *     isQuickMode: modelIsQuickMode === "true",
  *     maxTrainingDurationInHours: modelMaxTrainingDurationInHours,
  *     modelVersion: modelModelVersion,
  *     testingDataset: {

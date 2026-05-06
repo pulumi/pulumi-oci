@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     logGroupId: testLogAnalyticsLogGroup.id,
  *     namespace: namespaceAssociationNamespace,
  *     sourceName: namespaceAssociationSourceName,
- *     isFromRepublish: namespaceAssociationIsFromRepublish,
+ *     isFromRepublish: namespaceAssociationIsFromRepublish === "true",
  *     associationProperties: [{
  *         name: namespaceAssociationAssociationPropertiesName,
  *         patterns: [{

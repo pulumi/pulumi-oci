@@ -25,16 +25,16 @@ import * as utilities from "../utilities";
  *     taskDetails: {
  *         type: monitoredResourceTaskTaskDetailsType,
  *         agentId: testAgent.id,
- *         availabilityProxyMetricCollectionInterval: monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval,
+ *         availabilityProxyMetricCollectionInterval: Number(monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval),
  *         availabilityProxyMetrics: monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics,
  *         consolePathPrefix: monitoredResourceTaskTaskDetailsConsolePathPrefix,
  *         externalIdMapping: monitoredResourceTaskTaskDetailsExternalIdMapping,
  *         handlerType: monitoredResourceTaskTaskDetailsHandlerType,
- *         isEnable: monitoredResourceTaskTaskDetailsIsEnable,
+ *         isEnable: monitoredResourceTaskTaskDetailsIsEnable === "true",
  *         lifecycleStatusMappingsForUpStatuses: monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus,
  *         namespace: monitoredResourceTaskTaskDetailsNamespace,
  *         receiverProperties: {
- *             listenerPort: monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort,
+ *             listenerPort: Number(monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort),
  *         },
  *         resourceGroup: monitoredResourceTaskTaskDetailsResourceGroup,
  *         resourceNameFilter: monitoredResourceTaskTaskDetailsResourceNameFilter,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *         resourceTypeMapping: monitoredResourceTaskTaskDetailsResourceTypeMapping,
  *         resourceTypesConfigurations: [{
  *             availabilityMetricsConfig: {
- *                 collectionIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds,
+ *                 collectionIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds),
  *                 metrics: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics,
  *             },
  *             handlerConfig: {
@@ -59,26 +59,26 @@ import * as utilities from "../utilities";
  *                 }],
  *                 metricMappings: [{
  *                     collectorMetricName: testMetric.name,
- *                     isSkipUpload: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload,
- *                     metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds,
+ *                     isSkipUpload: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload === "true",
+ *                     metricUploadIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds),
  *                     telemetryMetricName: testMetric.name,
  *                 }],
  *                 metricNameConfig: {
  *                     excludePatternOnPrefix: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix,
- *                     isPrefixWithCollectorType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType,
+ *                     isPrefixWithCollectorType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType === "true",
  *                 },
- *                 metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds,
+ *                 metricUploadIntervalInSeconds: Number(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds),
  *                 telegrafResourceNameConfig: {
  *                     excludeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags,
  *                     includeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags,
- *                     isUseTagsOnly: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly,
+ *                     isUseTagsOnly: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly === "true",
  *                 },
  *                 telemetryResourceGroup: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup,
  *             },
  *             resourceType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType,
  *         }],
  *         serviceBaseUrl: monitoredResourceTaskTaskDetailsServiceBaseUrl,
- *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus,
+ *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus === "true",
  *         source: monitoredResourceTaskTaskDetailsSource,
  *     },
  *     definedTags: {

@@ -410,7 +410,7 @@ def get_domains_user_db_credential(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_user_db_credential = oci.identity.get_domains_user_db_credential(idcs_endpoint=test_domain["url"],
         user_db_credential_id=test_db_credential["id"],
         attribute_sets=[],
         attributes="",
@@ -486,7 +486,7 @@ def get_domains_user_db_credential_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credential = oci.Identity.get_domains_user_db_credential(idcs_endpoint=test_domain["url"],
+    test_user_db_credential = oci.identity.get_domains_user_db_credential(idcs_endpoint=test_domain["url"],
         user_db_credential_id=test_db_credential["id"],
         attribute_sets=[],
         attributes="",

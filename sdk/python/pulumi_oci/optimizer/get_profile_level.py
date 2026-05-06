@@ -120,8 +120,8 @@ def get_profile_level(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
-        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+    test_profile_level = oci.optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree == "true",
         name=profile_level_name,
         recommendation_name=test_recommendation["name"])
     ```
@@ -165,8 +165,8 @@ def get_profile_level_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
-        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+    test_profile_level = oci.optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree == "true",
         name=profile_level_name,
         recommendation_name=test_recommendation["name"])
     ```

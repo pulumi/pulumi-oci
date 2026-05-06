@@ -111,7 +111,7 @@ def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=test_listener["name"],
+    test_listener_rules = oci.loadbalancer.get_listener_rules(listener_name=test_listener["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 
@@ -153,7 +153,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=test_listener["name"],
+    test_listener_rules = oci.loadbalancer.get_listener_rules(listener_name=test_listener["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
 

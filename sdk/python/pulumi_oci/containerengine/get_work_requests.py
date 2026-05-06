@@ -141,7 +141,7 @@ def get_work_requests(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=compartment_id,
+    test_work_requests = oci.containerengine.get_work_requests(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         resource_id=test_resource["id"],
         resource_type=work_request_resource_type,
@@ -192,7 +192,7 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=compartment_id,
+    test_work_requests = oci.containerengine.get_work_requests(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         resource_id=test_resource["id"],
         resource_type=work_request_resource_type,

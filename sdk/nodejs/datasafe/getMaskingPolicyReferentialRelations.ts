@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyReferentialRelations = oci.DataSafe.getMaskingPolicyReferentialRelations({
+ * const testMaskingPolicyReferentialRelations = oci.datasafe.getMaskingPolicyReferentialRelations({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPolicyReferentialRelationColumnName,
  *     objects: maskingPolicyReferentialRelationObject,
@@ -107,7 +107,7 @@ export interface GetMaskingPolicyReferentialRelationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyReferentialRelations = oci.DataSafe.getMaskingPolicyReferentialRelations({
+ * const testMaskingPolicyReferentialRelations = oci.datasafe.getMaskingPolicyReferentialRelations({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPolicyReferentialRelationColumnName,
  *     objects: maskingPolicyReferentialRelationObject,

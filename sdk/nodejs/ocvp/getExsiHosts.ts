@@ -25,13 +25,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ * const testEsxiHosts = oci.ocvp.getExsiHosts({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });
@@ -151,13 +151,13 @@ export interface GetExsiHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ * const testEsxiHosts = oci.ocvp.getExsiHosts({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });

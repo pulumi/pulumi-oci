@@ -381,7 +381,7 @@ def get_user_assessment(user_assessment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
+    test_user_assessment = oci.datasafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
     ```
 
 
@@ -434,7 +434,7 @@ def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
+    test_user_assessment = oci.datasafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
     ```
 
 

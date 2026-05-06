@@ -103,7 +103,7 @@ def get_network_load_balancer_backend_set_backend_operational_status(backend_nam
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_backend_set_backend_operational_status = oci.NetworkLoadBalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
+    test_network_load_balancer_backend_set_backend_operational_status = oci.networkloadbalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```
@@ -141,7 +141,7 @@ def get_network_load_balancer_backend_set_backend_operational_status_output(back
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_backend_set_backend_operational_status = oci.NetworkLoadBalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
+    test_network_load_balancer_backend_set_backend_operational_status = oci.networkloadbalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```

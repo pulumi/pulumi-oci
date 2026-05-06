@@ -95,7 +95,7 @@ def get_hostnames(filters: Optional[Sequence[Union['GetHostnamesFilterArgs', 'Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
+    test_hostnames = oci.loadbalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
+    test_hostnames = oci.loadbalancer.get_hostnames(load_balancer_id=test_load_balancer["id"])
     ```
 
 

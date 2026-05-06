@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyDevices = oci.Identity.getDomainsMyDevices({
+ * const testMyDevices = oci.identity.getDomainsMyDevices({
  *     idcsEndpoint: testDomain.url,
- *     myDeviceCount: myDeviceMyDeviceCount,
+ *     myDeviceCount: Number(myDeviceMyDeviceCount),
  *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myDeviceAuthorization,
  *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
- *     startIndex: myDeviceStartIndex,
+ *     startIndex: Number(myDeviceStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsMyDevicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyDevices = oci.Identity.getDomainsMyDevices({
+ * const testMyDevices = oci.identity.getDomainsMyDevices({
  *     idcsEndpoint: testDomain.url,
- *     myDeviceCount: myDeviceMyDeviceCount,
+ *     myDeviceCount: Number(myDeviceMyDeviceCount),
  *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myDeviceAuthorization,
  *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
- *     startIndex: myDeviceStartIndex,
+ *     startIndex: Number(myDeviceStartIndex),
  * });
  * ```
  */

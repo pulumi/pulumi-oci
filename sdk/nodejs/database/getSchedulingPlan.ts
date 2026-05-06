@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPlan = oci.Database.getSchedulingPlan({
+ * const testSchedulingPlan = oci.database.getSchedulingPlan({
  *     schedulingPlanId: testSchedulingPlanOciDatabaseSchedulingPlan.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetSchedulingPlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPlan = oci.Database.getSchedulingPlan({
+ * const testSchedulingPlan = oci.database.getSchedulingPlan({
  *     schedulingPlanId: testSchedulingPlanOciDatabaseSchedulingPlan.id,
  * });
  * ```

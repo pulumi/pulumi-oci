@@ -195,7 +195,7 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
+    test_managed_database_optimizer_statistics_advisor_execution = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```
@@ -241,7 +241,7 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
+    test_managed_database_optimizer_statistics_advisor_execution = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```

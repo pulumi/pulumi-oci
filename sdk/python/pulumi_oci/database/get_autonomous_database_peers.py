@@ -95,7 +95,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_peers = oci.Database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_peers = oci.database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_peers = oci.Database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_peers = oci.database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

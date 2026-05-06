@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isPrivate: cpeIsPrivate,
+ *     isPrivate: cpeIsPrivate === "true",
  * });
  * ```
  *

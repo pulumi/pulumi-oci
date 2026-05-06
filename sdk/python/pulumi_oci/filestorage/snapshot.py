@@ -522,9 +522,9 @@ class Snapshot(pulumi.CustomResource):
                 "Department": "Finance",
             },
             lock_duration_details={
-                "lock_duration": snapshot_lock_duration_details_lock_duration,
+                "lock_duration": int(snapshot_lock_duration_details_lock_duration),
                 "lock_mode": snapshot_lock_duration_details_lock_mode,
-                "cool_off_duration": snapshot_lock_duration_details_cool_off_duration,
+                "cool_off_duration": int(snapshot_lock_duration_details_cool_off_duration),
             },
             locks=[{
                 "type": snapshot_locks_type,
@@ -593,9 +593,9 @@ class Snapshot(pulumi.CustomResource):
                 "Department": "Finance",
             },
             lock_duration_details={
-                "lock_duration": snapshot_lock_duration_details_lock_duration,
+                "lock_duration": int(snapshot_lock_duration_details_lock_duration),
                 "lock_mode": snapshot_lock_duration_details_lock_mode,
-                "cool_off_duration": snapshot_lock_duration_details_cool_off_duration,
+                "cool_off_duration": int(snapshot_lock_duration_details_cool_off_duration),
             },
             locks=[{
                 "type": snapshot_locks_type,

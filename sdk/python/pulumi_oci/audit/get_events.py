@@ -119,7 +119,7 @@ def get_events(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+    test_audit_events = oci.audit.get_events(compartment_id=compartment_id,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```
@@ -165,7 +165,7 @@ def get_events_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+    test_audit_events = oci.audit.get_events(compartment_id=compartment_id,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddcs = oci.Ocvp.getSddcs({
+ * const testSddcs = oci.ocvp.getSddcs({
  *     compartmentId: compartmentId,
  *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
  *     displayName: sddcDisplayName,
@@ -102,7 +102,7 @@ export interface GetSddcsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSddcs = oci.Ocvp.getSddcs({
+ * const testSddcs = oci.ocvp.getSddcs({
  *     compartmentId: compartmentId,
  *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
  *     displayName: sddcDisplayName,

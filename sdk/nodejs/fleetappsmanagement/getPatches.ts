@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatches = oci.FleetAppsManagement.getPatches({
+ * const testPatches = oci.fleetappsmanagement.getPatches({
  *     compartmentId: compartmentId,
  *     id: patchId,
  *     name: patchName,
  *     patchTypeId: testPatchType.id,
  *     productId: testProduct.id,
- *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied,
+ *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied === "true",
  *     state: patchState,
  *     timeReleasedGreaterThanOrEqualTo: patchTimeReleasedGreaterThanOrEqualTo,
  *     timeReleasedLessThan: patchTimeReleasedLessThan,
@@ -151,13 +151,13 @@ export interface GetPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPatches = oci.FleetAppsManagement.getPatches({
+ * const testPatches = oci.fleetappsmanagement.getPatches({
  *     compartmentId: compartmentId,
  *     id: patchId,
  *     name: patchName,
  *     patchTypeId: testPatchType.id,
  *     productId: testProduct.id,
- *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied,
+ *     shouldCompliancePolicyRulesBeApplied: patchShouldCompliancePolicyRulesBeApplied === "true",
  *     state: patchState,
  *     timeReleasedGreaterThanOrEqualTo: patchTimeReleasedGreaterThanOrEqualTo,
  *     timeReleasedLessThan: patchTimeReleasedLessThan,

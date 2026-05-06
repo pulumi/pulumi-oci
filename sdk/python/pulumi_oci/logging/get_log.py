@@ -229,7 +229,7 @@ def get_log(log_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.Logging.get_log(log_group_id=test_log_group["id"],
+    test_log = oci.logging.get_log(log_group_id=test_log_group["id"],
         log_id=test_log_oci_logging_log["id"])
     ```
 
@@ -273,7 +273,7 @@ def get_log_output(log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.Logging.get_log(log_group_id=test_log_group["id"],
+    test_log = oci.logging.get_log(log_group_id=test_log_group["id"],
         log_id=test_log_oci_logging_log["id"])
     ```
 

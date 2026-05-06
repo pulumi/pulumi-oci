@@ -124,7 +124,7 @@ def get_http_monitors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=compartment_id,
+    test_http_monitors = oci.healthchecks.get_http_monitors(compartment_id=compartment_id,
         display_name=http_monitor_display_name,
         home_region=http_monitor_home_region)
     ```
@@ -165,7 +165,7 @@ def get_http_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=compartment_id,
+    test_http_monitors = oci.healthchecks.get_http_monitors(compartment_id=compartment_id,
         display_name=http_monitor_display_name,
         home_region=http_monitor_home_region)
     ```

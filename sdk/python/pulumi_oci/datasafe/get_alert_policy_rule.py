@@ -150,7 +150,7 @@ def get_alert_policy_rule(alert_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
+    test_alert_policy_rule = oci.datasafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
         rule_key=alert_policy_rule_rule_key)
     ```
 
@@ -188,7 +188,7 @@ def get_alert_policy_rule_output(alert_policy_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
+    test_alert_policy_rule = oci.datasafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
         rule_key=alert_policy_rule_rule_key)
     ```
 

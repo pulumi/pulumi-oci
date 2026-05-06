@@ -525,7 +525,7 @@ class NamespaceAssociation(pulumi.CustomResource):
             log_group_id=test_log_analytics_log_group["id"],
             namespace=namespace_association_namespace,
             source_name=namespace_association_source_name,
-            is_from_republish=namespace_association_is_from_republish,
+            is_from_republish=namespace_association_is_from_republish == "true",
             association_properties=[{
                 "name": namespace_association_association_properties_name,
                 "patterns": [{
@@ -585,7 +585,7 @@ class NamespaceAssociation(pulumi.CustomResource):
             log_group_id=test_log_analytics_log_group["id"],
             namespace=namespace_association_namespace,
             source_name=namespace_association_source_name,
-            is_from_republish=namespace_association_is_from_republish,
+            is_from_republish=namespace_association_is_from_republish == "true",
             association_properties=[{
                 "name": namespace_association_association_properties_name,
                 "patterns": [{

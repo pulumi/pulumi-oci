@@ -150,7 +150,7 @@ def get_db_node_snapshots(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshots = oci.Database.get_db_node_snapshots(compartment_id=compartment_id,
+    test_db_node_snapshots = oci.database.get_db_node_snapshots(compartment_id=compartment_id,
         cluster_id=test_db_node_snapshot_management["exadbVmClusterId"],
         name=test_db_node_snapshot_management["snapshots"][0]["name"],
         source_dbnode_id=test_db_node_snapshot_management["snapshots"][0]["sourceDbnodeId"],
@@ -201,7 +201,7 @@ def get_db_node_snapshots_output(cluster_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshots = oci.Database.get_db_node_snapshots(compartment_id=compartment_id,
+    test_db_node_snapshots = oci.database.get_db_node_snapshots(compartment_id=compartment_id,
         cluster_id=test_db_node_snapshot_management["exadbVmClusterId"],
         name=test_db_node_snapshot_management["snapshots"][0]["name"],
         source_dbnode_id=test_db_node_snapshot_management["snapshots"][0]["sourceDbnodeId"],

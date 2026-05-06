@@ -105,7 +105,7 @@ def get_audit_profile_target_overrides(audit_profile_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_target_overrides = oci.DataSafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_target_overrides = oci.datasafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
         display_name=audit_profile_target_override_display_name)
     ```
 
@@ -141,7 +141,7 @@ def get_audit_profile_target_overrides_output(audit_profile_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_target_overrides = oci.DataSafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_target_overrides = oci.datasafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
         display_name=audit_profile_target_override_display_name)
     ```
 

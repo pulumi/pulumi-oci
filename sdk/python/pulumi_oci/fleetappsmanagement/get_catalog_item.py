@@ -345,7 +345,7 @@ def get_catalog_item(catalog_item_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item = oci.FleetAppsManagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
+    test_catalog_item = oci.fleetappsmanagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
     ```
 
 
@@ -395,7 +395,7 @@ def get_catalog_item_output(catalog_item_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item = oci.FleetAppsManagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
+    test_catalog_item = oci.fleetappsmanagement.get_catalog_item(catalog_item_id=test_catalog_item_oci_fleet_apps_management_catalog_item["id"])
     ```
 
 

@@ -213,7 +213,7 @@ def get_imported_model(imported_model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_model = oci.GenerativeAi.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
+    test_imported_model = oci.generativeai.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_imported_model_output(imported_model_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_model = oci.GenerativeAi.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
+    test_imported_model = oci.generativeai.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
     ```
 
 

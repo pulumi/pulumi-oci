@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageCarbonEmissionsQueries = oci.MeteringComputation.getUsageCarbonEmissionsQueries({
+ * const testUsageCarbonEmissionsQueries = oci.meteringcomputation.getUsageCarbonEmissionsQueries({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetUsageCarbonEmissionsQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageCarbonEmissionsQueries = oci.MeteringComputation.getUsageCarbonEmissionsQueries({
+ * const testUsageCarbonEmissionsQueries = oci.meteringcomputation.getUsageCarbonEmissionsQueries({
  *     compartmentId: compartmentId,
  * });
  * ```

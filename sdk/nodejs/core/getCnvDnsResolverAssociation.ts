@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcnDnsResolverAssociation = oci.Core.getCnvDnsResolverAssociation({
+ * const testVcnDnsResolverAssociation = oci.core.getCnvDnsResolverAssociation({
  *     vcnId: testVcn.id,
  * });
  * ```
@@ -73,7 +73,7 @@ export interface GetCnvDnsResolverAssociationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcnDnsResolverAssociation = oci.Core.getCnvDnsResolverAssociation({
+ * const testVcnDnsResolverAssociation = oci.core.getCnvDnsResolverAssociation({
  *     vcnId: testVcn.id,
  * });
  * ```

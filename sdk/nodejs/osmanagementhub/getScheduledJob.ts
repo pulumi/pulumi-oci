@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJob = oci.OsManagementHub.getScheduledJob({
+ * const testScheduledJob = oci.osmanagementhub.getScheduledJob({
  *     scheduledJobId: testScheduledJobOciOsManagementHubScheduledJob.id,
  * });
  * ```
@@ -172,7 +172,7 @@ export interface GetScheduledJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJob = oci.OsManagementHub.getScheduledJob({
+ * const testScheduledJob = oci.osmanagementhub.getScheduledJob({
  *     scheduledJobId: testScheduledJobOciOsManagementHubScheduledJob.id,
  * });
  * ```

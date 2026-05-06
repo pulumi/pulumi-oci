@@ -108,7 +108,7 @@ def get_masking_report_masking_errors(filters: Optional[Sequence[Union['GetMaski
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report_masking_errors = oci.DataSafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
+    test_masking_report_masking_errors = oci.datasafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
         step_name=masking_report_masking_error_step_name)
     ```
 
@@ -144,7 +144,7 @@ def get_masking_report_masking_errors_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_report_masking_errors = oci.DataSafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
+    test_masking_report_masking_errors = oci.datasafe.get_masking_report_masking_errors(masking_report_id=test_masking_report["id"],
         step_name=masking_report_masking_error_step_name)
     ```
 

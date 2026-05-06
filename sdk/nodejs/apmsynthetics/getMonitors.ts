@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitors = oci.ApmSynthetics.getMonitors({
+ * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,
@@ -128,11 +128,11 @@ export interface GetMonitorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitors = oci.ApmSynthetics.getMonitors({
+ * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,

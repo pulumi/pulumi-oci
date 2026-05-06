@@ -76,8 +76,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ipv6privateCidrBlocks: vcnIpv6privateCidrBlocks,
- *     isIpv6enabled: vcnIsIpv6enabled,
- *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled,
+ *     isIpv6enabled: vcnIsIpv6enabled === "true",
+ *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled === "true",
  *     securityAttributes: vcnSecurityAttributes,
  * });
  * ```

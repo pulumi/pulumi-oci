@@ -33,7 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				AgentId:       pulumi.StringRef(managementAgentId),
 //				DisplayName:   pulumi.StringRef(managementAgentPluginDisplayName),
-//				PlatformTypes: managementAgentPluginPlatformType,
+//				PlatformTypes: pulumi.ToArray(managementAgentPluginPlatformType),
 //				State:         pulumi.StringRef(managementAgentPluginState),
 //			}, nil)
 //			if err != nil {

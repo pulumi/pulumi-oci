@@ -509,7 +509,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
+            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider == "true",
             nsg_id_lists=private_endpoint_nsg_id_list,
             security_attributes=private_endpoint_security_attributes)
         ```
@@ -576,7 +576,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
+            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider == "true",
             nsg_id_lists=private_endpoint_nsg_id_list,
             security_attributes=private_endpoint_security_attributes)
         ```

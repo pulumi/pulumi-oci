@@ -134,7 +134,7 @@ def get_email_outbound_ips(assignment_state: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_outbound_ips = oci.Email.get_email_outbound_ips(compartment_id=compartment_id,
+    test_email_outbound_ips = oci.email.get_email_outbound_ips(compartment_id=compartment_id,
         assignment_state=email_outbound_ip_assignment_state,
         outbound_ip=email_outbound_ip_outbound_ip,
         state=email_outbound_ip_state)
@@ -180,7 +180,7 @@ def get_email_outbound_ips_output(assignment_state: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_email_outbound_ips = oci.Email.get_email_outbound_ips(compartment_id=compartment_id,
+    test_email_outbound_ips = oci.email.get_email_outbound_ips(compartment_id=compartment_id,
         assignment_state=email_outbound_ip_assignment_state,
         outbound_ip=email_outbound_ip_outbound_ip,
         state=email_outbound_ip_state)

@@ -77,7 +77,7 @@ def get_software_source_manifest(software_source_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_manifest = oci.OsManagementHub.get_software_source_manifest(software_source_id=test_software_source["id"])
+    test_software_source_manifest = oci.osmanagementhub.get_software_source_manifest(software_source_id=test_software_source["id"])
     ```
 
 
@@ -105,7 +105,7 @@ def get_software_source_manifest_output(software_source_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_manifest = oci.OsManagementHub.get_software_source_manifest(software_source_id=test_software_source["id"])
+    test_software_source_manifest = oci.osmanagementhub.get_software_source_manifest(software_source_id=test_software_source["id"])
     ```
 
 

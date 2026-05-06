@@ -101,7 +101,7 @@ def get_queries(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=compartment_id)
+    test_queries = oci.meteringcomputation.get_queries(compartment_id=compartment_id)
     ```
 
 
@@ -133,7 +133,7 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=compartment_id)
+    test_queries = oci.meteringcomputation.get_queries(compartment_id=compartment_id)
     ```
 
 

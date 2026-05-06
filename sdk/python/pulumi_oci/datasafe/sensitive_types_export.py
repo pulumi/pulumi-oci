@@ -377,7 +377,7 @@ class SensitiveTypesExport(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_include_all_sensitive_types=sensitive_types_export_is_include_all_sensitive_types,
+            is_include_all_sensitive_types=sensitive_types_export_is_include_all_sensitive_types == "true",
             sensitive_type_ids_for_exports=sensitive_types_export_sensitive_type_ids_for_export)
         ```
 
@@ -436,7 +436,7 @@ class SensitiveTypesExport(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_include_all_sensitive_types=sensitive_types_export_is_include_all_sensitive_types,
+            is_include_all_sensitive_types=sensitive_types_export_is_include_all_sensitive_types == "true",
             sensitive_type_ids_for_exports=sensitive_types_export_sensitive_type_ids_for_export)
         ```
 

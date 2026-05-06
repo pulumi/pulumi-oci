@@ -528,7 +528,7 @@ class ProductLicense(pulumi.CustomResource):
         test_product_license = oci.licensemanager.ProductLicense("test_product_license",
             compartment_id=compartment_id,
             display_name=product_license_display_name,
-            is_vendor_oracle=product_license_is_vendor_oracle,
+            is_vendor_oracle=product_license_is_vendor_oracle == "true",
             license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -590,7 +590,7 @@ class ProductLicense(pulumi.CustomResource):
         test_product_license = oci.licensemanager.ProductLicense("test_product_license",
             compartment_id=compartment_id,
             display_name=product_license_display_name,
-            is_vendor_oracle=product_license_is_vendor_oracle,
+            is_vendor_oracle=product_license_is_vendor_oracle == "true",
             license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",

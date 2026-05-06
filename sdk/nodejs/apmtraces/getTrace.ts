@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrace = oci.ApmTraces.getTrace({
+ * const testTrace = oci.apmtraces.getTrace({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceTraceKey,
  *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,
@@ -167,7 +167,7 @@ export interface GetTraceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrace = oci.ApmTraces.getTrace({
+ * const testTrace = oci.apmtraces.getTrace({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceTraceKey,
  *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,

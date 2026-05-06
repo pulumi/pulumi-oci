@@ -1086,7 +1086,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
-            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled,
+            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
         ```
@@ -1179,7 +1179,7 @@ class EsxiHost(pulumi.CustomResource):
             },
             host_ocpu_count=esxi_host_host_ocpu_count,
             host_shape_name=test_shape["name"],
-            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled,
+            is_vsan_byol_enabled=esxi_host_is_vsan_byol_enabled == "true",
             next_commitment=esxi_host_next_commitment,
             vcf_byol_allocation_id=test_byol_allocation["id"])
         ```

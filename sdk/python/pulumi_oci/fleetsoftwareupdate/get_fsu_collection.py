@@ -276,7 +276,7 @@ def get_fsu_collection(fsu_collection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_collection = oci.FleetSoftwareUpdate.get_fsu_collection(fsu_collection_id=test_fsu_collection_oci_fleet_software_update_fsu_collection["id"])
+    test_fsu_collection = oci.fleetsoftwareupdate.get_fsu_collection(fsu_collection_id=test_fsu_collection_oci_fleet_software_update_fsu_collection["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_collection = oci.FleetSoftwareUpdate.get_fsu_collection(fsu_collection_id=test_fsu_collection_oci_fleet_software_update_fsu_collection["id"])
+    test_fsu_collection = oci.fleetsoftwareupdate.get_fsu_collection(fsu_collection_id=test_fsu_collection_oci_fleet_software_update_fsu_collection["id"])
     ```
 
 

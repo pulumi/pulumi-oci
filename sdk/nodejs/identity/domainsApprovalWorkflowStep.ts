@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testApprovalWorkflowStep = new oci.identity.DomainsApprovalWorkflowStep("test_approval_workflow_step", {
  *     idcsEndpoint: testDomain.url,
- *     order: approvalWorkflowStepOrder,
+ *     order: Number(approvalWorkflowStepOrder),
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep"],
  *     type: approvalWorkflowStepType,
  *     approvers: [{
@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     attributes: "",
  *     authorization: approvalWorkflowStepAuthorization,
  *     id: approvalWorkflowStepId,
- *     minimumApprovals: approvalWorkflowStepMinimumApprovals,
+ *     minimumApprovals: Number(approvalWorkflowStepMinimumApprovals),
  *     ocid: approvalWorkflowStepOcid,
  *     resourceTypeSchemaVersion: approvalWorkflowStepResourceTypeSchemaVersion,
  *     tags: [{

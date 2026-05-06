@@ -164,10 +164,10 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+    test_ccc_infrastructures = oci.computecloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
         ccc_infrastructure_id=test_ccc_infrastructure["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree == "true",
         display_name=ccc_infrastructure_display_name,
         display_name_contains=ccc_infrastructure_display_name_contains,
         state=ccc_infrastructure_state)
@@ -225,10 +225,10 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+    test_ccc_infrastructures = oci.computecloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
         ccc_infrastructure_id=test_ccc_infrastructure["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree == "true",
         display_name=ccc_infrastructure_display_name,
         display_name_contains=ccc_infrastructure_display_name_contains,
         state=ccc_infrastructure_state)

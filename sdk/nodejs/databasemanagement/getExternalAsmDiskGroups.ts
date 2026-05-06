@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
+ * const testExternalAsmDiskGroups = oci.databasemanagement.getExternalAsmDiskGroups({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmDiskGroupOpcNamedCredentialId,
  * });
@@ -74,7 +74,7 @@ export interface GetExternalAsmDiskGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
+ * const testExternalAsmDiskGroups = oci.databasemanagement.getExternalAsmDiskGroups({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmDiskGroupOpcNamedCredentialId,
  * });

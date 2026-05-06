@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGrant = oci.Identity.getDomainsGrant({
+ * const testGrant = oci.identity.getDomainsGrant({
  *     grantId: testGrantOciIdentityDomainsGrant.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -182,7 +182,7 @@ export interface GetDomainsGrantResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGrant = oci.Identity.getDomainsGrant({
+ * const testGrant = oci.identity.getDomainsGrant({
  *     grantId: testGrantOciIdentityDomainsGrant.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

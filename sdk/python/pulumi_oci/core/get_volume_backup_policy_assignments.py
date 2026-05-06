@@ -100,7 +100,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
+    test_volume_backup_policy_assignments = oci.core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
 
 
@@ -133,7 +133,7 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
+    test_volume_backup_policy_assignments = oci.core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
 
 

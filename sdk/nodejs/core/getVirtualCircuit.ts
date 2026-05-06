@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuit = oci.Core.getVirtualCircuit({
+ * const testVirtualCircuit = oci.core.getVirtualCircuit({
  *     virtualCircuitId: testVirtualCircuitOciCoreVirtualCircuit.id,
  * });
  * ```
@@ -180,7 +180,7 @@ export interface GetVirtualCircuitResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuit = oci.Core.getVirtualCircuit({
+ * const testVirtualCircuit = oci.core.getVirtualCircuit({
  *     virtualCircuitId: testVirtualCircuitOciCoreVirtualCircuit.id,
  * });
  * ```

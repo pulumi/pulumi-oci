@@ -95,7 +95,7 @@ def get_deployment_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_environments = oci.GoldenGate.get_deployment_environments(compartment_id=compartment_id)
+    test_deployment_environments = oci.goldengate.get_deployment_environments(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_deployment_environments_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_environments = oci.GoldenGate.get_deployment_environments(compartment_id=compartment_id)
+    test_deployment_environments = oci.goldengate.get_deployment_environments(compartment_id=compartment_id)
     ```
 
 

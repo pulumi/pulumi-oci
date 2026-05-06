@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateAuthorities = oci.CertificatesManagement.getCertificateAuthorities({
+ * const testCertificateAuthorities = oci.certificatesmanagement.getCertificateAuthorities({
  *     certificateAuthorityId: testCertificateAuthority.id,
  *     compartmentId: compartmentId,
  *     issuerCertificateAuthorityId: testCertificateAuthority.id,
@@ -113,7 +113,7 @@ export interface GetCertificateAuthoritiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateAuthorities = oci.CertificatesManagement.getCertificateAuthorities({
+ * const testCertificateAuthorities = oci.certificatesmanagement.getCertificateAuthorities({
  *     certificateAuthorityId: testCertificateAuthority.id,
  *     compartmentId: compartmentId,
  *     issuerCertificateAuthorityId: testCertificateAuthority.id,

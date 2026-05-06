@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociations = oci.Database.getAutonomousContainerDatabaseDataguardAssociations({
+ * const testAutonomousContainerDatabaseDataguardAssociations = oci.database.getAutonomousContainerDatabaseDataguardAssociations({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociations = oci.Database.getAutonomousContainerDatabaseDataguardAssociations({
+ * const testAutonomousContainerDatabaseDataguardAssociations = oci.database.getAutonomousContainerDatabaseDataguardAssociations({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```

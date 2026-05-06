@@ -323,7 +323,7 @@ def get_delegation_control(delegation_control_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control = oci.DelegateAccessControl.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
+    test_delegation_control = oci.delegateaccesscontrol.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
     ```
 
 
@@ -371,7 +371,7 @@ def get_delegation_control_output(delegation_control_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control = oci.DelegateAccessControl.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
+    test_delegation_control = oci.delegateaccesscontrol.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
     ```
 
 

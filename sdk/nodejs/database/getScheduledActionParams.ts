@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActionParams = oci.Database.getScheduledActionParams({
+ * const testScheduledActionParams = oci.database.getScheduledActionParams({
  *     type: scheduledActionParamType,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetScheduledActionParamsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledActionParams = oci.Database.getScheduledActionParams({
+ * const testScheduledActionParams = oci.database.getScheduledActionParams({
  *     type: scheduledActionParamType,
  * });
  * ```

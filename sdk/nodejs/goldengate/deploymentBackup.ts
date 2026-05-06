@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isMetadataOnly: deploymentBackupIsMetadataOnly,
+ *     isMetadataOnly: deploymentBackupIsMetadataOnly === "true",
  *     locks: [{
  *         type: deploymentBackupLocksType,
  *         message: deploymentBackupLocksMessage,

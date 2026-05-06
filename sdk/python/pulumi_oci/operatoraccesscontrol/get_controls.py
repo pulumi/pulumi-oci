@@ -134,7 +134,7 @@ def get_controls(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=compartment_id,
+    test_operator_controls = oci.operatoraccesscontrol.get_controls(compartment_id=compartment_id,
         display_name=operator_control_display_name,
         resource_type=operator_control_resource_type,
         state=operator_control_state)
@@ -180,7 +180,7 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=compartment_id,
+    test_operator_controls = oci.operatoraccesscontrol.get_controls(compartment_id=compartment_id,
         display_name=operator_control_display_name,
         resource_type=operator_control_resource_type,
         state=operator_control_state)

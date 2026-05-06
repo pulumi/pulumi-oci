@@ -139,7 +139,7 @@ def get_health(load_balancer_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=test_load_balancer["id"])
+    test_load_balancer_health = oci.loadbalancer.get_health(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -171,7 +171,7 @@ def get_health_output(load_balancer_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_health = oci.LoadBalancer.get_health(load_balancer_id=test_load_balancer["id"])
+    test_load_balancer_health = oci.loadbalancer.get_health(load_balancer_id=test_load_balancer["id"])
     ```
 
 

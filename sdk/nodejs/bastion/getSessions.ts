@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSessions = oci.Bastion.getSessions({
+ * const testSessions = oci.bastion.getSessions({
  *     bastionId: testBastion.id,
  *     displayName: sessionDisplayName,
  *     sessionId: testSession.id,
@@ -94,7 +94,7 @@ export interface GetSessionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSessions = oci.Bastion.getSessions({
+ * const testSessions = oci.bastion.getSessions({
  *     bastionId: testBastion.id,
  *     displayName: sessionDisplayName,
  *     sessionId: testSession.id,

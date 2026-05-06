@@ -405,8 +405,8 @@ class CostAnomalyMonitor(pulumi.CustomResource):
             cost_alert_subscription_map={
                 "cost_alert_subscription_id": test_cost_alert_subscription["id"],
                 "operator": cost_anomaly_monitor_cost_alert_subscription_map_operator,
-                "threshold_absolute_value": cost_anomaly_monitor_cost_alert_subscription_map_threshold_absolute_value,
-                "threshold_relative_percent": cost_anomaly_monitor_cost_alert_subscription_map_threshold_relative_percent,
+                "threshold_absolute_value": int(cost_anomaly_monitor_cost_alert_subscription_map_threshold_absolute_value),
+                "threshold_relative_percent": int(cost_anomaly_monitor_cost_alert_subscription_map_threshold_relative_percent),
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -467,8 +467,8 @@ class CostAnomalyMonitor(pulumi.CustomResource):
             cost_alert_subscription_map={
                 "cost_alert_subscription_id": test_cost_alert_subscription["id"],
                 "operator": cost_anomaly_monitor_cost_alert_subscription_map_operator,
-                "threshold_absolute_value": cost_anomaly_monitor_cost_alert_subscription_map_threshold_absolute_value,
-                "threshold_relative_percent": cost_anomaly_monitor_cost_alert_subscription_map_threshold_relative_percent,
+                "threshold_absolute_value": int(cost_anomaly_monitor_cost_alert_subscription_map_threshold_absolute_value),
+                "threshold_relative_percent": int(cost_anomaly_monitor_cost_alert_subscription_map_threshold_relative_percent),
             },
             defined_tags={
                 "Operations.CostCenter": "42",

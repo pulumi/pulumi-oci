@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogItems = oci.FleetAppsManagement.getCatalogItems({
+ * const testCatalogItems = oci.fleetappsmanagement.getCatalogItems({
  *     compartmentId: compartmentId,
  *     catalogListingId: testListing.id,
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems,
+ *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
  *     state: catalogItemState,
  * });
  * ```
@@ -134,14 +134,14 @@ export interface GetCatalogItemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogItems = oci.FleetAppsManagement.getCatalogItems({
+ * const testCatalogItems = oci.fleetappsmanagement.getCatalogItems({
  *     compartmentId: compartmentId,
  *     catalogListingId: testListing.id,
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems,
+ *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
  *     state: catalogItemState,
  * });
  * ```

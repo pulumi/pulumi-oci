@@ -561,7 +561,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=privileged_api_control_number_of_approvers)
+            number_of_approvers=int(privileged_api_control_number_of_approvers))
         ```
 
         ## Import
@@ -630,7 +630,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=privileged_api_control_number_of_approvers)
+            number_of_approvers=int(privileged_api_control_number_of_approvers))
         ```
 
         ## Import

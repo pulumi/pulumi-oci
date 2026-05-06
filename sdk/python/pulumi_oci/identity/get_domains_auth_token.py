@@ -338,7 +338,7 @@ def get_domains_auth_token(attribute_sets: Optional[Sequence[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_token = oci.Identity.get_domains_auth_token(auth_token_id=test_auth_token_oci_identity_auth_token["id"],
+    test_auth_token = oci.identity.get_domains_auth_token(auth_token_id=test_auth_token_oci_identity_auth_token["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -408,7 +408,7 @@ def get_domains_auth_token_output(attribute_sets: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_auth_token = oci.Identity.get_domains_auth_token(auth_token_id=test_auth_token_oci_identity_auth_token["id"],
+    test_auth_token = oci.identity.get_domains_auth_token(auth_token_id=test_auth_token_oci_identity_auth_token["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

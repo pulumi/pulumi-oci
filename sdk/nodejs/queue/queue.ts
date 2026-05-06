@@ -21,16 +21,16 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
  *     capabilities: [{
- *         isPrimaryConsumerGroupEnabled: queueCapabilitiesIsPrimaryConsumerGroupEnabled,
- *         primaryConsumerGroupDeadLetterQueueDeliveryCount: queueCapabilitiesPrimaryConsumerGroupDeadLetterQueueDeliveryCount,
+ *         isPrimaryConsumerGroupEnabled: queueCapabilitiesIsPrimaryConsumerGroupEnabled === "true",
+ *         primaryConsumerGroupDeadLetterQueueDeliveryCount: Number(queueCapabilitiesPrimaryConsumerGroupDeadLetterQueueDeliveryCount),
  *         primaryConsumerGroupDisplayName: queueCapabilitiesPrimaryConsumerGroupDisplayName,
  *         primaryConsumerGroupFilter: queueCapabilitiesPrimaryConsumerGroupFilter,
  *         type: queueCapabilitiesType,
  *     }],
- *     channelConsumptionLimit: queueChannelConsumptionLimit,
+ *     channelConsumptionLimit: Number(queueChannelConsumptionLimit),
  *     customEncryptionKeyId: testKey.id,
- *     deadLetterQueueDeliveryCount: queueDeadLetterQueueDeliveryCount,
- *     purgeTrigger: purgeTrigger,
+ *     deadLetterQueueDeliveryCount: Number(queueDeadLetterQueueDeliveryCount),
+ *     purgeTrigger: Number(purgeTrigger),
  *     purgeType: purgeType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -38,9 +38,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionInSeconds: queueRetentionInSeconds,
- *     timeoutInSeconds: queueTimeoutInSeconds,
- *     visibilityInSeconds: queueVisibilityInSeconds,
+ *     retentionInSeconds: Number(queueRetentionInSeconds),
+ *     timeoutInSeconds: Number(queueTimeoutInSeconds),
+ *     visibilityInSeconds: Number(queueVisibilityInSeconds),
  * });
  * ```
  *

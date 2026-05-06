@@ -32,8 +32,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := opsi.GetOpsiConfigurationConfigurationItem(ctx, &opsi.GetOpsiConfigurationConfigurationItemArgs{
 //				CompartmentId:                 pulumi.StringRef(compartmentId),
-//				ConfigItemFields:              opsiConfigurationConfigurationItemConfigItemField,
-//				ConfigItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+//				ConfigItemFields:              pulumi.ToArray(opsiConfigurationConfigurationItemConfigItemField),
+//				ConfigItemsApplicableContexts: pulumi.ToArray(opsiConfigurationConfigurationItemConfigItemsApplicableContext),
 //				Name:                          pulumi.StringRef(opsiConfigurationConfigurationItemName),
 //				OpsiConfigType:                opsiConfigurationConfigurationItemOpsiConfigType,
 //			}, nil)

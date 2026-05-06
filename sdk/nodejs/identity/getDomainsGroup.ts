@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGroup = oci.Identity.getDomainsGroup({
+ * const testGroup = oci.identity.getDomainsGroup({
  *     groupId: testGroupOciIdentityGroup.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
@@ -184,7 +184,7 @@ export interface GetDomainsGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGroup = oci.Identity.getDomainsGroup({
+ * const testGroup = oci.identity.getDomainsGroup({
  *     groupId: testGroupOciIdentityGroup.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],

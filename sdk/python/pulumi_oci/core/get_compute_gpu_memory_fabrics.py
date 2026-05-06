@@ -177,7 +177,7 @@ def get_compute_gpu_memory_fabrics(availability_domain: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabrics = oci.Core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
+    test_compute_gpu_memory_fabrics = oci.core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_fabric_availability_domain,
         compute_gpu_memory_fabric_health=compute_gpu_memory_fabric_compute_gpu_memory_fabric_health,
         compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],
@@ -243,7 +243,7 @@ def get_compute_gpu_memory_fabrics_output(availability_domain: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabrics = oci.Core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
+    test_compute_gpu_memory_fabrics = oci.core.get_compute_gpu_memory_fabrics(compartment_id=compartment_id,
         availability_domain=compute_gpu_memory_fabric_availability_domain,
         compute_gpu_memory_fabric_health=compute_gpu_memory_fabric_compute_gpu_memory_fabric_health,
         compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],

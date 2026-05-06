@@ -215,7 +215,7 @@ def get_domain_governance(domain_governance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governance = oci.Tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
+    test_domain_governance = oci.tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_domain_governance_output(domain_governance_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_domain_governance = oci.Tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
+    test_domain_governance = oci.tenantmanagercontrolplane.get_domain_governance(domain_governance_id=test_domain_governance_oci_tenantmanagercontrolplane_domain_governance["id"])
     ```
 
 

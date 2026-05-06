@@ -274,7 +274,7 @@ def get_event(event_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_event = oci.OsManagementHub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
+    test_event = oci.osmanagementhub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_event_output(event_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_event = oci.OsManagementHub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
+    test_event = oci.osmanagementhub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
     ```
 
 

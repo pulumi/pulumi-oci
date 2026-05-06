@@ -184,7 +184,7 @@ def get_errata(advisory_severities: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
+    test_errata = oci.osmanagementhub.get_errata(compartment_id=compartment_id,
         names=errata_name)
     ```
 
@@ -244,7 +244,7 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
+    test_errata = oci.osmanagementhub.get_errata(compartment_id=compartment_id,
         names=errata_name)
     ```
 

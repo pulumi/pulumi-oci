@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedules = oci.Jms.getTaskSchedules({
+ * const testTaskSchedules = oci.jms.getTaskSchedules({
  *     fleetId: "example-fleet-ocid",
  *     id: "example-task-schedule-ocid",
  *     managedInstanceId: "example-managed-instance-ocid",
@@ -103,7 +103,7 @@ export interface GetTaskSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedules = oci.Jms.getTaskSchedules({
+ * const testTaskSchedules = oci.jms.getTaskSchedules({
  *     fleetId: "example-fleet-ocid",
  *     id: "example-task-schedule-ocid",
  *     managedInstanceId: "example-managed-instance-ocid",

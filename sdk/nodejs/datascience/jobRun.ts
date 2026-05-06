@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     jobId: testJob.id,
  *     projectId: testProject.id,
- *     asynchronous: asynchronous,
+ *     asynchronous: asynchronous === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -40,9 +40,9 @@ import * as utilities from "../utilities";
  *         startupProbeDetails: {
  *             commands: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand,
  *             jobProbeCheckType: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType,
- *             failureThreshold: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold,
- *             initialDelayInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds,
- *             periodInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds,
+ *             failureThreshold: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold),
+ *             initialDelayInSeconds: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *             periodInSeconds: Number(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds),
  *         },
  *     },
  *     jobEnvironmentConfigurationOverrideDetails: {
@@ -55,7 +55,7 @@ import * as utilities from "../utilities";
  *     },
  *     jobInfrastructureConfigurationOverrideDetails: {
  *         jobInfrastructureType: jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
- *         blockStorageSizeInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
@@ -64,8 +64,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     jobLogConfigurationOverrideDetails: {
- *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging,
+ *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -85,9 +85,9 @@ import * as utilities from "../utilities";
  *                 startupProbeDetails: {
  *                     commands: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
  *                     jobProbeCheckType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
- *                     failureThreshold: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *                     initialDelayInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
- *                     periodInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                     failureThreshold: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *                     initialDelayInSeconds: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *                     periodInSeconds: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *                 },
  *             },
  *             jobEnvironmentConfigurationDetails: {
@@ -100,7 +100,7 @@ import * as utilities from "../utilities";
  *             },
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *                 blockStorageSizeInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 blockStorageSizeInGbs: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -108,8 +108,8 @@ import * as utilities from "../utilities";
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,
  *             },
- *             minimumSuccessReplicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
- *             replicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *             minimumSuccessReplicas: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+ *             replicas: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas),
  *         }],
  *         maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobRunJobNodeConfigurationOverrideDetailsStartupOrder,

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceConnectors = oci.Sch.getServiceConnectors({
+ * const testServiceConnectors = oci.sch.getServiceConnectors({
  *     compartmentId: compartmentId,
  *     displayName: serviceConnectorDisplayName,
  *     state: serviceConnectorState,
@@ -94,7 +94,7 @@ export interface GetServiceConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceConnectors = oci.Sch.getServiceConnectors({
+ * const testServiceConnectors = oci.sch.getServiceConnectors({
  *     compartmentId: compartmentId,
  *     displayName: serviceConnectorDisplayName,
  *     state: serviceConnectorState,

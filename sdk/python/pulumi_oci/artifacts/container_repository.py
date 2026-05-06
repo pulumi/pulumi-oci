@@ -455,8 +455,8 @@ class ContainerRepository(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_immutable=container_repository_is_immutable,
-            is_public=container_repository_is_public,
+            is_immutable=container_repository_is_immutable == "true",
+            is_public=container_repository_is_public == "true",
             readme={
                 "content": container_repository_readme_content,
                 "format": container_repository_readme_format,
@@ -511,8 +511,8 @@ class ContainerRepository(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_immutable=container_repository_is_immutable,
-            is_public=container_repository_is_public,
+            is_immutable=container_repository_is_immutable == "true",
+            is_public=container_repository_is_public == "true",
             readme={
                 "content": container_repository_readme_content,
                 "format": container_repository_readme_format,

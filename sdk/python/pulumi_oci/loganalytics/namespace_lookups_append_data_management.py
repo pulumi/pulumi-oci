@@ -272,7 +272,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_append_data_management_namespace,
             char_encoding=namespace_lookups_append_data_management_char_encoding,
             expect=namespace_lookups_append_data_management_expect,
-            is_force=namespace_lookups_append_data_management_is_force)
+            is_force=namespace_lookups_append_data_management_is_force == "true")
         ```
 
         ## Import
@@ -319,7 +319,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_append_data_management_namespace,
             char_encoding=namespace_lookups_append_data_management_char_encoding,
             expect=namespace_lookups_append_data_management_expect,
-            is_force=namespace_lookups_append_data_management_is_force)
+            is_force=namespace_lookups_append_data_management_is_force == "true")
         ```
 
         ## Import

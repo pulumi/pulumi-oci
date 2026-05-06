@@ -215,7 +215,7 @@ def get_delegation_subscription(delegation_subscription_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_subscription = oci.DelegateAccessControl.get_delegation_subscription(delegation_subscription_id=test_delegation_subscription_oci_delegate_access_control_delegation_subscription["id"])
+    test_delegation_subscription = oci.delegateaccesscontrol.get_delegation_subscription(delegation_subscription_id=test_delegation_subscription_oci_delegate_access_control_delegation_subscription["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_delegation_subscription_output(delegation_subscription_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_subscription = oci.DelegateAccessControl.get_delegation_subscription(delegation_subscription_id=test_delegation_subscription_oci_delegate_access_control_delegation_subscription["id"])
+    test_delegation_subscription = oci.delegateaccesscontrol.get_delegation_subscription(delegation_subscription_id=test_delegation_subscription_oci_delegate_access_control_delegation_subscription["id"])
     ```
 
 

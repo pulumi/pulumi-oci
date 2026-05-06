@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundle = oci.CertificatesManagement.getCaBundle({
+ * const testCaBundle = oci.certificatesmanagement.getCaBundle({
  *     caBundleId: testCaBundleOciCertificatesManagementCaBundle.id,
  * });
  * ```
@@ -91,7 +91,7 @@ export interface GetCaBundleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundle = oci.CertificatesManagement.getCaBundle({
+ * const testCaBundle = oci.certificatesmanagement.getCaBundle({
  *     caBundleId: testCaBundleOciCertificatesManagementCaBundle.id,
  * });
  * ```

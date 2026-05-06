@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthTokens = oci.Identity.getAuthTokens({
+ * const testAuthTokens = oci.identity.getAuthTokens({
  *     userId: testUser.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetAuthTokensResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthTokens = oci.Identity.getAuthTokens({
+ * const testAuthTokens = oci.identity.getAuthTokens({
  *     userId: testUser.id,
  * });
  * ```

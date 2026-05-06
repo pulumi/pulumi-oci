@@ -311,7 +311,7 @@ def get_control(operator_control_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=test_operator_control_oci_operator_access_control_operator_control["id"])
+    test_operator_control = oci.operatoraccesscontrol.get_control(operator_control_id=test_operator_control_oci_operator_access_control_operator_control["id"])
     ```
 
 
@@ -358,7 +358,7 @@ def get_control_output(operator_control_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=test_operator_control_oci_operator_access_control_operator_control["id"])
+    test_operator_control = oci.operatoraccesscontrol.get_control(operator_control_id=test_operator_control_oci_operator_access_control_operator_control["id"])
     ```
 
 

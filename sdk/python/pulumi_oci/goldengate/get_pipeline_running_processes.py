@@ -95,7 +95,7 @@ def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipeline
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_running_processes = oci.GoldenGate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
+    test_pipeline_running_processes = oci.goldengate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_pipeline_running_processes_output(filters: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_running_processes = oci.GoldenGate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
+    test_pipeline_running_processes = oci.goldengate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
     ```
 
 

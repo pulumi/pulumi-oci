@@ -121,7 +121,7 @@ def get_flex_components(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
+    test_flex_components = oci.database.get_flex_components(compartment_id=compartment_id,
         name=flex_component_name,
         shape=flex_component_shape)
     ```
@@ -162,7 +162,7 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_flex_components = oci.Database.get_flex_components(compartment_id=compartment_id,
+    test_flex_components = oci.database.get_flex_components(compartment_id=compartment_id,
         name=flex_component_name,
         shape=flex_component_shape)
     ```

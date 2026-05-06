@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OspGateway.getInvoices({
+ * const testInvoices = oci.ospgateway.getInvoices({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: invoiceOspHomeRegion,
  *     invoiceId: testInvoice.id,
@@ -133,7 +133,7 @@ export interface GetInvoicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OspGateway.getInvoices({
+ * const testInvoices = oci.ospgateway.getInvoices({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: invoiceOspHomeRegion,
  *     invoiceId: testInvoice.id,

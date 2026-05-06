@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  * const testDrPlanExecution = new oci.disasterrecovery.DrPlanExecution("test_dr_plan_execution", {
  *     executionOptions: {
  *         planExecutionType: drPlanExecutionExecutionOptionsPlanExecutionType,
- *         arePrechecksEnabled: drPlanExecutionExecutionOptionsArePrechecksEnabled,
- *         areWarningsIgnored: drPlanExecutionExecutionOptionsAreWarningsIgnored,
+ *         arePrechecksEnabled: drPlanExecutionExecutionOptionsArePrechecksEnabled === "true",
+ *         areWarningsIgnored: drPlanExecutionExecutionOptionsAreWarningsIgnored === "true",
  *     },
  *     planId: testPlan.id,
  *     definedTags: {

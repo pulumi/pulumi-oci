@@ -518,7 +518,7 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+    test_account_mgmt_info = oci.identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -603,7 +603,7 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+    test_account_mgmt_info = oci.identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

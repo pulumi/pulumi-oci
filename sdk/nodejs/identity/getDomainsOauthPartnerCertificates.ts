@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthPartnerCertificates = oci.Identity.getDomainsOauthPartnerCertificates({
+ * const testOauthPartnerCertificates = oci.identity.getDomainsOauthPartnerCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
+ *     oauthPartnerCertificateCount: Number(oauthPartnerCertificateOauthPartnerCertificateCount),
  *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
  *     authorization: oauthPartnerCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
- *     startIndex: oauthPartnerCertificateStartIndex,
+ *     startIndex: Number(oauthPartnerCertificateStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsOauthPartnerCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthPartnerCertificates = oci.Identity.getDomainsOauthPartnerCertificates({
+ * const testOauthPartnerCertificates = oci.identity.getDomainsOauthPartnerCertificates({
  *     idcsEndpoint: testDomain.url,
- *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
+ *     oauthPartnerCertificateCount: Number(oauthPartnerCertificateOauthPartnerCertificateCount),
  *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
  *     authorization: oauthPartnerCertificateAuthorization,
  *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
- *     startIndex: oauthPartnerCertificateStartIndex,
+ *     startIndex: Number(oauthPartnerCertificateStartIndex),
  * });
  * ```
  */

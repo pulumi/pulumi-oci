@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMySupportAccounts = oci.Identity.getDomainsMySupportAccounts({
+ * const testMySupportAccounts = oci.identity.getDomainsMySupportAccounts({
  *     idcsEndpoint: testDomain.url,
- *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
+ *     mySupportAccountCount: Number(mySupportAccountMySupportAccountCount),
  *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
  *     authorization: mySupportAccountAuthorization,
  *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
- *     startIndex: mySupportAccountStartIndex,
+ *     startIndex: Number(mySupportAccountStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMySupportAccountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMySupportAccounts = oci.Identity.getDomainsMySupportAccounts({
+ * const testMySupportAccounts = oci.identity.getDomainsMySupportAccounts({
  *     idcsEndpoint: testDomain.url,
- *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
+ *     mySupportAccountCount: Number(mySupportAccountMySupportAccountCount),
  *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
  *     authorization: mySupportAccountAuthorization,
  *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
- *     startIndex: mySupportAccountStartIndex,
+ *     startIndex: Number(mySupportAccountStartIndex),
  * });
  * ```
  */

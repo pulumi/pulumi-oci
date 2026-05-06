@@ -312,7 +312,7 @@ def get_product_license(product_license_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=test_product_license_oci_license_manager_product_license["id"])
+    test_product_license = oci.licensemanager.get_product_license(product_license_id=test_product_license_oci_license_manager_product_license["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_product_license_output(product_license_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=test_product_license_oci_license_manager_product_license["id"])
+    test_product_license = oci.licensemanager.get_product_license(product_license_id=test_product_license_oci_license_manager_product_license["id"])
     ```
 
 

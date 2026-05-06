@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameters = oci.DatabaseManagement.getManagedDatabasesDatabaseParameters({
+ * const testManagedDatabasesDatabaseParameters = oci.databasemanagement.getManagedDatabasesDatabaseParameters({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     opcNamedCredentialId: managedDatabasesDatabaseParameterOpcNamedCredentialId,
  *     source: managedDatabasesDatabaseParameterSource,
@@ -98,9 +98,9 @@ export interface GetManagedDatabasesDatabaseParametersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesDatabaseParameters = oci.DatabaseManagement.getManagedDatabasesDatabaseParameters({
+ * const testManagedDatabasesDatabaseParameters = oci.databasemanagement.getManagedDatabasesDatabaseParameters({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
  *     name: managedDatabasesDatabaseParameterName,
  *     opcNamedCredentialId: managedDatabasesDatabaseParameterOpcNamedCredentialId,
  *     source: managedDatabasesDatabaseParameterSource,

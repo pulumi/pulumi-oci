@@ -435,7 +435,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.Ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
+    test_cluster = oci.ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
     ```
 
 
@@ -493,7 +493,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.Ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
+    test_cluster = oci.ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
     ```
 
 

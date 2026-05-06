@@ -124,7 +124,7 @@ def get_agent_knowledge_bases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.GenerativeAi.get_agent_knowledge_bases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.generativeai.get_agent_knowledge_bases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         state=knowledge_base_state)
     ```
@@ -165,7 +165,7 @@ def get_agent_knowledge_bases_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.GenerativeAi.get_agent_knowledge_bases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.generativeai.get_agent_knowledge_bases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         state=knowledge_base_state)
     ```

@@ -172,7 +172,7 @@ def get_iam_work_request(iam_work_request_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
+    test_iam_work_request = oci.identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
     ```
 
 
@@ -211,7 +211,7 @@ def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
+    test_iam_work_request = oci.identity.get_iam_work_request(iam_work_request_id=test_iam_work_request_oci_identity_iam_work_request["id"])
     ```
 
 

@@ -109,7 +109,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
+    test_virtual_circuit_public_prefixes = oci.core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
 
@@ -148,7 +148,7 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
+    test_virtual_circuit_public_prefixes = oci.core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
 

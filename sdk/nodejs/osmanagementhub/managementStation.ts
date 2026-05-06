@@ -28,11 +28,11 @@ import * as utilities from "../utilities";
  *         directory: managementStationMirrorDirectory,
  *         port: managementStationMirrorPort,
  *         sslport: managementStationMirrorSslport,
- *         isSslverifyEnabled: managementStationMirrorIsSslverifyEnabled,
+ *         isSslverifyEnabled: managementStationMirrorIsSslverifyEnabled === "true",
  *         sslcert: managementStationMirrorSslcert,
  *     },
  *     proxy: {
- *         isEnabled: managementStationProxyIsEnabled,
+ *         isEnabled: managementStationProxyIsEnabled === "true",
  *         forward: managementStationProxyForward,
  *         hosts: managementStationProxyHosts,
  *         port: managementStationProxyPort,
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled,
+ *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled === "true",
  *     osFamily: managementStationOsFamily,
  * });
  * ```

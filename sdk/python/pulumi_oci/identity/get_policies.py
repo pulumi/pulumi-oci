@@ -128,7 +128,7 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_policies(compartment_id=tenancy_ocid,
+    test_policies = oci.identity.get_policies(compartment_id=tenancy_ocid,
         name=policy_name,
         state=policy_state)
     ```
@@ -173,7 +173,7 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_policies(compartment_id=tenancy_ocid,
+    test_policies = oci.identity.get_policies(compartment_id=tenancy_ocid,
         name=policy_name,
         state=policy_state)
     ```

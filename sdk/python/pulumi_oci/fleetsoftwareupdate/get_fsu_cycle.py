@@ -408,7 +408,7 @@ def get_fsu_cycle(fsu_cycle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycle = oci.FleetSoftwareUpdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
+    test_fsu_cycle = oci.fleetsoftwareupdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
     ```
 
 
@@ -463,7 +463,7 @@ def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_cycle = oci.FleetSoftwareUpdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
+    test_fsu_cycle = oci.fleetsoftwareupdate.get_fsu_cycle(fsu_cycle_id=test_fsu_cycle_oci_fleet_software_update_fsu_cycle["id"])
     ```
 
 

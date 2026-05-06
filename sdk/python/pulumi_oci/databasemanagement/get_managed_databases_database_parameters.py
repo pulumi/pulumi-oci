@@ -138,8 +138,8 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameters = oci.databasemanagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         opc_named_credential_id=managed_databases_database_parameter_opc_named_credential_id,
         source=managed_databases_database_parameter_source)
@@ -189,8 +189,8 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
-        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included,
+    test_managed_databases_database_parameters = oci.databasemanagement.get_managed_databases_database_parameters(managed_database_id=test_managed_database["id"],
+        is_allowed_values_included=managed_databases_database_parameter_is_allowed_values_included == "true",
         name=managed_databases_database_parameter_name,
         opc_named_credential_id=managed_databases_database_parameter_opc_named_credential_id,
         source=managed_databases_database_parameter_source)

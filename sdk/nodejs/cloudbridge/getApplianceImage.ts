@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplianceImage = oci.CloudBridge.getApplianceImage({
+ * const testApplianceImage = oci.cloudbridge.getApplianceImage({
  *     compartmentId: compartmentId,
  *     displayName: applianceImageDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetApplianceImageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplianceImage = oci.CloudBridge.getApplianceImage({
+ * const testApplianceImage = oci.cloudbridge.getApplianceImage({
  *     compartmentId: compartmentId,
  *     displayName: applianceImageDisplayName,
  * });

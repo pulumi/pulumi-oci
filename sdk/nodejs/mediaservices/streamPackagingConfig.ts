@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testStreamPackagingConfig = new oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config", {
  *     displayName: streamPackagingConfigDisplayName,
  *     distributionChannelId: testChannel.id,
- *     segmentTimeInSeconds: streamPackagingConfigSegmentTimeInSeconds,
+ *     segmentTimeInSeconds: Number(streamPackagingConfigSegmentTimeInSeconds),
  *     streamPackagingFormat: streamPackagingConfigStreamPackagingFormat,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

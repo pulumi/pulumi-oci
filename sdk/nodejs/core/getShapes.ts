@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Core.getShapes({
+ * const testShapes = oci.core.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     imageId: testImage.id,
@@ -90,7 +90,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Core.getShapes({
+ * const testShapes = oci.core.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     imageId: testImage.id,

@@ -161,7 +161,7 @@ def get_object_head(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+    test_object_head = oci.objectstorage.get_object_head(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object)
     ```
@@ -204,7 +204,7 @@ def get_object_head_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+    test_object_head = oci.objectstorage.get_object_head(bucket=object_bucket,
         namespace=object_namespace,
         object=object_object)
     ```

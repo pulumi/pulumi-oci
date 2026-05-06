@@ -321,7 +321,7 @@ def get_model_group(model_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group = oci.DataScience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
+    test_model_group = oci.datascience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
     ```
 
 
@@ -369,7 +369,7 @@ def get_model_group_output(model_group_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group = oci.DataScience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
+    test_model_group = oci.datascience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccountRecoverySetting = oci.Identity.getDomainsAccountRecoverySetting({
+ * const testAccountRecoverySetting = oci.identity.getDomainsAccountRecoverySetting({
  *     accountRecoverySettingId: testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -159,7 +159,7 @@ export interface GetDomainsAccountRecoverySettingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccountRecoverySetting = oci.Identity.getDomainsAccountRecoverySetting({
+ * const testAccountRecoverySetting = oci.identity.getDomainsAccountRecoverySetting({
  *     accountRecoverySettingId: testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

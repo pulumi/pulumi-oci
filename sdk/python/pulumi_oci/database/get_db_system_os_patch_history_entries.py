@@ -124,7 +124,7 @@ def get_db_system_os_patch_history_entries(action: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_os_patch_history_entries = oci.Database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
+    test_db_system_os_patch_history_entries = oci.database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
         action=db_system_os_patch_history_entry_action,
         state=db_system_os_patch_history_entry_state)
     ```
@@ -165,7 +165,7 @@ def get_db_system_os_patch_history_entries_output(action: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_os_patch_history_entries = oci.Database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
+    test_db_system_os_patch_history_entries = oci.database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
         action=db_system_os_patch_history_entry_action,
         state=db_system_os_patch_history_entry_state)
     ```

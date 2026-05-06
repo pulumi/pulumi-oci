@@ -499,10 +499,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                 "host_name": external_my_sql_database_connector_connector_details_host_name,
                 "macs_agent_id": test_agent["id"],
                 "network_protocol": external_my_sql_database_connector_connector_details_network_protocol,
-                "port": external_my_sql_database_connector_connector_details_port,
+                "port": int(external_my_sql_database_connector_connector_details_port),
                 "ssl_secret_id": test_secret["id"],
             },
-            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param)
+            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param == "true")
         ```
 
         ## Import
@@ -554,10 +554,10 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                 "host_name": external_my_sql_database_connector_connector_details_host_name,
                 "macs_agent_id": test_agent["id"],
                 "network_protocol": external_my_sql_database_connector_connector_details_network_protocol,
-                "port": external_my_sql_database_connector_connector_details_port,
+                "port": int(external_my_sql_database_connector_connector_details_port),
                 "ssl_secret_id": test_secret["id"],
             },
-            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param)
+            is_test_connection_param=external_my_sql_database_connector_is_test_connection_param == "true")
         ```
 
         ## Import

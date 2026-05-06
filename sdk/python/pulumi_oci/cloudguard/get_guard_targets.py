@@ -168,11 +168,11 @@ def get_guard_targets(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_targets = oci.CloudGuard.get_guard_targets(compartment_id=compartment_id,
+    test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
         state=target_state)
     ```
 
@@ -238,11 +238,11 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_targets = oci.CloudGuard.get_guard_targets(compartment_id=compartment_id,
+    test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
         state=target_state)
     ```
 

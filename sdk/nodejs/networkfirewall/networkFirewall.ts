@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     ipv4address: networkFirewallIpv4address,
  *     ipv6address: networkFirewallIpv6address,
  *     natConfiguration: {
- *         mustEnablePrivateNat: networkFirewallNatConfigurationMustEnablePrivateNat,
+ *         mustEnablePrivateNat: networkFirewallNatConfigurationMustEnablePrivateNat === "true",
  *     },
  *     networkSecurityGroupIds: networkFirewallNetworkSecurityGroupIds,
  *     shape: networkFirewallShape,

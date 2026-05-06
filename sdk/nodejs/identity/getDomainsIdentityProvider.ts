@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProvider = oci.Identity.getDomainsIdentityProvider({
+ * const testIdentityProvider = oci.identity.getDomainsIdentityProvider({
  *     idcsEndpoint: testDomain.url,
  *     identityProviderId: testIdentityProviderOciIdentityIdentityProvider.id,
  *     attributeSets: [],
@@ -327,7 +327,7 @@ export interface GetDomainsIdentityProviderResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProvider = oci.Identity.getDomainsIdentityProvider({
+ * const testIdentityProvider = oci.identity.getDomainsIdentityProvider({
  *     idcsEndpoint: testDomain.url,
  *     identityProviderId: testIdentityProviderOciIdentityIdentityProvider.id,
  *     attributeSets: [],

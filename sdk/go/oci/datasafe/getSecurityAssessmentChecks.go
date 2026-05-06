@@ -33,8 +33,8 @@ import (
 //				SecurityAssessmentId:   testSecurityAssessment.Id,
 //				AccessLevel:            pulumi.StringRef(securityAssessmentCheckAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(securityAssessmentCheckCompartmentIdInSubtree),
-//				ContainsReferences:     securityAssessmentCheckContainsReferences,
-//				ContainsSeverities:     securityAssessmentCheckContainsSeverity,
+//				ContainsReferences:     pulumi.ToArray(securityAssessmentCheckContainsReferences),
+//				ContainsSeverities:     pulumi.ToArray(securityAssessmentCheckContainsSeverity),
 //				Key:                    pulumi.StringRef(securityAssessmentCheckKey),
 //				SuggestedSeverity:      pulumi.StringRef(securityAssessmentCheckSuggestedSeverity),
 //			}, nil)

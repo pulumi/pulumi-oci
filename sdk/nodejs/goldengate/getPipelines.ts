@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelines = oci.GoldenGate.getPipelines({
+ * const testPipelines = oci.goldengate.getPipelines({
  *     compartmentId: compartmentId,
  *     displayName: pipelineDisplayName,
  *     lifecycleSubState: pipelineLifecycleSubState,
@@ -100,7 +100,7 @@ export interface GetPipelinesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelines = oci.GoldenGate.getPipelines({
+ * const testPipelines = oci.goldengate.getPipelines({
  *     compartmentId: compartmentId,
  *     displayName: pipelineDisplayName,
  *     lifecycleSubState: pipelineLifecycleSubState,

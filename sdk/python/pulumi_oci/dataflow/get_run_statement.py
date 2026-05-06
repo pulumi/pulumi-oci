@@ -157,7 +157,7 @@ def get_run_statement(run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=test_run["id"],
+    test_run_statement = oci.dataflow.get_run_statement(run_id=test_run["id"],
         statement_id=test_statement["id"])
     ```
 
@@ -195,7 +195,7 @@ def get_run_statement_output(run_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=test_run["id"],
+    test_run_statement = oci.dataflow.get_run_statement(run_id=test_run["id"],
         statement_id=test_statement["id"])
     ```
 

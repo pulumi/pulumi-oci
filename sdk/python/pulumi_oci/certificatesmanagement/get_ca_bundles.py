@@ -135,7 +135,7 @@ def get_ca_bundles(ca_bundle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
+    test_ca_bundles = oci.certificatesmanagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
         compartment_id=compartment_id,
         name=ca_bundle_name,
         state=ca_bundle_state)
@@ -182,7 +182,7 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
+    test_ca_bundles = oci.certificatesmanagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
         compartment_id=compartment_id,
         name=ca_bundle_name,
         state=ca_bundle_state)

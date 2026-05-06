@@ -121,7 +121,7 @@ def get_assigned_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscriptions = oci.Tenantmanagercontrolplane.get_assigned_subscriptions(compartment_id=compartment_id,
+    test_assigned_subscriptions = oci.tenantmanagercontrolplane.get_assigned_subscriptions(compartment_id=compartment_id,
         entity_version=assigned_subscription_entity_version,
         subscription_id=test_subscription["id"])
     ```
@@ -162,7 +162,7 @@ def get_assigned_subscriptions_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscriptions = oci.Tenantmanagercontrolplane.get_assigned_subscriptions(compartment_id=compartment_id,
+    test_assigned_subscriptions = oci.tenantmanagercontrolplane.get_assigned_subscriptions(compartment_id=compartment_id,
         entity_version=assigned_subscription_entity_version,
         subscription_id=test_subscription["id"])
     ```

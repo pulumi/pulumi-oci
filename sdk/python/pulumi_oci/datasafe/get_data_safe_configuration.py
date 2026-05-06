@@ -168,7 +168,7 @@ def get_data_safe_configuration(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=compartment_id)
+    test_data_safe_configuration = oci.datasafe.get_data_safe_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -203,7 +203,7 @@ def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=compartment_id)
+    test_data_safe_configuration = oci.datasafe.get_data_safe_configuration(compartment_id=compartment_id)
     ```
 
 

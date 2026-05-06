@@ -125,7 +125,7 @@ def get_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=compartment_id,
+    test_applications = oci.functions.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         id=application_id,
         state=application_state)
@@ -170,7 +170,7 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=compartment_id,
+    test_applications = oci.functions.get_applications(compartment_id=compartment_id,
         display_name=application_display_name,
         id=application_id,
         state=application_state)

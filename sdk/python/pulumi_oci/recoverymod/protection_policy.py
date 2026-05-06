@@ -420,7 +420,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_protection_policy = oci.recoverymod.ProtectionPolicy("test_protection_policy",
-            backup_retention_period_in_days=protection_policy_backup_retention_period_in_days,
+            backup_retention_period_in_days=int(protection_policy_backup_retention_period_in_days),
             compartment_id=compartment_id,
             display_name=protection_policy_display_name,
             defined_tags={
@@ -429,7 +429,7 @@ class ProtectionPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
+            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
             policy_locked_date_time=protection_policy_policy_locked_date_time)
         ```
 
@@ -483,7 +483,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_protection_policy = oci.recoverymod.ProtectionPolicy("test_protection_policy",
-            backup_retention_period_in_days=protection_policy_backup_retention_period_in_days,
+            backup_retention_period_in_days=int(protection_policy_backup_retention_period_in_days),
             compartment_id=compartment_id,
             display_name=protection_policy_display_name,
             defined_tags={
@@ -492,7 +492,7 @@ class ProtectionPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
+            must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
             policy_locked_date_time=protection_policy_policy_locked_date_time)
         ```
 

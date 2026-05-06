@@ -220,7 +220,7 @@ def get_software_package_software_source(arch_types: Optional[Sequence[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package_software_source = oci.OsManagementHub.get_software_package_software_source(compartment_id=compartment_id,
+    test_software_package_software_source = oci.osmanagementhub.get_software_package_software_source(compartment_id=compartment_id,
         software_package_name=test_software_package["name"],
         arch_types=software_package_software_source_arch_type,
         availabilities=software_package_software_source_availability,
@@ -302,7 +302,7 @@ def get_software_package_software_source_output(arch_types: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package_software_source = oci.OsManagementHub.get_software_package_software_source(compartment_id=compartment_id,
+    test_software_package_software_source = oci.osmanagementhub.get_software_package_software_source(compartment_id=compartment_id,
         software_package_name=test_software_package["name"],
         arch_types=software_package_software_source_arch_type,
         availabilities=software_package_software_source_availability,

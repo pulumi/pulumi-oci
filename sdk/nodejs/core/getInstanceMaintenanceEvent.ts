@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvent = oci.Core.getInstanceMaintenanceEvent({
+ * const testInstanceMaintenanceEvent = oci.core.getInstanceMaintenanceEvent({
  *     instanceMaintenanceEventId: testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id,
  * });
  * ```
@@ -151,7 +151,7 @@ export interface GetInstanceMaintenanceEventResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvent = oci.Core.getInstanceMaintenanceEvent({
+ * const testInstanceMaintenanceEvent = oci.core.getInstanceMaintenanceEvent({
  *     instanceMaintenanceEventId: testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id,
  * });
  * ```

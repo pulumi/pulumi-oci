@@ -84,7 +84,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_top_sql_cpu_activity = oci.databasemanagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exa
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_top_sql_cpu_activity = oci.databasemanagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 

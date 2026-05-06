@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRuleSets = oci.LoadBalancer.getRuleSets({
+ * const testRuleSets = oci.loadbalancer.getRuleSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetRuleSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRuleSets = oci.LoadBalancer.getRuleSets({
+ * const testRuleSets = oci.loadbalancer.getRuleSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```

@@ -466,8 +466,8 @@ class Pool(pulumi.CustomResource):
         test_pool = oci.dataflow.Pool("test_pool",
             compartment_id=compartment_id,
             configurations=[{
-                "max": pool_configurations_max,
-                "min": pool_configurations_min,
+                "max": int(pool_configurations_max),
+                "min": int(pool_configurations_min),
                 "shape": pool_configurations_shape,
                 "shape_config": {
                     "memory_in_gbs": pool_configurations_shape_config_memory_in_gbs,
@@ -482,11 +482,11 @@ class Pool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
+            idle_timeout_in_minutes=int(pool_idle_timeout_in_minutes),
             schedules=[{
                 "day_of_week": pool_schedules_day_of_week,
-                "start_time": pool_schedules_start_time,
-                "stop_time": pool_schedules_stop_time,
+                "start_time": int(pool_schedules_start_time),
+                "stop_time": int(pool_schedules_stop_time),
             }])
         ```
 
@@ -538,8 +538,8 @@ class Pool(pulumi.CustomResource):
         test_pool = oci.dataflow.Pool("test_pool",
             compartment_id=compartment_id,
             configurations=[{
-                "max": pool_configurations_max,
-                "min": pool_configurations_min,
+                "max": int(pool_configurations_max),
+                "min": int(pool_configurations_min),
                 "shape": pool_configurations_shape,
                 "shape_config": {
                     "memory_in_gbs": pool_configurations_shape_config_memory_in_gbs,
@@ -554,11 +554,11 @@ class Pool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
+            idle_timeout_in_minutes=int(pool_idle_timeout_in_minutes),
             schedules=[{
                 "day_of_week": pool_schedules_day_of_week,
-                "start_time": pool_schedules_start_time,
-                "stop_time": pool_schedules_stop_time,
+                "start_time": int(pool_schedules_start_time),
+                "stop_time": int(pool_schedules_stop_time),
             }])
         ```
 

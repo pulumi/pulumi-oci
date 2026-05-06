@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPlatformConfigurations = oci.FleetAppsManagement.getPlatformConfigurations({
+ * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,
@@ -126,9 +126,9 @@ export interface GetPlatformConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPlatformConfigurations = oci.FleetAppsManagement.getPlatformConfigurations({
+ * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,

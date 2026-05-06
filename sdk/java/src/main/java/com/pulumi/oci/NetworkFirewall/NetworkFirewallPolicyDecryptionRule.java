@@ -37,8 +37,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
  * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRulePositionArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyDecryptionRule = new NetworkFirewallPolicyDecryptionRule("testNetworkFirewallPolicyDecryptionRule", NetworkFirewallPolicyDecryptionRuleArgs.builder()
- *             .lifecycle(Map.of("ignoreChanges", List.of(position)))
+ *             .lifecycle(Map.of("ignoreChanges", Arrays.asList(position)))
  *             .name(networkFirewallPolicyDecryptionRuleName)
  *             .action(networkFirewallPolicyDecryptionRuleAction)
  *             .condition(NetworkFirewallPolicyDecryptionRuleConditionArgs.builder()

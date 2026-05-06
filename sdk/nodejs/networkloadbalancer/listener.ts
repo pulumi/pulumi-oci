@@ -22,13 +22,13 @@ import * as utilities from "../utilities";
  *     defaultBackendSetName: testBackendSet.name,
  *     name: listenerName,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
- *     port: listenerPort,
+ *     port: Number(listenerPort),
  *     protocol: listenerProtocol,
  *     ipVersion: listenerIpVersion,
- *     isPpv2enabled: listenerIsPpv2enabled,
- *     l3ipIdleTimeout: listenerL3ipIdleTimeout,
- *     tcpIdleTimeout: listenerTcpIdleTimeout,
- *     udpIdleTimeout: listenerUdpIdleTimeout,
+ *     isPpv2enabled: listenerIsPpv2enabled === "true",
+ *     l3ipIdleTimeout: Number(listenerL3ipIdleTimeout),
+ *     tcpIdleTimeout: Number(listenerTcpIdleTimeout),
+ *     udpIdleTimeout: Number(listenerUdpIdleTimeout),
  * });
  * ```
  *

@@ -143,7 +143,7 @@ def get_enrollment_status(enrollment_status_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
+    test_enrollment_status = oci.optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_enrollment_status_output(enrollment_status_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
+    test_enrollment_status = oci.optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
     ```
 
 

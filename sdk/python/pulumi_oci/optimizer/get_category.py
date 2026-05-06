@@ -204,7 +204,7 @@ def get_category(category_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_category = oci.Optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
+    test_category = oci.optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_category_output(category_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_category = oci.Optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
+    test_category = oci.optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
     ```
 
 

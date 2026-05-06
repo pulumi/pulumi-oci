@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAppliances = oci.Ocvp.getManagementAppliances({
+ * const testManagementAppliances = oci.ocvp.getManagementAppliances({
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,
@@ -107,7 +107,7 @@ export interface GetManagementAppliancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAppliances = oci.Ocvp.getManagementAppliances({
+ * const testManagementAppliances = oci.ocvp.getManagementAppliances({
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,

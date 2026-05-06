@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyUserDbCredentials = oci.Identity.getDomainsMyUserDbCredentials({
+ * const testMyUserDbCredentials = oci.identity.getDomainsMyUserDbCredentials({
  *     idcsEndpoint: testDomain.url,
- *     myUserDbCredentialCount: myUserDbCredentialMyUserDbCredentialCount,
+ *     myUserDbCredentialCount: Number(myUserDbCredentialMyUserDbCredentialCount),
  *     myUserDbCredentialFilter: myUserDbCredentialMyUserDbCredentialFilter,
  *     authorization: myUserDbCredentialAuthorization,
  *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
- *     startIndex: myUserDbCredentialStartIndex,
+ *     startIndex: Number(myUserDbCredentialStartIndex),
  * });
  * ```
  */
@@ -114,13 +114,13 @@ export interface GetDomainsMyUserDbCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyUserDbCredentials = oci.Identity.getDomainsMyUserDbCredentials({
+ * const testMyUserDbCredentials = oci.identity.getDomainsMyUserDbCredentials({
  *     idcsEndpoint: testDomain.url,
- *     myUserDbCredentialCount: myUserDbCredentialMyUserDbCredentialCount,
+ *     myUserDbCredentialCount: Number(myUserDbCredentialMyUserDbCredentialCount),
  *     myUserDbCredentialFilter: myUserDbCredentialMyUserDbCredentialFilter,
  *     authorization: myUserDbCredentialAuthorization,
  *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
- *     startIndex: myUserDbCredentialStartIndex,
+ *     startIndex: Number(myUserDbCredentialStartIndex),
  * });
  * ```
  */

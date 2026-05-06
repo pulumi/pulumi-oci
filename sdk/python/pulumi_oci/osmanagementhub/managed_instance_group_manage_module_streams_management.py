@@ -306,7 +306,7 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
                 "stream_name": test_stream["name"],
                 "software_source_id": test_software_source["id"],
             }],
-            is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run,
+            is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run == "true",
             removes=[{
                 "module_name": managed_instance_group_manage_module_streams_management_remove_module_name,
                 "profile_name": test_profile["name"],
@@ -377,7 +377,7 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
                 "stream_name": test_stream["name"],
                 "software_source_id": test_software_source["id"],
             }],
-            is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run,
+            is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run == "true",
             removes=[{
                 "module_name": managed_instance_group_manage_module_streams_management_remove_module_name,
                 "profile_name": test_profile["name"],

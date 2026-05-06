@@ -151,7 +151,7 @@ def get_summarize_resource_inventory(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=compartment_id,
+    test_summarize_resource_inventory = oci.jms.get_summarize_resource_inventory(compartment_id=compartment_id,
         time_end=summarize_resource_inventory_time_end,
         time_start=summarize_resource_inventory_time_start)
     ```
@@ -193,7 +193,7 @@ def get_summarize_resource_inventory_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_summarize_resource_inventory = oci.Jms.get_summarize_resource_inventory(compartment_id=compartment_id,
+    test_summarize_resource_inventory = oci.jms.get_summarize_resource_inventory(compartment_id=compartment_id,
         time_end=summarize_resource_inventory_time_end,
         time_start=summarize_resource_inventory_time_start)
     ```

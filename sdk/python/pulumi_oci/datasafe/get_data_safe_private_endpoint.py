@@ -239,7 +239,7 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
+    test_data_safe_private_endpoint = oci.datasafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
+    test_data_safe_private_endpoint = oci.datasafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
     ```
 
 

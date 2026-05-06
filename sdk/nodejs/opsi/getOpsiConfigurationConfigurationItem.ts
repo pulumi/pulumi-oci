@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
+ * const testOpsiConfigurationConfigurationItem = oci.opsi.getOpsiConfigurationConfigurationItem({
  *     compartmentId: compartmentId,
  *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
  *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
@@ -100,7 +100,7 @@ export interface GetOpsiConfigurationConfigurationItemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
+ * const testOpsiConfigurationConfigurationItem = oci.opsi.getOpsiConfigurationConfigurationItem({
  *     compartmentId: compartmentId,
  *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
  *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,

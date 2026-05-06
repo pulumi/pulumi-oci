@@ -337,7 +337,7 @@ def get_bucket(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=bucket_name,
+    test_bucket = oci.objectstorage.get_bucket(name=bucket_name,
         namespace=bucket_namespace)
     ```
 
@@ -390,7 +390,7 @@ def get_bucket_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=bucket_name,
+    test_bucket = oci.objectstorage.get_bucket(name=bucket_name,
         namespace=bucket_namespace)
     ```
 

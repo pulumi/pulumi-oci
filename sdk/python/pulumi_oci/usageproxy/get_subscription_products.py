@@ -125,7 +125,7 @@ def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionP
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=test_subscription["id"],
+    test_subscription_products = oci.usageproxy.get_subscription_products(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)
@@ -171,7 +171,7 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=test_subscription["id"],
+    test_subscription_products = oci.usageproxy.get_subscription_products(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         usage_period_key=subscription_product_usage_period_key,
         producttype=subscription_product_producttype)

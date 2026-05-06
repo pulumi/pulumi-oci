@@ -118,7 +118,7 @@ def get_deployment_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=compartment_id,
+    test_deployment_versions = oci.goldengate.get_deployment_versions(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         deployment_type=deployment_version_deployment_type)
     ```
@@ -159,7 +159,7 @@ def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=compartment_id,
+    test_deployment_versions = oci.goldengate.get_deployment_versions(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         deployment_type=deployment_version_deployment_type)
     ```

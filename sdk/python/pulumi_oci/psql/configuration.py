@@ -636,9 +636,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
-            is_flexible=configuration_is_flexible,
+            instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(configuration_instance_ocpu_count),
+            is_flexible=configuration_is_flexible == "true",
             shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```
@@ -716,9 +716,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
-            is_flexible=configuration_is_flexible,
+            instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(configuration_instance_ocpu_count),
+            is_flexible=configuration_is_flexible == "true",
             shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```

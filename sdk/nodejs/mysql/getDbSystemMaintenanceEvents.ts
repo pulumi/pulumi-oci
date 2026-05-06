@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemMaintenanceEvents = oci.Mysql.getDbSystemMaintenanceEvents({
+ * const testDbSystemMaintenanceEvents = oci.mysql.getDbSystemMaintenanceEvents({
  *     dbSystemId: testMysqlDbSystem.id,
  *     maintenanceAction: dbSystemMaintenanceEventMaintenanceAction,
  *     maintenanceStatus: dbSystemMaintenanceEventMaintenanceStatus,
@@ -122,7 +122,7 @@ export interface GetDbSystemMaintenanceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemMaintenanceEvents = oci.Mysql.getDbSystemMaintenanceEvents({
+ * const testDbSystemMaintenanceEvents = oci.mysql.getDbSystemMaintenanceEvents({
  *     dbSystemId: testMysqlDbSystem.id,
  *     maintenanceAction: dbSystemMaintenanceEventMaintenanceAction,
  *     maintenanceStatus: dbSystemMaintenanceEventMaintenanceStatus,

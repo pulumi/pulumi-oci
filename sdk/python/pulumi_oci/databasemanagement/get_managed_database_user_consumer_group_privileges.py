@@ -128,7 +128,7 @@ def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_consumer_group_privileges = oci.DatabaseManagement.get_managed_database_user_consumer_group_privileges(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_consumer_group_privileges = oci.databasemanagement.get_managed_database_user_consumer_group_privileges(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_consumer_group_privilege_name,
         opc_named_credential_id=managed_database_user_consumer_group_privilege_opc_named_credential_id)
@@ -174,7 +174,7 @@ def get_managed_database_user_consumer_group_privileges_output(filters: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_consumer_group_privileges = oci.DatabaseManagement.get_managed_database_user_consumer_group_privileges(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_consumer_group_privileges = oci.databasemanagement.get_managed_database_user_consumer_group_privileges(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_consumer_group_privilege_name,
         opc_named_credential_id=managed_database_user_consumer_group_privilege_opc_named_credential_id)

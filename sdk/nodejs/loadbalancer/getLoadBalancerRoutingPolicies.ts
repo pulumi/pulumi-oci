@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerRoutingPolicies = oci.LoadBalancer.getLoadBalancerRoutingPolicies({
+ * const testLoadBalancerRoutingPolicies = oci.loadbalancer.getLoadBalancerRoutingPolicies({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetLoadBalancerRoutingPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerRoutingPolicies = oci.LoadBalancer.getLoadBalancerRoutingPolicies({
+ * const testLoadBalancerRoutingPolicies = oci.loadbalancer.getLoadBalancerRoutingPolicies({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```

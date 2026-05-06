@@ -134,7 +134,7 @@ def get_oce_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=compartment_id,
+    test_oce_instances = oci.oce.get_oce_instances(compartment_id=compartment_id,
         display_name=oce_instance_display_name,
         state=oce_instance_state,
         tenancy_id=test_tenancy["id"])
@@ -180,7 +180,7 @@ def get_oce_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_oce_instances = oci.Oce.get_oce_instances(compartment_id=compartment_id,
+    test_oce_instances = oci.oce.get_oce_instances(compartment_id=compartment_id,
         display_name=oce_instance_display_name,
         state=oce_instance_state,
         tenancy_id=test_tenancy["id"])

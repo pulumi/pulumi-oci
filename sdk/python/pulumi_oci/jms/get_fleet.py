@@ -300,7 +300,7 @@ def get_fleet(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet = oci.Jms.get_fleet(fleet_id=test_fleet_oci_jms_fleet["id"])
+    test_fleet = oci.jms.get_fleet(fleet_id=test_fleet_oci_jms_fleet["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet = oci.Jms.get_fleet(fleet_id=test_fleet_oci_jms_fleet["id"])
+    test_fleet = oci.jms.get_fleet(fleet_id=test_fleet_oci_jms_fleet["id"])
     ```
 
 

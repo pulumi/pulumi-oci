@@ -138,7 +138,7 @@ def get_oci_cache_config_sets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_sets = oci.Redis.get_oci_cache_config_sets(compartment_id=compartment_id,
+    test_oci_cache_config_sets = oci.redis.get_oci_cache_config_sets(compartment_id=compartment_id,
         display_name=oci_cache_config_set_display_name,
         id=oci_cache_config_set_id,
         software_version=oci_cache_config_set_software_version,
@@ -188,7 +188,7 @@ def get_oci_cache_config_sets_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_sets = oci.Redis.get_oci_cache_config_sets(compartment_id=compartment_id,
+    test_oci_cache_config_sets = oci.redis.get_oci_cache_config_sets(compartment_id=compartment_id,
         display_name=oci_cache_config_set_display_name,
         id=oci_cache_config_set_id,
         software_version=oci_cache_config_set_software_version,

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskRecords = oci.FleetAppsManagement.getTaskRecords({
+ * const testTaskRecords = oci.fleetappsmanagement.getTaskRecords({
  *     compartmentId: compartmentId,
  *     displayName: taskRecordDisplayName,
  *     id: taskRecordId,
@@ -126,7 +126,7 @@ export interface GetTaskRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskRecords = oci.FleetAppsManagement.getTaskRecords({
+ * const testTaskRecords = oci.fleetappsmanagement.getTaskRecords({
  *     compartmentId: compartmentId,
  *     displayName: taskRecordDisplayName,
  *     id: taskRecordId,

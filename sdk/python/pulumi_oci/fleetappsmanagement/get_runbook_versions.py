@@ -144,7 +144,7 @@ def get_runbook_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_versions = oci.FleetAppsManagement.get_runbook_versions(compartment_id=compartment_id,
+    test_runbook_versions = oci.fleetappsmanagement.get_runbook_versions(compartment_id=compartment_id,
         id=runbook_version_id,
         name=runbook_version_name,
         runbook_id=test_runbook["id"],
@@ -195,7 +195,7 @@ def get_runbook_versions_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_versions = oci.FleetAppsManagement.get_runbook_versions(compartment_id=compartment_id,
+    test_runbook_versions = oci.fleetappsmanagement.get_runbook_versions(compartment_id=compartment_id,
         id=runbook_version_id,
         name=runbook_version_name,
         runbook_id=test_runbook["id"],

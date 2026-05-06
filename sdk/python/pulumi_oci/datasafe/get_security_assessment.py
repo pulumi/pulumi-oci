@@ -477,7 +477,7 @@ def get_security_assessment(security_assessment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
+    test_security_assessment = oci.datasafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
     ```
 
 
@@ -539,7 +539,7 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
+    test_security_assessment = oci.datasafe.get_security_assessment(security_assessment_id=test_security_assessment_oci_data_safe_security_assessment["id"])
     ```
 
 

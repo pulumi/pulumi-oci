@@ -148,7 +148,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         status=managed_database_sql_tuning_advisor_task_status,
@@ -204,7 +204,7 @@ def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         status=managed_database_sql_tuning_advisor_task_status,

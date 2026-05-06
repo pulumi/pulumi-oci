@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicies = oci.CloudGuard.getSecurityPolicies({
+ * const testSecurityPolicies = oci.cloudguard.getSecurityPolicies({
  *     compartmentId: compartmentId,
  *     displayName: securityPolicyDisplayName,
  *     id: securityPolicyId,
@@ -98,7 +98,7 @@ export interface GetSecurityPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicies = oci.CloudGuard.getSecurityPolicies({
+ * const testSecurityPolicies = oci.cloudguard.getSecurityPolicies({
  *     compartmentId: compartmentId,
  *     displayName: securityPolicyDisplayName,
  *     id: securityPolicyId,

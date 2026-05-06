@@ -150,7 +150,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=compartment_id,
+    test_database_tools_private_endpoints = oci.databasetools.get_database_tools_private_endpoints(compartment_id=compartment_id,
         display_name=database_tools_private_endpoint_display_name,
         endpoint_service_id=test_service["id"],
         state=database_tools_private_endpoint_state,
@@ -201,7 +201,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=compartment_id,
+    test_database_tools_private_endpoints = oci.databasetools.get_database_tools_private_endpoints(compartment_id=compartment_id,
         display_name=database_tools_private_endpoint_display_name,
         endpoint_service_id=test_service["id"],
         state=database_tools_private_endpoint_state,

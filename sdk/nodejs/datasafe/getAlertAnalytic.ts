@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertAnalytic = oci.DataSafe.getAlertAnalytic({
+ * const testAlertAnalytic = oci.datasafe.getAlertAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAnalyticAccessLevel,
- *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: alertAnalyticGroupBy,
  *     queryTimeZone: alertAnalyticQueryTimeZone,
  *     scimQuery: alertAnalyticScimQuery,
@@ -131,10 +131,10 @@ export interface GetAlertAnalyticResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertAnalytic = oci.DataSafe.getAlertAnalytic({
+ * const testAlertAnalytic = oci.datasafe.getAlertAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAnalyticAccessLevel,
- *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: alertAnalyticGroupBy,
  *     queryTimeZone: alertAnalyticQueryTimeZone,
  *     scimQuery: alertAnalyticScimQuery,

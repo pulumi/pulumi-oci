@@ -175,8 +175,8 @@ def get_metrics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
-        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+    test_metrics = oci.monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree == "true",
         dimension_filters=metric_dimension_filters,
         group_bies=metric_group_by,
         name=metric_name,
@@ -246,8 +246,8 @@ def get_metrics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
-        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+    test_metrics = oci.monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree == "true",
         dimension_filters=metric_dimension_filters,
         group_bies=metric_group_by,
         name=metric_name,

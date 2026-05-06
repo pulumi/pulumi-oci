@@ -116,7 +116,7 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_instance_wallet_management = oci.database.get_autonomous_database_instance_wallet_management(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -147,7 +147,7 @@ def get_autonomous_database_instance_wallet_management_output(autonomous_databas
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_instance_wallet_management = oci.database.get_autonomous_database_instance_wallet_management(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileTargetOverrides = oci.DataSafe.getAuditProfileTargetOverrides({
+ * const testAuditProfileTargetOverrides = oci.datasafe.getAuditProfileTargetOverrides({
  *     auditProfileId: testAuditProfile.id,
  *     displayName: auditProfileTargetOverrideDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetAuditProfileTargetOverridesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileTargetOverrides = oci.DataSafe.getAuditProfileTargetOverrides({
+ * const testAuditProfileTargetOverrides = oci.datasafe.getAuditProfileTargetOverrides({
  *     auditProfileId: testAuditProfile.id,
  *     displayName: auditProfileTargetOverrideDisplayName,
  * });

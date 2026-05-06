@@ -203,10 +203,10 @@ def get_audit_trails(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=compartment_id,
+    test_audit_trails = oci.datasafe.get_audit_trails(compartment_id=compartment_id,
         access_level=audit_trail_access_level,
         audit_trail_id=test_audit_trail["id"],
-        compartment_id_in_subtree=audit_trail_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_trail_compartment_id_in_subtree == "true",
         display_name=audit_trail_display_name,
         state=audit_trail_state,
         status=audit_trail_status,
@@ -287,10 +287,10 @@ def get_audit_trails_output(access_level: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=compartment_id,
+    test_audit_trails = oci.datasafe.get_audit_trails(compartment_id=compartment_id,
         access_level=audit_trail_access_level,
         audit_trail_id=test_audit_trail["id"],
-        compartment_id_in_subtree=audit_trail_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_trail_compartment_id_in_subtree == "true",
         display_name=audit_trail_display_name,
         state=audit_trail_state,
         status=audit_trail_status,

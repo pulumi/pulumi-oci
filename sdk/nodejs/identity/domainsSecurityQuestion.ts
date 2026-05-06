@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityQuestion = new oci.identity.DomainsSecurityQuestion("test_security_question", {
- *     active: securityQuestionActive,
+ *     active: securityQuestionActive === "true",
  *     idcsEndpoint: testDomain.url,
  *     questionTexts: [{
  *         locale: "en",

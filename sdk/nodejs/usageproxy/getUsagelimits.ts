@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagelimits = oci.UsageProxy.getUsagelimits({
+ * const testUsagelimits = oci.usageproxy.getUsagelimits({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     limitType: usagelimitLimitType,
@@ -98,7 +98,7 @@ export interface GetUsagelimitsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagelimits = oci.UsageProxy.getUsagelimits({
+ * const testUsagelimits = oci.usageproxy.getUsagelimits({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     limitType: usagelimitLimitType,

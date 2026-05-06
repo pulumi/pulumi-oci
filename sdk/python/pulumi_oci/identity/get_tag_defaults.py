@@ -125,7 +125,7 @@ def get_tag_defaults(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=compartment_id,
+    test_tag_defaults = oci.identity.get_tag_defaults(compartment_id=compartment_id,
         id=tag_default_id,
         state=tag_default_state,
         tag_definition_id=test_tag_definition["id"])
@@ -170,7 +170,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=compartment_id,
+    test_tag_defaults = oci.identity.get_tag_defaults(compartment_id=compartment_id,
         id=tag_default_id,
         state=tag_default_state,
         tag_definition_id=test_tag_definition["id"])

@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicies = oci.DataSafe.getSqlFirewallPolicies({
+ * const testSqlFirewallPolicies = oci.datasafe.getSqlFirewallPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyCompartmentIdInSubtree === "true",
  *     dbUserName: testUser.name,
  *     displayName: sqlFirewallPolicyDisplayName,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -185,10 +185,10 @@ export interface GetSqlFirewallPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicies = oci.DataSafe.getSqlFirewallPolicies({
+ * const testSqlFirewallPolicies = oci.datasafe.getSqlFirewallPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyCompartmentIdInSubtree === "true",
  *     dbUserName: testUser.name,
  *     displayName: sqlFirewallPolicyDisplayName,
  *     securityPolicyId: testSecurityPolicy.id,

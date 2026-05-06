@@ -422,7 +422,7 @@ def get_domains_app_role(app_role_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_role = oci.Identity.get_domains_app_role(app_role_id=test_app_role_oci_identity_domains_app_role["id"],
+    test_app_role = oci.identity.get_domains_app_role(app_role_id=test_app_role_oci_identity_domains_app_role["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -499,7 +499,7 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_app_role = oci.Identity.get_domains_app_role(app_role_id=test_app_role_oci_identity_domains_app_role["id"],
+    test_app_role = oci.identity.get_domains_app_role(app_role_id=test_app_role_oci_identity_domains_app_role["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

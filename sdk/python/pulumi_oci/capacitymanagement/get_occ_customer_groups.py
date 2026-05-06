@@ -125,7 +125,7 @@ def get_occ_customer_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=compartment_id,
+    test_occ_customer_groups = oci.capacitymanagement.get_occ_customer_groups(compartment_id=compartment_id,
         display_name=occ_customer_group_display_name,
         id=occ_customer_group_id,
         status=occ_customer_group_status)
@@ -170,7 +170,7 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=compartment_id,
+    test_occ_customer_groups = oci.capacitymanagement.get_occ_customer_groups(compartment_id=compartment_id,
         display_name=occ_customer_group_display_name,
         id=occ_customer_group_id,
         status=occ_customer_group_status)

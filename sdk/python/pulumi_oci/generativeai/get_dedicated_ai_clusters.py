@@ -125,7 +125,7 @@ def get_dedicated_ai_clusters(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_clusters = oci.GenerativeAi.get_dedicated_ai_clusters(compartment_id=compartment_id,
+    test_dedicated_ai_clusters = oci.generativeai.get_dedicated_ai_clusters(compartment_id=compartment_id,
         display_name=dedicated_ai_cluster_display_name,
         id=dedicated_ai_cluster_id,
         state=dedicated_ai_cluster_state)
@@ -170,7 +170,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_clusters = oci.GenerativeAi.get_dedicated_ai_clusters(compartment_id=compartment_id,
+    test_dedicated_ai_clusters = oci.generativeai.get_dedicated_ai_clusters(compartment_id=compartment_id,
         display_name=dedicated_ai_cluster_display_name,
         id=dedicated_ai_cluster_id,
         state=dedicated_ai_cluster_state)

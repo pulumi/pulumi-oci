@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolvers = oci.Dns.getResolvers({
+ * const testResolvers = oci.dns.getResolvers({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: resolverDisplayName,
@@ -113,7 +113,7 @@ export interface GetResolversResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolvers = oci.Dns.getResolvers({
+ * const testResolvers = oci.dns.getResolvers({
  *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
  *     displayName: resolverDisplayName,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseGroup = oci.DatabaseManagement.getManagedDatabaseGroup({
+ * const testManagedDatabaseGroup = oci.databasemanagement.getManagedDatabaseGroup({
  *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```
@@ -100,7 +100,7 @@ export interface GetManagedDatabaseGroupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseGroup = oci.DatabaseManagement.getManagedDatabaseGroup({
+ * const testManagedDatabaseGroup = oci.databasemanagement.getManagedDatabaseGroup({
  *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```

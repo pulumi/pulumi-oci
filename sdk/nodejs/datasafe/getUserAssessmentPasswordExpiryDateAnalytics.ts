@@ -27,10 +27,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentPasswordExpiryDateAnalytics = oci.DataSafe.getUserAssessmentPasswordExpiryDateAnalytics({
+ * const testUserAssessmentPasswordExpiryDateAnalytics = oci.datasafe.getUserAssessmentPasswordExpiryDateAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentPasswordExpiryDateAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree === "true",
  *     timePasswordExpiryLessThan: userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan,
  *     userCategory: userAssessmentPasswordExpiryDateAnalyticUserCategory,
  * });
@@ -115,10 +115,10 @@ export interface GetUserAssessmentPasswordExpiryDateAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentPasswordExpiryDateAnalytics = oci.DataSafe.getUserAssessmentPasswordExpiryDateAnalytics({
+ * const testUserAssessmentPasswordExpiryDateAnalytics = oci.datasafe.getUserAssessmentPasswordExpiryDateAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentPasswordExpiryDateAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree === "true",
  *     timePasswordExpiryLessThan: userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan,
  *     userCategory: userAssessmentPasswordExpiryDateAnalyticUserCategory,
  * });

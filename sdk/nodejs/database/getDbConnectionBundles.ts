@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundles = oci.Database.getDbConnectionBundles({
+ * const testDbConnectionBundles = oci.database.getDbConnectionBundles({
  *     compartmentId: compartmentId,
  *     associatedResourceId: testResource.id,
  *     dbConnectionBundleType: dbConnectionBundleDbConnectionBundleType,
@@ -107,7 +107,7 @@ export interface GetDbConnectionBundlesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbConnectionBundles = oci.Database.getDbConnectionBundles({
+ * const testDbConnectionBundles = oci.database.getDbConnectionBundles({
  *     compartmentId: compartmentId,
  *     associatedResourceId: testResource.id,
  *     dbConnectionBundleType: dbConnectionBundleDbConnectionBundleType,

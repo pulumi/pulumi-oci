@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
+ * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
- *     isShared: autonomousDatabaseCharacterSetIsShared,
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
+ *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
  * });
  * ```
  */
@@ -85,10 +85,10 @@ export interface GetAutonomousCharacterSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
+ * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
- *     isShared: autonomousDatabaseCharacterSetIsShared,
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
+ *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
  * });
  * ```
  */

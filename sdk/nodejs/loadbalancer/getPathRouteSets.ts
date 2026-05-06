@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathRouteSets = oci.LoadBalancer.getPathRouteSets({
+ * const testPathRouteSets = oci.loadbalancer.getPathRouteSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetPathRouteSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathRouteSets = oci.LoadBalancer.getPathRouteSets({
+ * const testPathRouteSets = oci.loadbalancer.getPathRouteSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```

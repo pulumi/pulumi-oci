@@ -413,7 +413,7 @@ def get_migration(migration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=test_migration_oci_database_migration_migration["id"])
+    test_migration = oci.databasemigration.get_migration(migration_id=test_migration_oci_database_migration_migration["id"])
     ```
 
 
@@ -471,7 +471,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=test_migration_oci_database_migration_migration["id"])
+    test_migration = oci.databasemigration.get_migration(migration_id=test_migration_oci_database_migration_migration["id"])
     ```
 
 

@@ -226,11 +226,11 @@ def get_unified_audit_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policies = oci.DataSafe.get_unified_audit_policies(compartment_id=compartment_id,
+    test_unified_audit_policies = oci.datasafe.get_unified_audit_policies(compartment_id=compartment_id,
         access_level=unified_audit_policy_access_level,
-        compartment_id_in_subtree=unified_audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=unified_audit_policy_compartment_id_in_subtree == "true",
         display_name=unified_audit_policy_display_name,
-        is_seeded=unified_audit_policy_is_seeded,
+        is_seeded=unified_audit_policy_is_seeded == "true",
         security_policy_id=test_security_policy["id"],
         state=unified_audit_policy_state,
         time_created_greater_than_or_equal_to=unified_audit_policy_time_created_greater_than_or_equal_to,
@@ -324,11 +324,11 @@ def get_unified_audit_policies_output(access_level: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policies = oci.DataSafe.get_unified_audit_policies(compartment_id=compartment_id,
+    test_unified_audit_policies = oci.datasafe.get_unified_audit_policies(compartment_id=compartment_id,
         access_level=unified_audit_policy_access_level,
-        compartment_id_in_subtree=unified_audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=unified_audit_policy_compartment_id_in_subtree == "true",
         display_name=unified_audit_policy_display_name,
-        is_seeded=unified_audit_policy_is_seeded,
+        is_seeded=unified_audit_policy_is_seeded == "true",
         security_policy_id=test_security_policy["id"],
         state=unified_audit_policy_state,
         time_created_greater_than_or_equal_to=unified_audit_policy_time_created_greater_than_or_equal_to,

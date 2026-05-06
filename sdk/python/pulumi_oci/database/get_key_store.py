@@ -225,7 +225,7 @@ def get_key_store(key_store_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
+    test_key_store = oci.database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
+    test_key_store = oci.database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
     ```
 
 

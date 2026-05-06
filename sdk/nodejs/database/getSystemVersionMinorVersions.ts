@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersionMinorVersions = oci.Database.getSystemVersionMinorVersions({
+ * const testSystemVersionMinorVersions = oci.database.getSystemVersionMinorVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest,
+ *     isLatest: systemVersionMinorVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });
@@ -102,11 +102,11 @@ export interface GetSystemVersionMinorVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSystemVersionMinorVersions = oci.Database.getSystemVersionMinorVersions({
+ * const testSystemVersionMinorVersions = oci.database.getSystemVersionMinorVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionMinorVersionGiVersion,
  *     majorVersion: systemVersionMinorVersionMajorVersion,
- *     isLatest: systemVersionMinorVersionIsLatest,
+ *     isLatest: systemVersionMinorVersionIsLatest === "true",
  *     resourceId: testResource.id,
  *     shape: systemVersionMinorVersionShape,
  * });

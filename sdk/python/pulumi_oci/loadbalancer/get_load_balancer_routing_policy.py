@@ -124,7 +124,7 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
+    test_load_balancer_routing_policy = oci.loadbalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
 
@@ -160,7 +160,7 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
+    test_load_balancer_routing_policy = oci.loadbalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
 

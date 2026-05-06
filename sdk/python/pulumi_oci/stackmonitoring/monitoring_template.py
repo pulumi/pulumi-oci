@@ -576,8 +576,8 @@ class MonitoringTemplate(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_alarms_enabled=monitoring_template_is_alarms_enabled,
-            is_split_notification_enabled=monitoring_template_is_split_notification_enabled,
+            is_alarms_enabled=monitoring_template_is_alarms_enabled == "true",
+            is_split_notification_enabled=monitoring_template_is_split_notification_enabled == "true",
             message_format=monitoring_template_message_format,
             repeat_notification_duration=monitoring_template_repeat_notification_duration)
         ```
@@ -645,8 +645,8 @@ class MonitoringTemplate(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_alarms_enabled=monitoring_template_is_alarms_enabled,
-            is_split_notification_enabled=monitoring_template_is_split_notification_enabled,
+            is_alarms_enabled=monitoring_template_is_alarms_enabled == "true",
+            is_split_notification_enabled=monitoring_template_is_split_notification_enabled == "true",
             message_format=monitoring_template_message_format,
             repeat_notification_duration=monitoring_template_repeat_notification_duration)
         ```

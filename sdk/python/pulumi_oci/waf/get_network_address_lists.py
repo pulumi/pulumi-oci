@@ -125,7 +125,7 @@ def get_network_address_lists(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=compartment_id,
+    test_network_address_lists = oci.waf.get_network_address_lists(compartment_id=compartment_id,
         display_name=network_address_list_display_name,
         id=network_address_list_id,
         states=network_address_list_state)
@@ -170,7 +170,7 @@ def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=compartment_id,
+    test_network_address_lists = oci.waf.get_network_address_lists(compartment_id=compartment_id,
         display_name=network_address_list_display_name,
         id=network_address_list_id,
         states=network_address_list_state)

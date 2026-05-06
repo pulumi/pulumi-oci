@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfile = oci.Optimizer.getProfile({
+ * const testProfile = oci.optimizer.getProfile({
  *     profileId: testProfileOciOptimizerProfile.id,
  * });
  * ```
@@ -109,7 +109,7 @@ export interface GetProfileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfile = oci.Optimizer.getProfile({
+ * const testProfile = oci.optimizer.getProfile({
  *     profileId: testProfileOciOptimizerProfile.id,
  * });
  * ```

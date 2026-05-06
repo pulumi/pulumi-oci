@@ -301,7 +301,7 @@ def get_profile_version(profile_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_version = oci.OsManagementHub.get_profile_version(profile_id=test_profile["id"],
+    test_profile_version = oci.osmanagementhub.get_profile_version(profile_id=test_profile["id"],
         profile_version=profile_version_profile_version)
     ```
 
@@ -351,7 +351,7 @@ def get_profile_version_output(profile_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_version = oci.OsManagementHub.get_profile_version(profile_id=test_profile["id"],
+    test_profile_version = oci.osmanagementhub.get_profile_version(profile_id=test_profile["id"],
         profile_version=profile_version_profile_version)
     ```
 

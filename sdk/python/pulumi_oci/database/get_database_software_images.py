@@ -173,12 +173,12 @@ def get_database_software_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+    test_database_software_images = oci.database.get_database_software_images(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
         state=database_software_image_state)
     ```
 
@@ -234,12 +234,12 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+    test_database_software_images = oci.database.get_database_software_images(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
         state=database_software_image_state)
     ```
 

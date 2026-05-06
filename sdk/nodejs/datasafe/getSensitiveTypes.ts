@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
+ * const testSensitiveTypes = oci.datasafe.getSensitiveTypes({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree === "true",
  *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
  *     displayName: sensitiveTypeDisplayName,
  *     entityType: sensitiveTypeEntityType,
- *     isCommon: sensitiveTypeIsCommon,
+ *     isCommon: sensitiveTypeIsCommon === "true",
  *     parentCategoryId: testCategory.id,
  *     sensitiveTypeId: testSensitiveType.id,
  *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,
@@ -176,14 +176,14 @@ export interface GetSensitiveTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
+ * const testSensitiveTypes = oci.datasafe.getSensitiveTypes({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree === "true",
  *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
  *     displayName: sensitiveTypeDisplayName,
  *     entityType: sensitiveTypeEntityType,
- *     isCommon: sensitiveTypeIsCommon,
+ *     isCommon: sensitiveTypeIsCommon === "true",
  *     parentCategoryId: testCategory.id,
  *     sensitiveTypeId: testSensitiveType.id,
  *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,

@@ -357,7 +357,7 @@ def get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipeline = oci.Opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
+    test_opensearch_cluster_pipeline = oci.opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
     ```
 
 
@@ -408,7 +408,7 @@ def get_opensearch_cluster_pipeline_output(opensearch_cluster_pipeline_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipeline = oci.Opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
+    test_opensearch_cluster_pipeline = oci.opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
     ```
 
 

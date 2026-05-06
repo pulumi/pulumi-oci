@@ -157,7 +157,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"],
@@ -213,7 +213,7 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
         availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
         compartment_id=compartment_id,
         compute_hpc_island_id=test_compute_hpc_island["id"],

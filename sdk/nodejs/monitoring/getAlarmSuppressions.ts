@@ -25,12 +25,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppressions = oci.Monitoring.getAlarmSuppressions({
+ * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,
@@ -162,12 +162,12 @@ export interface GetAlarmSuppressionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppressions = oci.Monitoring.getAlarmSuppressions({
+ * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,

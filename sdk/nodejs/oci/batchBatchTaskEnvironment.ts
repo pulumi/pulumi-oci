@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     securityContext: {
- *         fsGroup: batchTaskEnvironmentSecurityContextFsGroup,
- *         runAsGroup: batchTaskEnvironmentSecurityContextRunAsGroup,
- *         runAsUser: batchTaskEnvironmentSecurityContextRunAsUser,
+ *         fsGroup: Number(batchTaskEnvironmentSecurityContextFsGroup),
+ *         runAsGroup: Number(batchTaskEnvironmentSecurityContextRunAsGroup),
+ *         runAsUser: Number(batchTaskEnvironmentSecurityContextRunAsUser),
  *     },
  *     volumes: [{
  *         localMountDirectoryPath: batchTaskEnvironmentVolumesLocalMountDirectoryPath,

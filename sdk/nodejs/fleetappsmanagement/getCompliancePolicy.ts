@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicy = oci.FleetAppsManagement.getCompliancePolicy({
+ * const testCompliancePolicy = oci.fleetappsmanagement.getCompliancePolicy({
  *     compliancePolicyId: testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetCompliancePolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicy = oci.FleetAppsManagement.getCompliancePolicy({
+ * const testCompliancePolicy = oci.fleetappsmanagement.getCompliancePolicy({
  *     compliancePolicyId: testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id,
  * });
  * ```

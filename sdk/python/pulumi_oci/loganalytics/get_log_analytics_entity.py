@@ -356,7 +356,7 @@ def get_log_analytics_entity(is_show_associated_sources_count: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
+    test_log_analytics_entity = oci.loganalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
         namespace=log_analytics_entity_namespace,
         is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count)
     ```
@@ -415,7 +415,7 @@ def get_log_analytics_entity_output(is_show_associated_sources_count: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
+    test_log_analytics_entity = oci.loganalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
         namespace=log_analytics_entity_namespace,
         is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count)
     ```

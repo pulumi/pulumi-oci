@@ -179,7 +179,7 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=test_custom_protection_rule_oci_waas_custom_protection_rule["id"])
+    test_custom_protection_rule = oci.waas.get_custom_protection_rule(custom_protection_rule_id=test_custom_protection_rule_oci_waas_custom_protection_rule["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=test_custom_protection_rule_oci_waas_custom_protection_rule["id"])
+    test_custom_protection_rule = oci.waas.get_custom_protection_rule(custom_protection_rule_id=test_custom_protection_rule_oci_waas_custom_protection_rule["id"])
     ```
 
 

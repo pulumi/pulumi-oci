@@ -114,7 +114,7 @@ def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_key_versions = oci.Kms.get_key_versions(key_id=test_key["id"],
+    test_key_versions = oci.kms.get_key_versions(key_id=test_key["id"],
         management_endpoint=key_version_management_endpoint)
     ```
 
@@ -156,7 +156,7 @@ def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_key_versions = oci.Kms.get_key_versions(key_id=test_key["id"],
+    test_key_versions = oci.kms.get_key_versions(key_id=test_key["id"],
         management_endpoint=key_version_management_endpoint)
     ```
 

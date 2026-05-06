@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListings = oci.Marketplace.getListings({
+ * const testListings = oci.marketplace.getListings({
  *     categories: listingCategory,
  *     compartmentId: compartmentId,
  *     imageId: testImage.id,
- *     isFeatured: listingIsFeatured,
+ *     isFeatured: listingIsFeatured === "true",
  *     listingId: testListing.id,
  *     listingTypes: listingListingTypes,
  *     names: listingName,
@@ -175,11 +175,11 @@ export interface GetListingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListings = oci.Marketplace.getListings({
+ * const testListings = oci.marketplace.getListings({
  *     categories: listingCategory,
  *     compartmentId: compartmentId,
  *     imageId: testImage.id,
- *     isFeatured: listingIsFeatured,
+ *     isFeatured: listingIsFeatured === "true",
  *     listingId: testListing.id,
  *     listingTypes: listingListingTypes,
  *     names: listingName,

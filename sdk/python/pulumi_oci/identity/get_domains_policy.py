@@ -350,7 +350,7 @@ def get_domains_policy(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=test_domain["url"],
+    test_policy = oci.identity.get_domains_policy(idcs_endpoint=test_domain["url"],
         policy_id=test_policy_oci_identity_policy["id"],
         attribute_sets=["all"],
         attributes="",
@@ -421,7 +421,7 @@ def get_domains_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=test_domain["url"],
+    test_policy = oci.identity.get_domains_policy(idcs_endpoint=test_domain["url"],
         policy_id=test_policy_oci_identity_policy["id"],
         attribute_sets=["all"],
         attributes="",

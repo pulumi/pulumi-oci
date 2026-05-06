@@ -97,7 +97,7 @@ def get_cross_connect_port_speed_shape(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
+    test_cross_connect_port_speed_shapes = oci.core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
     ```
 
 
@@ -130,7 +130,7 @@ def get_cross_connect_port_speed_shape_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
+    test_cross_connect_port_speed_shapes = oci.core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
     ```
 
 

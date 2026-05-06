@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     namespace: namespaceLookupsAppendDataManagementNamespace,
  *     charEncoding: namespaceLookupsAppendDataManagementCharEncoding,
  *     expect: namespaceLookupsAppendDataManagementExpect,
- *     isForce: namespaceLookupsAppendDataManagementIsForce,
+ *     isForce: namespaceLookupsAppendDataManagementIsForce === "true",
  * });
  * ```
  *

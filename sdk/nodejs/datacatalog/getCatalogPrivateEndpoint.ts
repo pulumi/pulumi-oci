@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogPrivateEndpoint = oci.DataCatalog.getCatalogPrivateEndpoint({
+ * const testCatalogPrivateEndpoint = oci.datacatalog.getCatalogPrivateEndpoint({
  *     catalogPrivateEndpointId: testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetCatalogPrivateEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogPrivateEndpoint = oci.DataCatalog.getCatalogPrivateEndpoint({
+ * const testCatalogPrivateEndpoint = oci.datacatalog.getCatalogPrivateEndpoint({
  *     catalogPrivateEndpointId: testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id,
  * });
  * ```

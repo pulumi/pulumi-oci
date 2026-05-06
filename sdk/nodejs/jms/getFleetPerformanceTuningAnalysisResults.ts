@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
+ * const testFleetPerformanceTuningAnalysisResults = oci.jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
  *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,
@@ -124,7 +124,7 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
+ * const testFleetPerformanceTuningAnalysisResults = oci.jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
  *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
  *     applicationName: fleetPerformanceTuningAnalysisResultApplicationName,

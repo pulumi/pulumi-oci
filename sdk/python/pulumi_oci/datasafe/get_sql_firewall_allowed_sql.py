@@ -263,7 +263,7 @@ def get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_allowed_sql = oci.DataSafe.get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id=test_sql_firewall_allowed_sql_oci_data_safe_sql_firewall_allowed_sql["id"])
+    test_sql_firewall_allowed_sql = oci.datasafe.get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id=test_sql_firewall_allowed_sql_oci_data_safe_sql_firewall_allowed_sql["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_sql_firewall_allowed_sql_output(sql_firewall_allowed_sql_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_allowed_sql = oci.DataSafe.get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id=test_sql_firewall_allowed_sql_oci_data_safe_sql_firewall_allowed_sql["id"])
+    test_sql_firewall_allowed_sql = oci.datasafe.get_sql_firewall_allowed_sql(sql_firewall_allowed_sql_id=test_sql_firewall_allowed_sql_oci_data_safe_sql_firewall_allowed_sql["id"])
     ```
 
 

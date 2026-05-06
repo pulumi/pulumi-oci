@@ -144,7 +144,7 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=namespace_namespace)
+    test_namespace = oci.loganalytics.get_namespace(namespace=namespace_namespace)
     ```
 
 
@@ -177,7 +177,7 @@ def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=namespace_namespace)
+    test_namespace = oci.loganalytics.get_namespace(namespace=namespace_namespace)
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstance = oci.OsManagementHub.getManagedInstance({
+ * const testManagedInstance = oci.osmanagementhub.getManagedInstance({
  *     managedInstanceId: testManagedInstanceOciOsManagementHubManagedInstance.id,
  * });
  * ```
@@ -224,7 +224,7 @@ export interface GetManagedInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstance = oci.OsManagementHub.getManagedInstance({
+ * const testManagedInstance = oci.osmanagementhub.getManagedInstance({
  *     managedInstanceId: testManagedInstanceOciOsManagementHubManagedInstance.id,
  * });
  * ```

@@ -138,7 +138,7 @@ def get_file_storage_lustre_file_systems(availability_domain: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,
@@ -188,7 +188,7 @@ def get_file_storage_lustre_file_systems_output(availability_domain: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,

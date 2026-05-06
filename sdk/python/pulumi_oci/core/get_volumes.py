@@ -163,7 +163,7 @@ def get_volumes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+    test_volumes = oci.core.get_volumes(availability_domain=volume_availability_domain,
         cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,
@@ -219,7 +219,7 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+    test_volumes = oci.core.get_volumes(availability_domain=volume_availability_domain,
         cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,

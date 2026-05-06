@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetUncorrelatedPackageApplications = oci.Jms.getFleetUncorrelatedPackageApplications({
+ * const testFleetUncorrelatedPackageApplications = oci.jms.getFleetUncorrelatedPackageApplications({
  *     fleetId: testFleet.id,
  *     packageName: fleetUncorrelatedPackageApplicationPackageName,
  *     applicationId: testApplication.id,
@@ -102,7 +102,7 @@ export interface GetFleetUncorrelatedPackageApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetUncorrelatedPackageApplications = oci.Jms.getFleetUncorrelatedPackageApplications({
+ * const testFleetUncorrelatedPackageApplications = oci.jms.getFleetUncorrelatedPackageApplications({
  *     fleetId: testFleet.id,
  *     packageName: fleetUncorrelatedPackageApplicationPackageName,
  *     applicationId: testApplication.id,

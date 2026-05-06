@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditPolicies = oci.DataSafe.getAuditPolicies({
+ * const testAuditPolicies = oci.datasafe.getAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: auditPolicyAccessLevel,
  *     auditPolicyId: testAuditPolicy.id,
- *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree === "true",
  *     displayName: auditPolicyDisplayName,
  *     state: auditPolicyState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -156,11 +156,11 @@ export interface GetAuditPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditPolicies = oci.DataSafe.getAuditPolicies({
+ * const testAuditPolicies = oci.datasafe.getAuditPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: auditPolicyAccessLevel,
  *     auditPolicyId: testAuditPolicy.id,
- *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree === "true",
  *     displayName: auditPolicyDisplayName,
  *     state: auditPolicyState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,

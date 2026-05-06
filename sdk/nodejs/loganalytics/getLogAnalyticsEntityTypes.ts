@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTypes = oci.LogAnalytics.getLogAnalyticsEntityTypes({
+ * const testLogAnalyticsEntityTypes = oci.loganalytics.getLogAnalyticsEntityTypes({
  *     namespace: logAnalyticsEntityTypeNamespace,
  *     cloudType: logAnalyticsEntityTypeCloudType,
  *     name: logAnalyticsEntityTypeName,
@@ -104,7 +104,7 @@ export interface GetLogAnalyticsEntityTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTypes = oci.LogAnalytics.getLogAnalyticsEntityTypes({
+ * const testLogAnalyticsEntityTypes = oci.loganalytics.getLogAnalyticsEntityTypes({
  *     namespace: logAnalyticsEntityTypeNamespace,
  *     cloudType: logAnalyticsEntityTypeCloudType,
  *     name: logAnalyticsEntityTypeName,

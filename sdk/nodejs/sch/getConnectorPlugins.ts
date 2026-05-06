@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
+ * const testConnectorPlugins = oci.sch.getConnectorPlugins({
  *     displayName: connectorPluginDisplayName,
  *     name: connectorPluginName,
  *     state: connectorPluginState,
@@ -91,7 +91,7 @@ export interface GetConnectorPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
+ * const testConnectorPlugins = oci.sch.getConnectorPlugins({
  *     displayName: connectorPluginDisplayName,
  *     name: connectorPluginName,
  *     state: connectorPluginState,

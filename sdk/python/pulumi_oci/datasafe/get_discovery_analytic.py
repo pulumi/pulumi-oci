@@ -132,8 +132,8 @@ def get_discovery_analytic(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytic = oci.DataSafe.get_discovery_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytic = oci.datasafe.get_discovery_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         target_id=test_target["id"])
@@ -182,8 +182,8 @@ def get_discovery_analytic_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytic = oci.DataSafe.get_discovery_analytic(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytic = oci.datasafe.get_discovery_analytic(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         target_id=test_target["id"])

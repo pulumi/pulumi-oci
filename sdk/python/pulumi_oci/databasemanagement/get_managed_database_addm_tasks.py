@@ -119,7 +119,7 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[Union['GetManaged
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_addm_tasks = oci.databasemanagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```
@@ -161,7 +161,7 @@ def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_addm_tasks = oci.databasemanagement.get_managed_database_addm_tasks(managed_database_id=test_managed_database["id"],
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```

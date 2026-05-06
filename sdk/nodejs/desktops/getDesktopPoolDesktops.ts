@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktopPoolDesktops = oci.Desktops.getDesktopPoolDesktops({
+ * const testDesktopPoolDesktops = oci.desktops.getDesktopPoolDesktops({
  *     compartmentId: compartmentId,
  *     desktopPoolId: testDesktopPool.id,
  *     availabilityDomain: desktopPoolDesktopAvailabilityDomain,
@@ -101,7 +101,7 @@ export interface GetDesktopPoolDesktopsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDesktopPoolDesktops = oci.Desktops.getDesktopPoolDesktops({
+ * const testDesktopPoolDesktops = oci.desktops.getDesktopPoolDesktops({
  *     compartmentId: compartmentId,
  *     desktopPoolId: testDesktopPool.id,
  *     availabilityDomain: desktopPoolDesktopAvailabilityDomain,

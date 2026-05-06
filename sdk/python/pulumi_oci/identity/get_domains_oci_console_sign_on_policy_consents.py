@@ -216,14 +216,14 @@ def get_domains_oci_console_sign_on_policy_consents(attribute_sets: Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consents = oci.Identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
-        oci_console_sign_on_policy_consent_count=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count,
+    test_oci_console_sign_on_policy_consents = oci.identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
+        oci_console_sign_on_policy_consent_count=int(oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count),
         oci_console_sign_on_policy_consent_filter=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_filter,
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,
         authorization=oci_console_sign_on_policy_consent_authorization,
         resource_type_schema_version=oci_console_sign_on_policy_consent_resource_type_schema_version,
-        start_index=oci_console_sign_on_policy_consent_start_index)
+        start_index=int(oci_console_sign_on_policy_consent_start_index))
     ```
 
 
@@ -287,14 +287,14 @@ def get_domains_oci_console_sign_on_policy_consents_output(attribute_sets: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consents = oci.Identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
-        oci_console_sign_on_policy_consent_count=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count,
+    test_oci_console_sign_on_policy_consents = oci.identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
+        oci_console_sign_on_policy_consent_count=int(oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count),
         oci_console_sign_on_policy_consent_filter=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_filter,
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,
         authorization=oci_console_sign_on_policy_consent_authorization,
         resource_type_schema_version=oci_console_sign_on_policy_consent_resource_type_schema_version,
-        start_index=oci_console_sign_on_policy_consent_start_index)
+        start_index=int(oci_console_sign_on_policy_consent_start_index))
     ```
 
 

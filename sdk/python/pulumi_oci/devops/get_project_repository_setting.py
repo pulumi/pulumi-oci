@@ -93,7 +93,7 @@ def get_project_repository_setting(project_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_project_repository_setting = oci.DevOps.get_project_repository_setting(project_id=test_project["id"])
+    test_project_repository_setting = oci.devops.get_project_repository_setting(project_id=test_project["id"])
     ```
 
 
@@ -122,7 +122,7 @@ def get_project_repository_setting_output(project_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_project_repository_setting = oci.DevOps.get_project_repository_setting(project_id=test_project["id"])
+    test_project_repository_setting = oci.devops.get_project_repository_setting(project_id=test_project["id"])
     ```
 
 

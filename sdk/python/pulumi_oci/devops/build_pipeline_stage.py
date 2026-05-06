@@ -770,8 +770,8 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_pipeline_stage_type=build_pipeline_stage_build_pipeline_stage_type,
             build_runner_shape_config={
                 "build_runner_type": build_pipeline_stage_build_runner_shape_config_build_runner_type,
-                "memory_in_gbs": build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
-                "ocpus": build_pipeline_stage_build_runner_shape_config_ocpus,
+                "memory_in_gbs": int(build_pipeline_stage_build_runner_shape_config_memory_in_gbs),
+                "ocpus": int(build_pipeline_stage_build_runner_shape_config_ocpus),
             },
             build_source_collection={
                 "items": [{
@@ -800,14 +800,14 @@ class BuildPipelineStage(pulumi.CustomResource):
                 "bar-key": "value",
             },
             image=build_pipeline_stage_image,
-            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled,
+            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled == "true",
             primary_build_source=build_pipeline_stage_primary_build_source,
             private_access_config={
                 "network_channel_type": build_pipeline_stage_private_access_config_network_channel_type,
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": build_pipeline_stage_private_access_config_nsg_ids,
             },
-            stage_execution_timeout_in_seconds=build_pipeline_stage_stage_execution_timeout_in_seconds,
+            stage_execution_timeout_in_seconds=int(build_pipeline_stage_stage_execution_timeout_in_seconds),
             wait_criteria={
                 "wait_duration": build_pipeline_stage_wait_criteria_wait_duration,
                 "wait_type": build_pipeline_stage_wait_criteria_wait_type,
@@ -874,8 +874,8 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_pipeline_stage_type=build_pipeline_stage_build_pipeline_stage_type,
             build_runner_shape_config={
                 "build_runner_type": build_pipeline_stage_build_runner_shape_config_build_runner_type,
-                "memory_in_gbs": build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
-                "ocpus": build_pipeline_stage_build_runner_shape_config_ocpus,
+                "memory_in_gbs": int(build_pipeline_stage_build_runner_shape_config_memory_in_gbs),
+                "ocpus": int(build_pipeline_stage_build_runner_shape_config_ocpus),
             },
             build_source_collection={
                 "items": [{
@@ -904,14 +904,14 @@ class BuildPipelineStage(pulumi.CustomResource):
                 "bar-key": "value",
             },
             image=build_pipeline_stage_image,
-            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled,
+            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled == "true",
             primary_build_source=build_pipeline_stage_primary_build_source,
             private_access_config={
                 "network_channel_type": build_pipeline_stage_private_access_config_network_channel_type,
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": build_pipeline_stage_private_access_config_nsg_ids,
             },
-            stage_execution_timeout_in_seconds=build_pipeline_stage_stage_execution_timeout_in_seconds,
+            stage_execution_timeout_in_seconds=int(build_pipeline_stage_stage_execution_timeout_in_seconds),
             wait_criteria={
                 "wait_duration": build_pipeline_stage_wait_criteria_wait_duration,
                 "wait_type": build_pipeline_stage_wait_criteria_wait_type,

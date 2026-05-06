@@ -170,7 +170,7 @@ def get_awr_hub_sources(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_sources = oci.opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
         awr_hub_source_id=test_awr_hub_source["id"],
         compartment_id=compartment_id,
         name=awr_hub_source_name,
@@ -231,7 +231,7 @@ def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_sources = oci.opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
         awr_hub_source_id=test_awr_hub_source["id"],
         compartment_id=compartment_id,
         name=awr_hub_source_name,

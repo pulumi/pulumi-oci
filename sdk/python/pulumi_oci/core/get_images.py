@@ -190,7 +190,7 @@ def get_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=compartment_id,
+    test_images = oci.core.get_images(compartment_id=compartment_id,
         display_name=image_display_name,
         operating_system=image_operating_system,
         operating_system_version=image_operating_system_version,
@@ -266,7 +266,7 @@ def get_images_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=compartment_id,
+    test_images = oci.core.get_images(compartment_id=compartment_id,
         display_name=image_display_name,
         operating_system=image_operating_system,
         operating_system_version=image_operating_system_version,

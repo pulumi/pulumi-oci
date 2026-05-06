@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTriggers = oci.DevOps.getTriggers({
+ * const testTriggers = oci.devops.getTriggers({
  *     compartmentId: compartmentId,
  *     displayName: triggerDisplayName,
  *     id: triggerId,
@@ -107,7 +107,7 @@ export interface GetTriggersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTriggers = oci.DevOps.getTriggers({
+ * const testTriggers = oci.devops.getTriggers({
  *     compartmentId: compartmentId,
  *     displayName: triggerDisplayName,
  *     id: triggerId,

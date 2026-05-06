@@ -105,7 +105,7 @@ def get_repository_protected_branches(filters: Optional[Sequence[Union['GetRepos
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_protected_branches = oci.DevOps.get_repository_protected_branches(repository_id=test_repository["id"],
+    test_repository_protected_branches = oci.devops.get_repository_protected_branches(repository_id=test_repository["id"],
         name=repository_protected_branch_name)
     ```
 
@@ -141,7 +141,7 @@ def get_repository_protected_branches_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_protected_branches = oci.DevOps.get_repository_protected_branches(repository_id=test_repository["id"],
+    test_repository_protected_branches = oci.devops.get_repository_protected_branches(repository_id=test_repository["id"],
         name=repository_protected_branch_name)
     ```
 

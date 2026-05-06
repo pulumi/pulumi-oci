@@ -136,7 +136,7 @@ def get_sql_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+    test_sql_endpoints = oci.dataflow.get_sql_endpoints(compartment_id=compartment_id,
         display_name=sql_endpoint_display_name,
         sql_endpoint_id=test_sql_endpoint["id"],
         state=sql_endpoint_state)
@@ -184,7 +184,7 @@ def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+    test_sql_endpoints = oci.dataflow.get_sql_endpoints(compartment_id=compartment_id,
         display_name=sql_endpoint_display_name,
         sql_endpoint_id=test_sql_endpoint["id"],
         state=sql_endpoint_state)

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExports = oci.FileStorage.getExports({
+ * const testExports = oci.filestorage.getExports({
  *     compartmentId: compartmentId,
  *     exportSetId: testExportSet.id,
  *     fileSystemId: testFileSystem.id,
@@ -108,7 +108,7 @@ export interface GetExportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExports = oci.FileStorage.getExports({
+ * const testExports = oci.filestorage.getExports({
  *     compartmentId: compartmentId,
  *     exportSetId: testExportSet.id,
  *     fileSystemId: testFileSystem.id,

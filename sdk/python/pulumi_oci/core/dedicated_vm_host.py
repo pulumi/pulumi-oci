@@ -540,7 +540,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
@@ -609,7 +609,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],

@@ -144,7 +144,7 @@ def get_service_provider_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_actions = oci.DelegateAccessControl.get_service_provider_actions(compartment_id=compartment_id,
+    test_service_provider_actions = oci.delegateaccesscontrol.get_service_provider_actions(compartment_id=compartment_id,
         name=service_provider_action_name,
         resource_type=service_provider_action_resource_type,
         service_provider_service_types=service_provider_action_service_provider_service_type,
@@ -195,7 +195,7 @@ def get_service_provider_actions_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider_actions = oci.DelegateAccessControl.get_service_provider_actions(compartment_id=compartment_id,
+    test_service_provider_actions = oci.delegateaccesscontrol.get_service_provider_actions(compartment_id=compartment_id,
         name=service_provider_action_name,
         resource_type=service_provider_action_resource_type,
         service_provider_service_types=service_provider_action_service_provider_service_type,

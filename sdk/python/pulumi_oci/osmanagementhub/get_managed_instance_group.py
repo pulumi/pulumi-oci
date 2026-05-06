@@ -324,7 +324,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
+    test_managed_instance_group = oci.osmanagementhub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
     ```
 
 
@@ -372,7 +372,7 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
+    test_managed_instance_group = oci.osmanagementhub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
     ```
 
 

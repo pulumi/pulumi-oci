@@ -128,7 +128,7 @@ def get_windows_updates(classification_types: Optional[Sequence[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_updates = oci.OsManagementHub.get_windows_updates(compartment_id=compartment_id,
+    test_windows_updates = oci.osmanagementhub.get_windows_updates(compartment_id=compartment_id,
         classification_types=windows_update_classification_type,
         display_name_contains=windows_update_display_name_contains,
         names=windows_update_name)
@@ -174,7 +174,7 @@ def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_updates = oci.OsManagementHub.get_windows_updates(compartment_id=compartment_id,
+    test_windows_updates = oci.osmanagementhub.get_windows_updates(compartment_id=compartment_id,
         classification_types=windows_update_classification_type,
         display_name_contains=windows_update_display_name_contains,
         names=windows_update_name)

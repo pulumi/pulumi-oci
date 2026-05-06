@@ -240,7 +240,7 @@ def get_named_credential(named_credential_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credential = oci.DatabaseManagement.get_named_credential(named_credential_id=test_named_credential_oci_database_management_named_credential["id"])
+    test_named_credential = oci.databasemanagement.get_named_credential(named_credential_id=test_named_credential_oci_database_management_named_credential["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_named_credential_output(named_credential_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credential = oci.DatabaseManagement.get_named_credential(named_credential_id=test_named_credential_oci_database_management_named_credential["id"])
+    test_named_credential = oci.databasemanagement.get_named_credential(named_credential_id=test_named_credential_oci_database_management_named_credential["id"])
     ```
 
 

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testRepository = new oci.artifacts.Repository("test_repository", {
  *     compartmentId: compartmentId,
- *     isImmutable: repositoryIsImmutable,
+ *     isImmutable: repositoryIsImmutable === "true",
  *     repositoryType: repositoryRepositoryType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",

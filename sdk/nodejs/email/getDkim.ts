@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDkim = oci.Email.getDkim({
+ * const testDkim = oci.email.getDkim({
  *     dkimId: testDkimOciEmailDkim.id,
  * });
  * ```
@@ -123,7 +123,7 @@ export interface GetDkimResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDkim = oci.Email.getDkim({
+ * const testDkim = oci.email.getDkim({
  *     dkimId: testDkimOciEmailDkim.id,
  * });
  * ```

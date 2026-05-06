@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  * const testPool = new oci.dataflow.Pool("test_pool", {
  *     compartmentId: compartmentId,
  *     configurations: [{
- *         max: poolConfigurationsMax,
- *         min: poolConfigurationsMin,
+ *         max: Number(poolConfigurationsMax),
+ *         min: Number(poolConfigurationsMin),
  *         shape: poolConfigurationsShape,
  *         shapeConfig: {
  *             memoryInGbs: poolConfigurationsShapeConfigMemoryInGbs,
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     idleTimeoutInMinutes: poolIdleTimeoutInMinutes,
+ *     idleTimeoutInMinutes: Number(poolIdleTimeoutInMinutes),
  *     schedules: [{
  *         dayOfWeek: poolSchedulesDayOfWeek,
- *         startTime: poolSchedulesStartTime,
- *         stopTime: poolSchedulesStopTime,
+ *         startTime: Number(poolSchedulesStartTime),
+ *         stopTime: Number(poolSchedulesStopTime),
  *     }],
  * });
  * ```

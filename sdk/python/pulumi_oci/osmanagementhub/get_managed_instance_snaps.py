@@ -128,7 +128,7 @@ def get_managed_instance_snaps(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_snaps = oci.OsManagementHub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_snaps = oci.osmanagementhub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         name=managed_instance_snap_name,
         name_contains=managed_instance_snap_name_contains)
@@ -174,7 +174,7 @@ def get_managed_instance_snaps_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_snaps = oci.OsManagementHub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_snaps = oci.osmanagementhub.get_managed_instance_snaps(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         name=managed_instance_snap_name,
         name_contains=managed_instance_snap_name_contains)

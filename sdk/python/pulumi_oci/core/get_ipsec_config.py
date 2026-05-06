@@ -122,7 +122,7 @@ def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_device_config = oci.core.get_ipsec_config(ipsec_id=test_ipsec["id"])
     ```
 
 
@@ -158,7 +158,7 @@ def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_device_config = oci.core.get_ipsec_config(ipsec_id=test_ipsec["id"])
     ```
 
 

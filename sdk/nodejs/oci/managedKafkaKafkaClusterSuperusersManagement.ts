@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testKafkaClusterSuperusersManagement = new oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management", {
  *     kafkaClusterId: testKafkaCluster.id,
- *     enableSuperuser: enableSuperuser,
+ *     enableSuperuser: enableSuperuser === "true",
  *     compartmentId: compartmentId,
  *     secretId: testSecret.id,
  * });

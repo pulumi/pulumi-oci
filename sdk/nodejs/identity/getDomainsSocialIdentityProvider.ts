@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSocialIdentityProvider = oci.Identity.getDomainsSocialIdentityProvider({
+ * const testSocialIdentityProvider = oci.identity.getDomainsSocialIdentityProvider({
  *     idcsEndpoint: testDomain.url,
  *     socialIdentityProviderId: testIdentityProvider.id,
  *     authorization: socialIdentityProviderAuthorization,
@@ -245,7 +245,7 @@ export interface GetDomainsSocialIdentityProviderResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSocialIdentityProvider = oci.Identity.getDomainsSocialIdentityProvider({
+ * const testSocialIdentityProvider = oci.identity.getDomainsSocialIdentityProvider({
  *     idcsEndpoint: testDomain.url,
  *     socialIdentityProviderId: testIdentityProvider.id,
  *     authorization: socialIdentityProviderAuthorization,

@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     instancePools: [{
  *         instanceConfigurationId: testInstanceConfiguration.id,
- *         size: clusterNetworkInstancePoolsSize,
+ *         size: Number(clusterNetworkInstancePoolsSize),
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
@@ -54,7 +54,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip === "true",
  *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: testSubnet.id,
@@ -62,7 +62,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip === "true",
  *         }],
  *     },
  *     clusterConfiguration: {

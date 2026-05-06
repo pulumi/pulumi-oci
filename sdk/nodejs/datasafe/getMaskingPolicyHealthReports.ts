@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReports = oci.DataSafe.getMaskingPolicyHealthReports({
+ * const testMaskingPolicyHealthReports = oci.datasafe.getMaskingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree === "true",
  *     displayName: maskingPolicyHealthReportDisplayName,
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -131,10 +131,10 @@ export interface GetMaskingPolicyHealthReportsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReports = oci.DataSafe.getMaskingPolicyHealthReports({
+ * const testMaskingPolicyHealthReports = oci.datasafe.getMaskingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: maskingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingPolicyHealthReportCompartmentIdInSubtree === "true",
  *     displayName: maskingPolicyHealthReportDisplayName,
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     maskingPolicyId: testMaskingPolicy.id,

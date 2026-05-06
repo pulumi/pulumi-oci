@@ -95,7 +95,7 @@ def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'Get
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=test_load_balancer["id"])
+    test_rule_sets = oci.loadbalancer.get_rule_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_rule_sets = oci.LoadBalancer.get_rule_sets(load_balancer_id=test_load_balancer["id"])
+    test_rule_sets = oci.loadbalancer.get_rule_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorAction = oci.OperatorAccessControl.getAction({
+ * const testOperatorAction = oci.operatoraccesscontrol.getAction({
  *     operatorActionId: testOperatorActionOciOperatorAccessControlOperatorAction.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export interface GetActionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorAction = oci.OperatorAccessControl.getAction({
+ * const testOperatorAction = oci.operatoraccesscontrol.getAction({
  *     operatorActionId: testOperatorActionOciOperatorAccessControlOperatorAction.id,
  * });
  * ```

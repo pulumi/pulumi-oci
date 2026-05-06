@@ -252,7 +252,7 @@ def get_software_package(software_package_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package = oci.OsManagementHub.get_software_package(software_package_name=test_software_package_oci_os_management_hub_software_package["name"])
+    test_software_package = oci.osmanagementhub.get_software_package(software_package_name=test_software_package_oci_os_management_hub_software_package["name"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_software_package_output(software_package_name: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_package = oci.OsManagementHub.get_software_package(software_package_name=test_software_package_oci_os_management_hub_software_package["name"])
+    test_software_package = oci.osmanagementhub.get_software_package(software_package_name=test_software_package_oci_os_management_hub_software_package["name"])
     ```
 
 

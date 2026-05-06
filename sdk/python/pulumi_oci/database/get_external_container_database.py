@@ -300,7 +300,7 @@ def get_external_container_database(external_container_database_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_container_database = oci.Database.get_external_container_database(external_container_database_id=test_external_container_database_oci_database_external_container_database["id"])
+    test_external_container_database = oci.database.get_external_container_database(external_container_database_id=test_external_container_database_oci_database_external_container_database["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_external_container_database_output(external_container_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_external_container_database = oci.Database.get_external_container_database(external_container_database_id=test_external_container_database_oci_database_external_container_database["id"])
+    test_external_container_database = oci.database.get_external_container_database(external_container_database_id=test_external_container_database_oci_database_external_container_database["id"])
     ```
 
 

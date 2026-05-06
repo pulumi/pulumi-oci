@@ -116,7 +116,7 @@ def get_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+    test_resources = oci.usageproxy.get_resources(compartment_id=compartment_id,
         service_name=test_service["name"],
         entitlement_id=test_entitlement["id"])
     ```
@@ -158,7 +158,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+    test_resources = oci.usageproxy.get_resources(compartment_id=compartment_id,
         service_name=test_service["name"],
         entitlement_id=test_entitlement["id"])
     ```

@@ -180,7 +180,7 @@ def get_http_redirect(http_redirect_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=test_http_redirect_oci_waas_http_redirect["id"])
+    test_http_redirect = oci.waas.get_http_redirect(http_redirect_id=test_http_redirect_oci_waas_http_redirect["id"])
     ```
 
 
@@ -216,7 +216,7 @@ def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirect = oci.Waas.get_http_redirect(http_redirect_id=test_http_redirect_oci_waas_http_redirect["id"])
+    test_http_redirect = oci.waas.get_http_redirect(http_redirect_id=test_http_redirect_oci_waas_http_redirect["id"])
     ```
 
 

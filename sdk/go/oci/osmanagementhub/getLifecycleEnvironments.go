@@ -33,11 +33,11 @@ import (
 //			_, err := osmanagementhub.GetLifecycleEnvironments(ctx, &osmanagementhub.GetLifecycleEnvironmentsArgs{
 //				ArchType:               pulumi.StringRef(lifecycleEnvironmentArchType),
 //				CompartmentId:          pulumi.StringRef(compartmentId),
-//				DisplayNames:           lifecycleEnvironmentDisplayName,
+//				DisplayNames:           pulumi.ToArray(lifecycleEnvironmentDisplayName),
 //				DisplayNameContains:    pulumi.StringRef(lifecycleEnvironmentDisplayNameContains),
 //				LifecycleEnvironmentId: pulumi.StringRef(testLifecycleEnvironment.Id),
-//				Locations:              lifecycleEnvironmentLocation,
-//				LocationNotEqualTos:    lifecycleEnvironmentLocationNotEqualTo,
+//				Locations:              pulumi.ToArray(lifecycleEnvironmentLocation),
+//				LocationNotEqualTos:    pulumi.ToArray(lifecycleEnvironmentLocationNotEqualTo),
 //				OsFamily:               pulumi.StringRef(lifecycleEnvironmentOsFamily),
 //				State:                  pulumi.StringRef(lifecycleEnvironmentState),
 //			}, nil)

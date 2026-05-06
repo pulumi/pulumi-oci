@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobs = oci.StackMonitoring.getDiscoveryJobs({
+ * const testDiscoveryJobs = oci.stackmonitoring.getDiscoveryJobs({
  *     compartmentId: compartmentId,
  *     name: discoveryJobName,
  * });
@@ -77,7 +77,7 @@ export interface GetDiscoveryJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobs = oci.StackMonitoring.getDiscoveryJobs({
+ * const testDiscoveryJobs = oci.stackmonitoring.getDiscoveryJobs({
  *     compartmentId: compartmentId,
  *     name: discoveryJobName,
  * });

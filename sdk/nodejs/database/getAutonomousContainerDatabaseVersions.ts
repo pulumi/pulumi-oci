@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseVersions = oci.Database.getAutonomousContainerDatabaseVersions({
+ * const testAutonomousContainerDatabaseVersions = oci.database.getAutonomousContainerDatabaseVersions({
  *     compartmentId: compartmentId,
  *     serviceComponent: autonomousContainerDatabaseVersionServiceComponent,
  * });
@@ -74,7 +74,7 @@ export interface GetAutonomousContainerDatabaseVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseVersions = oci.Database.getAutonomousContainerDatabaseVersions({
+ * const testAutonomousContainerDatabaseVersions = oci.database.getAutonomousContainerDatabaseVersions({
  *     compartmentId: compartmentId,
  *     serviceComponent: autonomousContainerDatabaseVersionServiceComponent,
  * });

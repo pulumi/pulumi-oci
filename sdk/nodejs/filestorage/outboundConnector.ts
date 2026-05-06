@@ -62,9 +62,9 @@ import * as utilities from "../utilities";
  *         timeCreated: outboundConnectorLocksTimeCreated,
  *     }],
  *     passwordSecretId: testSecret.id,
- *     passwordSecretVersion: outboundConnectorPasswordSecretVersion,
+ *     passwordSecretVersion: Number(outboundConnectorPasswordSecretVersion),
  *     trustedCertificateSecretId: testSecret.id,
- *     trustedCertificateSecretVersion: outboundConnectorTrustedCertificateSecretVersion,
+ *     trustedCertificateSecretVersion: Number(outboundConnectorTrustedCertificateSecretVersion),
  * });
  * ```
  *

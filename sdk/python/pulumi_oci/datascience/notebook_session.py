@@ -477,7 +477,7 @@ class NotebookSession(pulumi.CustomResource):
             },
             notebook_session_config_details={
                 "shape": notebook_session_notebook_session_config_details_shape,
-                "block_storage_size_in_gbs": notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(notebook_session_notebook_session_config_details_block_storage_size_in_gbs),
                 "notebook_session_shape_config_details": {
                     "cpu_baseline": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_cpu_baseline,
                     "memory_in_gbs": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
@@ -489,7 +489,7 @@ class NotebookSession(pulumi.CustomResource):
             notebook_session_configuration_details={
                 "shape": notebook_session_notebook_session_configuration_details_shape,
                 "subnet_id": test_subnet["id"],
-                "block_storage_size_in_gbs": notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs),
                 "notebook_session_shape_config_details": {
                     "cpu_baseline": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_cpu_baseline,
                     "memory_in_gbs": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
@@ -575,7 +575,7 @@ class NotebookSession(pulumi.CustomResource):
             },
             notebook_session_config_details={
                 "shape": notebook_session_notebook_session_config_details_shape,
-                "block_storage_size_in_gbs": notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(notebook_session_notebook_session_config_details_block_storage_size_in_gbs),
                 "notebook_session_shape_config_details": {
                     "cpu_baseline": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_cpu_baseline,
                     "memory_in_gbs": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
@@ -587,7 +587,7 @@ class NotebookSession(pulumi.CustomResource):
             notebook_session_configuration_details={
                 "shape": notebook_session_notebook_session_configuration_details_shape,
                 "subnet_id": test_subnet["id"],
-                "block_storage_size_in_gbs": notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs),
                 "notebook_session_shape_config_details": {
                     "cpu_baseline": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_cpu_baseline,
                     "memory_in_gbs": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,

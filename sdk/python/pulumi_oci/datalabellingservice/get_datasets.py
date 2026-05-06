@@ -138,7 +138,7 @@ def get_datasets(annotation_format: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=compartment_id,
+    test_datasets = oci.datalabellingservice.get_datasets(compartment_id=compartment_id,
         annotation_format=dataset_annotation_format,
         display_name=dataset_display_name,
         id=dataset_id,
@@ -188,7 +188,7 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=compartment_id,
+    test_datasets = oci.datalabellingservice.get_datasets(compartment_id=compartment_id,
         annotation_format=dataset_annotation_format,
         display_name=dataset_display_name,
         id=dataset_id,

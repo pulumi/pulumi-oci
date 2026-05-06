@@ -111,7 +111,7 @@ def get_iam_work_requests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=compartment_id,
+    test_iam_work_requests = oci.identity.get_iam_work_requests(compartment_id=compartment_id,
         resource_identifier=iam_work_request_resource_identifier)
     ```
 
@@ -150,7 +150,7 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=compartment_id,
+    test_iam_work_requests = oci.identity.get_iam_work_requests(compartment_id=compartment_id,
         resource_identifier=iam_work_request_resource_identifier)
     ```
 

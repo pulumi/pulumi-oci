@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcn = oci.Core.getVcn({
+ * const testVcn = oci.core.getVcn({
  *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```
@@ -131,7 +131,7 @@ export interface GetVcnResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcn = oci.Core.getVcn({
+ * const testVcn = oci.core.getVcn({
  *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```

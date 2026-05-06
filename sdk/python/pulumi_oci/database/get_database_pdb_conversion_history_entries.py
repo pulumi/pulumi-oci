@@ -118,7 +118,7 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+    test_database_pdb_conversion_history_entries = oci.database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
         pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
         state=database_pdb_conversion_history_entry_state)
     ```
@@ -159,7 +159,7 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+    test_database_pdb_conversion_history_entries = oci.database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
         pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
         state=database_pdb_conversion_history_entry_state)
     ```

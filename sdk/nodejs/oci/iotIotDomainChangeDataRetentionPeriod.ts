@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIotDomainChangeDataRetentionPeriod = new oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period", {
- *     dataRetentionPeriodInDays: iotDomainChangeDataRetentionPeriodDataRetentionPeriodInDays,
+ *     dataRetentionPeriodInDays: Number(iotDomainChangeDataRetentionPeriodDataRetentionPeriodInDays),
  *     iotDomainId: testIotDomain.id,
  *     type: iotDomainChangeDataRetentionPeriodType,
  * });

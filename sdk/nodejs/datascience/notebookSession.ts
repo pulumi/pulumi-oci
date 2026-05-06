@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     },
  *     notebookSessionConfigDetails: {
  *         shape: notebookSessionNotebookSessionConfigDetailsShape,
- *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs),
  *         notebookSessionShapeConfigDetails: {
  *             cpuBaseline: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
@@ -44,7 +44,7 @@ import * as utilities from "../utilities";
  *     notebookSessionConfigurationDetails: {
  *         shape: notebookSessionNotebookSessionConfigurationDetailsShape,
  *         subnetId: testSubnet.id,
- *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs),
  *         notebookSessionShapeConfigDetails: {
  *             cpuBaseline: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,

@@ -240,7 +240,7 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=test_catalog_private_endpoint_oci_datacatalog_catalog_private_endpoint["id"])
+    test_catalog_private_endpoint = oci.datacatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=test_catalog_private_endpoint_oci_datacatalog_catalog_private_endpoint["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_catalog_private_endpoint_output(catalog_private_endpoint_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=test_catalog_private_endpoint_oci_datacatalog_catalog_private_endpoint["id"])
+    test_catalog_private_endpoint = oci.datacatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=test_catalog_private_endpoint_oci_datacatalog_catalog_private_endpoint["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
+ * const testJavaLicenseAcceptanceRecords = oci.jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
  *     compartmentId: tenancyOcid,
  *     id: javaLicenseAcceptanceRecordId,
  *     licenseType: javaLicenseAcceptanceRecordLicenseType,
@@ -100,7 +100,7 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
+ * const testJavaLicenseAcceptanceRecords = oci.jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
  *     compartmentId: tenancyOcid,
  *     id: javaLicenseAcceptanceRecordId,
  *     licenseType: javaLicenseAcceptanceRecordLicenseType,

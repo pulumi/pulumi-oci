@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistories = oci.Core.getConsoleHistories({
+ * const testConsoleHistories = oci.core.getConsoleHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: consoleHistoryAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -100,7 +100,7 @@ export interface GetConsoleHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistories = oci.Core.getConsoleHistories({
+ * const testConsoleHistories = oci.core.getConsoleHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: consoleHistoryAvailabilityDomain,
  *     instanceId: testInstance.id,

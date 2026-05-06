@@ -1264,9 +1264,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             hostname=exadb_vm_cluster_hostname,
             shape=exadb_vm_cluster_shape,
             node_config={
-                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
-                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
-                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+                "enabled_ecpu_count_per_node": int(exadb_vm_cluster_enabled_ecpu_count_per_node),
+                "total_ecpu_count_per_node": int(exadb_vm_cluster_total_ecpu_count_per_node),
+                "vm_file_system_storage_size_gbs_per_node": int(exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node),
             },
             node_resources=[
                 {
@@ -1281,9 +1281,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
             cluster_name=exadb_vm_cluster_cluster_name,
             data_collection_options={
-                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled == "true",
             },
             defined_tags=exadb_vm_cluster_defined_tags,
             domain=exadb_vm_cluster_domain,
@@ -1293,8 +1293,8 @@ class ExadbVmCluster(pulumi.CustomResource):
             license_model=exadb_vm_cluster_license_model,
             nsg_ids=exadb_vm_cluster_nsg_ids,
             private_zone_id=test_zone["id"],
-            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
-            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            scan_listener_port_tcp=int(exadb_vm_cluster_scan_listener_port_tcp),
+            scan_listener_port_tcp_ssl=int(exadb_vm_cluster_scan_listener_port_tcp_ssl),
             security_attributes=exadb_vm_cluster_security_attributes,
             shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,
@@ -1383,9 +1383,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             hostname=exadb_vm_cluster_hostname,
             shape=exadb_vm_cluster_shape,
             node_config={
-                "enabled_ecpu_count_per_node": exadb_vm_cluster_enabled_ecpu_count_per_node,
-                "total_ecpu_count_per_node": exadb_vm_cluster_total_ecpu_count_per_node,
-                "vm_file_system_storage_size_gbs_per_node": exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node,
+                "enabled_ecpu_count_per_node": int(exadb_vm_cluster_enabled_ecpu_count_per_node),
+                "total_ecpu_count_per_node": int(exadb_vm_cluster_total_ecpu_count_per_node),
+                "vm_file_system_storage_size_gbs_per_node": int(exadb_vm_cluster_vm_file_system_storage_size_in_gbs_per_node),
             },
             node_resources=[
                 {
@@ -1400,9 +1400,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_network_nsg_ids=exadb_vm_cluster_backup_network_nsg_ids,
             cluster_name=exadb_vm_cluster_cluster_name,
             data_collection_options={
-                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": exadb_vm_cluster_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": exadb_vm_cluster_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": exadb_vm_cluster_data_collection_options_is_incident_logs_enabled == "true",
             },
             defined_tags=exadb_vm_cluster_defined_tags,
             domain=exadb_vm_cluster_domain,
@@ -1412,8 +1412,8 @@ class ExadbVmCluster(pulumi.CustomResource):
             license_model=exadb_vm_cluster_license_model,
             nsg_ids=exadb_vm_cluster_nsg_ids,
             private_zone_id=test_zone["id"],
-            scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
-            scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
+            scan_listener_port_tcp=int(exadb_vm_cluster_scan_listener_port_tcp),
+            scan_listener_port_tcp_ssl=int(exadb_vm_cluster_scan_listener_port_tcp_ssl),
             security_attributes=exadb_vm_cluster_security_attributes,
             shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,

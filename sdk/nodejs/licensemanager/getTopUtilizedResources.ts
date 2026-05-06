@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTopUtilizedResources = oci.LicenseManager.getTopUtilizedResources({
+ * const testTopUtilizedResources = oci.licensemanager.getTopUtilizedResources({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree === "true",
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
@@ -78,9 +78,9 @@ export interface GetTopUtilizedResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTopUtilizedResources = oci.LicenseManager.getTopUtilizedResources({
+ * const testTopUtilizedResources = oci.licensemanager.getTopUtilizedResources({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree === "true",
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```

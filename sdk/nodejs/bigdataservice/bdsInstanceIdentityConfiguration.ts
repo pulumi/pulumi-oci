@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     displayName: bdsInstanceIdentityConfigurationDisplayName,
  *     identityDomainId: testDomain.id,
  *     iamUserSyncConfigurationDetails: {
- *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired,
+ *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired === "true",
  *     },
  *     upstConfigurationDetails: {
  *         masterEncryptionKeyId: testKey.id,

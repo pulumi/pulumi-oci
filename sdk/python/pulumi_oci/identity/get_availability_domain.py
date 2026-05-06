@@ -98,9 +98,9 @@ def get_availability_domain(ad_number: Optional[_builtins.int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=tenancy_ocid,
+    test_compartment = oci.identity.get_availability_domain(compartment_id=tenancy_ocid,
         id=id,
-        ad_number=ad_number)
+        ad_number=int(ad_number))
     ```
 
 
@@ -133,9 +133,9 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=tenancy_ocid,
+    test_compartment = oci.identity.get_availability_domain(compartment_id=tenancy_ocid,
         id=id,
-        ad_number=ad_number)
+        ad_number=int(ad_number))
     ```
 
 

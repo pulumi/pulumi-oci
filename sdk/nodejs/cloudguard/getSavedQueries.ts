@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQueries = oci.CloudGuard.getSavedQueries({
+ * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
  *     displayName: savedQueryDisplayName,
  * });
  * ```
@@ -94,10 +94,10 @@ export interface GetSavedQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQueries = oci.CloudGuard.getSavedQueries({
+ * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
  *     displayName: savedQueryDisplayName,
  * });
  * ```

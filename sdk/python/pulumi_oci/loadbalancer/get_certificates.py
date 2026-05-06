@@ -95,7 +95,7 @@ def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=test_load_balancer["id"])
+    test_certificates = oci.loadbalancer.get_certificates(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=test_load_balancer["id"])
+    test_certificates = oci.loadbalancer.get_certificates(load_balancer_id=test_load_balancer["id"])
     ```
 
 

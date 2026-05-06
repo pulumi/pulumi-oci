@@ -129,7 +129,7 @@ def get_trail_sequences(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=test_deployment["id"],
+    test_trail_sequences = oci.goldengate.get_trail_sequences(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file["id"],
         display_name=trail_sequence_display_name,
         trail_sequence_id=test_trail_sequence["id"])
@@ -176,7 +176,7 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=test_deployment["id"],
+    test_trail_sequences = oci.goldengate.get_trail_sequences(deployment_id=test_deployment["id"],
         trail_file_id=test_trail_file["id"],
         display_name=trail_sequence_display_name,
         trail_sequence_id=test_trail_sequence["id"])

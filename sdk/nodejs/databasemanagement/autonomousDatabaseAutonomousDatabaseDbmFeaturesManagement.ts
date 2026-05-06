@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = new oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management", {
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
+ *     enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature === "true",
  *     featureDetails: {
  *         feature: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 port: Number(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
  *                 protocol: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },

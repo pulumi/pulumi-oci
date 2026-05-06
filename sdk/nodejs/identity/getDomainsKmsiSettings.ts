@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKmsiSettings = oci.Identity.getDomainsKmsiSettings({
+ * const testKmsiSettings = oci.identity.getDomainsKmsiSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
@@ -102,7 +102,7 @@ export interface GetDomainsKmsiSettingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKmsiSettings = oci.Identity.getDomainsKmsiSettings({
+ * const testKmsiSettings = oci.identity.getDomainsKmsiSettings({
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",

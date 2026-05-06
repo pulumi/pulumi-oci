@@ -169,7 +169,7 @@ def get_managed_preferred_credential(credential_name: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
+    test_managed_database_preferred_credential = oci.database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
         managed_database_id=test_managed_database["id"])
     ```
 
@@ -211,7 +211,7 @@ def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
+    test_managed_database_preferred_credential = oci.database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
         managed_database_id=test_managed_database["id"])
     ```
 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTables = oci.Core.getDrgRouteTables({
+ * const testDrgRouteTables = oci.core.getDrgRouteTables({
  *     drgId: testDrg.id,
  *     displayName: drgRouteTableDisplayName,
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
@@ -104,7 +104,7 @@ export interface GetDrgRouteTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTables = oci.Core.getDrgRouteTables({
+ * const testDrgRouteTables = oci.core.getDrgRouteTables({
  *     drgId: testDrg.id,
  *     displayName: drgRouteTableDisplayName,
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,

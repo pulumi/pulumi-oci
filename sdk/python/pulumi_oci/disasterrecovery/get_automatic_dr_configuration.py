@@ -264,7 +264,7 @@ def get_automatic_dr_configuration(automatic_dr_configuration_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configuration = oci.DisasterRecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
+    test_automatic_dr_configuration = oci.disasterrecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_automatic_dr_configuration_output(automatic_dr_configuration_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configuration = oci.DisasterRecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
+    test_automatic_dr_configuration = oci.disasterrecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
     ```
 
 

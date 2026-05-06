@@ -127,7 +127,7 @@ def get_announcement_subscriptions(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscriptions = oci.AnnouncementsService.get_announcement_subscriptions(compartment_id=compartment_id,
+    test_announcement_subscriptions = oci.announcementsservice.get_announcement_subscriptions(compartment_id=compartment_id,
         display_name=announcement_subscription_display_name,
         id=announcement_subscription_id,
         state=announcement_subscription_state)
@@ -174,7 +174,7 @@ def get_announcement_subscriptions_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscriptions = oci.AnnouncementsService.get_announcement_subscriptions(compartment_id=compartment_id,
+    test_announcement_subscriptions = oci.announcementsservice.get_announcement_subscriptions(compartment_id=compartment_id,
         display_name=announcement_subscription_display_name,
         id=announcement_subscription_id,
         state=announcement_subscription_state)

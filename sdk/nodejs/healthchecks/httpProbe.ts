@@ -28,8 +28,8 @@ import * as utilities from "../utilities";
  *     headers: httpProbeHeaders,
  *     method: httpProbeMethod,
  *     path: httpProbePath,
- *     port: httpProbePort,
- *     timeoutInSeconds: httpProbeTimeoutInSeconds,
+ *     port: Number(httpProbePort),
+ *     timeoutInSeconds: Number(httpProbeTimeoutInSeconds),
  *     vantagePointNames: httpProbeVantagePointNames,
  * });
  * ```

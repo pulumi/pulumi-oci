@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRun = oci.Adm.getRemediationRun({
+ * const testRemediationRun = oci.adm.getRemediationRun({
  *     remediationRunId: testRemediationRunOciAdmRemediationRun.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetRemediationRunResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRun = oci.Adm.getRemediationRun({
+ * const testRemediationRun = oci.adm.getRemediationRun({
  *     remediationRunId: testRemediationRunOciAdmRemediationRun.id,
  * });
  * ```

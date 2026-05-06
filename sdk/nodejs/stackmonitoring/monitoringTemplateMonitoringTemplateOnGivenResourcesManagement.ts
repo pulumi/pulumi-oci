@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testMonitoringTemplateMonitoringTemplateOnGivenResourcesManagement = new oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management", {
  *     monitoringTemplateId: testMonitoringTemplate.id,
- *     enableMonitoringTemplateOnGivenResources: enableMonitoringTemplateOnGivenResources,
+ *     enableMonitoringTemplateOnGivenResources: enableMonitoringTemplateOnGivenResources === "true",
  * });
  * ```
  */

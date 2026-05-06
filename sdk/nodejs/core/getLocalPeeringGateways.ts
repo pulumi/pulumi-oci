@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLocalPeeringGateways = oci.Core.getLocalPeeringGateways({
+ * const testLocalPeeringGateways = oci.core.getLocalPeeringGateways({
  *     compartmentId: compartmentId,
  *     vcnId: testVcn.id,
  * });
@@ -82,7 +82,7 @@ export interface GetLocalPeeringGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLocalPeeringGateways = oci.Core.getLocalPeeringGateways({
+ * const testLocalPeeringGateways = oci.core.getLocalPeeringGateways({
  *     compartmentId: compartmentId,
  *     vcnId: testVcn.id,
  * });

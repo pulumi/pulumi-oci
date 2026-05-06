@@ -144,7 +144,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
+    test_instance_pool_load_balancer_attachment = oci.core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
         instance_pool_load_balancer_attachment_id=test_instance_pool_load_balancer_attachment_oci_core_instance_pool_load_balancer_attachment["id"])
     ```
 
@@ -181,7 +181,7 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
+    test_instance_pool_load_balancer_attachment = oci.core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
         instance_pool_load_balancer_attachment_id=test_instance_pool_load_balancer_attachment_oci_core_instance_pool_load_balancer_attachment["id"])
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShapes = oci.CloudMigrations.getMigrationPlanAvailableShapes({
+ * const testMigrationPlanAvailableShapes = oci.cloudmigrations.getMigrationPlanAvailableShapes({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -98,7 +98,7 @@ export interface GetMigrationPlanAvailableShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationPlanAvailableShapes = oci.CloudMigrations.getMigrationPlanAvailableShapes({
+ * const testMigrationPlanAvailableShapes = oci.cloudmigrations.getMigrationPlanAvailableShapes({
  *     migrationPlanId: testMigrationPlan.id,
  *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
  *     compartmentId: compartmentId,

@@ -216,7 +216,7 @@ def get_network_address_list(network_address_list_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
+    test_network_address_list = oci.waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
+    test_network_address_list = oci.waf.get_network_address_list(network_address_list_id=test_network_address_list_oci_waf_network_address_list["id"])
     ```
 
 

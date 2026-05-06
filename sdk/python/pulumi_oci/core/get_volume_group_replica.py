@@ -204,7 +204,7 @@ def get_volume_group_replica(volume_group_replica_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
+    test_volume_group_replica = oci.core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_volume_group_replica_output(volume_group_replica_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
+    test_volume_group_replica = oci.core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
     ```
 
 

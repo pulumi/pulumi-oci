@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyApps = oci.Identity.getDomainsMyApps({
+ * const testMyApps = oci.identity.getDomainsMyApps({
  *     idcsEndpoint: testDomain.url,
- *     myAppCount: myAppMyAppCount,
+ *     myAppCount: Number(myAppMyAppCount),
  *     myAppFilter: myAppMyAppFilter,
  *     authorization: myAppAuthorization,
  *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
- *     startIndex: myAppStartIndex,
+ *     startIndex: Number(myAppStartIndex),
  * });
  * ```
  */
@@ -123,13 +123,13 @@ export interface GetDomainsMyAppsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyApps = oci.Identity.getDomainsMyApps({
+ * const testMyApps = oci.identity.getDomainsMyApps({
  *     idcsEndpoint: testDomain.url,
- *     myAppCount: myAppMyAppCount,
+ *     myAppCount: Number(myAppMyAppCount),
  *     myAppFilter: myAppMyAppFilter,
  *     authorization: myAppAuthorization,
  *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
- *     startIndex: myAppStartIndex,
+ *     startIndex: Number(myAppStartIndex),
  * });
  * ```
  */

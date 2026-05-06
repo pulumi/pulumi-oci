@@ -229,7 +229,7 @@ def get_security_policy(security_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy = oci.CloudGuard.get_security_policy(security_policy_id=test_security_policy_oci_cloud_guard_security_policy["id"])
+    test_security_policy = oci.cloudguard.get_security_policy(security_policy_id=test_security_policy_oci_cloud_guard_security_policy["id"])
     ```
 
 
@@ -271,7 +271,7 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy = oci.CloudGuard.get_security_policy(security_policy_id=test_security_policy_oci_cloud_guard_security_policy["id"])
+    test_security_policy = oci.cloudguard.get_security_policy(security_policy_id=test_security_policy_oci_cloud_guard_security_policy["id"])
     ```
 
 

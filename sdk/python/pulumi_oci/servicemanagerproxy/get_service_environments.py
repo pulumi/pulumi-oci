@@ -132,7 +132,7 @@ def get_service_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=compartment_id,
+    test_service_environments = oci.servicemanagerproxy.get_service_environments(compartment_id=compartment_id,
         display_name=service_environment_display_name,
         service_environment_id=test_service_environment["id"],
         service_environment_type=service_environment_service_environment_type)
@@ -181,7 +181,7 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=compartment_id,
+    test_service_environments = oci.servicemanagerproxy.get_service_environments(compartment_id=compartment_id,
         display_name=service_environment_display_name,
         service_environment_id=test_service_environment["id"],
         service_environment_type=service_environment_service_environment_type)

@@ -122,7 +122,7 @@ def get_fleet_properties(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_properties = oci.FleetAppsManagement.get_fleet_properties(fleet_id=test_fleet["id"],
+    test_fleet_properties = oci.fleetappsmanagement.get_fleet_properties(fleet_id=test_fleet["id"],
         display_name=fleet_property_display_name,
         id=fleet_property_id,
         state=fleet_property_state)
@@ -167,7 +167,7 @@ def get_fleet_properties_output(display_name: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_properties = oci.FleetAppsManagement.get_fleet_properties(fleet_id=test_fleet["id"],
+    test_fleet_properties = oci.fleetappsmanagement.get_fleet_properties(fleet_id=test_fleet["id"],
         display_name=fleet_property_display_name,
         id=fleet_property_id,
         state=fleet_property_state)

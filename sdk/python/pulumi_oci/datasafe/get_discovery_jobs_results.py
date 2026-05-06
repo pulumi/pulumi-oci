@@ -189,11 +189,11 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_results = oci.datasafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
         confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
-        is_result_applied=discovery_jobs_result_is_result_applied,
+        is_result_applied=discovery_jobs_result_is_result_applied == "true",
         objects=discovery_jobs_result_object,
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)
@@ -255,11 +255,11 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_results = oci.datasafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
         confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
-        is_result_applied=discovery_jobs_result_is_result_applied,
+        is_result_applied=discovery_jobs_result_is_result_applied == "true",
         objects=discovery_jobs_result_object,
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)

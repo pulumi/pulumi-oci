@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
+ * const testMetricExtensions = oci.stackmonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
  *     metricExtensionId: testMetricExtension.id,
@@ -125,7 +125,7 @@ export interface GetMetricExtensionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
+ * const testMetricExtensions = oci.stackmonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
  *     metricExtensionId: testMetricExtension.id,

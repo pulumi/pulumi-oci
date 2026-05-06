@@ -138,7 +138,7 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+    test_models = oci.aidocument.get_models(compartment_id=compartment_id,
         display_name=model_display_name,
         id=model_id,
         project_id=test_project["id"],
@@ -188,7 +188,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+    test_models = oci.aidocument.get_models(compartment_id=compartment_id,
         display_name=model_display_name,
         id=model_id,
         project_id=test_project["id"],

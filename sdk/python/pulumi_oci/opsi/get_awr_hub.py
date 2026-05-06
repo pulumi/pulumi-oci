@@ -227,7 +227,7 @@ def get_awr_hub(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
+    test_awr_hub = oci.opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_awr_hub_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
+    test_awr_hub = oci.opsi.get_awr_hub(awr_hub_id=test_awr_hub_oci_opsi_awr_hub["id"])
     ```
 
 

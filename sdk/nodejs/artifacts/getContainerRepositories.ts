@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
+ * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic,
+ *     isPublic: containerRepositoryIsPublic === "true",
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });
@@ -114,11 +114,11 @@ export interface GetContainerRepositoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
+ * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic,
+ *     isPublic: containerRepositoryIsPublic === "true",
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });

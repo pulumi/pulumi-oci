@@ -154,7 +154,7 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_workers = oci.apmsynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         capability=on_premise_vantage_point_worker_capability,
         display_name=on_premise_vantage_point_worker_display_name,
@@ -210,7 +210,7 @@ def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_workers = oci.apmsynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         capability=on_premise_vantage_point_worker_capability,
         display_name=on_premise_vantage_point_worker_display_name,

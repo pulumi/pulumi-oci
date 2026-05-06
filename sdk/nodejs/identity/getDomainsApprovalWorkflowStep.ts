@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflowStep = oci.Identity.getDomainsApprovalWorkflowStep({
+ * const testApprovalWorkflowStep = oci.identity.getDomainsApprovalWorkflowStep({
  *     approvalWorkflowStepId: testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
@@ -163,7 +163,7 @@ export interface GetDomainsApprovalWorkflowStepResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApprovalWorkflowStep = oci.Identity.getDomainsApprovalWorkflowStep({
+ * const testApprovalWorkflowStep = oci.identity.getDomainsApprovalWorkflowStep({
  *     approvalWorkflowStepId: testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id,
  *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],

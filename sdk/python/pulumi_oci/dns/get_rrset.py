@@ -146,7 +146,7 @@ def get_rrset(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
+    test_rrset = oci.dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
         view_id=test_view["id"])
@@ -201,7 +201,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
+    test_rrset = oci.dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
         view_id=test_view["id"])

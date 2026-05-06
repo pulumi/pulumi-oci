@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisionedCapacity = oci.GenerativeAi.getAgentProvisionedCapacity({
+ * const testProvisionedCapacity = oci.generativeai.getAgentProvisionedCapacity({
  *     provisionedCapacityId: testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetAgentProvisionedCapacityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisionedCapacity = oci.GenerativeAi.getAgentProvisionedCapacity({
+ * const testProvisionedCapacity = oci.generativeai.getAgentProvisionedCapacity({
  *     provisionedCapacityId: testProvisionedCapacityOciGenerativeAiAgentProvisionedCapacity.id,
  * });
  * ```

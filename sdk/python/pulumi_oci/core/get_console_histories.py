@@ -137,7 +137,7 @@ def get_console_histories(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=compartment_id,
+    test_console_histories = oci.core.get_console_histories(compartment_id=compartment_id,
         availability_domain=console_history_availability_domain,
         instance_id=test_instance["id"],
         state=console_history_state)
@@ -183,7 +183,7 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_console_histories = oci.Core.get_console_histories(compartment_id=compartment_id,
+    test_console_histories = oci.core.get_console_histories(compartment_id=compartment_id,
         availability_domain=console_history_availability_domain,
         instance_id=test_instance["id"],
         state=console_history_state)

@@ -39,8 +39,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isVtapEnabled: vtapIsVtapEnabled,
- *     maxPacketSize: vtapMaxPacketSize,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
+ *     maxPacketSize: Number(vtapMaxPacketSize),
  *     sourcePrivateEndpointIp: vtapSourcePrivateEndpointIp,
  *     sourcePrivateEndpointSubnetId: testSubnet.id,
  *     sourceType: vtapSourceType,

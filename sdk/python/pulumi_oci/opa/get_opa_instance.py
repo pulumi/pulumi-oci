@@ -309,7 +309,7 @@ def get_opa_instance(opa_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=test_opa_instance_oci_opa_opa_instance["id"])
+    test_opa_instance = oci.opa.get_opa_instance(opa_instance_id=test_opa_instance_oci_opa_opa_instance["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_opa_instance_output(opa_instance_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=test_opa_instance_oci_opa_opa_instance["id"])
+    test_opa_instance = oci.opa.get_opa_instance(opa_instance_id=test_opa_instance_oci_opa_opa_instance["id"])
     ```
 
 

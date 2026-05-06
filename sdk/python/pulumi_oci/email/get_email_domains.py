@@ -125,7 +125,7 @@ def get_email_domains(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_domains = oci.Email.get_email_domains(compartment_id=compartment_id,
+    test_email_domains = oci.email.get_email_domains(compartment_id=compartment_id,
         id=email_domain_id,
         name=email_domain_name,
         state=email_domain_state)
@@ -170,7 +170,7 @@ def get_email_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_email_domains = oci.Email.get_email_domains(compartment_id=compartment_id,
+    test_email_domains = oci.email.get_email_domains(compartment_id=compartment_id,
         id=email_domain_id,
         name=email_domain_name,
         state=email_domain_state)

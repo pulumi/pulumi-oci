@@ -998,7 +998,7 @@ class DesktopPool(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users,
+            are_privileged_users=desktop_pool_are_privileged_users == "true",
             availability_domain=desktop_pool_availability_domain,
             availability_policy={
                 "start_schedule": {
@@ -1016,11 +1016,11 @@ class DesktopPool(pulumi.CustomResource):
                 "audio_mode": desktop_pool_device_policy_audio_mode,
                 "cdm_mode": desktop_pool_device_policy_cdm_mode,
                 "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled,
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
+                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
+                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
+                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
+                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1028,18 +1028,18 @@ class DesktopPool(pulumi.CustomResource):
                 "image_name": desktop_pool_image_image_name,
                 "operating_system": desktop_pool_image_operating_system,
             },
-            is_storage_enabled=desktop_pool_is_storage_enabled,
-            maximum_size=desktop_pool_maximum_size,
+            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
+            maximum_size=int(desktop_pool_maximum_size),
             network_configuration={
                 "subnet_id": test_subnet["id"],
                 "vcn_id": test_vcn["id"],
             },
             shape_name="VM.Standard.E4.Flex",
-            standby_size=desktop_pool_standby_size,
+            standby_size=int(desktop_pool_standby_size),
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
-            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
-            are_volumes_preserved=desktop_pool_are_volumes_preserved,
+            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
+            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
+            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1061,11 +1061,11 @@ class DesktopPool(pulumi.CustomResource):
             session_lifecycle_actions={
                 "disconnect": {
                     "action": "STOP",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
                 },
                 "inactivity": {
                     "action": "DISCONNECT",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
                 },
             },
             time_start_scheduled=desktop_pool_time_start_scheduled,
@@ -1137,7 +1137,7 @@ class DesktopPool(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users,
+            are_privileged_users=desktop_pool_are_privileged_users == "true",
             availability_domain=desktop_pool_availability_domain,
             availability_policy={
                 "start_schedule": {
@@ -1155,11 +1155,11 @@ class DesktopPool(pulumi.CustomResource):
                 "audio_mode": desktop_pool_device_policy_audio_mode,
                 "cdm_mode": desktop_pool_device_policy_cdm_mode,
                 "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled,
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
+                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
+                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
+                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
+                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1167,18 +1167,18 @@ class DesktopPool(pulumi.CustomResource):
                 "image_name": desktop_pool_image_image_name,
                 "operating_system": desktop_pool_image_operating_system,
             },
-            is_storage_enabled=desktop_pool_is_storage_enabled,
-            maximum_size=desktop_pool_maximum_size,
+            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
+            maximum_size=int(desktop_pool_maximum_size),
             network_configuration={
                 "subnet_id": test_subnet["id"],
                 "vcn_id": test_vcn["id"],
             },
             shape_name="VM.Standard.E4.Flex",
-            standby_size=desktop_pool_standby_size,
+            standby_size=int(desktop_pool_standby_size),
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
-            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
-            are_volumes_preserved=desktop_pool_are_volumes_preserved,
+            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
+            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
+            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1200,11 +1200,11 @@ class DesktopPool(pulumi.CustomResource):
             session_lifecycle_actions={
                 "disconnect": {
                     "action": "STOP",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
                 },
                 "inactivity": {
                     "action": "DISCONNECT",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
                 },
             },
             time_start_scheduled=desktop_pool_time_start_scheduled,

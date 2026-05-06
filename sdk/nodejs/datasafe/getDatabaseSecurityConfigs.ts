@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSecurityConfigs = oci.DataSafe.getDatabaseSecurityConfigs({
+ * const testDatabaseSecurityConfigs = oci.datasafe.getDatabaseSecurityConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: databaseSecurityConfigAccessLevel,
- *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree === "true",
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,
@@ -172,10 +172,10 @@ export interface GetDatabaseSecurityConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSecurityConfigs = oci.DataSafe.getDatabaseSecurityConfigs({
+ * const testDatabaseSecurityConfigs = oci.datasafe.getDatabaseSecurityConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: databaseSecurityConfigAccessLevel,
- *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree === "true",
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,

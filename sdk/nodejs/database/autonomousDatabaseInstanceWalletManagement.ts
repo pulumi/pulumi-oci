@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseInstanceWalletManagement = new oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management", {
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     gracePeriod: autonomousDatabaseInstanceWalletManagementGracePeriod,
- *     shouldRotate: autonomousDatabaseInstanceWalletManagementShouldRotate,
+ *     gracePeriod: Number(autonomousDatabaseInstanceWalletManagementGracePeriod),
+ *     shouldRotate: autonomousDatabaseInstanceWalletManagementShouldRotate === "true",
  * });
  * ```
  *

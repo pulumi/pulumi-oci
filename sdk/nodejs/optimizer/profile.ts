@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     name: profileName,
- *     aggregationIntervalInDays: profileAggregationIntervalInDays,
+ *     aggregationIntervalInDays: Number(profileAggregationIntervalInDays),
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

@@ -321,7 +321,7 @@ def get_vb_instance(vb_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
+    test_vb_instance = oci.visualbuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
     ```
 
 
@@ -369,7 +369,7 @@ def get_vb_instance_output(vb_instance_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance = oci.VisualBuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
+    test_vb_instance = oci.visualbuilder.get_vb_instance(vb_instance_id=test_vb_instance_oci_visual_builder_vb_instance["id"])
     ```
 
 

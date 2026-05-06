@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
+ * const testDataSciencePrivateEndpoints = oci.datascience.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     createdBy: dataSciencePrivateEndpointCreatedBy,
  *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
@@ -110,7 +110,7 @@ export interface GetPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
+ * const testDataSciencePrivateEndpoints = oci.datascience.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     createdBy: dataSciencePrivateEndpointCreatedBy,
  *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,

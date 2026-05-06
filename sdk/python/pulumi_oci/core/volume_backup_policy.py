@@ -286,12 +286,12 @@ class VolumeBackupPolicy(pulumi.CustomResource):
             schedules=[{
                 "backup_type": volume_backup_policy_schedules_backup_type,
                 "period": volume_backup_policy_schedules_period,
-                "retention_seconds": volume_backup_policy_schedules_retention_seconds,
-                "day_of_month": volume_backup_policy_schedules_day_of_month,
+                "retention_seconds": int(volume_backup_policy_schedules_retention_seconds),
+                "day_of_month": int(volume_backup_policy_schedules_day_of_month),
                 "day_of_week": volume_backup_policy_schedules_day_of_week,
-                "hour_of_day": volume_backup_policy_schedules_hour_of_day,
+                "hour_of_day": int(volume_backup_policy_schedules_hour_of_day),
                 "month": volume_backup_policy_schedules_month,
-                "offset_seconds": volume_backup_policy_schedules_offset_seconds,
+                "offset_seconds": int(volume_backup_policy_schedules_offset_seconds),
                 "offset_type": volume_backup_policy_schedules_offset_type,
                 "time_zone": volume_backup_policy_schedules_time_zone,
             }])
@@ -351,12 +351,12 @@ class VolumeBackupPolicy(pulumi.CustomResource):
             schedules=[{
                 "backup_type": volume_backup_policy_schedules_backup_type,
                 "period": volume_backup_policy_schedules_period,
-                "retention_seconds": volume_backup_policy_schedules_retention_seconds,
-                "day_of_month": volume_backup_policy_schedules_day_of_month,
+                "retention_seconds": int(volume_backup_policy_schedules_retention_seconds),
+                "day_of_month": int(volume_backup_policy_schedules_day_of_month),
                 "day_of_week": volume_backup_policy_schedules_day_of_week,
-                "hour_of_day": volume_backup_policy_schedules_hour_of_day,
+                "hour_of_day": int(volume_backup_policy_schedules_hour_of_day),
                 "month": volume_backup_policy_schedules_month,
-                "offset_seconds": volume_backup_policy_schedules_offset_seconds,
+                "offset_seconds": int(volume_backup_policy_schedules_offset_seconds),
                 "offset_type": volume_backup_policy_schedules_offset_type,
                 "time_zone": volume_backup_policy_schedules_time_zone,
             }])

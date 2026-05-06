@@ -137,7 +137,7 @@ def get_ping_probe_results(filters: Optional[Sequence[Union['GetPingProbeResults
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
+    test_ping_probe_results = oci.healthchecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
         start_time_greater_than_or_equal_to=ping_probe_result_start_time_greater_than_or_equal_to,
         start_time_less_than_or_equal_to=ping_probe_result_start_time_less_than_or_equal_to,
         target=ping_probe_result_target)
@@ -189,7 +189,7 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
+    test_ping_probe_results = oci.healthchecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
         start_time_greater_than_or_equal_to=ping_probe_result_start_time_greater_than_or_equal_to,
         start_time_less_than_or_equal_to=ping_probe_result_start_time_less_than_or_equal_to,
         target=ping_probe_result_target)

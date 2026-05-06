@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
+ * const testManagedDatabaseSqlPlanBaselineJobs = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlPlanBaselineJobName,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
@@ -84,7 +84,7 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
+ * const testManagedDatabaseSqlPlanBaselineJobs = oci.databasemanagement.getManagedDatabaseSqlPlanBaselineJobs({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlPlanBaselineJobName,
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,

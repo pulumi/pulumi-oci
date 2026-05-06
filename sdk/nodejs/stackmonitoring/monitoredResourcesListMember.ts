@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testMonitoredResourcesListMember = new oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member", {
  *     monitoredResourceId: testMonitoredResource.id,
  *     destinationResourceId: testDestinationResource.id,
- *     limitLevel: monitoredResourcesListMemberLimitLevel,
+ *     limitLevel: Number(monitoredResourcesListMemberLimitLevel),
  * });
  * ```
  *

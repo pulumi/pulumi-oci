@@ -121,7 +121,7 @@ def get_cluster_network_instances(cluster_network_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
+    test_cluster_network_instances = oci.core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
         compartment_id=compartment_id,
         display_name=cluster_network_instance_display_name)
     ```
@@ -162,7 +162,7 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
+    test_cluster_network_instances = oci.core.get_cluster_network_instances(cluster_network_id=test_cluster_network["id"],
         compartment_id=compartment_id,
         display_name=cluster_network_instance_display_name)
     ```

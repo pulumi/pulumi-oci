@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpeDeviceShape = oci.Core.getCpeDeviceShape({
+ * const testCpeDeviceShape = oci.core.getCpeDeviceShape({
  *     cpeDeviceShapeId: testCpeDeviceShapeOciCoreCpeDeviceShape.id,
  * });
  * ```
@@ -94,7 +94,7 @@ export interface GetCpeDeviceShapeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpeDeviceShape = oci.Core.getCpeDeviceShape({
+ * const testCpeDeviceShape = oci.core.getCpeDeviceShape({
  *     cpeDeviceShapeId: testCpeDeviceShapeOciCoreCpeDeviceShape.id,
  * });
  * ```

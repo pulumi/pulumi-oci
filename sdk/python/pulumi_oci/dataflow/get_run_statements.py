@@ -111,7 +111,7 @@ def get_run_statements(filters: Optional[Sequence[Union['GetRunStatementsFilterA
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=test_run["id"],
+    test_run_statements = oci.dataflow.get_run_statements(run_id=test_run["id"],
         state=run_statement_state)
     ```
 
@@ -147,7 +147,7 @@ def get_run_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     import pulumi
     import pulumi_oci as oci
 
-    test_run_statements = oci.DataFlow.get_run_statements(run_id=test_run["id"],
+    test_run_statements = oci.dataflow.get_run_statements(run_id=test_run["id"],
         state=run_statement_state)
     ```
 

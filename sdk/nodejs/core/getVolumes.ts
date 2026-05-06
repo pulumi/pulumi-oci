@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumes = oci.Core.getVolumes({
+ * const testVolumes = oci.core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
  *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,
@@ -121,7 +121,7 @@ export interface GetVolumesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumes = oci.Core.getVolumes({
+ * const testVolumes = oci.core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
  *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,

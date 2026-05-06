@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
+ * const testUserGroupMemberships = oci.identity.getUserGroupMemberships({
  *     compartmentId: tenancyOcid,
  *     groupId: testGroup.id,
  *     userId: testUser.id,
@@ -108,7 +108,7 @@ export interface GetUserGroupMembershipsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
+ * const testUserGroupMemberships = oci.identity.getUserGroupMemberships({
  *     compartmentId: tenancyOcid,
  *     groupId: testGroup.id,
  *     userId: testUser.id,

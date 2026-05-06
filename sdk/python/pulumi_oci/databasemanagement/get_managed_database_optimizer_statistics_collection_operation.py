@@ -250,7 +250,7 @@ def get_managed_database_optimizer_statistics_collection_operation(managed_datab
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_operation = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_collection_operation = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=test_managed_database["id"],
         optimizer_statistics_collection_operation_id=test_optimizer_statistics_collection_operation["id"])
     ```
 
@@ -296,7 +296,7 @@ def get_managed_database_optimizer_statistics_collection_operation_output(manage
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_collection_operation = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_collection_operation = oci.databasemanagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=test_managed_database["id"],
         optimizer_statistics_collection_operation_id=test_optimizer_statistics_collection_operation["id"])
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventorySubnetCidr = oci.Core.getIpInventorySubnetCidr({
+ * const testIpInventorySubnetCidr = oci.core.getIpInventorySubnetCidr({
  *     subnetId: testSubnet.id,
  * });
  * ```
@@ -80,7 +80,7 @@ export interface GetIpInventorySubnetCidrResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventorySubnetCidr = oci.Core.getIpInventorySubnetCidr({
+ * const testIpInventorySubnetCidr = oci.core.getIpInventorySubnetCidr({
  *     subnetId: testSubnet.id,
  * });
  * ```

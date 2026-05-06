@@ -124,7 +124,7 @@ def get_path_analyzer_tests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=compartment_id,
+    test_path_analyzer_tests = oci.vnmonitoring.get_path_analyzer_tests(compartment_id=compartment_id,
         display_name=path_analyzer_test_display_name,
         state=path_analyzer_test_state)
     ```
@@ -165,7 +165,7 @@ def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=compartment_id,
+    test_path_analyzer_tests = oci.vnmonitoring.get_path_analyzer_tests(compartment_id=compartment_id,
         display_name=path_analyzer_test_display_name,
         state=path_analyzer_test_state)
     ```

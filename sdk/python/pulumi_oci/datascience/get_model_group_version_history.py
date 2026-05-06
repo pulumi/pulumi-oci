@@ -227,7 +227,7 @@ def get_model_group_version_history(model_group_version_history_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_history = oci.DataScience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
+    test_model_group_version_history = oci.datascience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_model_group_version_history_output(model_group_version_history_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_version_history = oci.DataScience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
+    test_model_group_version_history = oci.datascience.get_model_group_version_history(model_group_version_history_id=test_model_group_version_history_oci_datascience_model_group_version_history["id"])
     ```
 
 

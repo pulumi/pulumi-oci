@@ -390,7 +390,7 @@ def get_computed_usage(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=compartment_id,
+    test_computed_usage = oci.osubusage.get_computed_usage(compartment_id=compartment_id,
         computed_usage_id=test_computed_usage_oci_osub_usage_computed_usage["id"],
         fields=computed_usage_fields,
         x_one_origin_region=computed_usage_x_one_origin_region)
@@ -456,7 +456,7 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=compartment_id,
+    test_computed_usage = oci.osubusage.get_computed_usage(compartment_id=compartment_id,
         computed_usage_id=test_computed_usage_oci_osub_usage_computed_usage["id"],
         fields=computed_usage_fields,
         x_one_origin_region=computed_usage_x_one_origin_region)

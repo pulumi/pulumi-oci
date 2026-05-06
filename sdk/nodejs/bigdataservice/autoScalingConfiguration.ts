@@ -23,38 +23,38 @@ import * as utilities from "../utilities";
  * const testAutoScalingConfiguration = new oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: autoScalingConfigurationClusterAdminPassword,
- *     isEnabled: autoScalingConfigurationIsEnabled,
+ *     isEnabled: autoScalingConfigurationIsEnabled === "true",
  *     nodeType: autoScalingConfigurationNodeType,
  *     displayName: autoScalingConfigurationDisplayName,
  *     policyDetails: {
  *         policyType: autoScalingConfigurationPolicyDetailsPolicyType,
  *         scaleDownConfig: {
- *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize,
+ *             memoryStepSize: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize),
  *             metric: {
  *                 metricType: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes,
+ *                     durationInMinutes: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes),
  *                     operator: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOperator,
- *                     value: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue,
+ *                     value: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue),
  *                 },
  *             },
- *             minMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode,
- *             minOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode,
- *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize,
+ *             minMemoryPerNode: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode),
+ *             minOcpusPerNode: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode),
+ *             ocpuStepSize: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize),
  *         },
  *         scaleUpConfig: {
- *             maxMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode,
- *             maxOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode,
- *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize,
+ *             maxMemoryPerNode: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode),
+ *             maxOcpusPerNode: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode),
+ *             memoryStepSize: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize),
  *             metric: {
  *                 metricType: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes,
+ *                     durationInMinutes: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes),
  *                     operator: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOperator,
- *                     value: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue,
+ *                     value: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue),
  *                 },
  *             },
- *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize,
+ *             ocpuStepSize: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize),
  *         },
  *     },
  * });

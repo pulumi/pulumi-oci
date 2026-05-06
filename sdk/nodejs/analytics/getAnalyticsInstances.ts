@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
+ * const testAnalyticsInstances = oci.analytics.getAnalyticsInstances({
  *     compartmentId: compartmentId,
  *     capacityType: analyticsInstanceCapacityType,
  *     featureSet: analyticsInstanceFeatureSet,
@@ -110,7 +110,7 @@ export interface GetAnalyticsInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
+ * const testAnalyticsInstances = oci.analytics.getAnalyticsInstances({
  *     compartmentId: compartmentId,
  *     capacityType: analyticsInstanceCapacityType,
  *     featureSet: analyticsInstanceFeatureSet,

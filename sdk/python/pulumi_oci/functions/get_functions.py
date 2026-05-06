@@ -125,7 +125,7 @@ def get_functions(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+    test_functions = oci.functions.get_functions(application_id=test_application["id"],
         display_name=function_display_name,
         id=function_id,
         state=function_state)
@@ -170,7 +170,7 @@ def get_functions_output(application_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+    test_functions = oci.functions.get_functions(application_id=test_application["id"],
         display_name=function_display_name,
         id=function_id,
         state=function_state)

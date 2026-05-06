@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *             metricType: subscriptionSubscriptionDetailsBillingDetailsMetricType,
  *             rateAllocation: subscriptionSubscriptionDetailsBillingDetailsRateAllocation,
  *             sku: subscriptionSubscriptionDetailsBillingDetailsSku,
- *             hasGovSku: subscriptionSubscriptionDetailsBillingDetailsHasGovSku,
+ *             hasGovSku: subscriptionSubscriptionDetailsBillingDetailsHasGovSku === "true",
  *         },
  *         partnerRegistrationUrl: subscriptionSubscriptionDetailsPartnerRegistrationUrl,
  *         pricingPlan: {
@@ -53,7 +53,7 @@ import * as utilities from "../utilities";
  *         },
  *         amount: subscriptionSubscriptionDetailsAmount,
  *         currency: subscriptionSubscriptionDetailsCurrency,
- *         isAutoRenew: subscriptionSubscriptionDetailsIsAutoRenew,
+ *         isAutoRenew: subscriptionSubscriptionDetailsIsAutoRenew === "true",
  *     },
  *     tenantId: testTenant.id,
  *     additionalDetails: [{

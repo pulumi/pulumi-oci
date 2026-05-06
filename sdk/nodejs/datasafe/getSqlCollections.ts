@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlCollections = oci.DataSafe.getSqlCollections({
+ * const testSqlCollections = oci.datasafe.getSqlCollections({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlCollectionAccessLevel,
- *     compartmentIdInSubtree: sqlCollectionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlCollectionCompartmentIdInSubtree === "true",
  *     dbUserName: testUser.name,
  *     displayName: sqlCollectionDisplayName,
  *     sqlCollectionId: testSqlCollection.id,
@@ -182,10 +182,10 @@ export interface GetSqlCollectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlCollections = oci.DataSafe.getSqlCollections({
+ * const testSqlCollections = oci.datasafe.getSqlCollections({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlCollectionAccessLevel,
- *     compartmentIdInSubtree: sqlCollectionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlCollectionCompartmentIdInSubtree === "true",
  *     dbUserName: testUser.name,
  *     displayName: sqlCollectionDisplayName,
  *     sqlCollectionId: testSqlCollection.id,

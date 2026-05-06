@@ -148,7 +148,7 @@ def get_datastores(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_datastores = oci.Ocvp.get_datastores(compartment_id=compartment_id,
+    test_datastores = oci.ocvp.get_datastores(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_id=test_datastore["id"],
         display_name=datastore_display_name,
@@ -200,7 +200,7 @@ def get_datastores_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_datastores = oci.Ocvp.get_datastores(compartment_id=compartment_id,
+    test_datastores = oci.ocvp.get_datastores(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         datastore_id=test_datastore["id"],
         display_name=datastore_display_name,

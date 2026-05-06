@@ -172,7 +172,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DatabaseMigration.get_connections(compartment_id=compartment_id,
+    test_connections = oci.databasemigration.get_connections(compartment_id=compartment_id,
         connection_types=connection_connection_type,
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],
@@ -235,7 +235,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DatabaseMigration.get_connections(compartment_id=compartment_id,
+    test_connections = oci.databasemigration.get_connections(compartment_id=compartment_id,
         connection_types=connection_connection_type,
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],

@@ -227,7 +227,7 @@ def get_service_provider(service_provider_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider = oci.DelegateAccessControl.get_service_provider(service_provider_id=test_service_provider_oci_delegate_access_control_service_provider["id"])
+    test_service_provider = oci.delegateaccesscontrol.get_service_provider(service_provider_id=test_service_provider_oci_delegate_access_control_service_provider["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_service_provider_output(service_provider_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_service_provider = oci.DelegateAccessControl.get_service_provider(service_provider_id=test_service_provider_oci_delegate_access_control_service_provider["id"])
+    test_service_provider = oci.delegateaccesscontrol.get_service_provider(service_provider_id=test_service_provider_oci_delegate_access_control_service_provider["id"])
     ```
 
 

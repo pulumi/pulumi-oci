@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentEndpoint = oci.GenerativeAi.getAgentAgentEndpoint({
+ * const testAgentEndpoint = oci.generativeai.getAgentAgentEndpoint({
  *     agentEndpointId: testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id,
  * });
  * ```
@@ -148,7 +148,7 @@ export interface GetAgentAgentEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentEndpoint = oci.GenerativeAi.getAgentAgentEndpoint({
+ * const testAgentEndpoint = oci.generativeai.getAgentAgentEndpoint({
  *     agentEndpointId: testAgentEndpointOciGenerativeAiAgentAgentEndpoint.id,
  * });
  * ```

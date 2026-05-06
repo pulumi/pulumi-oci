@@ -121,7 +121,7 @@ def get_announcements(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+    test_announcements = oci.fleetappsmanagement.get_announcements(compartment_id=compartment_id,
         display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```
@@ -162,7 +162,7 @@ def get_announcements_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+    test_announcements = oci.fleetappsmanagement.get_announcements(compartment_id=compartment_id,
         display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```

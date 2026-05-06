@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccountMgmtInfos = oci.Identity.getDomainsAccountMgmtInfos({
+ * const testAccountMgmtInfos = oci.identity.getDomainsAccountMgmtInfos({
  *     idcsEndpoint: testDomain.url,
- *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
+ *     accountMgmtInfoCount: Number(accountMgmtInfoAccountMgmtInfoCount),
  *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: accountMgmtInfoAuthorization,
  *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
- *     startIndex: accountMgmtInfoStartIndex,
+ *     startIndex: Number(accountMgmtInfoStartIndex),
  * });
  * ```
  */
@@ -128,15 +128,15 @@ export interface GetDomainsAccountMgmtInfosResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccountMgmtInfos = oci.Identity.getDomainsAccountMgmtInfos({
+ * const testAccountMgmtInfos = oci.identity.getDomainsAccountMgmtInfos({
  *     idcsEndpoint: testDomain.url,
- *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
+ *     accountMgmtInfoCount: Number(accountMgmtInfoAccountMgmtInfoCount),
  *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: accountMgmtInfoAuthorization,
  *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
- *     startIndex: accountMgmtInfoStartIndex,
+ *     startIndex: Number(accountMgmtInfoStartIndex),
  * });
  * ```
  */

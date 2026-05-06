@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildPipelineStages = oci.DevOps.getBuildPipelineStages({
+ * const testBuildPipelineStages = oci.devops.getBuildPipelineStages({
  *     buildPipelineId: testBuildPipeline.id,
  *     compartmentId: compartmentId,
  *     displayName: buildPipelineStageDisplayName,
@@ -107,7 +107,7 @@ export interface GetBuildPipelineStagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildPipelineStages = oci.DevOps.getBuildPipelineStages({
+ * const testBuildPipelineStages = oci.devops.getBuildPipelineStages({
  *     buildPipelineId: testBuildPipeline.id,
  *     compartmentId: compartmentId,
  *     displayName: buildPipelineStageDisplayName,

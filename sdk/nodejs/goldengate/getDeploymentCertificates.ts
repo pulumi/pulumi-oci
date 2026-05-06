@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
+ * const testDeploymentCertificates = oci.goldengate.getDeploymentCertificates({
  *     deploymentId: testDeployment.id,
  *     state: deploymentCertificateState,
  * });
@@ -80,7 +80,7 @@ export interface GetDeploymentCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
+ * const testDeploymentCertificates = oci.goldengate.getDeploymentCertificates({
  *     deploymentId: testDeployment.id,
  *     state: deploymentCertificateState,
  * });

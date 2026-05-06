@@ -118,7 +118,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"])
@@ -162,7 +162,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"])

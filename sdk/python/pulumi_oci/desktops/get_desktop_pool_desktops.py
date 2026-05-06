@@ -136,7 +136,7 @@ def get_desktop_pool_desktops(availability_domain: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool_desktops = oci.Desktops.get_desktop_pool_desktops(compartment_id=compartment_id,
+    test_desktop_pool_desktops = oci.desktops.get_desktop_pool_desktops(compartment_id=compartment_id,
         desktop_pool_id=test_desktop_pool["id"],
         availability_domain=desktop_pool_desktop_availability_domain,
         display_name=desktop_pool_desktop_display_name,
@@ -191,7 +191,7 @@ def get_desktop_pool_desktops_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool_desktops = oci.Desktops.get_desktop_pool_desktops(compartment_id=compartment_id,
+    test_desktop_pool_desktops = oci.desktops.get_desktop_pool_desktops(compartment_id=compartment_id,
         desktop_pool_id=test_desktop_pool["id"],
         availability_domain=desktop_pool_desktop_availability_domain,
         display_name=desktop_pool_desktop_display_name,

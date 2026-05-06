@@ -239,7 +239,7 @@ def get_zones(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+    test_zones = oci.dns.get_zones(compartment_id=compartment_id,
         dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,
@@ -331,7 +331,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+    test_zones = oci.dns.get_zones(compartment_id=compartment_id,
         dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,

@@ -147,7 +147,7 @@ def get_fleet_products(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_products = oci.FleetAppsManagement.get_fleet_products(fleet_id=test_fleet["id"],
+    test_fleet_products = oci.fleetappsmanagement.get_fleet_products(fleet_id=test_fleet["id"],
         compartment_id=compartment_id,
         display_name=fleet_product_display_name,
         resource_display_name=fleet_product_resource_display_name,
@@ -198,7 +198,7 @@ def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_products = oci.FleetAppsManagement.get_fleet_products(fleet_id=test_fleet["id"],
+    test_fleet_products = oci.fleetappsmanagement.get_fleet_products(fleet_id=test_fleet["id"],
         compartment_id=compartment_id,
         display_name=fleet_product_display_name,
         resource_display_name=fleet_product_resource_display_name,

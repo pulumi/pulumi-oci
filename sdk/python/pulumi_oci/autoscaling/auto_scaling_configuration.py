@@ -391,9 +391,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             policies=[{
                 "policy_type": auto_scaling_configuration_policies_policy_type,
                 "capacity": {
-                    "initial": auto_scaling_configuration_policies_capacity_initial,
-                    "max": auto_scaling_configuration_policies_capacity_max,
-                    "min": auto_scaling_configuration_policies_capacity_min,
+                    "initial": int(auto_scaling_configuration_policies_capacity_initial),
+                    "max": int(auto_scaling_configuration_policies_capacity_max),
+                    "min": int(auto_scaling_configuration_policies_capacity_min),
                 },
                 "display_name": auto_scaling_configuration_policies_display_name,
                 "execution_schedule": {
@@ -401,7 +401,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     "timezone": auto_scaling_configuration_policies_execution_schedule_timezone,
                     "type": auto_scaling_configuration_policies_execution_schedule_type,
                 },
-                "is_enabled": auto_scaling_configuration_policies_is_enabled,
+                "is_enabled": auto_scaling_configuration_policies_is_enabled == "true",
                 "resource_action": {
                     "action": auto_scaling_configuration_policies_resource_action_action,
                     "action_type": auto_scaling_configuration_policies_resource_action_action_type,
@@ -409,7 +409,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                 "rules": [{
                     "action": {
                         "type": auto_scaling_configuration_policies_rules_action_type,
-                        "value": auto_scaling_configuration_policies_rules_action_value,
+                        "value": int(auto_scaling_configuration_policies_rules_action_value),
                     },
                     "display_name": auto_scaling_configuration_policies_rules_display_name,
                     "metric": {
@@ -422,12 +422,12 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                         "resource_group": auto_scaling_configuration_policies_rules_metric_resource_group,
                         "threshold": {
                             "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policies_rules_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policies_rules_metric_threshold_value),
                         },
                     },
                 }],
             }],
-            cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
+            cool_down_in_seconds=int(auto_scaling_configuration_cool_down_in_seconds),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -435,7 +435,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=auto_scaling_configuration_is_enabled)
+            is_enabled=auto_scaling_configuration_is_enabled == "true")
         ```
 
         ## Import
@@ -491,9 +491,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             policies=[{
                 "policy_type": auto_scaling_configuration_policies_policy_type,
                 "capacity": {
-                    "initial": auto_scaling_configuration_policies_capacity_initial,
-                    "max": auto_scaling_configuration_policies_capacity_max,
-                    "min": auto_scaling_configuration_policies_capacity_min,
+                    "initial": int(auto_scaling_configuration_policies_capacity_initial),
+                    "max": int(auto_scaling_configuration_policies_capacity_max),
+                    "min": int(auto_scaling_configuration_policies_capacity_min),
                 },
                 "display_name": auto_scaling_configuration_policies_display_name,
                 "execution_schedule": {
@@ -501,7 +501,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     "timezone": auto_scaling_configuration_policies_execution_schedule_timezone,
                     "type": auto_scaling_configuration_policies_execution_schedule_type,
                 },
-                "is_enabled": auto_scaling_configuration_policies_is_enabled,
+                "is_enabled": auto_scaling_configuration_policies_is_enabled == "true",
                 "resource_action": {
                     "action": auto_scaling_configuration_policies_resource_action_action,
                     "action_type": auto_scaling_configuration_policies_resource_action_action_type,
@@ -509,7 +509,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                 "rules": [{
                     "action": {
                         "type": auto_scaling_configuration_policies_rules_action_type,
-                        "value": auto_scaling_configuration_policies_rules_action_value,
+                        "value": int(auto_scaling_configuration_policies_rules_action_value),
                     },
                     "display_name": auto_scaling_configuration_policies_rules_display_name,
                     "metric": {
@@ -522,12 +522,12 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                         "resource_group": auto_scaling_configuration_policies_rules_metric_resource_group,
                         "threshold": {
                             "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policies_rules_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policies_rules_metric_threshold_value),
                         },
                     },
                 }],
             }],
-            cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
+            cool_down_in_seconds=int(auto_scaling_configuration_cool_down_in_seconds),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -535,7 +535,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=auto_scaling_configuration_is_enabled)
+            is_enabled=auto_scaling_configuration_is_enabled == "true")
         ```
 
         ## Import

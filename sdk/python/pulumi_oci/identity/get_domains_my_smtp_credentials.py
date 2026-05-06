@@ -194,12 +194,12 @@ def get_domains_my_smtp_credentials(authorization: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_my_smtp_credentials = oci.Identity.get_domains_my_smtp_credentials(idcs_endpoint=test_domain["url"],
-        my_smtp_credential_count=my_smtp_credential_my_smtp_credential_count,
+    test_my_smtp_credentials = oci.identity.get_domains_my_smtp_credentials(idcs_endpoint=test_domain["url"],
+        my_smtp_credential_count=int(my_smtp_credential_my_smtp_credential_count),
         my_smtp_credential_filter=my_smtp_credential_my_smtp_credential_filter,
         authorization=my_smtp_credential_authorization,
         resource_type_schema_version=my_smtp_credential_resource_type_schema_version,
-        start_index=my_smtp_credential_start_index)
+        start_index=int(my_smtp_credential_start_index))
     ```
 
 
@@ -259,12 +259,12 @@ def get_domains_my_smtp_credentials_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_smtp_credentials = oci.Identity.get_domains_my_smtp_credentials(idcs_endpoint=test_domain["url"],
-        my_smtp_credential_count=my_smtp_credential_my_smtp_credential_count,
+    test_my_smtp_credentials = oci.identity.get_domains_my_smtp_credentials(idcs_endpoint=test_domain["url"],
+        my_smtp_credential_count=int(my_smtp_credential_my_smtp_credential_count),
         my_smtp_credential_filter=my_smtp_credential_my_smtp_credential_filter,
         authorization=my_smtp_credential_authorization,
         resource_type_schema_version=my_smtp_credential_resource_type_schema_version,
-        start_index=my_smtp_credential_start_index)
+        start_index=int(my_smtp_credential_start_index))
     ```
 
 

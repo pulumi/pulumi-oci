@@ -297,7 +297,7 @@ def get_configuration(configuration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
+    test_configuration = oci.psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
     ```
 
 
@@ -343,7 +343,7 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
+    test_configuration = oci.psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
     ```
 
 

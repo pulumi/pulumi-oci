@@ -151,7 +151,7 @@ def get_occ_capacity_requests(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=compartment_id,
+    test_occ_capacity_requests = oci.capacitymanagement.get_occ_capacity_requests(compartment_id=compartment_id,
         display_name=occ_capacity_request_display_name,
         id=occ_capacity_request_id,
         namespace=occ_capacity_request_namespace,
@@ -206,7 +206,7 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=compartment_id,
+    test_occ_capacity_requests = oci.capacitymanagement.get_occ_capacity_requests(compartment_id=compartment_id,
         display_name=occ_capacity_request_display_name,
         id=occ_capacity_request_id,
         namespace=occ_capacity_request_namespace,

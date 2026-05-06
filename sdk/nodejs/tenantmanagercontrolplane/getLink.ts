@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLink = oci.Tenantmanagercontrolplane.getLink({
+ * const testLink = oci.tenantmanagercontrolplane.getLink({
  *     linkId: testLinkOciTenantmanagercontrolplaneLink.id,
  * });
  * ```
@@ -82,7 +82,7 @@ export interface GetLinkResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLink = oci.Tenantmanagercontrolplane.getLink({
+ * const testLink = oci.tenantmanagercontrolplane.getLink({
  *     linkId: testLinkOciTenantmanagercontrolplaneLink.id,
  * });
  * ```

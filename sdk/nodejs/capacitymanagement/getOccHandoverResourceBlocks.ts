@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlocks = oci.CapacityManagement.getOccHandoverResourceBlocks({
+ * const testOccHandoverResourceBlocks = oci.capacitymanagement.getOccHandoverResourceBlocks({
  *     compartmentId: compartmentId,
  *     handoverDateGreaterThanOrEqualTo: occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
  *     handoverDateLessThanOrEqualTo: occHandoverResourceBlockHandoverDateLessThanOrEqualTo,
@@ -112,7 +112,7 @@ export interface GetOccHandoverResourceBlocksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccHandoverResourceBlocks = oci.CapacityManagement.getOccHandoverResourceBlocks({
+ * const testOccHandoverResourceBlocks = oci.capacitymanagement.getOccHandoverResourceBlocks({
  *     compartmentId: compartmentId,
  *     handoverDateGreaterThanOrEqualTo: occHandoverResourceBlockHandoverDateGreaterThanOrEqualTo,
  *     handoverDateLessThanOrEqualTo: occHandoverResourceBlockHandoverDateLessThanOrEqualTo,

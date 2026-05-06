@@ -185,10 +185,10 @@ def get_metric_data(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+    test_metric_data = oci.monitoring.get_metric_data(compartment_id=compartment_id,
         namespace=metric_data_namespace,
         query=metric_data_query,
-        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree == "true",
         end_time=metric_data_end_time,
         resolution=metric_data_resolution,
         resource_group=metric_data_resource_group,
@@ -267,10 +267,10 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+    test_metric_data = oci.monitoring.get_metric_data(compartment_id=compartment_id,
         namespace=metric_data_namespace,
         query=metric_data_query,
-        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree == "true",
         end_time=metric_data_end_time,
         resolution=metric_data_resolution,
         resource_group=metric_data_resource_group,

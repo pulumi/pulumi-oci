@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileLevel = oci.Optimizer.getProfileLevel({
+ * const testProfileLevel = oci.optimizer.getProfileLevel({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -93,9 +93,9 @@ export interface GetProfileLevelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfileLevel = oci.Optimizer.getProfileLevel({
+ * const testProfileLevel = oci.optimizer.getProfileLevel({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });

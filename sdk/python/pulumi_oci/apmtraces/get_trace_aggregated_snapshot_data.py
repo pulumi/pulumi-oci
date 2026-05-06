@@ -134,7 +134,7 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_aggregated_snapshot_data = oci.apmtraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_aggregated_snapshot_data_trace_key,
         server_name=trace_aggregated_snapshot_data_server_name,
         service_name=test_service["name"],
@@ -187,7 +187,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_aggregated_snapshot_data = oci.apmtraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_aggregated_snapshot_data_trace_key,
         server_name=trace_aggregated_snapshot_data_server_name,
         service_name=test_service["name"],

@@ -132,7 +132,7 @@ def get_fleet_resources(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_resources = oci.FleetAppsManagement.get_fleet_resources(fleet_id=test_fleet["id"],
+    test_fleet_resources = oci.fleetappsmanagement.get_fleet_resources(fleet_id=test_fleet["id"],
         display_name=fleet_resource_display_name,
         fleet_resource_type=fleet_resource_fleet_resource_type,
         id=fleet_resource_id,
@@ -182,7 +182,7 @@ def get_fleet_resources_output(display_name: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_resources = oci.FleetAppsManagement.get_fleet_resources(fleet_id=test_fleet["id"],
+    test_fleet_resources = oci.fleetappsmanagement.get_fleet_resources(fleet_id=test_fleet["id"],
         display_name=fleet_resource_display_name,
         fleet_resource_type=fleet_resource_fleet_resource_type,
         id=fleet_resource_id,

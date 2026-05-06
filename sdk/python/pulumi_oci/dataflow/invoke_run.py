@@ -1266,7 +1266,7 @@ class InvokeRun(pulumi.CustomResource):
             logs_bucket_uri=invoke_run_logs_bucket_uri,
             max_duration_in_minutes=invoke_run_max_duration_in_minutes,
             metastore_id=metastore_id,
-            num_executors=invoke_run_num_executors,
+            num_executors=int(invoke_run_num_executors),
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[{
                 "name": invoke_run_parameters_name,
@@ -1376,7 +1376,7 @@ class InvokeRun(pulumi.CustomResource):
             logs_bucket_uri=invoke_run_logs_bucket_uri,
             max_duration_in_minutes=invoke_run_max_duration_in_minutes,
             metastore_id=metastore_id,
-            num_executors=invoke_run_num_executors,
+            num_executors=int(invoke_run_num_executors),
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[{
                 "name": invoke_run_parameters_name,

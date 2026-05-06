@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipRanges = oci.Core.getByoipRanges({
+ * const testByoipRanges = oci.core.getByoipRanges({
  *     compartmentId: compartmentId,
  *     displayName: byoipRangeDisplayName,
  *     state: byoipRangeState,
@@ -92,7 +92,7 @@ export interface GetByoipRangesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoipRanges = oci.Core.getByoipRanges({
+ * const testByoipRanges = oci.core.getByoipRanges({
  *     compartmentId: compartmentId,
  *     displayName: byoipRangeDisplayName,
  *     state: byoipRangeState,

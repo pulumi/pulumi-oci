@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublishers = oci.Marketplace.getPublishers({
+ * const testPublishers = oci.marketplace.getPublishers({
  *     compartmentId: compartmentId,
  *     publisherId: testPublisher.id,
  * });
@@ -75,7 +75,7 @@ export interface GetPublishersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublishers = oci.Marketplace.getPublishers({
+ * const testPublishers = oci.marketplace.getPublishers({
  *     compartmentId: compartmentId,
  *     publisherId: testPublisher.id,
  * });

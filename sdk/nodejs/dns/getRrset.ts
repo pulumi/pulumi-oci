@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = oci.Dns.getRrset({
+ * const testRrset = oci.dns.getRrset({
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
@@ -101,7 +101,7 @@ export interface GetRrsetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = oci.Dns.getRrset({
+ * const testRrset = oci.dns.getRrset({
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,

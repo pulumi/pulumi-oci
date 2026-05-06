@@ -518,7 +518,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],
@@ -580,7 +580,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
             iam_user_sync_configuration_details={
-                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required,
+                "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],

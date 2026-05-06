@@ -191,7 +191,7 @@ def get_security_attribute_namespace(security_attribute_namespace_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespace = oci.SecurityAttribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
+    test_security_attribute_namespace = oci.securityattribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_security_attribute_namespace_output(security_attribute_namespace_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attribute_namespace = oci.SecurityAttribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
+    test_security_attribute_namespace = oci.securityattribute.get_security_attribute_namespace(security_attribute_namespace_id=test_security_attribute_namespace_oci_security_attribute_security_attribute_namespace["id"])
     ```
 
 

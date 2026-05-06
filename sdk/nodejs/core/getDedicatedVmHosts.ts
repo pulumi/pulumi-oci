@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
+ * const testDedicatedVmHosts = oci.core.getDedicatedVmHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -137,12 +137,12 @@ export interface GetDedicatedVmHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
+ * const testDedicatedVmHosts = oci.core.getDedicatedVmHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,

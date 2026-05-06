@@ -168,7 +168,7 @@ def get_heat_wave_cluster(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
+    test_heat_wave_cluster = oci.mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
     ```
 
 
@@ -203,7 +203,7 @@ def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
+    test_heat_wave_cluster = oci.mysql.get_heat_wave_cluster(db_system_id=test_db_system["id"])
     ```
 
 

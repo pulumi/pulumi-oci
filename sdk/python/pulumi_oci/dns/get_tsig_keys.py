@@ -125,7 +125,7 @@ def get_tsig_keys(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+    test_tsig_keys = oci.dns.get_tsig_keys(compartment_id=compartment_id,
         id=tsig_key_id,
         name=tsig_key_name,
         state=tsig_key_state)
@@ -170,7 +170,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+    test_tsig_keys = oci.dns.get_tsig_keys(compartment_id=compartment_id,
         id=tsig_key_id,
         name=tsig_key_name,
         state=tsig_key_state)

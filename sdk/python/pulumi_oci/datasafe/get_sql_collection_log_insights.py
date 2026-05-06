@@ -131,7 +131,7 @@ def get_sql_collection_log_insights(filters: Optional[Sequence[Union['GetSqlColl
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
+    test_sql_collection_log_insights = oci.datasafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
         time_ended=sql_collection_log_insight_time_ended,
         time_started=sql_collection_log_insight_time_started,
         group_by=sql_collection_log_insight_group_by)
@@ -177,7 +177,7 @@ def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
+    test_sql_collection_log_insights = oci.datasafe.get_sql_collection_log_insights(sql_collection_id=test_sql_collection["id"],
         time_ended=sql_collection_log_insight_time_ended,
         time_started=sql_collection_log_insight_time_started,
         group_by=sql_collection_log_insight_group_by)

@@ -275,7 +275,7 @@ def get_cost_anomaly_event(cost_anomaly_event_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event = oci.Budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
+    test_cost_anomaly_event = oci.budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
     ```
 
 
@@ -319,7 +319,7 @@ def get_cost_anomaly_event_output(cost_anomaly_event_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_event = oci.Budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
+    test_cost_anomaly_event = oci.budget.get_cost_anomaly_event(cost_anomaly_event_id=test_cost_anomaly_event_oci_budget_cost_anomaly_event["id"])
     ```
 
 

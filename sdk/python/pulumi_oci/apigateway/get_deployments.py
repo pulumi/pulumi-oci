@@ -137,7 +137,7 @@ def get_deployments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.apigateway.get_deployments(compartment_id=compartment_id,
         display_name=deployment_display_name,
         gateway_id=test_gateway["id"],
         state=deployment_state)
@@ -183,7 +183,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.apigateway.get_deployments(compartment_id=compartment_id,
         display_name=deployment_display_name,
         gateway_id=test_gateway["id"],
         state=deployment_state)

@@ -105,7 +105,7 @@ def get_attribute_auto_activate_status(apm_domain_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_auto_activate_status = oci.ApmTraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
+    test_attribute_auto_activate_status = oci.apmtraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
         data_key_type=attribute_auto_activate_status_data_key_type)
     ```
 
@@ -139,7 +139,7 @@ def get_attribute_auto_activate_status_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_auto_activate_status = oci.ApmTraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
+    test_attribute_auto_activate_status = oci.apmtraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
         data_key_type=attribute_auto_activate_status_data_key_type)
     ```
 

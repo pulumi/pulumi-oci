@@ -27,17 +27,17 @@ import * as utilities from "../utilities";
  *     type: managementAgentDataSourceType,
  *     url: managementAgentDataSourceUrl,
  *     allowMetrics: managementAgentDataSourceAllowMetrics,
- *     connectionTimeout: managementAgentDataSourceConnectionTimeout,
+ *     connectionTimeout: Number(managementAgentDataSourceConnectionTimeout),
  *     metricDimensions: [{
  *         name: managementAgentDataSourceMetricDimensionsName,
  *         value: managementAgentDataSourceMetricDimensionsValue,
  *     }],
  *     namespace: managementAgentDataSourceNamespace,
  *     proxyUrl: managementAgentDataSourceProxyUrl,
- *     readDataLimitInKilobytes: managementAgentDataSourceReadDataLimitInKilobytes,
- *     readTimeout: managementAgentDataSourceReadTimeout,
+ *     readDataLimitInKilobytes: Number(managementAgentDataSourceReadDataLimitInKilobytes),
+ *     readTimeout: Number(managementAgentDataSourceReadTimeout),
  *     resourceGroup: managementAgentDataSourceResourceGroup,
- *     scheduleMins: managementAgentDataSourceScheduleMins,
+ *     scheduleMins: Number(managementAgentDataSourceScheduleMins),
  * });
  * ```
  *

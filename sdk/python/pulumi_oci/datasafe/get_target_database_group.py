@@ -228,7 +228,7 @@ def get_target_database_group(target_database_group_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group = oci.DataSafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
+    test_target_database_group = oci.datasafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_target_database_group_output(target_database_group_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_group = oci.DataSafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
+    test_target_database_group = oci.datasafe.get_target_database_group(target_database_group_id=test_target_database_group_oci_data_safe_target_database_group["id"])
     ```
 
 

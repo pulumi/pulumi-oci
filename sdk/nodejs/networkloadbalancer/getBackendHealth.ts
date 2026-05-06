@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackendHealth = oci.NetworkLoadBalancer.getBackendHealth({
+ * const testBackendHealth = oci.networkloadbalancer.getBackendHealth({
  *     backendName: testBackend.name,
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
@@ -87,7 +87,7 @@ export interface GetBackendHealthResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackendHealth = oci.NetworkLoadBalancer.getBackendHealth({
+ * const testBackendHealth = oci.networkloadbalancer.getBackendHealth({
  *     backendName: testBackend.name,
  *     backendSetName: testBackendSet.name,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,

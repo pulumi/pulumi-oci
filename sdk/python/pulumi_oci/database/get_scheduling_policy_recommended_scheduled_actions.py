@@ -115,7 +115,7 @@ def get_scheduling_policy_recommended_scheduled_actions(filters: Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_recommended_scheduled_actions = oci.Database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
+    test_scheduling_policy_recommended_scheduled_actions = oci.database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
         scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_policy_target_resource_id=test_resource["id"])
     ```
@@ -156,7 +156,7 @@ def get_scheduling_policy_recommended_scheduled_actions_output(filters: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_recommended_scheduled_actions = oci.Database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
+    test_scheduling_policy_recommended_scheduled_actions = oci.database.get_scheduling_policy_recommended_scheduled_actions(plan_intent=scheduling_policy_recommended_scheduled_action_plan_intent,
         scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_policy_target_resource_id=test_resource["id"])
     ```

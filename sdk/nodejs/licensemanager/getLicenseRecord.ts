@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseRecord = oci.LicenseManager.getLicenseRecord({
+ * const testLicenseRecord = oci.licensemanager.getLicenseRecord({
  *     licenseRecordId: testLicenseRecordOciLicenseManagerLicenseRecord.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetLicenseRecordResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseRecord = oci.LicenseManager.getLicenseRecord({
+ * const testLicenseRecord = oci.licensemanager.getLicenseRecord({
  *     licenseRecordId: testLicenseRecordOciLicenseManagerLicenseRecord.id,
  * });
  * ```

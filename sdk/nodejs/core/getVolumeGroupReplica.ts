@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplica = oci.Core.getVolumeGroupReplica({
+ * const testVolumeGroupReplica = oci.core.getVolumeGroupReplica({
  *     volumeGroupReplicaId: testVolumeGroupReplicaOciCoreVolumeGroupReplica.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetVolumeGroupReplicaResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupReplica = oci.Core.getVolumeGroupReplica({
+ * const testVolumeGroupReplica = oci.core.getVolumeGroupReplica({
  *     volumeGroupReplicaId: testVolumeGroupReplicaOciCoreVolumeGroupReplica.id,
  * });
  * ```

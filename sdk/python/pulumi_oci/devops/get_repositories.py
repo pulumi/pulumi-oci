@@ -147,7 +147,7 @@ def get_repositories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.DevOps.get_repositories(compartment_id=compartment_id,
+    test_repositories = oci.devops.get_repositories(compartment_id=compartment_id,
         name=repository_name,
         project_id=test_project["id"],
         repository_id=test_repository["id"],
@@ -198,7 +198,7 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_repositories = oci.DevOps.get_repositories(compartment_id=compartment_id,
+    test_repositories = oci.devops.get_repositories(compartment_id=compartment_id,
         name=repository_name,
         project_id=test_project["id"],
         repository_id=test_repository["id"],

@@ -103,7 +103,7 @@ def get_vaults(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
+    test_vaults = oci.kms.get_vaults(compartment_id=compartment_id)
     ```
 
 
@@ -139,7 +139,7 @@ def get_vaults_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
+    test_vaults = oci.kms.get_vaults(compartment_id=compartment_id)
     ```
 
 

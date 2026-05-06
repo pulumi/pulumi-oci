@@ -167,7 +167,7 @@ def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommended_patches = oci.FleetAppsManagement.get_recommended_patches(compartment_id=compartment_id,
+    test_recommended_patches = oci.fleetappsmanagement.get_recommended_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_id=test_patch["id"],
@@ -228,7 +228,7 @@ def get_recommended_patches_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_recommended_patches = oci.FleetAppsManagement.get_recommended_patches(compartment_id=compartment_id,
+    test_recommended_patches = oci.fleetappsmanagement.get_recommended_patches(compartment_id=compartment_id,
         target_id=fleet_target_id,
         target_name=fleet_target_name,
         patch_id=test_patch["id"],

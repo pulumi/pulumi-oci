@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *
  * const testManagementAppliance = new oci.ocvp.ManagementAppliance("test_management_appliance", {
  *     configuration: {
- *         isLogIngestionEnabled: managementApplianceConfigurationIsLogIngestionEnabled,
- *         isMetricsCollectionEnabled: managementApplianceConfigurationIsMetricsCollectionEnabled,
+ *         isLogIngestionEnabled: managementApplianceConfigurationIsLogIngestionEnabled === "true",
+ *         isMetricsCollectionEnabled: managementApplianceConfigurationIsMetricsCollectionEnabled === "true",
  *         metrics: managementApplianceConfigurationMetrics,
  *         supportBundleBucketId: testBucket.id,
  *     },

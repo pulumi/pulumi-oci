@@ -105,7 +105,7 @@ def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_digest_errors = oci.DatabaseManagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
+    test_managed_my_sql_database_digest_errors = oci.databasemanagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
@@ -141,7 +141,7 @@ def get_managed_my_sql_database_digest_errors_output(digest: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_digest_errors = oci.DatabaseManagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
+    test_managed_my_sql_database_digest_errors = oci.databasemanagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 

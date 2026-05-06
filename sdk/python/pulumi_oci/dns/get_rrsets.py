@@ -153,7 +153,7 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+    test_rrsets = oci.dns.get_rrsets(zone_name_or_id=test_zone["id"],
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,
@@ -209,7 +209,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+    test_rrsets = oci.dns.get_rrsets(zone_name_or_id=test_zone["id"],
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,

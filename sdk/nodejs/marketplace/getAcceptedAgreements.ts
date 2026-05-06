@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
+ * const testAcceptedAgreements = oci.marketplace.getAcceptedAgreements({
  *     compartmentId: compartmentId,
  *     acceptedAgreementId: testAcceptedAgreement.id,
  *     displayName: acceptedAgreementDisplayName,
@@ -109,7 +109,7 @@ export interface GetAcceptedAgreementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
+ * const testAcceptedAgreements = oci.marketplace.getAcceptedAgreements({
  *     compartmentId: compartmentId,
  *     acceptedAgreementId: testAcceptedAgreement.id,
  *     displayName: acceptedAgreementDisplayName,

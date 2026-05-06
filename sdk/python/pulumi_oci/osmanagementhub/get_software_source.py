@@ -542,7 +542,7 @@ def get_software_source(software_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
+    test_software_source = oci.osmanagementhub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
     ```
 
 
@@ -608,7 +608,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
+    test_software_source = oci.osmanagementhub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
     ```
 
 

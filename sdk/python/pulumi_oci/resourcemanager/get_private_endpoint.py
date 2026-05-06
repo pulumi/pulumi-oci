@@ -253,7 +253,7 @@ def get_private_endpoint(private_endpoint_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_resourcemanager_private_endpoint["id"])
+    test_private_endpoint = oci.resourcemanager.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_resourcemanager_private_endpoint["id"])
     ```
 
 
@@ -297,7 +297,7 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_resourcemanager_private_endpoint["id"])
+    test_private_endpoint = oci.resourcemanager.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_resourcemanager_private_endpoint["id"])
     ```
 
 

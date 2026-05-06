@@ -846,9 +846,9 @@ class SqlEndpoint(pulumi.CustomResource):
             driver_shape=sql_endpoint_driver_shape,
             executor_shape=sql_endpoint_executor_shape,
             lake_id=test_lake["id"],
-            max_executor_count=sql_endpoint_max_executor_count,
+            max_executor_count=int(sql_endpoint_max_executor_count),
             metastore_id=test_metastore["id"],
-            min_executor_count=sql_endpoint_min_executor_count,
+            min_executor_count=int(sql_endpoint_min_executor_count),
             network_configuration={
                 "network_type": sql_endpoint_network_configuration_network_type,
                 "access_control_rules": [{
@@ -883,7 +883,7 @@ class SqlEndpoint(pulumi.CustomResource):
             log_compartment_id=test_compartment["id"],
             log_display_name=sql_endpoint_log_display_name,
             log_group_id=test_log_group["id"],
-            log_retention_duration=sql_endpoint_log_retention_duration,
+            log_retention_duration=int(sql_endpoint_log_retention_duration),
             spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
         ```
 
@@ -953,9 +953,9 @@ class SqlEndpoint(pulumi.CustomResource):
             driver_shape=sql_endpoint_driver_shape,
             executor_shape=sql_endpoint_executor_shape,
             lake_id=test_lake["id"],
-            max_executor_count=sql_endpoint_max_executor_count,
+            max_executor_count=int(sql_endpoint_max_executor_count),
             metastore_id=test_metastore["id"],
-            min_executor_count=sql_endpoint_min_executor_count,
+            min_executor_count=int(sql_endpoint_min_executor_count),
             network_configuration={
                 "network_type": sql_endpoint_network_configuration_network_type,
                 "access_control_rules": [{
@@ -990,7 +990,7 @@ class SqlEndpoint(pulumi.CustomResource):
             log_compartment_id=test_compartment["id"],
             log_display_name=sql_endpoint_log_display_name,
             log_group_id=test_log_group["id"],
-            log_retention_duration=sql_endpoint_log_retention_duration,
+            log_retention_duration=int(sql_endpoint_log_retention_duration),
             spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
         ```
 

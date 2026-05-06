@@ -31,11 +31,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetMaskingReportsMaskedColumn(ctx, &datasafe.GetMaskingReportsMaskedColumnArgs{
 //				MaskingReportId:     testMaskingReport.Id,
-//				ColumnNames:         maskingReportsMaskedColumnColumnName,
-//				MaskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
-//				Objects:             maskingReportsMaskedColumnObject,
-//				ObjectTypes:         maskingReportsMaskedColumnObjectType,
-//				SchemaNames:         maskingReportsMaskedColumnSchemaName,
+//				ColumnNames:         pulumi.ToArray(maskingReportsMaskedColumnColumnName),
+//				MaskingColumnGroups: pulumi.ToArray(maskingReportsMaskedColumnMaskingColumnGroup),
+//				Objects:             pulumi.ToArray(maskingReportsMaskedColumnObject),
+//				ObjectTypes:         pulumi.ToArray(maskingReportsMaskedColumnObjectType),
+//				SchemaNames:         pulumi.ToArray(maskingReportsMaskedColumnSchemaName),
 //				SensitiveTypeId:     pulumi.StringRef(testSensitiveType.Id),
 //			}, nil)
 //			if err != nil {

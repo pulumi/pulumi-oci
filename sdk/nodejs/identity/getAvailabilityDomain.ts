@@ -13,10 +13,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartment = oci.Identity.getAvailabilityDomain({
+ * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: adNumber,
+ *     adNumber: Number(adNumber),
  * });
  * ```
  */
@@ -77,10 +77,10 @@ export interface GetAvailabilityDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartment = oci.Identity.getAvailabilityDomain({
+ * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: adNumber,
+ *     adNumber: Number(adNumber),
  * });
  * ```
  */

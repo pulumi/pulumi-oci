@@ -147,7 +147,7 @@ def get_block_volume_replicas(availability_domain: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replicas = oci.Core.get_block_volume_replicas(availability_domain=block_volume_replica_availability_domain,
+    test_block_volume_replicas = oci.core.get_block_volume_replicas(availability_domain=block_volume_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=block_volume_replica_display_name,
         state=block_volume_replica_state,
@@ -198,7 +198,7 @@ def get_block_volume_replicas_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_block_volume_replicas = oci.Core.get_block_volume_replicas(availability_domain=block_volume_replica_availability_domain,
+    test_block_volume_replicas = oci.core.get_block_volume_replicas(availability_domain=block_volume_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=block_volume_replica_display_name,
         state=block_volume_replica_state,

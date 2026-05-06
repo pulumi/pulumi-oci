@@ -138,7 +138,7 @@ def get_boot_volume_attachments(availability_domain: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+    test_boot_volume_attachments = oci.core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
         compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         instance_id=test_instance["id"])
@@ -186,7 +186,7 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+    test_boot_volume_attachments = oci.core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
         compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         instance_id=test_instance["id"])

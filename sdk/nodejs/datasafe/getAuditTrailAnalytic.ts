@@ -29,10 +29,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrailAnalytic = oci.DataSafe.getAuditTrailAnalytic({
+ * const testAuditTrailAnalytic = oci.datasafe.getAuditTrailAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: auditTrailAnalyticGroupBy,
  *     targetId: testTarget.id,
  * });
@@ -119,10 +119,10 @@ export interface GetAuditTrailAnalyticResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrailAnalytic = oci.DataSafe.getAuditTrailAnalytic({
+ * const testAuditTrailAnalytic = oci.datasafe.getAuditTrailAnalytic({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAnalyticAccessLevel,
- *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: auditTrailAnalyticGroupBy,
  *     targetId: testTarget.id,
  * });

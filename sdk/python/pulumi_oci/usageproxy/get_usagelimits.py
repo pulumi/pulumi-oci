@@ -138,7 +138,7 @@ def get_usagelimits(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+    test_usagelimits = oci.usageproxy.get_usagelimits(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         limit_type=usagelimit_limit_type,
         resource_type=usagelimit_resource_type,
@@ -189,7 +189,7 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+    test_usagelimits = oci.usageproxy.get_usagelimits(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         limit_type=usagelimit_limit_type,
         resource_type=usagelimit_resource_type,

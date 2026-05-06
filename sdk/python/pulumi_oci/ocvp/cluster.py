@@ -942,7 +942,7 @@ class Cluster(pulumi.CustomResource):
 
         test_cluster = oci.ocvp.Cluster("test_cluster",
             compute_availability_domain=cluster_compute_availability_domain,
-            esxi_hosts_count=cluster_esxi_hosts_count,
+            esxi_hosts_count=int(cluster_esxi_hosts_count),
             network_configuration={
                 "nsx_edge_vtep_vlan_id": test_vlan["id"],
                 "nsx_vtep_vlan_id": test_vlan["id"],
@@ -980,7 +980,7 @@ class Cluster(pulumi.CustomResource):
             initial_host_shape_name=test_shape["name"],
             initial_vcf_byol_allocation_id=test_byol_allocation["id"],
             instance_display_name_prefix=cluster_instance_display_name_prefix,
-            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
+            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled == "true",
             vmware_software_version=cluster_vmware_software_version,
             workload_network_cidr=cluster_workload_network_cidr)
         ```
@@ -1052,7 +1052,7 @@ class Cluster(pulumi.CustomResource):
 
         test_cluster = oci.ocvp.Cluster("test_cluster",
             compute_availability_domain=cluster_compute_availability_domain,
-            esxi_hosts_count=cluster_esxi_hosts_count,
+            esxi_hosts_count=int(cluster_esxi_hosts_count),
             network_configuration={
                 "nsx_edge_vtep_vlan_id": test_vlan["id"],
                 "nsx_vtep_vlan_id": test_vlan["id"],
@@ -1090,7 +1090,7 @@ class Cluster(pulumi.CustomResource):
             initial_host_shape_name=test_shape["name"],
             initial_vcf_byol_allocation_id=test_byol_allocation["id"],
             instance_display_name_prefix=cluster_instance_display_name_prefix,
-            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled,
+            is_shielded_instance_enabled=cluster_is_shielded_instance_enabled == "true",
             vmware_software_version=cluster_vmware_software_version,
             workload_network_cidr=cluster_workload_network_cidr)
         ```

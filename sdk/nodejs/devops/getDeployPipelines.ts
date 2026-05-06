@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployPipelines = oci.DevOps.getDeployPipelines({
+ * const testDeployPipelines = oci.devops.getDeployPipelines({
  *     compartmentId: compartmentId,
  *     displayName: deployPipelineDisplayName,
  *     id: deployPipelineId,
@@ -107,7 +107,7 @@ export interface GetDeployPipelinesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployPipelines = oci.DevOps.getDeployPipelines({
+ * const testDeployPipelines = oci.devops.getDeployPipelines({
  *     compartmentId: compartmentId,
  *     displayName: deployPipelineDisplayName,
  *     id: deployPipelineId,

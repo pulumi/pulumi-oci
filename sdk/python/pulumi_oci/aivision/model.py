@@ -705,7 +705,7 @@ class Model(pulumi.CustomResource):
             description=model_description,
             display_name=model_display_name,
             freeform_tags=model_freeform_tags,
-            is_quick_mode=model_is_quick_mode,
+            is_quick_mode=model_is_quick_mode == "true",
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
             testing_dataset={
@@ -784,7 +784,7 @@ class Model(pulumi.CustomResource):
             description=model_description,
             display_name=model_display_name,
             freeform_tags=model_freeform_tags,
-            is_quick_mode=model_is_quick_mode,
+            is_quick_mode=model_is_quick_mode == "true",
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
             testing_dataset={

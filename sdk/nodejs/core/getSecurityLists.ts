@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityLists = oci.Core.getSecurityLists({
+ * const testSecurityLists = oci.core.getSecurityLists({
  *     compartmentId: compartmentId,
  *     displayName: securityListDisplayName,
  *     state: securityListState,
@@ -102,7 +102,7 @@ export interface GetSecurityListsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityLists = oci.Core.getSecurityLists({
+ * const testSecurityLists = oci.core.getSecurityLists({
  *     compartmentId: compartmentId,
  *     displayName: securityListDisplayName,
  *     state: securityListState,

@@ -207,7 +207,7 @@ class Configuration(pulumi.CustomResource):
         test_configuration = oci.nosql.Configuration("test_configuration",
             compartment_id=compartment_id,
             environment="HOSTED",
-            is_opc_dry_run=configuration_is_opc_dry_run,
+            is_opc_dry_run=configuration_is_opc_dry_run == "true",
             kms_key={
                 "id": configuration_kms_key_id,
                 "kms_vault_id": test_vault["id"],
@@ -270,7 +270,7 @@ class Configuration(pulumi.CustomResource):
         test_configuration = oci.nosql.Configuration("test_configuration",
             compartment_id=compartment_id,
             environment="HOSTED",
-            is_opc_dry_run=configuration_is_opc_dry_run,
+            is_opc_dry_run=configuration_is_opc_dry_run == "true",
             kms_key={
                 "id": configuration_kms_key_id,
                 "kms_vault_id": test_vault["id"],

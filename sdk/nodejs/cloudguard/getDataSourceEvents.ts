@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSourceEvents = oci.CloudGuard.getDataSourceEvents({
+ * const testDataSourceEvents = oci.cloudguard.getDataSourceEvents({
  *     dataSourceId: testDataSource.id,
  *     region: dataSourceEventRegion,
  * });
@@ -84,7 +84,7 @@ export interface GetDataSourceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSourceEvents = oci.CloudGuard.getDataSourceEvents({
+ * const testDataSourceEvents = oci.cloudguard.getDataSourceEvents({
  *     dataSourceId: testDataSource.id,
  *     region: dataSourceEventRegion,
  * });

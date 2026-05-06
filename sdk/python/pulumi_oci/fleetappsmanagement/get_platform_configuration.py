@@ -228,7 +228,7 @@ def get_platform_configuration(platform_configuration_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configuration = oci.FleetAppsManagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
+    test_platform_configuration = oci.fleetappsmanagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_platform_configuration_output(platform_configuration_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configuration = oci.FleetAppsManagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
+    test_platform_configuration = oci.fleetappsmanagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
     ```
 
 

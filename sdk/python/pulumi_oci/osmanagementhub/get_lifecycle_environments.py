@@ -197,7 +197,7 @@ def get_lifecycle_environments(arch_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+    test_lifecycle_environments = oci.osmanagementhub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
         compartment_id=compartment_id,
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,
@@ -269,7 +269,7 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+    test_lifecycle_environments = oci.osmanagementhub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
         compartment_id=compartment_id,
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentChecks = oci.DataSafe.getSecurityAssessmentChecks({
+ * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,
@@ -115,10 +115,10 @@ export interface GetSecurityAssessmentChecksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentChecks = oci.DataSafe.getSecurityAssessmentChecks({
+ * const testSecurityAssessmentChecks = oci.datasafe.getSecurityAssessmentChecks({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     accessLevel: securityAssessmentCheckAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCheckCompartmentIdInSubtree === "true",
  *     containsReferences: securityAssessmentCheckContainsReferences,
  *     containsSeverities: securityAssessmentCheckContainsSeverity,
  *     key: securityAssessmentCheckKey,

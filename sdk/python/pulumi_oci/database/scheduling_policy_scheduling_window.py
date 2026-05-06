@@ -319,8 +319,8 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                 "days_of_weeks": [{
                     "name": scheduling_policy_scheduling_window_window_preference_days_of_week_name,
                 }],
-                "duration": scheduling_policy_scheduling_window_window_preference_duration,
-                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration,
+                "duration": int(scheduling_policy_scheduling_window_window_preference_duration),
+                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration == "true",
                 "start_time": scheduling_policy_scheduling_window_window_preference_start_time,
                 "weeks_of_months": scheduling_policy_scheduling_window_window_preference_weeks_of_month,
                 "months": [{
@@ -374,8 +374,8 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
                 "days_of_weeks": [{
                     "name": scheduling_policy_scheduling_window_window_preference_days_of_week_name,
                 }],
-                "duration": scheduling_policy_scheduling_window_window_preference_duration,
-                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration,
+                "duration": int(scheduling_policy_scheduling_window_window_preference_duration),
+                "is_enforced_duration": scheduling_policy_scheduling_window_window_preference_is_enforced_duration == "true",
                 "start_time": scheduling_policy_scheduling_window_window_preference_start_time,
                 "weeks_of_months": scheduling_policy_scheduling_window_window_preference_weeks_of_month,
                 "months": [{

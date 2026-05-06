@@ -208,7 +208,7 @@ def get_scheduler_definitions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definitions = oci.FleetAppsManagement.get_scheduler_definitions(compartment_id=compartment_id,
+    test_scheduler_definitions = oci.fleetappsmanagement.get_scheduler_definitions(compartment_id=compartment_id,
         display_name=scheduler_definition_display_name,
         fleet_id=test_fleet["id"],
         id=scheduler_definition_id,
@@ -289,7 +289,7 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definitions = oci.FleetAppsManagement.get_scheduler_definitions(compartment_id=compartment_id,
+    test_scheduler_definitions = oci.fleetappsmanagement.get_scheduler_definitions(compartment_id=compartment_id,
         display_name=scheduler_definition_display_name,
         fleet_id=test_fleet["id"],
         id=scheduler_definition_id,

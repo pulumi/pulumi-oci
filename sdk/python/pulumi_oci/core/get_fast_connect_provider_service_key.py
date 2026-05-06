@@ -118,7 +118,7 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+    test_fast_connect_provider_service_key = oci.core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
         provider_service_key_name=fast_connect_provider_service_key_provider_service_key_name)
     ```
 
@@ -154,7 +154,7 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+    test_fast_connect_provider_service_key = oci.core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
         provider_service_key_name=fast_connect_provider_service_key_provider_service_key_name)
     ```
 

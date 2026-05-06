@@ -125,7 +125,7 @@ def get_entitlements(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_entitlements = oci.OsManagementHub.get_entitlements(compartment_id=compartment_id,
+    test_entitlements = oci.osmanagementhub.get_entitlements(compartment_id=compartment_id,
         csi=entitlement_csi,
         vendor_name=entitlement_vendor_name)
     ```
@@ -167,7 +167,7 @@ def get_entitlements_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_entitlements = oci.OsManagementHub.get_entitlements(compartment_id=compartment_id,
+    test_entitlements = oci.osmanagementhub.get_entitlements(compartment_id=compartment_id,
         csi=entitlement_csi,
         vendor_name=entitlement_vendor_name)
     ```

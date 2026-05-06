@@ -170,7 +170,7 @@ def get_delegated_resource_access_requests(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_requests = oci.DelegateAccessControl.get_delegated_resource_access_requests(compartment_id=compartment_id,
+    test_delegated_resource_access_requests = oci.delegateaccesscontrol.get_delegated_resource_access_requests(compartment_id=compartment_id,
         delegation_control_id=test_delegation_control["id"],
         request_status=delegated_resource_access_request_request_status,
         resource_id=test_resource["id"],
@@ -231,7 +231,7 @@ def get_delegated_resource_access_requests_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_delegated_resource_access_requests = oci.DelegateAccessControl.get_delegated_resource_access_requests(compartment_id=compartment_id,
+    test_delegated_resource_access_requests = oci.delegateaccesscontrol.get_delegated_resource_access_requests(compartment_id=compartment_id,
         delegation_control_id=test_delegation_control["id"],
         request_status=delegated_resource_access_request_request_status,
         resource_id=test_resource["id"],

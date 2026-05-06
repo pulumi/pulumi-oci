@@ -32,8 +32,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetProtectionRules(ctx, &waas.GetProtectionRulesArgs{
 //				WaasPolicyId:       testWaasPolicy.Id,
-//				Actions:            protectionRuleAction,
-//				ModSecurityRuleIds: testRule.Id,
+//				Actions:            pulumi.ToArray(protectionRuleAction),
+//				ModSecurityRuleIds: pulumi.ToArray(testRule.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

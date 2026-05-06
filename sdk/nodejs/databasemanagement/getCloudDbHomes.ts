@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHomes = oci.DatabaseManagement.getCloudDbHomes({
+ * const testCloudDbHomes = oci.databasemanagement.getCloudDbHomes({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbHomeDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudDbHomesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHomes = oci.DatabaseManagement.getCloudDbHomes({
+ * const testCloudDbHomes = oci.databasemanagement.getCloudDbHomes({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbHomeDisplayName,

@@ -276,7 +276,7 @@ def get_execution_action(execution_action_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_action = oci.Database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
+    test_execution_action = oci.database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_execution_action_output(execution_action_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_action = oci.Database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
+    test_execution_action = oci.database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
     ```
 
 

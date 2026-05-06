@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
+ * const testMaskingAnalytics = oci.datasafe.getMaskingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -119,9 +119,9 @@ export interface GetMaskingAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
+ * const testMaskingAnalytics = oci.datasafe.getMaskingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveTypeId: testSensitiveType.id,

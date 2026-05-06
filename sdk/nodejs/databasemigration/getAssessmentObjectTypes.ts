@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessmentObjectTypes = oci.DatabaseMigration.getAssessmentObjectTypes({
+ * const testAssessmentObjectTypes = oci.databasemigration.getAssessmentObjectTypes({
  *     connectionType: assessmentObjectTypeConnectionType,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetAssessmentObjectTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessmentObjectTypes = oci.DatabaseMigration.getAssessmentObjectTypes({
+ * const testAssessmentObjectTypes = oci.databasemigration.getAssessmentObjectTypes({
  *     connectionType: assessmentObjectTypeConnectionType,
  * });
  * ```

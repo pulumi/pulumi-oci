@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDesktopPool = new oci.desktops.DesktopPool("test_desktop_pool", {
- *     arePrivilegedUsers: desktopPoolArePrivilegedUsers,
+ *     arePrivilegedUsers: desktopPoolArePrivilegedUsers === "true",
  *     availabilityDomain: desktopPoolAvailabilityDomain,
  *     availabilityPolicy: {
  *         startSchedule: {
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *         audioMode: desktopPoolDevicePolicyAudioMode,
  *         cdmMode: desktopPoolDevicePolicyCdmMode,
  *         clipboardMode: desktopPoolDevicePolicyClipboardMode,
- *         isDisplayEnabled: desktopPoolDevicePolicyIsDisplayEnabled,
- *         isKeyboardEnabled: desktopPoolDevicePolicyIsKeyboardEnabled,
- *         isPointerEnabled: desktopPoolDevicePolicyIsPointerEnabled,
- *         isPrintingEnabled: desktopPoolDevicePolicyIsPrintingEnabled,
- *         isVideoInputEnabled: desktopPoolDevicePolicyIsVideoInputEnabled,
+ *         isDisplayEnabled: desktopPoolDevicePolicyIsDisplayEnabled === "true",
+ *         isKeyboardEnabled: desktopPoolDevicePolicyIsKeyboardEnabled === "true",
+ *         isPointerEnabled: desktopPoolDevicePolicyIsPointerEnabled === "true",
+ *         isPrintingEnabled: desktopPoolDevicePolicyIsPrintingEnabled === "true",
+ *         isVideoInputEnabled: desktopPoolDevicePolicyIsVideoInputEnabled === "true",
  *     },
  *     displayName: desktopPoolDisplayName,
  *     image: {
@@ -51,18 +51,18 @@ import * as utilities from "../utilities";
  *         imageName: desktopPoolImageImageName,
  *         operatingSystem: desktopPoolImageOperatingSystem,
  *     },
- *     isStorageEnabled: desktopPoolIsStorageEnabled,
- *     maximumSize: desktopPoolMaximumSize,
+ *     isStorageEnabled: desktopPoolIsStorageEnabled === "true",
+ *     maximumSize: Number(desktopPoolMaximumSize),
  *     networkConfiguration: {
  *         subnetId: testSubnet.id,
  *         vcnId: testVcn.id,
  *     },
  *     shapeName: "VM.Standard.E4.Flex",
- *     standbySize: desktopPoolStandbySize,
+ *     standbySize: Number(desktopPoolStandbySize),
  *     storageBackupPolicyId: "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
- *     storageSizeInGbs: desktopPoolStorageSizeInGbs,
- *     bootVolumeSizeInGbs: desktopPoolBootVolumeSizeInGbs,
- *     areVolumesPreserved: desktopPoolAreVolumesPreserved,
+ *     storageSizeInGbs: Number(desktopPoolStorageSizeInGbs),
+ *     bootVolumeSizeInGbs: Number(desktopPoolBootVolumeSizeInGbs),
+ *     areVolumesPreserved: desktopPoolAreVolumesPreserved === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -84,11 +84,11 @@ import * as utilities from "../utilities";
  *     sessionLifecycleActions: {
  *         disconnect: {
  *             action: "STOP",
- *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes,
+ *             gracePeriodInMinutes: Number(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes),
  *         },
  *         inactivity: {
  *             action: "DISCONNECT",
- *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes,
+ *             gracePeriodInMinutes: Number(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes),
  *         },
  *     },
  *     timeStartScheduled: desktopPoolTimeStartScheduled,

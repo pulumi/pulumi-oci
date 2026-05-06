@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsumerGroups = oci.Queue.getConsumerGroups({
+ * const testConsumerGroups = oci.queue.getConsumerGroups({
  *     displayName: consumerGroupDisplayName,
  *     id: consumerGroupId,
  *     queueId: testQueue.id,
@@ -97,7 +97,7 @@ export interface GetConsumerGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsumerGroups = oci.Queue.getConsumerGroups({
+ * const testConsumerGroups = oci.queue.getConsumerGroups({
  *     displayName: consumerGroupDisplayName,
  *     id: consumerGroupId,
  *     queueId: testQueue.id,

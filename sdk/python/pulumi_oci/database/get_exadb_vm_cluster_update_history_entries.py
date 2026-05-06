@@ -108,7 +108,7 @@ def get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_update_history_entries = oci.Database.get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_update_history_entries = oci.database.get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_type=exadb_vm_cluster_update_history_entry_update_type)
     ```
 
@@ -144,7 +144,7 @@ def get_exadb_vm_cluster_update_history_entries_output(exadb_vm_cluster_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_update_history_entries = oci.Database.get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_update_history_entries = oci.database.get_exadb_vm_cluster_update_history_entries(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_type=exadb_vm_cluster_update_history_entry_update_type)
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFunctions = oci.Functions.getFunctions({
+ * const testFunctions = oci.functions.getFunctions({
  *     applicationId: testApplication.id,
  *     displayName: functionDisplayName,
  *     id: functionId,
@@ -96,7 +96,7 @@ export interface GetFunctionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFunctions = oci.Functions.getFunctions({
+ * const testFunctions = oci.functions.getFunctions({
  *     applicationId: testApplication.id,
  *     displayName: functionDisplayName,
  *     id: functionId,

@@ -276,7 +276,7 @@ def get_container_repository(repository_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repository = oci.Artifacts.get_container_repository(repository_id=test_repository["id"])
+    test_container_repository = oci.artifacts.get_container_repository(repository_id=test_repository["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_container_repository_output(repository_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repository = oci.Artifacts.get_container_repository(repository_id=test_repository["id"])
+    test_container_repository = oci.artifacts.get_container_repository(repository_id=test_repository["id"])
     ```
 
 

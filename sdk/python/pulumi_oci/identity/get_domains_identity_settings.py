@@ -173,7 +173,7 @@ def get_domains_identity_settings(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
+    test_identity_settings = oci.identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=identity_setting_authorization,
@@ -228,7 +228,7 @@ def get_domains_identity_settings_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
+    test_identity_settings = oci.identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
         authorization=identity_setting_authorization,

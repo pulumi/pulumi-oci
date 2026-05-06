@@ -456,12 +456,12 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             load_balancer_id=test_load_balancer["id"],
             name=listener_name,
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
                 "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
-                "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
+                "backend_tcp_proxy_protocol_version": int(listener_connection_configuration_backend_tcp_proxy_protocol_version),
             },
             hostname_names=[test_hostname["name"]],
             path_route_set_name=test_path_route_set["name"],
@@ -469,14 +469,14 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration={
                 "certificate_name": test_certificate["name"],
-                "has_session_resumption": listener_ssl_configuration_has_session_resumption,
+                "has_session_resumption": listener_ssl_configuration_has_session_resumption == "true",
                 "certificate_ids": listener_ssl_configuration_certificate_ids,
                 "cipher_suite_name": listener_ssl_configuration_cipher_suite_name,
                 "protocols": listener_ssl_configuration_protocols,
                 "server_order_preference": listener_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": listener_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": listener_ssl_configuration_verify_depth,
-                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(listener_ssl_configuration_verify_depth),
+                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
 
@@ -533,12 +533,12 @@ class Listener(pulumi.CustomResource):
             default_backend_set_name=test_backend_set["name"],
             load_balancer_id=test_load_balancer["id"],
             name=listener_name,
-            port=listener_port,
+            port=int(listener_port),
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
                 "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
-                "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
+                "backend_tcp_proxy_protocol_version": int(listener_connection_configuration_backend_tcp_proxy_protocol_version),
             },
             hostname_names=[test_hostname["name"]],
             path_route_set_name=test_path_route_set["name"],
@@ -546,14 +546,14 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration={
                 "certificate_name": test_certificate["name"],
-                "has_session_resumption": listener_ssl_configuration_has_session_resumption,
+                "has_session_resumption": listener_ssl_configuration_has_session_resumption == "true",
                 "certificate_ids": listener_ssl_configuration_certificate_ids,
                 "cipher_suite_name": listener_ssl_configuration_cipher_suite_name,
                 "protocols": listener_ssl_configuration_protocols,
                 "server_order_preference": listener_ssl_configuration_server_order_preference,
                 "trusted_certificate_authority_ids": listener_ssl_configuration_trusted_certificate_authority_ids,
-                "verify_depth": listener_ssl_configuration_verify_depth,
-                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate,
+                "verify_depth": int(listener_ssl_configuration_verify_depth),
+                "verify_peer_certificate": listener_ssl_configuration_verify_peer_certificate == "true",
             })
         ```
 

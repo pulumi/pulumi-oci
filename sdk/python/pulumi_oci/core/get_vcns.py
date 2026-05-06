@@ -128,7 +128,7 @@ def get_vcns(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=compartment_id,
+    test_vcns = oci.core.get_vcns(compartment_id=compartment_id,
         display_name=vcn_display_name,
         state=vcn_state)
     ```
@@ -173,7 +173,7 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=compartment_id,
+    test_vcns = oci.core.get_vcns(compartment_id=compartment_id,
         display_name=vcn_display_name,
         state=vcn_state)
     ```

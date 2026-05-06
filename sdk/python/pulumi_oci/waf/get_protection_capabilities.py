@@ -159,7 +159,7 @@ def get_protection_capabilities(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+    test_protection_capabilities = oci.waf.get_protection_capabilities(compartment_id=compartment_id,
         display_name=protection_capability_display_name,
         group_tags=protection_capability_group_tag,
         is_latest_versions=protection_capability_is_latest_version,
@@ -215,7 +215,7 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+    test_protection_capabilities = oci.waf.get_protection_capabilities(compartment_id=compartment_id,
         display_name=protection_capability_display_name,
         group_tags=protection_capability_group_tag,
         is_latest_versions=protection_capability_is_latest_version,

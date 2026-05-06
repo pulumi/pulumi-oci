@@ -324,7 +324,7 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vault = oci.Database.get_exascale_db_storage_vault(exascale_db_storage_vault_id=test_exascale_db_storage_vault_oci_database_exascale_db_storage_vault["id"])
+    test_exascale_db_storage_vault = oci.database.get_exascale_db_storage_vault(exascale_db_storage_vault_id=test_exascale_db_storage_vault_oci_database_exascale_db_storage_vault["id"])
     ```
 
 
@@ -372,7 +372,7 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vault = oci.Database.get_exascale_db_storage_vault(exascale_db_storage_vault_id=test_exascale_db_storage_vault_oci_database_exascale_db_storage_vault["id"])
+    test_exascale_db_storage_vault = oci.database.get_exascale_db_storage_vault(exascale_db_storage_vault_id=test_exascale_db_storage_vault_oci_database_exascale_db_storage_vault["id"])
     ```
 
 

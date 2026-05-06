@@ -106,7 +106,7 @@ def get_namespace_field_usage(field_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_field_usage = oci.LogAnalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
+    test_namespace_field_usage = oci.loganalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
         namespace=namespace_field_usage_namespace)
     ```
 
@@ -140,7 +140,7 @@ def get_namespace_field_usage_output(field_name: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_field_usage = oci.LogAnalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
+    test_namespace_field_usage = oci.loganalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
         namespace=namespace_field_usage_namespace)
     ```
 

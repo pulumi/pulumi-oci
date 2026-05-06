@@ -147,7 +147,7 @@ def get_control_assignments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+    test_operator_control_assignments = oci.operatoraccesscontrol.get_control_assignments(compartment_id=compartment_id,
         operator_control_name=test_operator_control["name"],
         resource_name=operator_control_assignment_resource_name,
         resource_type=operator_control_assignment_resource_type,
@@ -198,7 +198,7 @@ def get_control_assignments_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+    test_operator_control_assignments = oci.operatoraccesscontrol.get_control_assignments(compartment_id=compartment_id,
         operator_control_name=test_operator_control["name"],
         resource_name=operator_control_assignment_resource_name,
         resource_type=operator_control_assignment_resource_type,

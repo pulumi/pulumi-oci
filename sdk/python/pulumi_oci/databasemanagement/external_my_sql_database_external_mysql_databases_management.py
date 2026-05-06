@@ -169,7 +169,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
 
         test_external_my_sql_database_external_mysql_databases_management = oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management",
             external_my_sql_database_id=test_external_my_sql_database["id"],
-            enable_external_mysql_database=enable_external_mysql_database,
+            enable_external_mysql_database=enable_external_mysql_database == "true",
             connector_id=test_connector["id"])
         ```
 
@@ -205,7 +205,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
 
         test_external_my_sql_database_external_mysql_databases_management = oci.databasemanagement.ExternalMySqlDatabaseExternalMysqlDatabasesManagement("test_external_my_sql_database_external_mysql_databases_management",
             external_my_sql_database_id=test_external_my_sql_database["id"],
-            enable_external_mysql_database=enable_external_mysql_database,
+            enable_external_mysql_database=enable_external_mysql_database == "true",
             connector_id=test_connector["id"])
         ```
 

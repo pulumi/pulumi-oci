@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
+ * const testWorkRequests = oci.containerengine.getWorkRequests({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     resourceId: testResource.id,
@@ -101,7 +101,7 @@ export interface GetWorkRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
+ * const testWorkRequests = oci.containerengine.getWorkRequests({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     resourceId: testResource.id,

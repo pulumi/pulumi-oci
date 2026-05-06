@@ -232,7 +232,7 @@ def get_workspace_folder(folder_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
+    test_workspace_folder = oci.dataintegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -277,7 +277,7 @@ def get_workspace_folder_output(folder_key: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
+    test_workspace_folder = oci.dataintegration.get_workspace_folder(folder_key=workspace_folder_folder_key,
         workspace_id=test_workspace["id"])
     ```
 

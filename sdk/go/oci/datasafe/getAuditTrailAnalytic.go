@@ -45,7 +45,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(auditTrailAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(auditTrailAnalyticCompartmentIdInSubtree),
-//				GroupBies:              auditTrailAnalyticGroupBy,
+//				GroupBies:              pulumi.ToArray(auditTrailAnalyticGroupBy),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {

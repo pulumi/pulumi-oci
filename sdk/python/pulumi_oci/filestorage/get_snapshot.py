@@ -288,7 +288,7 @@ def get_snapshot(snapshot_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
+    test_snapshot = oci.filestorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
+    test_snapshot = oci.filestorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
 
 

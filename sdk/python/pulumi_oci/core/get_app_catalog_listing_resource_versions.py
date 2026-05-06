@@ -98,7 +98,7 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
+    test_app_catalog_listing_resource_versions = oci.core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
     ```
 
 
@@ -129,7 +129,7 @@ def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
+    test_app_catalog_listing_resource_versions = oci.core.get_app_catalog_listing_resource_versions(listing_id=test_listing["id"])
     ```
 
 

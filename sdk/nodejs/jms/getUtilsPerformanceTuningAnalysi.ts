@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPerformanceTuningAnalysi = oci.Jms.getUtilsPerformanceTuningAnalysi({
+ * const testPerformanceTuningAnalysi = oci.jms.getUtilsPerformanceTuningAnalysi({
  *     performanceTuningAnalysisId: testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id,
  * });
  * ```
@@ -109,7 +109,7 @@ export interface GetUtilsPerformanceTuningAnalysiResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPerformanceTuningAnalysi = oci.Jms.getUtilsPerformanceTuningAnalysi({
+ * const testPerformanceTuningAnalysi = oci.jms.getUtilsPerformanceTuningAnalysi({
  *     performanceTuningAnalysisId: testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id,
  * });
  * ```

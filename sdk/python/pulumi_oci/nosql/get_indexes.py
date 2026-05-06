@@ -134,7 +134,7 @@ def get_indexes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
+    test_indexes = oci.nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id,
         name=index_name,
         state=index_state)
@@ -180,7 +180,7 @@ def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
+    test_indexes = oci.nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id,
         name=index_name,
         state=index_state)

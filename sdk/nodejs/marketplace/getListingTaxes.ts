@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingTaxes = oci.Marketplace.getListingTaxes({
+ * const testListingTaxes = oci.marketplace.getListingTaxes({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  * });
@@ -74,7 +74,7 @@ export interface GetListingTaxesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingTaxes = oci.Marketplace.getListingTaxes({
+ * const testListingTaxes = oci.marketplace.getListingTaxes({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  * });

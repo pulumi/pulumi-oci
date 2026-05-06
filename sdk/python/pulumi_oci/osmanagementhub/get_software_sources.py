@@ -269,7 +269,7 @@ def get_software_sources(arch_types: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
+    test_software_sources = oci.osmanagementhub.get_software_sources(arch_types=software_source_arch_type,
         availabilities=software_source_availability,
         availability_anywheres=software_source_availability_anywhere,
         availability_at_ocis=software_source_availability_at_oci,
@@ -277,8 +277,8 @@ def get_software_sources(arch_types: Optional[Sequence[_builtins.str]] = None,
         display_name=software_source_display_name,
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
-        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
-        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed,
+        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux == "true",
+        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed == "true",
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,
@@ -371,7 +371,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
+    test_software_sources = oci.osmanagementhub.get_software_sources(arch_types=software_source_arch_type,
         availabilities=software_source_availability,
         availability_anywheres=software_source_availability_anywhere,
         availability_at_ocis=software_source_availability_at_oci,
@@ -379,8 +379,8 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
         display_name=software_source_display_name,
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
-        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
-        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed,
+        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux == "true",
+        is_mirror_sync_allowed=software_source_is_mirror_sync_allowed == "true",
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,

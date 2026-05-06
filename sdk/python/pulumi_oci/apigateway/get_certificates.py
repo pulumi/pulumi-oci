@@ -124,7 +124,7 @@ def get_certificates(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=compartment_id,
+    test_certificates = oci.apigateway.get_certificates(compartment_id=compartment_id,
         display_name=certificate_display_name,
         state=certificate_state)
     ```
@@ -165,7 +165,7 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=compartment_id,
+    test_certificates = oci.apigateway.get_certificates(compartment_id=compartment_id,
         display_name=certificate_display_name,
         state=certificate_state)
     ```

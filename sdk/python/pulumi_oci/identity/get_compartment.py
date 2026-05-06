@@ -177,7 +177,7 @@ def get_compartment(id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=compartment_id)
+    test_compartment = oci.identity.get_compartment(id=compartment_id)
     ```
 
 
@@ -219,7 +219,7 @@ def get_compartment_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartment = oci.Identity.get_compartment(id=compartment_id)
+    test_compartment = oci.identity.get_compartment(id=compartment_id)
     ```
 
 

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeAttachments = oci.Core.getVolumeAttachments({
+ * const testVolumeAttachments = oci.core.getVolumeAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: volumeAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -108,7 +108,7 @@ export interface GetVolumeAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeAttachments = oci.Core.getVolumeAttachments({
+ * const testVolumeAttachments = oci.core.getVolumeAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: volumeAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,

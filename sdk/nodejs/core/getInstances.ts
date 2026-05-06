@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstances = oci.Core.getInstances({
+ * const testInstances = oci.core.getInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: instanceAvailabilityDomain,
  *     capacityReservationId: testCapacityReservation.id,
@@ -127,7 +127,7 @@ export interface GetInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstances = oci.Core.getInstances({
+ * const testInstances = oci.core.getInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: instanceAvailabilityDomain,
  *     capacityReservationId: testCapacityReservation.id,

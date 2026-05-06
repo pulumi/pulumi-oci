@@ -445,10 +445,10 @@ class Deployment(pulumi.CustomResource):
             specification={
                 "logging_policies": {
                     "access_log": {
-                        "is_enabled": deployment_specification_logging_policies_access_log_is_enabled,
+                        "is_enabled": deployment_specification_logging_policies_access_log_is_enabled == "true",
                     },
                     "execution_log": {
-                        "is_enabled": deployment_specification_logging_policies_execution_log_is_enabled,
+                        "is_enabled": deployment_specification_logging_policies_execution_log_is_enabled == "true",
                         "log_level": deployment_specification_logging_policies_execution_log_log_level,
                     },
                 },
@@ -458,13 +458,13 @@ class Deployment(pulumi.CustomResource):
                         "audiences": deployment_specification_request_policies_authentication_audiences,
                         "cache_keys": deployment_specification_request_policies_authentication_cache_key,
                         "function_id": test_function["id"],
-                        "is_anonymous_access_allowed": deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
+                        "is_anonymous_access_allowed": deployment_specification_request_policies_authentication_is_anonymous_access_allowed == "true",
                         "issuers": deployment_specification_request_policies_authentication_issuers,
                         "max_clock_skew_in_seconds": deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
                         "parameters": deployment_specification_request_policies_authentication_parameters,
                         "public_keys": {
                             "type": deployment_specification_request_policies_authentication_public_keys_type,
-                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
+                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled == "true",
                             "keys": [{
                                 "format": deployment_specification_request_policies_authentication_public_keys_keys_format,
                                 "alg": deployment_specification_request_policies_authentication_public_keys_keys_alg,
@@ -476,7 +476,7 @@ class Deployment(pulumi.CustomResource):
                                 "n": deployment_specification_request_policies_authentication_public_keys_keys_n,
                                 "use": deployment_specification_request_policies_authentication_public_keys_keys_use,
                             }],
-                            "max_cache_duration_in_hours": deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours,
+                            "max_cache_duration_in_hours": int(deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours),
                             "uri": deployment_specification_request_policies_authentication_public_keys_uri,
                         },
                         "token_auth_scheme": deployment_specification_request_policies_authentication_token_auth_scheme,
@@ -492,7 +492,7 @@ class Deployment(pulumi.CustomResource):
                             },
                             "fallback_redirect_path": deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path,
                             "logout_path": deployment_specification_request_policies_authentication_validation_failure_policy_logout_path,
-                            "max_expiry_duration_in_hours": deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours,
+                            "max_expiry_duration_in_hours": int(deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours),
                             "response_code": deployment_specification_request_policies_authentication_validation_failure_policy_response_code,
                             "response_header_transformations": {
                                 "filter_headers": {
@@ -522,9 +522,9 @@ class Deployment(pulumi.CustomResource):
                                 "type": deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type,
                                 "uri": deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri,
                             },
-                            "use_cookies_for_intermediate_steps": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps,
-                            "use_cookies_for_session": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session,
-                            "use_pkce": deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce,
+                            "use_cookies_for_intermediate_steps": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps == "true",
+                            "use_cookies_for_session": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session == "true",
+                            "use_pkce": deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce == "true",
                         },
                         "validation_policy": {
                             "type": deployment_specification_request_policies_authentication_validation_policy_type,
@@ -532,7 +532,7 @@ class Deployment(pulumi.CustomResource):
                                 "audiences": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences,
                                 "issuers": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers,
                                 "verify_claims": [{
-                                    "is_required": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required,
+                                    "is_required": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required == "true",
                                     "key": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key,
                                     "values": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values,
                                 }],
@@ -543,7 +543,7 @@ class Deployment(pulumi.CustomResource):
                                 "client_secret_id": test_secret["id"],
                                 "client_secret_version_number": deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number,
                             },
-                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled,
+                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled == "true",
                             "keys": [{
                                 "format": deployment_specification_request_policies_authentication_validation_policy_keys_format,
                                 "alg": deployment_specification_request_policies_authentication_validation_policy_keys_alg,
@@ -555,7 +555,7 @@ class Deployment(pulumi.CustomResource):
                                 "n": deployment_specification_request_policies_authentication_validation_policy_keys_n,
                                 "use": deployment_specification_request_policies_authentication_validation_policy_keys_use,
                             }],
-                            "max_cache_duration_in_hours": deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours,
+                            "max_cache_duration_in_hours": int(deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours),
                             "source_uri_details": {
                                 "type": deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type,
                                 "uri": deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri,
@@ -563,7 +563,7 @@ class Deployment(pulumi.CustomResource):
                             "uri": deployment_specification_request_policies_authentication_validation_policy_uri,
                         },
                         "verify_claims": [{
-                            "is_required": deployment_specification_request_policies_authentication_verify_claims_is_required,
+                            "is_required": deployment_specification_request_policies_authentication_verify_claims_is_required == "true",
                             "key": deployment_specification_request_policies_authentication_verify_claims_key,
                             "values": deployment_specification_request_policies_authentication_verify_claims_values,
                         }],
@@ -573,8 +573,8 @@ class Deployment(pulumi.CustomResource):
                         "allowed_headers": deployment_specification_request_policies_cors_allowed_headers,
                         "allowed_methods": deployment_specification_request_policies_cors_allowed_methods,
                         "exposed_headers": deployment_specification_request_policies_cors_exposed_headers,
-                        "is_allow_credentials_enabled": deployment_specification_request_policies_cors_is_allow_credentials_enabled,
-                        "max_age_in_seconds": deployment_specification_request_policies_cors_max_age_in_seconds,
+                        "is_allow_credentials_enabled": deployment_specification_request_policies_cors_is_allow_credentials_enabled == "true",
+                        "max_age_in_seconds": int(deployment_specification_request_policies_cors_max_age_in_seconds),
                     },
                     "dynamic_authentication": {
                         "authentication_servers": [{
@@ -582,12 +582,12 @@ class Deployment(pulumi.CustomResource):
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type,
                                 "audiences": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences,
                                 "function_id": test_function["id"],
-                                "is_anonymous_access_allowed": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed,
+                                "is_anonymous_access_allowed": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed == "true",
                                 "issuers": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers,
                                 "max_clock_skew_in_seconds": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds,
                                 "public_keys": {
                                     "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type,
-                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled,
+                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled == "true",
                                     "keys": [{
                                         "format": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format,
                                         "alg": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg,
@@ -599,7 +599,7 @@ class Deployment(pulumi.CustomResource):
                                         "n": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n,
                                         "use": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use,
                                     }],
-                                    "max_cache_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours,
+                                    "max_cache_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours),
                                     "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri,
                                 },
                                 "token_auth_scheme": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme,
@@ -615,7 +615,7 @@ class Deployment(pulumi.CustomResource):
                                     },
                                     "fallback_redirect_path": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path,
                                     "logout_path": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path,
-                                    "max_expiry_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours,
+                                    "max_expiry_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours),
                                     "response_code": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code,
                                     "response_header_transformations": {
                                         "filter_headers": {
@@ -645,9 +645,9 @@ class Deployment(pulumi.CustomResource):
                                         "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type,
                                         "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri,
                                     },
-                                    "use_cookies_for_intermediate_steps": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps,
-                                    "use_cookies_for_session": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session,
-                                    "use_pkce": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce,
+                                    "use_cookies_for_intermediate_steps": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps == "true",
+                                    "use_cookies_for_session": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session == "true",
+                                    "use_pkce": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce == "true",
                                 },
                                 "validation_policy": {
                                     "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type,
@@ -655,7 +655,7 @@ class Deployment(pulumi.CustomResource):
                                         "audiences": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences,
                                         "issuers": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers,
                                         "verify_claims": [{
-                                            "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required,
+                                            "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required == "true",
                                             "key": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key,
                                             "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values,
                                         }],
@@ -666,7 +666,7 @@ class Deployment(pulumi.CustomResource):
                                         "client_secret_id": test_secret["id"],
                                         "client_secret_version_number": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number,
                                     },
-                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled,
+                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled == "true",
                                     "keys": [{
                                         "format": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format,
                                         "alg": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg,
@@ -678,7 +678,7 @@ class Deployment(pulumi.CustomResource):
                                         "n": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n,
                                         "use": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use,
                                     }],
-                                    "max_cache_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours,
+                                    "max_cache_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours),
                                     "source_uri_details": {
                                         "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type,
                                         "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri,
@@ -686,7 +686,7 @@ class Deployment(pulumi.CustomResource):
                                     "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri,
                                 },
                                 "verify_claims": [{
-                                    "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required,
+                                    "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required == "true",
                                     "key": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key,
                                     "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values,
                                 }],
@@ -694,7 +694,7 @@ class Deployment(pulumi.CustomResource):
                             "key": {
                                 "name": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name,
                                 "expression": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default == "true",
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
                                 "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
                             },
@@ -706,10 +706,10 @@ class Deployment(pulumi.CustomResource):
                     },
                     "mutual_tls": {
                         "allowed_sans": deployment_specification_request_policies_mutual_tls_allowed_sans,
-                        "is_verified_certificate_required": deployment_specification_request_policies_mutual_tls_is_verified_certificate_required,
+                        "is_verified_certificate_required": deployment_specification_request_policies_mutual_tls_is_verified_certificate_required == "true",
                     },
                     "rate_limiting": {
-                        "rate_in_requests_per_second": deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
+                        "rate_in_requests_per_second": int(deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second),
                         "rate_key": deployment_specification_request_policies_rate_limiting_rate_key,
                     },
                     "usage_plans": {
@@ -727,7 +727,7 @@ class Deployment(pulumi.CustomResource):
                             "name": deployment_specification_routes_backend_headers_name,
                             "value": deployment_specification_routes_backend_headers_value,
                         }],
-                        "is_ssl_verify_disabled": deployment_specification_routes_backend_is_ssl_verify_disabled,
+                        "is_ssl_verify_disabled": deployment_specification_routes_backend_is_ssl_verify_disabled == "true",
                         "post_logout_state": deployment_specification_routes_backend_post_logout_state,
                         "read_timeout_in_seconds": deployment_specification_routes_backend_read_timeout_in_seconds,
                         "routing_backends": [{
@@ -740,17 +740,17 @@ class Deployment(pulumi.CustomResource):
                                     "name": deployment_specification_routes_backend_routing_backends_backend_headers_name,
                                     "value": deployment_specification_routes_backend_routing_backends_backend_headers_value,
                                 }],
-                                "is_ssl_verify_disabled": deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled,
+                                "is_ssl_verify_disabled": deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled == "true",
                                 "read_timeout_in_seconds": deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds,
                                 "send_timeout_in_seconds": deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds,
-                                "status": deployment_specification_routes_backend_routing_backends_backend_status,
+                                "status": int(deployment_specification_routes_backend_routing_backends_backend_status),
                                 "url": deployment_specification_routes_backend_routing_backends_backend_url,
                             },
                             "key": {
                                 "name": deployment_specification_routes_backend_routing_backends_key_name,
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
                                 "expression": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default == "true",
                                 "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
                             },
                         }],
@@ -759,16 +759,16 @@ class Deployment(pulumi.CustomResource):
                             "type": deployment_specification_routes_backend_selection_source_type,
                         },
                         "send_timeout_in_seconds": deployment_specification_routes_backend_send_timeout_in_seconds,
-                        "status": deployment_specification_routes_backend_status,
+                        "status": int(deployment_specification_routes_backend_status),
                         "url": deployment_specification_routes_backend_url,
                     },
                     "path": deployment_specification_routes_path,
                     "logging_policies": {
                         "access_log": {
-                            "is_enabled": deployment_specification_routes_logging_policies_access_log_is_enabled,
+                            "is_enabled": deployment_specification_routes_logging_policies_access_log_is_enabled == "true",
                         },
                         "execution_log": {
-                            "is_enabled": deployment_specification_routes_logging_policies_execution_log_is_enabled,
+                            "is_enabled": deployment_specification_routes_logging_policies_execution_log_is_enabled == "true",
                             "log_level": deployment_specification_routes_logging_policies_execution_log_log_level,
                         },
                     },
@@ -783,7 +783,7 @@ class Deployment(pulumi.CustomResource):
                                 "media_type": deployment_specification_routes_request_policies_body_validation_content_media_type,
                                 "validation_type": deployment_specification_routes_request_policies_body_validation_content_validation_type,
                             }],
-                            "required": deployment_specification_routes_request_policies_body_validation_required,
+                            "required": deployment_specification_routes_request_policies_body_validation_required == "true",
                             "validation_mode": deployment_specification_routes_request_policies_body_validation_validation_mode,
                         },
                         "cors": {
@@ -791,8 +791,8 @@ class Deployment(pulumi.CustomResource):
                             "allowed_headers": deployment_specification_routes_request_policies_cors_allowed_headers,
                             "allowed_methods": deployment_specification_routes_request_policies_cors_allowed_methods,
                             "exposed_headers": deployment_specification_routes_request_policies_cors_exposed_headers,
-                            "is_allow_credentials_enabled": deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled,
-                            "max_age_in_seconds": deployment_specification_routes_request_policies_cors_max_age_in_seconds,
+                            "is_allow_credentials_enabled": deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled == "true",
+                            "max_age_in_seconds": int(deployment_specification_routes_request_policies_cors_max_age_in_seconds),
                         },
                         "header_transformations": {
                             "filter_headers": {
@@ -818,7 +818,7 @@ class Deployment(pulumi.CustomResource):
                         "header_validations": {
                             "headers": [{
                                 "name": deployment_specification_routes_request_policies_header_validations_headers_name,
-                                "required": deployment_specification_routes_request_policies_header_validations_headers_required,
+                                "required": deployment_specification_routes_request_policies_header_validations_headers_required == "true",
                             }],
                             "validation_mode": deployment_specification_routes_request_policies_header_validations_validation_mode,
                         },
@@ -846,15 +846,15 @@ class Deployment(pulumi.CustomResource):
                         "query_parameter_validations": {
                             "parameters": [{
                                 "name": deployment_specification_routes_request_policies_query_parameter_validations_parameters_name,
-                                "required": deployment_specification_routes_request_policies_query_parameter_validations_parameters_required,
+                                "required": deployment_specification_routes_request_policies_query_parameter_validations_parameters_required == "true",
                             }],
                             "validation_mode": deployment_specification_routes_request_policies_query_parameter_validations_validation_mode,
                         },
                         "response_cache_lookup": {
                             "type": deployment_specification_routes_request_policies_response_cache_lookup_type,
                             "cache_key_additions": deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions,
-                            "is_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_enabled,
-                            "is_private_caching_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled,
+                            "is_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_enabled == "true",
+                            "is_private_caching_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled == "true",
                         },
                     },
                     "response_policies": {
@@ -880,7 +880,7 @@ class Deployment(pulumi.CustomResource):
                             },
                         },
                         "response_cache_store": {
-                            "time_to_live_in_seconds": deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds,
+                            "time_to_live_in_seconds": int(deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds),
                             "type": deployment_specification_routes_response_policies_response_cache_store_type,
                         },
                     },
@@ -946,10 +946,10 @@ class Deployment(pulumi.CustomResource):
             specification={
                 "logging_policies": {
                     "access_log": {
-                        "is_enabled": deployment_specification_logging_policies_access_log_is_enabled,
+                        "is_enabled": deployment_specification_logging_policies_access_log_is_enabled == "true",
                     },
                     "execution_log": {
-                        "is_enabled": deployment_specification_logging_policies_execution_log_is_enabled,
+                        "is_enabled": deployment_specification_logging_policies_execution_log_is_enabled == "true",
                         "log_level": deployment_specification_logging_policies_execution_log_log_level,
                     },
                 },
@@ -959,13 +959,13 @@ class Deployment(pulumi.CustomResource):
                         "audiences": deployment_specification_request_policies_authentication_audiences,
                         "cache_keys": deployment_specification_request_policies_authentication_cache_key,
                         "function_id": test_function["id"],
-                        "is_anonymous_access_allowed": deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
+                        "is_anonymous_access_allowed": deployment_specification_request_policies_authentication_is_anonymous_access_allowed == "true",
                         "issuers": deployment_specification_request_policies_authentication_issuers,
                         "max_clock_skew_in_seconds": deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
                         "parameters": deployment_specification_request_policies_authentication_parameters,
                         "public_keys": {
                             "type": deployment_specification_request_policies_authentication_public_keys_type,
-                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
+                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled == "true",
                             "keys": [{
                                 "format": deployment_specification_request_policies_authentication_public_keys_keys_format,
                                 "alg": deployment_specification_request_policies_authentication_public_keys_keys_alg,
@@ -977,7 +977,7 @@ class Deployment(pulumi.CustomResource):
                                 "n": deployment_specification_request_policies_authentication_public_keys_keys_n,
                                 "use": deployment_specification_request_policies_authentication_public_keys_keys_use,
                             }],
-                            "max_cache_duration_in_hours": deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours,
+                            "max_cache_duration_in_hours": int(deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours),
                             "uri": deployment_specification_request_policies_authentication_public_keys_uri,
                         },
                         "token_auth_scheme": deployment_specification_request_policies_authentication_token_auth_scheme,
@@ -993,7 +993,7 @@ class Deployment(pulumi.CustomResource):
                             },
                             "fallback_redirect_path": deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path,
                             "logout_path": deployment_specification_request_policies_authentication_validation_failure_policy_logout_path,
-                            "max_expiry_duration_in_hours": deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours,
+                            "max_expiry_duration_in_hours": int(deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours),
                             "response_code": deployment_specification_request_policies_authentication_validation_failure_policy_response_code,
                             "response_header_transformations": {
                                 "filter_headers": {
@@ -1023,9 +1023,9 @@ class Deployment(pulumi.CustomResource):
                                 "type": deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type,
                                 "uri": deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri,
                             },
-                            "use_cookies_for_intermediate_steps": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps,
-                            "use_cookies_for_session": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session,
-                            "use_pkce": deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce,
+                            "use_cookies_for_intermediate_steps": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps == "true",
+                            "use_cookies_for_session": deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session == "true",
+                            "use_pkce": deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce == "true",
                         },
                         "validation_policy": {
                             "type": deployment_specification_request_policies_authentication_validation_policy_type,
@@ -1033,7 +1033,7 @@ class Deployment(pulumi.CustomResource):
                                 "audiences": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences,
                                 "issuers": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers,
                                 "verify_claims": [{
-                                    "is_required": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required,
+                                    "is_required": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required == "true",
                                     "key": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key,
                                     "values": deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values,
                                 }],
@@ -1044,7 +1044,7 @@ class Deployment(pulumi.CustomResource):
                                 "client_secret_id": test_secret["id"],
                                 "client_secret_version_number": deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number,
                             },
-                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled,
+                            "is_ssl_verify_disabled": deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled == "true",
                             "keys": [{
                                 "format": deployment_specification_request_policies_authentication_validation_policy_keys_format,
                                 "alg": deployment_specification_request_policies_authentication_validation_policy_keys_alg,
@@ -1056,7 +1056,7 @@ class Deployment(pulumi.CustomResource):
                                 "n": deployment_specification_request_policies_authentication_validation_policy_keys_n,
                                 "use": deployment_specification_request_policies_authentication_validation_policy_keys_use,
                             }],
-                            "max_cache_duration_in_hours": deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours,
+                            "max_cache_duration_in_hours": int(deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours),
                             "source_uri_details": {
                                 "type": deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type,
                                 "uri": deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri,
@@ -1064,7 +1064,7 @@ class Deployment(pulumi.CustomResource):
                             "uri": deployment_specification_request_policies_authentication_validation_policy_uri,
                         },
                         "verify_claims": [{
-                            "is_required": deployment_specification_request_policies_authentication_verify_claims_is_required,
+                            "is_required": deployment_specification_request_policies_authentication_verify_claims_is_required == "true",
                             "key": deployment_specification_request_policies_authentication_verify_claims_key,
                             "values": deployment_specification_request_policies_authentication_verify_claims_values,
                         }],
@@ -1074,8 +1074,8 @@ class Deployment(pulumi.CustomResource):
                         "allowed_headers": deployment_specification_request_policies_cors_allowed_headers,
                         "allowed_methods": deployment_specification_request_policies_cors_allowed_methods,
                         "exposed_headers": deployment_specification_request_policies_cors_exposed_headers,
-                        "is_allow_credentials_enabled": deployment_specification_request_policies_cors_is_allow_credentials_enabled,
-                        "max_age_in_seconds": deployment_specification_request_policies_cors_max_age_in_seconds,
+                        "is_allow_credentials_enabled": deployment_specification_request_policies_cors_is_allow_credentials_enabled == "true",
+                        "max_age_in_seconds": int(deployment_specification_request_policies_cors_max_age_in_seconds),
                     },
                     "dynamic_authentication": {
                         "authentication_servers": [{
@@ -1083,12 +1083,12 @@ class Deployment(pulumi.CustomResource):
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type,
                                 "audiences": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences,
                                 "function_id": test_function["id"],
-                                "is_anonymous_access_allowed": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed,
+                                "is_anonymous_access_allowed": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed == "true",
                                 "issuers": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers,
                                 "max_clock_skew_in_seconds": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds,
                                 "public_keys": {
                                     "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type,
-                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled,
+                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled == "true",
                                     "keys": [{
                                         "format": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format,
                                         "alg": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg,
@@ -1100,7 +1100,7 @@ class Deployment(pulumi.CustomResource):
                                         "n": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n,
                                         "use": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use,
                                     }],
-                                    "max_cache_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours,
+                                    "max_cache_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours),
                                     "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri,
                                 },
                                 "token_auth_scheme": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme,
@@ -1116,7 +1116,7 @@ class Deployment(pulumi.CustomResource):
                                     },
                                     "fallback_redirect_path": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path,
                                     "logout_path": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path,
-                                    "max_expiry_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours,
+                                    "max_expiry_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours),
                                     "response_code": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code,
                                     "response_header_transformations": {
                                         "filter_headers": {
@@ -1146,9 +1146,9 @@ class Deployment(pulumi.CustomResource):
                                         "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type,
                                         "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri,
                                     },
-                                    "use_cookies_for_intermediate_steps": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps,
-                                    "use_cookies_for_session": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session,
-                                    "use_pkce": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce,
+                                    "use_cookies_for_intermediate_steps": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps == "true",
+                                    "use_cookies_for_session": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session == "true",
+                                    "use_pkce": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce == "true",
                                 },
                                 "validation_policy": {
                                     "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type,
@@ -1156,7 +1156,7 @@ class Deployment(pulumi.CustomResource):
                                         "audiences": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences,
                                         "issuers": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers,
                                         "verify_claims": [{
-                                            "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required,
+                                            "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required == "true",
                                             "key": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key,
                                             "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values,
                                         }],
@@ -1167,7 +1167,7 @@ class Deployment(pulumi.CustomResource):
                                         "client_secret_id": test_secret["id"],
                                         "client_secret_version_number": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number,
                                     },
-                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled,
+                                    "is_ssl_verify_disabled": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled == "true",
                                     "keys": [{
                                         "format": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format,
                                         "alg": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg,
@@ -1179,7 +1179,7 @@ class Deployment(pulumi.CustomResource):
                                         "n": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n,
                                         "use": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use,
                                     }],
-                                    "max_cache_duration_in_hours": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours,
+                                    "max_cache_duration_in_hours": int(deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours),
                                     "source_uri_details": {
                                         "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type,
                                         "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri,
@@ -1187,7 +1187,7 @@ class Deployment(pulumi.CustomResource):
                                     "uri": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri,
                                 },
                                 "verify_claims": [{
-                                    "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required,
+                                    "is_required": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required == "true",
                                     "key": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key,
                                     "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values,
                                 }],
@@ -1195,7 +1195,7 @@ class Deployment(pulumi.CustomResource):
                             "key": {
                                 "name": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name,
                                 "expression": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default == "true",
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
                                 "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
                             },
@@ -1207,10 +1207,10 @@ class Deployment(pulumi.CustomResource):
                     },
                     "mutual_tls": {
                         "allowed_sans": deployment_specification_request_policies_mutual_tls_allowed_sans,
-                        "is_verified_certificate_required": deployment_specification_request_policies_mutual_tls_is_verified_certificate_required,
+                        "is_verified_certificate_required": deployment_specification_request_policies_mutual_tls_is_verified_certificate_required == "true",
                     },
                     "rate_limiting": {
-                        "rate_in_requests_per_second": deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
+                        "rate_in_requests_per_second": int(deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second),
                         "rate_key": deployment_specification_request_policies_rate_limiting_rate_key,
                     },
                     "usage_plans": {
@@ -1228,7 +1228,7 @@ class Deployment(pulumi.CustomResource):
                             "name": deployment_specification_routes_backend_headers_name,
                             "value": deployment_specification_routes_backend_headers_value,
                         }],
-                        "is_ssl_verify_disabled": deployment_specification_routes_backend_is_ssl_verify_disabled,
+                        "is_ssl_verify_disabled": deployment_specification_routes_backend_is_ssl_verify_disabled == "true",
                         "post_logout_state": deployment_specification_routes_backend_post_logout_state,
                         "read_timeout_in_seconds": deployment_specification_routes_backend_read_timeout_in_seconds,
                         "routing_backends": [{
@@ -1241,17 +1241,17 @@ class Deployment(pulumi.CustomResource):
                                     "name": deployment_specification_routes_backend_routing_backends_backend_headers_name,
                                     "value": deployment_specification_routes_backend_routing_backends_backend_headers_value,
                                 }],
-                                "is_ssl_verify_disabled": deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled,
+                                "is_ssl_verify_disabled": deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled == "true",
                                 "read_timeout_in_seconds": deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds,
                                 "send_timeout_in_seconds": deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds,
-                                "status": deployment_specification_routes_backend_routing_backends_backend_status,
+                                "status": int(deployment_specification_routes_backend_routing_backends_backend_status),
                                 "url": deployment_specification_routes_backend_routing_backends_backend_url,
                             },
                             "key": {
                                 "name": deployment_specification_routes_backend_routing_backends_key_name,
                                 "type": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
                                 "expression": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+                                "is_default": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default == "true",
                                 "values": deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
                             },
                         }],
@@ -1260,16 +1260,16 @@ class Deployment(pulumi.CustomResource):
                             "type": deployment_specification_routes_backend_selection_source_type,
                         },
                         "send_timeout_in_seconds": deployment_specification_routes_backend_send_timeout_in_seconds,
-                        "status": deployment_specification_routes_backend_status,
+                        "status": int(deployment_specification_routes_backend_status),
                         "url": deployment_specification_routes_backend_url,
                     },
                     "path": deployment_specification_routes_path,
                     "logging_policies": {
                         "access_log": {
-                            "is_enabled": deployment_specification_routes_logging_policies_access_log_is_enabled,
+                            "is_enabled": deployment_specification_routes_logging_policies_access_log_is_enabled == "true",
                         },
                         "execution_log": {
-                            "is_enabled": deployment_specification_routes_logging_policies_execution_log_is_enabled,
+                            "is_enabled": deployment_specification_routes_logging_policies_execution_log_is_enabled == "true",
                             "log_level": deployment_specification_routes_logging_policies_execution_log_log_level,
                         },
                     },
@@ -1284,7 +1284,7 @@ class Deployment(pulumi.CustomResource):
                                 "media_type": deployment_specification_routes_request_policies_body_validation_content_media_type,
                                 "validation_type": deployment_specification_routes_request_policies_body_validation_content_validation_type,
                             }],
-                            "required": deployment_specification_routes_request_policies_body_validation_required,
+                            "required": deployment_specification_routes_request_policies_body_validation_required == "true",
                             "validation_mode": deployment_specification_routes_request_policies_body_validation_validation_mode,
                         },
                         "cors": {
@@ -1292,8 +1292,8 @@ class Deployment(pulumi.CustomResource):
                             "allowed_headers": deployment_specification_routes_request_policies_cors_allowed_headers,
                             "allowed_methods": deployment_specification_routes_request_policies_cors_allowed_methods,
                             "exposed_headers": deployment_specification_routes_request_policies_cors_exposed_headers,
-                            "is_allow_credentials_enabled": deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled,
-                            "max_age_in_seconds": deployment_specification_routes_request_policies_cors_max_age_in_seconds,
+                            "is_allow_credentials_enabled": deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled == "true",
+                            "max_age_in_seconds": int(deployment_specification_routes_request_policies_cors_max_age_in_seconds),
                         },
                         "header_transformations": {
                             "filter_headers": {
@@ -1319,7 +1319,7 @@ class Deployment(pulumi.CustomResource):
                         "header_validations": {
                             "headers": [{
                                 "name": deployment_specification_routes_request_policies_header_validations_headers_name,
-                                "required": deployment_specification_routes_request_policies_header_validations_headers_required,
+                                "required": deployment_specification_routes_request_policies_header_validations_headers_required == "true",
                             }],
                             "validation_mode": deployment_specification_routes_request_policies_header_validations_validation_mode,
                         },
@@ -1347,15 +1347,15 @@ class Deployment(pulumi.CustomResource):
                         "query_parameter_validations": {
                             "parameters": [{
                                 "name": deployment_specification_routes_request_policies_query_parameter_validations_parameters_name,
-                                "required": deployment_specification_routes_request_policies_query_parameter_validations_parameters_required,
+                                "required": deployment_specification_routes_request_policies_query_parameter_validations_parameters_required == "true",
                             }],
                             "validation_mode": deployment_specification_routes_request_policies_query_parameter_validations_validation_mode,
                         },
                         "response_cache_lookup": {
                             "type": deployment_specification_routes_request_policies_response_cache_lookup_type,
                             "cache_key_additions": deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions,
-                            "is_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_enabled,
-                            "is_private_caching_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled,
+                            "is_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_enabled == "true",
+                            "is_private_caching_enabled": deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled == "true",
                         },
                     },
                     "response_policies": {
@@ -1381,7 +1381,7 @@ class Deployment(pulumi.CustomResource):
                             },
                         },
                         "response_cache_store": {
-                            "time_to_live_in_seconds": deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds,
+                            "time_to_live_in_seconds": int(deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds),
                             "type": deployment_specification_routes_response_policies_response_cache_store_type,
                         },
                     },

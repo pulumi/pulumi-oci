@@ -108,7 +108,7 @@ def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_types = oci.DataSafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_types = oci.datasafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 
@@ -144,7 +144,7 @@ def get_sensitive_data_model_sensitive_types_output(filters: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_types = oci.DataSafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_types = oci.datasafe.get_sensitive_data_model_sensitive_types(sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 

@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree === "true",
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  *     subscriptionServiceName: subscriptionServiceName,
  *     subscriptionId: subscriptionId,
  * });
@@ -147,8 +147,8 @@ export interface GetMulticloudResourceAnchorsResult {
  *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
- *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree === "true",
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName === "true",
  *     subscriptionServiceName: subscriptionServiceName,
  *     subscriptionId: subscriptionId,
  * });

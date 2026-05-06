@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitions = oci.FleetAppsManagement.getSchedulerDefinitions({
+ * const testSchedulerDefinitions = oci.fleetappsmanagement.getSchedulerDefinitions({
  *     compartmentId: compartmentId,
  *     displayName: schedulerDefinitionDisplayName,
  *     fleetId: testFleet.id,
@@ -160,7 +160,7 @@ export interface GetSchedulerDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerDefinitions = oci.FleetAppsManagement.getSchedulerDefinitions({
+ * const testSchedulerDefinitions = oci.fleetappsmanagement.getSchedulerDefinitions({
  *     compartmentId: compartmentId,
  *     displayName: schedulerDefinitionDisplayName,
  *     fleetId: testFleet.id,

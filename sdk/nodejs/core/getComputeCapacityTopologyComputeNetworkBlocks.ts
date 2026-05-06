@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeNetworkBlocks = oci.Core.getComputeCapacityTopologyComputeNetworkBlocks({
+ * const testComputeCapacityTopologyComputeNetworkBlocks = oci.core.getComputeCapacityTopologyComputeNetworkBlocks({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -94,7 +94,7 @@ export interface GetComputeCapacityTopologyComputeNetworkBlocksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeNetworkBlocks = oci.Core.getComputeCapacityTopologyComputeNetworkBlocks({
+ * const testComputeCapacityTopologyComputeNetworkBlocks = oci.core.getComputeCapacityTopologyComputeNetworkBlocks({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
  *     compartmentId: compartmentId,

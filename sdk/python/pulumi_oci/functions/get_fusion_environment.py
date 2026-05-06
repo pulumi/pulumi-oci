@@ -429,7 +429,7 @@ def get_fusion_environment(fusion_environment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
+    test_fusion_environment = oci.functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
     ```
 
 
@@ -486,7 +486,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
+    test_fusion_environment = oci.functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
     ```
 
 

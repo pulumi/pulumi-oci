@@ -203,14 +203,14 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_crypto_analysis_results = oci.jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        finding_count=fleet_crypto_analysis_result_finding_count,
-        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        finding_count=int(fleet_crypto_analysis_result_finding_count),
+        finding_count_greater_than=int(fleet_crypto_analysis_result_finding_count_greater_than),
         host_name=fleet_crypto_analysis_result_host_name,
         managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
-        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
-        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
+        non_compliant_finding_count=int(fleet_crypto_analysis_result_non_compliant_finding_count),
+        non_compliant_finding_count_greater_than=int(fleet_crypto_analysis_result_non_compliant_finding_count_greater_than),
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```
@@ -279,14 +279,14 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_crypto_analysis_results = oci.jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        finding_count=fleet_crypto_analysis_result_finding_count,
-        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        finding_count=int(fleet_crypto_analysis_result_finding_count),
+        finding_count_greater_than=int(fleet_crypto_analysis_result_finding_count_greater_than),
         host_name=fleet_crypto_analysis_result_host_name,
         managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
-        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
-        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
+        non_compliant_finding_count=int(fleet_crypto_analysis_result_non_compliant_finding_count),
+        non_compliant_finding_count_greater_than=int(fleet_crypto_analysis_result_non_compliant_finding_count_greater_than),
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```

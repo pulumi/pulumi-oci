@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMySupportAccount = oci.Identity.getDomainsMySupportAccount({
+ * const testMySupportAccount = oci.identity.getDomainsMySupportAccount({
  *     idcsEndpoint: testDomain.url,
  *     mySupportAccountId: testMySupportAccountOciIdentityDomainsMySupportAccount.id,
  *     authorization: mySupportAccountAuthorization,
@@ -145,7 +145,7 @@ export interface GetDomainsMySupportAccountResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMySupportAccount = oci.Identity.getDomainsMySupportAccount({
+ * const testMySupportAccount = oci.identity.getDomainsMySupportAccount({
  *     idcsEndpoint: testDomain.url,
  *     mySupportAccountId: testMySupportAccountOciIdentityDomainsMySupportAccount.id,
  *     authorization: mySupportAccountAuthorization,

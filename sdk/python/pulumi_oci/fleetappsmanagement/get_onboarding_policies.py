@@ -95,7 +95,7 @@ def get_onboarding_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
+    test_onboarding_policies = oci.fleetappsmanagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_onboarding_policies_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
+    test_onboarding_policies = oci.fleetappsmanagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
 
 

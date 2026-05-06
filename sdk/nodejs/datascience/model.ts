@@ -25,13 +25,13 @@ import * as utilities from "../utilities";
  *     projectId: testProject.id,
  *     backupSetting: {
  *         backupRegion: modelBackupSettingBackupRegion,
- *         isBackupEnabled: modelBackupSettingIsBackupEnabled,
+ *         isBackupEnabled: modelBackupSettingIsBackupEnabled === "true",
  *         customerNotificationType: modelBackupSettingCustomerNotificationType,
  *     },
  *     customMetadataLists: [{
  *         category: modelCustomMetadataListCategory,
  *         description: modelCustomMetadataListDescription,
- *         hasArtifact: modelCustomMetadataListHasArtifact,
+ *         hasArtifact: modelCustomMetadataListHasArtifact === "true",
  *         key: modelCustomMetadataListKey,
  *         keywords: modelCustomMetadataListKeywords,
  *         value: modelCustomMetadataListValue,
@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *     definedMetadataLists: [{
  *         category: modelDefinedMetadataListCategory,
  *         description: modelDefinedMetadataListDescription,
- *         hasArtifact: modelDefinedMetadataListHasArtifact,
+ *         hasArtifact: modelDefinedMetadataListHasArtifact === "true",
  *         key: modelDefinedMetadataListKey,
  *         keywords: modelDefinedMetadataListKeywords,
  *         value: modelDefinedMetadataListValue,
@@ -55,9 +55,9 @@ import * as utilities from "../utilities";
  *     inputSchema: modelInputSchema,
  *     outputSchema: modelOutputSchema,
  *     retentionSetting: {
- *         archiveAfterDays: modelRetentionSettingArchiveAfterDays,
+ *         archiveAfterDays: Number(modelRetentionSettingArchiveAfterDays),
  *         customerNotificationType: modelRetentionSettingCustomerNotificationType,
- *         deleteAfterDays: modelRetentionSettingDeleteAfterDays,
+ *         deleteAfterDays: Number(modelRetentionSettingDeleteAfterDays),
  *     },
  *     versionLabel: modelVersionLabel,
  * });

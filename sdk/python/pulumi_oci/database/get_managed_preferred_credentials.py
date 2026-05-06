@@ -95,7 +95,7 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[Union['GetManag
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
+    test_managed_database_preferred_credentials = oci.database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credentials = oci.Database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
+    test_managed_database_preferred_credentials = oci.database.get_managed_preferred_credentials(managed_database_id=test_managed_database["id"])
     ```
 
 

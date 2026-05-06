@@ -146,7 +146,7 @@ def get_managed_instance_group_installed_packages(compartment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_installed_packages = oci.OsManagementHub.get_managed_instance_group_installed_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_installed_packages = oci.osmanagementhub.get_managed_instance_group_installed_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_installed_package_display_name,
         display_name_contains=managed_instance_group_installed_package_display_name_contains,
@@ -203,7 +203,7 @@ def get_managed_instance_group_installed_packages_output(compartment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_installed_packages = oci.OsManagementHub.get_managed_instance_group_installed_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_installed_packages = oci.osmanagementhub.get_managed_instance_group_installed_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_installed_package_display_name,
         display_name_contains=managed_instance_group_installed_package_display_name_contains,

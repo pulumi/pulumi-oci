@@ -108,7 +108,7 @@ def get_scheduler_definition_scheduled_fleets(display_name: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition_scheduled_fleets = oci.FleetAppsManagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
+    test_scheduler_definition_scheduled_fleets = oci.fleetappsmanagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
         display_name=scheduler_definition_scheduled_fleet_display_name)
     ```
 
@@ -144,7 +144,7 @@ def get_scheduler_definition_scheduled_fleets_output(display_name: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definition_scheduled_fleets = oci.FleetAppsManagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
+    test_scheduler_definition_scheduled_fleets = oci.fleetappsmanagement.get_scheduler_definition_scheduled_fleets(scheduler_definition_id=test_scheduler_definition["id"],
         display_name=scheduler_definition_scheduled_fleet_display_name)
     ```
 

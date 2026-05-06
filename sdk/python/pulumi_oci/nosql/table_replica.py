@@ -238,8 +238,8 @@ class TableReplica(pulumi.CustomResource):
             region=table_replica_region,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            max_read_units=table_replica_max_read_units,
-            max_write_units=table_replica_max_write_units)
+            max_read_units=int(table_replica_max_read_units),
+            max_write_units=int(table_replica_max_write_units))
         ```
 
         ## Import
@@ -287,8 +287,8 @@ class TableReplica(pulumi.CustomResource):
             region=table_replica_region,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            max_read_units=table_replica_max_read_units,
-            max_write_units=table_replica_max_write_units)
+            max_read_units=int(table_replica_max_read_units),
+            max_write_units=int(table_replica_max_write_units))
         ```
 
         ## Import

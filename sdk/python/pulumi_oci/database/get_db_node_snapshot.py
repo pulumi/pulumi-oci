@@ -228,7 +228,7 @@ def get_db_node_snapshot(dbnode_snapshot_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshot = oci.Database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
+    test_db_node_snapshot = oci.database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_db_node_snapshot_output(dbnode_snapshot_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_snapshot = oci.Database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
+    test_db_node_snapshot = oci.database.get_db_node_snapshot(dbnode_snapshot_id=test_snapshot["id"])
     ```
 
 

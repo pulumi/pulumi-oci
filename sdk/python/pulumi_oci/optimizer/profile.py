@@ -421,7 +421,7 @@ class Profile(pulumi.CustomResource):
                 }],
             },
             name=profile_name,
-            aggregation_interval_in_days=profile_aggregation_interval_in_days,
+            aggregation_interval_in_days=int(profile_aggregation_interval_in_days),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -492,7 +492,7 @@ class Profile(pulumi.CustomResource):
                 }],
             },
             name=profile_name,
-            aggregation_interval_in_days=profile_aggregation_interval_in_days,
+            aggregation_interval_in_days=int(profile_aggregation_interval_in_days),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

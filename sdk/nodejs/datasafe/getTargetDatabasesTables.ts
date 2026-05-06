@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
+ * const testTargetDatabasesTables = oci.datasafe.getTargetDatabasesTables({
  *     targetDatabaseId: testTargetDatabase.id,
  *     schemaNames: targetDatabasesTableSchemaName,
  *     schemaNameContains: targetDatabasesTableSchemaNameContains,
@@ -101,7 +101,7 @@ export interface GetTargetDatabasesTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
+ * const testTargetDatabasesTables = oci.datasafe.getTargetDatabasesTables({
  *     targetDatabaseId: testTargetDatabase.id,
  *     schemaNames: targetDatabasesTableSchemaName,
  *     schemaNameContains: targetDatabasesTableSchemaNameContains,

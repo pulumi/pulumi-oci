@@ -300,7 +300,7 @@ def get_certificate_authority(certificate_authority_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
+    test_certificate_authority = oci.certificatesmanagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
 
 
@@ -346,7 +346,7 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
+    test_certificate_authority = oci.certificatesmanagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
 
 

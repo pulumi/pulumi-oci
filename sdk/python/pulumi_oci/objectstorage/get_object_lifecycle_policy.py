@@ -103,7 +103,7 @@ def get_object_lifecycle_policy(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+    test_object_lifecycle_policy = oci.objectstorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
         namespace=object_lifecycle_policy_namespace)
     ```
 
@@ -137,7 +137,7 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+    test_object_lifecycle_policy = oci.objectstorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
         namespace=object_lifecycle_policy_namespace)
     ```
 

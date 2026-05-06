@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseInstanceWalletManagement = oci.Database.getAutonomousDatabaseInstanceWalletManagement({
+ * const testAutonomousDatabaseInstanceWalletManagement = oci.database.getAutonomousDatabaseInstanceWalletManagement({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -71,7 +71,7 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseInstanceWalletManagement = oci.Database.getAutonomousDatabaseInstanceWalletManagement({
+ * const testAutonomousDatabaseInstanceWalletManagement = oci.database.getAutonomousDatabaseInstanceWalletManagement({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```

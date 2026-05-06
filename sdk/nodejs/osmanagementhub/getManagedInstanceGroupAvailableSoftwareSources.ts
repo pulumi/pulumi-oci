@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailableSoftwareSources = oci.OsManagementHub.getManagedInstanceGroupAvailableSoftwareSources({
+ * const testManagedInstanceGroupAvailableSoftwareSources = oci.osmanagementhub.getManagedInstanceGroupAvailableSoftwareSources({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailableSoftwareSourceDisplayName,
@@ -94,7 +94,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailableSoftwareSources = oci.OsManagementHub.getManagedInstanceGroupAvailableSoftwareSources({
+ * const testManagedInstanceGroupAvailableSoftwareSources = oci.osmanagementhub.getManagedInstanceGroupAvailableSoftwareSources({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailableSoftwareSourceDisplayName,

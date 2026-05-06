@@ -173,7 +173,7 @@ def get_domains_authentication_factor_settings(attribute_sets: Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=test_domain["url"],
+    test_authentication_factor_settings = oci.identity.get_domains_authentication_factor_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
         authorization=authentication_factor_setting_authorization,
@@ -228,7 +228,7 @@ def get_domains_authentication_factor_settings_output(attribute_sets: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_settings = oci.Identity.get_domains_authentication_factor_settings(idcs_endpoint=test_domain["url"],
+    test_authentication_factor_settings = oci.identity.get_domains_authentication_factor_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
         authorization=authentication_factor_setting_authorization,

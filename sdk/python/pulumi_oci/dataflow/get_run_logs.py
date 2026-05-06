@@ -95,7 +95,7 @@ def get_run_logs(filters: Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRu
     import pulumi
     import pulumi_oci as oci
 
-    test_run_logs = oci.DataFlow.get_run_logs(run_id=test_run["id"])
+    test_run_logs = oci.dataflow.get_run_logs(run_id=test_run["id"])
     ```
 
 
@@ -126,7 +126,7 @@ def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_run_logs = oci.DataFlow.get_run_logs(run_id=test_run["id"])
+    test_run_logs = oci.dataflow.get_run_logs(run_id=test_run["id"])
     ```
 
 

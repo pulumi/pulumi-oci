@@ -118,7 +118,7 @@ def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPac
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=test_publication["id"],
+    test_publication_packages = oci.marketplace.get_publication_packages(publication_id=test_publication["id"],
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```
@@ -159,7 +159,7 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=test_publication["id"],
+    test_publication_packages = oci.marketplace.get_publication_packages(publication_id=test_publication["id"],
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```

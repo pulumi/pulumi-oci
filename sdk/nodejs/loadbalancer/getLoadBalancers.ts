@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
+ * const testLoadBalancers = oci.loadbalancer.getLoadBalancers({
  *     compartmentId: compartmentId,
  *     detail: loadBalancerDetail,
  *     displayName: loadBalancerDisplayName,
@@ -105,7 +105,7 @@ export interface GetLoadBalancersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
+ * const testLoadBalancers = oci.loadbalancer.getLoadBalancers({
  *     compartmentId: compartmentId,
  *     detail: loadBalancerDetail,
  *     displayName: loadBalancerDisplayName,

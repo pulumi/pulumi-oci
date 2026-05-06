@@ -477,7 +477,7 @@ def get_maintenance_run(maintenance_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run = oci.Database.get_maintenance_run(maintenance_run_id=test_maintenance_run_oci_database_maintenance_run["id"])
+    test_maintenance_run = oci.database.get_maintenance_run(maintenance_run_id=test_maintenance_run_oci_database_maintenance_run["id"])
     ```
 
 
@@ -538,7 +538,7 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run = oci.Database.get_maintenance_run(maintenance_run_id=test_maintenance_run_oci_database_maintenance_run["id"])
+    test_maintenance_run = oci.database.get_maintenance_run(maintenance_run_id=test_maintenance_run_oci_database_maintenance_run["id"])
     ```
 
 

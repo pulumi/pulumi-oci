@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string Id;
         public readonly bool IsRemote;
         public readonly bool IsRetentionLockEnabled;
+        public readonly bool IsZeroDataLossEnabled;
         public readonly string RemoteRegion;
         public readonly string Type;
 
@@ -36,6 +37,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isRetentionLockEnabled,
 
+            bool isZeroDataLossEnabled,
+
             string remoteRegion,
 
             string type)
@@ -45,6 +48,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             IsRemote = isRemote;
             IsRetentionLockEnabled = isRetentionLockEnabled;
+            IsZeroDataLossEnabled = isZeroDataLossEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
         }

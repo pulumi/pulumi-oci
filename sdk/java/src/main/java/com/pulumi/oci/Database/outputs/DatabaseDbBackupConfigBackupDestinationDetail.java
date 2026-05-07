@@ -38,6 +38,11 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
      */
     private @Nullable Boolean isRetentionLockEnabled;
     /**
+     * @return Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+     * 
+     */
+    private @Nullable Boolean isZeroDataLossEnabled;
+    /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
@@ -87,6 +92,13 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.isRetentionLockEnabled);
     }
     /**
+     * @return Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+     * 
+     */
+    public Optional<Boolean> isZeroDataLossEnabled() {
+        return Optional.ofNullable(this.isZeroDataLossEnabled);
+    }
+    /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
@@ -121,6 +133,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
         private @Nullable String id;
         private @Nullable Boolean isRemote;
         private @Nullable Boolean isRetentionLockEnabled;
+        private @Nullable Boolean isZeroDataLossEnabled;
         private @Nullable String remoteRegion;
         private @Nullable String type;
         private @Nullable String vpcPassword;
@@ -133,6 +146,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
+    	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
@@ -170,6 +184,12 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder isZeroDataLossEnabled(@Nullable Boolean isZeroDataLossEnabled) {
+
+            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remoteRegion(@Nullable String remoteRegion) {
 
             this.remoteRegion = remoteRegion;
@@ -200,6 +220,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
+            _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;

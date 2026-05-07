@@ -31916,6 +31916,10 @@ export namespace Database {
          */
         isRetentionLockEnabled?: pulumi.Input<boolean>;
         /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+         */
+        isZeroDataLossEnabled?: pulumi.Input<boolean>;
+        /**
          * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
@@ -32885,6 +32889,7 @@ export namespace Database {
          * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
          */
         isRetentionLockEnabled?: pulumi.Input<boolean>;
+        isZeroDataLossEnabled?: pulumi.Input<boolean>;
         /**
          * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */

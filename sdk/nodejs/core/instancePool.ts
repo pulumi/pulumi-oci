@@ -158,7 +158,7 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
-    declare public readonly loadBalancers: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
+    declare public readonly loadBalancers: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[] | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *

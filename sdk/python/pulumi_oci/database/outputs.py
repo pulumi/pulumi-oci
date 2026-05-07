@@ -11421,6 +11421,8 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
             suggest = "is_remote"
         elif key == "isRetentionLockEnabled":
             suggest = "is_retention_lock_enabled"
+        elif key == "isZeroDataLossEnabled":
+            suggest = "is_zero_data_loss_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
         elif key == "vpcPassword":
@@ -11445,6 +11447,7 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
                  id: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
                  is_retention_lock_enabled: Optional[_builtins.bool] = None,
+                 is_zero_data_loss_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None,
                  vpc_password: Optional[_builtins.str] = None,
@@ -11455,6 +11458,7 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
         :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.bool is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
         :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
@@ -11468,6 +11472,8 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "is_remote", is_remote)
         if is_retention_lock_enabled is not None:
             pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        if is_zero_data_loss_enabled is not None:
+            pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -11516,6 +11522,14 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
         Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -15127,6 +15141,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
             suggest = "is_remote"
         elif key == "isRetentionLockEnabled":
             suggest = "is_retention_lock_enabled"
+        elif key == "isZeroDataLossEnabled":
+            suggest = "is_zero_data_loss_enabled"
         elif key == "remoteRegion":
             suggest = "remote_region"
 
@@ -15147,6 +15163,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
                  id: Optional[_builtins.str] = None,
                  is_remote: Optional[_builtins.bool] = None,
                  is_retention_lock_enabled: Optional[_builtins.bool] = None,
+                 is_zero_data_loss_enabled: Optional[_builtins.bool] = None,
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
@@ -15168,6 +15185,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
             pulumi.set(__self__, "is_remote", is_remote)
         if is_retention_lock_enabled is not None:
             pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        if is_zero_data_loss_enabled is not None:
+            pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -15212,6 +15231,11 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_zero_data_loss_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -46403,6 +46427,7 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
                  id: _builtins.str,
                  is_remote: _builtins.bool,
                  is_retention_lock_enabled: _builtins.bool,
+                 is_zero_data_loss_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -46412,6 +46437,7 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param _builtins.bool is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
         :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
         :param _builtins.str type: Type of the database backup destination.
         :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
@@ -46422,6 +46448,7 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
         pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
@@ -46463,6 +46490,14 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     @pulumi.getter(name="isRetentionLockEnabled")
     def is_retention_lock_enabled(self) -> _builtins.bool:
         return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -50837,6 +50872,7 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
                  id: _builtins.str,
                  is_remote: _builtins.bool,
                  is_retention_lock_enabled: _builtins.bool,
+                 is_zero_data_loss_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str,
                  vpc_password: _builtins.str,
@@ -50847,6 +50883,7 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
         :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.bool is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
         :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
@@ -50855,6 +50892,7 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
         pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vpc_password", vpc_password)
@@ -50899,6 +50937,14 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
         Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -56544,6 +56590,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
                  id: _builtins.str,
                  is_remote: _builtins.bool,
                  is_retention_lock_enabled: _builtins.bool,
+                 is_zero_data_loss_enabled: _builtins.bool,
                  remote_region: _builtins.str,
                  type: _builtins.str):
         """
@@ -56554,6 +56601,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_remote", is_remote)
         pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
         pulumi.set(__self__, "remote_region", remote_region)
         pulumi.set(__self__, "type", type)
 
@@ -56584,6 +56632,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailRes
     @pulumi.getter(name="isRetentionLockEnabled")
     def is_retention_lock_enabled(self) -> _builtins.bool:
         return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_zero_data_loss_enabled")
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")

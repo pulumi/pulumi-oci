@@ -6268,6 +6268,8 @@ type GetDatabaseDbBackupConfigBackupDestinationDetail struct {
 	// Indicates whether the backup destination is cross-region or local region.
 	IsRemote               bool `pulumi:"isRemote"`
 	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+	IsZeroDataLossEnabled bool `pulumi:"isZeroDataLossEnabled"`
 	// The name of the remote region where the remote automatic incremental backups will be stored.
 	RemoteRegion string `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
@@ -6299,6 +6301,8 @@ type GetDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
 	// Indicates whether the backup destination is cross-region or local region.
 	IsRemote               pulumi.BoolInput `pulumi:"isRemote"`
 	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+	IsZeroDataLossEnabled pulumi.BoolInput `pulumi:"isZeroDataLossEnabled"`
 	// The name of the remote region where the remote automatic incremental backups will be stored.
 	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
@@ -6384,6 +6388,11 @@ func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulum
 
 func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+func (o GetDatabaseDbBackupConfigBackupDestinationDetailOutput) IsZeroDataLossEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsZeroDataLossEnabled }).(pulumi.BoolOutput)
 }
 
 // The name of the remote region where the remote automatic incremental backups will be stored.
@@ -13507,6 +13516,8 @@ type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail struct {
 	IsRemote bool `pulumi:"isRemote"`
 	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
 	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
+	// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+	IsZeroDataLossEnabled bool `pulumi:"isZeroDataLossEnabled"`
 	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion string `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
@@ -13537,6 +13548,8 @@ type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
 	IsRemote pulumi.BoolInput `pulumi:"isRemote"`
 	// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
 	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
+	// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+	IsZeroDataLossEnabled pulumi.BoolInput `pulumi:"isZeroDataLossEnabled"`
 	// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
 	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
 	// Type of the database backup destination.
@@ -13623,6 +13636,11 @@ func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) IsReten
 	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) bool {
 		return v.IsRetentionLockEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) IsZeroDataLossEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsZeroDataLossEnabled }).(pulumi.BoolOutput)
 }
 
 // The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
@@ -24307,6 +24325,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail str
 	Id                     string `pulumi:"id"`
 	IsRemote               bool   `pulumi:"isRemote"`
 	IsRetentionLockEnabled bool   `pulumi:"isRetentionLockEnabled"`
+	IsZeroDataLossEnabled  bool   `pulumi:"isZeroDataLossEnabled"`
 	RemoteRegion           string `pulumi:"remoteRegion"`
 	Type                   string `pulumi:"type"`
 }
@@ -24329,6 +24348,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs
 	Id                     pulumi.StringInput `pulumi:"id"`
 	IsRemote               pulumi.BoolInput   `pulumi:"isRemote"`
 	IsRetentionLockEnabled pulumi.BoolInput   `pulumi:"isRetentionLockEnabled"`
+	IsZeroDataLossEnabled  pulumi.BoolInput   `pulumi:"isZeroDataLossEnabled"`
 	RemoteRegion           pulumi.StringInput `pulumi:"remoteRegion"`
 	Type                   pulumi.StringInput `pulumi:"type"`
 }
@@ -24410,6 +24430,12 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailO
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
 		return v.IsRetentionLockEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsZeroDataLossEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsZeroDataLossEnabled
 	}).(pulumi.BoolOutput)
 }
 

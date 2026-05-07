@@ -20,6 +20,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     private String id;
     private Boolean isRemote;
     private Boolean isRetentionLockEnabled;
+    private Boolean isZeroDataLossEnabled;
     private String remoteRegion;
     private String type;
 
@@ -43,6 +44,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     public Boolean isRetentionLockEnabled() {
         return this.isRetentionLockEnabled;
     }
+    public Boolean isZeroDataLossEnabled() {
+        return this.isZeroDataLossEnabled;
+    }
     public String remoteRegion() {
         return this.remoteRegion;
     }
@@ -64,6 +68,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
         private String id;
         private Boolean isRemote;
         private Boolean isRetentionLockEnabled;
+        private Boolean isZeroDataLossEnabled;
         private String remoteRegion;
         private String type;
         public Builder() {}
@@ -74,6 +79,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
+    	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
         }
@@ -119,6 +125,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             return this;
         }
         @CustomType.Setter
+        public Builder isZeroDataLossEnabled(Boolean isZeroDataLossEnabled) {
+            if (isZeroDataLossEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isZeroDataLossEnabled");
+            }
+            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remoteRegion(String remoteRegion) {
             if (remoteRegion == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "remoteRegion");
@@ -141,6 +155,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
+            _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             return _resultValue;

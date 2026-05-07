@@ -43,6 +43,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool>? IsRetentionLockEnabled { get; set; }
 
         /// <summary>
+        /// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        /// </summary>
+        [Input("isZeroDataLossEnabled")]
+        public Input<bool>? IsZeroDataLossEnabled { get; set; }
+
+        /// <summary>
         /// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         /// </summary>
         [Input("remoteRegion")]

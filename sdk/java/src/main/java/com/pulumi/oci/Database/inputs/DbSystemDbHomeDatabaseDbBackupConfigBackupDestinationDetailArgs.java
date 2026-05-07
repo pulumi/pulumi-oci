@@ -91,6 +91,13 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         return Optional.ofNullable(this.isRetentionLockEnabled);
     }
 
+    @Import(name="isZeroDataLossEnabled")
+    private @Nullable Output<Boolean> isZeroDataLossEnabled;
+
+    public Optional<Output<Boolean>> isZeroDataLossEnabled() {
+        return Optional.ofNullable(this.isZeroDataLossEnabled);
+    }
+
     /**
      * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
@@ -129,6 +136,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         this.id = $.id;
         this.isRemote = $.isRemote;
         this.isRetentionLockEnabled = $.isRetentionLockEnabled;
+        this.isZeroDataLossEnabled = $.isZeroDataLossEnabled;
         this.remoteRegion = $.remoteRegion;
         this.type = $.type;
     }
@@ -254,6 +262,15 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
          */
         public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
             return isRetentionLockEnabled(Output.of(isRetentionLockEnabled));
+        }
+
+        public Builder isZeroDataLossEnabled(@Nullable Output<Boolean> isZeroDataLossEnabled) {
+            $.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            return this;
+        }
+
+        public Builder isZeroDataLossEnabled(Boolean isZeroDataLossEnabled) {
+            return isZeroDataLossEnabled(Output.of(isZeroDataLossEnabled));
         }
 
         /**

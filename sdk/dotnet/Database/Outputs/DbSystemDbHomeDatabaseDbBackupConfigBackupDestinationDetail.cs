@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         /// </summary>
         public readonly bool? IsRetentionLockEnabled;
+        public readonly bool? IsZeroDataLossEnabled;
         /// <summary>
         /// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         /// </summary>
@@ -54,6 +55,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool? isRetentionLockEnabled,
 
+            bool? isZeroDataLossEnabled,
+
             string? remoteRegion,
 
             string? type)
@@ -63,6 +66,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             IsRemote = isRemote;
             IsRetentionLockEnabled = isRetentionLockEnabled;
+            IsZeroDataLossEnabled = isZeroDataLossEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
         }

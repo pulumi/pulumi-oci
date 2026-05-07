@@ -37,6 +37,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private @Nullable Boolean isRetentionLockEnabled;
+    private @Nullable Boolean isZeroDataLossEnabled;
     /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
@@ -84,6 +85,9 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     public Optional<Boolean> isRetentionLockEnabled() {
         return Optional.ofNullable(this.isRetentionLockEnabled);
     }
+    public Optional<Boolean> isZeroDataLossEnabled() {
+        return Optional.ofNullable(this.isZeroDataLossEnabled);
+    }
     /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
@@ -113,6 +117,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         private @Nullable String id;
         private @Nullable Boolean isRemote;
         private @Nullable Boolean isRetentionLockEnabled;
+        private @Nullable Boolean isZeroDataLossEnabled;
         private @Nullable String remoteRegion;
         private @Nullable String type;
         public Builder() {}
@@ -123,6 +128,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
+    	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
         }
@@ -158,6 +164,12 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder isZeroDataLossEnabled(@Nullable Boolean isZeroDataLossEnabled) {
+
+            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remoteRegion(@Nullable String remoteRegion) {
 
             this.remoteRegion = remoteRegion;
@@ -176,6 +188,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
+            _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             return _resultValue;

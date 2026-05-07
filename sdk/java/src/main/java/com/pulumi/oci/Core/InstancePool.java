@@ -17,6 +17,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -273,14 +274,14 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="loadBalancers", refs={List.class,InstancePoolLoadBalancer.class}, tree="[0,1]")
-    private Output<List<InstancePoolLoadBalancer>> loadBalancers;
+    private Output</* @Nullable */ List<InstancePoolLoadBalancer>> loadBalancers;
 
     /**
      * @return The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
-    public Output<List<InstancePoolLoadBalancer>> loadBalancers() {
-        return this.loadBalancers;
+    public Output<Optional<List<InstancePoolLoadBalancer>>> loadBalancers() {
+        return Codegen.optional(this.loadBalancers);
     }
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.

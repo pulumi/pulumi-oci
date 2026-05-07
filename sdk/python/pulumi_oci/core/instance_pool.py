@@ -912,7 +912,7 @@ class InstancePool(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> pulumi.Output[Sequence['outputs.InstancePoolLoadBalancer']]:
+    def load_balancers(self) -> pulumi.Output[Optional[Sequence['outputs.InstancePoolLoadBalancer']]]:
         """
         The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
